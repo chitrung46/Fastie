@@ -29,278 +29,105 @@
         private void InitializeComponent()
         {
             this.sidebarLayout = new System.Windows.Forms.Panel();
-            this.pnlDecentralization = new System.Windows.Forms.Panel();
+            this.stateAnalytics = new System.Windows.Forms.Panel();
             this.stateDecentralization = new System.Windows.Forms.Panel();
-            this.lblPhanQuyen = new System.Windows.Forms.Label();
-            this.pnlWork = new System.Windows.Forms.Panel();
             this.stateWork = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pnlPersonnel = new System.Windows.Forms.Panel();
             this.statePersonnel = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlPosition = new System.Windows.Forms.Panel();
             this.statePosition = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnlPart = new System.Windows.Forms.Panel();
             this.statePart = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlAnalytics = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.mainLayout = new System.Windows.Forms.Panel();
             this.topbarLayout = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.stateAnalytics = new System.Windows.Forms.Panel();
-            this.lblLogout = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnAnalytics = new System.Windows.Forms.Button();
+            this.btnDecentralization = new System.Windows.Forms.Button();
+            this.btnWork = new System.Windows.Forms.Button();
+            this.btnPart = new System.Windows.Forms.Button();
+            this.btnPosition = new System.Windows.Forms.Button();
+            this.btnPersonnel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pnlLogout = new System.Windows.Forms.Panel();
             this.sidebarLayout.SuspendLayout();
-            this.pnlDecentralization.SuspendLayout();
-            this.pnlWork.SuspendLayout();
-            this.pnlPersonnel.SuspendLayout();
-            this.pnlPosition.SuspendLayout();
-            this.pnlPart.SuspendLayout();
-            this.pnlAnalytics.SuspendLayout();
             this.topbarLayout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.pnlLogout.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebarLayout
             // 
+            this.sidebarLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.sidebarLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.sidebarLayout.Controls.Add(this.pnlLogout);
-            this.sidebarLayout.Controls.Add(this.stateAnalytics);
-            this.sidebarLayout.Controls.Add(this.pnlDecentralization);
-            this.sidebarLayout.Controls.Add(this.pnlWork);
-            this.sidebarLayout.Controls.Add(this.pnlPersonnel);
-            this.sidebarLayout.Controls.Add(this.pnlPosition);
-            this.sidebarLayout.Controls.Add(this.pnlPart);
+            this.sidebarLayout.Controls.Add(this.panel2);
             this.sidebarLayout.Controls.Add(this.pictureBox1);
-            this.sidebarLayout.Controls.Add(this.pnlAnalytics);
             this.sidebarLayout.Cursor = System.Windows.Forms.Cursors.Default;
             this.sidebarLayout.Location = new System.Drawing.Point(1, 0);
             this.sidebarLayout.Name = "sidebarLayout";
             this.sidebarLayout.Size = new System.Drawing.Size(300, 800);
             this.sidebarLayout.TabIndex = 0;
             // 
-            // pnlDecentralization
+            // stateAnalytics
             // 
-            this.pnlDecentralization.BackColor = System.Drawing.Color.Transparent;
-            this.pnlDecentralization.Controls.Add(this.stateDecentralization);
-            this.pnlDecentralization.Controls.Add(this.lblPhanQuyen);
-            this.pnlDecentralization.Controls.Add(this.pictureBox2);
-            this.pnlDecentralization.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlDecentralization.Location = new System.Drawing.Point(0, 148);
-            this.pnlDecentralization.Name = "pnlDecentralization";
-            this.pnlDecentralization.Size = new System.Drawing.Size(300, 58);
-            this.pnlDecentralization.TabIndex = 1;
-            this.pnlDecentralization.Click += new System.EventHandler(this.pnlDecentralization_Click);
-            this.pnlDecentralization.MouseEnter += new System.EventHandler(this.pnlDecentralization_MouseEnter);
-            this.pnlDecentralization.MouseLeave += new System.EventHandler(this.pnlDecentralization_MouseLeave);
+            this.stateAnalytics.BackColor = System.Drawing.Color.Transparent;
+            this.stateAnalytics.Location = new System.Drawing.Point(290, 323);
+            this.stateAnalytics.Name = "stateAnalytics";
+            this.stateAnalytics.Size = new System.Drawing.Size(10, 58);
+            this.stateAnalytics.TabIndex = 1;
             // 
             // stateDecentralization
             // 
             this.stateDecentralization.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.stateDecentralization.Location = new System.Drawing.Point(290, 0);
+            this.stateDecentralization.Location = new System.Drawing.Point(290, 3);
             this.stateDecentralization.Name = "stateDecentralization";
             this.stateDecentralization.Size = new System.Drawing.Size(10, 58);
             this.stateDecentralization.TabIndex = 0;
             // 
-            // lblPhanQuyen
-            // 
-            this.lblPhanQuyen.AutoSize = true;
-            this.lblPhanQuyen.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhanQuyen.ForeColor = System.Drawing.Color.White;
-            this.lblPhanQuyen.Location = new System.Drawing.Point(87, 20);
-            this.lblPhanQuyen.Name = "lblPhanQuyen";
-            this.lblPhanQuyen.Size = new System.Drawing.Size(108, 21);
-            this.lblPhanQuyen.TabIndex = 2;
-            this.lblPhanQuyen.Text = "Phân quyền";
-            // 
-            // pnlWork
-            // 
-            this.pnlWork.BackColor = System.Drawing.Color.Transparent;
-            this.pnlWork.Controls.Add(this.stateWork);
-            this.pnlWork.Controls.Add(this.label4);
-            this.pnlWork.Controls.Add(this.pictureBox6);
-            this.pnlWork.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlWork.Location = new System.Drawing.Point(0, 404);
-            this.pnlWork.Name = "pnlWork";
-            this.pnlWork.Size = new System.Drawing.Size(300, 58);
-            this.pnlWork.TabIndex = 1;
-            this.pnlWork.Click += new System.EventHandler(this.pnlWork_Click);
-            this.pnlWork.MouseEnter += new System.EventHandler(this.pnlWork_MouseEnter);
-            this.pnlWork.MouseLeave += new System.EventHandler(this.pnlWork_MouseLeave);
-            // 
             // stateWork
             // 
             this.stateWork.BackColor = System.Drawing.Color.Transparent;
-            this.stateWork.Location = new System.Drawing.Point(290, 0);
+            this.stateWork.Location = new System.Drawing.Point(290, 259);
             this.stateWork.Name = "stateWork";
             this.stateWork.Size = new System.Drawing.Size(10, 58);
             this.stateWork.TabIndex = 0;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(87, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Công việc";
-            // 
-            // pnlPersonnel
-            // 
-            this.pnlPersonnel.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPersonnel.Controls.Add(this.statePersonnel);
-            this.pnlPersonnel.Controls.Add(this.label3);
-            this.pnlPersonnel.Controls.Add(this.pictureBox5);
-            this.pnlPersonnel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlPersonnel.Location = new System.Drawing.Point(0, 340);
-            this.pnlPersonnel.Name = "pnlPersonnel";
-            this.pnlPersonnel.Size = new System.Drawing.Size(300, 58);
-            this.pnlPersonnel.TabIndex = 1;
-            this.pnlPersonnel.Click += new System.EventHandler(this.pnlPersonnel_Click);
-            this.pnlPersonnel.MouseEnter += new System.EventHandler(this.pnlPersonnel_MouseEnter);
-            this.pnlPersonnel.MouseLeave += new System.EventHandler(this.pnlPersonnel_MouseLeave);
-            // 
             // statePersonnel
             // 
             this.statePersonnel.BackColor = System.Drawing.Color.Transparent;
-            this.statePersonnel.Location = new System.Drawing.Point(290, 0);
+            this.statePersonnel.Location = new System.Drawing.Point(290, 195);
             this.statePersonnel.Name = "statePersonnel";
             this.statePersonnel.Size = new System.Drawing.Size(10, 58);
             this.statePersonnel.TabIndex = 0;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(87, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nhân sự";
-            // 
-            // pnlPosition
-            // 
-            this.pnlPosition.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPosition.Controls.Add(this.statePosition);
-            this.pnlPosition.Controls.Add(this.label2);
-            this.pnlPosition.Controls.Add(this.pictureBox4);
-            this.pnlPosition.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlPosition.Location = new System.Drawing.Point(0, 276);
-            this.pnlPosition.Name = "pnlPosition";
-            this.pnlPosition.Size = new System.Drawing.Size(300, 58);
-            this.pnlPosition.TabIndex = 1;
-            this.pnlPosition.Click += new System.EventHandler(this.pnlPosition_Click);
-            this.pnlPosition.MouseEnter += new System.EventHandler(this.pnlPosition_MouseEnter);
-            this.pnlPosition.MouseLeave += new System.EventHandler(this.pnlPosition_MouseLeave);
-            // 
             // statePosition
             // 
             this.statePosition.BackColor = System.Drawing.Color.Transparent;
-            this.statePosition.Location = new System.Drawing.Point(290, 0);
+            this.statePosition.Location = new System.Drawing.Point(290, 131);
             this.statePosition.Name = "statePosition";
             this.statePosition.Size = new System.Drawing.Size(10, 58);
             this.statePosition.TabIndex = 0;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(87, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Chức vụ";
-            // 
-            // pnlPart
-            // 
-            this.pnlPart.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPart.Controls.Add(this.statePart);
-            this.pnlPart.Controls.Add(this.label1);
-            this.pnlPart.Controls.Add(this.pictureBox3);
-            this.pnlPart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlPart.Location = new System.Drawing.Point(0, 212);
-            this.pnlPart.Name = "pnlPart";
-            this.pnlPart.Size = new System.Drawing.Size(300, 58);
-            this.pnlPart.TabIndex = 1;
-            this.pnlPart.Click += new System.EventHandler(this.pnlPart_Click);
-            this.pnlPart.MouseEnter += new System.EventHandler(this.pnlPart_MouseEnter);
-            this.pnlPart.MouseLeave += new System.EventHandler(this.pnlPart_MouseLeave);
-            // 
             // statePart
             // 
             this.statePart.BackColor = System.Drawing.Color.Transparent;
-            this.statePart.Location = new System.Drawing.Point(290, 0);
+            this.statePart.Location = new System.Drawing.Point(290, 67);
             this.statePart.Name = "statePart";
             this.statePart.Size = new System.Drawing.Size(10, 58);
             this.statePart.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(87, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Bộ phận";
-            // 
-            // pnlAnalytics
-            // 
-            this.pnlAnalytics.BackColor = System.Drawing.Color.Transparent;
-            this.pnlAnalytics.Controls.Add(this.label5);
-            this.pnlAnalytics.Controls.Add(this.pictureBox7);
-            this.pnlAnalytics.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlAnalytics.Location = new System.Drawing.Point(0, 468);
-            this.pnlAnalytics.Name = "pnlAnalytics";
-            this.pnlAnalytics.Size = new System.Drawing.Size(300, 58);
-            this.pnlAnalytics.TabIndex = 1;
-            this.pnlAnalytics.Click += new System.EventHandler(this.pnlAnalytics_Click);
-            this.pnlAnalytics.MouseEnter += new System.EventHandler(this.pnlAnalytics_MouseEnter);
-            this.pnlAnalytics.MouseLeave += new System.EventHandler(this.pnlAnalytics_MouseLeave);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(87, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 21);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Thống kê";
-            // 
             // mainLayout
             // 
+            this.mainLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.mainLayout.Location = new System.Drawing.Point(302, 62);
             this.mainLayout.Name = "mainLayout";
@@ -309,27 +136,38 @@
             // 
             // topbarLayout
             // 
+            this.topbarLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.topbarLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.topbarLayout.Controls.Add(this.pictureBox10);
-            this.topbarLayout.Controls.Add(this.pictureBox9);
+            this.topbarLayout.Controls.Add(this.panel1);
             this.topbarLayout.Controls.Add(this.pictureBox8);
-            this.topbarLayout.Controls.Add(this.label7);
             this.topbarLayout.Controls.Add(this.label6);
             this.topbarLayout.Location = new System.Drawing.Point(302, 0);
             this.topbarLayout.Name = "topbarLayout";
-            this.topbarLayout.Size = new System.Drawing.Size(1200, 65);
+            this.topbarLayout.Size = new System.Drawing.Size(1197, 65);
             this.topbarLayout.TabIndex = 2;
             // 
-            // label7
+            // panel1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(1015, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 21);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Nhật Toàn";
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.pictureBox12);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.pictureBox13);
+            this.panel1.Location = new System.Drawing.Point(956, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 53);
+            this.panel1.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(64, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(92, 21);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Nhật Toàn";
             // 
             // label6
             // 
@@ -342,44 +180,45 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Tìm kiếm";
             // 
-            // stateAnalytics
+            // panel2
             // 
-            this.stateAnalytics.BackColor = System.Drawing.Color.Transparent;
-            this.stateAnalytics.Location = new System.Drawing.Point(290, 468);
-            this.stateAnalytics.Name = "stateAnalytics";
-            this.stateAnalytics.Size = new System.Drawing.Size(10, 58);
-            this.stateAnalytics.TabIndex = 1;
+            this.panel2.Controls.Add(this.btnLogout);
+            this.panel2.Controls.Add(this.stateAnalytics);
+            this.panel2.Controls.Add(this.statePart);
+            this.panel2.Controls.Add(this.stateWork);
+            this.panel2.Controls.Add(this.btnAnalytics);
+            this.panel2.Controls.Add(this.stateDecentralization);
+            this.panel2.Controls.Add(this.statePersonnel);
+            this.panel2.Controls.Add(this.btnDecentralization);
+            this.panel2.Controls.Add(this.btnWork);
+            this.panel2.Controls.Add(this.statePosition);
+            this.panel2.Controls.Add(this.btnPart);
+            this.panel2.Controls.Add(this.btnPosition);
+            this.panel2.Controls.Add(this.btnPersonnel);
+            this.panel2.Location = new System.Drawing.Point(0, 166);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 591);
+            this.panel2.TabIndex = 2;
             // 
-            // lblLogout
+            // pictureBox12
             // 
-            this.lblLogout.AutoSize = true;
-            this.lblLogout.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogout.ForeColor = System.Drawing.Color.White;
-            this.lblLogout.Location = new System.Drawing.Point(86, 18);
-            this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(94, 21);
-            this.lblLogout.TabIndex = 2;
-            this.lblLogout.Text = "Đăng xuất";
+            this.pictureBox12.Image = global::Fastie.Properties.Resources.icons8_arrow_down_100;
+            this.pictureBox12.Location = new System.Drawing.Point(170, 15);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 3;
+            this.pictureBox12.TabStop = false;
             // 
-            // pictureBox10
+            // pictureBox13
             // 
-            this.pictureBox10.Image = global::Fastie.Properties.Resources.icons8_arrow_down_100;
-            this.pictureBox10.Location = new System.Drawing.Point(1121, 21);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 0;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::Fastie.Properties.Resources.icons8_person_94;
-            this.pictureBox9.Location = new System.Drawing.Point(965, 15);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 0;
-            this.pictureBox9.TabStop = false;
+            this.pictureBox13.Image = global::Fastie.Properties.Resources.icons8_person_94;
+            this.pictureBox13.Location = new System.Drawing.Point(14, 9);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 4;
+            this.pictureBox13.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -391,55 +230,137 @@
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
             // 
-            // pictureBox2
+            // btnLogout
             // 
-            this.pictureBox2.Image = global::Fastie.Properties.Resources.icons8_decentralization_100;
-            this.pictureBox2.Location = new System.Drawing.Point(31, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Image = global::Fastie.Properties.Resources.icons8_log_out_30;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(0, 387);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(40, 0, 45, 0);
+            this.btnLogout.Size = new System.Drawing.Size(300, 58);
+            this.btnLogout.TabIndex = 0;
+            this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
-            // pictureBox6
+            // btnAnalytics
             // 
-            this.pictureBox6.Image = global::Fastie.Properties.Resources.icons8_document_100;
-            this.pictureBox6.Location = new System.Drawing.Point(31, 12);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
+            this.btnAnalytics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnAnalytics.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnalytics.FlatAppearance.BorderSize = 0;
+            this.btnAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnalytics.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAnalytics.ForeColor = System.Drawing.Color.White;
+            this.btnAnalytics.Image = global::Fastie.Properties.Resources.icons8_analytics_30;
+            this.btnAnalytics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnalytics.Location = new System.Drawing.Point(0, 323);
+            this.btnAnalytics.Name = "btnAnalytics";
+            this.btnAnalytics.Padding = new System.Windows.Forms.Padding(40, 0, 50, 0);
+            this.btnAnalytics.Size = new System.Drawing.Size(300, 58);
+            this.btnAnalytics.TabIndex = 0;
+            this.btnAnalytics.Text = "Thống kê";
+            this.btnAnalytics.UseVisualStyleBackColor = false;
+            this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
             // 
-            // pictureBox5
+            // btnDecentralization
             // 
-            this.pictureBox5.Image = global::Fastie.Properties.Resources.icons8_person_100;
-            this.pictureBox5.Location = new System.Drawing.Point(31, 12);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            this.btnDecentralization.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnDecentralization.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDecentralization.FlatAppearance.BorderSize = 0;
+            this.btnDecentralization.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecentralization.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDecentralization.ForeColor = System.Drawing.Color.White;
+            this.btnDecentralization.Image = global::Fastie.Properties.Resources.icons8_decentralization_30;
+            this.btnDecentralization.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDecentralization.Location = new System.Drawing.Point(0, 3);
+            this.btnDecentralization.Name = "btnDecentralization";
+            this.btnDecentralization.Padding = new System.Windows.Forms.Padding(40, 0, 25, 0);
+            this.btnDecentralization.Size = new System.Drawing.Size(300, 58);
+            this.btnDecentralization.TabIndex = 0;
+            this.btnDecentralization.Text = "Phân quyền";
+            this.btnDecentralization.UseVisualStyleBackColor = false;
+            this.btnDecentralization.Click += new System.EventHandler(this.btnDecentralization_Click);
             // 
-            // pictureBox4
+            // btnWork
             // 
-            this.pictureBox4.Image = global::Fastie.Properties.Resources.icons8_permanent_job_100;
-            this.pictureBox4.Location = new System.Drawing.Point(31, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.btnWork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnWork.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWork.FlatAppearance.BorderSize = 0;
+            this.btnWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWork.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnWork.ForeColor = System.Drawing.Color.White;
+            this.btnWork.Image = global::Fastie.Properties.Resources.icons8_document_30;
+            this.btnWork.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWork.Location = new System.Drawing.Point(0, 259);
+            this.btnWork.Name = "btnWork";
+            this.btnWork.Padding = new System.Windows.Forms.Padding(40, 0, 45, 0);
+            this.btnWork.Size = new System.Drawing.Size(300, 58);
+            this.btnWork.TabIndex = 0;
+            this.btnWork.Text = "Công việc";
+            this.btnWork.UseVisualStyleBackColor = false;
+            this.btnWork.Click += new System.EventHandler(this.btnWork_Click);
             // 
-            // pictureBox3
+            // btnPart
             // 
-            this.pictureBox3.Image = global::Fastie.Properties.Resources.icons8_part_100;
-            this.pictureBox3.Location = new System.Drawing.Point(31, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.btnPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnPart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPart.FlatAppearance.BorderSize = 0;
+            this.btnPart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPart.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPart.ForeColor = System.Drawing.Color.White;
+            this.btnPart.Image = global::Fastie.Properties.Resources.icons8_part_30;
+            this.btnPart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPart.Location = new System.Drawing.Point(0, 67);
+            this.btnPart.Name = "btnPart";
+            this.btnPart.Padding = new System.Windows.Forms.Padding(40, 0, 55, 0);
+            this.btnPart.Size = new System.Drawing.Size(300, 58);
+            this.btnPart.TabIndex = 0;
+            this.btnPart.Text = "Bộ phận";
+            this.btnPart.UseVisualStyleBackColor = false;
+            this.btnPart.Click += new System.EventHandler(this.btnPart_Click);
+            // 
+            // btnPosition
+            // 
+            this.btnPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnPosition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPosition.FlatAppearance.BorderSize = 0;
+            this.btnPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPosition.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPosition.ForeColor = System.Drawing.Color.White;
+            this.btnPosition.Image = global::Fastie.Properties.Resources.icons8_permanent_job_30;
+            this.btnPosition.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPosition.Location = new System.Drawing.Point(0, 131);
+            this.btnPosition.Name = "btnPosition";
+            this.btnPosition.Padding = new System.Windows.Forms.Padding(40, 0, 55, 0);
+            this.btnPosition.Size = new System.Drawing.Size(300, 58);
+            this.btnPosition.TabIndex = 0;
+            this.btnPosition.Text = "Chức vụ";
+            this.btnPosition.UseVisualStyleBackColor = false;
+            this.btnPosition.Click += new System.EventHandler(this.btnPosition_Click);
+            // 
+            // btnPersonnel
+            // 
+            this.btnPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnPersonnel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPersonnel.FlatAppearance.BorderSize = 0;
+            this.btnPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonnel.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPersonnel.ForeColor = System.Drawing.Color.White;
+            this.btnPersonnel.Image = global::Fastie.Properties.Resources.icons8_person_30;
+            this.btnPersonnel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPersonnel.Location = new System.Drawing.Point(0, 195);
+            this.btnPersonnel.Name = "btnPersonnel";
+            this.btnPersonnel.Padding = new System.Windows.Forms.Padding(40, 0, 55, 0);
+            this.btnPersonnel.Size = new System.Drawing.Size(300, 58);
+            this.btnPersonnel.TabIndex = 0;
+            this.btnPersonnel.Text = "Nhân sự";
+            this.btnPersonnel.UseVisualStyleBackColor = false;
+            this.btnPersonnel.Click += new System.EventHandler(this.btnPersonnel_Click);
             // 
             // pictureBox1
             // 
@@ -450,38 +371,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::Fastie.Properties.Resources.icons8_log_out_100;
-            this.pictureBox11.Location = new System.Drawing.Point(31, 11);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 0;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::Fastie.Properties.Resources.icons8_analytics_64;
-            this.pictureBox7.Location = new System.Drawing.Point(31, 12);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pnlLogout
-            // 
-            this.pnlLogout.Controls.Add(this.pictureBox11);
-            this.pnlLogout.Controls.Add(this.lblLogout);
-            this.pnlLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlLogout.Location = new System.Drawing.Point(0, 532);
-            this.pnlLogout.Name = "pnlLogout";
-            this.pnlLogout.Size = new System.Drawing.Size(300, 58);
-            this.pnlLogout.TabIndex = 3;
-            this.pnlLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
-            this.pnlLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
             // 
             // FormLayout
             // 
@@ -496,33 +385,15 @@
             this.Text = "Layout";
             this.Load += new System.EventHandler(this.FormLayout_Load);
             this.sidebarLayout.ResumeLayout(false);
-            this.pnlDecentralization.ResumeLayout(false);
-            this.pnlDecentralization.PerformLayout();
-            this.pnlWork.ResumeLayout(false);
-            this.pnlWork.PerformLayout();
-            this.pnlPersonnel.ResumeLayout(false);
-            this.pnlPersonnel.PerformLayout();
-            this.pnlPosition.ResumeLayout(false);
-            this.pnlPosition.PerformLayout();
-            this.pnlPart.ResumeLayout(false);
-            this.pnlPart.PerformLayout();
-            this.pnlAnalytics.ResumeLayout(false);
-            this.pnlAnalytics.PerformLayout();
             this.topbarLayout.ResumeLayout(false);
             this.topbarLayout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.pnlLogout.ResumeLayout(false);
-            this.pnlLogout.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -531,24 +402,6 @@
 
         private System.Windows.Forms.Panel sidebarLayout;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel pnlDecentralization;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblPhanQuyen;
-        private System.Windows.Forms.Panel pnlAnalytics;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Panel pnlWork;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Panel pnlPersonnel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel pnlPosition;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel pnlPart;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel mainLayout;
         private System.Windows.Forms.Panel stateDecentralization;
         private System.Windows.Forms.Panel stateWork;
@@ -558,13 +411,19 @@
         private System.Windows.Forms.Panel topbarLayout;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel stateAnalytics;
-        private System.Windows.Forms.Label lblLogout;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Panel pnlLogout;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Button btnDecentralization;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnAnalytics;
+        private System.Windows.Forms.Button btnWork;
+        private System.Windows.Forms.Button btnPersonnel;
+        private System.Windows.Forms.Button btnPosition;
+        private System.Windows.Forms.Button btnPart;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

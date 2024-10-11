@@ -48,122 +48,119 @@ namespace Fastie
         }
 
         //Set Click panel
-        private void pnlDecentralization_Click(object sender, EventArgs e)
+
+        private void btnDecentralization_Click(object sender, EventArgs e)
         {
             Decentralization decentralization = new Decentralization();
             addFormInMainLayout(decentralization);
             setStatePanel(stateDecentralization);
         }
 
-        private void pnlPart_Click(object sender, EventArgs e)
+        private void btnPart_Click(object sender, EventArgs e)
         {
             Part part = new Part();
             addFormInMainLayout(part);
             setStatePanel(statePart);
         }
 
-        private void pnlPosition_Click(object sender, EventArgs e)
+        private void btnPosition_Click(object sender, EventArgs e)
         {
             Position position = new Position();
             addFormInMainLayout(position);
             setStatePanel(statePosition);
         }
 
-        private void pnlPersonnel_Click(object sender, EventArgs e)
+        private void btnPersonnel_Click(object sender, EventArgs e)
         {
             Personnel personnel = new Personnel();
             addFormInMainLayout(personnel);
             setStatePanel(statePersonnel);
         }
 
-        private void pnlWork_Click(object sender, EventArgs e)
+        private void btnWork_Click(object sender, EventArgs e)
         {
             Work work = new Work();
             addFormInMainLayout(work);
             setStatePanel(stateWork);
         }
 
-        private void pnlAnalytics_Click(object sender, EventArgs e)
+        private void btnAnalytics_Click(object sender, EventArgs e)
         {
             Analytics analytics = new Analytics();
             addFormInMainLayout(analytics);
             setStatePanel(stateAnalytics);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         //Set hover
         private void pnlDecentralization_MouseLeave(object sender, EventArgs e)
         {
-            pnlDecentralization.BackColor = Color.Transparent;
+            btnDecentralization.BackColor = Color.Transparent;
         }
 
         private void pnlDecentralization_MouseEnter(object sender, EventArgs e)
         {
-            pnlDecentralization.BackColor = Color.FromArgb(91, 91, 92);
+            btnDecentralization.BackColor = Color.FromArgb(91, 91, 92);
         }
 
         private void pnlPart_MouseEnter(object sender, EventArgs e)
         {
-            pnlPart.BackColor = Color.FromArgb(91, 91, 92);
+            btnPart.BackColor = Color.FromArgb(91, 91, 92);
         }
 
         private void pnlPart_MouseLeave(object sender, EventArgs e)
         {
-            pnlPart.BackColor = Color.Transparent;  
+            btnPart.BackColor = Color.Transparent;  
         }
 
         private void pnlPosition_MouseEnter(object sender, EventArgs e)
         {
-            pnlPosition.BackColor = Color.FromArgb(91, 91, 92);
+            btnPosition.BackColor = Color.FromArgb(91, 91, 92);
         }
 
         private void pnlPosition_MouseLeave(object sender, EventArgs e)
         {
-            pnlPosition.BackColor = Color.Transparent;
+            btnPosition.BackColor = Color.Transparent;
         }
 
         private void pnlPersonnel_MouseEnter(object sender, EventArgs e)
         {
-            pnlPersonnel.BackColor = Color.FromArgb(91, 91, 92);
+            btnPersonnel.BackColor = Color.FromArgb(91, 91, 92);
         }
 
         private void pnlPersonnel_MouseLeave(object sender, EventArgs e)
         {
-            pnlPersonnel.BackColor = Color.Transparent;
+            btnPersonnel.BackColor = Color.Transparent;
         }
 
         private void pnlWork_MouseEnter(object sender, EventArgs e)
         {
-            pnlWork.BackColor = Color.FromArgb(91, 91, 92); 
+            btnWork.BackColor = Color.FromArgb(91, 91, 92); 
         }
 
         private void pnlWork_MouseLeave(object sender, EventArgs e)
         {
-            pnlWork.BackColor = Color.Transparent;
+            btnWork.BackColor = Color.Transparent;
         }
 
         private void pnlAnalytics_MouseEnter(object sender, EventArgs e)
         {
-            pnlAnalytics.BackColor = Color.FromArgb(91, 91, 92);
+            btnAnalytics.BackColor = Color.FromArgb(91, 91, 92);
         }
 
         private void pnlAnalytics_MouseLeave(object sender, EventArgs e)
         {
-            pnlAnalytics.BackColor = Color.Transparent;
+            btnAnalytics.BackColor = Color.Transparent;
         }
 
         private void pnlLogout_MouseEnter(object sender, EventArgs e)
         {
-            pnlLogout.BackColor = Color.FromArgb(91, 91, 92);
+            btnLogout.BackColor = Color.FromArgb(91, 91, 92);
         }
 
         private void pnlLogout_MouseLeave(object sender, EventArgs e)
         {
-            pnlLogout.BackColor = Color.Transparent;
+            btnLogout.BackColor = Color.Transparent;
         }
+
     }
 }
