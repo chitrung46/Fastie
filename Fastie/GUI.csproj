@@ -87,9 +87,11 @@
     <Compile Include="TruniControls\customButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TruniControls\customComboBox.cs" />
-    <Compile Include="TruniControls\customPanel.cs">
+    <Compile Include="TruniControls\customComboBox.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruniControls\customPanel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Work.cs">
       <SubType>Form</SubType>

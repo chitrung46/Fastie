@@ -29,37 +29,37 @@
         private void InitializeComponent()
         {
             this.sidebarLayout = new System.Windows.Forms.Panel();
-            this.stateAnalytics = new System.Windows.Forms.Panel();
-            this.stateDecentralization = new System.Windows.Forms.Panel();
-            this.stateWork = new System.Windows.Forms.Panel();
-            this.statePersonnel = new System.Windows.Forms.Panel();
-            this.statePosition = new System.Windows.Forms.Panel();
-            this.statePart = new System.Windows.Forms.Panel();
-            this.mainLayout = new System.Windows.Forms.Panel();
-            this.topbarLayout = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.stateAnalytics = new System.Windows.Forms.Panel();
+            this.statePart = new System.Windows.Forms.Panel();
+            this.stateWork = new System.Windows.Forms.Panel();
             this.btnAnalytics = new System.Windows.Forms.Button();
+            this.stateDecentralization = new System.Windows.Forms.Panel();
+            this.statePersonnel = new System.Windows.Forms.Panel();
             this.btnDecentralization = new System.Windows.Forms.Button();
             this.btnWork = new System.Windows.Forms.Button();
+            this.statePosition = new System.Windows.Forms.Panel();
             this.btnPart = new System.Windows.Forms.Button();
             this.btnPosition = new System.Windows.Forms.Button();
             this.btnPersonnel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mainLayout = new System.Windows.Forms.Panel();
+            this.topbarLayout = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.sidebarLayout.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.topbarLayout.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebarLayout
@@ -74,111 +74,6 @@
             this.sidebarLayout.Name = "sidebarLayout";
             this.sidebarLayout.Size = new System.Drawing.Size(300, 800);
             this.sidebarLayout.TabIndex = 0;
-            // 
-            // stateAnalytics
-            // 
-            this.stateAnalytics.BackColor = System.Drawing.Color.Transparent;
-            this.stateAnalytics.Location = new System.Drawing.Point(290, 323);
-            this.stateAnalytics.Name = "stateAnalytics";
-            this.stateAnalytics.Size = new System.Drawing.Size(10, 58);
-            this.stateAnalytics.TabIndex = 1;
-            // 
-            // stateDecentralization
-            // 
-            this.stateDecentralization.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.stateDecentralization.Location = new System.Drawing.Point(290, 3);
-            this.stateDecentralization.Name = "stateDecentralization";
-            this.stateDecentralization.Size = new System.Drawing.Size(10, 58);
-            this.stateDecentralization.TabIndex = 0;
-            // 
-            // stateWork
-            // 
-            this.stateWork.BackColor = System.Drawing.Color.Transparent;
-            this.stateWork.Location = new System.Drawing.Point(290, 259);
-            this.stateWork.Name = "stateWork";
-            this.stateWork.Size = new System.Drawing.Size(10, 58);
-            this.stateWork.TabIndex = 0;
-            // 
-            // statePersonnel
-            // 
-            this.statePersonnel.BackColor = System.Drawing.Color.Transparent;
-            this.statePersonnel.Location = new System.Drawing.Point(290, 195);
-            this.statePersonnel.Name = "statePersonnel";
-            this.statePersonnel.Size = new System.Drawing.Size(10, 58);
-            this.statePersonnel.TabIndex = 0;
-            // 
-            // statePosition
-            // 
-            this.statePosition.BackColor = System.Drawing.Color.Transparent;
-            this.statePosition.Location = new System.Drawing.Point(290, 131);
-            this.statePosition.Name = "statePosition";
-            this.statePosition.Size = new System.Drawing.Size(10, 58);
-            this.statePosition.TabIndex = 0;
-            // 
-            // statePart
-            // 
-            this.statePart.BackColor = System.Drawing.Color.Transparent;
-            this.statePart.Location = new System.Drawing.Point(290, 67);
-            this.statePart.Name = "statePart";
-            this.statePart.Size = new System.Drawing.Size(10, 58);
-            this.statePart.TabIndex = 0;
-            // 
-            // mainLayout
-            // 
-            this.mainLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.mainLayout.Location = new System.Drawing.Point(302, 62);
-            this.mainLayout.Name = "mainLayout";
-            this.mainLayout.Size = new System.Drawing.Size(1200, 695);
-            this.mainLayout.TabIndex = 1;
-            // 
-            // topbarLayout
-            // 
-            this.topbarLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.topbarLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.topbarLayout.Controls.Add(this.panel1);
-            this.topbarLayout.Controls.Add(this.pictureBox8);
-            this.topbarLayout.Controls.Add(this.label6);
-            this.topbarLayout.Location = new System.Drawing.Point(302, 0);
-            this.topbarLayout.Name = "topbarLayout";
-            this.topbarLayout.Size = new System.Drawing.Size(1197, 65);
-            this.topbarLayout.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.pictureBox12);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.pictureBox13);
-            this.panel1.Location = new System.Drawing.Point(956, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 53);
-            this.panel1.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(64, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 21);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Nhật Toàn";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(83, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 21);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Tìm kiếm";
             // 
             // panel2
             // 
@@ -200,36 +95,6 @@
             this.panel2.Size = new System.Drawing.Size(300, 591);
             this.panel2.TabIndex = 2;
             // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::Fastie.Properties.Resources.icons8_arrow_down_100;
-            this.pictureBox12.Location = new System.Drawing.Point(170, 15);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 3;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::Fastie.Properties.Resources.icons8_person_94;
-            this.pictureBox13.Location = new System.Drawing.Point(14, 9);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 4;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::Fastie.Properties.Resources.icons8_search_100;
-            this.pictureBox8.Location = new System.Drawing.Point(37, 15);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -247,6 +112,30 @@
             this.btnLogout.TabIndex = 0;
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // stateAnalytics
+            // 
+            this.stateAnalytics.BackColor = System.Drawing.Color.Transparent;
+            this.stateAnalytics.Location = new System.Drawing.Point(290, 323);
+            this.stateAnalytics.Name = "stateAnalytics";
+            this.stateAnalytics.Size = new System.Drawing.Size(10, 58);
+            this.stateAnalytics.TabIndex = 1;
+            // 
+            // statePart
+            // 
+            this.statePart.BackColor = System.Drawing.Color.Transparent;
+            this.statePart.Location = new System.Drawing.Point(290, 67);
+            this.statePart.Name = "statePart";
+            this.statePart.Size = new System.Drawing.Size(10, 58);
+            this.statePart.TabIndex = 0;
+            // 
+            // stateWork
+            // 
+            this.stateWork.BackColor = System.Drawing.Color.Transparent;
+            this.stateWork.Location = new System.Drawing.Point(290, 259);
+            this.stateWork.Name = "stateWork";
+            this.stateWork.Size = new System.Drawing.Size(10, 58);
+            this.stateWork.TabIndex = 0;
             // 
             // btnAnalytics
             // 
@@ -266,6 +155,22 @@
             this.btnAnalytics.Text = "Thống kê";
             this.btnAnalytics.UseVisualStyleBackColor = false;
             this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
+            // 
+            // stateDecentralization
+            // 
+            this.stateDecentralization.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.stateDecentralization.Location = new System.Drawing.Point(290, 3);
+            this.stateDecentralization.Name = "stateDecentralization";
+            this.stateDecentralization.Size = new System.Drawing.Size(10, 58);
+            this.stateDecentralization.TabIndex = 0;
+            // 
+            // statePersonnel
+            // 
+            this.statePersonnel.BackColor = System.Drawing.Color.Transparent;
+            this.statePersonnel.Location = new System.Drawing.Point(290, 195);
+            this.statePersonnel.Name = "statePersonnel";
+            this.statePersonnel.Size = new System.Drawing.Size(10, 58);
+            this.statePersonnel.TabIndex = 0;
             // 
             // btnDecentralization
             // 
@@ -304,6 +209,14 @@
             this.btnWork.Text = "Công việc";
             this.btnWork.UseVisualStyleBackColor = false;
             this.btnWork.Click += new System.EventHandler(this.btnWork_Click);
+            // 
+            // statePosition
+            // 
+            this.statePosition.BackColor = System.Drawing.Color.Transparent;
+            this.statePosition.Location = new System.Drawing.Point(290, 131);
+            this.statePosition.Name = "statePosition";
+            this.statePosition.Size = new System.Drawing.Size(10, 58);
+            this.statePosition.TabIndex = 0;
             // 
             // btnPart
             // 
@@ -372,6 +285,93 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // mainLayout
+            // 
+            this.mainLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.mainLayout.Location = new System.Drawing.Point(302, 62);
+            this.mainLayout.Name = "mainLayout";
+            this.mainLayout.Size = new System.Drawing.Size(1200, 695);
+            this.mainLayout.TabIndex = 1;
+            // 
+            // topbarLayout
+            // 
+            this.topbarLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.topbarLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.topbarLayout.Controls.Add(this.panel1);
+            this.topbarLayout.Controls.Add(this.pictureBox8);
+            this.topbarLayout.Controls.Add(this.label6);
+            this.topbarLayout.Location = new System.Drawing.Point(302, 0);
+            this.topbarLayout.Name = "topbarLayout";
+            this.topbarLayout.Size = new System.Drawing.Size(1197, 65);
+            this.topbarLayout.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.pictureBox12);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.pictureBox13);
+            this.panel1.Location = new System.Drawing.Point(956, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 53);
+            this.panel1.TabIndex = 0;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::Fastie.Properties.Resources.icons8_arrow_down_100;
+            this.pictureBox12.Location = new System.Drawing.Point(170, 15);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 3;
+            this.pictureBox12.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(64, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 21);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Nhật Toàn";
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::Fastie.Properties.Resources.icons8_person_94;
+            this.pictureBox13.Location = new System.Drawing.Point(14, 9);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 4;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::Fastie.Properties.Resources.icons8_search_100;
+            this.pictureBox8.Location = new System.Drawing.Point(37, 15);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(83, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 21);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Tìm kiếm";
+            // 
             // FormLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -385,15 +385,15 @@
             this.Text = "Layout";
             this.Load += new System.EventHandler(this.FormLayout_Load);
             this.sidebarLayout.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.topbarLayout.ResumeLayout(false);
             this.topbarLayout.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
