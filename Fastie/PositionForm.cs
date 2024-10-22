@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Fastie
 {
-    public partial class Personnel : Form
+    public partial class PositionForm : Form
     {
-        public Personnel()
+        public PositionForm()
         {
             InitializeComponent();
         }

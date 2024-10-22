@@ -58,28 +58,28 @@ namespace Fastie
 
         private void btnPart_Click(object sender, EventArgs e)
         {
-            Part part = new Part();
+            DepartmentForm part = new DepartmentForm();
             addFormInMainLayout(part);
             setStatePanel(statePart);
         }
 
         private void btnPosition_Click(object sender, EventArgs e)
         {
-            Position position = new Position();
+            PositionForm position = new PositionForm();
             addFormInMainLayout(position);
             setStatePanel(statePosition);
         }
 
         private void btnPersonnel_Click(object sender, EventArgs e)
         {
-            Personnel personnel = new Personnel();
+            PersonnelForm personnel = new PersonnelForm();
             addFormInMainLayout(personnel);
             setStatePanel(statePersonnel);
         }
 
         private void btnWork_Click(object sender, EventArgs e)
         {
-            Work work = new Work();
+            TaskForm work = new TaskForm();
             addFormInMainLayout(work);
             setStatePanel(stateWork);
         }
@@ -161,6 +161,5 @@ namespace Fastie
         {
             btnLogout.BackColor = Color.Transparent;
         }
-
     }
 }

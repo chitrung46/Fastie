@@ -58,29 +58,29 @@
     <Compile Include="Decentralization.Designer.cs">
       <DependentUpon>Decentralization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Part.cs">
+    <Compile Include="DepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Part.Designer.cs">
-      <DependentUpon>Part.cs</DependentUpon>
+    <Compile Include="DepartmentForm.Designer.cs">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personnel.cs">
+    <Compile Include="PersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personnel.Designer.cs">
-      <DependentUpon>Personnel.cs</DependentUpon>
+    <Compile Include="PersonnelForm.Designer.cs">
+      <DependentUpon>PersonnelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Position.cs">
+    <Compile Include="PositionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Position.Designer.cs">
-      <DependentUpon>Position.cs</DependentUpon>
+    <Compile Include="PositionForm.Designer.cs">
+      <DependentUpon>PositionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,11 +93,17 @@
     <Compile Include="TruniControls\customPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Work.cs">
+    <Compile Include="TaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Work.Designer.cs">
-      <DependentUpon>Work.cs</DependentUpon>
+    <Compile Include="TaskForm.Designer.cs">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruniControls\customTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruniControls\customTextBox.Designer.cs">
+      <DependentUpon>customTextBox.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
@@ -105,17 +111,17 @@
     <EmbeddedResource Include="Decentralization.resx">
       <DependentUpon>Decentralization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Part.resx">
-      <DependentUpon>Part.cs</DependentUpon>
+    <EmbeddedResource Include="DepartmentForm.resx">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personnel.resx">
-      <DependentUpon>Personnel.cs</DependentUpon>
+    <EmbeddedResource Include="PersonnelForm.resx">
+      <DependentUpon>PersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Position.resx">
-      <DependentUpon>Position.cs</DependentUpon>
+    <EmbeddedResource Include="PositionForm.resx">
+      <DependentUpon>PositionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,8 +133,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Work.resx">
-      <DependentUpon>Work.cs</DependentUpon>
+    <EmbeddedResource Include="TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruniControls\customTextBox.resx">
+      <DependentUpon>customTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

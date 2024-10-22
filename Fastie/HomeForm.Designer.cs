@@ -46,6 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainLayout = new System.Windows.Forms.Panel();
             this.topbarLayout = new System.Windows.Forms.Panel();
+            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -293,7 +294,7 @@
             this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.mainLayout.Location = new System.Drawing.Point(302, 62);
             this.mainLayout.Name = "mainLayout";
-            this.mainLayout.Size = new System.Drawing.Size(1200, 695);
+            this.mainLayout.Size = new System.Drawing.Size(1182, 695);
             this.mainLayout.TabIndex = 1;
             // 
             // topbarLayout
@@ -301,13 +302,32 @@
             this.topbarLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.topbarLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.topbarLayout.Controls.Add(this.customTextBox1);
             this.topbarLayout.Controls.Add(this.panel1);
             this.topbarLayout.Controls.Add(this.pictureBox8);
             this.topbarLayout.Controls.Add(this.label6);
             this.topbarLayout.Location = new System.Drawing.Point(302, 0);
             this.topbarLayout.Name = "topbarLayout";
-            this.topbarLayout.Size = new System.Drawing.Size(1197, 65);
+            this.topbarLayout.Size = new System.Drawing.Size(1182, 65);
             this.topbarLayout.TabIndex = 2;
+            // 
+            // customTextBox1
+            // 
+            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
+            this.customTextBox1.BorderRadius = 5;
+            this.customTextBox1.BorderSize = 2;
+            this.customTextBox1.Location = new System.Drawing.Point(225, 15);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox1.Multiline = false;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.customTextBox1.PasswordChar = false;
+            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.PlaceholderText = "Tìm kiếm";
+            this.customTextBox1.Size = new System.Drawing.Size(200, 33);
+            this.customTextBox1.TabIndex = 3;
+            this.customTextBox1.UnderlinedStyle = false;
             // 
             // panel1
             // 
@@ -315,7 +335,7 @@
             this.panel1.Controls.Add(this.pictureBox12);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.pictureBox13);
-            this.panel1.Location = new System.Drawing.Point(956, 6);
+            this.panel1.Location = new System.Drawing.Point(941, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 53);
             this.panel1.TabIndex = 0;
@@ -424,6 +444,7 @@
         private System.Windows.Forms.Button btnPosition;
         private System.Windows.Forms.Button btnPart;
         private System.Windows.Forms.Panel panel2;
+        private GUI.TruniControls.CustomTextBox customTextBox1;
     }
 }
 
