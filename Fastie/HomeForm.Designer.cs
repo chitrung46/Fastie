@@ -46,13 +46,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainLayout = new System.Windows.Forms.Panel();
             this.topbarLayout = new System.Windows.Forms.Panel();
-            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.sidebarLayout.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -311,24 +311,6 @@
             this.topbarLayout.Size = new System.Drawing.Size(1182, 65);
             this.topbarLayout.TabIndex = 2;
             // 
-            // customTextBox1
-            // 
-            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox1.BorderRadius = 5;
-            this.customTextBox1.BorderSize = 2;
-            this.customTextBox1.Location = new System.Drawing.Point(225, 15);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.PlaceholderText = "Tìm kiếm";
-            this.customTextBox1.Size = new System.Drawing.Size(200, 33);
-            this.customTextBox1.TabIndex = 3;
-            this.customTextBox1.UnderlinedStyle = false;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -391,6 +373,24 @@
             this.label6.Size = new System.Drawing.Size(81, 21);
             this.label6.TabIndex = 2;
             this.label6.Text = "Tìm kiếm";
+            // 
+            // customTextBox1
+            // 
+            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
+            this.customTextBox1.BorderRadius = 0;
+            this.customTextBox1.BorderSize = 2;
+            this.customTextBox1.Location = new System.Drawing.Point(255, 24);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox1.Multiline = false;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.customTextBox1.PasswordChar = false;
+            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.PlaceholderText = "";
+            this.customTextBox1.Size = new System.Drawing.Size(279, 33);
+            this.customTextBox1.TabIndex = 3;
+            this.customTextBox1.UnderlinedStyle = false;
             // 
             // FormLayout
             // 
