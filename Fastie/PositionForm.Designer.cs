@@ -1,6 +1,6 @@
 ﻿namespace Fastie
 {
-    partial class Position
+    partial class PositionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(480, 273);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 32);
+            this.label1.Size = new System.Drawing.Size(229, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Position - Chức vụ";
             // 
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 648);
+            this.ClientSize = new System.Drawing.Size(1182, 695);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Position";
