@@ -58,6 +58,18 @@
     <Compile Include="Decentralization.Designer.cs">
       <DependentUpon>Decentralization.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreatePersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePersonnel.Designer.cs">
+      <DependentUpon>CreatePersonnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPersonnel.Designer.cs">
+      <DependentUpon>EditPersonnel.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Decentralization.resx">
       <DependentUpon>Decentralization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePersonnel.resx">
+      <DependentUpon>CreatePersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPersonnel.resx">
+      <DependentUpon>EditPersonnel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

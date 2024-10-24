@@ -53,8 +53,6 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
-            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
             this.sidebarLayout.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -290,9 +288,6 @@
             // 
             // mainLayout
             // 
-            this.mainLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.mainLayout.Location = new System.Drawing.Point(302, 62);
             this.mainLayout.Name = "mainLayout";
@@ -304,8 +299,6 @@
             this.topbarLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.topbarLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.topbarLayout.Controls.Add(this.customComboBox1);
-            this.topbarLayout.Controls.Add(this.customTextBox1);
             this.topbarLayout.Controls.Add(this.panel1);
             this.topbarLayout.Controls.Add(this.pictureBox8);
             this.topbarLayout.Controls.Add(this.label6);
@@ -342,7 +335,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(64, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 21);
+            this.label8.Size = new System.Drawing.Size(97, 21);
             this.label8.TabIndex = 5;
             this.label8.Text = "Nhật Toàn";
             // 
@@ -373,50 +366,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(83, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 21);
+            this.label6.Size = new System.Drawing.Size(89, 21);
             this.label6.TabIndex = 2;
             this.label6.Text = "Tìm kiếm";
-            // 
-            // customTextBox1
-            // 
-            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox1.BorderColor = System.Drawing.Color.Black;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox1.BorderRadius = 8;
-            this.customTextBox1.BorderSize = 2;
-            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox1.Location = new System.Drawing.Point(471, 18);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.PlaceholderText = "";
-            this.customTextBox1.Size = new System.Drawing.Size(423, 35);
-            this.customTextBox1.TabIndex = 4;
-            this.customTextBox1.UnderlinedStyle = false;
-            // 
-            // customComboBox1
-            // 
-            this.customComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox1.BorderRadius = 8;
-            this.customComboBox1.BorderSize = 2;
-            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.IconColor = System.Drawing.Color.Black;
-            this.customComboBox1.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.Location = new System.Drawing.Point(216, 22);
-            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.customComboBox1.Size = new System.Drawing.Size(200, 30);
-            this.customComboBox1.TabIndex = 5;
-            this.customComboBox1.Texts = "";
             // 
             // FormLayout
             // 
@@ -471,8 +423,6 @@
         private System.Windows.Forms.Button btnPart;
         private System.Windows.Forms.Panel panel2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private GUI.TruniControls.CustomTextBox customTextBox1;
-        private GUI.TruniControls.CustomComboBox customComboBox1;
     }
 }
 
