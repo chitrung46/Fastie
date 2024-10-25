@@ -16,5 +16,16 @@ namespace Fastie
         {
             InitializeComponent();
         }
+
+        private void dgvPersonnel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            CreateDepartmentForm createDepartmentForm = new CreateDepartmentForm();
+            createDepartmentForm.Show();
+        }
     }
 }

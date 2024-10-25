@@ -113,6 +113,16 @@ namespace Fastie.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_back_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-back-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_decentralization_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-decentralization-100", resourceCulture);

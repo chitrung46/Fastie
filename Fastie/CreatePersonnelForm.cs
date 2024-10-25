@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Fastie
 {
-    public partial class CreatePersonnel : Form
+    public partial class CreatePersonnelForm : Form
     {
-        public CreatePersonnel()
+        public CreatePersonnelForm()
         {
             InitializeComponent();
+            // Thiết lập định dạng cho DateTimePicker trong form
+            dTPBirthday.Format = DateTimePickerFormat.Custom;
+            dTPBirthday.CustomFormat = "dd/MM/yyyy";
+            // Thiết lập định dạng cho DateTimePicker trong form
+            dTPDayOfWork.Format = DateTimePickerFormat.Custom;
+            dTPDayOfWork.CustomFormat = "dd/MM/yyyy";
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -61,5 +67,11 @@ namespace Fastie
         {
 
         }
+
+        private void dTPBirtday_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
     }
 }

@@ -15,9 +15,21 @@ namespace Fastie
         public editPersonnel()
         {
             InitializeComponent();
+            // Thiết lập định dạng cho DateTimePicker trong form
+            dTPBirthday.Format = DateTimePickerFormat.Custom;
+            dTPBirthday.CustomFormat = "dd/MM/yyyy";
+            // Thiết lập định dạng cho DateTimePicker trong form
+            dTPDayOfWork.Format = DateTimePickerFormat.Custom;
+            dTPDayOfWork.CustomFormat = "dd/MM/yyyy";
+
         }
 
         private void customButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
