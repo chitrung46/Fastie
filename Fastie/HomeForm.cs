@@ -19,7 +19,7 @@ namespace Fastie
 
         private void FormLayout_Load(object sender, EventArgs e)
         {
-            Decentralization decentralization = new Decentralization();
+            DecentralizationForm decentralization = new DecentralizationForm();
             addFormInMainLayout(decentralization);
         }
 
@@ -51,7 +51,7 @@ namespace Fastie
 
         private void btnDecentralization_Click(object sender, EventArgs e)
         {
-            Decentralization decentralization = new Decentralization();
+            DecentralizationForm decentralization = new DecentralizationForm();
             addFormInMainLayout(decentralization);
             setStatePanel(stateDecentralization);
         }

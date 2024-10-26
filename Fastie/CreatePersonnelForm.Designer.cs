@@ -67,7 +67,7 @@
             this.customButton1.FlatAppearance.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(403, 364);
+            this.customButton1.Location = new System.Drawing.Point(405, 364);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(81, 35);
             this.customButton1.TabIndex = 6;
@@ -99,7 +99,7 @@
             this.customPanel1.Location = new System.Drawing.Point(23, 78);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(563, 266);
-            this.customPanel1.TabIndex = 4;
+            this.customPanel1.TabIndex = 10;
             this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint_1);
             // 
             // label4
@@ -288,7 +288,7 @@
             this.customButton2.Text = "Hủy";
             this.customButton2.UseVisualStyleBackColor = false;
             // 
-            // CreatePersonnel
+            // CreatePersonnelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -301,7 +301,7 @@
             this.Controls.Add(this.customPanel1);
             this.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "CreatePersonnel";
+            this.Name = "CreatePersonnelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm nhân sự";
             this.Load += new System.EventHandler(this.CreatePersonnel_Load);

@@ -1,6 +1,6 @@
 ﻿namespace Fastie
 {
-    partial class CreatePositionForm
+    partial class CreateAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -47,11 +47,12 @@
             this.customButton2.BorderSize = 2;
             this.customButton2.FlatAppearance.BorderSize = 0;
             this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
             this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(500, 343);
+            this.customButton2.Location = new System.Drawing.Point(500, 300);
             this.customButton2.Name = "customButton2";
             this.customButton2.Size = new System.Drawing.Size(81, 35);
-            this.customButton2.TabIndex = 11;
+            this.customButton2.TabIndex = 14;
             this.customButton2.Text = "Hủy";
             this.customButton2.UseVisualStyleBackColor = false;
             // 
@@ -62,10 +63,9 @@
             this.label4.Location = new System.Drawing.Point(29, 105);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 21);
+            this.label4.Size = new System.Drawing.Size(93, 21);
             this.label4.TabIndex = 30;
-            this.label4.Text = "Mô tả chức vụ:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.Text = "Mật khẩu:";
             // 
             // cTBDescribe
             // 
@@ -76,15 +76,15 @@
             this.cTBDescribe.BorderSize = 2;
             this.cTBDescribe.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBDescribe.ForeColor = System.Drawing.Color.DimGray;
-            this.cTBDescribe.Location = new System.Drawing.Point(26, 138);
+            this.cTBDescribe.Location = new System.Drawing.Point(23, 137);
             this.cTBDescribe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cTBDescribe.Multiline = true;
+            this.cTBDescribe.Multiline = false;
             this.cTBDescribe.Name = "cTBDescribe";
             this.cTBDescribe.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.cTBDescribe.PasswordChar = false;
             this.cTBDescribe.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.cTBDescribe.PlaceholderText = "";
-            this.cTBDescribe.Size = new System.Drawing.Size(509, 72);
+            this.cTBDescribe.Size = new System.Drawing.Size(511, 36);
             this.cTBDescribe.TabIndex = 24;
             this.cTBDescribe.UnderlinedStyle = false;
             // 
@@ -96,11 +96,12 @@
             this.customButton1.BorderSize = 2;
             this.customButton1.FlatAppearance.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
             this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(405, 343);
+            this.customButton1.Location = new System.Drawing.Point(405, 300);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(81, 35);
-            this.customButton1.TabIndex = 11;
+            this.customButton1.TabIndex = 15;
             this.customButton1.Text = "Lưu";
             this.customButton1.UseVisualStyleBackColor = false;
             // 
@@ -111,10 +112,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(16, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 39);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Thông tin chức vụ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Size = new System.Drawing.Size(301, 39);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Thông tin tài khoản";
             // 
             // lblName
             // 
@@ -124,9 +124,9 @@
             this.lblName.Location = new System.Drawing.Point(29, 20);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(121, 21);
+            this.lblName.Size = new System.Drawing.Size(145, 21);
             this.lblName.TabIndex = 20;
-            this.lblName.Text = "Tên chức vụ: ";
+            this.lblName.Text = "Tên đăng nhập: ";
             // 
             // cTBName
             // 
@@ -159,33 +159,29 @@
             this.customPanel1.Controls.Add(this.cTBDescribe);
             this.customPanel1.Controls.Add(this.lblName);
             this.customPanel1.Controls.Add(this.cTBName);
+            this.customPanel1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
             this.customPanel1.ForeColor = System.Drawing.Color.Black;
             this.customPanel1.GradientAngle = 90F;
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
             this.customPanel1.Location = new System.Drawing.Point(23, 78);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(563, 240);
-            this.customPanel1.TabIndex = 9;
-            this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
+            this.customPanel1.Size = new System.Drawing.Size(563, 200);
+            this.customPanel1.TabIndex = 10;
             // 
-            // CreatePositionForm
+            // CreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(608, 399);
+            this.ClientSize = new System.Drawing.Size(608, 353);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.customButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
-            this.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "CreatePositionForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm chức vụ ";
-            this.Load += new System.EventHandler(this.CreatePosition_Load);
+            this.Name = "CreateAccount";
+            this.Text = "Tạo tài khoản";
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);

@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.customButton3 = new GUI.CustomButton();
             this.customButton1 = new GUI.CustomButton();
             this.customButton2 = new GUI.CustomButton();
             this.dgvPosition = new System.Windows.Forms.DataGridView();
-            this.lblNameForm = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblNameForm = new System.Windows.Forms.Label();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).BeginInit();
             this.SuspendLayout();
@@ -124,6 +125,14 @@
             // dgvPosition
             // 
             this.dgvPosition.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPosition.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPosition.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -135,18 +144,6 @@
             this.dgvPosition.RowTemplate.Height = 24;
             this.dgvPosition.Size = new System.Drawing.Size(1108, 468);
             this.dgvPosition.TabIndex = 7;
-            // 
-            // lblNameForm
-            // 
-            this.lblNameForm.AutoSize = true;
-            this.lblNameForm.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameForm.ForeColor = System.Drawing.Color.White;
-            this.lblNameForm.Location = new System.Drawing.Point(13, 49);
-            this.lblNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNameForm.Name = "lblNameForm";
-            this.lblNameForm.Size = new System.Drawing.Size(138, 39);
-            this.lblNameForm.TabIndex = 4;
-            this.lblNameForm.Text = "Nhân sự";
             // 
             // ID
             // 
@@ -170,6 +167,18 @@
             this.moTa.HeaderText = "Mô tả";
             this.moTa.MinimumWidth = 6;
             this.moTa.Name = "moTa";
+            // 
+            // lblNameForm
+            // 
+            this.lblNameForm.AutoSize = true;
+            this.lblNameForm.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameForm.ForeColor = System.Drawing.Color.White;
+            this.lblNameForm.Location = new System.Drawing.Point(13, 49);
+            this.lblNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNameForm.Name = "lblNameForm";
+            this.lblNameForm.Size = new System.Drawing.Size(138, 39);
+            this.lblNameForm.TabIndex = 4;
+            this.lblNameForm.Text = "Nhân sự";
             // 
             // PersonnelForm
             // 
