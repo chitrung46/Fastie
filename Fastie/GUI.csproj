@@ -52,6 +52,12 @@
     <Compile Include="Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateDecentralization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateDecentralization.Designer.cs">
+      <DependentUpon>CreateDecentralization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Decentralization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateDecentralization.resx">
+      <DependentUpon>CreateDecentralization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Decentralization.resx">
       <DependentUpon>Decentralization.cs</DependentUpon>
@@ -239,6 +248,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-log-out-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pencil-23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fastie_300px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

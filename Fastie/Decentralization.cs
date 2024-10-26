@@ -21,5 +21,12 @@ namespace Fastie
         {
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            CreateDecentralization createDecentralization = new CreateDecentralization();
+            createDecentralization.Show();
+                
+        }
     }
 }
