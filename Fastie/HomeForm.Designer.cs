@@ -38,6 +38,7 @@
             this.statePosition = new System.Windows.Forms.Panel();
             this.mainLayout = new System.Windows.Forms.Panel();
             this.topbarLayout = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.btnPosition = new System.Windows.Forms.Button();
             this.btnPersonnel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.sidebarLayout.SuspendLayout();
             this.panel2.SuspendLayout();
             this.topbarLayout.SuspendLayout();
@@ -128,6 +128,7 @@
             this.stateDecentralization.Name = "stateDecentralization";
             this.stateDecentralization.Size = new System.Drawing.Size(10, 58);
             this.stateDecentralization.TabIndex = 0;
+            this.stateDecentralization.Paint += new System.Windows.Forms.PaintEventHandler(this.stateDecentralization_Paint);
             // 
             // statePersonnel
             // 
@@ -166,6 +167,15 @@
             this.topbarLayout.Name = "topbarLayout";
             this.topbarLayout.Size = new System.Drawing.Size(1182, 65);
             this.topbarLayout.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(0, 62);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1182, 4);
+            this.panel3.TabIndex = 3;
             // 
             // panel1
             // 
@@ -371,15 +381,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(0, 62);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1182, 4);
-            this.panel3.TabIndex = 3;
             // 
             // FormLayout
             // 
