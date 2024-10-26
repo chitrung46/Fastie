@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screen.Decentralization;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,19 @@ namespace Fastie
             CreateDecentralization createDecentralization = new CreateDecentralization();
             createDecentralization.Show();
                 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteLayoutConfirm deleteLayoutConfirm = new DeleteLayoutConfirm();
+            deleteLayoutConfirm.Show();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateDecentralization updateDecentralization = new UpdateDecentralization();
+            updateDecentralization.Show();
+
         }
     }
 }

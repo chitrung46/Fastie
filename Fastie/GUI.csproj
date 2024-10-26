@@ -46,50 +46,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analytics.cs">
+    <Compile Include="Screens\Analytics\Analytics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Analytics.Designer.cs">
+    <Compile Include="Screens\Analytics\Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateDecentralization.cs">
+    <Compile Include="Screens\Decentralization\CreateDecentralization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateDecentralization.Designer.cs">
+    <Compile Include="Screens\Decentralization\CreateDecentralization.Designer.cs">
       <DependentUpon>CreateDecentralization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Decentralization.cs">
+    <Compile Include="Screens\Decentralization\Decentralization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Decentralization.Designer.cs">
+    <Compile Include="Screens\Decentralization\Decentralization.Designer.cs">
       <DependentUpon>Decentralization.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeForm.cs">
+    <Compile Include="Components\Layout\DeleteLayoutConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeForm.Designer.cs">
+    <Compile Include="Components\Layout\DeleteLayoutConfirm.Designer.cs">
+      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Home\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Home\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepartmentForm.cs">
+    <Compile Include="Screens\Department\DepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DepartmentForm.Designer.cs">
+    <Compile Include="Screens\Department\DepartmentForm.Designer.cs">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersonnelForm.cs">
+    <Compile Include="Screens\Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonnelForm.Designer.cs">
+    <Compile Include="Screens\Login\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Personnel\PersonnelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Personnel\PersonnelForm.Designer.cs">
       <DependentUpon>PersonnelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PositionForm.cs">
+    <Compile Include="Screens\Position\PositionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PositionForm.Designer.cs">
+    <Compile Include="Screens\Position\PositionForm.Designer.cs">
       <DependentUpon>PositionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\Decentralization\UpdateDecentralization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Decentralization\UpdateDecentralization.Designer.cs">
+      <DependentUpon>UpdateDecentralization.cs</DependentUpon>
+    </Compile>
     <Compile Include="TruniControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -99,10 +117,10 @@
     <Compile Include="TruniControls\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TaskForm.cs">
+    <Compile Include="Screens\Task\TaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TaskForm.Designer.cs">
+    <Compile Include="Screens\Task\TaskForm.Designer.cs">
       <DependentUpon>TaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TruniControls\CustomTextBox.cs">
@@ -111,25 +129,31 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Analytics.resx">
+    <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateDecentralization.resx">
+    <EmbeddedResource Include="Screens\Decentralization\CreateDecentralization.resx">
       <DependentUpon>CreateDecentralization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Decentralization.resx">
+    <EmbeddedResource Include="Screens\Decentralization\Decentralization.resx">
       <DependentUpon>Decentralization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeForm.resx">
+    <EmbeddedResource Include="Components\Layout\DeleteLayoutConfirm.resx">
+      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Home\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentForm.resx">
+    <EmbeddedResource Include="Screens\Department\DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonnelForm.resx">
+    <EmbeddedResource Include="Screens\Login\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Personnel\PersonnelForm.resx">
       <DependentUpon>PersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PositionForm.resx">
+    <EmbeddedResource Include="Screens\Position\PositionForm.resx">
       <DependentUpon>PositionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -142,7 +166,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TaskForm.resx">
+    <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralization.resx">
+      <DependentUpon>UpdateDecentralization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\TaskForm.resx">
       <DependentUpon>TaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TruniControls\CustomTextBox.resx">
@@ -260,6 +287,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fastie_300px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Screens\Login\ForgetPassword\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bacground_login.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
