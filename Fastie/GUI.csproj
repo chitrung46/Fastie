@@ -52,11 +52,65 @@
     <Compile Include="Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Decentralization.cs">
+    <Compile Include="DecentralizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Decentralization.Designer.cs">
-      <DependentUpon>Decentralization.cs</DependentUpon>
+    <Compile Include="DecentralizationForm.Designer.cs">
+      <DependentUpon>DecentralizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePersonnelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePersonnelForm.Designer.cs">
+      <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPersonnelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPersonnelForm.Designer.cs">
+      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePositionForm.Designer.cs">
+      <DependentUpon>CreatePositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPositionForm.Designer.cs">
+      <DependentUpon>EditPositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateDepartmentForm.Designer.cs">
+      <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDepartmentForm.Designer.cs">
+      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.Designer.cs">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAccount.Designer.cs">
+      <DependentUpon>EditAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -105,11 +159,38 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Decentralization.resx">
-      <DependentUpon>Decentralization.cs</DependentUpon>
+    <EmbeddedResource Include="CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateDepartmentForm.resx">
+      <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePositionForm.resx">
+      <DependentUpon>CreatePositionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DecentralizationForm.resx">
+      <DependentUpon>DecentralizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePersonnelForm.resx">
+      <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAccount.resx">
+      <DependentUpon>EditAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDepartmentForm.resx">
+      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPersonnelForm.resx">
+      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPositionForm.resx">
+      <DependentUpon>EditPositionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -239,6 +320,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-log-out-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
