@@ -1,6 +1,6 @@
 ﻿namespace Fastie
 {
-    partial class Decentralization
+    partial class DecentralizationForm
     {
         /// <summary>
         /// Required designer variable.

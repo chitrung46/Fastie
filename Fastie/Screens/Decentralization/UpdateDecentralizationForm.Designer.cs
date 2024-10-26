@@ -1,6 +1,6 @@
 ﻿namespace Fastie.Screen.Decentralization
 {
-    partial class UpdateDecentralization
+    partial class UpdateDecentralizationForm
     {
         /// <summary>
         /// Required designer variable.

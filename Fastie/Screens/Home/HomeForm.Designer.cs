@@ -1,6 +1,7 @@
 ﻿namespace Fastie
 {
-    partial class FormLayout
+    partial class HomeForm
+
     {
         /// <summary>
         /// Required designer variable.

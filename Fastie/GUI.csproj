@@ -52,73 +52,70 @@
     <Compile Include="Screens\Analytics\Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
     </Compile>
-    <Compile Include="DecentralizationForm.cs">
+    <Compile Include="Screens\Personnel\CreatePersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DecentralizationForm.Designer.cs">
-      <DependentUpon>DecentralizationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreatePersonnelForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreatePersonnelForm.Designer.cs">
+    <Compile Include="Screens\Personnel\CreatePersonnelForm.Designer.cs">
       <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditPersonnelForm.cs">
+    <Compile Include="Screens\Personnel\EditPersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditPersonnelForm.Designer.cs">
+    <Compile Include="Screens\Personnel\EditPersonnelForm.Designer.cs">
       <DependentUpon>EditPersonnelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreatePositionForm.cs">
+    <Compile Include="Screens\Position\CreatePositionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreatePositionForm.Designer.cs">
+    <Compile Include="Screens\Position\CreatePositionForm.Designer.cs">
       <DependentUpon>CreatePositionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditPositionForm.cs">
+    <Compile Include="Screens\Position\EditPositionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditPositionForm.Designer.cs">
+    <Compile Include="Screens\Position\EditPositionForm.Designer.cs">
       <DependentUpon>EditPositionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateDepartmentForm.cs">
+    <Compile Include="Screens\Department\CreateDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateDepartmentForm.Designer.cs">
+    <Compile Include="Screens\Department\CreateDepartmentForm.Designer.cs">
       <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditDepartmentForm.cs">
+    <Compile Include="Screens\Department\EditDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditDepartmentForm.Designer.cs">
+    <Compile Include="Screens\Department\EditDepartmentForm.Designer.cs">
       <DependentUpon>EditDepartmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountForm.cs">
+    <Compile Include="Screens\Account\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountForm.Designer.cs">
+    <Compile Include="Screens\Account\AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateAccount.cs">
+    <Compile Include="Screens\Account\CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateAccount.Designer.cs">
+    <Compile Include="Screens\Account\CreateAccount.Designer.cs">
       <DependentUpon>CreateAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditAccount.cs">
-    <Compile Include="Screens\Decentralization\CreateDecentralization.cs">
+    <Compile Include="Screens\Account\EditAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Decentralization\CreateDecentralization.Designer.cs">
-      <DependentUpon>CreateDecentralization.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Decentralization\Decentralization.cs">
+    <Compile Include="Screens\Decentralization\CreateDecentralizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Decentralization\Decentralization.Designer.cs">
-      <DependentUpon>Decentralization.cs</DependentUpon>
-    <Compile Include="EditAccount.Designer.cs">
+    <Compile Include="Screens\Decentralization\CreateDecentralizationForm.Designer.cs">
+      <DependentUpon>CreateDecentralizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Decentralization\DecentralizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Decentralization\DecentralizationForm.Designer.cs">
+      <DependentUpon>DecentralizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Account\EditAccount.Designer.cs">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Layout\DeleteLayoutConfirm.cs">
@@ -159,11 +156,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screens\Decentralization\UpdateDecentralization.cs">
+    <Compile Include="Screens\Decentralization\UpdateDecentralizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Decentralization\UpdateDecentralization.Designer.cs">
-      <DependentUpon>UpdateDecentralization.cs</DependentUpon>
+    <Compile Include="Screens\Decentralization\UpdateDecentralizationForm.Designer.cs">
+      <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TruniControls\CustomButton.cs">
       <SubType>Component</SubType>
@@ -187,42 +184,39 @@
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
-    <EmbeddedResource Include="AccountForm.resx">
-      <DependentUpon>AccountForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Decentralization\CreateDecentralization.resx">
-      <DependentUpon>CreateDecentralization.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Account\AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Decentralization\Decentralization.resx">
-      <DependentUpon>Decentralization.cs</DependentUpon>
-    <EmbeddedResource Include="CreateAccount.resx">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Decentralization\CreateDecentralizationForm.resx">
+      <DependentUpon>CreateDecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateDepartmentForm.resx">
-      <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreatePositionForm.resx">
-      <DependentUpon>CreatePositionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DecentralizationForm.resx">
+    <EmbeddedResource Include="Screens\Decentralization\DecentralizationForm.resx">
       <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreatePersonnelForm.resx">
+    <EmbeddedResource Include="Screens\Account\CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Department\CreateDepartmentForm.resx">
+      <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Position\CreatePositionForm.resx">
+      <DependentUpon>CreatePositionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Personnel\CreatePersonnelForm.resx">
       <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditAccount.resx">
+    <EmbeddedResource Include="Screens\Account\EditAccount.resx">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditDepartmentForm.resx">
+    <EmbeddedResource Include="Screens\Department\EditDepartmentForm.resx">
       <DependentUpon>EditDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditPersonnelForm.resx">
+    <EmbeddedResource Include="Screens\Personnel\EditPersonnelForm.resx">
       <DependentUpon>EditPersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditPositionForm.resx">
+    <EmbeddedResource Include="Screens\Position\EditPositionForm.resx">
       <DependentUpon>EditPositionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Layout\DeleteLayoutConfirm.resx">
@@ -253,8 +247,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralization.resx">
-      <DependentUpon>UpdateDecentralization.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
+      <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\TaskForm.resx">
       <DependentUpon>TaskForm.cs</DependentUpon>

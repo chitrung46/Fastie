@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Fastie
 {
-    public partial class Decentralization : Form
+    public partial class DecentralizationForm : Form
     {
-        public Decentralization()
+        public DecentralizationForm()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace Fastie
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CreateDecentralization createDecentralization = new CreateDecentralization();
+            CreateDecentralizationForm createDecentralization = new CreateDecentralizationForm();
             createDecentralization.Show();
                 
         }
@@ -38,7 +38,7 @@ namespace Fastie
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateDecentralization updateDecentralization = new UpdateDecentralization();
+            UpdateDecentralizationForm updateDecentralization = new UpdateDecentralizationForm();
             updateDecentralization.Show();
 
         }

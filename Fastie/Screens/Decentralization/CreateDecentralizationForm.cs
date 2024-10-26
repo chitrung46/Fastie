@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Fastie
 {
-    public partial class CreateDecentralization : Form
+    public partial class CreateDecentralizationForm : Form
     {
-        public CreateDecentralization()
+        public CreateDecentralizationForm()
         {
             InitializeComponent();
         }

@@ -89,7 +89,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Forgot password?";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label2_Click);
             // 
             // customTextBox1
             // 
@@ -124,7 +123,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Password";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label2_Click);
             // 
             // customTextBox2
             // 
@@ -159,7 +157,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Email";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnAdd
             // 
