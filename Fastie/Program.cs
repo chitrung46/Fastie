@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Login;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Fastie
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLayout());
+            Application.Run(new LoginForm());
         }
     }
 }
