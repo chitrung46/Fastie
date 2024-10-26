@@ -8,17 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fastie.Screens.Login
+namespace Fastie
 {
-<<<<<<<< HEAD:Fastie/Screens/Login/LoginForm.cs
-    public partial class LoginForm : Form
-    {
-        public LoginForm()
-========
     public partial class EditPosition : Form
     {
         public EditPosition()
->>>>>>>> master:Fastie/EditPosition.cs
         {
             InitializeComponent();
         }

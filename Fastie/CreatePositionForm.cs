@@ -10,34 +10,24 @@ using System.Windows.Forms;
 
 namespace Fastie
 {
-    public partial class PositionForm : Form
+    public partial class CreatePositionForm : Form
     {
-        public PositionForm()
+        public CreatePositionForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void CreatePosition_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void customButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customButton2_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
