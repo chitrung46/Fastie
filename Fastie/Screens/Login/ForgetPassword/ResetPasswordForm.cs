@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fastie
+namespace Fastie.Screens.Login.ForgetPassword
 {
-    public partial class DecentralizationForm : Form
+    public partial class ResetPasswordForm : Form
     {
-        public DecentralizationForm()
+        public ResetPasswordForm()
         {
             InitializeComponent();
         }

@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fastie
+namespace Fastie.Screen.Decentralization
 {
-    public partial class EditPosition : Form
+    public partial class UpdateDecentralizationForm : Form
     {
-        public EditPosition()
+        public UpdateDecentralizationForm()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();   
         }
     }
 }

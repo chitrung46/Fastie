@@ -1,6 +1,6 @@
 ﻿namespace Fastie
 {
-    partial class DepartmentForm
+    partial class PersonnelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             this.customButton2 = new GUI.CustomButton();
             this.dgvPosition = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenBoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNameForm = new System.Windows.Forms.Label();
             this.customPanel1.SuspendLayout();
@@ -48,11 +48,10 @@
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Image = global::Fastie.Properties.Resources.icons8_back_16;
             this.btnBack.Location = new System.Drawing.Point(0, 0);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(40, 40);
-            this.btnBack.TabIndex = 9;
+            this.btnBack.TabIndex = 6;
             this.btnBack.UseVisualStyleBackColor = false;
             // 
             // customPanel1
@@ -72,7 +71,7 @@
             this.customPanel1.Location = new System.Drawing.Point(19, 113);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(1145, 566);
-            this.customPanel1.TabIndex = 8;
+            this.customPanel1.TabIndex = 5;
             // 
             // customButton3
             // 
@@ -83,7 +82,7 @@
             this.customButton3.FlatAppearance.BorderSize = 0;
             this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Location = new System.Drawing.Point(359, 17);
+            this.customButton3.Location = new System.Drawing.Point(360, 18);
             this.customButton3.Name = "customButton3";
             this.customButton3.Size = new System.Drawing.Size(150, 40);
             this.customButton3.TabIndex = 12;
@@ -99,13 +98,12 @@
             this.customButton1.FlatAppearance.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(17, 18);
+            this.customButton1.Location = new System.Drawing.Point(18, 19);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(150, 40);
             this.customButton1.TabIndex = 10;
             this.customButton1.Text = "Thêm";
             this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // customButton2
             // 
@@ -116,7 +114,7 @@
             this.customButton2.FlatAppearance.BorderSize = 0;
             this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(189, 17);
+            this.customButton2.Location = new System.Drawing.Point(190, 18);
             this.customButton2.Name = "customButton2";
             this.customButton2.Size = new System.Drawing.Size(150, 40);
             this.customButton2.TabIndex = 11;
@@ -128,7 +126,7 @@
             this.dgvPosition.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -137,9 +135,9 @@
             this.dgvPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPosition.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.tenBoPhan,
+            this.tenNhanSu,
             this.moTa});
-            this.dgvPosition.Location = new System.Drawing.Point(17, 77);
+            this.dgvPosition.Location = new System.Drawing.Point(18, 78);
             this.dgvPosition.Name = "dgvPosition";
             this.dgvPosition.RowHeadersWidth = 51;
             this.dgvPosition.RowTemplate.Height = 24;
@@ -153,14 +151,14 @@
             this.ID.HeaderText = "ID";
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
-            this.ID.Width = 58;
+            this.ID.Width = 56;
             // 
-            // tenBoPhan
+            // tenNhanSu
             // 
-            this.tenBoPhan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenBoPhan.HeaderText = "Tên Bộ phận";
-            this.tenBoPhan.MinimumWidth = 6;
-            this.tenBoPhan.Name = "tenBoPhan";
+            this.tenNhanSu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenNhanSu.HeaderText = "Tên Nhân sự";
+            this.tenNhanSu.MinimumWidth = 6;
+            this.tenNhanSu.Name = "tenNhanSu";
             // 
             // moTa
             // 
@@ -178,22 +176,23 @@
             this.lblNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameForm.Name = "lblNameForm";
             this.lblNameForm.Size = new System.Drawing.Size(138, 39);
-            this.lblNameForm.TabIndex = 7;
-            this.lblNameForm.Text = "Bộ phận";
+            this.lblNameForm.TabIndex = 4;
+            this.lblNameForm.Text = "Nhân sự";
             // 
-            // DepartmentForm
+            // PersonnelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1182, 648);
+            this.ClientSize = new System.Drawing.Size(1182, 695);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.lblNameForm);
-            this.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DepartmentForm";
-            this.Text = "part";
+            this.Name = "PersonnelForm";
+            this.Text = "Personnel";
+            this.Load += new System.EventHandler(this.PersonnelForm_Load);
             this.customPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).EndInit();
             this.ResumeLayout(false);
@@ -209,9 +208,9 @@
         private GUI.CustomButton customButton1;
         private GUI.CustomButton customButton2;
         private System.Windows.Forms.DataGridView dgvPosition;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenBoPhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
         private System.Windows.Forms.Label lblNameForm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanSu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
     }
 }
