@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
             this.btnGetPassword = new GUI.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,15 +46,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.customPanel2.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // customPanel1
@@ -81,6 +81,16 @@
             this.customPanel1.Size = new System.Drawing.Size(411, 443);
             this.customPanel1.TabIndex = 12;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Fastie.Properties.Resources.icons8_lock_50;
+            this.pictureBox1.Location = new System.Drawing.Point(70, 295);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Fastie.Properties.Resources.icons8_lock_50;
@@ -90,6 +100,27 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            // 
+            // customTextBox1
+            // 
+            this.customTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
+            this.customTextBox1.BorderRadius = 15;
+            this.customTextBox1.BorderSize = 1;
+            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox1.ForeColor = System.Drawing.Color.White;
+            this.customTextBox1.Location = new System.Drawing.Point(59, 288);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox1.Multiline = false;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
+            this.customTextBox1.PasswordChar = false;
+            this.customTextBox1.PlaceholderColor = System.Drawing.Color.White;
+            this.customTextBox1.PlaceholderText = "";
+            this.customTextBox1.Size = new System.Drawing.Size(286, 35);
+            this.customTextBox1.TabIndex = 9;
+            this.customTextBox1.UnderlinedStyle = false;
             // 
             // customTextBox3
             // 
@@ -158,6 +189,19 @@
             this.label3.Text = "Mật khẩu mới phải khác với mật khẩu\r\nđã được sử dụng trước đó";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(55, 259);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(158, 21);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Xác nhận mật khẩu";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -192,7 +236,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(14, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 33);
@@ -221,7 +265,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(14, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 33);
@@ -250,7 +294,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(14, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 33);
@@ -274,51 +318,7 @@
             this.panel1.Size = new System.Drawing.Size(60, 2);
             this.panel1.TabIndex = 17;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(55, 259);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 21);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Xác nhận mật khẩu";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // customTextBox1
-            // 
-            this.customTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox1.BorderRadius = 15;
-            this.customTextBox1.BorderSize = 1;
-            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox1.ForeColor = System.Drawing.Color.White;
-            this.customTextBox1.Location = new System.Drawing.Point(59, 288);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.White;
-            this.customTextBox1.PlaceholderText = "";
-            this.customTextBox1.Size = new System.Drawing.Size(286, 35);
-            this.customTextBox1.TabIndex = 9;
-            this.customTextBox1.UnderlinedStyle = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Fastie.Properties.Resources.icons8_lock_50;
-            this.pictureBox1.Location = new System.Drawing.Point(70, 295);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ResetPassword
+            // ResetPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -330,11 +330,12 @@
             this.Controls.Add(this.customPanel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "ResetPassword";
+            this.Name = "ResetPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResetPassword";
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
@@ -342,7 +343,6 @@
             this.customPanel3.PerformLayout();
             this.customPanel4.ResumeLayout(false);
             this.customPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

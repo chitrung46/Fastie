@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.customPanel4 = new GUI.TruniControls.CustomPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.customPanel3 = new GUI.TruniControls.CustomPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.customPanel2 = new GUI.TruniControls.CustomPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
@@ -35,20 +43,115 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.customPanel2 = new GUI.TruniControls.CustomPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.customPanel3 = new GUI.TruniControls.CustomPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.customPanel4 = new GUI.TruniControls.CustomPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.customPanel4.SuspendLayout();
+            this.customPanel3.SuspendLayout();
+            this.customPanel2.SuspendLayout();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.customPanel2.SuspendLayout();
-            this.customPanel3.SuspendLayout();
-            this.customPanel4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(492, 103);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(60, 2);
+            this.panel1.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(602, 103);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(60, 2);
+            this.panel2.TabIndex = 11;
+            // 
+            // customPanel4
+            // 
+            this.customPanel4.BackColor = System.Drawing.Color.White;
+            this.customPanel4.BorderColor = System.Drawing.Color.Black;
+            this.customPanel4.BorderRadius = 50;
+            this.customPanel4.BorderSize = 0;
+            this.customPanel4.Controls.Add(this.label6);
+            this.customPanel4.ForeColor = System.Drawing.Color.White;
+            this.customPanel4.GradientAngle = 90F;
+            this.customPanel4.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel4.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel4.Location = new System.Drawing.Point(660, 80);
+            this.customPanel4.Name = "customPanel4";
+            this.customPanel4.Size = new System.Drawing.Size(50, 50);
+            this.customPanel4.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(14, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 33);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "3";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customPanel3
+            // 
+            this.customPanel3.BackColor = System.Drawing.Color.White;
+            this.customPanel3.BorderColor = System.Drawing.Color.Black;
+            this.customPanel3.BorderRadius = 50;
+            this.customPanel3.BorderSize = 0;
+            this.customPanel3.Controls.Add(this.label5);
+            this.customPanel3.ForeColor = System.Drawing.Color.White;
+            this.customPanel3.GradientAngle = 90F;
+            this.customPanel3.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel3.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel3.Location = new System.Drawing.Point(551, 80);
+            this.customPanel3.Name = "customPanel3";
+            this.customPanel3.Size = new System.Drawing.Size(50, 50);
+            this.customPanel3.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(14, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 33);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "2";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(203)))), ((int)(((byte)(201)))));
+            this.customPanel2.BorderColor = System.Drawing.Color.Black;
+            this.customPanel2.BorderRadius = 50;
+            this.customPanel2.BorderSize = 0;
+            this.customPanel2.Controls.Add(this.label4);
+            this.customPanel2.ForeColor = System.Drawing.Color.White;
+            this.customPanel2.GradientAngle = 90F;
+            this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(203)))), ((int)(((byte)(201)))));
+            this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(203)))), ((int)(((byte)(201)))));
+            this.customPanel2.Location = new System.Drawing.Point(442, 80);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(50, 50);
+            this.customPanel2.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(14, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 33);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "1";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // customPanel1
             // 
@@ -165,109 +268,6 @@
             this.label2.Text = "Email";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customPanel2
-            // 
-            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(203)))), ((int)(((byte)(201)))));
-            this.customPanel2.BorderColor = System.Drawing.Color.Black;
-            this.customPanel2.BorderRadius = 50;
-            this.customPanel2.BorderSize = 0;
-            this.customPanel2.Controls.Add(this.label4);
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.GradientAngle = 90F;
-            this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(203)))), ((int)(((byte)(201)))));
-            this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(203)))), ((int)(((byte)(201)))));
-            this.customPanel2.Location = new System.Drawing.Point(442, 80);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(50, 50);
-            this.customPanel2.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(14, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 33);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "1";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // customPanel3
-            // 
-            this.customPanel3.BackColor = System.Drawing.Color.White;
-            this.customPanel3.BorderColor = System.Drawing.Color.Black;
-            this.customPanel3.BorderRadius = 50;
-            this.customPanel3.BorderSize = 0;
-            this.customPanel3.Controls.Add(this.label5);
-            this.customPanel3.ForeColor = System.Drawing.Color.White;
-            this.customPanel3.GradientAngle = 90F;
-            this.customPanel3.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel3.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel3.Location = new System.Drawing.Point(551, 80);
-            this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(50, 50);
-            this.customPanel3.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(14, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 33);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "2";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // customPanel4
-            // 
-            this.customPanel4.BackColor = System.Drawing.Color.White;
-            this.customPanel4.BorderColor = System.Drawing.Color.Black;
-            this.customPanel4.BorderRadius = 50;
-            this.customPanel4.BorderSize = 0;
-            this.customPanel4.Controls.Add(this.label6);
-            this.customPanel4.ForeColor = System.Drawing.Color.White;
-            this.customPanel4.GradientAngle = 90F;
-            this.customPanel4.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel4.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel4.Location = new System.Drawing.Point(660, 80);
-            this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(50, 50);
-            this.customPanel4.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(14, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 33);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "3";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(492, 103);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(60, 2);
-            this.panel1.TabIndex = 11;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(602, 103);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(60, 2);
-            this.panel2.TabIndex = 11;
-            // 
             // ForgetPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -283,15 +283,15 @@
             this.Name = "ForgetPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgetPassword";
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel4.PerformLayout();
+            this.customPanel3.ResumeLayout(false);
+            this.customPanel3.PerformLayout();
+            this.customPanel2.ResumeLayout(false);
+            this.customPanel2.PerformLayout();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.customPanel2.ResumeLayout(false);
-            this.customPanel2.PerformLayout();
-            this.customPanel3.ResumeLayout(false);
-            this.customPanel3.PerformLayout();
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
