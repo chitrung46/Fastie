@@ -396,6 +396,7 @@
         private System.Windows.Forms.Panel topbarLayout;
         private System.Windows.Forms.Panel stateAnalytics;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox13;
