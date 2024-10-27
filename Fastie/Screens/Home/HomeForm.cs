@@ -161,5 +161,10 @@ namespace Fastie
         {
             btnLogout.BackColor = Color.Transparent;
         }
+
+        private void stateDecentralization_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
