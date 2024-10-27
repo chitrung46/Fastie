@@ -52,6 +52,24 @@
     <Compile Include="Screens\Analytics\Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Login\ForgetPassword\ForgetPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Login\ForgetPassword\ForgetPasswordForm.Designer.cs">
+      <DependentUpon>ForgetPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Login\ForgetPassword\GetCodeConfirmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Login\ForgetPassword\GetCodeConfirmForm.Designer.cs">
+      <DependentUpon>GetCodeConfirmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Login\ForgetPassword\ResetPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Login\ForgetPassword\ResetPasswordForm.Designer.cs">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Personnel\CreatePersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +218,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Department\CreateDepartmentForm.resx">
       <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login\ForgetPassword\ForgetPasswordForm.resx">
+      <DependentUpon>ForgetPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login\ForgetPassword\GetCodeConfirmForm.resx">
+      <DependentUpon>GetCodeConfirmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login\ForgetPassword\ResetPasswordForm.resx">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Position\CreatePositionForm.resx">
       <DependentUpon>CreatePositionForm.cs</DependentUpon>
@@ -372,11 +399,24 @@
   <ItemGroup>
     <None Include="Resources\icons8-close-24.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Screens\Login\ForgetPassword\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\bacground_login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-email-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lock-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hide-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
