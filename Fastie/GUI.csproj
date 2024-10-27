@@ -46,76 +46,223 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analytics.cs">
+    <Compile Include="Screens\Analytics\Analytics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Analytics.Designer.cs">
+    <Compile Include="Screens\Analytics\Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Decentralization.cs">
+    <Compile Include="Screens\Login\ForgetPassword\ForgetPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Decentralization.Designer.cs">
-      <DependentUpon>Decentralization.cs</DependentUpon>
+    <Compile Include="Screens\Login\ForgetPassword\ForgetPasswordForm.Designer.cs">
+      <DependentUpon>ForgetPasswordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Screens\Login\ForgetPassword\GetCodeConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Screens\Login\ForgetPassword\GetCodeConfirmForm.Designer.cs">
+      <DependentUpon>GetCodeConfirmForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Part.cs">
+    <Compile Include="Screens\Login\ForgetPassword\ResetPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Part.Designer.cs">
-      <DependentUpon>Part.cs</DependentUpon>
+    <Compile Include="Screens\Login\ForgetPassword\ResetPasswordForm.Designer.cs">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personnel.cs">
+    <Compile Include="Screens\Personnel\CreatePersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personnel.Designer.cs">
-      <DependentUpon>Personnel.cs</DependentUpon>
+    <Compile Include="Screens\Personnel\CreatePersonnelForm.Designer.cs">
+      <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Position.cs">
+    <Compile Include="Screens\Personnel\EditPersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Position.Designer.cs">
-      <DependentUpon>Position.cs</DependentUpon>
+    <Compile Include="Screens\Personnel\EditPersonnelForm.Designer.cs">
+      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Position\CreatePositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Position\CreatePositionForm.Designer.cs">
+      <DependentUpon>CreatePositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Position\EditPositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Position\EditPositionForm.Designer.cs">
+      <DependentUpon>EditPositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Department\CreateDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Department\CreateDepartmentForm.Designer.cs">
+      <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Department\EditDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Department\EditDepartmentForm.Designer.cs">
+      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Account\AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Account\AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Account\CreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Account\CreateAccount.Designer.cs">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Account\EditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Decentralization\CreateDecentralizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Decentralization\CreateDecentralizationForm.Designer.cs">
+      <DependentUpon>CreateDecentralizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Decentralization\DecentralizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Decentralization\DecentralizationForm.Designer.cs">
+      <DependentUpon>DecentralizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Account\EditAccount.Designer.cs">
+      <DependentUpon>EditAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Layout\DeleteLayoutConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Layout\DeleteLayoutConfirm.Designer.cs">
+      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Home\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Home\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Department\DepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Department\DepartmentForm.Designer.cs">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Login\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Login\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Personnel\PersonnelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Personnel\PersonnelForm.Designer.cs">
+      <DependentUpon>PersonnelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Position\PositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Position\PositionForm.Designer.cs">
+      <DependentUpon>PositionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TruniControls\customButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TruniControls\customComboBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TruniControls\customPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Work.cs">
+    <Compile Include="Screens\Decentralization\UpdateDecentralizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Work.Designer.cs">
-      <DependentUpon>Work.cs</DependentUpon>
+    <Compile Include="Screens\Decentralization\UpdateDecentralizationForm.Designer.cs">
+      <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Analytics.resx">
+    <Compile Include="TruniControls\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TruniControls\CustomComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruniControls\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\TaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\TaskForm.Designer.cs">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruniControls\CustomTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruniControls\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Decentralization.resx">
-      <DependentUpon>Decentralization.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Account\AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Decentralization\CreateDecentralizationForm.resx">
+      <DependentUpon>CreateDecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Part.resx">
-      <DependentUpon>Part.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Decentralization\DecentralizationForm.resx">
+      <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personnel.resx">
-      <DependentUpon>Personnel.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Account\CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Position.resx">
-      <DependentUpon>Position.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Department\CreateDepartmentForm.resx">
+      <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login\ForgetPassword\ForgetPasswordForm.resx">
+      <DependentUpon>ForgetPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login\ForgetPassword\GetCodeConfirmForm.resx">
+      <DependentUpon>GetCodeConfirmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login\ForgetPassword\ResetPasswordForm.resx">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Position\CreatePositionForm.resx">
+      <DependentUpon>CreatePositionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Personnel\CreatePersonnelForm.resx">
+      <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Account\EditAccount.resx">
+      <DependentUpon>EditAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Department\EditDepartmentForm.resx">
+      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Personnel\EditPersonnelForm.resx">
+      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Position\EditPositionForm.resx">
+      <DependentUpon>EditPositionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Layout\DeleteLayoutConfirm.resx">
+      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Home\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Department\DepartmentForm.resx">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Personnel\PersonnelForm.resx">
+      <DependentUpon>PersonnelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Position\PositionForm.resx">
+      <DependentUpon>PositionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,8 +274,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Work.resx">
-      <DependentUpon>Work.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
+      <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruniControls\CustomTextBox.resx">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -230,6 +383,40 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-log-out-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pencil-23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fastie_300px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-24.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\bacground_login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-email-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lock-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hide-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
