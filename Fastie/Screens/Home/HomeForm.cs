@@ -17,10 +17,13 @@ namespace Fastie
             InitializeComponent();
         }
 
+        
+
         private void FormLayout_Load(object sender, EventArgs e)
         {
             DecentralizationForm decentralization = new DecentralizationForm();
             addFormInMainLayout(decentralization);
+
         }
 
         //Add form in main layout
@@ -165,6 +168,16 @@ namespace Fastie
         private void stateDecentralization_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            string[] information = {"Bạn có chắc chắn muốn đăng xuất?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Đăng xuất" };
+            LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm();
+            layoutConfirmForm.Title = information[0];
+            layoutConfirmForm.Content = information[1];
+            layoutConfirmForm.btnConfirmText = information[2];
+            layoutConfirmForm.Show();
         }
     }
 }

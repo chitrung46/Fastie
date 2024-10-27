@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace DAL
 {
@@ -12,53 +15,40 @@ namespace DAL
     {
         public static SqlConnection Connect()
         {
-            string connectionString = @"Data Source=ANH-QUAN;Initial Catalog=ATTENDANCE_SYSTEM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-            SqlConnection conn = new SqlConnection(connectionString);
+            string strcon = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;";
+            SqlConnection conn = new SqlConnection(strcon);
             return conn;
         }
     }
     public class DatabaseAccess
     {
-        public DatabaseAccess () { }
-
-        public DataTable ExecuteQuery(string queryOrProcName, SqlParameter[] parameters = null, bool isStoredProc = false)
+        public static string checkLoginDTO(Account acc)
         {
-            DataTable dt = new DataTable();
-            try
+            string user = null;
+            SqlConnection conn = SqlConnectionData.Connect();
+            conn.Open();
+            SqlCommand command = new SqlCommand("proc_checkLogin", conn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@tendangnhap", acc.accountName);
+            command.Parameters.AddWithValue("@matkhau", acc.password);
+
+            command.Connection = conn;
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
             {
-                using (SqlConnection con = SqlConnectionData.Connect())
+                while (reader.Read())
                 {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(queryOrProcName, con))
-                    {
-                        if (isStoredProc)
-                        {
-                            cmd.CommandType = CommandType.StoredProcedure;  // Nếu là Stored Procedure
-                        }
-                        else
-                        {
-                            cmd.CommandType = CommandType.Text;  // Nếu là câu truy vấn thông thường
-                        }
-
-                        if (parameters != null)
-                        {
-                            cmd.Parameters.AddRange(parameters);  // Thêm các tham số nếu có
-                        }
-
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);  // Điền dữ liệu vào DataTable
-                        }
-                    }
-                    con.Close();
+                    user = reader.ToString();
                 }
+                reader.Close();
+                conn.Close();
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception("Error executing query: " + ex.Message);
+                return "Email hoặc mật khẩu không chính xác!";
             }
-            return dt;  // Trả về DataTable kết quả
-        }
 
+            return user;
+        }
     }
 }
