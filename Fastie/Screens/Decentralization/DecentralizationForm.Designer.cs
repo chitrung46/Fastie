@@ -143,7 +143,7 @@
             // 
             // customPanel2
             // 
-            this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel2.BorderColor = System.Drawing.Color.Black;
             this.customPanel2.BorderRadius = 30;
             this.customPanel2.BorderSize = 0;
@@ -178,6 +178,7 @@
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdate.Location = new System.Drawing.Point(1016, 99);
             this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnUpdate.Size = new System.Drawing.Size(125, 40);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Cập nhật";
@@ -200,7 +201,7 @@
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete.Location = new System.Drawing.Point(876, 99);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Padding = new System.Windows.Forms.Padding(17, 0, 17, 0);
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
             this.btnDelete.Size = new System.Drawing.Size(125, 40);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Xóa";
@@ -223,7 +224,7 @@
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(735, 99);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(18, 0, 18, 0);
             this.btnAdd.Size = new System.Drawing.Size(125, 40);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm";
@@ -348,7 +349,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Phân quyền";
             // 
-            // Decentralization
+            // DecentralizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -359,7 +360,7 @@
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Decentralization";
+            this.Name = "DecentralizationForm";
             this.Text = "decentralization";
             this.Load += new System.EventHandler(this.Decentralization_Load);
             this.customPanel4.ResumeLayout(false);

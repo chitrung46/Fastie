@@ -35,8 +35,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new GUI.TruniControls.CustomTextBox();
             this.lblForgetPassword = new System.Windows.Forms.Label();
-            this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
-            this.btnAdd = new GUI.CustomButton();
+            this.txtUsername = new GUI.TruniControls.CustomTextBox();
+            this.btnLogin = new GUI.CustomButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,8 +76,8 @@
             this.customPanel1.Controls.Add(this.pictureBox2);
             this.customPanel1.Controls.Add(this.txtPassword);
             this.customPanel1.Controls.Add(this.lblForgetPassword);
-            this.customPanel1.Controls.Add(this.customTextBox3);
-            this.customPanel1.Controls.Add(this.btnAdd);
+            this.customPanel1.Controls.Add(this.txtUsername);
+            this.customPanel1.Controls.Add(this.btnLogin);
             this.customPanel1.Controls.Add(this.label5);
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.Controls.Add(this.label2);
@@ -158,46 +158,47 @@
             this.lblForgetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblForgetPassword.Click += new System.EventHandler(this.lblForgetPassword_Click);
             // 
-            // customTextBox3
+            // txtUsername
             // 
-            this.customTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customTextBox3.BorderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox3.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox3.BorderRadius = 15;
-            this.customTextBox3.BorderSize = 1;
-            this.customTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox3.ForeColor = System.Drawing.Color.White;
-            this.customTextBox3.Location = new System.Drawing.Point(59, 135);
-            this.customTextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox3.Multiline = false;
-            this.customTextBox3.Name = "customTextBox3";
-            this.customTextBox3.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
-            this.customTextBox3.PasswordChar = false;
-            this.customTextBox3.PlaceholderColor = System.Drawing.Color.White;
-            this.customTextBox3.PlaceholderText = "";
-            this.customTextBox3.Size = new System.Drawing.Size(286, 35);
-            this.customTextBox3.TabIndex = 9;
-            this.customTextBox3.UnderlinedStyle = false;
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtUsername.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtUsername.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtUsername.BorderRadius = 15;
+            this.txtUsername.BorderSize = 1;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.White;
+            this.txtUsername.Location = new System.Drawing.Point(59, 135);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUsername.Multiline = false;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
+            this.txtUsername.PasswordChar = false;
+            this.txtUsername.PlaceholderColor = System.Drawing.Color.White;
+            this.txtUsername.PlaceholderText = "";
+            this.txtUsername.Size = new System.Drawing.Size(286, 35);
+            this.txtUsername.TabIndex = 9;
+            this.txtUsername.UnderlinedStyle = false;
             // 
-            // btnAdd
+            // btnLogin
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(59, 304);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.btnAdd.Size = new System.Drawing.Size(286, 40);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Đăng nhập";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnLogin.BackColor = System.Drawing.Color.White;
+            this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnLogin.BorderRadius = 15;
+            this.btnLogin.BorderSize = 0;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.Black;
+            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogin.Location = new System.Drawing.Point(59, 304);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnLogin.Size = new System.Drawing.Size(286, 40);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label5
             // 
@@ -247,6 +248,7 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
@@ -261,11 +263,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private GUI.CustomButton btnAdd;
+        private GUI.CustomButton btnLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblForgetPassword;
         private GUI.TruniControls.CustomPanel customPanel1;
-        private GUI.TruniControls.CustomTextBox customTextBox3;
+        private GUI.TruniControls.CustomTextBox txtUsername;
         private GUI.TruniControls.CustomTextBox txtPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureEye;

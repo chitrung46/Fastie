@@ -282,7 +282,6 @@
             this.Controls.Add(this.customPanel1);
             this.Name = "ForgetPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ForgetPassword";
             this.customPanel4.ResumeLayout(false);
             this.customPanel4.PerformLayout();
             this.customPanel3.ResumeLayout(false);

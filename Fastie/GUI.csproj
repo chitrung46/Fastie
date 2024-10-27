@@ -136,11 +136,11 @@
     <Compile Include="Screens\Account\EditAccount.Designer.cs">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Layout\DeleteLayoutConfirm.cs">
+    <Compile Include="Components\Layout\LayoutConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Layout\DeleteLayoutConfirm.Designer.cs">
-      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    <Compile Include="Components\Layout\LayoutConfirmForm.Designer.cs">
+      <DependentUpon>LayoutConfirmForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Home\HomeForm.cs">
       <SubType>Form</SubType>
@@ -246,8 +246,8 @@
     <EmbeddedResource Include="Screens\Position\EditPositionForm.resx">
       <DependentUpon>EditPositionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Layout\DeleteLayoutConfirm.resx">
-      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Layout\LayoutConfirmForm.resx">
+      <DependentUpon>LayoutConfirmForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Home\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

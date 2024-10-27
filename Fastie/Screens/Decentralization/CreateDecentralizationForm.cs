@@ -81,14 +81,12 @@ namespace Fastie
         {
             if(checkboxTasksManagement.Checked)
             {
-                checkboxSendComments.Checked = true;
                 checkboxSendNotification.Checked = true;
                 checkboxAssignTasks.Checked = true;
                 checkboxDeleteTasks.Checked = true;
                 checkboxUpdateTasks.Checked = true;
             } else
             {
-                checkboxSendComments.Checked = false;
                 checkboxSendNotification.Checked = false;
                 checkboxAssignTasks.Checked = false;
                 checkboxDeleteTasks.Checked = false;
