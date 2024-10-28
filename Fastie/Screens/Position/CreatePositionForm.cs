@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DTO;
+using BLL;
 namespace Fastie
 {
     public partial class CreatePositionForm : Form
     {
+        CRUDPositionBLL chucVuBLL = new CRUDPositionBLL();
         public CreatePositionForm()
         {
             InitializeComponent();
@@ -35,6 +37,32 @@ namespace Fastie
         private void customPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ChucVuDTO newChucVu = new ChucVuDTO
+                {
+                    Ten = cTBName.Text,
+                    MoTa = cTBDescribe.Text
+                };
+                chucVuBLL.InsertPositionDAL(newChucVu);
+                MessageBox.Show("Thêm Chức vụ mới thành công!", "Success");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            this.Close();
+        }
+
+        private void customButton2_Click(object sender, EventArgs e)
+        {
+            cTBName.Text = string.Empty;
+            cTBDescribe.Text = string.Empty;
         }
     }
 }

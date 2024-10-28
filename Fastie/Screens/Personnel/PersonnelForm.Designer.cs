@@ -104,6 +104,7 @@
             this.customButton1.TabIndex = 10;
             this.customButton1.Text = "Thêm";
             this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // customButton2
             // 
@@ -126,7 +127,7 @@
             this.dgvPosition.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -151,7 +152,7 @@
             this.ID.HeaderText = "ID";
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
-            this.ID.Width = 56;
+            this.ID.Width = 53;
             // 
             // tenNhanSu
             // 
@@ -170,12 +171,12 @@
             // lblNameForm
             // 
             this.lblNameForm.AutoSize = true;
-            this.lblNameForm.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameForm.ForeColor = System.Drawing.Color.White;
             this.lblNameForm.Location = new System.Drawing.Point(13, 49);
             this.lblNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameForm.Name = "lblNameForm";
-            this.lblNameForm.Size = new System.Drawing.Size(138, 39);
+            this.lblNameForm.Size = new System.Drawing.Size(126, 32);
             this.lblNameForm.TabIndex = 4;
             this.lblNameForm.Text = "Nhân sự";
             // 
@@ -188,7 +189,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.lblNameForm);
-            this.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PersonnelForm";
             this.Text = "Personnel";
