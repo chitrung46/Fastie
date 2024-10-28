@@ -14,16 +14,18 @@ namespace Fastie
     public partial class LayoutConfirmForm : Form
     {
         private string accountName;
+        private DecentralizationForm decentralizationForm;
         AccountBLL accountBll = new AccountBLL();
         public LayoutConfirmForm()
         {
             InitializeComponent();
         }
 
-        public LayoutConfirmForm(string accountName)
+        public LayoutConfirmForm(DecentralizationForm decentralization ,string accountName)
         {
             InitializeComponent();
             this.accountName = accountName;
+            this.decentralizationForm = decentralization;   
         }
 
         public string AccountName { get => accountName; set => accountName = value; }   
@@ -58,6 +60,7 @@ namespace Fastie
                     if(result)
                     {
                         MessageBox.Show("Xóa quyền thành công");
+                        decentralizationForm.loadData();
                     }
                     else
                     {

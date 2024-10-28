@@ -18,15 +18,17 @@ namespace Fastie
         private AccountBLL accountBLL = new AccountBLL();
         private Dictionary<string, CheckBox> permissionCheckboxMap;
         private string accountName;
+        private DecentralizationForm decentralizationForm;
 
         public delegate void FormClosingHandler();
         public event FormClosingHandler OnFormClosing;
 
-        public CreateDecentralizationForm(string accountName)
+        public CreateDecentralizationForm(DecentralizationForm decentralizationForm ,string accountName)
         {
             InitializeComponent();
             InitializePermissionCheckboxMap();
             this.accountName = accountName;
+            this.decentralizationForm = decentralizationForm;
         }
 
 
@@ -324,6 +326,7 @@ namespace Fastie
                     bool result = accountBLL.updateRoles(this.accountName, selectedPermissions);
                     if (result)
                     {
+                        decentralizationForm.loadData();
                         MessageBox.Show("Cập nhật quyền thành công!");
                         this.Close();
                     }

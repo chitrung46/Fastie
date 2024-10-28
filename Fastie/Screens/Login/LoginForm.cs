@@ -58,8 +58,8 @@ namespace Fastie.Screens.Login
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            acc.accountName = txtUsername.Text;
-            acc.password = txtPassword.Text;
+            acc.TenDangNhap = txtUsername.Text;
+            acc.MatKhau = txtPassword.Text;
 
             string getUser = accBLL.checkLogin(acc);
 

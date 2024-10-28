@@ -31,6 +31,12 @@ namespace Fastie
 
         public string AccountName { get => accountName; set => accountName = value; }
         public string TenNhanSu { get => tenNhanSu; set => tenNhanSu = value; }
+
+        public void loadData()
+        {
+            loadDataPersonnel();
+            loadDataPersonnelRoleless();
+        }
         private void Decentralization_Load(object sender, EventArgs e)
         {
             loadDataPersonnel();
@@ -38,13 +44,17 @@ namespace Fastie
             
         }
 
-        private void loadDataPersonnel()
+        protected void loadDataPersonnel()
         {
             List<AccountInfo> accountInfo = accountBll.getAllAccountInfo();
-            dataGridViewPersonnel.Columns.Add("soThuTu", "STT");
-            dataGridViewPersonnel.Columns.Add("tenNhanSu", "Tên Nhân Sự");
-            dataGridViewPersonnel.Columns.Add("tenBoPhan", "Tên Bộ Phận");
-            dataGridViewPersonnel.Columns.Add("tenChucVu", "Tên Chức Vụ");
+            dataGridViewPersonnel.Rows.Clear(); 
+            if(dataGridViewPersonnel.Columns.Count == 0)
+            {
+                dataGridViewPersonnel.Columns.Add("soThuTu", "STT");
+                dataGridViewPersonnel.Columns.Add("tenNhanSu", "Tên Nhân Sự");
+                dataGridViewPersonnel.Columns.Add("tenBoPhan", "Tên Bộ Phận");
+                dataGridViewPersonnel.Columns.Add("tenChucVu", "Tên Chức Vụ");
+            }
             if (accountInfo != null)
             {
                 int count = 1;
@@ -62,13 +72,17 @@ namespace Fastie
             }
         }
 
-        private void loadDataPersonnelRoleless()
+        protected void loadDataPersonnelRoleless()
         {
+            dataGridViewRoleless.Rows.Clear();
+            if(dataGridViewRoleless.Columns.Count == 0)
+            {
+                dataGridViewRoleless.Columns.Add("soThuTu", "STT");
+                dataGridViewRoleless.Columns.Add("tenNhanSu", "Tên Nhân Sự");
+                dataGridViewRoleless.Columns.Add("tenBoPhan", "Tên Bộ Phận");
+                dataGridViewRoleless.Columns.Add("tenChucVu", "Tên Chức Vụ");
+            }
             List<AccountInfo> accountInfo = accountBll.getAllPersonnelRoleLess();
-            dataGridViewRoleless.Columns.Add("soThuTu", "STT");
-            dataGridViewRoleless.Columns.Add("tenNhanSu", "Tên Nhân Sự");
-            dataGridViewRoleless.Columns.Add("tenBoPhan", "Tên Bộ Phận");
-            dataGridViewRoleless.Columns.Add("tenChucVu", "Tên Chức Vụ");
             if (accountInfo != null)
             {
                 int count = 1;
@@ -87,7 +101,7 @@ namespace Fastie
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CreateDecentralizationForm createDecentralization = new CreateDecentralizationForm(this.accountName);
+            CreateDecentralizationForm createDecentralization = new CreateDecentralizationForm(this ,this.accountName);
             createDecentralization.OnFormClosing += () =>
             {
                 //Unable decentralization
@@ -108,7 +122,7 @@ namespace Fastie
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string[] information = { "Bạn có chắc chắn xóa toàn bộ quyền?", $"{this.tenNhanSu} sẽ mất toàn bộ quyền trong hệ thống", "Xóa quyền" };
-            LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this.accountName);
+            LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.accountName);
             deleteLayoutConfirm.Title = information[0];
             deleteLayoutConfirm.Content = information[1];
             deleteLayoutConfirm.btnConfirmText = information[2];
@@ -149,7 +163,27 @@ namespace Fastie
 
         private void dataGridViewRoleless_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewRoleless.Rows[e.RowIndex];
+                string accountName = row.Tag.ToString();
+                string tenNhanSu = row.Cells[1].Value.ToString();
+                if (accountName != null)
+                {
+                    //enale decentralization
+                    btnAdd.Enabled = true;
+                    btnAdd.Image = Properties.Resources.icons8_pencil_23;
+                    btnAdd.ForeColor = Color.FromArgb(255, 255, 255);
 
+                    //enable delete
+                    btnDelete.Enabled = true;
+                    btnDelete.Image = Properties.Resources.icons8_delete_23;
+                    btnDelete.ForeColor = Color.FromArgb(255, 255, 255);
+
+                    this.accountName = accountName;
+                    this.tenNhanSu = tenNhanSu;
+                }
+            }
         }
     }
 }

@@ -15,12 +15,12 @@ namespace BLL
         AccountAccess accAccess = new AccountAccess();
         public string checkLogin(Account acc)
         {
-            if (acc.accountName == "")
+            if (acc.TenDangNhap == "")
             {
                 return "required_email";
             }
 
-            if (acc.password == "")
+            if (acc.MatKhau == "")
             {
                 return "required_password";
             }

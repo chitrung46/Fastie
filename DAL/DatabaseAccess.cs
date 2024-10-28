@@ -29,8 +29,8 @@ namespace DAL
             conn.Open();
             SqlCommand command = new SqlCommand("proc_checkLogin", conn);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@tendangnhap", acc.accountName);
-            command.Parameters.AddWithValue("@matkhau", acc.password);
+            command.Parameters.AddWithValue("@tendangnhap", acc.TenDangNhap);
+            command.Parameters.AddWithValue("@matkhau", acc.MatKhau);
 
             command.Connection = conn;
             SqlDataReader reader = command.ExecuteReader();

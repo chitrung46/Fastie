@@ -15,6 +15,7 @@ namespace DTO
         private DateTime capNhatLuc;
         private string trangThai;
 
+        public Account() { }
         public Account(string id, string tenDangNhap, string matKhau, DateTime khoiTaoLuc, DateTime capNhatLuc, string trangThai)
         {
             this.id = id;
