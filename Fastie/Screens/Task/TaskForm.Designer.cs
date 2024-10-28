@@ -28,15 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.mainLayout = new System.Windows.Forms.Panel();
             this.pnlTabBar = new GUI.TruniControls.CustomPanel();
             this.btnAdjustTask = new GUI.CustomButton();
             this.btnReportTask = new GUI.CustomButton();
             this.btnAcceptTask = new GUI.CustomButton();
             this.btnAssignTask = new GUI.CustomButton();
             this.btnTaskTable = new GUI.CustomButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTabBar.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // mainLayout
+            // 
+            this.mainLayout.Location = new System.Drawing.Point(28, 92);
+            this.mainLayout.Name = "mainLayout";
+            this.mainLayout.Size = new System.Drawing.Size(1120, 591);
+            this.mainLayout.TabIndex = 2;
             // 
             // pnlTabBar
             // 
@@ -53,9 +60,9 @@
             this.pnlTabBar.GradientAngle = 90F;
             this.pnlTabBar.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnlTabBar.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnlTabBar.Location = new System.Drawing.Point(9, 10);
+            this.pnlTabBar.Location = new System.Drawing.Point(28, 12);
             this.pnlTabBar.Name = "pnlTabBar";
-            this.pnlTabBar.Size = new System.Drawing.Size(1161, 76);
+            this.pnlTabBar.Size = new System.Drawing.Size(1120, 76);
             this.pnlTabBar.TabIndex = 1;
             // 
             // btnAdjustTask
@@ -64,6 +71,7 @@
             this.btnAdjustTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnAdjustTask.BorderRadius = 40;
             this.btnAdjustTask.BorderSize = 0;
+            this.btnAdjustTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdjustTask.FlatAppearance.BorderSize = 0;
             this.btnAdjustTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdjustTask.ForeColor = System.Drawing.Color.White;
@@ -81,6 +89,7 @@
             this.btnReportTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnReportTask.BorderRadius = 40;
             this.btnReportTask.BorderSize = 0;
+            this.btnReportTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportTask.FlatAppearance.BorderSize = 0;
             this.btnReportTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportTask.ForeColor = System.Drawing.Color.White;
@@ -98,6 +107,7 @@
             this.btnAcceptTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnAcceptTask.BorderRadius = 40;
             this.btnAcceptTask.BorderSize = 0;
+            this.btnAcceptTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAcceptTask.FlatAppearance.BorderSize = 0;
             this.btnAcceptTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcceptTask.ForeColor = System.Drawing.Color.White;
@@ -115,6 +125,7 @@
             this.btnAssignTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnAssignTask.BorderRadius = 40;
             this.btnAssignTask.BorderSize = 0;
+            this.btnAssignTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAssignTask.FlatAppearance.BorderSize = 0;
             this.btnAssignTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignTask.ForeColor = System.Drawing.Color.White;
@@ -132,6 +143,7 @@
             this.btnTaskTable.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnTaskTable.BorderRadius = 40;
             this.btnTaskTable.BorderSize = 0;
+            this.btnTaskTable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTaskTable.FlatAppearance.BorderSize = 0;
             this.btnTaskTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaskTable.ForeColor = System.Drawing.Color.White;
@@ -143,25 +155,19 @@
             this.btnTaskTable.UseVisualStyleBackColor = false;
             this.btnTaskTable.Click += new System.EventHandler(this.btnTaskTable_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(9, 118);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1160, 550);
-            this.panel1.TabIndex = 2;
-            // 
             // TaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1182, 695);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.mainLayout);
             this.Controls.Add(this.pnlTabBar);
             this.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TaskForm";
             this.Text = "Work";
+            this.Load += new System.EventHandler(this.TaskForm_Load);
             this.pnlTabBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -174,6 +180,6 @@
         private GUI.CustomButton btnAssignTask;
         private GUI.CustomButton btnAdjustTask;
         private GUI.CustomButton btnReportTask;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel mainLayout;
     }
 }

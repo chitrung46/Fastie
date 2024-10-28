@@ -66,9 +66,9 @@
             this.customPanel4.GradientAngle = 90F;
             this.customPanel4.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel4.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel4.Location = new System.Drawing.Point(595, 194);
+            this.customPanel4.Location = new System.Drawing.Point(591, 194);
             this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(575, 489);
+            this.customPanel4.Size = new System.Drawing.Size(557, 489);
             this.customPanel4.TabIndex = 2;
             // 
             // dataGridViewRoleless
@@ -84,7 +84,7 @@
             this.dataGridViewRoleless.RowHeadersVisible = false;
             this.dataGridViewRoleless.RowHeadersWidth = 51;
             this.dataGridViewRoleless.RowTemplate.Height = 24;
-            this.dataGridViewRoleless.Size = new System.Drawing.Size(529, 417);
+            this.dataGridViewRoleless.Size = new System.Drawing.Size(510, 417);
             this.dataGridViewRoleless.TabIndex = 0;
             this.dataGridViewRoleless.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRoleless_CellContentClick);
             // 
@@ -112,9 +112,9 @@
             this.customPanel3.GradientAngle = 90F;
             this.customPanel3.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel3.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel3.Location = new System.Drawing.Point(12, 194);
+            this.customPanel3.Location = new System.Drawing.Point(28, 194);
             this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(575, 489);
+            this.customPanel3.Size = new System.Drawing.Size(557, 489);
             this.customPanel3.TabIndex = 2;
             // 
             // dataGridViewPersonnel
@@ -130,7 +130,7 @@
             this.dataGridViewPersonnel.RowHeadersVisible = false;
             this.dataGridViewPersonnel.RowHeadersWidth = 51;
             this.dataGridViewPersonnel.RowTemplate.Height = 24;
-            this.dataGridViewPersonnel.Size = new System.Drawing.Size(524, 417);
+            this.dataGridViewPersonnel.Size = new System.Drawing.Size(510, 417);
             this.dataGridViewPersonnel.TabIndex = 0;
             this.dataGridViewPersonnel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPersonnel_CellContentClick);
             // 
@@ -162,9 +162,9 @@
             this.customPanel2.GradientAngle = 90F;
             this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.Location = new System.Drawing.Point(12, 92);
+            this.customPanel2.Location = new System.Drawing.Point(28, 92);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1158, 96);
+            this.customPanel2.Size = new System.Drawing.Size(1120, 96);
             this.customPanel2.TabIndex = 2;
             // 
             // btnDelete
@@ -181,7 +181,7 @@
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = global::Fastie.Properties.Resources.icons8_delete_23_black;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(1012, 39);
+            this.btnDelete.Location = new System.Drawing.Point(969, 39);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
             this.btnDelete.Size = new System.Drawing.Size(125, 40);
@@ -205,7 +205,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Image = global::Fastie.Properties.Resources.icons8_pencil_23_black;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(825, 39);
+            this.btnAdd.Location = new System.Drawing.Point(782, 39);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(18, 0, 18, 0);
             this.btnAdd.Size = new System.Drawing.Size(171, 40);
@@ -292,16 +292,16 @@
             this.customPanel1.GradientAngle = 90F;
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel1.Location = new System.Drawing.Point(12, 12);
+            this.customPanel1.Location = new System.Drawing.Point(28, 12);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(1158, 74);
+            this.customPanel1.Size = new System.Drawing.Size(1120, 74);
             this.customPanel1.TabIndex = 2;
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::Fastie.Properties.Resources.icons8_search_100;
-            this.pictureBox8.Location = new System.Drawing.Point(1010, 22);
+            this.pictureBox8.Location = new System.Drawing.Point(963, 22);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(35, 35);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -314,7 +314,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(1056, 29);
+            this.label6.Location = new System.Drawing.Point(1009, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 21);
             this.label6.TabIndex = 4;

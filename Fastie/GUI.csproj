@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\LayoutRole\LayoutRoleForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Components\LayoutNotification\NotificationForm.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\LayoutRole\LayoutRoleForm.Designer.cs">
-      <DependentUpon>LayoutRoleForm.cs</DependentUpon>
+    <Compile Include="Components\LayoutNotification\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutGetTaskForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutGetTaskForm.Designer.cs">
+      <DependentUpon>LayoutGetTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutTaskForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutTaskForm.Designer.cs">
+      <DependentUpon>LayoutTaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Analytics\Analytics.cs">
       <SubType>Form</SubType>
@@ -186,6 +198,18 @@
     <Compile Include="Screens\Decentralization\UpdateDecentralizationForm.Designer.cs">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Task\AcceptTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\AcceptTaskForm.Designer.cs">
+      <DependentUpon>AcceptTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Task\TaskTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\TaskTableForm.Designer.cs">
+      <DependentUpon>TaskTableForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TruniControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -207,8 +231,14 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Components\LayoutRole\LayoutRoleForm.resx">
-      <DependentUpon>LayoutRoleForm.cs</DependentUpon>
+    <EmbeddedResource Include="Components\LayoutNotification\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutGetTaskForm.resx">
+      <DependentUpon>LayoutGetTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutTaskForm.resx">
+      <DependentUpon>LayoutTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
@@ -286,8 +316,14 @@
     <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\AcceptTaskForm.resx">
+      <DependentUpon>AcceptTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\TaskForm.resx">
       <DependentUpon>TaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\TaskTableForm.resx">
+      <DependentUpon>TaskTableForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TruniControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
@@ -437,6 +473,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-delete-23-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell_notice_alert_new_event_information_sign_or_symbol_website_icon_3d_illustration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bell-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu-23.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

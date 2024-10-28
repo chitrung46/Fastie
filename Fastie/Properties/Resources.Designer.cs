@@ -73,6 +73,17 @@ namespace Fastie.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bell_notice_alert_new_event_information_sign_or_symbol_website_icon_3d_illustration {
+            get {
+                object obj = ResourceManager.GetObject("bell_notice_alert_new_event_information_sign_or_symbol_website_icon_3d_illustrati" +
+                        "on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fastie_300px {
             get {
                 object obj = ResourceManager.GetObject("fastie_300px", resourceCulture);
@@ -126,6 +137,16 @@ namespace Fastie.Properties {
         internal static System.Drawing.Bitmap icons8_arrow_down_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-arrow-down-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_bell_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bell-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +317,16 @@ namespace Fastie.Properties {
         internal static System.Drawing.Bitmap icons8_log_out_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-log-out-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_menu_23 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-menu-23", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
