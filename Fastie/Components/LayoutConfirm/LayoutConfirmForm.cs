@@ -8,33 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
 namespace Fastie
 {
     public partial class LayoutConfirmForm : Form
     {
+        private string accountName;
+        AccountBLL accountBll = new AccountBLL();
         public LayoutConfirmForm()
         {
             InitializeComponent();
         }
 
-        public string Title
+        public LayoutConfirmForm(string accountName)
         {
-            get { return lblTitle.Text; }
-            set { lblTitle.Text = value; }
+            InitializeComponent();
+            this.accountName = accountName;
         }
 
-        public string Content 
-        {
-            get { return lblContent.Text; }
-            set { lblContent.Text = value; }
-        }
-
-        public string btnConfirmText
-        {
-            get { return btnConfirm.Text; }
-            set { btnConfirm.Text = value; }
-        }
+        public string AccountName { get => accountName; set => accountName = value; }   
+        public string Title { get => lblTitle.Text; set => lblTitle.Text = value; }
+        public string Content { get => lblContent.Text; set => lblContent.Text = value; }
+        public string btnConfirmText { get => btnConfirm.Text; set => btnConfirm.Text = value; }
 
         private void pictureClose_Click(object sender, EventArgs e)
         {
@@ -57,8 +52,18 @@ namespace Fastie
         {
             switch (btnConfirm.Text)
             {
-                case "Xóa":
-                    MessageBox.Show("Xóa thành công");
+                case "Xóa quyền":
+                    MessageBox.Show("id", this.accountName);
+                    bool result = accountBll.deleteAllRoles(this.accountName);
+                    if(result)
+                    {
+                        MessageBox.Show("Xóa quyền thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa quyền thất bại");
+                    }
+                    this.Close();
                     break;
                 case "Cập nhật":
                     MessageBox.Show("Cập nhật thành công");

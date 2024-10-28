@@ -193,6 +193,16 @@ namespace Fastie.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_23_black {
+            get {
+                object obj = ResourceManager.GetObject("icons8-delete-23-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_document_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-document-100", resourceCulture);
@@ -333,6 +343,16 @@ namespace Fastie.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pencil_23_black {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pencil-23-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_permanent_job_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-permanent-job-100", resourceCulture);
@@ -413,9 +433,29 @@ namespace Fastie.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_23_black {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plus-23-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_search_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-search-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_staff_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-staff-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

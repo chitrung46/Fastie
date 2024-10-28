@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\LayoutRole\LayoutRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutRole\LayoutRoleForm.Designer.cs">
+      <DependentUpon>LayoutRoleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Analytics\Analytics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,10 +142,10 @@
     <Compile Include="Screens\Account\EditAccount.Designer.cs">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Layout\LayoutConfirmForm.cs">
+    <Compile Include="Components\LayoutConfirm\LayoutConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Layout\LayoutConfirmForm.Designer.cs">
+    <Compile Include="Components\LayoutConfirm\LayoutConfirmForm.Designer.cs">
       <DependentUpon>LayoutConfirmForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Home\HomeForm.cs">
@@ -201,6 +207,9 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\LayoutRole\LayoutRoleForm.resx">
+      <DependentUpon>LayoutRoleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,7 +255,7 @@
     <EmbeddedResource Include="Screens\Position\EditPositionForm.resx">
       <DependentUpon>EditPositionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Layout\LayoutConfirmForm.resx">
+    <EmbeddedResource Include="Components\LayoutConfirm\LayoutConfirmForm.resx">
       <DependentUpon>LayoutConfirmForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Home\HomeForm.resx">
@@ -399,7 +408,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-close-24.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-30.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bacground_login.jpg" />
   </ItemGroup>
@@ -417,6 +428,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-hide-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-23-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pencil-23-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-23-black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

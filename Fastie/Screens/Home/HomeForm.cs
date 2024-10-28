@@ -39,7 +39,7 @@ namespace Fastie
         //Check other panel is not click
         private void setStatePanel(Panel statePanel)
         {
-            Panel[] panel = { stateDecentralization, statePart, statePosition, statePersonnel, stateWork, stateAnalytics };
+            Panel[] panel = { stateDecentralization, statePart, statePosition, statePersonnel, stateWork, stateAnalytics, stateAccount };
             for (int i = 0; i < panel.Length; i++)
             {
                 if (panel[i] != statePanel)
@@ -93,6 +93,13 @@ namespace Fastie
             addFormInMainLayout(analytics);
             setStatePanel(stateAnalytics);
         }
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            AccountForm account = new AccountForm();
+            addFormInMainLayout(account);
+            setStatePanel(stateAccount);
+        }
+
 
         //Set hover
         private void pnlDecentralization_MouseLeave(object sender, EventArgs e)
@@ -164,10 +171,15 @@ namespace Fastie
         {
             btnLogout.BackColor = Color.Transparent;
         }
-
-        private void stateDecentralization_Paint(object sender, PaintEventArgs e)
+        private void pnlAccount_MouseLeave(object sender, EventArgs e)
         {
+            btnLogout.BackColor = Color.FromArgb(91, 91, 92);
 
+        }
+
+        private void pnlAccount_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = Color.Transparent;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -179,5 +191,6 @@ namespace Fastie
             layoutConfirmForm.btnConfirmText = information[2];
             layoutConfirmForm.Show();
         }
+
     }
 }

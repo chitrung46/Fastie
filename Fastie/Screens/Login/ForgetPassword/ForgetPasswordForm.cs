@@ -22,5 +22,10 @@ namespace Fastie.Screens.Login.ForgetPassword
             GetCodeConfirmForm getCodeConfirmForm = new GetCodeConfirmForm();
             getCodeConfirmForm.Show();
         }
+
+        private void ForgetPasswordForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

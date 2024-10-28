@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.customPanel4 = new GUI.TruniControls.CustomPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewRoleless = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.customPanel3 = new GUI.TruniControls.CustomPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPersonnel = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
-            this.btnUpdate = new GUI.CustomButton();
             this.btnDelete = new GUI.CustomButton();
             this.btnAdd = new GUI.CustomButton();
             this.customComboBox2 = new GUI.TruniControls.CustomComboBox();
@@ -47,9 +46,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.customPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoleless)).BeginInit();
             this.customPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonnel)).BeginInit();
             this.customPanel2.SuspendLayout();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -61,30 +60,33 @@
             this.customPanel4.BorderColor = System.Drawing.Color.Black;
             this.customPanel4.BorderRadius = 30;
             this.customPanel4.BorderSize = 0;
-            this.customPanel4.Controls.Add(this.dataGridView2);
+            this.customPanel4.Controls.Add(this.dataGridViewRoleless);
             this.customPanel4.Controls.Add(this.label5);
             this.customPanel4.ForeColor = System.Drawing.Color.Black;
             this.customPanel4.GradientAngle = 90F;
             this.customPanel4.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel4.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel4.Location = new System.Drawing.Point(595, 253);
+            this.customPanel4.Location = new System.Drawing.Point(595, 194);
             this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(575, 430);
+            this.customPanel4.Size = new System.Drawing.Size(575, 489);
             this.customPanel4.TabIndex = 2;
             // 
-            // dataGridView2
+            // dataGridViewRoleless
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(24, 54);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(529, 360);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridViewRoleless.AllowUserToAddRows = false;
+            this.dataGridViewRoleless.AllowUserToDeleteRows = false;
+            this.dataGridViewRoleless.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewRoleless.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewRoleless.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRoleless.Location = new System.Drawing.Point(24, 54);
+            this.dataGridViewRoleless.Name = "dataGridViewRoleless";
+            this.dataGridViewRoleless.ReadOnly = true;
+            this.dataGridViewRoleless.RowHeadersVisible = false;
+            this.dataGridViewRoleless.RowHeadersWidth = 51;
+            this.dataGridViewRoleless.RowTemplate.Height = 24;
+            this.dataGridViewRoleless.Size = new System.Drawing.Size(529, 417);
+            this.dataGridViewRoleless.TabIndex = 0;
+            this.dataGridViewRoleless.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRoleless_CellContentClick);
             // 
             // label5
             // 
@@ -104,30 +106,33 @@
             this.customPanel3.BorderColor = System.Drawing.Color.Black;
             this.customPanel3.BorderRadius = 30;
             this.customPanel3.BorderSize = 0;
-            this.customPanel3.Controls.Add(this.dataGridView1);
+            this.customPanel3.Controls.Add(this.dataGridViewPersonnel);
             this.customPanel3.Controls.Add(this.label4);
             this.customPanel3.ForeColor = System.Drawing.Color.Black;
             this.customPanel3.GradientAngle = 90F;
             this.customPanel3.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel3.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel3.Location = new System.Drawing.Point(12, 253);
+            this.customPanel3.Location = new System.Drawing.Point(12, 194);
             this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(575, 430);
+            this.customPanel3.Size = new System.Drawing.Size(575, 489);
             this.customPanel3.TabIndex = 2;
             // 
-            // dataGridView1
+            // dataGridViewPersonnel
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(524, 360);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewPersonnel.AllowUserToAddRows = false;
+            this.dataGridViewPersonnel.AllowUserToDeleteRows = false;
+            this.dataGridViewPersonnel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewPersonnel.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPersonnel.Location = new System.Drawing.Point(24, 54);
+            this.dataGridViewPersonnel.Name = "dataGridViewPersonnel";
+            this.dataGridViewPersonnel.ReadOnly = true;
+            this.dataGridViewPersonnel.RowHeadersVisible = false;
+            this.dataGridViewPersonnel.RowHeadersWidth = 51;
+            this.dataGridViewPersonnel.RowTemplate.Height = 24;
+            this.dataGridViewPersonnel.Size = new System.Drawing.Size(524, 417);
+            this.dataGridViewPersonnel.TabIndex = 0;
+            this.dataGridViewPersonnel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPersonnel_CellContentClick);
             // 
             // label4
             // 
@@ -147,7 +152,6 @@
             this.customPanel2.BorderColor = System.Drawing.Color.Black;
             this.customPanel2.BorderRadius = 30;
             this.customPanel2.BorderSize = 0;
-            this.customPanel2.Controls.Add(this.btnUpdate);
             this.customPanel2.Controls.Add(this.btnDelete);
             this.customPanel2.Controls.Add(this.btnAdd);
             this.customPanel2.Controls.Add(this.customComboBox2);
@@ -160,31 +164,8 @@
             this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel2.Location = new System.Drawing.Point(12, 92);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1158, 155);
+            this.customPanel2.Size = new System.Drawing.Size(1158, 96);
             this.customPanel2.TabIndex = 2;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnUpdate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnUpdate.BorderRadius = 15;
-            this.btnUpdate.BorderSize = 0;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Image = global::Fastie.Properties.Resources.icons8_pencil_23;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(1016, 99);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnUpdate.Size = new System.Drawing.Size(125, 40);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -193,13 +174,14 @@
             this.btnDelete.BorderRadius = 15;
             this.btnDelete.BorderSize = 0;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Enabled = false;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Image = global::Fastie.Properties.Resources.icons8_delete_23_black;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(876, 99);
+            this.btnDelete.Location = new System.Drawing.Point(1012, 39);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
             this.btnDelete.Size = new System.Drawing.Size(125, 40);
@@ -216,18 +198,19 @@
             this.btnAdd.BorderRadius = 15;
             this.btnAdd.BorderSize = 0;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Enabled = false;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = global::Fastie.Properties.Resources.icons8_plus_23;
+            this.btnAdd.ForeColor = System.Drawing.Color.Black;
+            this.btnAdd.Image = global::Fastie.Properties.Resources.icons8_pencil_23_black;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(735, 99);
+            this.btnAdd.Location = new System.Drawing.Point(825, 39);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(18, 0, 18, 0);
-            this.btnAdd.Size = new System.Drawing.Size(125, 40);
+            this.btnAdd.Size = new System.Drawing.Size(171, 40);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Phân quyền";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -244,11 +227,11 @@
             this.customComboBox2.IconColor = System.Drawing.Color.Black;
             this.customComboBox2.ListBackColor = System.Drawing.Color.WhiteSmoke;
             this.customComboBox2.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox2.Location = new System.Drawing.Point(24, 109);
+            this.customComboBox2.Location = new System.Drawing.Point(314, 49);
             this.customComboBox2.MinimumSize = new System.Drawing.Size(200, 30);
             this.customComboBox2.Name = "customComboBox2";
             this.customComboBox2.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox2.Size = new System.Drawing.Size(200, 30);
+            this.customComboBox2.Size = new System.Drawing.Size(233, 30);
             this.customComboBox2.TabIndex = 1;
             this.customComboBox2.Texts = "";
             // 
@@ -264,11 +247,11 @@
             this.customComboBox1.IconColor = System.Drawing.Color.Black;
             this.customComboBox1.ListBackColor = System.Drawing.Color.WhiteSmoke;
             this.customComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.Location = new System.Drawing.Point(24, 40);
+            this.customComboBox1.Location = new System.Drawing.Point(24, 49);
             this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
             this.customComboBox1.Name = "customComboBox1";
             this.customComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox1.Size = new System.Drawing.Size(200, 30);
+            this.customComboBox1.Size = new System.Drawing.Size(233, 30);
             this.customComboBox1.TabIndex = 1;
             this.customComboBox1.Texts = "";
             // 
@@ -278,11 +261,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(20, 85);
+            this.label3.Location = new System.Drawing.Point(310, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 21);
+            this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Phân quyền";
+            this.label3.Text = "Chức vụ";
             // 
             // label2
             // 
@@ -290,7 +273,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 15);
+            this.label2.Location = new System.Drawing.Point(20, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 21);
             this.label2.TabIndex = 0;
@@ -365,10 +348,10 @@
             this.Load += new System.EventHandler(this.Decentralization_Load);
             this.customPanel4.ResumeLayout(false);
             this.customPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoleless)).EndInit();
             this.customPanel3.ResumeLayout(false);
             this.customPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonnel)).EndInit();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
             this.customPanel1.ResumeLayout(false);
@@ -387,16 +370,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private GUI.TruniControls.CustomComboBox customComboBox2;
         private GUI.TruniControls.CustomComboBox customComboBox1;
         private GUI.CustomButton btnAdd;
-        private GUI.CustomButton btnUpdate;
         private GUI.CustomButton btnDelete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewPersonnel;
         private System.Windows.Forms.Label label4;
         private GUI.TruniControls.CustomPanel customPanel4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewRoleless;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
+        private GUI.TruniControls.CustomComboBox customComboBox2;
     }
 }
