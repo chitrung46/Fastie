@@ -44,7 +44,7 @@ namespace Fastie
             
         }
 
-        protected void loadDataPersonnel()
+        private void loadDataPersonnel()
         {
             List<AccountInfo> accountInfo = accountBll.getAllAccountInfo();
             dataGridViewPersonnel.Rows.Clear(); 
@@ -72,7 +72,7 @@ namespace Fastie
             }
         }
 
-        protected void loadDataPersonnelRoleless()
+        private void loadDataPersonnelRoleless()
         {
             dataGridViewRoleless.Rows.Clear();
             if(dataGridViewRoleless.Columns.Count == 0)
@@ -174,11 +174,6 @@ namespace Fastie
                     btnAdd.Enabled = true;
                     btnAdd.Image = Properties.Resources.icons8_pencil_23;
                     btnAdd.ForeColor = Color.FromArgb(255, 255, 255);
-
-                    //enable delete
-                    btnDelete.Enabled = true;
-                    btnDelete.Image = Properties.Resources.icons8_delete_23;
-                    btnDelete.ForeColor = Color.FromArgb(255, 255, 255);
 
                     this.accountName = accountName;
                     this.tenNhanSu = tenNhanSu;

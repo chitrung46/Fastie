@@ -55,7 +55,6 @@ namespace Fastie
             switch (btnConfirm.Text)
             {
                 case "Xóa quyền":
-                    MessageBox.Show("id", this.accountName);
                     bool result = accountBll.deleteAllRoles(this.accountName);
                     if(result)
                     {
