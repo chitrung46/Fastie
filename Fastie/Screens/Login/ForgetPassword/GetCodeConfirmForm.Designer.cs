@@ -74,6 +74,7 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(411, 414);
             this.customPanel1.TabIndex = 12;
+            this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
             // txtCode4
             // 
@@ -173,7 +174,7 @@
             this.btnConfirmCode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmCode.FlatAppearance.BorderSize = 0;
             this.btnConfirmCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmCode.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmCode.ForeColor = System.Drawing.Color.Black;
             this.btnConfirmCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmCode.Location = new System.Drawing.Point(58, 259);
@@ -189,11 +190,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(87, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 32);
+            this.label1.Size = new System.Drawing.Size(215, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhập mã của bạn";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -202,11 +203,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Montserrat Thin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
             this.label3.Location = new System.Drawing.Point(84, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(234, 42);
+            this.label3.Size = new System.Drawing.Size(199, 36);
             this.label3.TabIndex = 0;
             this.label3.Text = "Vui lòng nhập 4 kí tự được gửi\r\nvào địa chỉ email của bạn";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -231,11 +232,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(14, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 33);
+            this.label4.Size = new System.Drawing.Size(27, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "1";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -260,11 +261,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(14, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 33);
+            this.label5.Size = new System.Drawing.Size(27, 29);
             this.label5.TabIndex = 0;
             this.label5.Text = "2";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -289,11 +290,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(14, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 33);
+            this.label6.Size = new System.Drawing.Size(27, 29);
             this.label6.TabIndex = 0;
             this.label6.Text = "3";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,7 +330,6 @@
             this.Name = "GetCodeConfirmForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GetCodeConfirmForm";
-            this.Load += new System.EventHandler(this.GetCodeConfirmForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.customPanel2.ResumeLayout(false);
