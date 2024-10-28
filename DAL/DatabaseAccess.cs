@@ -349,7 +349,7 @@ namespace DAL
         {
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
-                SqlCommand cmd = new SqlCommand("proc_GetAccountByEmail", conn)
+                SqlCommand cmd = new SqlCommand("proc_getAccountByEmail", conn)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -378,7 +378,7 @@ namespace DAL
         {
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
-                SqlCommand cmd = new SqlCommand("proc_UpdatePassword", conn)
+                SqlCommand cmd = new SqlCommand("proc_updatePassword", conn)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
