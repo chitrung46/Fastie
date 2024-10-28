@@ -66,7 +66,6 @@
             this.label4.Size = new System.Drawing.Size(119, 18);
             this.label4.TabIndex = 30;
             this.label4.Text = "Mô tả chức vụ:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cTBDescribe
             // 
@@ -116,7 +115,6 @@
             this.label2.Size = new System.Drawing.Size(254, 32);
             this.label2.TabIndex = 10;
             this.label2.Text = "Thông tin chức vụ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblName
             // 
@@ -169,7 +167,6 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(563, 240);
             this.customPanel1.TabIndex = 9;
-            this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
             // CreatePositionForm
             // 
@@ -187,7 +184,6 @@
             this.Name = "CreatePositionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm chức vụ ";
-            this.Load += new System.EventHandler(this.CreatePosition_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);

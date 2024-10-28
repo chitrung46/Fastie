@@ -11,14 +11,16 @@ using BLL;
 using DTO;
 namespace Fastie
 {
-    public partial class EditPositionForm : Form
+    public partial class UpdatePositionForm : Form
     {
-        private readonly ChucVuDTO needEdit;
-        CRUDPositionBLL chucVuBLL = new CRUDPositionBLL();
-        public EditPositionForm(ChucVuDTO chucVu)
+        private readonly Position needEdit;
+        PositionForm positionForm;
+        PositionBLL positionBLL = new PositionBLL();
+        public UpdatePositionForm(PositionForm positionForm, Position chucVu)
         {
             InitializeComponent();
             needEdit = chucVu;
+            this.positionForm = positionForm;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -36,8 +38,9 @@ namespace Fastie
         {
             needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
             needEdit.MoTa = cTBDesribe.Text;
-            chucVuBLL.EditPositionDAL(needEdit);
+            positionBLL.UpdatePositionBLL(needEdit);
             MessageBox.Show("Sửa Bộ phận thành công!", "Success");
+            positionForm.LoadPositionData();
             this.Close();
         }
 

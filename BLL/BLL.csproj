@@ -42,9 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
-    <Compile Include="CRUDDepartmentBLL.cs" />
-    <Compile Include="CRUDPersonnelBLL.cs" />
-    <Compile Include="CRUDPositionBLL.cs" />
+    <Compile Include="DepartmentBLL.cs" />
+    <Compile Include="PersonnelBLL.cs" />
+    <Compile Include="PositionBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,7 @@ namespace Fastie
 {
     public partial class PositionForm : Form
     {
-        CRUDPositionBLL chucVuBLL = new CRUDPositionBLL();
+        PositionBLL positionBLL = new PositionBLL();
         public PositionForm()
         {
             InitializeComponent();
@@ -21,22 +21,12 @@ namespace Fastie
         }
         public void LoadPositionData()
         {
-            List<ChucVuDTO> positionList = chucVuBLL.GetPositionListDAL();
+            List<Position> positionList = positionBLL.GetPositionListBLL();
             dgvPosition.Rows.Clear();
-            foreach (ChucVuDTO position in positionList)
+            foreach (Position position in positionList)
             {
                 dgvPosition.Rows.Add(position.Id, position.Ten, position.MoTa);
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void customButton3_Click(object sender, EventArgs e)
@@ -45,32 +35,32 @@ namespace Fastie
             {
                 // Get the selected row
                 var selectedRow = dgvPosition.SelectedRows[0];
-                if (selectedRow.Cells["ID"].Value == null || string.IsNullOrWhiteSpace(selectedRow.Cells["ID"].Value.ToString()))
+                if (selectedRow.Cells["id"].Value == null || string.IsNullOrWhiteSpace(selectedRow.Cells["id"].Value.ToString()))
                 {
-                    MessageBox.Show("Ô dữ liệu này trống. Vui lòng chọn một bộ phận có dữ liệu hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Ô dữ liệu này trống. Vui lòng chọn một chức vụ có dữ liệu hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    var editPosition = new ChucVuDTO
+                    var updatePosition = new Position
                     {
-                        Id = selectedRow.Cells["ID"].Value.ToString(),
+                        Id = selectedRow.Cells["iD"].Value.ToString(),
                         Ten = selectedRow.Cells["tenChucVu"].Value.ToString(),
                         MoTa = selectedRow.Cells["moTa"].Value.ToString()
 
                     };
-                    EditPositionForm editPositionForm = new EditPositionForm(editPosition);
-                    editPositionForm.Show();
+                    UpdatePositionForm updatePositionForm = new UpdatePositionForm(this,updatePosition);
+                    updatePositionForm.Show();
                 }
             }
             else
             {
-                MessageBox.Show("Please select a student to edit."); // Inform user if no selection
+                MessageBox.Show("Vui lòng chọn chức vụ để cập nhật");
             }
         }
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-            CreatePositionForm createPositionForm = new CreatePositionForm();
+            CreatePositionForm createPositionForm = new CreatePositionForm(this);
             createPositionForm.Show();
         }
 
@@ -81,23 +71,23 @@ namespace Fastie
                 DataGridViewRow selectedRow = dgvPosition.SelectedRows[0];
                 if (selectedRow.Cells["ID"].Value == null || string.IsNullOrWhiteSpace(selectedRow.Cells["ID"].Value.ToString()))
                 {
-                    MessageBox.Show("Ô dữ liệu này trống. Vui lòng chọn một bộ phận có dữ liệu hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Ô dữ liệu này trống. Vui lòng chọn một chức vụ có dữ liệu hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa bộ phận này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa chức vụ này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
                         string id = selectedRow.Cells["ID"].Value.ToString();
-                        chucVuBLL.DeletePositionDAL(id);
+                        positionBLL.DeletePositionBLL(id);
                         dgvPosition.Rows.RemoveAt(selectedRow.Index);
-                        MessageBox.Show("Xóa bộ phận thành công!", "Success");
+                        MessageBox.Show("Xóa chức vụ thành công!", "Success");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một bộ phận để xóa.");
+                MessageBox.Show("Vui lòng chọn một chức vụ để xóa.");
             }
         }
 

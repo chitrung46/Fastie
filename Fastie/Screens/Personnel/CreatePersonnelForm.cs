@@ -14,7 +14,7 @@ namespace Fastie
 {
     public partial class CreatePersonnelForm : Form
     {
-        CRUDPersonnelBLL nhanSuBLL = new CRUDPersonnelBLL();
+        PersonnelBLL nhanSuBLL = new PersonnelBLL();
         public CreatePersonnelForm()
         {
             InitializeComponent();
@@ -83,7 +83,7 @@ namespace Fastie
         {
             try
             {
-                NhanSuDTO newNhanSu = new NhanSuDTO
+                Personnel newNhanSu = new Personnel
                 {
                     Ten = cTBName.Text,
                     Email = cTBEmail.Text,

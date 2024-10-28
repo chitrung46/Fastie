@@ -14,23 +14,25 @@ namespace Fastie
 {
     public partial class CreateDepartmentForm : Form
     {
-        CRUDDepartmentBLL boPhanBLL = new CRUDDepartmentBLL();
+        DepartmentBLL departmentBLL = new DepartmentBLL();
+        DepartmentForm departmentForm ;
 
-        public CreateDepartmentForm()
+        public CreateDepartmentForm(DepartmentForm departmentForm)
         {
             InitializeComponent();
+            this.departmentForm= departmentForm;    
         }
 
         private void customButton1_Click(object sender, EventArgs e)
         {
             try
             {
-                BoPhanDTO newBoPhan = new BoPhanDTO
+                Department newBoPhan = new Department
                 {
                     Ten = cTBName.Text,
                     MoTa = cTBDescribe.Text
                 };
-                boPhanBLL.InsertDepartmentDAL(newBoPhan);
+                departmentBLL.InsertDepartmentBLL(newBoPhan);
                 MessageBox.Show("Thêm Bộ phận mới thành công!", "Success");
 
             }
@@ -38,13 +40,14 @@ namespace Fastie
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+            departmentForm.LoadDepartmentData();
             this.Close();
+            
         }
 
         private void customButton2_Click(object sender, EventArgs e)
         {
-            cTBName.Text = string.Empty;
-            cTBDescribe.Text = string.Empty;
+            this.Close();
         }
     }
 }

@@ -8,28 +8,28 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class CRUDPositionAccess : DatabaseAccess
+    public class PositionAccess : DatabaseAccess
     {
-        public void InsertPositionDAL(ChucVuDTO chucVu)
+        public void InsertPositionDAL(Position chucVu)
         {
             InsertPosition(chucVu);
         }
 
-        public List<ChucVuDTO> GetPositionListDAL()
+        public List<Position> GetPositionListDAL()
         {
-            List<ChucVuDTO> list = GetPositionList();
+            List<Position> list = GetPositionList();
             return list;
         }
 
-        public void EditPositionDAL (ChucVuDTO chucVu)
+        public void UpdatePositionDAL (Position chucVu)
         {
-            EditPosition(chucVu);
+            UpdatePosition(chucVu);
         }
 
         public void DeletePositionDAL(string id) 
         { 
-            DeletePosition(id);
-        
+            DeletePosition(id);     
         }
+
     }
 }

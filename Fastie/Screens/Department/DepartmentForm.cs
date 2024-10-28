@@ -14,7 +14,7 @@ namespace Fastie
 {
     public partial class DepartmentForm : Form
     {
-        CRUDDepartmentBLL boPhanBLL = new CRUDDepartmentBLL();
+        DepartmentBLL departmentBLL = new DepartmentBLL();
         public DepartmentForm()
         {
             InitializeComponent();
@@ -24,9 +24,9 @@ namespace Fastie
 
         public void LoadDepartmentData ()
         {
-            List<BoPhanDTO> departmentList = boPhanBLL.GetDepartmentListDAL();
+            List<Department> departmentList = departmentBLL.GetDepartmentListBLL();
             dgvPosition.Rows.Clear();
-            foreach (BoPhanDTO department in departmentList)
+            foreach (Department department in departmentList)
             {
                 dgvPosition.Rows.Add(department.Id, department.Ten, department.MoTa);
             }
@@ -38,7 +38,7 @@ namespace Fastie
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-            CreateDepartmentForm createDepartmentForm = new CreateDepartmentForm();
+            CreateDepartmentForm createDepartmentForm = new CreateDepartmentForm(this);
             createDepartmentForm.Show();
         }
 
@@ -54,15 +54,15 @@ namespace Fastie
                 }
                 else
                 {
-                    var editDepartment = new BoPhanDTO
+                    var updateDepartment = new Department
                     {
                         Id = selectedRow.Cells["ID"].Value.ToString(),
                         Ten = selectedRow.Cells["tenBoPhan"].Value.ToString(),
                         MoTa = selectedRow.Cells["moTa"].Value.ToString()
 
                     };
-                    EditDepartmentForm editDepartmentForm = new EditDepartmentForm(editDepartment);
-                    editDepartmentForm.Show();
+                    UpdateDepartmentForm updateDepartmentForm = new UpdateDepartmentForm(this, updateDepartment);
+                    updateDepartmentForm.Show();
                 }                                 
             }
             else
@@ -97,7 +97,7 @@ namespace Fastie
                     if (result == DialogResult.Yes)
                     {
                         string id = selectedRow.Cells["ID"].Value.ToString();
-                        boPhanBLL.DeleteDepartmentDAL(id);
+                        departmentBLL.DeleteDepartmentBLL(id);
                         dgvPosition.Rows.RemoveAt(selectedRow.Index);
                         MessageBox.Show("Xóa bộ phận thành công!", "Success");
                     }

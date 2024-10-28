@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CRUDDepartmentAccess.cs" />
-    <Compile Include="CRUDPersonnelAccess.cs" />
-    <Compile Include="CRUDPositionAccess.cs" />
+    <Compile Include="DepartmentAccess.cs" />
+    <Compile Include="PersonnelAccess.cs" />
+    <Compile Include="PositionAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

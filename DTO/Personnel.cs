@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class NhanSuDTO
+    public class Personnel
     {
         private string id;
         private string ten;
@@ -16,8 +16,8 @@ namespace DTO
         private DateTime ngayVaoLam;
         private string sdt;
 
-        public NhanSuDTO() { }  
-        public NhanSuDTO(string id, string ten, string email, string gioiTinh, DateTime ngaySinh, DateTime ngayVaoLam, string sdt)
+        public Personnel() { }  
+        public Personnel(string id, string ten, string email, string gioiTinh, DateTime ngaySinh, DateTime ngayVaoLam, string sdt)
         {
             this.id = id;
             this.ten = ten;

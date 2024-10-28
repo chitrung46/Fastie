@@ -11,17 +11,20 @@ using BLL;
 using DTO;
 namespace Fastie
 {
-    public partial class EditDepartmentForm : Form
+    public partial class UpdateDepartmentForm : Form
     {
-        private readonly BoPhanDTO needEdit;
-        CRUDDepartmentBLL boPhanBLL = new CRUDDepartmentBLL();
-        public EditDepartmentForm(BoPhanDTO editDepartment)
+        private readonly Department needEdit;
+        DepartmentBLL departmentBLL = new DepartmentBLL();
+        DepartmentForm departmentForm;
+
+        public UpdateDepartmentForm(DepartmentForm departmentForm, Department editDepartment)
         {
             InitializeComponent();
             this.needEdit = editDepartment;
+            this.departmentForm = departmentForm;
         }
 
-        private void EditDepartmentForm_Load(object sender, EventArgs e)
+        private void UpdateDepartmentForm_Load(object sender, EventArgs e)
         {
             cTBName.Text = needEdit.Ten;
             cTBDescribe.Text = needEdit.MoTa;
@@ -37,9 +40,10 @@ namespace Fastie
             //string id = needEdit.Id;
             needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
             needEdit.MoTa = cTBDescribe.Text;
-            boPhanBLL.EditDepartmentDAL(needEdit);
+            departmentBLL.UpdateDepartmentBLL(needEdit);
             MessageBox.Show("Sửa Bộ phận thành công!", "Success");
             this.Close();
+            departmentForm.LoadDepartmentData();
         }
     }
 }

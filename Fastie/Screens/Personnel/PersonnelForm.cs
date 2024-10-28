@@ -13,7 +13,7 @@ namespace Fastie
 {
     public partial class PersonnelForm : Form
     {
-        CRUDPersonnelBLL nhanSuBLL = new CRUDPersonnelBLL();
+        PersonnelBLL nhanSuBLL = new PersonnelBLL();
         public PersonnelForm()
         {
             InitializeComponent();

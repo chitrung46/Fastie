@@ -1,6 +1,6 @@
 ﻿namespace Fastie
 {
-    partial class EditDepartmentForm
+    partial class UpdatePositionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label2 = new System.Windows.Forms.Label();
             this.customButton2 = new GUI.CustomButton();
             this.customButton1 = new GUI.CustomButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.cTBDescribe = new GUI.TruniControls.CustomTextBox();
+            this.cTBDesribe = new GUI.TruniControls.CustomTextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.cTBName = new GUI.TruniControls.CustomTextBox();
             this.customPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(16, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(254, 32);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Thông tin chức vụ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // customButton2
             // 
@@ -73,17 +85,6 @@
             this.customButton1.UseVisualStyleBackColor = false;
             this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(260, 32);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Thông tin bộ phận";
-            // 
             // customPanel1
             // 
             this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -91,10 +92,9 @@
             this.customPanel1.BorderRadius = 30;
             this.customPanel1.BorderSize = 0;
             this.customPanel1.Controls.Add(this.label4);
-            this.customPanel1.Controls.Add(this.cTBDescribe);
+            this.customPanel1.Controls.Add(this.cTBDesribe);
             this.customPanel1.Controls.Add(this.lblName);
             this.customPanel1.Controls.Add(this.cTBName);
-            this.customPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customPanel1.ForeColor = System.Drawing.Color.Black;
             this.customPanel1.GradientAngle = 90F;
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
@@ -111,30 +111,30 @@
             this.label4.Location = new System.Drawing.Point(29, 105);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 18);
+            this.label4.Size = new System.Drawing.Size(119, 18);
             this.label4.TabIndex = 30;
-            this.label4.Text = "Mô tả bộ phận:";
+            this.label4.Text = "Mô tả chức vụ:";
             // 
-            // cTBDescribe
+            // cTBDesribe
             // 
-            this.cTBDescribe.BackColor = System.Drawing.SystemColors.Window;
-            this.cTBDescribe.BorderColor = System.Drawing.Color.DarkGray;
-            this.cTBDescribe.BorderFocusColor = System.Drawing.Color.Black;
-            this.cTBDescribe.BorderRadius = 8;
-            this.cTBDescribe.BorderSize = 2;
-            this.cTBDescribe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTBDescribe.ForeColor = System.Drawing.Color.DimGray;
-            this.cTBDescribe.Location = new System.Drawing.Point(26, 138);
-            this.cTBDescribe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cTBDescribe.Multiline = true;
-            this.cTBDescribe.Name = "cTBDescribe";
-            this.cTBDescribe.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.cTBDescribe.PasswordChar = false;
-            this.cTBDescribe.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.cTBDescribe.PlaceholderText = "";
-            this.cTBDescribe.Size = new System.Drawing.Size(509, 72);
-            this.cTBDescribe.TabIndex = 24;
-            this.cTBDescribe.UnderlinedStyle = false;
+            this.cTBDesribe.BackColor = System.Drawing.SystemColors.Window;
+            this.cTBDesribe.BorderColor = System.Drawing.Color.DarkGray;
+            this.cTBDesribe.BorderFocusColor = System.Drawing.Color.Black;
+            this.cTBDesribe.BorderRadius = 8;
+            this.cTBDesribe.BorderSize = 2;
+            this.cTBDesribe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cTBDesribe.ForeColor = System.Drawing.Color.DimGray;
+            this.cTBDesribe.Location = new System.Drawing.Point(26, 138);
+            this.cTBDesribe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cTBDesribe.Multiline = true;
+            this.cTBDesribe.Name = "cTBDesribe";
+            this.cTBDesribe.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.cTBDesribe.PasswordChar = false;
+            this.cTBDesribe.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.cTBDesribe.PlaceholderText = "";
+            this.cTBDesribe.Size = new System.Drawing.Size(509, 72);
+            this.cTBDesribe.TabIndex = 24;
+            this.cTBDesribe.UnderlinedStyle = false;
             // 
             // lblName
             // 
@@ -144,9 +144,9 @@
             this.lblName.Location = new System.Drawing.Point(29, 20);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(111, 18);
+            this.lblName.Size = new System.Drawing.Size(109, 18);
             this.lblName.TabIndex = 20;
-            this.lblName.Text = "Tên bộ phận: ";
+            this.lblName.Text = "Tên chức vụ: ";
             // 
             // cTBName
             // 
@@ -169,7 +169,7 @@
             this.cTBName.TabIndex = 31;
             this.cTBName.UnderlinedStyle = false;
             // 
-            // EditDepartmentForm
+            // EditPositionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -180,10 +180,11 @@
             this.Controls.Add(this.customButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Name = "EditDepartmentForm";
-            this.Text = "Cập nhật thông tin bộ phận";
-            this.Load += new System.EventHandler(this.EditDepartmentForm_Load);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "EditPositionForm";
+            this.Text = "Cập nhân thông tin chức vụ";
+            this.Load += new System.EventHandler(this.EditPositionForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -194,12 +195,12 @@
         #endregion
 
         private GUI.CustomButton customButton2;
+        private System.Windows.Forms.Label label4;
+        private GUI.TruniControls.CustomTextBox cTBDesribe;
         private GUI.CustomButton customButton1;
         private System.Windows.Forms.Label label2;
-        private GUI.TruniControls.CustomPanel customPanel1;
-        private System.Windows.Forms.Label label4;
-        private GUI.TruniControls.CustomTextBox cTBDescribe;
         private System.Windows.Forms.Label lblName;
         private GUI.TruniControls.CustomTextBox cTBName;
+        private GUI.TruniControls.CustomPanel customPanel1;
     }
 }

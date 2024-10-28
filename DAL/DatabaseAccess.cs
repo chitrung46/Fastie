@@ -13,7 +13,7 @@ namespace DAL
     {
         public static SqlConnection Connect()
         {
-            string connectionString = @"Data Source=HA-VY;Initial Catalog=FASTIE;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            string connectionString = @"Data Source=CHITRUNG-LAPTOP\TRUNG_SQL;Initial Catalog=FASTIE;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connectionString);
             return conn;
         }
@@ -61,41 +61,42 @@ namespace DAL
             return dt;  // Trả về DataTable kết quả
         }
 
+        #region //Bộ phận
         //Them Bo Phan
-        public static void InsertDepartment(BoPhanDTO boPhan)
+        public static void InsertDepartment(Department deparment)
         {
             string query = "proc_insertDepartment";
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 SqlCommand command = new SqlCommand(query, con);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Ten", boPhan.Ten);
-                command.Parameters.AddWithValue("@MoTa", boPhan.MoTa);
+                command.Parameters.AddWithValue("@ten", deparment.Ten);
+                command.Parameters.AddWithValue("@moTa", deparment.MoTa);
                 con.Open();
                 command.ExecuteNonQuery();
             }
         }
 
         //Sua Bo Phan
-        public static void EditDepartment(BoPhanDTO boPhan)
+        public static void UpdateDepartment(Department deparment)
         {
-            string query = "proc_editDepartment";
+            string query = "proc_updateDepartment";
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 SqlCommand command = new SqlCommand(query, con);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@id", boPhan.Id);
-                command.Parameters.AddWithValue("@ten", boPhan.Ten);
-                command.Parameters.AddWithValue("@moTa", boPhan.MoTa);
+                command.Parameters.AddWithValue("@id", deparment.Id);
+                command.Parameters.AddWithValue("@ten", deparment.Ten);
+                command.Parameters.AddWithValue("@moTa", deparment.MoTa);
                 con.Open();
                 command.ExecuteNonQuery();
             }
         }
 
         //Show Toan Bo Bo Phan
-        public static List<BoPhanDTO> GetDepartmentList() 
+        public static List<Department> GetDepartmentList() 
         {
-            List<BoPhanDTO> list = new List<BoPhanDTO>();
+            List<Department> list = new List<Department>();
             string query = "proc_getDepartmentList";
             using (SqlConnection con = SqlConnectionData.Connect())
             {
@@ -105,11 +106,11 @@ namespace DAL
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        list.Add(new BoPhanDTO
+                        list.Add(new Department
                         {
-                            Id = reader["Id"].ToString(),
-                            Ten = reader["Ten"].ToString(),
-                            MoTa = reader["MoTa"].ToString()
+                            Id = reader["id"].ToString(),
+                            Ten = reader["ten"].ToString(),
+                            MoTa = reader["moTa"].ToString()
                         });
                     }
                 }
@@ -125,22 +126,25 @@ namespace DAL
             {
                 SqlCommand command = new SqlCommand(query, con);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Id", departmentId);
+                command.Parameters.AddWithValue("@id", departmentId);
                 con.Open();
                 command.ExecuteNonQuery();
             }
         }
+        #endregion
+
+        #region //Chức vụ
 
         //Them Chuc Vu
-        public static void InsertPosition(ChucVuDTO chucVu)
+        public static void InsertPosition(Position position)
         {
             string query = "proc_insertPosition";
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 SqlCommand command = new SqlCommand(query, con);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Ten", chucVu.Ten);
-                command.Parameters.AddWithValue("@MoTa", chucVu.MoTa);
+                command.Parameters.AddWithValue("@ten", position.Ten);
+                command.Parameters.AddWithValue("@moTa", position.MoTa);
                 con.Open();
                 command.ExecuteNonQuery();
             }
@@ -148,9 +152,9 @@ namespace DAL
 
         
         //Show Toan Bo Chuc Vu
-        public static List<ChucVuDTO> GetPositionList()
+        public static List<Position> GetPositionList()
         {
-            List<ChucVuDTO> list = new List<ChucVuDTO>();
+            List<Position> list = new List<Position>();
             string query = "proc_getPositionList";
             using (SqlConnection con = SqlConnectionData.Connect())
             {
@@ -160,11 +164,11 @@ namespace DAL
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        list.Add(new ChucVuDTO
+                        list.Add(new Position
                         {
-                            Id = reader["Id"].ToString(),
-                            Ten = reader["Ten"].ToString(),
-                            MoTa = reader["MoTa"].ToString()
+                            Id = reader["id"].ToString(),
+                            Ten = reader["ten"].ToString(),
+                            MoTa = reader["moTa"].ToString()
                         });
                     }
                 }
@@ -172,16 +176,16 @@ namespace DAL
             return list;
         }
         //Sua Chuc Vu
-        public static void EditPosition(ChucVuDTO chucVu)
+        public static void UpdatePosition(Position position)
         {
-            string query = "proc_editPosition";
+            string query = "proc_updatePosition";
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 SqlCommand command = new SqlCommand(query, con);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@id", chucVu.Id);
-                command.Parameters.AddWithValue("@ten", chucVu.Ten);
-                command.Parameters.AddWithValue("@moTa", chucVu.MoTa);
+                command.Parameters.AddWithValue("@id", position.Id);
+                command.Parameters.AddWithValue("@ten", position.Ten);
+                command.Parameters.AddWithValue("@moTa", position.MoTa);
                 con.Open();
                 command.ExecuteNonQuery();
             }
@@ -194,31 +198,40 @@ namespace DAL
             {
                 SqlCommand command = new SqlCommand(query, con);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Id", positionId);
+                command.Parameters.AddWithValue("@id", positionId);
                 con.Open();
                 command.ExecuteNonQuery();
             }
         }
 
+        #endregion
 
-
+        #region //Nhân sự
         //Them Nhan Su
-        public static void InsertPersonnel(NhanSuDTO nhanSu) 
+        public static void InsertPersonnel(Personnel personnel) 
         {
             string query = "proc_insertPersonnel";
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 SqlCommand command = new SqlCommand(query, con);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Ten", nhanSu.Ten);
-                command.Parameters.AddWithValue("@Email", nhanSu.Email);
-                command.Parameters.AddWithValue("@GioiTinh", nhanSu.GioiTinh);
-                command.Parameters.AddWithValue("@NgaySinh", nhanSu.NgaySinh);
-                command.Parameters.AddWithValue("@NgayVaoLam", nhanSu.NgayVaoLam);
-                command.Parameters.AddWithValue("@Sdt", nhanSu.Sdt);
+                command.Parameters.AddWithValue("@ten", personnel.Ten);
+                command.Parameters.AddWithValue("@email", personnel.Email);
+                command.Parameters.AddWithValue("@gioiTinh", personnel.GioiTinh);
+                command.Parameters.AddWithValue("@ngaySinh", personnel.NgaySinh);
+                command.Parameters.AddWithValue("@ngayVaoLam", personnel.NgayVaoLam);
+                command.Parameters.AddWithValue("@sdt", personnel.Sdt);
                 con.Open();
                 command.ExecuteNonQuery();
             }
         }
+
+        public static List<Personnel> GetPersonnelList() {
+            return null;
+        }
+
+        public static void DeletePersonnel(string id) { }
+        public static void UpdatePersonnel(Personnel personnel) { }
+        #endregion
     }
 }

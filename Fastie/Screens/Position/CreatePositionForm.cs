@@ -13,42 +13,23 @@ namespace Fastie
 {
     public partial class CreatePositionForm : Form
     {
-        CRUDPositionBLL chucVuBLL = new CRUDPositionBLL();
-        public CreatePositionForm()
+        PositionBLL positionBLL = new PositionBLL();
+        PositionForm positionForm;
+        public CreatePositionForm(PositionForm positionForm)
         {
             InitializeComponent();
+            this.positionForm = positionForm;
         }
-
-        private void CreatePosition_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void customButton1_Click(object sender, EventArgs e)
         {
             try
             {
-                ChucVuDTO newChucVu = new ChucVuDTO
+                Position newPosition = new Position
                 {
                     Ten = cTBName.Text,
                     MoTa = cTBDescribe.Text
                 };
-                chucVuBLL.InsertPositionDAL(newChucVu);
+                positionBLL.InsertPositionBLL(newPosition);
                 MessageBox.Show("Thêm Chức vụ mới thành công!", "Success");
                 
             }
@@ -56,13 +37,13 @@ namespace Fastie
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+            positionForm.LoadPositionData();
             this.Close();
         }
 
         private void customButton2_Click(object sender, EventArgs e)
         {
-            cTBName.Text = string.Empty;
-            cTBDescribe.Text = string.Empty;
+            this.Close();
         }
     }
 }
