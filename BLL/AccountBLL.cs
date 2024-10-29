@@ -13,6 +13,7 @@ namespace BLL
 {
     public class AccountBLL
     {
+        AccountAccess accountDAL = new AccountAccess();
         public string checkLogin(Account acc)
         {
             if (acc.TenDangNhap == "")
@@ -25,48 +26,47 @@ namespace BLL
                 return "required_password";
             }
 
-            string info = taiKhoanDAL.checkLogin(acc);
+            string info = accountDAL.checkLogin(acc);
             return info;
 
         }
 
 
-
         // Lấy danh sách tất cả tài khoản
         public List<Account> LayTatCaTaiKhoan()
         {
-            return taiKhoanDAL.GetAllAccounts();
+            return accountDAL.GetAllAccounts();
         }
 
         // Thêm tài khoản mới
         public string ThemTaiKhoan(string tenDangNhap, string matKhau)
         {
-            string result = taiKhoanDAL.InsertAccount(tenDangNhap, matKhau);
+            string result = accountDAL.InsertAccount(tenDangNhap, matKhau);
             return result;
         }
 
         // Xóa tài khoản
         public bool XoaTaiKhoan(string tenDangNhap, string matKhau)
         {
-            return taiKhoanDAL.DeleteAccount(tenDangNhap, matKhau);
+            return accountDAL.DeleteAccount(tenDangNhap, matKhau);
         }
 
         // Cập nhật tài khoản
         public bool CapNhatTaiKhoan(string tenDangNhap, string matKhau)
         {
-            return taiKhoanDAL.UpdateAccount(tenDangNhap, matKhau);
+            return accountDAL.UpdateAccount(tenDangNhap, matKhau);
         }
 
         // Lấy tài khoản theo email
         public Account LayTaiKhoanBangEmail(string email)
         {
-            return taiKhoanDAL.GetAccountByEmail(email);
+            return accountDAL.GetAccountByEmail(email);
         }
 
         // Gửi mail để lấy lại mật khẩu
         public bool GuiMailLayLaiMatKhau(string email, string matKhauMail)
         {
-            Nhansu nhanSu = taiKhoanDAL.GetNhanSuByEmail(email);
+            Nhansu nhanSu = accountDAL.GetNhanSuByEmail(email);
             if (nhanSu == null)
             {
                 // Nếu không tìm thấy nhân sự, báo lỗi
@@ -109,7 +109,7 @@ namespace BLL
         // Cập nhật mật khẩu
         public bool UpdatePassword(string email, string newPassword)
         {
-            return taiKhoanDAL.UpdatePassword(email, newPassword);
+            return accountDAL.UpdatePassword(email, newPassword);
         }
 
     }

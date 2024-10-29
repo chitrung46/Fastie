@@ -14,7 +14,7 @@ namespace Fastie.Screens.Login
 {
     public partial class LoginForm : Form
     {
-        AccountBLL taiKhoanBLL = new AccountBLL();
+        AccountBLL accountBLL = new AccountBLL();
         Account acc = new Account();
         public LoginForm()
         {
@@ -47,13 +47,12 @@ namespace Fastie.Screens.Login
             forgetPasswordForm.Show();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-
             acc.TenDangNhap = txt_Email.Text;
             acc.MatKhau = txtPassword.Text;
 
-            string getUser = taiKhoanBLL.checkLogin(acc);
+            string getUser = accountBLL.checkLogin(acc);
             switch (getUser)
             {
                 case "required_email":
@@ -69,10 +68,7 @@ namespace Fastie.Screens.Login
             HomeForm home = new HomeForm();
             home.Show();
             this.Hide();
-
-
         }
-
     }
 
 }

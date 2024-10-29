@@ -179,6 +179,9 @@ namespace Fastie
             layoutConfirmForm.Content = information[1];
             layoutConfirmForm.btnConfirmText = information[2];
             layoutConfirmForm.Show();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

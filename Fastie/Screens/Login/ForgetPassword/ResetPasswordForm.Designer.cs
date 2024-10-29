@@ -46,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -80,7 +81,6 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(411, 443);
             this.customPanel1.TabIndex = 12;
-            //this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
             // pictureBox1
             // 
@@ -102,28 +102,6 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // customTextBox1
-            // 
-            this.customTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox1.BorderRadius = 15;
-            this.customTextBox1.BorderSize = 1;
-            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox1.ForeColor = System.Drawing.Color.White;
-            this.customTextBox1.Location = new System.Drawing.Point(59, 288);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.White;
-            this.customTextBox1.PlaceholderText = "";
-            this.customTextBox1.Size = new System.Drawing.Size(286, 35);
-            this.customTextBox1.TabIndex = 9;
-            this.customTextBox1.UnderlinedStyle = false;
-            // 
-            // customTextBox3
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -195,7 +173,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(73, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 32);
+            this.label1.Size = new System.Drawing.Size(250, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhập mật khẩu mới";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,7 +182,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Montserrat Thin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
             this.label3.Location = new System.Drawing.Point(55, 93);
             this.label3.Name = "label3";
@@ -221,7 +199,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(55, 259);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 21);
+            this.label7.Size = new System.Drawing.Size(174, 21);
             this.label7.TabIndex = 0;
             this.label7.Text = "Xác nhận mật khẩu";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -234,7 +212,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(55, 172);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.Size = new System.Drawing.Size(89, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mật khẩu";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -259,11 +237,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(14, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 33);
+            this.label4.Size = new System.Drawing.Size(27, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "1";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -288,11 +266,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(14, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 33);
+            this.label5.Size = new System.Drawing.Size(27, 29);
             this.label5.TabIndex = 0;
             this.label5.Text = "2";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -317,11 +295,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Montserrat Alternates Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(14, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 33);
+            this.label6.Size = new System.Drawing.Size(27, 29);
             this.label6.TabIndex = 0;
             this.label6.Text = "3";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,6 +319,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(60, 2);
             this.panel1.TabIndex = 17;
+            // 
+            // customTextBox1
+            // 
+            this.customTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
+            this.customTextBox1.BorderRadius = 15;
+            this.customTextBox1.BorderSize = 1;
+            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox1.ForeColor = System.Drawing.Color.White;
+            this.customTextBox1.Location = new System.Drawing.Point(59, 288);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox1.Multiline = false;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
+            this.customTextBox1.PasswordChar = false;
+            this.customTextBox1.PlaceholderColor = System.Drawing.Color.White;
+            this.customTextBox1.PlaceholderText = "";
+            this.customTextBox1.Size = new System.Drawing.Size(286, 35);
+            this.customTextBox1.TabIndex = 9;
+            this.customTextBox1.UnderlinedStyle = false;
             // 
             // ResetPasswordForm
             // 
@@ -391,5 +390,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private GUI.TruniControls.CustomTextBox txtConfirmPassword;
         private System.Windows.Forms.Label label7;
+        private GUI.TruniControls.CustomTextBox customTextBox1;
     }
 }
