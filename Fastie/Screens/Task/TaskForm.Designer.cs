@@ -28,18 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pnlTask = new System.Windows.Forms.Panel();
             this.pnlTabBar = new GUI.TruniControls.CustomPanel();
             this.btnAdjustTask = new GUI.CustomButton();
             this.btnReportTask = new GUI.CustomButton();
             this.btnAcceptTask = new GUI.CustomButton();
             this.btnAssignTask = new GUI.CustomButton();
             this.btnTaskTable = new GUI.CustomButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTabBar.SuspendLayout();
             this.SuspendLayout();
             // 
+            // pnlTask
+            // 
+            this.pnlTask.Location = new System.Drawing.Point(9, 118);
+            this.pnlTask.Name = "pnlTask";
+            this.pnlTask.Size = new System.Drawing.Size(1160, 550);
+            this.pnlTask.TabIndex = 2;
+            // 
             // pnlTabBar
             // 
+            this.pnlTabBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTabBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnlTabBar.BorderColor = System.Drawing.Color.Black;
             this.pnlTabBar.BorderRadius = 50;
@@ -143,20 +152,14 @@
             this.btnTaskTable.UseVisualStyleBackColor = false;
             this.btnTaskTable.Click += new System.EventHandler(this.btnTaskTable_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(9, 118);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1160, 550);
-            this.panel1.TabIndex = 2;
-            // 
             // TaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1182, 695);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTask);
             this.Controls.Add(this.pnlTabBar);
             this.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -174,6 +177,6 @@
         private GUI.CustomButton btnAssignTask;
         private GUI.CustomButton btnAdjustTask;
         private GUI.CustomButton btnReportTask;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTask;
     }
 }

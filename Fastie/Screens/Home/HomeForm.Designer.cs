@@ -39,9 +39,9 @@
             this.statePosition = new System.Windows.Forms.Panel();
             this.mainLayout = new System.Windows.Forms.Panel();
             this.topbarLayout = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -166,15 +166,6 @@
             this.topbarLayout.Size = new System.Drawing.Size(1182, 65);
             this.topbarLayout.TabIndex = 2;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(0, 62);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1182, 4);
-            this.panel3.TabIndex = 3;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -193,9 +184,18 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(64, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 21);
+            this.label8.Size = new System.Drawing.Size(97, 21);
             this.label8.TabIndex = 5;
             this.label8.Text = "Nhật Toàn";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(0, 62);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1182, 4);
+            this.panel3.TabIndex = 3;
             // 
             // pictureBox12
             // 
@@ -359,7 +359,7 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // FormLayout
+            // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -367,7 +367,7 @@
             this.Controls.Add(this.topbarLayout);
             this.Controls.Add(this.mainLayout);
             this.Controls.Add(this.sidebarLayout);
-            this.Name = "FormLayout";
+            this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Layout";
             this.Load += new System.EventHandler(this.FormLayout_Load);

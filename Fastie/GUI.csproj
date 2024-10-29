@@ -180,6 +180,30 @@
     <Compile Include="Screens\Decentralization\UpdateDecentralizationForm.Designer.cs">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Task\AssignTask\AssignTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\AssignTask\AssignTaskForm.Designer.cs">
+      <DependentUpon>AssignTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Task\AssignTask\DetailAssignFastingTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\AssignTask\DetailAssignFastingTaskForm.Designer.cs">
+      <DependentUpon>DetailAssignFastingTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Task\AssignTask\DetailAssignPositiveTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\AssignTask\DetailAssignPositiveTaskForm.Designer.cs">
+      <DependentUpon>DetailAssignPositiveTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Task\AssignTask\DetailAssignTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\AssignTask\DetailAssignTaskForm.Designer.cs">
+      <DependentUpon>DetailAssignTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TruniControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -276,6 +300,18 @@
     </Compile>
     <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\AssignTask\AssignTaskForm.resx">
+      <DependentUpon>AssignTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\AssignTask\DetailAssignFastingTaskForm.resx">
+      <DependentUpon>DetailAssignFastingTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\AssignTask\DetailAssignPositiveTaskForm.resx">
+      <DependentUpon>DetailAssignPositiveTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\AssignTask\DetailAssignTaskForm.resx">
+      <DependentUpon>DetailAssignTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\TaskForm.resx">
       <DependentUpon>TaskForm.cs</DependentUpon>
@@ -399,7 +435,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-close-24.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-thunder-24.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bacground_login.jpg" />
   </ItemGroup>
@@ -417,6 +455,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-hide-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-positive-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
