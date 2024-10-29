@@ -37,7 +37,7 @@
             this.customButton2 = new GUI.CustomButton();
             this.dgvPosition = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenChuvcVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).BeginInit();
@@ -46,15 +46,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(13, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 39);
+            this.label1.Size = new System.Drawing.Size(124, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chức vụ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnBack
             // 
@@ -66,7 +65,6 @@
             this.btnBack.Size = new System.Drawing.Size(40, 40);
             this.btnBack.TabIndex = 3;
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // customPanel1
             // 
@@ -144,7 +142,7 @@
             this.dgvPosition.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -153,7 +151,7 @@
             this.dgvPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPosition.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.tenChuvcVu,
+            this.tenChucVu,
             this.moTa});
             this.dgvPosition.Location = new System.Drawing.Point(19, 79);
             this.dgvPosition.Name = "dgvPosition";
@@ -169,14 +167,14 @@
             this.ID.HeaderText = "ID";
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
-            this.ID.Width = 58;
+            this.ID.Width = 53;
             // 
-            // tenChuvcVu
+            // tenChucVu
             // 
-            this.tenChuvcVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenChuvcVu.HeaderText = "Tên Chức vụ";
-            this.tenChuvcVu.MinimumWidth = 6;
-            this.tenChuvcVu.Name = "tenChuvcVu";
+            this.tenChucVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenChucVu.HeaderText = "Tên Chức vụ";
+            this.tenChucVu.MinimumWidth = 6;
+            this.tenChucVu.Name = "tenChucVu";
             // 
             // moTa
             // 
@@ -194,7 +192,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PositionForm";
@@ -216,7 +214,7 @@
         private GUI.CustomButton customButton2;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenChuvcVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
     }
 }

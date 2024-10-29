@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO;
+using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +14,19 @@ namespace Fastie
 {
     public partial class CreatePersonnelForm : Form
     {
+        PersonnelBLL nhanSuBLL = new PersonnelBLL();
         public CreatePersonnelForm()
         {
             InitializeComponent();
             // Thiết lập định dạng cho DateTimePicker trong form
             dTPBirthday.Format = DateTimePickerFormat.Custom;
-            dTPBirthday.CustomFormat = "dd/MM/yyyy";
+            dTPBirthday.CustomFormat = "yyyy-MM-dd";
             // Thiết lập định dạng cho DateTimePicker trong form
             dTPDayOfWork.Format = DateTimePickerFormat.Custom;
-            dTPDayOfWork.CustomFormat = "dd/MM/yyyy";
+            dTPDayOfWork.CustomFormat = "yyyy-MM-dd";
+            cCBSex.Items.Add("Nam");
+            cCBSex.Items.Add("Nữ");
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -73,5 +79,41 @@ namespace Fastie
            
         }
 
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Personnel newNhanSu = new Personnel
+                {
+                    Ten = cTBName.Text,
+                    Email = cTBEmail.Text,
+                    GioiTinh = cCBSex.SelectedItem.ToString(),
+                    NgaySinh = dTPBirthday.Value.Date,
+                    NgayVaoLam = dTPDayOfWork.Value.Date,
+                    Sdt = cTBNumberPhone.Text
+                };
+                nhanSuBLL.InsertPersonnelDAL(newNhanSu);
+                //MessageBox.Show("Thêm Nhân sự mới thành công!", "Success");
+                string ngaySinhFormatted = newNhanSu.NgaySinh.ToString("yyyy-MM-dd");
+                string ngayVaoLamFormatted = newNhanSu.NgayVaoLam.ToString("yyyy-MM-dd");
+
+                MessageBox.Show($"Thêm Nhân sự mới thành công!\nNgày Sinh: {ngaySinhFormatted}\nNgày Vào Làm: {ngayVaoLamFormatted}", "Success");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            //this.Close();
+        }
+
+        private void customButton2_Click(object sender, EventArgs e)
+        {
+            cTBName.Text = string.Empty;
+            cTBEmail.Text = string.Empty;
+            cTBNumberPhone.Text = string.Empty;
+            cCBSex.SelectedIndex = -1;
+            dTPBirthday.Value = DateTime.Now;
+            dTPDayOfWork.Value = DateTime.Now;
+        }
     }
 }

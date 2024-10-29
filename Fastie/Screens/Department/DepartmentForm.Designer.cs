@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
+            this.lblNameForm = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.customButton3 = new GUI.CustomButton();
             this.customButton1 = new GUI.CustomButton();
@@ -38,7 +39,6 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenBoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblNameForm = new System.Windows.Forms.Label();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,18 @@
             this.btnBack.Size = new System.Drawing.Size(40, 40);
             this.btnBack.TabIndex = 9;
             this.btnBack.UseVisualStyleBackColor = false;
+            // 
+            // lblNameForm
+            // 
+            this.lblNameForm.AutoSize = true;
+            this.lblNameForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameForm.ForeColor = System.Drawing.Color.White;
+            this.lblNameForm.Location = new System.Drawing.Point(13, 49);
+            this.lblNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNameForm.Name = "lblNameForm";
+            this.lblNameForm.Size = new System.Drawing.Size(127, 32);
+            this.lblNameForm.TabIndex = 7;
+            this.lblNameForm.Text = "Bộ phận";
             // 
             // customPanel1
             // 
@@ -88,6 +100,7 @@
             this.customButton3.TabIndex = 12;
             this.customButton3.Text = "Sửa";
             this.customButton3.UseVisualStyleBackColor = false;
+            this.customButton3.Click += new System.EventHandler(this.customButton3_Click);
             // 
             // customButton1
             // 
@@ -121,13 +134,14 @@
             this.customButton2.TabIndex = 11;
             this.customButton2.Text = "Xóa";
             this.customButton2.UseVisualStyleBackColor = false;
+            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
             // 
             // dgvPosition
             // 
             this.dgvPosition.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -144,6 +158,7 @@
             this.dgvPosition.RowTemplate.Height = 24;
             this.dgvPosition.Size = new System.Drawing.Size(1108, 468);
             this.dgvPosition.TabIndex = 7;
+            this.dgvPosition.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPosition_CellContentClick);
             // 
             // ID
             // 
@@ -152,7 +167,7 @@
             this.ID.HeaderText = "ID";
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
-            this.ID.Width = 58;
+            this.ID.Width = 53;
             // 
             // tenBoPhan
             // 
@@ -168,18 +183,6 @@
             this.moTa.MinimumWidth = 6;
             this.moTa.Name = "moTa";
             // 
-            // lblNameForm
-            // 
-            this.lblNameForm.AutoSize = true;
-            this.lblNameForm.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameForm.ForeColor = System.Drawing.Color.White;
-            this.lblNameForm.Location = new System.Drawing.Point(13, 49);
-            this.lblNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNameForm.Name = "lblNameForm";
-            this.lblNameForm.Size = new System.Drawing.Size(138, 39);
-            this.lblNameForm.TabIndex = 7;
-            this.lblNameForm.Text = "Bộ phận";
-            // 
             // DepartmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -189,10 +192,11 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.lblNameForm);
-            this.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DepartmentForm";
             this.Text = "part";
+            this.Load += new System.EventHandler(this.DepartmentForm_Load);
             this.customPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).EndInit();
             this.ResumeLayout(false);
