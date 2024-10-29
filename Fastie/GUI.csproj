@@ -76,11 +76,11 @@
     <Compile Include="Screens\Personnel\CreatePersonnelForm.Designer.cs">
       <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Personnel\EditPersonnelForm.cs">
+    <Compile Include="Screens\Personnel\UpdatePersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Personnel\EditPersonnelForm.Designer.cs">
-      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    <Compile Include="Screens\Personnel\UpdatePersonnelForm.Designer.cs">
+      <DependentUpon>UpdatePersonnelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Position\CreatePositionForm.cs">
       <SubType>Form</SubType>
@@ -240,8 +240,8 @@
     <EmbeddedResource Include="Screens\Department\UpdateDepartmentForm.resx">
       <DependentUpon>UpdateDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Personnel\EditPersonnelForm.resx">
-      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Personnel\UpdatePersonnelForm.resx">
+      <DependentUpon>UpdatePersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Position\UpdatePositionForm.resx">
       <DependentUpon>UpdatePositionForm.cs</DependentUpon>

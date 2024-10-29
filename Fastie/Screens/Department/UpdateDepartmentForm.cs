@@ -37,6 +37,11 @@ namespace Fastie
 
         private void customButton1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cTBName.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên bộ phận.", "Thông báo");
+                return; // Dừng lại không thực hiện thao tác thêm
+            }
             //string id = needEdit.Id;
             needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
             needEdit.MoTa = cTBDescribe.Text;

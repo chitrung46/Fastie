@@ -37,7 +37,11 @@
             this.dgvPosition = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNameForm = new System.Windows.Forms.Label();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).BeginInit();
@@ -88,6 +92,7 @@
             this.customButton3.TabIndex = 12;
             this.customButton3.Text = "Sửa";
             this.customButton3.UseVisualStyleBackColor = false;
+            this.customButton3.Click += new System.EventHandler(this.customButton3_Click);
             // 
             // customButton1
             // 
@@ -121,6 +126,7 @@
             this.customButton2.TabIndex = 11;
             this.customButton2.Text = "Xóa";
             this.customButton2.UseVisualStyleBackColor = false;
+            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
             // 
             // dgvPosition
             // 
@@ -137,7 +143,11 @@
             this.dgvPosition.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.tenNhanSu,
-            this.moTa});
+            this.email,
+            this.gioiTinh,
+            this.ngaySinh,
+            this.ngayVaoLam,
+            this.sdt});
             this.dgvPosition.Location = new System.Drawing.Point(18, 78);
             this.dgvPosition.Name = "dgvPosition";
             this.dgvPosition.RowHeadersWidth = 51;
@@ -161,12 +171,40 @@
             this.tenNhanSu.MinimumWidth = 6;
             this.tenNhanSu.Name = "tenNhanSu";
             // 
-            // moTa
+            // email
             // 
-            this.moTa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.moTa.HeaderText = "Mô tả";
-            this.moTa.MinimumWidth = 6;
-            this.moTa.Name = "moTa";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Width = 125;
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.HeaderText = "Giới tính";
+            this.gioiTinh.MinimumWidth = 6;
+            this.gioiTinh.Name = "gioiTinh";
+            this.gioiTinh.Width = 125;
+            // 
+            // ngaySinh
+            // 
+            this.ngaySinh.HeaderText = "Ngày sinh";
+            this.ngaySinh.MinimumWidth = 6;
+            this.ngaySinh.Name = "ngaySinh";
+            this.ngaySinh.Width = 125;
+            // 
+            // ngayVaoLam
+            // 
+            this.ngayVaoLam.HeaderText = "Ngày vào làm";
+            this.ngayVaoLam.MinimumWidth = 6;
+            this.ngayVaoLam.Name = "ngayVaoLam";
+            this.ngayVaoLam.Width = 125;
+            // 
+            // sdt
+            // 
+            this.sdt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sdt.HeaderText = "Số điện thoại";
+            this.sdt.MinimumWidth = 6;
+            this.sdt.Name = "sdt";
             // 
             // lblNameForm
             // 
@@ -212,6 +250,10 @@
         private System.Windows.Forms.Label lblNameForm;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanSu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayVaoLam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
     }
 }

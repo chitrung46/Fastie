@@ -25,6 +25,11 @@ namespace Fastie
 
         private void customButton1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cTBName.Text) )
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên bộ phận.", "Thông báo");
+                return;
+            }
             try
             {
                 Department newBoPhan = new Department

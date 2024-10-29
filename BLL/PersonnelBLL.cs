@@ -11,7 +11,7 @@ namespace BLL
     public class PersonnelBLL
     {
         private readonly PersonnelAccess personnelAccess = new PersonnelAccess();
-        public List<Position> GetPositionListBLL()
+        public List<Personnel> GetPersonnelnListBLL()
         {
             return personnelAccess.GetPersonnelListDAL();
         }
@@ -25,7 +25,7 @@ namespace BLL
             personnelAccess.UpdatePersonnelDAL(personnel);
         }
 
-        public void DeletePositionBLL(string id)
+        public void DeletePersonnelBLL(string id)
         {
             personnelAccess.DeletePersonnelDAL(id);
         }
