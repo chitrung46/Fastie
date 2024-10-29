@@ -31,8 +31,8 @@
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
-            this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
+            this.txtConfirmPassword = new GUI.TruniControls.CustomTextBox();
+            this.txtNewPassword = new GUI.TruniControls.CustomTextBox();
             this.btnGetPassword = new GUI.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,8 +65,8 @@
             this.customPanel1.BorderSize = 0;
             this.customPanel1.Controls.Add(this.pictureBox1);
             this.customPanel1.Controls.Add(this.pictureBox2);
-            this.customPanel1.Controls.Add(this.customTextBox1);
-            this.customPanel1.Controls.Add(this.customTextBox3);
+            this.customPanel1.Controls.Add(this.txtConfirmPassword);
+            this.customPanel1.Controls.Add(this.txtNewPassword);
             this.customPanel1.Controls.Add(this.btnGetPassword);
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.Controls.Add(this.label3);
@@ -80,6 +80,7 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(411, 443);
             this.customPanel1.TabIndex = 12;
+            //this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
             // pictureBox1
             // 
@@ -123,25 +124,47 @@
             this.customTextBox1.UnderlinedStyle = false;
             // 
             // customTextBox3
+            // txtConfirmPassword
             // 
-            this.customTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customTextBox3.BorderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox3.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox3.BorderRadius = 15;
-            this.customTextBox3.BorderSize = 1;
-            this.customTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox3.ForeColor = System.Drawing.Color.White;
-            this.customTextBox3.Location = new System.Drawing.Point(59, 201);
-            this.customTextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox3.Multiline = false;
-            this.customTextBox3.Name = "customTextBox3";
-            this.customTextBox3.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
-            this.customTextBox3.PasswordChar = false;
-            this.customTextBox3.PlaceholderColor = System.Drawing.Color.White;
-            this.customTextBox3.PlaceholderText = "";
-            this.customTextBox3.Size = new System.Drawing.Size(286, 35);
-            this.customTextBox3.TabIndex = 9;
-            this.customTextBox3.UnderlinedStyle = false;
+            this.txtConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtConfirmPassword.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtConfirmPassword.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtConfirmPassword.BorderRadius = 15;
+            this.txtConfirmPassword.BorderSize = 1;
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword.ForeColor = System.Drawing.Color.White;
+            this.txtConfirmPassword.Location = new System.Drawing.Point(59, 288);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtConfirmPassword.Multiline = false;
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
+            this.txtConfirmPassword.PasswordChar = false;
+            this.txtConfirmPassword.PlaceholderColor = System.Drawing.Color.White;
+            this.txtConfirmPassword.PlaceholderText = "";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(286, 35);
+            this.txtConfirmPassword.TabIndex = 9;
+            this.txtConfirmPassword.UnderlinedStyle = false;
+            // 
+            // txtNewPassword
+            // 
+            this.txtNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtNewPassword.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtNewPassword.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtNewPassword.BorderRadius = 15;
+            this.txtNewPassword.BorderSize = 1;
+            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPassword.ForeColor = System.Drawing.Color.White;
+            this.txtNewPassword.Location = new System.Drawing.Point(59, 201);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewPassword.Multiline = false;
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
+            this.txtNewPassword.PasswordChar = false;
+            this.txtNewPassword.PlaceholderColor = System.Drawing.Color.White;
+            this.txtNewPassword.PlaceholderText = "";
+            this.txtNewPassword.Size = new System.Drawing.Size(286, 35);
+            this.txtNewPassword.TabIndex = 9;
+            this.txtNewPassword.UnderlinedStyle = false;
             // 
             // btnGetPassword
             // 
@@ -152,7 +175,7 @@
             this.btnGetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGetPassword.FlatAppearance.BorderSize = 0;
             this.btnGetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGetPassword.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGetPassword.ForeColor = System.Drawing.Color.Black;
             this.btnGetPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGetPassword.Location = new System.Drawing.Point(62, 356);
@@ -162,6 +185,7 @@
             this.btnGetPassword.TabIndex = 6;
             this.btnGetPassword.Text = "Đổi mật khẩu";
             this.btnGetPassword.UseVisualStyleBackColor = false;
+            this.btnGetPassword.Click += new System.EventHandler(this.btnGetPassword_Click);
             // 
             // label1
             // 
@@ -351,7 +375,7 @@
 
         private GUI.TruniControls.CustomPanel customPanel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private GUI.TruniControls.CustomTextBox customTextBox3;
+        private GUI.TruniControls.CustomTextBox txtNewPassword;
         private GUI.CustomButton btnGetPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -365,7 +389,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private GUI.TruniControls.CustomTextBox customTextBox1;
+        private GUI.TruniControls.CustomTextBox txtConfirmPassword;
         private System.Windows.Forms.Label label7;
     }
 }

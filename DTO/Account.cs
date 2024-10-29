@@ -25,11 +25,24 @@ namespace DTO
             this.trangThai = trangThai;
         }
 
+        public Account(string tenDangNhap, string matKhau)
+        {
+            this.tenDangNhap = tenDangNhap;
+            this.matKhau = matKhau;
+        }
+        public Account() { }
+
         public string Id { get => id; set => id = value; }
         public string TenDangNhap { get => tenDangNhap; set => tenDangNhap = value; }
         public string MatKhau { get => matKhau; set => matKhau = value; }
         public DateTime KhoiTaoLuc { get => khoiTaoLuc; set => khoiTaoLuc = value; }
         public DateTime CapNhatLuc { get => capNhatLuc; set => capNhatLuc = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
+   
+
     }
+
+
+
+
 }

@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.txtEmail = new GUI.TruniControls.CustomPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureEye = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new GUI.TruniControls.CustomTextBox();
             this.lblForgetPassword = new System.Windows.Forms.Label();
-            this.txtUsername = new GUI.TruniControls.CustomTextBox();
-            this.btnLogin = new GUI.CustomButton();
+            this.txt_Email = new GUI.TruniControls.CustomTextBox();
+            this.btnAdd = new GUI.CustomButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.customPanel1.SuspendLayout();
+            this.txtEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -54,41 +54,41 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Controls.Add(this.customPanel1);
-            this.panel1.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(-4, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1171, 650);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // customPanel1
+            // txtEmail
             // 
-            this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel1.BorderColor = System.Drawing.Color.Black;
-            this.customPanel1.BorderRadius = 50;
-            this.customPanel1.BorderSize = 0;
-            this.customPanel1.Controls.Add(this.pictureBox3);
-            this.customPanel1.Controls.Add(this.pictureEye);
-            this.customPanel1.Controls.Add(this.pictureBox2);
-            this.customPanel1.Controls.Add(this.txtPassword);
-            this.customPanel1.Controls.Add(this.lblForgetPassword);
-            this.customPanel1.Controls.Add(this.txtUsername);
-            this.customPanel1.Controls.Add(this.btnLogin);
-            this.customPanel1.Controls.Add(this.label5);
-            this.customPanel1.Controls.Add(this.label1);
-            this.customPanel1.Controls.Add(this.label2);
-            this.customPanel1.ForeColor = System.Drawing.Color.Black;
-            this.customPanel1.GradientAngle = 125F;
-            this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.customPanel1.Location = new System.Drawing.Point(381, 98);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(400, 456);
-            this.customPanel1.TabIndex = 8;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtEmail.BorderColor = System.Drawing.Color.Black;
+            this.txtEmail.BorderRadius = 50;
+            this.txtEmail.BorderSize = 0;
+            this.txtEmail.Controls.Add(this.pictureBox3);
+            this.txtEmail.Controls.Add(this.pictureEye);
+            this.txtEmail.Controls.Add(this.pictureBox2);
+            this.txtEmail.Controls.Add(this.txtPassword);
+            this.txtEmail.Controls.Add(this.lblForgetPassword);
+            this.txtEmail.Controls.Add(this.txt_Email);
+            this.txtEmail.Controls.Add(this.btnAdd);
+            this.txtEmail.Controls.Add(this.label5);
+            this.txtEmail.Controls.Add(this.label1);
+            this.txtEmail.Controls.Add(this.label2);
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.GradientAngle = 125F;
+            this.txtEmail.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtEmail.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.txtEmail.Location = new System.Drawing.Point(381, 98);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(400, 456);
+            this.txtEmail.TabIndex = 8;
             // 
             // pictureBox3
             // 
@@ -158,47 +158,47 @@
             this.lblForgetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblForgetPassword.Click += new System.EventHandler(this.lblForgetPassword_Click);
             // 
-            // txtUsername
+            // txt_Email
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.txtUsername.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtUsername.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtUsername.BorderRadius = 15;
-            this.txtUsername.BorderSize = 1;
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.White;
-            this.txtUsername.Location = new System.Drawing.Point(59, 135);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtUsername.Multiline = false;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
-            this.txtUsername.PasswordChar = false;
-            this.txtUsername.PlaceholderColor = System.Drawing.Color.White;
-            this.txtUsername.PlaceholderText = "";
-            this.txtUsername.Size = new System.Drawing.Size(286, 35);
-            this.txtUsername.TabIndex = 9;
-            this.txtUsername.UnderlinedStyle = false;
+            this.txt_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txt_Email.BorderColor = System.Drawing.Color.DarkGray;
+            this.txt_Email.BorderFocusColor = System.Drawing.Color.Black;
+            this.txt_Email.BorderRadius = 15;
+            this.txt_Email.BorderSize = 1;
+            this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Email.ForeColor = System.Drawing.Color.White;
+            this.txt_Email.Location = new System.Drawing.Point(59, 135);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_Email.Multiline = false;
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
+            this.txt_Email.PasswordChar = false;
+            this.txt_Email.PlaceholderColor = System.Drawing.Color.White;
+            this.txt_Email.PlaceholderText = "";
+            this.txt_Email.Size = new System.Drawing.Size(286, 35);
+            this.txt_Email.TabIndex = 9;
+            this.txt_Email.UnderlinedStyle = false;
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.White;
-            this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnLogin.BorderRadius = 15;
-            this.btnLogin.BorderSize = 0;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(59, 304);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.btnLogin.Size = new System.Drawing.Size(286, 40);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnAdd.BorderRadius = 15;
+            this.btnAdd.BorderSize = 0;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Black;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(59, 304);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnAdd.Size = new System.Drawing.Size(286, 40);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Đăng nhập";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label5
             // 
@@ -248,10 +248,9 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
-            this.customPanel1.ResumeLayout(false);
-            this.customPanel1.PerformLayout();
+            this.txtEmail.ResumeLayout(false);
+            this.txtEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -263,11 +262,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private GUI.CustomButton btnLogin;
+        private GUI.CustomButton btnAdd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblForgetPassword;
-        private GUI.TruniControls.CustomPanel customPanel1;
-        private GUI.TruniControls.CustomTextBox txtUsername;
+        private GUI.TruniControls.CustomPanel txtEmail;
+        private GUI.TruniControls.CustomTextBox txt_Email;
         private GUI.TruniControls.CustomTextBox txtPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureEye;

@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
+            this.customTextBox_mail = new GUI.TruniControls.CustomTextBox();
             this.btnGetPassword = new GUI.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -163,7 +163,7 @@
             this.customPanel1.BorderRadius = 50;
             this.customPanel1.BorderSize = 0;
             this.customPanel1.Controls.Add(this.pictureBox2);
-            this.customPanel1.Controls.Add(this.customTextBox3);
+            this.customPanel1.Controls.Add(this.customTextBox_mail);
             this.customPanel1.Controls.Add(this.btnGetPassword);
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.Controls.Add(this.label3);
@@ -187,26 +187,26 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // customTextBox3
+            // customTextBox_mail
             // 
-            this.customTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customTextBox3.BorderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox3.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox3.BorderRadius = 15;
-            this.customTextBox3.BorderSize = 1;
-            this.customTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox3.ForeColor = System.Drawing.Color.White;
-            this.customTextBox3.Location = new System.Drawing.Point(59, 201);
-            this.customTextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox3.Multiline = false;
-            this.customTextBox3.Name = "customTextBox3";
-            this.customTextBox3.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
-            this.customTextBox3.PasswordChar = false;
-            this.customTextBox3.PlaceholderColor = System.Drawing.Color.White;
-            this.customTextBox3.PlaceholderText = "";
-            this.customTextBox3.Size = new System.Drawing.Size(286, 35);
-            this.customTextBox3.TabIndex = 9;
-            this.customTextBox3.UnderlinedStyle = false;
+            this.customTextBox_mail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customTextBox_mail.BorderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox_mail.BorderFocusColor = System.Drawing.Color.Black;
+            this.customTextBox_mail.BorderRadius = 15;
+            this.customTextBox_mail.BorderSize = 1;
+            this.customTextBox_mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox_mail.ForeColor = System.Drawing.Color.White;
+            this.customTextBox_mail.Location = new System.Drawing.Point(59, 201);
+            this.customTextBox_mail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox_mail.Multiline = false;
+            this.customTextBox_mail.Name = "customTextBox_mail";
+            this.customTextBox_mail.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
+            this.customTextBox_mail.PasswordChar = false;
+            this.customTextBox_mail.PlaceholderColor = System.Drawing.Color.White;
+            this.customTextBox_mail.PlaceholderText = "";
+            this.customTextBox_mail.Size = new System.Drawing.Size(286, 35);
+            this.customTextBox_mail.TabIndex = 9;
+            this.customTextBox_mail.UnderlinedStyle = false;
             // 
             // btnGetPassword
             // 
@@ -268,6 +268,109 @@
             this.label2.Text = "Email";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // customPanel2
+            // 
+            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(203)))), ((int)(((byte)(201)))));
+            this.customPanel2.BorderColor = System.Drawing.Color.Black;
+            this.customPanel2.BorderRadius = 50;
+            this.customPanel2.BorderSize = 0;
+            this.customPanel2.Controls.Add(this.label4);
+            this.customPanel2.ForeColor = System.Drawing.Color.White;
+            this.customPanel2.GradientAngle = 90F;
+            this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(203)))), ((int)(((byte)(201)))));
+            this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(203)))), ((int)(((byte)(201)))));
+            this.customPanel2.Location = new System.Drawing.Point(442, 80);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(50, 50);
+            this.customPanel2.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(14, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 29);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "1";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customPanel3
+            // 
+            this.customPanel3.BackColor = System.Drawing.Color.White;
+            this.customPanel3.BorderColor = System.Drawing.Color.Black;
+            this.customPanel3.BorderRadius = 50;
+            this.customPanel3.BorderSize = 0;
+            this.customPanel3.Controls.Add(this.label5);
+            this.customPanel3.ForeColor = System.Drawing.Color.White;
+            this.customPanel3.GradientAngle = 90F;
+            this.customPanel3.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel3.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel3.Location = new System.Drawing.Point(551, 80);
+            this.customPanel3.Name = "customPanel3";
+            this.customPanel3.Size = new System.Drawing.Size(50, 50);
+            this.customPanel3.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(14, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 29);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "2";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customPanel4
+            // 
+            this.customPanel4.BackColor = System.Drawing.Color.White;
+            this.customPanel4.BorderColor = System.Drawing.Color.Black;
+            this.customPanel4.BorderRadius = 50;
+            this.customPanel4.BorderSize = 0;
+            this.customPanel4.Controls.Add(this.label6);
+            this.customPanel4.ForeColor = System.Drawing.Color.White;
+            this.customPanel4.GradientAngle = 90F;
+            this.customPanel4.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel4.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel4.Location = new System.Drawing.Point(660, 80);
+            this.customPanel4.Name = "customPanel4";
+            this.customPanel4.Size = new System.Drawing.Size(50, 50);
+            this.customPanel4.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(14, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 29);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "3";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(492, 103);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(60, 2);
+            this.panel1.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(602, 103);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(60, 2);
+            this.panel2.TabIndex = 11;
+            // 
             // ForgetPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,7 +402,7 @@
 
         private GUI.TruniControls.CustomPanel customPanel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private GUI.TruniControls.CustomTextBox customTextBox3;
+        private GUI.TruniControls.CustomTextBox customTextBox_mail;
         private GUI.CustomButton btnGetPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
