@@ -65,7 +65,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             {
                 string fromEmail = "anhquan20041452@gmail.com";
                 string fromPassword = "fhbl clrh rurh dldr"; // Mật khẩu ứng dụng của email gửi
-                string content = $"Mã xác nhận của bạn là: {code}";
+                string content = $"Hệ thống phần mềm Fastie đã nhận được yêu cầu đổi mật khẩu\r\ncủa bạn.\r\nVui lòng nhập Mã xác nhận dưới đây để tiến hành đổi mật khẩu.\r\nMã xác nhận: {code}\r\nVui lòng không chia sẻ mã này với người khác vì lí do bảo mật.";
 
                 MailMessage mail = new MailMessage();
                 mail.To.Add(toEmail);
