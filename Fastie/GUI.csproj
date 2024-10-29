@@ -204,6 +204,12 @@
     <Compile Include="Screens\Task\AcceptTaskForm.Designer.cs">
       <DependentUpon>AcceptTaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Task\TaskAssignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\TaskAssignForm.Designer.cs">
+      <DependentUpon>TaskAssignForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Task\TaskTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\AcceptTaskForm.resx">
       <DependentUpon>AcceptTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\TaskAssignForm.resx">
+      <DependentUpon>TaskAssignForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\TaskForm.resx">
       <DependentUpon>TaskForm.cs</DependentUpon>

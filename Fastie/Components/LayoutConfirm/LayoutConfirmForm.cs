@@ -59,6 +59,7 @@ namespace Fastie
                     if(result)
                     {
                         MessageBox.Show("Xóa quyền thành công");
+                        decentralizationForm.DisableDeleteAndAdd();
                         decentralizationForm.loadData();
                     }
                     else
@@ -74,8 +75,8 @@ namespace Fastie
                     MessageBox.Show("Thêm thành công");
                     break;
                 case "Đăng xuất":
-                    LoginForm loginForm = new LoginForm();
-                    loginForm.Show();
+                    //LoginForm loginForm = new LoginForm();
+                    //loginForm.Show();
                     break;
                 default:
                     break;

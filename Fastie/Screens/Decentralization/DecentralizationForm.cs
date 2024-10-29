@@ -119,6 +119,26 @@ namespace Fastie
                 
         }
 
+        //Disable button Delete and Add after deleting
+        public void DisableDeleteAndAdd()
+        {
+
+           disableDeleteAndAdd();
+        }
+        private void disableDeleteAndAdd()
+        {
+
+           //Unable decentralization
+            btnAdd.Enabled = false;
+            btnAdd.Image = Properties.Resources.icons8_pencil_23_black;
+            btnAdd.ForeColor = Color.FromArgb(0, 0, 0);
+
+            //Unable delete
+            btnDelete.Enabled = false;
+            btnDelete.Image = Properties.Resources.icons8_delete_23_black;
+            btnDelete.ForeColor = Color.FromArgb(0, 0, 0);
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string[] information = { "Bạn có chắc chắn xóa toàn bộ quyền?", $"{this.tenNhanSu} sẽ mất toàn bộ quyền trong hệ thống", "Xóa quyền" };
