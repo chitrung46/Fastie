@@ -12,6 +12,7 @@ namespace BLL
 {
     public class AccountBLL
     {
+        //For account login
         AccountAccess accAccess = new AccountAccess();
         public string checkLogin(Account acc)
         {
@@ -30,6 +31,7 @@ namespace BLL
 
         }
 
+        //For Decentralization
         public AccountInfo getAccountInfo(string accountId)
         {
             try
@@ -104,6 +106,52 @@ namespace BLL
                 throw new Exception("Lỗi BLL" + ex.Message);
             }
         }
+        
+        public List<PositionInfo> getPositionList()
+        {
+            try
+            {
+                return DatabaseAccess.getPositionList();
+            } catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
 
+        public List<DepartmentInfo> getDepartmentList()
+        {
+            try
+            {
+                return DatabaseAccess.getDepartmentList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
+
+        public List<AccountInfo> getDepartmentListwithAllPosition(string idDepartment)
+        {
+            try
+            {
+                return DatabaseAccess.getDepartmentListwithAllPosition(idDepartment);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
+
+        public List<AccountInfo> getPositionListwithAllDepartment(string idPosition)
+        {
+            try
+            {
+                return DatabaseAccess.getPositionListwithAllDepartment(idPosition);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
     }
 }

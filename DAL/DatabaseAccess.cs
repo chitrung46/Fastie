@@ -22,6 +22,7 @@ namespace DAL
     }
     public class DatabaseAccess
     {
+        //For account login
         public static string checkLoginDTO(Account acc)
         {
             string user = null;
@@ -50,6 +51,8 @@ namespace DAL
 
             return user;
         }
+        
+        //For Decentralization
         public static AccountInfo getAccountInfo(string accountId)
         {
             AccountInfo info = null;
@@ -83,7 +86,6 @@ namespace DAL
             }
             return info;
         }
-
         public static List<AccountInfo> getAllAccountInfo()
         {
             SqlConnection conn = SqlConnectionData.Connect();
@@ -221,6 +223,127 @@ namespace DAL
                 throw new Exception("Lỗi khi cập nhật quyền: " + ex.Message);
             }
             return true;
+        }
+
+        public static List<PositionInfo> getPositionList()
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
+            List<PositionInfo> positionList = new List<PositionInfo>();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_getPositionList", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var idChucVu = reader["id"].ToString();
+                    var tenChucVu = reader["ten"].ToString();
+                    var moTa = reader["moTa"]?.ToString(); 
+
+                    PositionInfo positionInfo = string.IsNullOrEmpty(moTa) ?
+                        new PositionInfo(idChucVu, tenChucVu) :
+                        new PositionInfo(idChucVu, tenChucVu, moTa);
+                    positionList.Add(positionInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy danh sách chức vụ: " + ex.Message);
+            }
+            return positionList;
+        }
+
+        public static List<DepartmentInfo> getDepartmentList()
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
+            List<DepartmentInfo> positionList = new List<DepartmentInfo>();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_getDepartmentList", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var idBoPhan = reader["id"].ToString();
+                    var tenBoPhan = reader["ten"].ToString();
+                    var moTa = reader["moTa"]?.ToString();
+
+                    DepartmentInfo departmentInfo = string.IsNullOrEmpty(moTa) ?
+                        new DepartmentInfo(idBoPhan, tenBoPhan) :
+                        new DepartmentInfo(idBoPhan, tenBoPhan, moTa);
+                    positionList.Add(departmentInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy danh sách chức vụ: " + ex.Message);
+            }
+            return positionList;
+        }
+
+        public static List<AccountInfo> getDepartmentListwithAllPosition(string idDepartment)
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
+            List<AccountInfo> department = new List<AccountInfo>();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_getAccountListHavePermissionByDepartmentIdInAllPosition", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@departmentId", idDepartment);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    AccountInfo info = new AccountInfo
+                    {
+                        TenDangNhap = reader["TenDangNhap"].ToString(),
+                        TenNhanSu = reader["TenNhanSu"].ToString(),
+                        TenBoPhan = reader["TenBoPhan"].ToString(),
+                        TenChucVu = reader["TenChucVu"].ToString()
+                    };
+                    department.Add(info);
+                }
+                conn.Close();
+                return department;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy danh sách bộ phận theo ID: " + ex.Message);
+            }
+        }
+
+        public static List<AccountInfo> getPositionListwithAllDepartment(string idPosition)
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
+            List<AccountInfo> position = new List<AccountInfo>();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_getAccountListHavePermissionByPositionIdInAllDepartment", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@positionId", idPosition);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    AccountInfo info = new AccountInfo
+                    {
+                        TenDangNhap = reader["TenDangNhap"].ToString(),
+                        TenNhanSu = reader["TenNhanSu"].ToString(),
+                        TenBoPhan = reader["TenBoPhan"].ToString(),
+                        TenChucVu = reader["TenChucVu"].ToString()
+                    };
+                    position.Add(info);
+                }
+                conn.Close();
+                return position;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy danh sách chức vụ theo ID: " + ex.Message);
+            }
+
         }
     }
 }

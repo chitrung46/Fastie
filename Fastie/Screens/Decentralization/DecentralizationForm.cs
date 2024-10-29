@@ -18,15 +18,29 @@ namespace Fastie
         AccountBLL accountBll = new AccountBLL();
         private string accountName;
         private string tenNhanSu;
+        private bool isLoaded = false;
+
+        private string selectedDepartmentId;
+        private string selectedPositionId;
 
         public DecentralizationForm()
         {
             InitializeComponent();
         }
+
         public DecentralizationForm(string accountName)
         {
             InitializeComponent();
             this.accountName = accountName;
+        }
+        private void Decentralization_Load(object sender, EventArgs e)
+        {
+            isLoaded = false;
+            loadDataPersonnel();
+            loadDataPersonnelRoleless();
+            loadDataDepartmentList();
+            loadDataPositionList();
+            isLoaded = true;
         }
 
         public string AccountName { get => accountName; set => accountName = value; }
@@ -36,12 +50,6 @@ namespace Fastie
         {
             loadDataPersonnel();
             loadDataPersonnelRoleless();
-        }
-        private void Decentralization_Load(object sender, EventArgs e)
-        {
-            loadDataPersonnel();
-            loadDataPersonnelRoleless();
-            
         }
 
         private void loadDataPersonnel()
@@ -198,6 +206,133 @@ namespace Fastie
                     this.accountName = accountName;
                     this.tenNhanSu = tenNhanSu;
                 }
+            }
+        }
+
+        private void loadDataPositionList()
+        {
+            List<PositionInfo> positionInfos = accountBll.getPositionList();
+
+            if (positionInfos != null)
+            {
+                cbPosition.Items.Clear();
+                cbPosition.Items.Add(new KeyValuePair<string, string>(null, "Tất cả"));
+
+                foreach (PositionInfo position in positionInfos)
+                {
+                    cbPosition.Items.Add(new KeyValuePair<string, string>(position.IdChucVu, position.TenChucVu));
+                }
+
+                cbPosition.DisplayMember = "Value";
+                cbPosition.ValueMember = "Key";
+
+                cbPosition.SelectedIndex = 0;
+            }
+        }
+
+        private void loadDataDepartmentList()
+        {
+            List<DepartmentInfo> departmentInfos = accountBll.getDepartmentList();
+
+            if (departmentInfos != null)
+            {
+                cbDepartment.Items.Clear();
+                cbDepartment.Items.Add(new KeyValuePair<string, string>(null, "Tất cả")); 
+
+                foreach (DepartmentInfo department in departmentInfos)
+                {
+                    cbDepartment.Items.Add(new KeyValuePair<string, string>(department.IdBoPhan, department.TenBoPhan));
+                }
+
+                cbDepartment.DisplayMember = "Value"; 
+                cbDepartment.ValueMember = "Key";  
+
+                cbDepartment.SelectedIndex = 0;
+            }
+        }
+        private void cbDepartment_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(isLoaded)
+            {
+                var selectedId = ((KeyValuePair<string, string>)cbDepartment.SelectedItem).Key;
+                this.selectedDepartmentId = selectedId;
+                showByPositionIdAndDepartmentId();
+            }
+        }
+
+        private void cbPosition_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isLoaded)
+            {
+                var selectedId = ((KeyValuePair<string, string>)cbPosition.SelectedItem).Key;
+                this.selectedPositionId = selectedId;
+                showByPositionIdAndDepartmentId();
+            }
+        }
+
+        private void showByPositionIdAndDepartmentId()
+        {
+            if(selectedDepartmentId != null && selectedPositionId == null)
+            {
+                List <AccountInfo> accountInfo = accountBll.getDepartmentListwithAllPosition(this.selectedDepartmentId);
+                if (accountInfo != null)
+                {
+                    dataGridViewPersonnel.Rows.Clear();
+                    if (dataGridViewPersonnel.Columns.Count == 0)
+                    {
+                        dataGridViewPersonnel.Columns.Add("soThuTu", "STT");
+                        dataGridViewPersonnel.Columns.Add("tenNhanSu", "Tên Nhân Sự");
+                        dataGridViewPersonnel.Columns.Add("tenBoPhan", "Tên Bộ Phận");
+                        dataGridViewPersonnel.Columns.Add("tenChucVu", "Tên Chức Vụ");
+                    }
+                    if (accountInfo != null)
+                    {
+                        int count = 1;
+                        foreach (AccountInfo account in accountInfo)
+                        {
+                            DataGridViewRow rows = new DataGridViewRow();
+                            rows.CreateCells(dataGridViewPersonnel);
+                            rows.Cells[0].Value = count++;
+                            rows.Cells[1].Value = account.TenNhanSu;
+                            rows.Cells[2].Value = account.TenBoPhan;
+                            rows.Cells[3].Value = account.TenChucVu;
+                            rows.Tag = account.TenDangNhap;
+                            dataGridViewPersonnel.Rows.Add(rows);
+                        }
+                    }
+                }
+            } else if (selectedDepartmentId == null && selectedPositionId != null)
+            {
+                List<AccountInfo> accountInfo = accountBll.getPositionListwithAllDepartment(this.selectedPositionId);
+                if (accountInfo != null)
+                {
+                    dataGridViewPersonnel.Rows.Clear();
+                    if (dataGridViewPersonnel.Columns.Count == 0)
+                    {
+                        dataGridViewPersonnel.Columns.Add("soThuTu", "STT");
+                        dataGridViewPersonnel.Columns.Add("tenNhanSu", "Tên Nhân Sự");
+                        dataGridViewPersonnel.Columns.Add("tenBoPhan", "Tên Bộ Phận");
+                        dataGridViewPersonnel.Columns.Add("tenChucVu", "Tên Chức Vụ");
+                    }
+                    if (accountInfo != null)
+                    {
+                        int count = 1;
+                        foreach (AccountInfo account in accountInfo)
+                        {
+                            DataGridViewRow rows = new DataGridViewRow();
+                            rows.CreateCells(dataGridViewPersonnel);
+                            rows.Cells[0].Value = count++;
+                            rows.Cells[1].Value = account.TenNhanSu;
+                            rows.Cells[2].Value = account.TenBoPhan;
+                            rows.Cells[3].Value = account.TenChucVu;
+                            rows.Tag = account.TenDangNhap;
+                            dataGridViewPersonnel.Rows.Add(rows);
+                        }
+                    }
+                }
+            } else
+            {
+                loadData();
             }
         }
     }

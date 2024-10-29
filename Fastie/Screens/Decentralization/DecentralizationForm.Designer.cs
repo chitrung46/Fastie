@@ -37,8 +37,8 @@
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.btnDelete = new GUI.CustomButton();
             this.btnAdd = new GUI.CustomButton();
-            this.customComboBox2 = new GUI.TruniControls.CustomComboBox();
-            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
+            this.cbPosition = new GUI.TruniControls.CustomComboBox();
+            this.cbDepartment = new GUI.TruniControls.CustomComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
@@ -154,8 +154,8 @@
             this.customPanel2.BorderSize = 0;
             this.customPanel2.Controls.Add(this.btnDelete);
             this.customPanel2.Controls.Add(this.btnAdd);
-            this.customPanel2.Controls.Add(this.customComboBox2);
-            this.customPanel2.Controls.Add(this.customComboBox1);
+            this.customPanel2.Controls.Add(this.cbPosition);
+            this.customPanel2.Controls.Add(this.cbDepartment);
             this.customPanel2.Controls.Add(this.label3);
             this.customPanel2.Controls.Add(this.label2);
             this.customPanel2.ForeColor = System.Drawing.Color.Black;
@@ -215,45 +215,47 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // customComboBox2
+            // cbPosition
             // 
-            this.customComboBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox2.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox2.BorderRadius = 8;
-            this.customComboBox2.BorderSize = 1;
-            this.customComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox2.IconColor = System.Drawing.Color.Black;
-            this.customComboBox2.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox2.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox2.Location = new System.Drawing.Point(314, 49);
-            this.customComboBox2.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox2.Name = "customComboBox2";
-            this.customComboBox2.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox2.Size = new System.Drawing.Size(233, 30);
-            this.customComboBox2.TabIndex = 1;
-            this.customComboBox2.Texts = "";
+            this.cbPosition.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPosition.BorderColor = System.Drawing.Color.Black;
+            this.cbPosition.BorderRadius = 8;
+            this.cbPosition.BorderSize = 1;
+            this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbPosition.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPosition.IconColor = System.Drawing.Color.Black;
+            this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPosition.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPosition.Location = new System.Drawing.Point(314, 49);
+            this.cbPosition.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Padding = new System.Windows.Forms.Padding(1);
+            this.cbPosition.Size = new System.Drawing.Size(233, 30);
+            this.cbPosition.TabIndex = 1;
+            this.cbPosition.Texts = "";
+            this.cbPosition.OnSelectedIndexChanged += new System.EventHandler(this.cbPosition_OnSelectedIndexChanged);
             // 
-            // customComboBox1
+            // cbDepartment
             // 
-            this.customComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox1.BorderRadius = 8;
-            this.customComboBox1.BorderSize = 1;
-            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.IconColor = System.Drawing.Color.Black;
-            this.customComboBox1.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.Location = new System.Drawing.Point(24, 49);
-            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox1.Size = new System.Drawing.Size(233, 30);
-            this.customComboBox1.TabIndex = 1;
-            this.customComboBox1.Texts = "";
+            this.cbDepartment.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbDepartment.BorderColor = System.Drawing.Color.Black;
+            this.cbDepartment.BorderRadius = 8;
+            this.cbDepartment.BorderSize = 1;
+            this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbDepartment.ForeColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.IconColor = System.Drawing.Color.Black;
+            this.cbDepartment.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbDepartment.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.Location = new System.Drawing.Point(24, 49);
+            this.cbDepartment.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbDepartment.Name = "cbDepartment";
+            this.cbDepartment.Padding = new System.Windows.Forms.Padding(1);
+            this.cbDepartment.Size = new System.Drawing.Size(233, 30);
+            this.cbDepartment.TabIndex = 1;
+            this.cbDepartment.Texts = "";
+            this.cbDepartment.OnSelectedIndexChanged += new System.EventHandler(this.cbDepartment_OnSelectedIndexChanged);
             // 
             // label3
             // 
@@ -370,7 +372,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private GUI.TruniControls.CustomComboBox customComboBox1;
+        private GUI.TruniControls.CustomComboBox cbDepartment;
         private GUI.CustomButton btnAdd;
         private GUI.CustomButton btnDelete;
         private System.Windows.Forms.DataGridView dataGridViewPersonnel;
@@ -379,6 +381,6 @@
         private System.Windows.Forms.DataGridView dataGridViewRoleless;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private GUI.TruniControls.CustomComboBox customComboBox2;
+        private GUI.TruniControls.CustomComboBox cbPosition;
     }
 }
