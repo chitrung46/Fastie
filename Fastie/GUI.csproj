@@ -64,6 +64,12 @@
     <Compile Include="Components\LayoutTask\LayoutTaskForm.Designer.cs">
       <DependentUpon>LayoutTaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.Designer.cs">
+      <DependentUpon>NoPermissionAccessForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Analytics\Analytics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutTask\LayoutTaskForm.resx">
       <DependentUpon>LayoutTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.resx">
+      <DependentUpon>NoPermissionAccessForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
@@ -492,5 +501,6 @@
   <ItemGroup>
     <None Include="Resources\icons8-menu-23.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

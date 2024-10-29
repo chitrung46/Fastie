@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using System.Web;
 namespace Fastie.Screens.Login
 {
     public partial class LoginForm : Form
@@ -18,7 +19,7 @@ namespace Fastie.Screens.Login
         //Initial AccountBLL and Account
         AccountBLL accBLL = new AccountBLL();   
         Account acc = new Account();
-
+       
         public LoginForm()
         {
             InitializeComponent();
@@ -61,20 +62,31 @@ namespace Fastie.Screens.Login
             acc.TenDangNhap = txtUsername.Text;
             acc.MatKhau = txtPassword.Text;
 
-            string getUser = accBLL.checkLogin(acc);
+            string[] getUser = accBLL.checkLogin(acc);
 
-            switch (getUser)
+            if (getUser.Length == 1 && getUser[0] == "Email hoặc mật khẩu không chính xác!")
             {
-                case "required_email":
-                    MessageBox.Show("Email không được để trống");
-                    return;
-                case "required_password":
-                    MessageBox.Show("Mật khẩu không được để trống");
-                    return;
-                case "Email hoặc mật khẩu không chính xác!":
-                    MessageBox.Show("Email hoặc mật khẩu không chính xác!");
-                    return;
+                MessageBox.Show("Email hoặc mật khẩu không chính xác!");
+                return;
             }
+
+            if (string.IsNullOrWhiteSpace(acc.TenDangNhap))
+            {
+                MessageBox.Show("Email không được để trống");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(acc.MatKhau))
+            {
+                MessageBox.Show("Mật khẩu không được để trống");
+                return;
+            }
+
+            List<(string, string, string, string)> userData = new List<(string, string, string, string)>
+            {
+                (getUser[0], getUser[1], getUser[2], getUser[3])
+            };
+            UserAccountSession.Instance.SetUserInfo(userData);
             HomeForm home = new HomeForm();
             home.Show();
             this.Hide();

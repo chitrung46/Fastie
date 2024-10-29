@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fastie.Screens.Task
+namespace Fastie.Components.NoPermissionAccessForm
 {
-    public partial class TaskAssignForm : Form
+    public partial class NoPermissionAccessForm : Form
     {
-        public TaskAssignForm()
+        public NoPermissionAccessForm()
         {
             InitializeComponent();
-        }
-
-        private void TaskAssignForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

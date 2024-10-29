@@ -39,6 +39,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TaskAssignForm";
             this.Text = "TaskAssignForm";
+            this.Load += new System.EventHandler(this.TaskAssignForm_Load);
             this.ResumeLayout(false);
 
         }

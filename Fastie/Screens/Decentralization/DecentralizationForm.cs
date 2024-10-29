@@ -36,10 +36,12 @@ namespace Fastie
         private void Decentralization_Load(object sender, EventArgs e)
         {
             isLoaded = false;
-            loadDataPersonnel();
-            loadDataPersonnelRoleless();
+
+            //loadData();
             loadDataDepartmentList();
             loadDataPositionList();
+            showByPositionIdAndDepartmentId();
+
             isLoaded = true;
         }
 
@@ -48,65 +50,9 @@ namespace Fastie
 
         public void loadData()
         {
-            loadDataPersonnel();
-            loadDataPersonnelRoleless();
+            showByPositionIdAndDepartmentId();
         }
 
-        private void loadDataPersonnel()
-        {
-            List<AccountInfo> accountInfo = accountBll.getAllAccountInfo();
-            dataGridViewPersonnel.Rows.Clear(); 
-            if(dataGridViewPersonnel.Columns.Count == 0)
-            {
-                dataGridViewPersonnel.Columns.Add("soThuTu", "STT");
-                dataGridViewPersonnel.Columns.Add("tenNhanSu", "Tên Nhân Sự");
-                dataGridViewPersonnel.Columns.Add("tenBoPhan", "Tên Bộ Phận");
-                dataGridViewPersonnel.Columns.Add("tenChucVu", "Tên Chức Vụ");
-            }
-            if (accountInfo != null)
-            {
-                int count = 1;
-                foreach (AccountInfo account in accountInfo)
-                {
-                    DataGridViewRow rows = new DataGridViewRow();
-                    rows.CreateCells(dataGridViewPersonnel);
-                    rows.Cells[0].Value = count++;
-                    rows.Cells[1].Value = account.TenNhanSu;
-                    rows.Cells[2].Value = account.TenBoPhan;
-                    rows.Cells[3].Value = account.TenChucVu;
-                    rows.Tag = account.TenDangNhap;
-                    dataGridViewPersonnel.Rows.Add(rows);
-                }
-            }
-        }
-
-        private void loadDataPersonnelRoleless()
-        {
-            dataGridViewRoleless.Rows.Clear();
-            if(dataGridViewRoleless.Columns.Count == 0)
-            {
-                dataGridViewRoleless.Columns.Add("soThuTu", "STT");
-                dataGridViewRoleless.Columns.Add("tenNhanSu", "Tên Nhân Sự");
-                dataGridViewRoleless.Columns.Add("tenBoPhan", "Tên Bộ Phận");
-                dataGridViewRoleless.Columns.Add("tenChucVu", "Tên Chức Vụ");
-            }
-            List<AccountInfo> accountInfo = accountBll.getAllPersonnelRoleLess();
-            if (accountInfo != null)
-            {
-                int count = 1;
-                foreach (AccountInfo account in accountInfo)
-                {
-                    DataGridViewRow rows = new DataGridViewRow();
-                    rows.CreateCells(dataGridViewRoleless);
-                    rows.Cells[0].Value = count++;
-                    rows.Cells[1].Value = account.TenNhanSu;
-                    rows.Cells[2].Value = account.TenBoPhan;
-                    rows.Cells[3].Value = account.TenChucVu;
-                    rows.Tag = account.TenDangNhap;
-                    dataGridViewRoleless.Rows.Add(rows);
-                }
-            }
-        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             CreateDecentralizationForm createDecentralization = new CreateDecentralizationForm(this ,this.accountName);
@@ -270,69 +216,67 @@ namespace Fastie
             }
         }
 
+        private void loadDataFormat(DataGridView dataGridView, List<AccountInfo> accountInfo)
+        {
+
+            dataGridView.Rows.Clear();
+            if (dataGridView.Columns.Count == 0)
+            {
+                dataGridView.Columns.Add("soThuTu", "STT");
+                dataGridView.Columns.Add("tenNhanSu", "Tên Nhân Sự");
+                dataGridView.Columns.Add("tenBoPhan", "Tên Bộ Phận");
+                dataGridView.Columns.Add("tenChucVu", "Tên Chức Vụ");
+            }
+            if (accountInfo != null)
+            {
+                int count = 1;
+                foreach (AccountInfo account in accountInfo)
+                {
+                    DataGridViewRow rows = new DataGridViewRow();
+                    rows.CreateCells(dataGridView);
+                    rows.Cells[0].Value = count++;
+                    rows.Cells[1].Value = account.TenNhanSu;
+                    rows.Cells[2].Value = account.TenBoPhan;
+                    rows.Cells[3].Value = account.TenChucVu;
+                    rows.Tag = account.TenDangNhap;
+                    dataGridView.Rows.Add(rows);
+                }
+            }
+        }
+
         private void showByPositionIdAndDepartmentId()
         {
-            if(selectedDepartmentId != null && selectedPositionId == null)
+            if(selectedDepartmentId != null && selectedPositionId != null)
+            {
+                List<AccountInfo> accountInfo = accountBll.getListByDepartmentIdAndPositionId(this.selectedDepartmentId, this.selectedPositionId);
+                loadDataFormat(dataGridViewPersonnel, accountInfo);
+
+                List<AccountInfo> accountInfoRoleless = accountBll.getListByDepartmentIdAndPositionIdRoleLess(this.selectedDepartmentId, this.selectedPositionId);
+                loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
+
+            }
+            else if(selectedDepartmentId != null && selectedPositionId == null)
             {
                 List <AccountInfo> accountInfo = accountBll.getDepartmentListwithAllPosition(this.selectedDepartmentId);
-                if (accountInfo != null)
-                {
-                    dataGridViewPersonnel.Rows.Clear();
-                    if (dataGridViewPersonnel.Columns.Count == 0)
-                    {
-                        dataGridViewPersonnel.Columns.Add("soThuTu", "STT");
-                        dataGridViewPersonnel.Columns.Add("tenNhanSu", "Tên Nhân Sự");
-                        dataGridViewPersonnel.Columns.Add("tenBoPhan", "Tên Bộ Phận");
-                        dataGridViewPersonnel.Columns.Add("tenChucVu", "Tên Chức Vụ");
-                    }
-                    if (accountInfo != null)
-                    {
-                        int count = 1;
-                        foreach (AccountInfo account in accountInfo)
-                        {
-                            DataGridViewRow rows = new DataGridViewRow();
-                            rows.CreateCells(dataGridViewPersonnel);
-                            rows.Cells[0].Value = count++;
-                            rows.Cells[1].Value = account.TenNhanSu;
-                            rows.Cells[2].Value = account.TenBoPhan;
-                            rows.Cells[3].Value = account.TenChucVu;
-                            rows.Tag = account.TenDangNhap;
-                            dataGridViewPersonnel.Rows.Add(rows);
-                        }
-                    }
-                }
+                loadDataFormat(dataGridViewPersonnel, accountInfo);
+
+                List<AccountInfo> accountInfoRoleless = accountBll.getDepartmentListwithAllPositionRoleLess(this.selectedDepartmentId);
+                loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
+
             } else if (selectedDepartmentId == null && selectedPositionId != null)
             {
                 List<AccountInfo> accountInfo = accountBll.getPositionListwithAllDepartment(this.selectedPositionId);
-                if (accountInfo != null)
-                {
-                    dataGridViewPersonnel.Rows.Clear();
-                    if (dataGridViewPersonnel.Columns.Count == 0)
-                    {
-                        dataGridViewPersonnel.Columns.Add("soThuTu", "STT");
-                        dataGridViewPersonnel.Columns.Add("tenNhanSu", "Tên Nhân Sự");
-                        dataGridViewPersonnel.Columns.Add("tenBoPhan", "Tên Bộ Phận");
-                        dataGridViewPersonnel.Columns.Add("tenChucVu", "Tên Chức Vụ");
-                    }
-                    if (accountInfo != null)
-                    {
-                        int count = 1;
-                        foreach (AccountInfo account in accountInfo)
-                        {
-                            DataGridViewRow rows = new DataGridViewRow();
-                            rows.CreateCells(dataGridViewPersonnel);
-                            rows.Cells[0].Value = count++;
-                            rows.Cells[1].Value = account.TenNhanSu;
-                            rows.Cells[2].Value = account.TenBoPhan;
-                            rows.Cells[3].Value = account.TenChucVu;
-                            rows.Tag = account.TenDangNhap;
-                            dataGridViewPersonnel.Rows.Add(rows);
-                        }
-                    }
-                }
+                loadDataFormat(dataGridViewPersonnel, accountInfo);
+
+                List<AccountInfo> accountInfoRoleless = accountBll.getPositionListwithAllDepartmentRoleLess(this.selectedPositionId);
+                loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
             } else
             {
-                loadData();
+                List<AccountInfo> accountInfoPersonnel = accountBll.getAllAccountInfo();
+                loadDataFormat(dataGridViewPersonnel, accountInfoPersonnel);
+
+                List<AccountInfo> accountInfoRoleless = accountBll.getAllPersonnelRoleLess();
+                loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
             }
         }
     }

@@ -41,5 +41,10 @@ namespace Fastie.Components.LayoutRole
             get { return taskJobAssigner; }
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

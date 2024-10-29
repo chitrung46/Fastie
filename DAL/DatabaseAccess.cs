@@ -23,9 +23,9 @@ namespace DAL
     public class DatabaseAccess
     {
         //For account login
-        public static string checkLoginDTO(Account acc)
+        public static string[] checkLoginDTO(Account acc)
         {
-            string user = null;
+            string[] user = new string[4];
             SqlConnection conn = SqlConnectionData.Connect();
             conn.Open();
             SqlCommand command = new SqlCommand("proc_checkLogin", conn);
@@ -39,14 +39,17 @@ namespace DAL
             {
                 while (reader.Read())
                 {
-                    user = reader.ToString();
+                    user[0] = reader["id"].ToString();
+                    user[1] = reader["idNhanSu"].ToString();
+                    user[2] = reader["idBoPhan"].ToString();
+                    user[3] = reader["idChucVu"].ToString();
                 }
                 reader.Close();
                 conn.Close();
             }
             else
             {
-                return "Email hoặc mật khẩu không chính xác!";
+                return new string[] { "Email hoặc mật khẩu không chính xác!" };
             }
 
             return user;
@@ -100,7 +103,7 @@ namespace DAL
                 {
                     AccountInfo info = new AccountInfo
                     {
-                        TenDangNhap = reader["TenDangNhap"].ToString(),
+                        TenDangNhap = reader["IdDangNhap"].ToString(),
                         TenNhanSu = reader["TenNhanSu"].ToString(),
                         TenBoPhan = reader["TenBoPhan"].ToString(),
                         TenChucVu = reader["TenChucVu"].ToString()
@@ -189,7 +192,7 @@ namespace DAL
                 {
                     AccountInfo info = new AccountInfo
                     {
-                        TenDangNhap = reader["TenDangNhap"].ToString(),
+                        TenDangNhap = reader["IdDangNhap"].ToString(),
                         TenNhanSu = reader["TenNhanSu"].ToString(),
                         TenBoPhan = reader["TenBoPhan"].ToString(),
                         TenChucVu = reader["TenChucVu"].ToString()
@@ -283,67 +286,105 @@ namespace DAL
             return positionList;
         }
 
-        public static List<AccountInfo> getDepartmentListwithAllPosition(string idDepartment)
+
+        //Define format for role and roleless
+        private static List<AccountInfo> getListForRoleAndRoleless(string procedureName, string[] procParameters, string[] parameters)
         {
             SqlConnection conn = SqlConnectionData.Connect();
-            List<AccountInfo> department = new List<AccountInfo>();
+            List<AccountInfo> listInfo = new List<AccountInfo>();
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("proc_getAccountListHavePermissionByDepartmentIdInAllPosition", conn);
+                SqlCommand cmd = new SqlCommand(procedureName, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@departmentId", idDepartment);
+                for(int i = 0; i < parameters.Length; i++)
+                {
+                   cmd.Parameters.AddWithValue(procParameters[i], parameters[i]);
+                }
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    AccountInfo info = new AccountInfo
+                    AccountInfo accountInfo = new AccountInfo
                     {
-                        TenDangNhap = reader["TenDangNhap"].ToString(),
+                        TenDangNhap = reader["IdTaiKhoan"].ToString(),
                         TenNhanSu = reader["TenNhanSu"].ToString(),
                         TenBoPhan = reader["TenBoPhan"].ToString(),
                         TenChucVu = reader["TenChucVu"].ToString()
                     };
-                    department.Add(info);
+                    listInfo.Add(accountInfo);
                 }
                 conn.Close();
-                return department;
+                return listInfo;
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi lấy danh sách bộ phận theo ID: " + ex.Message);
+                throw new Exception("Lỗi khi lấy danh sách: " + ex.Message);
             }
+        }
+        //For role
+        public static List<AccountInfo> getListByDepartmentIdAndPositionId(string idDepartment, string idPosition)
+        {
+            string procedureName = "proc_getAccountListHavePermissionByDepartmentIdAndPositionId";
+            string[] procParameters = { "@departmentId", "@positionId" };
+            string[] parameters = { idDepartment, idPosition };
+            return getListForRoleAndRoleless(procedureName, procParameters, parameters);
+        }
+        public static List<AccountInfo> getDepartmentListwithAllPosition(string idDepartment)
+        {
+            string procedureName = "proc_getAccountListHavePermissionByDepartmentIdInAllPosition";
+            string[] procParameters = { "@departmentId" };
+            string[] parameters = { idDepartment };
+            return getListForRoleAndRoleless(procedureName, procParameters, parameters);
         }
 
         public static List<AccountInfo> getPositionListwithAllDepartment(string idPosition)
         {
+            string procedureName = "proc_getAccountListHavePermissionByPositionIdInAllDepartment";
+            string[] procParameters = { "@positionId" };
+            string[] parameters = { idPosition };
+            return getListForRoleAndRoleless(procedureName, procParameters, parameters);
+        }
+
+        //For roleless
+        public static List<AccountInfo> getListByDepartmentIdAndPositionIdRoleLess (string idDepartment, string idPosition)
+        {
+            string procedureName = "proc_getAccountListHavePermissionByDepartmentIdAndPositionIdRoleless";
+            string[] procParameters = { "@departmentId", "@positionId" };
+            string[] parameters = { idDepartment, idPosition };
+            return getListForRoleAndRoleless(procedureName, procParameters, parameters);
+        }
+        public static List<AccountInfo> getDepartmentListwithAllPositionRoleLess(string idDepartment)
+        {
+            string procedureName = "proc_getAccountListHavePermissionByDepartmentIdInAllPositionRoleless";
+            string[] procParameters = { "@departmentId" };
+            string[] parameters = { idDepartment };
+            return getListForRoleAndRoleless(procedureName, procParameters, parameters);
+        }
+        public static List<AccountInfo> getPositionListwithAllDepartmentRoleLess(string idPosition)
+        {
+            string procedureName = "proc_getAccountListHavePermissionByPositionIdInAllDepartmentRoleless";
+            string[] procParameters = { "@positionId" };
+            string[] parameters = { idPosition };
+            return getListForRoleAndRoleless(procedureName, procParameters, parameters);
+        }
+
+        //Check permission for accessing
+        public static bool checkPermission(string accountId, string permissionId)
+        {
             SqlConnection conn = SqlConnectionData.Connect();
-            List<AccountInfo> position = new List<AccountInfo>();
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("proc_getAccountListHavePermissionByPositionIdInAllDepartment", conn);
+                SqlCommand cmd = new SqlCommand("proc_checkPermissionAccess", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@positionId", idPosition);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    AccountInfo info = new AccountInfo
-                    {
-                        TenDangNhap = reader["TenDangNhap"].ToString(),
-                        TenNhanSu = reader["TenNhanSu"].ToString(),
-                        TenBoPhan = reader["TenBoPhan"].ToString(),
-                        TenChucVu = reader["TenChucVu"].ToString()
-                    };
-                    position.Add(info);
-                }
-                conn.Close();
-                return position;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi lấy danh sách chức vụ theo ID: " + ex.Message);
-            }
+                cmd.Parameters.AddWithValue("@idTaiKhoan", accountId);
+                cmd.Parameters.AddWithValue("@idQuyen", permissionId);
+                return (int)cmd.ExecuteScalar() == 1 ? true : false;
 
+            } catch(Exception ex)
+            {
+                throw new Exception("Lỗi khi kiểm tra quyền: " + ex.Message);
+            }
         }
     }
 }

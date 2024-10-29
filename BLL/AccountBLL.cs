@@ -14,20 +14,19 @@ namespace BLL
     {
         //For account login
         AccountAccess accAccess = new AccountAccess();
-        public string checkLogin(Account acc)
+        public string[] checkLogin(Account acc)
         {
             if (acc.TenDangNhap == "")
             {
-                return "required_email";
+                return new string[] { "required_email" };
             }
 
             if (acc.MatKhau == "")
             {
-                return "required_password";
+                return new string[] { "required_password" };
             }
 
-            string info = accAccess.checkLogin(acc);
-            return info;
+            return accAccess.checkLogin(acc);
 
         }
 
@@ -130,6 +129,18 @@ namespace BLL
             }
         }
 
+        //For have Role
+        public List<AccountInfo> getListByDepartmentIdAndPositionId(string idDepartment, string idPosition)
+        {
+            try
+            {
+                return DatabaseAccess.getListByDepartmentIdAndPositionId(idDepartment, idPosition);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
         public List<AccountInfo> getDepartmentListwithAllPosition(string idDepartment)
         {
             try
@@ -141,12 +152,58 @@ namespace BLL
                 throw new Exception("Lỗi BLL" + ex.Message);
             }
         }
-
         public List<AccountInfo> getPositionListwithAllDepartment(string idPosition)
         {
             try
             {
                 return DatabaseAccess.getPositionListwithAllDepartment(idPosition);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
+        //For Roleless
+        public List<AccountInfo> getListByDepartmentIdAndPositionIdRoleLess(string idDepartment, string idPosition)
+        {
+            try
+            {
+                return DatabaseAccess.getListByDepartmentIdAndPositionIdRoleLess(idDepartment, idPosition);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
+        public List<AccountInfo> getDepartmentListwithAllPositionRoleLess(string idDepartment)
+        {
+            try
+            {
+                return DatabaseAccess.getDepartmentListwithAllPositionRoleLess(idDepartment);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
+        public List<AccountInfo> getPositionListwithAllDepartmentRoleLess(string idPosition)
+        {
+            try
+            {
+                return DatabaseAccess.getPositionListwithAllDepartmentRoleLess(idPosition);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
+
+        //Chech Permission for Accessing
+        public bool checkPermission(string accountId, string permissionId)
+        {
+            try
+            {
+                return DatabaseAccess.checkPermission(accountId, permissionId);
             }
             catch (Exception ex)
             {

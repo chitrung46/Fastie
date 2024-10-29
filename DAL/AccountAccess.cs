@@ -9,10 +9,9 @@ namespace DAL
 {
     public class AccountAccess
     {
-        public string checkLogin(Account acc)
+        public string[] checkLogin(Account acc)
         {
-            string info = DatabaseAccess.checkLoginDTO(acc);
-            return info;
+            return DatabaseAccess.checkLoginDTO(acc);
         }
 
     }
