@@ -13,7 +13,7 @@ namespace DAL
 {
     public static class SqlConnectionData
     {
-        private static readonly string connectionString = @"Data Source=CHITRUNG-LAPTOP\TRUNG_SQL;Initial Catalog=FASTIE;Integrated Security=True";
+        private static readonly string connectionString = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;";
 
         public static SqlConnection Connect()
         {
