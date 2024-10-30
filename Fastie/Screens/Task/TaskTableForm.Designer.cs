@@ -50,9 +50,9 @@
             this.customPanel2.GradientAngle = 90F;
             this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.Location = new System.Drawing.Point(658, 2);
+            this.customPanel2.Location = new System.Drawing.Point(635, 2);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(521, 587);
+            this.customPanel2.Size = new System.Drawing.Size(462, 563);
             this.customPanel2.TabIndex = 0;
             // 
             // flowLayoutPanelNotification
@@ -61,7 +61,7 @@
             this.flowLayoutPanelNotification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.flowLayoutPanelNotification.Location = new System.Drawing.Point(25, 71);
             this.flowLayoutPanelNotification.Name = "flowLayoutPanelNotification";
-            this.flowLayoutPanelNotification.Size = new System.Drawing.Size(415, 488);
+            this.flowLayoutPanelNotification.Size = new System.Drawing.Size(415, 477);
             this.flowLayoutPanelNotification.TabIndex = 1;
             this.flowLayoutPanelNotification.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelNotification_Paint);
             // 
@@ -91,7 +91,7 @@
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.Location = new System.Drawing.Point(2, 2);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(650, 587);
+            this.customPanel1.Size = new System.Drawing.Size(628, 563);
             this.customPanel1.TabIndex = 0;
             // 
             // flowLayoutPanelTask
@@ -100,7 +100,7 @@
             this.flowLayoutPanelTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.flowLayoutPanelTask.Location = new System.Drawing.Point(26, 71);
             this.flowLayoutPanelTask.Name = "flowLayoutPanelTask";
-            this.flowLayoutPanelTask.Size = new System.Drawing.Size(600, 488);
+            this.flowLayoutPanelTask.Size = new System.Drawing.Size(578, 477);
             this.flowLayoutPanelTask.TabIndex = 1;
             this.flowLayoutPanelTask.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelNotification_Paint);
             // 
@@ -121,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1183, 591);
+            this.ClientSize = new System.Drawing.Size(1104, 567);
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
