@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -42,6 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DepartmentAccess.cs" />
+    <Compile Include="FASTIEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FASTIEDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FASTIEDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FASTIEDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PersonnelAccess.cs" />
     <Compile Include="PositionAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />
@@ -60,6 +70,28 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="FASTIEDataSet.xsc">
+      <DependentUpon>FASTIEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FASTIEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FASTIEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FASTIEDataSet.xss">
+      <DependentUpon>FASTIEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FASTIEDataSet1.xsc">
+      <DependentUpon>FASTIEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FASTIEDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FASTIEDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FASTIEDataSet1.xss">
+      <DependentUpon>FASTIEDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

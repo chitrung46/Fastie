@@ -157,7 +157,6 @@
             this.stateDecentralization.Name = "stateDecentralization";
             this.stateDecentralization.Size = new System.Drawing.Size(10, 58);
             this.stateDecentralization.TabIndex = 0;
-            this.stateDecentralization.Paint += new System.Windows.Forms.PaintEventHandler(this.stateDecentralization_Paint);
             // 
             // statePersonnel
             // 
@@ -292,7 +291,6 @@
             this.stateDecentralization.Name = "stateDecentralization";
             this.stateDecentralization.Size = new System.Drawing.Size(10, 58);
             this.stateDecentralization.TabIndex = 0;
-            this.stateDecentralization.Paint += new System.Windows.Forms.PaintEventHandler(this.stateDecentralization_Paint);
             // 
             // statePersonnel
             // 
