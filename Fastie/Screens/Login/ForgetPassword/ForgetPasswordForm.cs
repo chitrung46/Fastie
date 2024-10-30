@@ -89,5 +89,10 @@ namespace Fastie.Screens.Login.ForgetPassword
                 return false;
             }
         }
+
+        private void ForgetPasswordForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

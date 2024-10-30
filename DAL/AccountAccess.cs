@@ -11,7 +11,7 @@ namespace DAL
 {
     public class AccountAccess
     {
-        public string checkLogin(Account acc)
+        public string[] checkLogin(Account acc)
         {
             return DatabaseAccess.checkLoginDTO(acc);
         }

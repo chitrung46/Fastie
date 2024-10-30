@@ -1,4 +1,6 @@
-﻿using Fastie.Screens.Login;
+﻿using BLL;
+using DTO;
+using Fastie.Components.NoPermissionAccessForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,18 +15,42 @@ namespace Fastie
 {
     public partial class HomeForm : Form
     {
+        private string idTaiKhoan;
+        private string idChucVu;
+        AccountBLL accountBLL = new AccountBLL();
         public HomeForm()
         {
             InitializeComponent();
+            var user = UserAccountSession.Instance.UserInfo[0];
+            this.idTaiKhoan = user.Id;
+            this.idChucVu = user.IdChucVu;
+            Console.WriteLine(user.Id + user.IdChucVu + user.IdNhanSu + user.IdBoPhan);
         }
 
+        public string IdTaiKhoan
+        {
+            get { return idTaiKhoan; }
+            set { idTaiKhoan = value; }
+        }
         
+        public string IdChucVu
+        {
+            get { return idChucVu; }
+            set { idChucVu = value; }
+        }
 
         private void FormLayout_Load(object sender, EventArgs e)
         {
-            DecentralizationForm decentralization = new DecentralizationForm();
-            addFormInMainLayout(decentralization);
-
+            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0001"); //Q0001 is permission to access DecentralizationForm
+            if (idChucVu == "CV001" || checkPermission)
+            {
+                DecentralizationForm decentralization = new DecentralizationForm();
+                addFormInMainLayout(decentralization);
+            } else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
         }
 
         //Add form in main layout
@@ -35,12 +61,13 @@ namespace Fastie
             mainLayout.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
             userControl.Show();
+
         }
 
         //Check other panel is not click
         private void setStatePanel(Panel statePanel)
         {
-            Panel[] panel = { stateDecentralization, statePart, statePosition, statePersonnel, stateWork, stateAnalytics };
+            Panel[] panel = { stateDecentralization, statePart, statePosition, statePersonnel, stateWork, stateAnalytics, stateAccount };
             for (int i = 0; i < panel.Length; i++)
             {
                 if (panel[i] != statePanel)
@@ -55,45 +82,115 @@ namespace Fastie
 
         private void btnDecentralization_Click(object sender, EventArgs e)
         {
-            DecentralizationForm decentralization = new DecentralizationForm();
-            addFormInMainLayout(decentralization);
+            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0001");
+            if (idChucVu == "CV001" || checkPermission)
+            {
+                DecentralizationForm decentralization = new DecentralizationForm();
+                addFormInMainLayout(decentralization);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
             setStatePanel(stateDecentralization);
         }
 
         private void btnPart_Click(object sender, EventArgs e)
         {
-            DepartmentForm part = new DepartmentForm();
-            addFormInMainLayout(part);
+            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0006");
+            if (checkPermission)
+            {
+                DepartmentForm departmentForm = new DepartmentForm();
+                addFormInMainLayout(departmentForm);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
             setStatePanel(statePart);
         }
 
         private void btnPosition_Click(object sender, EventArgs e)
         {
-            PositionForm position = new PositionForm();
-            addFormInMainLayout(position);
+            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0010");
+            if (checkPermission)
+            {
+                PositionForm position = new PositionForm();
+                addFormInMainLayout(position);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
             setStatePanel(statePosition);
         }
 
         private void btnPersonnel_Click(object sender, EventArgs e)
         {
-            PersonnelForm personnel = new PersonnelForm();
-            addFormInMainLayout(personnel);
+            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0014");
+            if (checkPermission)
+            {
+                PersonnelForm personnel = new PersonnelForm();
+                addFormInMainLayout(personnel);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
             setStatePanel(statePersonnel);
         }
 
         private void btnWork_Click(object sender, EventArgs e)
         {
-            TaskForm work = new TaskForm();
-            addFormInMainLayout(work);
+            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0018");
+            if (checkPermission)
+            {
+                TaskForm work = new TaskForm();
+                addFormInMainLayout(work);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
             setStatePanel(stateWork);
         }
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
-            Analytics analytics = new Analytics();
-            addFormInMainLayout(analytics);
+            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0026");
+            if (checkPermission)
+            {
+                Analytics analytics = new Analytics();
+                addFormInMainLayout(analytics);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
             setStatePanel(stateAnalytics);
         }
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0002");
+            if (checkPermission)
+            {
+                AccountForm account = new AccountForm();
+                addFormInMainLayout(account);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
+            setStatePanel(stateAccount);
+        }
+
 
         //Set hover
         private void pnlDecentralization_MouseLeave(object sender, EventArgs e)
@@ -165,23 +262,26 @@ namespace Fastie
         {
             btnLogout.BackColor = Color.Transparent;
         }
-
-        private void stateDecentralization_Paint(object sender, PaintEventArgs e)
+        private void pnlAccount_MouseLeave(object sender, EventArgs e)
         {
+            btnLogout.BackColor = Color.FromArgb(91, 91, 92);
 
+        }
+
+        private void pnlAccount_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = Color.Transparent;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            string[] information = {"Bạn có chắc chắn muốn đăng xuất?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Đăng xuất" };
-            LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm();
-            layoutConfirmForm.Title = information[0];
-            layoutConfirmForm.Content = information[1];
-            layoutConfirmForm.btnConfirmText = information[2];
-            layoutConfirmForm.Show();
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-            this.Hide();
+            //string[] information = {"Bạn có chắc chắn muốn đăng xuất?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Đăng xuất" };
+            //LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm();
+            //layoutConfirmForm.Title = information[0];
+            //layoutConfirmForm.Content = information[1];
+            //layoutConfirmForm.btnConfirmText = information[2];
+            //layoutConfirmForm.Show();
         }
+
     }
 }
