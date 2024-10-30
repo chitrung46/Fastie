@@ -38,10 +38,18 @@
             this.lblTaskName = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbxDepartment = new GUI.TruniControls.CustomComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.customButton7 = new GUI.CustomButton();
             this.pnl2 = new GUI.TruniControls.CustomPanel();
+            this.customButton3 = new GUI.CustomButton();
+            this.customButton5 = new GUI.CustomButton();
+            this.customButton4 = new GUI.CustomButton();
+            this.customButton2 = new GUI.CustomButton();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.cbxPersonnel = new GUI.TruniControls.CustomComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,19 +60,11 @@
             this.customButton6 = new GUI.CustomButton();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.lblNameOfForm = new System.Windows.Forms.Label();
-            this.customButton4 = new GUI.CustomButton();
-            this.customButton2 = new GUI.CustomButton();
-            this.cbxPersonnel = new GUI.TruniControls.CustomComboBox();
-            this.customButton3 = new GUI.CustomButton();
-            this.customButton5 = new GUI.CustomButton();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.pnl2.SuspendLayout();
-            this.customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.customPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpTimeCompleted
@@ -124,7 +124,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(25, 346);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(196, 21);
+            this.label7.Size = new System.Drawing.Size(186, 21);
             this.label7.TabIndex = 41;
             this.label7.Text = "Thời hạn hoàn thành: ";
             // 
@@ -134,7 +134,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(26, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 21);
+            this.label2.Size = new System.Drawing.Size(145, 21);
             this.label2.TabIndex = 35;
             this.label2.Text = "Mô tả công việc: ";
             // 
@@ -144,7 +144,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(26, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 21);
+            this.label1.Size = new System.Drawing.Size(133, 21);
             this.label1.TabIndex = 33;
             this.label1.Text = "Loại công việc: ";
             // 
@@ -175,7 +175,7 @@
             this.lblTaskName.ForeColor = System.Drawing.Color.White;
             this.lblTaskName.Location = new System.Drawing.Point(25, 14);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(136, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(129, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Tên công việc: ";
             // 
@@ -216,6 +216,38 @@
             this.customPanel1.Size = new System.Drawing.Size(624, 442);
             this.customPanel1.TabIndex = 45;
             // 
+            // customTextBox1
+            // 
+            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
+            this.customTextBox1.BorderRadius = 8;
+            this.customTextBox1.BorderSize = 2;
+            this.customTextBox1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.customTextBox1.Location = new System.Drawing.Point(284, 388);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox1.Multiline = false;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.customTextBox1.PasswordChar = false;
+            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.PlaceholderText = "";
+            this.customTextBox1.Size = new System.Drawing.Size(60, 36);
+            this.customTextBox1.TabIndex = 44;
+            this.customTextBox1.UnderlinedStyle = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(25, 396);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(237, 21);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "Số lượng nhân sự chủ động:";
+            // 
             // cbxDepartment
             // 
             this.cbxDepartment.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -241,7 +273,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(26, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 21);
+            this.label5.Size = new System.Drawing.Size(147, 21);
             this.label5.TabIndex = 33;
             this.label5.Text = "Người nhận việc:";
             // 
@@ -287,13 +319,107 @@
             this.pnl2.Size = new System.Drawing.Size(470, 442);
             this.pnl2.TabIndex = 47;
             // 
+            // customButton3
+            // 
+            this.customButton3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.customButton3.BorderColor = System.Drawing.Color.White;
+            this.customButton3.BorderRadius = 15;
+            this.customButton3.BorderSize = 0;
+            this.customButton3.FlatAppearance.BorderSize = 0;
+            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton3.ForeColor = System.Drawing.Color.White;
+            this.customButton3.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.customButton3.Location = new System.Drawing.Point(397, 258);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Size = new System.Drawing.Size(42, 36);
+            this.customButton3.TabIndex = 47;
+            this.customButton3.UseVisualStyleBackColor = false;
+            // 
+            // customButton5
+            // 
+            this.customButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.customButton5.BorderColor = System.Drawing.Color.White;
+            this.customButton5.BorderRadius = 15;
+            this.customButton5.BorderSize = 0;
+            this.customButton5.FlatAppearance.BorderSize = 0;
+            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton5.ForeColor = System.Drawing.Color.White;
+            this.customButton5.Image = global::Fastie.Properties.Resources.icons8_plus_23;
+            this.customButton5.Location = new System.Drawing.Point(349, 258);
+            this.customButton5.Name = "customButton5";
+            this.customButton5.Size = new System.Drawing.Size(42, 36);
+            this.customButton5.TabIndex = 46;
+            this.customButton5.UseVisualStyleBackColor = false;
+            // 
+            // customButton4
+            // 
+            this.customButton4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.customButton4.BorderColor = System.Drawing.Color.White;
+            this.customButton4.BorderRadius = 15;
+            this.customButton4.BorderSize = 0;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.ForeColor = System.Drawing.Color.White;
+            this.customButton4.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.customButton4.Location = new System.Drawing.Point(397, 45);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Size = new System.Drawing.Size(42, 36);
+            this.customButton4.TabIndex = 45;
+            this.customButton4.UseVisualStyleBackColor = false;
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.customButton2.BorderColor = System.Drawing.Color.White;
+            this.customButton2.BorderRadius = 15;
+            this.customButton2.BorderSize = 0;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.White;
+            this.customButton2.Image = global::Fastie.Properties.Resources.icons8_plus_23;
+            this.customButton2.Location = new System.Drawing.Point(349, 45);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(42, 36);
+            this.customButton2.TabIndex = 43;
+            this.customButton2.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(29, 317);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(410, 107);
+            this.dataGridView2.TabIndex = 41;
+            // 
+            // cbxPersonnel
+            // 
+            this.cbxPersonnel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbxPersonnel.BorderColor = System.Drawing.Color.Black;
+            this.cbxPersonnel.BorderRadius = 8;
+            this.cbxPersonnel.BorderSize = 0;
+            this.cbxPersonnel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbxPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbxPersonnel.ForeColor = System.Drawing.Color.DimGray;
+            this.cbxPersonnel.IconColor = System.Drawing.Color.Black;
+            this.cbxPersonnel.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbxPersonnel.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbxPersonnel.Location = new System.Drawing.Point(29, 258);
+            this.cbxPersonnel.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbxPersonnel.Name = "cbxPersonnel";
+            this.cbxPersonnel.Size = new System.Drawing.Size(299, 36);
+            this.cbxPersonnel.TabIndex = 39;
+            this.cbxPersonnel.Texts = "";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(26, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 21);
+            this.label6.Size = new System.Drawing.Size(165, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bộ phận nhận việc:";
             // 
@@ -304,7 +430,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(627, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(171, 21);
+            this.label9.Size = new System.Drawing.Size(167, 21);
             this.label9.TabIndex = 40;
             this.label9.Text = "objectdiagram.png";
             // 
@@ -341,7 +467,7 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(159, 23);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(76, 21);
+            this.lblFileName.Size = new System.Drawing.Size(73, 21);
             this.lblFileName.TabIndex = 2;
             this.lblFileName.Text = "n2.docx";
             // 
@@ -415,135 +541,9 @@
             this.lblNameOfForm.ForeColor = System.Drawing.Color.White;
             this.lblNameOfForm.Location = new System.Drawing.Point(22, 18);
             this.lblNameOfForm.Name = "lblNameOfForm";
-            this.lblNameOfForm.Size = new System.Drawing.Size(257, 32);
+            this.lblNameOfForm.Size = new System.Drawing.Size(247, 32);
             this.lblNameOfForm.TabIndex = 46;
             this.lblNameOfForm.Text = "Giao việc chủ động";
-            // 
-            // customButton4
-            // 
-            this.customButton4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.customButton4.BorderColor = System.Drawing.Color.White;
-            this.customButton4.BorderRadius = 15;
-            this.customButton4.BorderSize = 0;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Image = global::Fastie.Properties.Resources.icons8_delete_23;
-            this.customButton4.Location = new System.Drawing.Point(397, 45);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Size = new System.Drawing.Size(42, 36);
-            this.customButton4.TabIndex = 45;
-            this.customButton4.UseVisualStyleBackColor = false;
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.customButton2.BorderColor = System.Drawing.Color.White;
-            this.customButton2.BorderRadius = 15;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Image = global::Fastie.Properties.Resources.icons8_plus_23;
-            this.customButton2.Location = new System.Drawing.Point(349, 45);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(42, 36);
-            this.customButton2.TabIndex = 43;
-            this.customButton2.UseVisualStyleBackColor = false;
-            // 
-            // cbxPersonnel
-            // 
-            this.cbxPersonnel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbxPersonnel.BorderColor = System.Drawing.Color.Black;
-            this.cbxPersonnel.BorderRadius = 8;
-            this.cbxPersonnel.BorderSize = 0;
-            this.cbxPersonnel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbxPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbxPersonnel.ForeColor = System.Drawing.Color.DimGray;
-            this.cbxPersonnel.IconColor = System.Drawing.Color.Black;
-            this.cbxPersonnel.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbxPersonnel.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbxPersonnel.Location = new System.Drawing.Point(29, 258);
-            this.cbxPersonnel.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbxPersonnel.Name = "cbxPersonnel";
-            this.cbxPersonnel.Size = new System.Drawing.Size(299, 36);
-            this.cbxPersonnel.TabIndex = 39;
-            this.cbxPersonnel.Texts = "";
-            // 
-            // customButton3
-            // 
-            this.customButton3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.customButton3.BorderColor = System.Drawing.Color.White;
-            this.customButton3.BorderRadius = 15;
-            this.customButton3.BorderSize = 0;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Image = global::Fastie.Properties.Resources.icons8_delete_23;
-            this.customButton3.Location = new System.Drawing.Point(397, 258);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(42, 36);
-            this.customButton3.TabIndex = 47;
-            this.customButton3.UseVisualStyleBackColor = false;
-            // 
-            // customButton5
-            // 
-            this.customButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.customButton5.BorderColor = System.Drawing.Color.White;
-            this.customButton5.BorderRadius = 15;
-            this.customButton5.BorderSize = 0;
-            this.customButton5.FlatAppearance.BorderSize = 0;
-            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton5.ForeColor = System.Drawing.Color.White;
-            this.customButton5.Image = global::Fastie.Properties.Resources.icons8_plus_23;
-            this.customButton5.Location = new System.Drawing.Point(349, 258);
-            this.customButton5.Name = "customButton5";
-            this.customButton5.Size = new System.Drawing.Size(42, 36);
-            this.customButton5.TabIndex = 46;
-            this.customButton5.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(29, 317);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(410, 107);
-            this.dataGridView2.TabIndex = 41;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(25, 396);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 21);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "Số lượng nhân sự chủ động:";
-            // 
-            // customTextBox1
-            // 
-            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox1.BorderRadius = 8;
-            this.customTextBox1.BorderSize = 2;
-            this.customTextBox1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox1.Location = new System.Drawing.Point(284, 388);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.PlaceholderText = "";
-            this.customTextBox1.Size = new System.Drawing.Size(60, 36);
-            this.customTextBox1.TabIndex = 44;
-            this.customTextBox1.UnderlinedStyle = false;
             // 
             // DetailAssignPositiveTaskForm
             // 
@@ -558,15 +558,16 @@
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.lblNameOfForm);
             this.Name = "DetailAssignPositiveTaskForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetailAssignPositiveTaskForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
