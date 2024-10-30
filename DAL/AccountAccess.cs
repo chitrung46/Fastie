@@ -17,15 +17,6 @@ namespace DAL
             return DatabaseAccess.GetAllAccounts();
         }
 
-        public string InsertAccount(string tenDangNhap, string matKhau)
-        {
-            return DatabaseAccess.InsertAccount(tenDangNhap, matKhau);
-        }
-
-        public bool DeleteAccount(string tenDangNhap, string matKhau)
-        {
-            return DatabaseAccess.DeleteAccount(tenDangNhap, matKhau);
-        }
 
         public bool UpdateAccount(string tenDangNhap, string matKhau)
         {
@@ -46,12 +37,10 @@ namespace DAL
         {
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
-                string query = @"
-            SELECT NS.id, NS.ten, NS.email, NS.gioiTinh, NS.ngaySinh, NS.ngayVaoLam, NS.sdt
-            FROM NhanSu NS
-            WHERE NS.email = @Email";
+                string procedureName = "proc_GetNhanSuByEmail";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(procedureName, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Email", email);
 
                 conn.Open();
@@ -73,6 +62,7 @@ namespace DAL
                 return null;
             }
         }
+
 
     }
 }
