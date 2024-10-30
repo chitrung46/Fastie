@@ -40,9 +40,10 @@
             // 
             // mainLayout
             // 
-            this.mainLayout.Location = new System.Drawing.Point(28, 92);
+            this.mainLayout.Location = new System.Drawing.Point(35, 115);
+            this.mainLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainLayout.Name = "mainLayout";
-            this.mainLayout.Size = new System.Drawing.Size(1120, 591);
+            this.mainLayout.Size = new System.Drawing.Size(1104, 567);
             this.mainLayout.TabIndex = 2;
             // 
             // pnlTabBar
@@ -62,9 +63,10 @@
             this.pnlTabBar.GradientAngle = 90F;
             this.pnlTabBar.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnlTabBar.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnlTabBar.Location = new System.Drawing.Point(28, 12);
+            this.pnlTabBar.Location = new System.Drawing.Point(35, 15);
+            this.pnlTabBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTabBar.Name = "pnlTabBar";
-            this.pnlTabBar.Size = new System.Drawing.Size(1120, 76);
+            this.pnlTabBar.Size = new System.Drawing.Size(1104, 75);
             this.pnlTabBar.TabIndex = 1;
             // 
             // btnAdjustTask
@@ -77,10 +79,10 @@
             this.btnAdjustTask.FlatAppearance.BorderSize = 0;
             this.btnAdjustTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdjustTask.ForeColor = System.Drawing.Color.White;
-            this.btnAdjustTask.Location = new System.Drawing.Point(509, 9);
-            this.btnAdjustTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdjustTask.Location = new System.Drawing.Point(636, 11);
+            this.btnAdjustTask.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdjustTask.Name = "btnAdjustTask";
-            this.btnAdjustTask.Size = new System.Drawing.Size(183, 43);
+            this.btnAdjustTask.Size = new System.Drawing.Size(229, 54);
             this.btnAdjustTask.TabIndex = 7;
             this.btnAdjustTask.Text = "Điều chỉnh phân công";
             this.btnAdjustTask.UseVisualStyleBackColor = false;
@@ -96,10 +98,10 @@
             this.btnReportTask.FlatAppearance.BorderSize = 0;
             this.btnReportTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportTask.ForeColor = System.Drawing.Color.White;
-            this.btnReportTask.Location = new System.Drawing.Point(351, 9);
-            this.btnReportTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReportTask.Location = new System.Drawing.Point(439, 11);
+            this.btnReportTask.Margin = new System.Windows.Forms.Padding(2);
             this.btnReportTask.Name = "btnReportTask";
-            this.btnReportTask.Size = new System.Drawing.Size(154, 43);
+            this.btnReportTask.Size = new System.Drawing.Size(192, 54);
             this.btnReportTask.TabIndex = 6;
             this.btnReportTask.Text = "Báo cáo công việc";
             this.btnReportTask.UseVisualStyleBackColor = false;
@@ -115,10 +117,10 @@
             this.btnAcceptTask.FlatAppearance.BorderSize = 0;
             this.btnAcceptTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcceptTask.ForeColor = System.Drawing.Color.White;
-            this.btnAcceptTask.Location = new System.Drawing.Point(250, 9);
-            this.btnAcceptTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAcceptTask.Location = new System.Drawing.Point(312, 11);
+            this.btnAcceptTask.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcceptTask.Name = "btnAcceptTask";
-            this.btnAcceptTask.Size = new System.Drawing.Size(98, 43);
+            this.btnAcceptTask.Size = new System.Drawing.Size(122, 54);
             this.btnAcceptTask.TabIndex = 5;
             this.btnAcceptTask.Text = "Nhận việc";
             this.btnAcceptTask.UseVisualStyleBackColor = false;
@@ -134,10 +136,10 @@
             this.btnAssignTask.FlatAppearance.BorderSize = 0;
             this.btnAssignTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignTask.ForeColor = System.Drawing.Color.White;
-            this.btnAssignTask.Location = new System.Drawing.Point(148, 9);
-            this.btnAssignTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAssignTask.Location = new System.Drawing.Point(185, 11);
+            this.btnAssignTask.Margin = new System.Windows.Forms.Padding(2);
             this.btnAssignTask.Name = "btnAssignTask";
-            this.btnAssignTask.Size = new System.Drawing.Size(98, 43);
+            this.btnAssignTask.Size = new System.Drawing.Size(122, 54);
             this.btnAssignTask.TabIndex = 4;
             this.btnAssignTask.Text = "Giao việc";
             this.btnAssignTask.UseVisualStyleBackColor = false;
@@ -153,10 +155,10 @@
             this.btnTaskTable.FlatAppearance.BorderSize = 0;
             this.btnTaskTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaskTable.ForeColor = System.Drawing.Color.White;
-            this.btnTaskTable.Location = new System.Drawing.Point(8, 9);
-            this.btnTaskTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaskTable.Location = new System.Drawing.Point(10, 11);
+            this.btnTaskTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaskTable.Name = "btnTaskTable";
-            this.btnTaskTable.Size = new System.Drawing.Size(137, 43);
+            this.btnTaskTable.Size = new System.Drawing.Size(171, 54);
             this.btnTaskTable.TabIndex = 3;
             this.btnTaskTable.Text = "Bảng công việc";
             this.btnTaskTable.UseVisualStyleBackColor = false;
@@ -164,7 +166,7 @@
             // 
             // TaskForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
@@ -173,7 +175,7 @@
             this.Controls.Add(this.pnlTabBar);
             this.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TaskForm";
             this.Text = "Work";
             this.Load += new System.EventHandler(this.TaskForm_Load);
