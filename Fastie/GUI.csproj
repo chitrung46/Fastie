@@ -76,11 +76,11 @@
     <Compile Include="Screens\Personnel\CreatePersonnelForm.Designer.cs">
       <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Personnel\EditPersonnelForm.cs">
+    <Compile Include="Screens\Personnel\UpdatePersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Personnel\EditPersonnelForm.Designer.cs">
-      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    <Compile Include="Screens\Personnel\UpdatePersonnelForm.Designer.cs">
+      <DependentUpon>UpdatePersonnelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Position\CreatePositionForm.cs">
       <SubType>Form</SubType>
@@ -88,11 +88,11 @@
     <Compile Include="Screens\Position\CreatePositionForm.Designer.cs">
       <DependentUpon>CreatePositionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Position\EditPositionForm.cs">
+    <Compile Include="Screens\Position\UpdatePositionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Position\EditPositionForm.Designer.cs">
-      <DependentUpon>EditPositionForm.cs</DependentUpon>
+    <Compile Include="Screens\Position\UpdatePositionForm.Designer.cs">
+      <DependentUpon>UpdatePositionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Department\CreateDepartmentForm.cs">
       <SubType>Form</SubType>
@@ -100,11 +100,11 @@
     <Compile Include="Screens\Department\CreateDepartmentForm.Designer.cs">
       <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Department\EditDepartmentForm.cs">
+    <Compile Include="Screens\Department\UpdateDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Department\EditDepartmentForm.Designer.cs">
-      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
+    <Compile Include="Screens\Department\UpdateDepartmentForm.Designer.cs">
+      <DependentUpon>UpdateDepartmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Account\AccountForm.cs">
       <SubType>Form</SubType>
@@ -136,11 +136,11 @@
     <Compile Include="Screens\Account\EditAccount.Designer.cs">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Layout\DeleteLayoutConfirm.cs">
+    <Compile Include="Components\Layout\LayoutConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Layout\DeleteLayoutConfirm.Designer.cs">
-      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    <Compile Include="Components\Layout\LayoutConfirmForm.Designer.cs">
+      <DependentUpon>LayoutConfirmForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Home\HomeForm.cs">
       <SubType>Form</SubType>
@@ -261,17 +261,17 @@
     <EmbeddedResource Include="Screens\Account\EditAccount.resx">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Department\EditDepartmentForm.resx">
-      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Department\UpdateDepartmentForm.resx">
+      <DependentUpon>UpdateDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Personnel\EditPersonnelForm.resx">
-      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Personnel\UpdatePersonnelForm.resx">
+      <DependentUpon>UpdatePersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Position\EditPositionForm.resx">
-      <DependentUpon>EditPositionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Position\UpdatePositionForm.resx">
+      <DependentUpon>UpdatePositionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Layout\DeleteLayoutConfirm.resx">
-      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Layout\LayoutConfirmForm.resx">
+      <DependentUpon>LayoutConfirmForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Home\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

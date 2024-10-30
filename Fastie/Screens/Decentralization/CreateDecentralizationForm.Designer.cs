@@ -61,7 +61,6 @@
             this.checkboxSendNotification = new System.Windows.Forms.CheckBox();
             this.checkboxDeleteTasks = new System.Windows.Forms.CheckBox();
             this.checkboxUpdateTasks = new System.Windows.Forms.CheckBox();
-            this.checkboxSendComments = new System.Windows.Forms.CheckBox();
             this.checkboxTasksManagement = new System.Windows.Forms.CheckBox();
             this.btnAdd = new GUI.CustomButton();
             this.btnCancel = new GUI.CustomButton();
@@ -508,7 +507,6 @@
             this.customPanel6.Controls.Add(this.checkboxSendNotification);
             this.customPanel6.Controls.Add(this.checkboxDeleteTasks);
             this.customPanel6.Controls.Add(this.checkboxUpdateTasks);
-            this.customPanel6.Controls.Add(this.checkboxSendComments);
             this.customPanel6.ForeColor = System.Drawing.Color.Black;
             this.customPanel6.GradientAngle = 90F;
             this.customPanel6.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -525,7 +523,7 @@
             this.checkboxAssignTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkboxAssignTasks.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold);
             this.checkboxAssignTasks.ForeColor = System.Drawing.Color.White;
-            this.checkboxAssignTasks.Location = new System.Drawing.Point(21, 87);
+            this.checkboxAssignTasks.Location = new System.Drawing.Point(22, 56);
             this.checkboxAssignTasks.Name = "checkboxAssignTasks";
             this.checkboxAssignTasks.Size = new System.Drawing.Size(97, 25);
             this.checkboxAssignTasks.TabIndex = 4;
@@ -539,7 +537,7 @@
             this.checkboxSendNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkboxSendNotification.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold);
             this.checkboxSendNotification.ForeColor = System.Drawing.Color.White;
-            this.checkboxSendNotification.Location = new System.Drawing.Point(21, 56);
+            this.checkboxSendNotification.Location = new System.Drawing.Point(22, 25);
             this.checkboxSendNotification.Name = "checkboxSendNotification";
             this.checkboxSendNotification.Size = new System.Drawing.Size(133, 25);
             this.checkboxSendNotification.TabIndex = 4;
@@ -573,20 +571,6 @@
             this.checkboxUpdateTasks.TabIndex = 4;
             this.checkboxUpdateTasks.Text = "Cập nhập công việc";
             this.checkboxUpdateTasks.UseVisualStyleBackColor = false;
-            // 
-            // checkboxSendComments
-            // 
-            this.checkboxSendComments.AutoSize = true;
-            this.checkboxSendComments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.checkboxSendComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkboxSendComments.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold);
-            this.checkboxSendComments.ForeColor = System.Drawing.Color.White;
-            this.checkboxSendComments.Location = new System.Drawing.Point(21, 25);
-            this.checkboxSendComments.Name = "checkboxSendComments";
-            this.checkboxSendComments.Size = new System.Drawing.Size(102, 25);
-            this.checkboxSendComments.TabIndex = 4;
-            this.checkboxSendComments.Text = "Gửi ý kiến";
-            this.checkboxSendComments.UseVisualStyleBackColor = false;
             // 
             // checkboxTasksManagement
             // 
@@ -643,7 +627,7 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // CreateDecentralization
+            // CreateDecentralizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -663,7 +647,7 @@
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.label1);
-            this.Name = "CreateDecentralization";
+            this.Name = "CreateDecentralizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Decentralizaton";
             this.customPanel1.ResumeLayout(false);
@@ -713,7 +697,6 @@
         private GUI.TruniControls.CustomPanel customPanel6;
         private System.Windows.Forms.CheckBox checkboxAssignTasks;
         private System.Windows.Forms.CheckBox checkboxSendNotification;
-        private System.Windows.Forms.CheckBox checkboxSendComments;
         private System.Windows.Forms.CheckBox checkboxTasksManagement;
         private System.Windows.Forms.CheckBox checkboxDeleteTasks;
         private System.Windows.Forms.CheckBox checkboxUpdateTasks;

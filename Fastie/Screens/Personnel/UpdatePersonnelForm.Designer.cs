@@ -1,6 +1,6 @@
 ﻿namespace Fastie
 {
-    partial class editPersonnel
+    partial class UpdatePersonnelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,11 +51,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(282, 39);
+            this.label2.Size = new System.Drawing.Size(258, 32);
             this.label2.TabIndex = 10;
             this.label2.Text = "Thông tin nhân sự";
             // 
@@ -101,6 +101,7 @@
             this.customButton1.TabIndex = 11;
             this.customButton1.Text = "Lưu";
             this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // customPanel1
             // 
@@ -120,7 +121,7 @@
             this.customPanel1.Controls.Add(this.lblBirthDay);
             this.customPanel1.Controls.Add(this.dTPBirthday);
             this.customPanel1.Controls.Add(this.cCBSex);
-            this.customPanel1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customPanel1.ForeColor = System.Drawing.Color.Black;
             this.customPanel1.GradientAngle = 90F;
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
@@ -137,7 +138,7 @@
             this.label4.Location = new System.Drawing.Point(29, 98);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 21);
+            this.label4.Size = new System.Drawing.Size(55, 18);
             this.label4.TabIndex = 30;
             this.label4.Text = "Email:";
             // 
@@ -148,7 +149,7 @@
             this.cTBEmail.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBEmail.BorderRadius = 8;
             this.cTBEmail.BorderSize = 2;
-            this.cTBEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cTBEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cTBEmail.ForeColor = System.Drawing.Color.DimGray;
             this.cTBEmail.Location = new System.Drawing.Point(26, 126);
             this.cTBEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -158,7 +159,7 @@
             this.cTBEmail.PasswordChar = false;
             this.cTBEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.cTBEmail.PlaceholderText = "";
-            this.cTBEmail.Size = new System.Drawing.Size(266, 38);
+            this.cTBEmail.Size = new System.Drawing.Size(266, 35);
             this.cTBEmail.TabIndex = 24;
             this.cTBEmail.UnderlinedStyle = false;
             // 
@@ -178,7 +179,7 @@
             this.lblSex.Location = new System.Drawing.Point(29, 189);
             this.lblSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSex.Name = "lblSex";
-            this.lblSex.Size = new System.Drawing.Size(92, 21);
+            this.lblSex.Size = new System.Drawing.Size(81, 18);
             this.lblSex.TabIndex = 22;
             this.lblSex.Text = "Giới tính: ";
             // 
@@ -189,7 +190,7 @@
             this.label1.Location = new System.Drawing.Point(153, 189);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 21);
+            this.label1.Size = new System.Drawing.Size(51, 18);
             this.label1.TabIndex = 21;
             this.label1.Text = "SĐT: ";
             // 
@@ -200,7 +201,7 @@
             this.label3.Location = new System.Drawing.Point(311, 98);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 21);
+            this.label3.Size = new System.Drawing.Size(92, 18);
             this.label3.TabIndex = 28;
             this.label3.Text = "Ngày sinh: ";
             // 
@@ -212,7 +213,7 @@
             this.lblName.Location = new System.Drawing.Point(29, 10);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(76, 21);
+            this.lblName.Size = new System.Drawing.Size(68, 18);
             this.lblName.TabIndex = 20;
             this.lblName.Text = "Họ tên: ";
             // 
@@ -223,7 +224,7 @@
             this.cTBNumberPhone.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBNumberPhone.BorderRadius = 8;
             this.cTBNumberPhone.BorderSize = 2;
-            this.cTBNumberPhone.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cTBNumberPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cTBNumberPhone.ForeColor = System.Drawing.Color.DimGray;
             this.cTBNumberPhone.Location = new System.Drawing.Point(148, 219);
             this.cTBNumberPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -233,7 +234,7 @@
             this.cTBNumberPhone.PasswordChar = false;
             this.cTBNumberPhone.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.cTBNumberPhone.PlaceholderText = "";
-            this.cTBNumberPhone.Size = new System.Drawing.Size(144, 38);
+            this.cTBNumberPhone.Size = new System.Drawing.Size(144, 35);
             this.cTBNumberPhone.TabIndex = 27;
             this.cTBNumberPhone.UnderlinedStyle = false;
             // 
@@ -244,7 +245,7 @@
             this.cTBName.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBName.BorderRadius = 8;
             this.cTBName.BorderSize = 2;
-            this.cTBName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cTBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cTBName.ForeColor = System.Drawing.Color.DimGray;
             this.cTBName.Location = new System.Drawing.Point(24, 39);
             this.cTBName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -254,7 +255,7 @@
             this.cTBName.PasswordChar = false;
             this.cTBName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.cTBName.PlaceholderText = "";
-            this.cTBName.Size = new System.Drawing.Size(511, 38);
+            this.cTBName.Size = new System.Drawing.Size(511, 35);
             this.cTBName.TabIndex = 31;
             this.cTBName.UnderlinedStyle = false;
             // 
@@ -265,7 +266,7 @@
             this.lblBirthDay.Location = new System.Drawing.Point(311, 190);
             this.lblBirthDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBirthDay.Name = "lblBirthDay";
-            this.lblBirthDay.Size = new System.Drawing.Size(134, 21);
+            this.lblBirthDay.Size = new System.Drawing.Size(120, 18);
             this.lblBirthDay.TabIndex = 23;
             this.lblBirthDay.Text = "Ngày vào làm: ";
             // 
@@ -286,7 +287,7 @@
             this.cCBSex.BorderRadius = 8;
             this.cCBSex.BorderSize = 1;
             this.cCBSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cCBSex.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cCBSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cCBSex.ForeColor = System.Drawing.Color.DimGray;
             this.cCBSex.IconColor = System.Drawing.Color.Black;
             this.cCBSex.ListBackColor = System.Drawing.Color.WhiteSmoke;
@@ -299,7 +300,7 @@
             this.cCBSex.TabIndex = 26;
             this.cCBSex.Texts = "";
             // 
-            // editPersonnel
+            // UpdatePersonnelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -311,9 +312,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "editPersonnel";
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "UpdatePersonnelForm";
             this.Text = "Cập nhật thông tin nhân sự";
+            this.Load += new System.EventHandler(this.UpdatePersonnelForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);

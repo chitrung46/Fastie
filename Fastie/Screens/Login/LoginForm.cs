@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
+using DTO;
 namespace Fastie.Screens.Login
 {
     public partial class LoginForm : Form
     {
+        AccountBLL accountBLL = new AccountBLL();
+        Account acc = new Account();
         public LoginForm()
         {
             InitializeComponent();
@@ -43,6 +46,29 @@ namespace Fastie.Screens.Login
             ForgetPasswordForm forgetPasswordForm = new ForgetPasswordForm();
             forgetPasswordForm.Show();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            acc.TenDangNhap = txt_Email.Text;
+            acc.MatKhau = txtPassword.Text;
+
+            string getUser = accountBLL.checkLogin(acc);
+            switch (getUser)
+            {
+                case "required_email":
+                    MessageBox.Show("Email không được để trống");
+                    return;
+                case "required_password":
+                    MessageBox.Show("Mật khẩu không được để trống");
+                    return;
+                case "Email hoặc mật khẩu không chính xác!":
+                    MessageBox.Show("Email hoặc mật khẩu không chính xác!");
+                    return;
+            }
+            HomeForm home = new HomeForm();
+            home.Show();
+            this.Hide();
+        }
     }
-    
+
 }
