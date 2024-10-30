@@ -21,10 +21,22 @@ namespace Fastie
         public HomeForm()
         {
             InitializeComponent();
-            var user = UserAccountSession.Instance.UserInfo[0];
-            this.idTaiKhoan = user.Id;
-            this.idChucVu = user.IdChucVu;
-            Console.WriteLine(user.Id + user.IdChucVu + user.IdNhanSu + user.IdBoPhan);
+            if(UserAccountSession.Instance.UserInfo.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa đăng nhập! bạn đang trong chế độ phát triển phần mềm. Tài khoản mặc định là TK0000000001. Nhấn OK để tiếp tục");
+                //Create temporary account
+                this.idTaiKhoan = "TK0000000001";
+                this.idChucVu = "CV001";
+            } else
+            {
+                var user = UserAccountSession.Instance.UserInfo[0];
+                if (user.Id != null && user.Id != null)
+                {
+                    this.idTaiKhoan = user.Id;
+                    this.idChucVu = user.IdChucVu;
+                }
+            }
+            Console.WriteLine(this.idTaiKhoan + " - " + this.idChucVu);
         }
 
         public string IdTaiKhoan
