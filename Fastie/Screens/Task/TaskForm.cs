@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Task;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,17 @@ namespace Fastie
             btnAdjustTask.BackColor = Color.FromArgb(55, 55, 55);
         }
 
+        public void LoadForm(object Form)
+        {
+            if (this.pnlTask.Controls.Count > 0)
+                this.pnlTask.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.pnlTask.Controls.Add(f);
+            this.pnlTask.Tag = f;
+            f.Show();
+        }
         private void btnTaskTable_Click(object sender, EventArgs e)
         {
             btnTaskTable.BackColor = Color.FromArgb(59, 171, 201);
@@ -33,6 +45,7 @@ namespace Fastie
 
         private void btnAssignTask_Click(object sender, EventArgs e)
         {
+            LoadForm(new AssignTaskForm());
             btnAssignTask.BackColor = Color.FromArgb(59, 171, 201);
             btnTaskTable.BackColor = Color.FromArgb(55, 55, 55);
             btnAcceptTask.BackColor = Color.FromArgb(55, 55, 55);
