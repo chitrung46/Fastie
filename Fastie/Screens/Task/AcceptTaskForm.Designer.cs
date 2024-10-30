@@ -124,7 +124,6 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AcceptTaskForm";
-            this.Text = "AcceptTaskForm";
             this.Load += new System.EventHandler(this.AcceptTaskForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
