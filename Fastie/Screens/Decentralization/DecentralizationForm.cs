@@ -1,4 +1,5 @@
 ﻿using BLL;
+using BLL.DecentralizationBLL;
 using DTO;
 using Fastie.Screen.Decentralization;
 using System;
@@ -15,7 +16,7 @@ namespace Fastie
 {
     public partial class DecentralizationForm : Form
     {
-        AccountBLL accountBll = new AccountBLL();
+        DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
         private string accountName;
         private string tenNhanSu;
         private bool isLoaded = false;
@@ -157,7 +158,7 @@ namespace Fastie
 
         private void loadDataPositionList()
         {
-            List<PositionInfo> positionInfos = accountBll.getPositionList();
+            List<PositionInfo> positionInfos = decentralizationBLL.getPositionList();
 
             if (positionInfos != null)
             {
@@ -178,7 +179,7 @@ namespace Fastie
 
         private void loadDataDepartmentList()
         {
-            List<DepartmentInfo> departmentInfos = accountBll.getDepartmentList();
+            List<DepartmentInfo> departmentInfos = decentralizationBLL.getDepartmentList();
 
             if (departmentInfos != null)
             {
@@ -248,34 +249,34 @@ namespace Fastie
         {
             if(selectedDepartmentId != null && selectedPositionId != null)
             {
-                List<AccountInfo> accountInfo = accountBll.getListByDepartmentIdAndPositionId(this.selectedDepartmentId, this.selectedPositionId);
+                List<AccountInfo> accountInfo = decentralizationBLL.getListByDepartmentIdAndPositionId(this.selectedDepartmentId, this.selectedPositionId);
                 loadDataFormat(dataGridViewPersonnel, accountInfo);
 
-                List<AccountInfo> accountInfoRoleless = accountBll.getListByDepartmentIdAndPositionIdRoleLess(this.selectedDepartmentId, this.selectedPositionId);
+                List<AccountInfo> accountInfoRoleless = decentralizationBLL.getListByDepartmentIdAndPositionIdRoleLess(this.selectedDepartmentId, this.selectedPositionId);
                 loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
 
             }
             else if(selectedDepartmentId != null && selectedPositionId == null)
             {
-                List <AccountInfo> accountInfo = accountBll.getDepartmentListwithAllPosition(this.selectedDepartmentId);
+                List <AccountInfo> accountInfo = decentralizationBLL.getDepartmentListwithAllPosition(this.selectedDepartmentId);
                 loadDataFormat(dataGridViewPersonnel, accountInfo);
 
-                List<AccountInfo> accountInfoRoleless = accountBll.getDepartmentListwithAllPositionRoleLess(this.selectedDepartmentId);
+                List<AccountInfo> accountInfoRoleless = decentralizationBLL.getDepartmentListwithAllPositionRoleLess(this.selectedDepartmentId);
                 loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
 
             } else if (selectedDepartmentId == null && selectedPositionId != null)
             {
-                List<AccountInfo> accountInfo = accountBll.getPositionListwithAllDepartment(this.selectedPositionId);
+                List<AccountInfo> accountInfo = decentralizationBLL.getPositionListwithAllDepartment(this.selectedPositionId);
                 loadDataFormat(dataGridViewPersonnel, accountInfo);
 
-                List<AccountInfo> accountInfoRoleless = accountBll.getPositionListwithAllDepartmentRoleLess(this.selectedPositionId);
+                List<AccountInfo> accountInfoRoleless = decentralizationBLL.getPositionListwithAllDepartmentRoleLess(this.selectedPositionId);
                 loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
             } else
             {
-                List<AccountInfo> accountInfoPersonnel = accountBll.getAllAccountInfo();
+                List<AccountInfo> accountInfoPersonnel = decentralizationBLL.getAllAccountInfo();
                 loadDataFormat(dataGridViewPersonnel, accountInfoPersonnel);
 
-                List<AccountInfo> accountInfoRoleless = accountBll.getAllPersonnelRoleLess();
+                List<AccountInfo> accountInfoRoleless = decentralizationBLL.getAllPersonnelRoleLess();
                 loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
             }
         }

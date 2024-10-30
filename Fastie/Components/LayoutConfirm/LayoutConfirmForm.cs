@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.DecentralizationBLL;
 namespace Fastie
 {
     public partial class LayoutConfirmForm : Form
     {
         private string accountName;
         private DecentralizationForm decentralizationForm;
-        AccountBLL accountBll = new AccountBLL();
+        DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
         public LayoutConfirmForm()
         {
             InitializeComponent();
@@ -55,7 +56,7 @@ namespace Fastie
             switch (btnConfirm.Text)
             {
                 case "Xóa quyền":
-                    bool result = accountBll.deleteAllRoles(this.accountName);
+                    bool result = decentralizationBLL.deleteAllRoles(this.accountName);
                     if(result)
                     {
                         MessageBox.Show("Xóa quyền thành công");

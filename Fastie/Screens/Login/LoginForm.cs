@@ -11,11 +11,12 @@ using System.Windows.Forms;
 using BLL;
 using DTO;
 using System.Web;
+using BLL.LoginBLL;
 namespace Fastie.Screens.Login
 {
     public partial class LoginForm : Form
     {
-        AccountBLL accountBLL = new AccountBLL();
+        LoginBLL loginBLL = new LoginBLL();
         Account acc = new Account();
         public LoginForm()
         {
@@ -53,7 +54,7 @@ namespace Fastie.Screens.Login
             acc.TenDangNhap = txt_Email.Text;
             acc.MatKhau = txtPassword.Text;
 
-            string[] getUser = accountBLL.checkLogin(acc);
+            string[] getUser = loginBLL.checkLogin(acc);
 
             if (getUser.Length == 1 && getUser[0] == "Email hoặc mật khẩu không chính xác!")
             {

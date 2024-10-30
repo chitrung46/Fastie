@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.DecentralizationBLL;
 using DTO;
 
 namespace Fastie
@@ -15,7 +16,7 @@ namespace Fastie
     public partial class CreateDecentralizationForm : Form
     {
 
-        private AccountBLL accountBLL = new AccountBLL();
+        private DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
         private Dictionary<string, CheckBox> permissionCheckboxMap;
         private string accountName;
         private DecentralizationForm decentralizationForm;
@@ -211,8 +212,8 @@ namespace Fastie
         {
             try
             {
-                AccountInfo info = accountBLL.getAccountInfo(this.accountName);
-                List<Permission> permissions = accountBLL.getAllPermissions(this.accountName);
+                AccountInfo info = decentralizationBLL.getAccountInfo(this.accountName);
+                List<Permission> permissions = decentralizationBLL.getAllPermissions(this.accountName);
                 CheckPermissionCheckboxes(permissions);
                 if (info != null)
                 {
@@ -323,7 +324,7 @@ namespace Fastie
                 // Kiểm tra và gọi phương thức cập nhật
                 if (!string.IsNullOrEmpty(selectedPermissions))
                 {
-                    bool result = accountBLL.updateRoles(this.accountName, selectedPermissions);
+                    bool result = decentralizationBLL.updateRoles(this.accountName, selectedPermissions);
                     if (result)
                     {
                         decentralizationForm.loadData();

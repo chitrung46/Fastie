@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
+    <Compile Include="DecentralizationBLL\DecentralizationBLL.cs" />
     <Compile Include="DepartmentBLL.cs" />
     <Compile Include="PersonnelBLL.cs" />
     <Compile Include="PositionBLL.cs" />

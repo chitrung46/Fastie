@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecentralizationDAL\DecentralizationDAL.cs" />
     <Compile Include="DepartmentAccess.cs" />
     <Compile Include="PersonnelAccess.cs" />
     <Compile Include="PositionAccess.cs" />
