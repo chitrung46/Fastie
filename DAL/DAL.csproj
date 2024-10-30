@@ -42,11 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DecentralizationDAL\DecentralizationDAL.cs" />
-    <Compile Include="DepartmentAccess.cs" />
-    <Compile Include="PersonnelAccess.cs" />
-    <Compile Include="PositionAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="AccountAccess.cs" />
+    <Compile Include="DepartmentDAL\DepartmentAccess.cs" />
+    <Compile Include="LoginDAL\LoginDAL.cs" />
+    <Compile Include="PersonnelDAL\PersonnelAccess.cs" />
+    <Compile Include="PositionDAL\PositionAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
