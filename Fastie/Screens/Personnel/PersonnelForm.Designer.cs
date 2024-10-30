@@ -72,9 +72,9 @@
             this.customPanel1.GradientAngle = 90F;
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
-            this.customPanel1.Location = new System.Drawing.Point(19, 113);
+            this.customPanel1.Location = new System.Drawing.Point(28, 92);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(1145, 566);
+            this.customPanel1.Size = new System.Drawing.Size(1120, 591);
             this.customPanel1.TabIndex = 5;
             // 
             // customButton3
@@ -86,7 +86,7 @@
             this.customButton3.FlatAppearance.BorderSize = 0;
             this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Location = new System.Drawing.Point(360, 18);
+            this.customButton3.Location = new System.Drawing.Point(366, 18);
             this.customButton3.Name = "customButton3";
             this.customButton3.Size = new System.Drawing.Size(150, 40);
             this.customButton3.TabIndex = 12;
@@ -103,7 +103,7 @@
             this.customButton1.FlatAppearance.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(18, 19);
+            this.customButton1.Location = new System.Drawing.Point(24, 19);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(150, 40);
             this.customButton1.TabIndex = 10;
@@ -120,7 +120,7 @@
             this.customButton2.FlatAppearance.BorderSize = 0;
             this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(190, 18);
+            this.customButton2.Location = new System.Drawing.Point(196, 18);
             this.customButton2.Name = "customButton2";
             this.customButton2.Size = new System.Drawing.Size(150, 40);
             this.customButton2.TabIndex = 11;
@@ -152,7 +152,7 @@
             this.dgvPosition.Name = "dgvPosition";
             this.dgvPosition.RowHeadersWidth = 51;
             this.dgvPosition.RowTemplate.Height = 24;
-            this.dgvPosition.Size = new System.Drawing.Size(1108, 468);
+            this.dgvPosition.Size = new System.Drawing.Size(1070, 492);
             this.dgvPosition.TabIndex = 7;
             // 
             // ID
@@ -206,7 +206,11 @@
             this.sdt.MinimumWidth = 6;
             this.sdt.Name = "sdt";
             // 
-            // lblNameForm
+            // customPanel2
+            // 
+            // 
+            // pictureBox8
+            // 
             // 
             this.lblNameForm.AutoSize = true;
             this.lblNameForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,7 +239,6 @@
             this.customPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -247,7 +250,6 @@
         private GUI.CustomButton customButton1;
         private GUI.CustomButton customButton2;
         private System.Windows.Forms.DataGridView dgvPosition;
-        private System.Windows.Forms.Label lblNameForm;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanSu;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
@@ -255,5 +257,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayVaoLam;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
+        private System.Windows.Forms.Label lblNameForm;
+        private GUI.TruniControls.CustomPanel customPanel2;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
     }
 }

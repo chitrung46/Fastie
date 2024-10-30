@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Fastie.Screens.Task
+{
+    public partial class TaskAssignForm : Form
+    {
+        public TaskAssignForm()
+        {
+            InitializeComponent();
+        }
+
+        private void TaskAssignForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

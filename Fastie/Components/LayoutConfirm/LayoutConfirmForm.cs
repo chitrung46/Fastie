@@ -8,33 +8,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
 namespace Fastie
 {
     public partial class LayoutConfirmForm : Form
     {
+        private string accountName;
+        private DecentralizationForm decentralizationForm;
+        AccountBLL accountBll = new AccountBLL();
         public LayoutConfirmForm()
         {
             InitializeComponent();
         }
 
-        public string Title
+        public LayoutConfirmForm(DecentralizationForm decentralization ,string accountName)
         {
-            get { return lblTitle.Text; }
-            set { lblTitle.Text = value; }
+            InitializeComponent();
+            this.accountName = accountName;
+            this.decentralizationForm = decentralization;   
         }
 
-        public string Content 
-        {
-            get { return lblContent.Text; }
-            set { lblContent.Text = value; }
-        }
-
-        public string btnConfirmText
-        {
-            get { return btnConfirm.Text; }
-            set { btnConfirm.Text = value; }
-        }
+        public string AccountName { get => accountName; set => accountName = value; }   
+        public string Title { get => lblTitle.Text; set => lblTitle.Text = value; }
+        public string Content { get => lblContent.Text; set => lblContent.Text = value; }
+        public string btnConfirmText { get => btnConfirm.Text; set => btnConfirm.Text = value; }
 
         private void pictureClose_Click(object sender, EventArgs e)
         {
@@ -57,8 +54,19 @@ namespace Fastie
         {
             switch (btnConfirm.Text)
             {
-                case "Xóa":
-                    MessageBox.Show("Xóa thành công");
+                case "Xóa quyền":
+                    bool result = accountBll.deleteAllRoles(this.accountName);
+                    if(result)
+                    {
+                        MessageBox.Show("Xóa quyền thành công");
+                        decentralizationForm.DisableDeleteAndAdd();
+                        decentralizationForm.loadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa quyền thất bại");
+                    }
+                    this.Close();
                     break;
                 case "Cập nhật":
                     MessageBox.Show("Cập nhật thành công");
@@ -67,8 +75,8 @@ namespace Fastie
                     MessageBox.Show("Thêm thành công");
                     break;
                 case "Đăng xuất":
-                    LoginForm loginForm = new LoginForm();
-                    loginForm.Show();
+                    //LoginForm loginForm = new LoginForm();
+                    //loginForm.Show();
                     break;
                 default:
                     break;

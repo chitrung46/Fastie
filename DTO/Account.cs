@@ -15,6 +15,7 @@ namespace DTO
         private DateTime capNhatLuc;
         private string trangThai;
 
+        public Account() { }
         public Account(string id, string tenDangNhap, string matKhau, DateTime khoiTaoLuc, DateTime capNhatLuc, string trangThai)
         {
             this.id = id;
@@ -30,7 +31,6 @@ namespace DTO
             this.tenDangNhap = tenDangNhap;
             this.matKhau = matKhau;
         }
-        public Account() { }
 
         public string Id { get => id; set => id = value; }
         public string TenDangNhap { get => tenDangNhap; set => tenDangNhap = value; }
