@@ -35,7 +35,7 @@ namespace BLL
         // Gửi mail để lấy lại mật khẩu
         public bool GuiMailLayLaiMatKhau(string email, string matKhauMail)
         {
-            Nhansu nhanSu = ResetPasswordDAL.ResetPasswordDAL(email);
+            Nhansu nhanSu = ResetPasswordDAL.GetNhanSuByEmail(email);
             if (nhanSu == null)
             {
                 // Nếu không tìm thấy nhân sự, báo lỗi
