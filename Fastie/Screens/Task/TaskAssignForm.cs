@@ -8,23 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fastie
+namespace Fastie.Screens.Task
 {
-    public partial class DeleteLayoutConfirm : Form
+    public partial class TaskAssignForm : Form
     {
-        public DeleteLayoutConfirm()
+        public TaskAssignForm()
         {
             InitializeComponent();
         }
 
-        private void pictureClose_Click(object sender, EventArgs e)
+        private void TaskAssignForm_Load(object sender, EventArgs e)
         {
-            this.Close();
-        }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

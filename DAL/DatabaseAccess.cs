@@ -1,64 +1,224 @@
-﻿using DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace DAL
 {
-    public class SqlConnectionData
+    public static class SqlConnectionData
     {
+        private static readonly string connectionString = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;";
+
         public static SqlConnection Connect()
         {
-            string connectionString = @"Data Source=HA-VY;Initial Catalog=FASTIE;Integrated Security=True";
-            SqlConnection conn = new SqlConnection(connectionString);
-            return conn;
+            return new SqlConnection(connectionString);
         }
     }
+
     public class DatabaseAccess
     {
-        public DatabaseAccess () { }
-
-        public DataTable ExecuteQuery(string queryOrProcName, SqlParameter[] parameters = null, bool isStoredProc = false)
+        //For account login
+        public static string[] checkLoginDTO(Account acc)
         {
-            DataTable dt = new DataTable();
+            string[] user = new string[4];
+            SqlConnection conn = SqlConnectionData.Connect();
+            conn.Open();
+            SqlCommand command = new SqlCommand("proc_checkLogin", conn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@tendangnhap", acc.TenDangNhap);
+            command.Parameters.AddWithValue("@matkhau", acc.MatKhau);
+
+            command.Connection = conn;
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    user[0] = reader["id"].ToString();
+                    user[1] = reader["idNhanSu"].ToString();
+                    user[2] = reader["idBoPhan"].ToString();
+                    user[3] = reader["idChucVu"].ToString();
+                }
+                reader.Close();
+                conn.Close();
+            }
+            else
+            {
+                return new string[] { "Email hoặc mật khẩu không chính xác!" };
+            }
+
+            return user;
+        }
+        
+
+        //Check permission for accessing
+        public static bool checkPermission(string accountId, string permissionId)
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
             try
             {
-                using (SqlConnection con = SqlConnectionData.Connect())
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_checkPermissionAccess", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idTaiKhoan", accountId);
+                cmd.Parameters.AddWithValue("@idQuyen", permissionId);
+                return (int)cmd.ExecuteScalar() == 1 ? true : false;
+
+            } catch(Exception ex)
+            {
+                throw new Exception("Lỗi khi kiểm tra quyền: " + ex.Message);
+            }
+        }
+
+
+
+
+
+
+        // Lấy tất cả tài khoản
+        public static List<Account> GetAllAccounts()
+        {
+            List<Account> accounts = new List<Account>();
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand("proc_getAllAccount", conn)
                 {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(queryOrProcName, con))
-                    {
-                        if (isStoredProc)
-                        {
-                            cmd.CommandType = CommandType.StoredProcedure;  // Nếu là Stored Procedure
-                        }
-                        else
-                        {
-                            cmd.CommandType = CommandType.Text;  // Nếu là câu truy vấn thông thường
-                        }
+                    CommandType = CommandType.StoredProcedure
+                };
 
-                        if (parameters != null)
-                        {
-                            cmd.Parameters.AddRange(parameters);  // Thêm các tham số nếu có
-                        }
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);  // Điền dữ liệu vào DataTable
-                        }
-                    }
-                    con.Close();
+                while (reader.Read())
+                {
+                    Account account = new Account(
+                        reader["id"].ToString(),
+                        reader["Tên đăng nhập"].ToString(),
+                        reader["Mật khẩu"].ToString(),
+                        Convert.ToDateTime(reader["Thời gian khởi tạo"]),
+                        reader["Thời gian cập nhật"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["Thời gian cập nhật"]),
+                        reader["Trạng thái"].ToString()
+                    );
+                    accounts.Add(account);
                 }
             }
-            catch (Exception ex)
+            return accounts;
+        }
+
+        // Thêm tài khoản mới
+        public static string InsertAccount(string tenDangNhap, string matKhau)
+        {
+            using (SqlConnection conn = SqlConnectionData.Connect())
             {
-                throw new Exception("Error executing query: " + ex.Message);
+                SqlCommand cmd = new SqlCommand("proc_insertAccount", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.AddWithValue("@tenDangNhap", tenDangNhap);
+                cmd.Parameters.AddWithValue("@matKhau", matKhau);
+
+                conn.Open();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return "Tài khoản đã được thêm thành công.";
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 50000) // Kiểm tra mã lỗi của RAISERROR
+                        return ex.Message;
+                    throw;
+                }
             }
-            return dt;  // Trả về DataTable kết quả
+        }
+
+        // Xóa tài khoản
+        public static bool DeleteAccount(string tenDangNhap, string matKhau)
+        {
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand("proc_deleteAccount", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.AddWithValue("@tenDangNhap", tenDangNhap);
+                cmd.Parameters.AddWithValue("@matKhau", matKhau);
+
+                conn.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+        }
+
+        // Cập nhật tài khoản
+        public static bool UpdateAccount(string tenDangNhap, string matKhau)
+        {
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand("proc_updateAccount", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.AddWithValue("@tenDangNhap", tenDangNhap);
+                cmd.Parameters.AddWithValue("@matKhau", matKhau);
+
+                conn.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+        }
+
+        // Lấy tài khoản theo email
+        public static Account GetAccountByEmail(string email)
+        {
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand("proc_getAccountByEmail", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.AddWithValue("@Email", email);
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return new Account(
+                        reader["id"].ToString(),
+                        reader["tenDangNhap"].ToString(),
+                        reader["matKhau"].ToString(),
+                        DateTime.MinValue,
+                        DateTime.MinValue,
+                        reader["email"].ToString()
+                    );
+                }
+                return null;
+            }
+        }
+
+        // Cập nhật mật khẩu theo email
+        public static bool UpdatePassword(string email, string newPassword)
+        {
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand("proc_updatePassword", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.AddWithValue("@NewPassword", newPassword);
+                cmd.Parameters.AddWithValue("@Email", email);
+
+                conn.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
         }
 
         #region //Bộ phận
