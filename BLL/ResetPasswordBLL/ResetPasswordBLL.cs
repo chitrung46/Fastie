@@ -14,40 +14,39 @@ namespace BLL
 {
     public class ResetPasswordBLL
     {
-        // Lấy danh sách tất cả tài khoản
-        public List<Account> LayTatCaTaiKhoan()
+        // getListAllAccount
+        public List<Account> getListAllAccount()
         {
-            return ResetPasswordDAL.GetAllAccounts();
+            return ResetPasswordDAL.GetListAllAccount();
         }
 
-        // Cập nhật tài khoản
-        public bool CapNhatTaiKhoan(string tenDangNhap, string matKhau)
+        // update account
+        public bool UpdateAccount(string tenDangNhap, string matKhau)
         {
             return ResetPasswordDAL.UpdateAccount(tenDangNhap, matKhau);
         }
 
-        // Lấy tài khoản theo email
-        public Account LayTaiKhoanBangEmail(string email)
+        // get account by email
+        public Account GetAccountByEmail(string email)
         {
             return ResetPasswordDAL.GetAccountByEmail(email);
         }
 
-        // Gửi mail để lấy lại mật khẩu
-        public bool GuiMailLayLaiMatKhau(string email, string matKhauMail)
+        // Send email to get password
+        public bool SendMailToGetPassword(string email, string matKhauMail)
         {
-            Nhansu nhanSu = ResetPasswordDAL.GetNhanSuByEmail(email);
+            Personnel nhanSu = ResetPasswordDAL.GetPersonnelByEmail(email);
             if (nhanSu == null)
             {
-                // Nếu không tìm thấy nhân sự, báo lỗi
                 return false;
             }
 
             try
             {
-                string from = "anhquan20041452@gmail.com"; // Email gửi
-                string pass = matKhauMail;                // Mật khẩu ứng dụng email gửi
-                string to = nhanSu.Email;                 // Email người nhận
-                string content = $"Hi {nhanSu.Ten}, mật khẩu của bạn là: ..."; // Nội dung
+                string from = "anhquan20041452@gmail.com"; //Email to send
+                string pass = matKhauMail;                // the app password to send email
+                string to = nhanSu.Email;                 // the receiver email
+                string content = $"Hi {nhanSu.Ten}, mật khẩu của bạn là: ..."; // Content to send
 
                 MailMessage mail = new MailMessage
                 {
@@ -66,17 +65,17 @@ namespace BLL
                 };
 
                 smtp.Send(mail);
-                return true; // Gửi thành công
+                return true; 
             }
             catch (Exception)
             {
-                return false; // Gửi thất bại
+                return false; 
             }
         }
 
 
-        // Cập nhật mật khẩu
-        public bool UpdatePassword(string email, string newPassword)
+        // Update new password
+        public bool UpdateNewPassword(string email, string newPassword)
         {
             return ResetPasswordDAL.UpdatePassword(email, newPassword);
         }

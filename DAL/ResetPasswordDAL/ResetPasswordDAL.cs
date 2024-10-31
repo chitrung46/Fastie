@@ -24,7 +24,7 @@ namespace DAL
     public class ResetPasswordDAL
     {
         // Lấy tất cả tài khoản
-        public static List<Account> GetAllAccounts()
+        public static List<Account> GetListAllAccount()
         {
             List<Account> accounts = new List<Account>();
             using (SqlConnection conn = SqlConnectionData.Connect())
@@ -119,7 +119,7 @@ namespace DAL
             }
         }
 
-        public Nhansu GetNhanSuByEmail(string email)
+        public static Personnel GetPersonnelByEmail(string email)
         {
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
@@ -134,7 +134,7 @@ namespace DAL
 
                 if (reader.Read())
                 {
-                    return new Nhansu
+                    return new Personnel
                     (
                         reader["id"].ToString(),
                         reader["ten"].ToString(),
