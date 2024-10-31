@@ -210,19 +210,27 @@
     <Compile Include="Screens\Task\AcceptTaskForm.Designer.cs">
       <DependentUpon>AcceptTaskForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Task\AssignTask\AssignTaskForm.cs" />
+    <Compile Include="Screens\Task\AssignTask\AssignTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Screens\Task\AssignTask\AssignTaskForm.Designer.cs">
       <DependentUpon>AssignTaskForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Task\AssignTask\DetailAssignFastingTaskForm.cs" />
+    <Compile Include="Screens\Task\AssignTask\DetailAssignFastingTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Screens\Task\AssignTask\DetailAssignFastingTaskForm.Designer.cs">
       <DependentUpon>DetailAssignFastingTaskForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Task\AssignTask\DetailAssignPositiveTaskForm.cs" />
+    <Compile Include="Screens\Task\AssignTask\DetailAssignPositiveTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Screens\Task\AssignTask\DetailAssignPositiveTaskForm.Designer.cs">
       <DependentUpon>DetailAssignPositiveTaskForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Task\AssignTask\DetailAssignTaskForm.cs" />
+    <Compile Include="Screens\Task\AssignTask\DetailAssignTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Screens\Task\AssignTask\DetailAssignTaskForm.Designer.cs">
       <DependentUpon>DetailAssignTaskForm.cs</DependentUpon>
     </Compile>
