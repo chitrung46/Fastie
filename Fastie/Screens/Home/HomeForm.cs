@@ -17,7 +17,7 @@ namespace Fastie
     {
         private string idTaiKhoan;
         private string idChucVu;
-        AccountBLL accountBLL = new AccountBLL();
+        ResetPasswordBLL accountBLL = new ResetPasswordBLL();
         public HomeForm()
         {
             InitializeComponent();

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PositionAccess : DatabaseAccess
+    public class PositionAccess : ResetPasswordDAL
     {
         public void InsertPositionDAL(Position chucVu)
         {

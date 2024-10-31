@@ -7,7 +7,7 @@ using DTO;
 
 namespace DAL
 {
-    public class PersonnelAccess:DatabaseAccess
+    public class PersonnelAccess:ResetPasswordDAL
     {
         public List<Personnel> GetPersonnelListDAL()
         {

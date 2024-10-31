@@ -17,7 +17,7 @@ namespace Fastie.Screens.Login.ForgetPassword
 {
     public partial class ForgetPasswordForm : Form
     {
-        private AccountBLL accountBLL = new AccountBLL();
+        private ResetPasswordBLL accountBLL = new ResetPasswordBLL();
         private string verificationCode; // Lưu mã xác nhận để so sánh sau
 
         public ForgetPasswordForm()

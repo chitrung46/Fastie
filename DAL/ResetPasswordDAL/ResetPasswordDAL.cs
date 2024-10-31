@@ -21,66 +21,8 @@ namespace DAL
         }
     }
 
-    public class DatabaseAccess
+    public class ResetPasswordDAL
     {
-        //For account login
-        public static string[] checkLoginDTO(Account acc)
-        {
-            string[] user = new string[4];
-            SqlConnection conn = SqlConnectionData.Connect();
-            conn.Open();
-            SqlCommand command = new SqlCommand("proc_checkLogin", conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@tendangnhap", acc.TenDangNhap);
-            command.Parameters.AddWithValue("@matkhau", acc.MatKhau);
-
-            command.Connection = conn;
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    user[0] = reader["id"].ToString();
-                    user[1] = reader["idNhanSu"].ToString();
-                    user[2] = reader["idBoPhan"].ToString();
-                    user[3] = reader["idChucVu"].ToString();
-                }
-                reader.Close();
-                conn.Close();
-            }
-            else
-            {
-                return new string[] { "Email hoặc mật khẩu không chính xác!" };
-            }
-
-            return user;
-        }
-        
-
-        //Check permission for accessing
-        public static bool checkPermission(string accountId, string permissionId)
-        {
-            SqlConnection conn = SqlConnectionData.Connect();
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("proc_checkPermissionAccess", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idTaiKhoan", accountId);
-                cmd.Parameters.AddWithValue("@idQuyen", permissionId);
-                return (int)cmd.ExecuteScalar() == 1 ? true : false;
-
-            } catch(Exception ex)
-            {
-                throw new Exception("Lỗi khi kiểm tra quyền: " + ex.Message);
-            }
-        }
-
-
-
-
-
-
         // Lấy tất cả tài khoản
         public static List<Account> GetAllAccounts()
         {
@@ -111,50 +53,6 @@ namespace DAL
             return accounts;
         }
 
-        // Thêm tài khoản mới
-        public static string InsertAccount(string tenDangNhap, string matKhau)
-        {
-            using (SqlConnection conn = SqlConnectionData.Connect())
-            {
-                SqlCommand cmd = new SqlCommand("proc_insertAccount", conn)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-                cmd.Parameters.AddWithValue("@tenDangNhap", tenDangNhap);
-                cmd.Parameters.AddWithValue("@matKhau", matKhau);
-
-                conn.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    return "Tài khoản đã được thêm thành công.";
-                }
-                catch (SqlException ex)
-                {
-                    if (ex.Number == 50000) // Kiểm tra mã lỗi của RAISERROR
-                        return ex.Message;
-                    throw;
-                }
-            }
-        }
-
-        // Xóa tài khoản
-        public static bool DeleteAccount(string tenDangNhap, string matKhau)
-        {
-            using (SqlConnection conn = SqlConnectionData.Connect())
-            {
-                SqlCommand cmd = new SqlCommand("proc_deleteAccount", conn)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-                cmd.Parameters.AddWithValue("@tenDangNhap", tenDangNhap);
-                cmd.Parameters.AddWithValue("@matKhau", matKhau);
-
-                conn.Open();
-                int rowsAffected = cmd.ExecuteNonQuery();
-                return rowsAffected > 0;
-            }
-        }
 
         // Cập nhật tài khoản
         public static bool UpdateAccount(string tenDangNhap, string matKhau)

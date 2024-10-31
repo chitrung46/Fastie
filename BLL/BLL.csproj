@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountBLL\AccountBLL.cs" />
+    <Compile Include="ResetPasswordBLL\ResetPasswordBLL.cs" />
     <Compile Include="DecentralizationBLL\DecentralizationBLL.cs" />
     <Compile Include="DepartmentBLL\DepartmentBLL.cs" />
     <Compile Include="LoginBLL\LoginBLL.cs" />
+    <Compile Include="PermissionBLL\PermissionBLL.cs" />
     <Compile Include="PersonnelBLL\PersonnelBLL.cs" />
     <Compile Include="PositionBLL\PositionBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,8 +60,6 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

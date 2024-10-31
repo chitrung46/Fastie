@@ -13,7 +13,7 @@ namespace Fastie.Screens.Login.ForgetPassword
 {
     public partial class ResetPasswordForm : Form
     {
-        private AccountBLL accountBLL = new AccountBLL();
+        private ResetPasswordBLL accountBLL = new ResetPasswordBLL();
         private string userEmail;
 
         // Khởi tạo với email được truyền từ `GetCodeConfirmForm`

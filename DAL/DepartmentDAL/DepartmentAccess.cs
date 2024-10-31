@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DepartmentAccess:DatabaseAccess
+    public class DepartmentAccess:ResetPasswordDAL
     {
         public void InsertDepartmentDAL(Department deparment)
         {
@@ -21,7 +21,7 @@ namespace DAL
 
         public List<Department> GetDepartmentListDAL ()
         {
-            List<Department> list = DatabaseAccess.GetDepartmentList();
+            List<Department> list = ResetPasswordDAL.GetDepartmentList();
             return list;
         }
 
