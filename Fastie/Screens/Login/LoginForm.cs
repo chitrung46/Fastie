@@ -54,7 +54,7 @@ namespace Fastie.Screens.Login
             acc.TenDangNhap = txt_Email.Text;
             acc.MatKhau = txtPassword.Text;
 
-            string getUser = taiKhoanBLL.checkLogin(acc);
+            string getUser = taiKhoanBLL.KiemTraDangNhap(acc);
             switch (getUser)
             {
                 case "required_email":
