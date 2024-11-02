@@ -388,16 +388,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{4a88544b-d6b0-424a-8126-7ce89238cce3}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{f9469dd2-23d1-4b54-8be7-8ffaa41c818b}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\fastie_logo_png.png" />
   </ItemGroup>
   <ItemGroup>
@@ -529,6 +519,19 @@
   <ItemGroup>
     <None Include="Resources\icons8-menu-23.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{4a88544b-d6b0-424a-8126-7ce89238cce3}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{37770693-67fa-4764-a4b0-d6f4cc14fa57}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{f9469dd2-23d1-4b54-8be7-8ffaa41c818b}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
