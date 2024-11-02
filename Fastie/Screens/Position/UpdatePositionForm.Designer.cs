@@ -169,7 +169,7 @@
             this.cTBName.TabIndex = 31;
             this.cTBName.UnderlinedStyle = false;
             // 
-            // EditPositionForm
+            // UpdatePositionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -182,8 +182,8 @@
             this.Controls.Add(this.customPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "EditPositionForm";
-            this.Text = "Cập nhân thông tin chức vụ";
+            this.Name = "UpdatePositionForm";
+            this.Text = "Fastie - Cập nhân thông tin chức vụ";
             this.Load += new System.EventHandler(this.EditPositionForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();

@@ -183,7 +183,7 @@
             this.MinimizeBox = false;
             this.Name = "CreateDepartmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm bộ phận";
+            this.Text = "Fastie - Thêm bộ phận";
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);

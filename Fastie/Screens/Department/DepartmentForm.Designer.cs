@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
-            this.lblNameForm = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.customButton3 = new GUI.CustomButton();
             this.customButton1 = new GUI.CustomButton();
@@ -39,8 +38,14 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenBoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customPanel2 = new GUI.TruniControls.CustomPanel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).BeginInit();
+            this.customPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -53,18 +58,6 @@
             this.btnBack.Size = new System.Drawing.Size(40, 40);
             this.btnBack.TabIndex = 9;
             this.btnBack.UseVisualStyleBackColor = false;
-            // 
-            // lblNameForm
-            // 
-            this.lblNameForm.AutoSize = true;
-            this.lblNameForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameForm.ForeColor = System.Drawing.Color.White;
-            this.lblNameForm.Location = new System.Drawing.Point(13, 49);
-            this.lblNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNameForm.Name = "lblNameForm";
-            this.lblNameForm.Size = new System.Drawing.Size(127, 32);
-            this.lblNameForm.TabIndex = 7;
-            this.lblNameForm.Text = "Bộ phận";
             // 
             // customPanel1
             // 
@@ -183,15 +176,68 @@
             this.moTa.MinimumWidth = 6;
             this.moTa.Name = "moTa";
             // 
+            // customPanel2
+            // 
+            this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.BorderColor = System.Drawing.Color.Black;
+            this.customPanel2.BorderRadius = 30;
+            this.customPanel2.BorderSize = 0;
+            this.customPanel2.Controls.Add(this.pictureBox8);
+            this.customPanel2.Controls.Add(this.label6);
+            this.customPanel2.Controls.Add(this.label1);
+            this.customPanel2.ForeColor = System.Drawing.Color.Black;
+            this.customPanel2.GradientAngle = 90F;
+            this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customPanel2.Location = new System.Drawing.Point(28, 12);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(1120, 74);
+            this.customPanel2.TabIndex = 10;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = global::Fastie.Properties.Resources.icons8_search_100;
+            this.pictureBox8.Location = new System.Drawing.Point(963, 22);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 3;
+            this.pictureBox8.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(1009, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 21);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Tìm kiếm";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(18, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bộ phận";
+            // 
             // DepartmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1182, 695);
+            this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.customPanel1);
-            this.Controls.Add(this.lblNameForm);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DepartmentForm";
@@ -199,6 +245,9 @@
             this.Load += new System.EventHandler(this.DepartmentForm_Load);
             this.customPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).EndInit();
+            this.customPanel2.ResumeLayout(false);
+            this.customPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,6 +265,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
         private GUI.TruniControls.CustomPanel customPanel2;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label lblNameForm;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
     }
 }

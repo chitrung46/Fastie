@@ -559,7 +559,7 @@
             this.Controls.Add(this.lblNameOfForm);
             this.Name = "DetailAssignPositiveTaskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DetailAssignPositiveTaskForm";
+            this.Text = "Fastie - Giao việc chủ động";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();

@@ -21,7 +21,7 @@ namespace Fastie
         }
         public void LoadPositionData()
         {
-            List<Position> positionList = positionBLL.GetPositionListBLL();
+            List<Position> positionList = positionBLL.GetPositionList();
             dgvPosition.Rows.Clear();
             foreach (Position position in positionList)
             {
@@ -79,7 +79,7 @@ namespace Fastie
                     if (result == DialogResult.Yes)
                     {
                         string id = selectedRow.Cells["ID"].Value.ToString();
-                        positionBLL.DeletePositionBLL(id);
+                        positionBLL.DeletePosition(id);
                         dgvPosition.Rows.RemoveAt(selectedRow.Index);
                         MessageBox.Show("Xóa chức vụ thành công!", "Success");
                     }

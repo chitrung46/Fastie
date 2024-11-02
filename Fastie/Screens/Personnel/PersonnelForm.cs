@@ -21,7 +21,7 @@ namespace Fastie
         }
         public void LoadPersonnelData()
         {
-            List<Personnel> personnelList = personnelBLL.GetPersonnelnListBLL();
+            List<Personnel> personnelList = personnelBLL.GetPersonnelList();
             dgvPosition.Rows.Clear();
             foreach (Personnel personnel in personnelList)
             {
@@ -104,7 +104,7 @@ namespace Fastie
                     if (result == DialogResult.Yes)
                     {
                         string id = selectedRow.Cells["ID"].Value.ToString();
-                        personnelBLL.DeletePersonnelBLL(id);
+                        personnelBLL.DeletePersonnel(id);
                         dgvPosition.Rows.RemoveAt(selectedRow.Index);
                         MessageBox.Show("Xóa nhân sự thành công!", "Success");
                     }

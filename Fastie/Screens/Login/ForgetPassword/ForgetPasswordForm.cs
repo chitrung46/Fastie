@@ -17,7 +17,7 @@ namespace Fastie.Screens.Login.ForgetPassword
 {
     public partial class ForgetPasswordForm : Form
     {
-        private AccountBLL accountBLL = new AccountBLL();
+        ResetPasswordBLL resetPassword = new ResetPasswordBLL();
         private string verificationCode; // Lưu mã xác nhận để so sánh sau
 
         public ForgetPasswordForm()
@@ -30,7 +30,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             string email = customTextBox_mail.Text.Trim();
 
             // Kiểm tra xem email có tồn tại trong hệ thống
-            Account account = accountBLL.LayTaiKhoanBangEmail(email);
+            Account account = resetPassword.GetAccountByEmail(email);
             if (account == null)
             {
                 MessageBox.Show("Email không tồn tại trong hệ thống!");

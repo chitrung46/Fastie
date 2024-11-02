@@ -38,7 +38,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(17, 94);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1123, 435);
+            this.panel1.Size = new System.Drawing.Size(1091, 481);
             this.panel1.TabIndex = 0;
             // 
             // btnDetailAssignTask
@@ -51,9 +51,9 @@
             this.btnDetailAssignTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetailAssignTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetailAssignTask.ForeColor = System.Drawing.Color.White;
-            this.btnDetailAssignTask.Location = new System.Drawing.Point(771, 27);
+            this.btnDetailAssignTask.Location = new System.Drawing.Point(780, 27);
             this.btnDetailAssignTask.Name = "btnDetailAssignTask";
-            this.btnDetailAssignTask.Size = new System.Drawing.Size(110, 47);
+            this.btnDetailAssignTask.Size = new System.Drawing.Size(104, 47);
             this.btnDetailAssignTask.TabIndex = 1;
             this.btnDetailAssignTask.Text = "Giao việc";
             this.btnDetailAssignTask.UseVisualStyleBackColor = false;
@@ -70,13 +70,11 @@
             this.btnDetailAssignPositiveTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetailAssignPositiveTask.ForeColor = System.Drawing.Color.White;
             this.btnDetailAssignPositiveTask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetailAssignPositiveTask.Location = new System.Drawing.Point(1007, 27);
+            this.btnDetailAssignPositiveTask.Location = new System.Drawing.Point(1000, 27);
             this.btnDetailAssignPositiveTask.Name = "btnDetailAssignPositiveTask";
-            this.btnDetailAssignPositiveTask.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.btnDetailAssignPositiveTask.Size = new System.Drawing.Size(133, 47);
+            this.btnDetailAssignPositiveTask.Size = new System.Drawing.Size(104, 47);
             this.btnDetailAssignPositiveTask.TabIndex = 3;
             this.btnDetailAssignPositiveTask.Text = "Chủ động";
-            this.btnDetailAssignPositiveTask.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDetailAssignPositiveTask.UseVisualStyleBackColor = false;
             this.btnDetailAssignPositiveTask.Click += new System.EventHandler(this.btnDetailAssignPositiveTask_Click);
             // 
@@ -91,13 +89,11 @@
             this.btnDetailAssignFastingTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetailAssignFastingTask.ForeColor = System.Drawing.Color.White;
             this.btnDetailAssignFastingTask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetailAssignFastingTask.Location = new System.Drawing.Point(891, 27);
+            this.btnDetailAssignFastingTask.Location = new System.Drawing.Point(890, 27);
             this.btnDetailAssignFastingTask.Name = "btnDetailAssignFastingTask";
-            this.btnDetailAssignFastingTask.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnDetailAssignFastingTask.Size = new System.Drawing.Size(104, 47);
             this.btnDetailAssignFastingTask.TabIndex = 2;
             this.btnDetailAssignFastingTask.Text = "Nhanh";
-            this.btnDetailAssignFastingTask.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDetailAssignFastingTask.UseVisualStyleBackColor = false;
             this.btnDetailAssignFastingTask.Click += new System.EventHandler(this.btnDetailAssignFastingTask_Click);
             // 
@@ -106,7 +102,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1160, 550);
+            this.ClientSize = new System.Drawing.Size(1120, 587);
             this.Controls.Add(this.btnDetailAssignPositiveTask);
             this.Controls.Add(this.btnDetailAssignFastingTask);
             this.Controls.Add(this.btnDetailAssignTask);
