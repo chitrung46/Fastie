@@ -1,4 +1,5 @@
-﻿using Fastie.Components.LayoutRole;
+﻿using BLL;
+using Fastie.Components.LayoutRole;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace Fastie.Screens.Task
 {
     public partial class AcceptTaskForm : Form
     {
+        private readonly TaskBLL taskBLL = new TaskBLL();
         public AcceptTaskForm()
         {
             InitializeComponent();
@@ -38,6 +40,8 @@ namespace Fastie.Screens.Task
                 flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm[i]);
             }
         }
+
+
 
         private void flowLayoutPanelTasks_Paint(object sender, PaintEventArgs e)
         {

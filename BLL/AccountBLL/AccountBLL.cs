@@ -51,19 +51,6 @@ namespace BLL
             return accountDAL.GetAllAccounts();
         }
 
-        // Thêm tài khoản mới
-        public string ThemTaiKhoan(string tenDangNhap, string matKhau)
-        {
-            string result = accountDAL.InsertAccount(tenDangNhap, matKhau);
-            return result;
-        }
-
-        // Xóa tài khoản
-        public bool XoaTaiKhoan(string tenDangNhap, string matKhau)
-        {
-            return accountDAL.DeleteAccount(tenDangNhap, matKhau);
-        }
-
         // Cập nhật tài khoản
         public bool CapNhatTaiKhoan(string tenDangNhap, string matKhau)
         {

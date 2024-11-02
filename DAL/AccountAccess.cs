@@ -21,16 +21,6 @@ namespace DAL
             return DatabaseAccess.GetAllAccounts();
         }
 
-        public string InsertAccount(string tenDangNhap, string matKhau)
-        {
-            return DatabaseAccess.InsertAccount(tenDangNhap, matKhau);
-        }
-
-        public bool DeleteAccount(string tenDangNhap, string matKhau)
-        {
-            return DatabaseAccess.DeleteAccount(tenDangNhap, matKhau);
-        }
-
         public bool UpdateAccount(string tenDangNhap, string matKhau)
         {
             return DatabaseAccess.UpdateAccount(tenDangNhap, matKhau);

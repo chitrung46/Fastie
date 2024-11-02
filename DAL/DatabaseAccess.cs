@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 using DTO;
 using System.Net.Mail;
 using System.Net;
+using System.Runtime.Remoting.Messaging;
 
 namespace DAL
 {
     public static class SqlConnectionData
     {
-        private static readonly string connectionString = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;";
+        private static readonly string connectionString = @"Data Source=ANH-QUAN;Initial Catalog=FASTIE;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
         public static SqlConnection Connect()
         {
@@ -114,7 +115,7 @@ namespace DAL
         }
 
         // Cập nhật tài khoản
-        public bool UpdateAccount(string tenDangNhap, string matKhau)
+        public static bool UpdateAccount(string tenDangNhap, string matKhau)
         {
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
@@ -128,20 +129,22 @@ namespace DAL
                 conn.Open();
                 try
                 {
-                    cmd.ExecuteNonQuery();
-                    return "Tài khoản đã được thêm thành công.";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0; 
                 }
                 catch (SqlException ex)
                 {
-                    if (ex.Number == 50000) // Kiểm tra mã lỗi của RAISERROR
-                        return ex.Message;
+                    if (ex.Number == 50000)
+                        throw new Exception(ex.Message); 
+
                     throw;
                 }
             }
         }
 
+
         // Lấy tài khoản theo email
-        public Account GetAccountByEmail(string email)
+        public static Account GetAccountByEmail(string email)
         {
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
@@ -170,7 +173,7 @@ namespace DAL
         }
 
         // Cập nhật mật khẩu theo email
-        public bool UpdatePassword(string email, string newPassword)
+        public static bool UpdatePassword(string email, string newPassword)
         {
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
@@ -188,50 +191,46 @@ namespace DAL
         }
 
         // Gửi mail để lấy lại mật khẩu
-        public bool GuiMailLayLaiMatKhau(string email, string matKhauMail)
+        public static bool GuiMailLayLaiMatKhau(string email, string matKhauMail)
         {
-            Nhansu nhanSu = GetNhanSuByEmail(email);
-            if (nhanSu == null)
+            // Khởi tạo kết nối cơ sở dữ liệu
+            using (SqlConnection conn = SqlConnectionData.Connect())
             {
-                SqlCommand cmd = new SqlCommand("proc_getAccountByEmail", conn)
+                Nhansu nhanSu = GetNhanSuByEmail(email);
+                if (nhanSu == null)
                 {
-                    CommandType = CommandType.StoredProcedure
-                };
-                cmd.Parameters.AddWithValue("@Email", email);
+                    SqlCommand cmd = new SqlCommand("proc_getAccountByEmail", conn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@Email", email);
 
-                MailMessage mail = new MailMessage
-                {
-                    From = new MailAddress(from),
-                    Subject = "Gửi lại mật khẩu",
-                    Body = content
-                };
-                mail.To.Add(to);
+                    conn.Open(); // Mở kết nối
 
-                if (reader.Read())
-                {
-                    return new Account(
-                        reader["id"].ToString(),
-                        reader["tenDangNhap"].ToString(),
-                        reader["matKhau"].ToString(),
-                        DateTime.MinValue,
-                        DateTime.MinValue,
-                        reader["email"].ToString()
-                    );
+                    // Thực hiện gửi email
+                    MailMessage mail = new MailMessage
+                    {
+                        From = new MailAddress("anhquan20041452@gmail.com"), 
+                        Subject = "Gửi lại mật khẩu",
+                        Body = "Nội dung email"
+                    };
+                    mail.To.Add(email);
+                    return true;
                 }
-                return null;
             }
+            return false;
         }
 
+
         // Lấy thông tin nhân sự theo email
-        public Nhansu GetNhanSuByEmail(string email)
+        public static Nhansu GetNhanSuByEmail(string email)
         {
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
-                SqlCommand cmd = new SqlCommand("proc_updatePassword", conn)
+                SqlCommand cmd = new SqlCommand("proc_getNhanSuByEmail", conn)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                cmd.Parameters.AddWithValue("@NewPassword", newPassword);
                 cmd.Parameters.AddWithValue("@Email", email);
 
                 conn.Open();
@@ -252,6 +251,8 @@ namespace DAL
                 return null;
             }
         }
+
+
 
         #region //Bộ phận
         //Them Bo Phan
@@ -476,5 +477,63 @@ namespace DAL
             }
         }
         #endregion
+
+        #region //CongViec
+
+        //Lay tat ca CongViec
+        public static List<TaskInfo> GetTasksFromDatabase()
+        {
+            List<TaskInfo> tasks = new List<TaskInfo>();
+            string query = "proc_getTask";
+
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure; // Đặt kiểu lệnh là Stored Procedure
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                tasks.Add(new TaskInfo
+                                {
+                                    Id = reader["id"].ToString(),
+                                    Ten = reader["ten"].ToString(),
+                                    MoTa = reader["moTa"].ToString(),
+                                    ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                    ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
+                                    ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                    GhiChu = reader["ghiChu"].ToString(),
+                                    IdTaiKhoanGiaoViec = reader["idTaiKhoanGiaoViec"].ToString(),
+                                    IdBoPhanGiaoViec = reader["idBoPhanGiaoViec"].ToString(),
+                                    IdLoaiCongViec = reader["idLoaiCongViec"].ToString(),
+                                    IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
+                                    IdLichSuMacDinh = reader["idLichSuMacDinh"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy dữ liệu công việc: " + ex.Message);
+            }
+
+            return tasks;
+        }
+
+       
+
+
+
+
+        #endregion
+
     }
+
 }

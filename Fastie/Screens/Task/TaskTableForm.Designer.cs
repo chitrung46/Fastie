@@ -63,7 +63,6 @@
             this.flowLayoutPanelNotification.Name = "flowLayoutPanelNotification";
             this.flowLayoutPanelNotification.Size = new System.Drawing.Size(415, 477);
             this.flowLayoutPanelNotification.TabIndex = 1;
-            this.flowLayoutPanelNotification.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelNotification_Paint);
             // 
             // label1
             // 
@@ -102,7 +101,7 @@
             this.flowLayoutPanelTask.Name = "flowLayoutPanelTask";
             this.flowLayoutPanelTask.Size = new System.Drawing.Size(578, 477);
             this.flowLayoutPanelTask.TabIndex = 1;
-            this.flowLayoutPanelTask.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelNotification_Paint);
+            
             // 
             // label2
             // 
