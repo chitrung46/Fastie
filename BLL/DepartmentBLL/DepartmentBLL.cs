@@ -11,24 +11,25 @@ namespace BLL
     public class DepartmentBLL
     {
         private readonly DepartmentAccess departmentAccess = new DepartmentAccess();
-        public void InsertDepartmentBLL(Department boPhan)
+        public void InsertDepartmentDAL(Department deparment)
         {
-            departmentAccess.InsertDepartmentDAL(boPhan);
+            InsertDepartment(deparment);
         }
 
-        public void UpdateDepartmentBLL(Department boPhan)
+        public void UpdateDepartmentDAL(Department deparment)
         {
-            departmentAccess.UpdateDepartmentDAL(boPhan);
+            UpdateDepartment(deparment);
         }
 
-        public List<Department> GetDepartmentListBLL()
+        public List<Department> GetDepartmentListDAL()
         {
-            return departmentAccess.GetDepartmentListDAL();
+            List<Department> list = ResetPasswordDAL.GetDepartmentList();
+            return list;
         }
 
-        public void DeleteDepartmentBLL(string departmentId)
+        public void DeleteDepartMentDAL(string departmentId)
         {
-            departmentAccess.DeleteDepartMentDAL(departmentId);
+            DeleteDepartment(departmentId);
         }
     }
 }
