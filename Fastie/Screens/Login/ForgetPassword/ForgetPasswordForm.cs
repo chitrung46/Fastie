@@ -17,7 +17,7 @@ namespace Fastie.Screens.Login.ForgetPassword
 {
     public partial class ForgetPasswordForm : Form
     {
-        private AccountBLL taiKhoanBLL = new AccountBLL();
+        private AccountBLL accountBLL = new AccountBLL();
         private string verificationCode; // Lưu mã xác nhận để so sánh sau
 
         public ForgetPasswordForm()
@@ -30,8 +30,8 @@ namespace Fastie.Screens.Login.ForgetPassword
             string email = customTextBox_mail.Text.Trim();
 
             // Kiểm tra xem email có tồn tại trong hệ thống
-            Account taiKhoan = taiKhoanBLL.LayTaiKhoanBangEmail(email);
-            if (taiKhoan == null)
+            Account account = accountBLL.LayTaiKhoanBangEmail(email);
+            if (account == null)
             {
                 MessageBox.Show("Email không tồn tại trong hệ thống!");
                 return;
@@ -65,7 +65,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             {
                 string fromEmail = "anhquan20041452@gmail.com";
                 string fromPassword = "fhbl clrh rurh dldr"; // Mật khẩu ứng dụng của email gửi
-                string content = $"Mã xác nhận của bạn là: {code}";
+                string content = $"Hệ thống phần mềm Fastie đã nhận được yêu cầu đổi mật khẩu\r\ncủa bạn.\r\nVui lòng nhập Mã xác nhận dưới đây để tiến hành đổi mật khẩu.\r\nMã xác nhận: {code}\r\nVui lòng không chia sẻ mã này với người khác vì lí do bảo mật.";
 
                 MailMessage mail = new MailMessage();
                 mail.To.Add(toEmail);
@@ -88,6 +88,11 @@ namespace Fastie.Screens.Login.ForgetPassword
             {
                 return false;
             }
+        }
+
+        private void ForgetPasswordForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

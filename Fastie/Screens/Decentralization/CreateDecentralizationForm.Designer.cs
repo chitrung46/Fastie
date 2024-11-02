@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
-            this.customComboBox3 = new GUI.TruniControls.CustomComboBox();
-            this.customComboBox2 = new GUI.TruniControls.CustomComboBox();
-            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
+            this.txtDepartment = new GUI.TruniControls.CustomTextBox();
+            this.txtPosition = new GUI.TruniControls.CustomTextBox();
+            this.txtPersonnel = new GUI.TruniControls.CustomTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,11 +57,12 @@
             this.checkboxAddAccount = new System.Windows.Forms.CheckBox();
             this.checkboxAccountManagement = new System.Windows.Forms.CheckBox();
             this.customPanel6 = new GUI.TruniControls.CustomPanel();
+            this.checkBoxGetTasks = new System.Windows.Forms.CheckBox();
             this.checkboxAssignTasks = new System.Windows.Forms.CheckBox();
             this.checkboxSendNotification = new System.Windows.Forms.CheckBox();
+            this.checkBoxReportTasks = new System.Windows.Forms.CheckBox();
             this.checkboxDeleteTasks = new System.Windows.Forms.CheckBox();
             this.checkboxUpdateTasks = new System.Windows.Forms.CheckBox();
-            this.checkboxSendComments = new System.Windows.Forms.CheckBox();
             this.checkboxTasksManagement = new System.Windows.Forms.CheckBox();
             this.btnAdd = new GUI.CustomButton();
             this.btnCancel = new GUI.CustomButton();
@@ -87,13 +88,13 @@
             // 
             // customPanel1
             // 
-            this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
             this.customPanel1.BorderSize = 0;
-            this.customPanel1.Controls.Add(this.customComboBox3);
-            this.customPanel1.Controls.Add(this.customComboBox2);
-            this.customPanel1.Controls.Add(this.customComboBox1);
+            this.customPanel1.Controls.Add(this.txtDepartment);
+            this.customPanel1.Controls.Add(this.txtPosition);
+            this.customPanel1.Controls.Add(this.txtPersonnel);
             this.customPanel1.Controls.Add(this.label4);
             this.customPanel1.Controls.Add(this.label3);
             this.customPanel1.Controls.Add(this.label2);
@@ -106,65 +107,71 @@
             this.customPanel1.Size = new System.Drawing.Size(682, 110);
             this.customPanel1.TabIndex = 3;
             // 
-            // customComboBox3
+            // txtDepartment
             // 
-            this.customComboBox3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox3.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox3.BorderRadius = 8;
-            this.customComboBox3.BorderSize = 1;
-            this.customComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox3.IconColor = System.Drawing.Color.Black;
-            this.customComboBox3.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox3.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox3.Location = new System.Drawing.Point(469, 51);
-            this.customComboBox3.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox3.Name = "customComboBox3";
-            this.customComboBox3.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox3.Size = new System.Drawing.Size(200, 30);
-            this.customComboBox3.TabIndex = 5;
-            this.customComboBox3.Texts = "";
+            this.txtDepartment.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDepartment.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtDepartment.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtDepartment.BorderRadius = 0;
+            this.txtDepartment.BorderSize = 2;
+            this.txtDepartment.Enabled = false;
+            this.txtDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartment.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDepartment.Location = new System.Drawing.Point(468, 51);
+            this.txtDepartment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDepartment.Multiline = false;
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDepartment.PasswordChar = false;
+            this.txtDepartment.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDepartment.PlaceholderText = "";
+            this.txtDepartment.Size = new System.Drawing.Size(200, 35);
+            this.txtDepartment.TabIndex = 6;
+            this.txtDepartment.UnderlinedStyle = false;
             // 
-            // customComboBox2
+            // txtPosition
             // 
-            this.customComboBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox2.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox2.BorderRadius = 8;
-            this.customComboBox2.BorderSize = 1;
-            this.customComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox2.IconColor = System.Drawing.Color.Black;
-            this.customComboBox2.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox2.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox2.Location = new System.Drawing.Point(239, 51);
-            this.customComboBox2.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox2.Name = "customComboBox2";
-            this.customComboBox2.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox2.Size = new System.Drawing.Size(200, 30);
-            this.customComboBox2.TabIndex = 5;
-            this.customComboBox2.Texts = "";
+            this.txtPosition.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPosition.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtPosition.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtPosition.BorderRadius = 0;
+            this.txtPosition.BorderSize = 2;
+            this.txtPosition.Enabled = false;
+            this.txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosition.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPosition.Location = new System.Drawing.Point(240, 51);
+            this.txtPosition.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPosition.Multiline = false;
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPosition.PasswordChar = false;
+            this.txtPosition.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPosition.PlaceholderText = "";
+            this.txtPosition.Size = new System.Drawing.Size(200, 35);
+            this.txtPosition.TabIndex = 6;
+            this.txtPosition.UnderlinedStyle = false;
             // 
-            // customComboBox1
+            // txtPersonnel
             // 
-            this.customComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox1.BorderRadius = 8;
-            this.customComboBox1.BorderSize = 1;
-            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.IconColor = System.Drawing.Color.Black;
-            this.customComboBox1.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.Location = new System.Drawing.Point(12, 51);
-            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox1.Size = new System.Drawing.Size(200, 30);
-            this.customComboBox1.TabIndex = 5;
-            this.customComboBox1.Texts = "";
+            this.txtPersonnel.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPersonnel.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtPersonnel.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtPersonnel.BorderRadius = 0;
+            this.txtPersonnel.BorderSize = 2;
+            this.txtPersonnel.Enabled = false;
+            this.txtPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonnel.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPersonnel.Location = new System.Drawing.Point(12, 51);
+            this.txtPersonnel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPersonnel.Multiline = false;
+            this.txtPersonnel.Name = "txtPersonnel";
+            this.txtPersonnel.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPersonnel.PasswordChar = false;
+            this.txtPersonnel.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPersonnel.PlaceholderText = "";
+            this.txtPersonnel.Size = new System.Drawing.Size(200, 35);
+            this.txtPersonnel.TabIndex = 6;
+            this.txtPersonnel.UnderlinedStyle = false;
             // 
             // label4
             // 
@@ -504,11 +511,12 @@
             this.customPanel6.BorderColor = System.Drawing.Color.Black;
             this.customPanel6.BorderRadius = 30;
             this.customPanel6.BorderSize = 0;
+            this.customPanel6.Controls.Add(this.checkBoxGetTasks);
             this.customPanel6.Controls.Add(this.checkboxAssignTasks);
             this.customPanel6.Controls.Add(this.checkboxSendNotification);
+            this.customPanel6.Controls.Add(this.checkBoxReportTasks);
             this.customPanel6.Controls.Add(this.checkboxDeleteTasks);
             this.customPanel6.Controls.Add(this.checkboxUpdateTasks);
-            this.customPanel6.Controls.Add(this.checkboxSendComments);
             this.customPanel6.ForeColor = System.Drawing.Color.Black;
             this.customPanel6.GradientAngle = 90F;
             this.customPanel6.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -518,6 +526,20 @@
             this.customPanel6.Size = new System.Drawing.Size(442, 132);
             this.customPanel6.TabIndex = 3;
             // 
+            // checkBoxGetTasks
+            // 
+            this.checkBoxGetTasks.AutoSize = true;
+            this.checkBoxGetTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.checkBoxGetTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxGetTasks.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold);
+            this.checkBoxGetTasks.ForeColor = System.Drawing.Color.White;
+            this.checkBoxGetTasks.Location = new System.Drawing.Point(22, 87);
+            this.checkBoxGetTasks.Name = "checkBoxGetTasks";
+            this.checkBoxGetTasks.Size = new System.Drawing.Size(104, 25);
+            this.checkBoxGetTasks.TabIndex = 4;
+            this.checkBoxGetTasks.Text = "Nhận việc";
+            this.checkBoxGetTasks.UseVisualStyleBackColor = false;
+            // 
             // checkboxAssignTasks
             // 
             this.checkboxAssignTasks.AutoSize = true;
@@ -525,7 +547,7 @@
             this.checkboxAssignTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkboxAssignTasks.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold);
             this.checkboxAssignTasks.ForeColor = System.Drawing.Color.White;
-            this.checkboxAssignTasks.Location = new System.Drawing.Point(21, 87);
+            this.checkboxAssignTasks.Location = new System.Drawing.Point(22, 56);
             this.checkboxAssignTasks.Name = "checkboxAssignTasks";
             this.checkboxAssignTasks.Size = new System.Drawing.Size(97, 25);
             this.checkboxAssignTasks.TabIndex = 4;
@@ -539,12 +561,26 @@
             this.checkboxSendNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkboxSendNotification.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold);
             this.checkboxSendNotification.ForeColor = System.Drawing.Color.White;
-            this.checkboxSendNotification.Location = new System.Drawing.Point(21, 56);
+            this.checkboxSendNotification.Location = new System.Drawing.Point(22, 25);
             this.checkboxSendNotification.Name = "checkboxSendNotification";
             this.checkboxSendNotification.Size = new System.Drawing.Size(133, 25);
             this.checkboxSendNotification.TabIndex = 4;
             this.checkboxSendNotification.Text = "Ra thông báo";
             this.checkboxSendNotification.UseVisualStyleBackColor = false;
+            // 
+            // checkBoxReportTasks
+            // 
+            this.checkBoxReportTasks.AutoSize = true;
+            this.checkBoxReportTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.checkBoxReportTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxReportTasks.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold);
+            this.checkBoxReportTasks.ForeColor = System.Drawing.Color.White;
+            this.checkBoxReportTasks.Location = new System.Drawing.Point(192, 87);
+            this.checkBoxReportTasks.Name = "checkBoxReportTasks";
+            this.checkBoxReportTasks.Size = new System.Drawing.Size(169, 25);
+            this.checkBoxReportTasks.TabIndex = 4;
+            this.checkBoxReportTasks.Text = "Báo cáo công việc";
+            this.checkBoxReportTasks.UseVisualStyleBackColor = false;
             // 
             // checkboxDeleteTasks
             // 
@@ -574,20 +610,6 @@
             this.checkboxUpdateTasks.Text = "Cập nhập công việc";
             this.checkboxUpdateTasks.UseVisualStyleBackColor = false;
             // 
-            // checkboxSendComments
-            // 
-            this.checkboxSendComments.AutoSize = true;
-            this.checkboxSendComments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.checkboxSendComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkboxSendComments.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold);
-            this.checkboxSendComments.ForeColor = System.Drawing.Color.White;
-            this.checkboxSendComments.Location = new System.Drawing.Point(21, 25);
-            this.checkboxSendComments.Name = "checkboxSendComments";
-            this.checkboxSendComments.Size = new System.Drawing.Size(102, 25);
-            this.checkboxSendComments.TabIndex = 4;
-            this.checkboxSendComments.Text = "Gửi ý kiến";
-            this.checkboxSendComments.UseVisualStyleBackColor = false;
-            // 
             // checkboxTasksManagement
             // 
             this.checkboxTasksManagement.AutoSize = true;
@@ -614,20 +636,21 @@
             this.btnAdd.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(493, 557);
+            this.btnAdd.Location = new System.Drawing.Point(466, 557);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.btnAdd.Size = new System.Drawing.Size(94, 40);
+            this.btnAdd.Size = new System.Drawing.Size(121, 40);
             this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Cập nhật";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnCancel.BorderRadius = 15;
-            this.btnCancel.BorderSize = 2;
+            this.btnCancel.BorderSize = 1;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -643,7 +666,7 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // CreateDecentralization
+            // CreateDecentralizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -663,9 +686,10 @@
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.label1);
-            this.Name = "CreateDecentralization";
+            this.Name = "CreateDecentralizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Decentralizaton";
+            this.Load += new System.EventHandler(this.CreateDecentralizationForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.customPanel2.ResumeLayout(false);
@@ -713,14 +737,15 @@
         private GUI.TruniControls.CustomPanel customPanel6;
         private System.Windows.Forms.CheckBox checkboxAssignTasks;
         private System.Windows.Forms.CheckBox checkboxSendNotification;
-        private System.Windows.Forms.CheckBox checkboxSendComments;
         private System.Windows.Forms.CheckBox checkboxTasksManagement;
         private System.Windows.Forms.CheckBox checkboxDeleteTasks;
         private System.Windows.Forms.CheckBox checkboxUpdateTasks;
         private GUI.CustomButton btnAdd;
         private GUI.CustomButton btnCancel;
-        private GUI.TruniControls.CustomComboBox customComboBox3;
-        private GUI.TruniControls.CustomComboBox customComboBox2;
-        private GUI.TruniControls.CustomComboBox customComboBox1;
+        private GUI.TruniControls.CustomTextBox txtDepartment;
+        private GUI.TruniControls.CustomTextBox txtPosition;
+        private GUI.TruniControls.CustomTextBox txtPersonnel;
+        private System.Windows.Forms.CheckBox checkBoxGetTasks;
+        private System.Windows.Forms.CheckBox checkBoxReportTasks;
     }
 }

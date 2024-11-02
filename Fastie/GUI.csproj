@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\LayoutNotification\NotificationForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutNotification\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutGetTaskForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutGetTaskForm.Designer.cs">
+      <DependentUpon>LayoutGetTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutTaskForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutTaskForm.Designer.cs">
+      <DependentUpon>LayoutTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.Designer.cs">
+      <DependentUpon>NoPermissionAccessForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Analytics\Analytics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +100,11 @@
     <Compile Include="Screens\Personnel\CreatePersonnelForm.Designer.cs">
       <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Personnel\EditPersonnelForm.cs">
+    <Compile Include="Screens\Personnel\UpdatePersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Personnel\EditPersonnelForm.Designer.cs">
-      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    <Compile Include="Screens\Personnel\UpdatePersonnelForm.Designer.cs">
+      <DependentUpon>UpdatePersonnelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Position\CreatePositionForm.cs">
       <SubType>Form</SubType>
@@ -88,11 +112,11 @@
     <Compile Include="Screens\Position\CreatePositionForm.Designer.cs">
       <DependentUpon>CreatePositionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Position\EditPositionForm.cs">
+    <Compile Include="Screens\Position\UpdatePositionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Position\EditPositionForm.Designer.cs">
-      <DependentUpon>EditPositionForm.cs</DependentUpon>
+    <Compile Include="Screens\Position\UpdatePositionForm.Designer.cs">
+      <DependentUpon>UpdatePositionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Department\CreateDepartmentForm.cs">
       <SubType>Form</SubType>
@@ -100,11 +124,11 @@
     <Compile Include="Screens\Department\CreateDepartmentForm.Designer.cs">
       <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Department\EditDepartmentForm.cs">
+    <Compile Include="Screens\Department\UpdateDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Department\EditDepartmentForm.Designer.cs">
-      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
+    <Compile Include="Screens\Department\UpdateDepartmentForm.Designer.cs">
+      <DependentUpon>UpdateDepartmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Account\AccountForm.cs">
       <SubType>Form</SubType>
@@ -136,11 +160,11 @@
     <Compile Include="Screens\Account\EditAccount.Designer.cs">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Layout\DeleteLayoutConfirm.cs">
+    <Compile Include="Components\LayoutConfirm\LayoutConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Layout\DeleteLayoutConfirm.Designer.cs">
-      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    <Compile Include="Components\LayoutConfirm\LayoutConfirmForm.Designer.cs">
+      <DependentUpon>LayoutConfirmForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Home\HomeForm.cs">
       <SubType>Form</SubType>
@@ -180,6 +204,24 @@
     <Compile Include="Screens\Decentralization\UpdateDecentralizationForm.Designer.cs">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Task\AcceptTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\AcceptTaskForm.Designer.cs">
+      <DependentUpon>AcceptTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Task\TaskAssignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\TaskAssignForm.Designer.cs">
+      <DependentUpon>TaskAssignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Task\TaskTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\TaskTableForm.Designer.cs">
+      <DependentUpon>TaskTableForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TruniControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -201,6 +243,18 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\LayoutNotification\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutGetTaskForm.resx">
+      <DependentUpon>LayoutGetTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutTaskForm.resx">
+      <DependentUpon>LayoutTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.resx">
+      <DependentUpon>NoPermissionAccessForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,17 +291,17 @@
     <EmbeddedResource Include="Screens\Account\EditAccount.resx">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Department\EditDepartmentForm.resx">
-      <DependentUpon>EditDepartmentForm.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Department\UpdateDepartmentForm.resx">
+      <DependentUpon>UpdateDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Personnel\EditPersonnelForm.resx">
-      <DependentUpon>EditPersonnelForm.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Personnel\UpdatePersonnelForm.resx">
+      <DependentUpon>UpdatePersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Position\EditPositionForm.resx">
-      <DependentUpon>EditPositionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Position\UpdatePositionForm.resx">
+      <DependentUpon>UpdatePositionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Layout\DeleteLayoutConfirm.resx">
-      <DependentUpon>DeleteLayoutConfirm.cs</DependentUpon>
+    <EmbeddedResource Include="Components\LayoutConfirm\LayoutConfirmForm.resx">
+      <DependentUpon>LayoutConfirmForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Home\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -277,8 +331,18 @@
     <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\AcceptTaskForm.resx">
+      <DependentUpon>AcceptTaskForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\TaskAssignForm.resx">
+      <DependentUpon>TaskAssignForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\TaskForm.resx">
       <DependentUpon>TaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\TaskTableForm.resx">
+      <DependentUpon>TaskTableForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TruniControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
@@ -300,6 +364,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{4a88544b-d6b0-424a-8126-7ce89238cce3}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{37770693-67fa-4764-a4b0-d6f4cc14fa57}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{f9469dd2-23d1-4b54-8be7-8ffaa41c818b}</Project>
@@ -399,7 +467,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-close-24.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-30.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bacground_login.jpg" />
   </ItemGroup>
@@ -418,5 +488,24 @@
   <ItemGroup>
     <None Include="Resources\icons8-hide-50.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-23-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pencil-23-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-23-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell_notice_alert_new_event_information_sign_or_symbol_website_icon_3d_illustration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bell-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu-23.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
