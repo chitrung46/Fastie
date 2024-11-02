@@ -13,7 +13,7 @@ namespace Fastie.Screens.Login.ForgetPassword
 {
     public partial class ResetPasswordForm : Form
     {
-        private ResetPasswordBLL accountBLL = new ResetPasswordBLL();
+        ResetPasswordBLL resetPasswordBLL = new ResetPasswordBLL();
         private string userEmail;
 
         // Khởi tạo với email được truyền từ `GetCodeConfirmForm`
@@ -43,7 +43,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             }
 
             // Gọi BLL để cập nhật mật khẩu trong cơ sở dữ liệu
-            bool isUpdated = accountBLL.UpdatePassword(userEmail, newPassword);
+            bool isUpdated = resetPasswordBLL.UpdateNewPassword(userEmail, newPassword);
             if (isUpdated)
             {
                 MessageBox.Show("Đặt lại mật khẩu thành công!");

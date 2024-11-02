@@ -10,23 +10,23 @@ namespace BLL.DepartmentBLL
 {
     public class DepartmentBLL
     {
-        public void InsertDepartmentDAL(Department deparment)
+        public void InsertDepartment(Department deparment)
         {
             DepartmentDAL.InsertDepartment(deparment);
         }
 
-        public void UpdateDepartmentDAL(Department deparment)
+        public void UpdateDepartment(Department deparment)
         {
             DepartmentDAL.UpdateDepartment(deparment);
         }
 
-        public List<Department> GetDepartmentListDAL()
+        public List<Department> GetDepartmentList()
         {
             List<Department> list = DepartmentDAL.GetDepartmentList();
             return list;
         }
 
-        public void DeleteDepartMentDAL(string departmentId)
+        public void DeleteDepartment(string departmentId)
         {
             DepartmentDAL.DeleteDepartment(departmentId);
         } 

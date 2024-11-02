@@ -10,25 +10,23 @@ namespace BLL
 {
     public class PositionBLL
     {
-        private readonly PositionDAL positionAccess = new PositionDAL();
-
-        public List<Position> GetPositionListBLL()
+        public List<Position> GetPositionList()
         {
-            return positionAccess.GetPositionListDAL();
+            return PositionDAL.GetPositionList();
         }
-        public void InsertPositionBLL(Position position)
+        public void InsertPosition(Position position)
         {
-            positionAccess.InsertPositionDAL(position);
+            PositionDAL.InsertPosition(position);
         }
 
-        public void UpdatePositionBLL(Position position)
+        public void UpdatePosition(Position position)
         {
-            positionAccess.UpdatePositionDAL(position);
+            PositionDAL.UpdatePosition(position);
         }
 
-        public void DeletePositionBLL(string id) 
+        public void DeletePosition(string id) 
         {
-            positionAccess.DeletePositionDAL(id);
+            PositionDAL.DeletePosition(id);
         }
     }
 }

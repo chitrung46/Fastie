@@ -69,15 +69,12 @@
             this.btnDetailAssignPositiveTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetailAssignPositiveTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetailAssignPositiveTask.ForeColor = System.Drawing.Color.White;
-            this.btnDetailAssignPositiveTask.Image = global::Fastie.Properties.Resources.icons8_positive_24;
             this.btnDetailAssignPositiveTask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetailAssignPositiveTask.Location = new System.Drawing.Point(1007, 27);
             this.btnDetailAssignPositiveTask.Name = "btnDetailAssignPositiveTask";
-            this.btnDetailAssignPositiveTask.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnDetailAssignPositiveTask.Size = new System.Drawing.Size(133, 47);
             this.btnDetailAssignPositiveTask.TabIndex = 3;
             this.btnDetailAssignPositiveTask.Text = "Chủ động";
-            this.btnDetailAssignPositiveTask.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDetailAssignPositiveTask.UseVisualStyleBackColor = false;
             this.btnDetailAssignPositiveTask.Click += new System.EventHandler(this.btnDetailAssignPositiveTask_Click);
             // 
@@ -91,15 +88,12 @@
             this.btnDetailAssignFastingTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetailAssignFastingTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetailAssignFastingTask.ForeColor = System.Drawing.Color.White;
-            this.btnDetailAssignFastingTask.Image = global::Fastie.Properties.Resources.icons8_thunder_24;
             this.btnDetailAssignFastingTask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetailAssignFastingTask.Location = new System.Drawing.Point(891, 27);
             this.btnDetailAssignFastingTask.Name = "btnDetailAssignFastingTask";
-            this.btnDetailAssignFastingTask.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnDetailAssignFastingTask.Size = new System.Drawing.Size(104, 47);
             this.btnDetailAssignFastingTask.TabIndex = 2;
             this.btnDetailAssignFastingTask.Text = "Nhanh";
-            this.btnDetailAssignFastingTask.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDetailAssignFastingTask.UseVisualStyleBackColor = false;
             this.btnDetailAssignFastingTask.Click += new System.EventHandler(this.btnDetailAssignFastingTask_Click);
             // 

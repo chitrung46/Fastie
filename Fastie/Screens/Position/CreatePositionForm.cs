@@ -29,7 +29,7 @@ namespace Fastie
                     Ten = cTBName.Text,
                     MoTa = cTBDescribe.Text
                 };
-                positionBLL.InsertPositionBLL(newPosition);
+                positionBLL.InsertPosition(newPosition);
                 MessageBox.Show("Thêm Chức vụ mới thành công!", "Success");
                 
             }

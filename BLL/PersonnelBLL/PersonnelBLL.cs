@@ -10,24 +10,23 @@ namespace BLL
 {
     public class PersonnelBLL
     {
-        private readonly PersonnelDAL personnelAccess = new PersonnelDAL();
-        public List<Personnel> GetPersonnelnListBLL()
+        public List<Personnel> GetPersonnelList()
         {
-            return personnelAccess.GetPersonnelListDAL();
+            return PersonnelDAL.GetPersonnelList();
         }
-        public void InsertPersonnelDAL(Personnel personnel)
+        public void InsertPersonnel(Personnel personnel)
         {
-            personnelAccess.InsertPersonnelDAL(personnel);
-        }
-
-        public void UpdatePersonnelBLL(Personnel personnel)
-        {
-            personnelAccess.UpdatePersonnelDAL(personnel);
+            PersonnelDAL.InsertPersonnel(personnel);
         }
 
-        public void DeletePersonnelBLL(string id)
+        public void UpdatePersonnel(Personnel personnel)
         {
-            personnelAccess.DeletePersonnelDAL(id);
+            PersonnelDAL.UpdatePersonnel(personnel);
+        }
+
+        public void DeletePersonnel(string id)
+        {
+            PersonnelDAL.DeletePersonnel(id);
         }
     }
 }

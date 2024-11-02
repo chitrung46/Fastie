@@ -214,8 +214,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenBoPhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
-        private GUI.TruniControls.CustomPanel customPanel2;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label lblNameForm;
     }
 }

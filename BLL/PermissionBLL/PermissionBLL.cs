@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DAL.PermissionDAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace BLL.PermissionBLL
 {
-    class PermissionBLL
+    public class PermissionBLL
     {
         public bool checkPermission(string accountId, string permissionId)
         {
             try
             {
-                return ResetPasswordDAL.checkPermission(accountId, permissionId);
+                return PermissionDAL.checkPermission(accountId, permissionId);
             }
             catch (Exception ex)
             {

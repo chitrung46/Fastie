@@ -1,4 +1,4 @@
-﻿using BLL;
+﻿using BLL.PermissionBLL;
 using DTO;
 using Fastie.Components.NoPermissionAccessForm;
 using System;
@@ -17,7 +17,7 @@ namespace Fastie
     {
         private string idTaiKhoan;
         private string idChucVu;
-        ResetPasswordBLL accountBLL = new ResetPasswordBLL();
+        PermissionBLL permissionBLL = new PermissionBLL();
         public HomeForm()
         {
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace Fastie
 
         private void FormLayout_Load(object sender, EventArgs e)
         {
-            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0001"); //Q0001 is permission to access DecentralizationForm
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0001"); //Q0001 is permission to access DecentralizationForm
             if (idChucVu == "CV001" || checkPermission)
             {
                 DecentralizationForm decentralization = new DecentralizationForm();
@@ -94,7 +94,7 @@ namespace Fastie
 
         private void btnDecentralization_Click(object sender, EventArgs e)
         {
-            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0001");
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0001");
             if (idChucVu == "CV001" || checkPermission)
             {
                 DecentralizationForm decentralization = new DecentralizationForm();
@@ -110,7 +110,7 @@ namespace Fastie
 
         private void btnPart_Click(object sender, EventArgs e)
         {
-            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0006");
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0006");
             if (checkPermission)
             {
                 DepartmentForm departmentForm = new DepartmentForm();
@@ -126,7 +126,7 @@ namespace Fastie
 
         private void btnPosition_Click(object sender, EventArgs e)
         {
-            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0010");
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0010");
             if (checkPermission)
             {
                 PositionForm position = new PositionForm();
@@ -142,7 +142,7 @@ namespace Fastie
 
         private void btnPersonnel_Click(object sender, EventArgs e)
         {
-            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0014");
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0014");
             if (checkPermission)
             {
                 PersonnelForm personnel = new PersonnelForm();
@@ -158,7 +158,7 @@ namespace Fastie
 
         private void btnWork_Click(object sender, EventArgs e)
         {
-            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0018");
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0018");
             if (checkPermission)
             {
                 TaskForm work = new TaskForm();
@@ -174,7 +174,7 @@ namespace Fastie
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
-            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0026");
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0026");
             if (checkPermission)
             {
                 Analytics analytics = new Analytics();
@@ -189,7 +189,7 @@ namespace Fastie
         }
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            bool checkPermission = accountBLL.checkPermission(idTaiKhoan, "Q0002");
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0002");
             if (checkPermission)
             {
                 AccountForm account = new AccountForm();

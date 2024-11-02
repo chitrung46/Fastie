@@ -2,34 +2,86 @@
 using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PositionDAL : ResetPasswordDAL
+    public class PositionDAL
     {
-        public void InsertPositionDAL(Position chucVu)
+        //Them Chuc Vu
+        public static void InsertPosition(Position position)
         {
-            InsertPosition(chucVu);
+            string query = "proc_insertPosition";
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                SqlCommand command = new SqlCommand(query, con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ten", position.Ten);
+                command.Parameters.AddWithValue("@moTa", position.MoTa);
+                con.Open();
+                command.ExecuteNonQuery();
+            }
         }
 
-        public List<Position> GetPositionListDAL()
+
+        //Show Toan Bo Chuc Vu
+        public static List<Position> GetPositionList()
         {
-            List<Position> list = GetPositionList();
+            List<Position> list = new List<Position>();
+            string query = "proc_getPositionList";
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new Position
+                        {
+                            Id = reader["id"].ToString(),
+                            Ten = reader["ten"].ToString(),
+                            MoTa = reader["moTa"].ToString()
+                        });
+                    }
+                }
+            }
             return list;
         }
-
-        public void UpdatePositionDAL (Position chucVu)
+        //Sua Chuc Vu
+        public static void UpdatePosition(Position position)
         {
-            UpdatePosition(chucVu);
+            string query = "proc_updatePosition";
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                SqlCommand command = new SqlCommand(query, con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@id", position.Id);
+                command.Parameters.AddWithValue("@ten", position.Ten);
+                command.Parameters.AddWithValue("@moTa", position.MoTa);
+                con.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+        //Xoa Chuc Vu
+        public static void DeletePosition(string positionId)
+        {
+            string query = "proc_deletePosition";
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                SqlCommand command = new SqlCommand(query, con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@id", positionId);
+                con.Open();
+                command.ExecuteNonQuery();
+            }
         }
 
-        public void DeletePositionDAL(string id) 
-        { 
-            DeletePosition(id);     
-        }
+
 
     }
 }

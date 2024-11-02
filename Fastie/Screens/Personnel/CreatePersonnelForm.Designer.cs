@@ -305,7 +305,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreatePersonnelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm nhân sự";
+            this.Text = "Fastie - Thêm nhân sự";
             this.Load += new System.EventHandler(this.CreatePersonnel_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();

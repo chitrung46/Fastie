@@ -23,11 +23,6 @@ namespace Fastie.Screens.Login
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void pictureEye_Click(object sender, EventArgs e)
         {
             if(txtPassword.PasswordChar == true)
@@ -51,26 +46,30 @@ namespace Fastie.Screens.Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            acc.TenDangNhap = txt_Email.Text;
+            acc.TenDangNhap = txtEmail.Text;
             acc.MatKhau = txtPassword.Text;
-
+            lblError.Visible = false;
+            lblError.Text = "";
             string[] getUser = loginBLL.checkLogin(acc);
 
             if (getUser.Length == 1 && getUser[0] == "Email hoặc mật khẩu không chính xác!")
             {
-                MessageBox.Show("Email hoặc mật khẩu không chính xác!");
+                lblError.Text = "Email hoặc mật khẩu không chính xác!";
+                lblError.Visible = true;
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(acc.TenDangNhap))
             {
-                MessageBox.Show("Email không được để trống");
+                lblError.Text = "Email không được để trống";
+                lblError.Visible = true;
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(acc.MatKhau))
             {
-                MessageBox.Show("Mật khẩu không được để trống");
+                lblError.Text = "Mật khẩu không được để trống";
+                lblError.Visible = true;
                 return;
             }
 

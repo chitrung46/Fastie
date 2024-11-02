@@ -92,7 +92,7 @@ namespace Fastie
                     NgayVaoLam = dTPDayOfWork.Value.Date,
                     Sdt = cTBNumberPhone.Text
                 };
-                nhanSuBLL.InsertPersonnelDAL(newNhanSu);
+                nhanSuBLL.InsertPersonnel(newNhanSu);
                 //MessageBox.Show("Thêm Nhân sự mới thành công!", "Success");
                 string ngaySinhFormatted = newNhanSu.NgaySinh.ToString("yyyy-MM-dd");
                 string ngayVaoLamFormatted = newNhanSu.NgayVaoLam.ToString("yyyy-MM-dd");

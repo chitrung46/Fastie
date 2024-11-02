@@ -38,7 +38,7 @@ namespace Fastie
         {
             needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
             needEdit.MoTa = cTBDesribe.Text;
-            positionBLL.UpdatePositionBLL(needEdit);
+            positionBLL.UpdatePosition(needEdit);
             MessageBox.Show("Sửa Bộ phận thành công!", "Success");
             positionForm.LoadPositionData();
             this.Close();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.DepartmentBLL;
 using DTO;
 using GUI.TruniControls;
 namespace Fastie
@@ -24,7 +25,7 @@ namespace Fastie
 
         public void LoadDepartmentData ()
         {
-            List<Department> departmentList = departmentBLL.GetDepartmentListBLL();
+            List<Department> departmentList = departmentBLL.GetDepartmentList();
             dgvPosition.Rows.Clear();
             foreach (Department department in departmentList)
             {
@@ -97,7 +98,7 @@ namespace Fastie
                     if (result == DialogResult.Yes)
                     {
                         string id = selectedRow.Cells["ID"].Value.ToString();
-                        departmentBLL.DeleteDepartmentBLL(id);
+                        departmentBLL.DeleteDepartment(id);
                         dgvPosition.Rows.RemoveAt(selectedRow.Index);
                         MessageBox.Show("Xóa bộ phận thành công!", "Success");
                     }

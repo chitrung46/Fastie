@@ -48,10 +48,10 @@
             this.customButton2.FlatAppearance.BorderSize = 0;
             this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(400, 274);
+            this.customButton2.Location = new System.Drawing.Point(500, 342);
             this.customButton2.Margin = new System.Windows.Forms.Padding(2);
             this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(65, 28);
+            this.customButton2.Size = new System.Drawing.Size(81, 35);
             this.customButton2.TabIndex = 11;
             this.customButton2.Text = "Hủy";
             this.customButton2.UseVisualStyleBackColor = false;
@@ -66,10 +66,10 @@
             this.customButton1.FlatAppearance.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(324, 274);
+            this.customButton1.Location = new System.Drawing.Point(405, 342);
             this.customButton1.Margin = new System.Windows.Forms.Padding(2);
             this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(65, 28);
+            this.customButton1.Size = new System.Drawing.Size(81, 35);
             this.customButton1.TabIndex = 11;
             this.customButton1.Text = "Lưu";
             this.customButton1.UseVisualStyleBackColor = false;
@@ -80,10 +80,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 14);
+            this.label2.Location = new System.Drawing.Point(16, 18);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 26);
+            this.label2.Size = new System.Drawing.Size(260, 32);
             this.label2.TabIndex = 10;
             this.label2.Text = "Thông tin bộ phận";
             // 
@@ -102,19 +102,20 @@
             this.customPanel1.GradientAngle = 90F;
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
-            this.customPanel1.Location = new System.Drawing.Point(18, 62);
+            this.customPanel1.Location = new System.Drawing.Point(22, 78);
             this.customPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(450, 192);
+            this.customPanel1.Size = new System.Drawing.Size(562, 240);
             this.customPanel1.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(23, 84);
+            this.label4.Location = new System.Drawing.Point(29, 105);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 15);
+            this.label4.Size = new System.Drawing.Size(121, 18);
             this.label4.TabIndex = 30;
             this.label4.Text = "Mô tả bộ phận:";
             // 
@@ -127,15 +128,15 @@
             this.cTBDescribe.BorderSize = 2;
             this.cTBDescribe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBDescribe.ForeColor = System.Drawing.Color.DimGray;
-            this.cTBDescribe.Location = new System.Drawing.Point(21, 110);
-            this.cTBDescribe.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cTBDescribe.Location = new System.Drawing.Point(26, 138);
+            this.cTBDescribe.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cTBDescribe.Multiline = true;
             this.cTBDescribe.Name = "cTBDescribe";
-            this.cTBDescribe.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.cTBDescribe.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.cTBDescribe.PasswordChar = false;
             this.cTBDescribe.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.cTBDescribe.PlaceholderText = "";
-            this.cTBDescribe.Size = new System.Drawing.Size(407, 58);
+            this.cTBDescribe.Size = new System.Drawing.Size(509, 72);
             this.cTBDescribe.TabIndex = 24;
             this.cTBDescribe.UnderlinedStyle = false;
             // 
@@ -144,9 +145,10 @@
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(23, 16);
+            this.lblName.Location = new System.Drawing.Point(29, 20);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(95, 15);
+            this.lblName.Size = new System.Drawing.Size(111, 18);
             this.lblName.TabIndex = 20;
             this.lblName.Text = "Tên bộ phận: ";
             // 
@@ -159,25 +161,25 @@
             this.cTBName.BorderSize = 2;
             this.cTBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBName.ForeColor = System.Drawing.Color.DimGray;
-            this.cTBName.Location = new System.Drawing.Point(19, 41);
-            this.cTBName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cTBName.Location = new System.Drawing.Point(24, 51);
+            this.cTBName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cTBName.Multiline = false;
             this.cTBName.Name = "cTBName";
-            this.cTBName.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.cTBName.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.cTBName.PasswordChar = false;
             this.cTBName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.cTBName.PlaceholderText = "";
-            this.cTBName.Size = new System.Drawing.Size(409, 28);
+            this.cTBName.Size = new System.Drawing.Size(511, 35);
             this.cTBName.TabIndex = 31;
             this.cTBName.UnderlinedStyle = false;
             // 
             // UpdateDepartmentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(486, 319);
+            this.ClientSize = new System.Drawing.Size(608, 399);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.customButton1);
             this.Controls.Add(this.label2);
@@ -186,7 +188,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UpdateDepartmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cập nhật thông tin bộ phận";
+            this.Text = "Fastie - Cập nhật thông tin bộ phận";
             this.Load += new System.EventHandler(this.UpdateDepartmentForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();

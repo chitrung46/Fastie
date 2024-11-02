@@ -314,7 +314,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UpdatePersonnelForm";
-            this.Text = "Cập nhật thông tin nhân sự";
+            this.Text = "Fastie - Cập nhật thông tin nhân sự";
             this.Load += new System.EventHandler(this.UpdatePersonnelForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
