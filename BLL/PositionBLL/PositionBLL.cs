@@ -10,7 +10,7 @@ namespace BLL
 {
     public class PositionBLL
     {
-        private readonly PositionAccess positionAccess = new PositionAccess();
+        private readonly PositionDAL positionAccess = new PositionDAL();
 
         public List<Position> GetPositionListBLL()
         {

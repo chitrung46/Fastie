@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL.DepartmentDAL
 {
-    public class DepartmentAccess
+    public class DepartmentDAL
     {
         //Them Bo Phan
         public static void InsertDepartment(Department deparment)

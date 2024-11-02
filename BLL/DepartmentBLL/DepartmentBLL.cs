@@ -3,33 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
+using DAL.DepartmentDAL;
 using DTO;
 
-namespace BLL
+namespace BLL.DepartmentBLL
 {
     public class DepartmentBLL
     {
-        private readonly DepartmentAccess departmentAccess = new DepartmentAccess();
         public void InsertDepartmentDAL(Department deparment)
         {
-            InsertDepartment(deparment);
+            DepartmentDAL.InsertDepartment(deparment);
         }
 
         public void UpdateDepartmentDAL(Department deparment)
         {
-            UpdateDepartment(deparment);
+            DepartmentDAL.UpdateDepartment(deparment);
         }
 
         public List<Department> GetDepartmentListDAL()
         {
-            List<Department> list = ResetPasswordDAL.GetDepartmentList();
+            List<Department> list = DepartmentDAL.GetDepartmentList();
             return list;
         }
 
         public void DeleteDepartMentDAL(string departmentId)
         {
-            DeleteDepartment(departmentId);
-        }
+            DepartmentDAL.DeleteDepartment(departmentId);
+        } 
     }
 }

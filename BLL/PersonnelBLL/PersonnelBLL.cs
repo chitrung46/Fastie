@@ -10,7 +10,7 @@ namespace BLL
 {
     public class PersonnelBLL
     {
-        private readonly PersonnelAccess personnelAccess = new PersonnelAccess();
+        private readonly PersonnelDAL personnelAccess = new PersonnelDAL();
         public List<Personnel> GetPersonnelnListBLL()
         {
             return personnelAccess.GetPersonnelListDAL();
