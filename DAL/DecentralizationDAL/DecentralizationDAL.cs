@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL.DecentralizationDAL
-{
+{/***
     public static class SqlConnectionData
     {
         private static readonly string connectionString = @"Data Source=ANH-QUAN;Initial Catalog=FASTIE;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
@@ -17,8 +17,8 @@ namespace DAL.DecentralizationDAL
         {
             return new SqlConnection(connectionString);
         }
-    }
-    public class DecentralizationDAL
+    }***/
+    public class DecentralizationDAL : DatabaseAccess
     {
         //For Decentralization
         public static AccountInfo getAccountInfo(string accountId)

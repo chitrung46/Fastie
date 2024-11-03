@@ -173,7 +173,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(73, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 32);
+            this.label1.Size = new System.Drawing.Size(257, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhập mật khẩu mới";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,7 +199,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(55, 259);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(174, 21);
+            this.label7.Size = new System.Drawing.Size(158, 21);
             this.label7.TabIndex = 0;
             this.label7.Text = "Xác nhận mật khẩu";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,7 +212,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(55, 172);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 21);
+            this.label2.Size = new System.Drawing.Size(82, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mật khẩu";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -355,7 +355,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ResetPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ResetPassword";
+            this.Text = "Fastie - Tạo mật khẩu mới";
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

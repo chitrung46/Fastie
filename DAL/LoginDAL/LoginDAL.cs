@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.LoginDAL
 {
+    /***
     public static class SqlConnectionData
     {
         private static readonly string connectionString = @"Data Source=ANH-QUAN;Initial Catalog=FASTIE;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
@@ -17,8 +18,8 @@ namespace DAL.LoginDAL
         {
             return new SqlConnection(connectionString);
         }
-    }
-    public class LoginDAL
+    }***/
+    public class LoginDAL:DatabaseAccess
     {
         public static string[] checkLogin(Account acc)
         {

@@ -10,11 +10,11 @@ namespace BLL
 {
     public class TaskBLL
     {
-        private readonly TaskAccess taskAccess = new TaskAccess();
+        //private readonly TaskAccess taskAccess = new TaskAccess();
 
         public List<TaskInfo> GetTaskListBLL()
         {
-            return taskAccess.GetTaskListDAL(); 
+            return TaskAccess.GetTasksFromDatabase(); 
         }
     }
 }

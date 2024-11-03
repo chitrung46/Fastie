@@ -47,7 +47,6 @@
     <Compile Include="CheckRoleDTO\UserAccountSession.cs" />
     <Compile Include="DepartmentDTO\Department.cs" />
     <Compile Include="DepartmentDTO\DepartmentInfo.cs" />
-    <Compile Include="Nhansu.cs" />
     <Compile Include="PersonnelDTO\Personnel.cs" />
     <Compile Include="PositionDTO\Position.cs" />
     <Compile Include="PositionDTO\PositionInfo.cs" />

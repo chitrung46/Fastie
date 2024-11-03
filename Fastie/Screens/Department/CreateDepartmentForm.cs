@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL.DepartmentBLL;
 
 namespace Fastie
 {
@@ -37,7 +38,7 @@ namespace Fastie
                     Ten = cTBName.Text,
                     MoTa = cTBDescribe.Text
                 };
-                departmentBLL.InsertDepartmentBLL(newBoPhan);
+                departmentBLL.InsertDepartment(newBoPhan);
                 MessageBox.Show("Thêm Bộ phận mới thành công!", "Success");
 
             }

@@ -40,10 +40,10 @@
             // 
             // mainLayout
             // 
-            this.mainLayout.Location = new System.Drawing.Point(35, 115);
-            this.mainLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainLayout.Location = new System.Drawing.Point(28, 95);
+            this.mainLayout.Margin = new System.Windows.Forms.Padding(4);
             this.mainLayout.Name = "mainLayout";
-            this.mainLayout.Size = new System.Drawing.Size(1104, 567);
+            this.mainLayout.Size = new System.Drawing.Size(1120, 587);
             this.mainLayout.TabIndex = 2;
             // 
             // pnlTabBar
@@ -63,10 +63,10 @@
             this.pnlTabBar.GradientAngle = 90F;
             this.pnlTabBar.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnlTabBar.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnlTabBar.Location = new System.Drawing.Point(35, 15);
-            this.pnlTabBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTabBar.Location = new System.Drawing.Point(28, 12);
+            this.pnlTabBar.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTabBar.Name = "pnlTabBar";
-            this.pnlTabBar.Size = new System.Drawing.Size(1104, 75);
+            this.pnlTabBar.Size = new System.Drawing.Size(1120, 75);
             this.pnlTabBar.TabIndex = 1;
             // 
             // btnAdjustTask

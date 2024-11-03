@@ -62,7 +62,7 @@ namespace Fastie
             needEdit.NgaySinh = dTPBirthday.Value;
             needEdit.NgayVaoLam = dTPDayOfWork.Value;
             needEdit.Sdt = cTBNumberPhone.Text;
-            personnelBLL.UpdatePersonnelBLL(needEdit);
+            personnelBLL.UpdatePersonnel(needEdit);
             MessageBox.Show("Sửa Nhân sự thành công!", "Success");
             personnelForm.LoadPersonnelData();
             this.Close();

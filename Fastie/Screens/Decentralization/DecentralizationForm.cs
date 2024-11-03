@@ -1,7 +1,6 @@
 ﻿using BLL;
 using BLL.DecentralizationBLL;
 using DTO;
-using Fastie.Screen.Decentralization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,7 +55,7 @@ namespace Fastie
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CreateDecentralizationForm createDecentralization = new CreateDecentralizationForm(this ,this.accountName);
+            UpdateDecentralizationForm createDecentralization = new UpdateDecentralizationForm(this ,this.accountName);
             createDecentralization.OnFormClosing += () =>
             {
                 //Unable decentralization
@@ -106,7 +105,7 @@ namespace Fastie
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateDecentralizationForm updateDecentralization = new UpdateDecentralizationForm();
+            UpdateDecentralizationForm updateDecentralization = new UpdateDecentralizationForm(this, this.accountName);
             updateDecentralization.Show();
 
         }

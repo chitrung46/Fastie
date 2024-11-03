@@ -50,9 +50,9 @@
             this.customPanel2.GradientAngle = 90F;
             this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.Location = new System.Drawing.Point(635, 2);
+            this.customPanel2.Location = new System.Drawing.Point(636, 2);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(462, 563);
+            this.customPanel2.Size = new System.Drawing.Size(482, 563);
             this.customPanel2.TabIndex = 0;
             // 
             // flowLayoutPanelNotification
@@ -61,7 +61,7 @@
             this.flowLayoutPanelNotification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.flowLayoutPanelNotification.Location = new System.Drawing.Point(25, 71);
             this.flowLayoutPanelNotification.Name = "flowLayoutPanelNotification";
-            this.flowLayoutPanelNotification.Size = new System.Drawing.Size(415, 477);
+            this.flowLayoutPanelNotification.Size = new System.Drawing.Size(432, 477);
             this.flowLayoutPanelNotification.TabIndex = 1;
             // 
             // label1
@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1104, 567);
+            this.ClientSize = new System.Drawing.Size(1120, 587);
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

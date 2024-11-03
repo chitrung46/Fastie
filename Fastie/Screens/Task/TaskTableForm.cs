@@ -54,7 +54,7 @@ namespace Fastie.Screens.Task
                 var taskForm = new LayoutTaskForm
                 {
                     TitleTask = task.Ten,
-                    Status = task.GhiChu
+                    Status = task.GhiChu,
                 };
 
                 flowLayoutPanelTask.Controls.Add(taskForm);

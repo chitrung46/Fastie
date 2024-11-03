@@ -236,7 +236,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(14, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 29);
+            this.label4.Size = new System.Drawing.Size(25, 33);
             this.label4.TabIndex = 0;
             this.label4.Text = "1";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -317,8 +317,8 @@
             // 
             // GetCodeConfirmForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(1164, 648);
             this.Controls.Add(this.panel2);
@@ -329,7 +329,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "GetCodeConfirmForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GetCodeConfirmForm";
+            this.Text = "Fastie - Nhận mã";
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.customPanel2.ResumeLayout(false);

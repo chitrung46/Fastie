@@ -183,7 +183,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "CreatePositionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm chức vụ ";
+            this.Text = "Fastie - Thêm chức vụ ";
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);
