@@ -9,14 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using Fastie.Components.LayoutDepartment;
 namespace Fastie
 {
     public partial class UpdatePositionForm : Form
     {
         private readonly Position needEdit;
-        PositionForm positionForm;
+        //PositionForm positionForm;
+        private LayoutPositionForm positionForm;
         PositionBLL positionBLL = new PositionBLL();
-        public UpdatePositionForm(PositionForm positionForm, Position chucVu)
+        public UpdatePositionForm(LayoutPositionForm positionForm, Position chucVu) //PositionForm positionForm, Position chucVu
         {
             InitializeComponent();
             needEdit = chucVu;
@@ -40,6 +42,7 @@ namespace Fastie
             needEdit.MoTa = cTBDesribe.Text;
             positionBLL.UpdatePosition(needEdit);
             MessageBox.Show("Sửa Bộ phận thành công!", "Success");
+            //positionForm.LoadPositionData();
             positionForm.LoadPositionData();
             this.Close();
         }

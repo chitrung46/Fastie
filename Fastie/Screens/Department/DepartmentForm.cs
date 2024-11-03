@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using BLL.DepartmentBLL;
+using DAL;
 using DTO;
+using Fastie.Components.LayoutDepartmen;
+using Fastie.Components.LayoutDepartment;
 using GUI.TruniControls;
 namespace Fastie
 {
@@ -19,95 +22,40 @@ namespace Fastie
         public DepartmentForm()
         {
             InitializeComponent();
-            LoadDepartmentData();
 
         }
-
-        public void LoadDepartmentData ()
+        private void DepartmentForm_Load(object sender, EventArgs e)
         {
+            loadDataDepartment();
+        }
+        public void LoadDataDepartment()
+        {
+            loadDataDepartment();
+        }
+
+        private void loadDataDepartment()
+        {
+            flowLayoutPanelDepartment.Controls.Clear();
             List<Department> departmentList = departmentBLL.GetDepartmentList();
-            dgvPosition.Rows.Clear();
+            int i = 0;
             foreach (Department department in departmentList)
             {
-                dgvPosition.Rows.Add(department.Id, department.Ten, department.MoTa);
+                var layoutDepartmentForm = new LayoutDepartmentForm(this)
+                {
+                    Number = (i + 1).ToString(),
+                    NameDepartment = department.Ten,
+                    Description = department.MoTa + "Mô tả",
+                    IdDepartment = department.Id
+                };
+                flowLayoutPanelDepartment.Controls.Add(layoutDepartmentForm);
+                i++;
             }
         }
-        private void dgvPersonnel_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void customButton1_Click(object sender, EventArgs e)
+        private void btnAddDepartment_Click(object sender, EventArgs e)
         {
             CreateDepartmentForm createDepartmentForm = new CreateDepartmentForm(this);
             createDepartmentForm.Show();
-        }
-
-        private void customButton3_Click(object sender, EventArgs e)
-        {
-            if (dgvPosition.SelectedRows.Count > 0) // Ensure a row is selected
-            {
-                // Get the selected row
-                var selectedRow = dgvPosition.SelectedRows[0];
-                if (selectedRow.Cells["ID"].Value == null || string.IsNullOrWhiteSpace(selectedRow.Cells["ID"].Value.ToString()))
-                {
-                    MessageBox.Show("Ô dữ liệu này trống. Vui lòng chọn một bộ phận có dữ liệu hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    var updateDepartment = new Department
-                    {
-                        Id = selectedRow.Cells["ID"].Value.ToString(),
-                        Ten = selectedRow.Cells["tenBoPhan"].Value.ToString(),
-                        MoTa = selectedRow.Cells["moTa"].Value.ToString()
-
-                    };
-                    UpdateDepartmentForm updateDepartmentForm = new UpdateDepartmentForm(this, updateDepartment);
-                    updateDepartmentForm.Show();
-                }                                 
-            }
-            else
-            {
-                MessageBox.Show("Please select a student to edit."); // Inform user if no selection
-            }
-            
-        }
-
-        private void dgvPosition_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void DepartmentForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customButton2_Click(object sender, EventArgs e)
-        {
-            if (dgvPosition.SelectedRows.Count > 0) 
-            { 
-                DataGridViewRow selectedRow = dgvPosition.SelectedRows[0];
-                if (selectedRow.Cells["ID"].Value == null || string.IsNullOrWhiteSpace(selectedRow.Cells["ID"].Value.ToString()))
-                {
-                    MessageBox.Show("Ô dữ liệu này trống. Vui lòng chọn một bộ phận có dữ liệu hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa bộ phận này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
-                    {
-                        string id = selectedRow.Cells["ID"].Value.ToString();
-                        departmentBLL.DeleteDepartment(id);
-                        dgvPosition.Rows.RemoveAt(selectedRow.Index);
-                        MessageBox.Show("Xóa bộ phận thành công!", "Success");
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một bộ phận để xóa.");
-            }
         }
     }
 }

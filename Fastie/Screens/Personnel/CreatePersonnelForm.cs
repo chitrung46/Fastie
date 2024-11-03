@@ -15,7 +15,8 @@ namespace Fastie
     public partial class CreatePersonnelForm : Form
     {
         PersonnelBLL nhanSuBLL = new PersonnelBLL();
-        public CreatePersonnelForm()
+        private PersonnelForm personnelForm;
+        public CreatePersonnelForm(PersonnelForm personnelForm)
         {
             InitializeComponent();
             // Thiết lập định dạng cho DateTimePicker trong form
@@ -26,7 +27,7 @@ namespace Fastie
             dTPDayOfWork.CustomFormat = "yyyy-MM-dd";
             cCBSex.Items.Add("Nam");
             cCBSex.Items.Add("Nữ");
-
+            this.personnelForm = personnelForm;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -98,6 +99,7 @@ namespace Fastie
                 string ngayVaoLamFormatted = newNhanSu.NgayVaoLam.ToString("yyyy-MM-dd");
 
                 MessageBox.Show($"Thêm Nhân sự mới thành công!\nNgày Sinh: {ngaySinhFormatted}\nNgày Vào Làm: {ngayVaoLamFormatted}", "Success");
+                personnelForm.LoadPersonnelData();
             }
             catch (Exception ex)
             {
