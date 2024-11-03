@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BLL;
 using BLL.DecentralizationBLL;
 using DTO;
+using Fastie.Components.LayoutDecentralization;
 
 namespace Fastie
 {
@@ -19,12 +20,12 @@ namespace Fastie
         private DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
         private Dictionary<string, CheckBox> permissionCheckboxMap;
         private string accountName;
-        private DecentralizationForm decentralizationForm;
-
+        //private DecentralizationForm decentralizationForm;
+        private LayoutDecentralizationForm decentralizationForm;
         public delegate void FormClosingHandler();
         public event FormClosingHandler OnFormClosing;
 
-        public UpdateDecentralizationForm(DecentralizationForm decentralizationForm ,string accountName)
+        public UpdateDecentralizationForm(LayoutDecentralizationForm decentralizationForm,string accountName) //replace by DecentralizationForm decentralizationForm ,string accountName
         {
             InitializeComponent();
             InitializePermissionCheckboxMap();
@@ -327,7 +328,8 @@ namespace Fastie
                     bool result = decentralizationBLL.updateRoles(this.accountName, selectedPermissions);
                     if (result)
                     {
-                        decentralizationForm.loadData();
+                        //decentralizationForm.loadData();
+                        decentralizationForm.loadDataFromDecentralization();
                         MessageBox.Show("Cập nhật quyền thành công!");
                         this.Close();
                     }

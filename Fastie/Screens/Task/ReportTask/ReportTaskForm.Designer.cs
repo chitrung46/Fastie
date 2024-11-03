@@ -1,6 +1,6 @@
-﻿namespace Fastie.Screens.Task
+﻿namespace Fastie.Screens.Task.ReportTask
 {
-    partial class AssignTaskForm
+    partial class ReportTaskForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDetailAssignTask = new GUI.CustomButton();
-            this.btnDetailAssignPositiveTask = new GUI.CustomButton();
-            this.btnDetailAssignFastingTask = new GUI.CustomButton();
             this.flowLayoutPanelTasks = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,69 +39,14 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnDetailAssignTask
-            // 
-            this.btnDetailAssignTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnDetailAssignTask.BorderColor = System.Drawing.Color.White;
-            this.btnDetailAssignTask.BorderRadius = 15;
-            this.btnDetailAssignTask.BorderSize = 0;
-            this.btnDetailAssignTask.FlatAppearance.BorderSize = 0;
-            this.btnDetailAssignTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetailAssignTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetailAssignTask.ForeColor = System.Drawing.Color.White;
-            this.btnDetailAssignTask.Location = new System.Drawing.Point(780, 15);
-            this.btnDetailAssignTask.Name = "btnDetailAssignTask";
-            this.btnDetailAssignTask.Size = new System.Drawing.Size(104, 47);
-            this.btnDetailAssignTask.TabIndex = 1;
-            this.btnDetailAssignTask.Text = "Giao việc";
-            this.btnDetailAssignTask.UseVisualStyleBackColor = false;
-            this.btnDetailAssignTask.Click += new System.EventHandler(this.btnDetailAssignTask_Click);
-            // 
-            // btnDetailAssignPositiveTask
-            // 
-            this.btnDetailAssignPositiveTask.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnDetailAssignPositiveTask.BorderColor = System.Drawing.Color.White;
-            this.btnDetailAssignPositiveTask.BorderRadius = 15;
-            this.btnDetailAssignPositiveTask.BorderSize = 0;
-            this.btnDetailAssignPositiveTask.FlatAppearance.BorderSize = 0;
-            this.btnDetailAssignPositiveTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetailAssignPositiveTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetailAssignPositiveTask.ForeColor = System.Drawing.Color.White;
-            this.btnDetailAssignPositiveTask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetailAssignPositiveTask.Location = new System.Drawing.Point(1000, 15);
-            this.btnDetailAssignPositiveTask.Name = "btnDetailAssignPositiveTask";
-            this.btnDetailAssignPositiveTask.Size = new System.Drawing.Size(104, 47);
-            this.btnDetailAssignPositiveTask.TabIndex = 3;
-            this.btnDetailAssignPositiveTask.Text = "Chủ động";
-            this.btnDetailAssignPositiveTask.UseVisualStyleBackColor = false;
-            this.btnDetailAssignPositiveTask.Click += new System.EventHandler(this.btnDetailAssignPositiveTask_Click);
-            // 
-            // btnDetailAssignFastingTask
-            // 
-            this.btnDetailAssignFastingTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.btnDetailAssignFastingTask.BorderColor = System.Drawing.Color.White;
-            this.btnDetailAssignFastingTask.BorderRadius = 15;
-            this.btnDetailAssignFastingTask.BorderSize = 0;
-            this.btnDetailAssignFastingTask.FlatAppearance.BorderSize = 0;
-            this.btnDetailAssignFastingTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetailAssignFastingTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetailAssignFastingTask.ForeColor = System.Drawing.Color.White;
-            this.btnDetailAssignFastingTask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetailAssignFastingTask.Location = new System.Drawing.Point(890, 15);
-            this.btnDetailAssignFastingTask.Name = "btnDetailAssignFastingTask";
-            this.btnDetailAssignFastingTask.Size = new System.Drawing.Size(104, 47);
-            this.btnDetailAssignFastingTask.TabIndex = 2;
-            this.btnDetailAssignFastingTask.Text = "Nhanh";
-            this.btnDetailAssignFastingTask.UseVisualStyleBackColor = false;
-            this.btnDetailAssignFastingTask.Click += new System.EventHandler(this.btnDetailAssignFastingTask_Click);
-            // 
             // flowLayoutPanelTasks
             // 
             this.flowLayoutPanelTasks.AutoScroll = true;
-            this.flowLayoutPanelTasks.Location = new System.Drawing.Point(12, 115);
+            this.flowLayoutPanelTasks.Location = new System.Drawing.Point(-17, 47);
             this.flowLayoutPanelTasks.Name = "flowLayoutPanelTasks";
-            this.flowLayoutPanelTasks.Size = new System.Drawing.Size(1168, 460);
+            this.flowLayoutPanelTasks.Size = new System.Drawing.Size(1164, 528);
             this.flowLayoutPanelTasks.TabIndex = 5;
+            this.flowLayoutPanelTasks.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelTasks_Paint);
             // 
             // panel1
             // 
@@ -114,17 +56,17 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 78);
+            this.panel1.Location = new System.Drawing.Point(1, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1117, 29);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(912, 4);
+            this.label6.Location = new System.Drawing.Point(903, 4);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 21);
             this.label6.TabIndex = 1;
@@ -135,7 +77,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1031, 4);
+            this.label5.Location = new System.Drawing.Point(1040, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 21);
             this.label5.TabIndex = 0;
@@ -146,18 +88,18 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(636, 4);
+            this.label4.Location = new System.Drawing.Point(634, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(219, 21);
+            this.label4.Size = new System.Drawing.Size(136, 21);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Tên người / Bộ phận nhận";
+            this.label4.Text = "Người giao việc";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(462, 4);
+            this.label3.Location = new System.Drawing.Point(466, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 21);
             this.label3.TabIndex = 0;
@@ -168,7 +110,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(305, 4);
+            this.label2.Location = new System.Drawing.Point(315, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 21);
             this.label2.TabIndex = 0;
@@ -179,27 +121,24 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 4);
+            this.label1.Location = new System.Drawing.Point(1, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên công việc";
             // 
-            // AssignTaskForm
+            // ReportTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1120, 587);
-            this.Controls.Add(this.flowLayoutPanelTasks);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnDetailAssignPositiveTask);
-            this.Controls.Add(this.btnDetailAssignFastingTask);
-            this.Controls.Add(this.btnDetailAssignTask);
+            this.Controls.Add(this.flowLayoutPanelTasks);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AssignTaskForm";
-            this.Text = "AssignTaskForm";
-            this.Load += new System.EventHandler(this.AssignTaskForm_Load);
+            this.Name = "ReportTaskForm";
+            this.Text = "ReportTask";
+            this.Load += new System.EventHandler(this.ReportTaskForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -207,16 +146,14 @@
         }
 
         #endregion
-        private GUI.CustomButton btnDetailAssignTask;
-        private GUI.CustomButton btnDetailAssignFastingTask;
-        private GUI.CustomButton btnDetailAssignPositiveTask;
+
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTasks;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
     }
 }

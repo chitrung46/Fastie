@@ -1,5 +1,6 @@
 ﻿using Fastie.Components.LayoutRole;
 using Fastie.Screens.Task;
+using Fastie.Screens.Task.ReportTask;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +70,8 @@ namespace Fastie
 
         private void btnReportTask_Click(object sender, EventArgs e)
         {
+            ReportTaskForm reportTaskForm = new ReportTaskForm();
+            addFormInMainLayout(reportTaskForm);
             setStateButton(btnReportTask);
         }
 
