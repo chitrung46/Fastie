@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO;
+using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +18,8 @@ namespace Fastie.Components.LayoutPersonnel
         private string personnelName;
         private string email;
         private string gender;
-        private string dateOfBirth;
-        private string dateOfWork;
+        private DateTime dateOfBirth;
+        private DateTime dateOfWork;
         private string idPersonnel;
         private string numberPhone;
         private PersonnelForm personnelForm;
@@ -52,15 +54,15 @@ namespace Fastie.Components.LayoutPersonnel
             get { return gender; }
             set { gender = value; lblGender.Text = gender; }
         }
-        public string DateOfBirth
+        public DateTime DateOfBirth
             {
             get { return dateOfBirth; }
-            set { dateOfBirth = value; lblDateOfBirth.Text = dateOfBirth; }
+            set { dateOfBirth = value; lblDateOfBirth.Text = dateOfBirth.ToString("dd/MM/yyyy"); }
         }
-        public string DateOfWork
+        public DateTime DateOfWork
         {
             get { return dateOfWork; }
-            set { dateOfWork = value; lblDateOfWork.Text = dateOfWork; }
+            set { dateOfWork = value; lblDateOfWork.Text = dateOfWork.ToString("dd/MM/yyyy"); }
         }
         public string IdPersonnel
         {
@@ -71,6 +73,36 @@ namespace Fastie.Components.LayoutPersonnel
         {
             get { return numberPhone; }
             set { numberPhone = value; lblNumberPhone.Text = numberPhone; }
+        }
+        public void loadDataPersonnel()
+        {
+            personnelForm.LoadDataPersonnel();
+        }
+
+        private void btnEditPersonnel_Click(object sender, EventArgs e)
+        {
+            var updatePersonnel = new Personnel
+            {
+                Id = this.idPersonnel,
+                Ten = this.personnelName,
+                Email = this.email,
+                GioiTinh = this.gender,  
+                NgaySinh =  this.dateOfBirth,
+                NgayVaoLam = this.dateOfWork,
+                Sdt = this.NumberPhone
+            };
+            UpdatePersonnelForm updatePersonnelForm = new UpdatePersonnelForm(this, updatePersonnel);
+            updatePersonnelForm.Show();
+        }
+
+        private void btnDeletePersonnel_Click(object sender, EventArgs e)
+        {
+            string[] information = { "Bạn có chắc chắn xóa nhân sự này?", $"{this.personnelName} sẽ được xóa khỏi hệ thống", "Xóa nhân sự" };
+            LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.idPersonnel);
+            deleteLayoutConfirm.Title = information[0];
+            deleteLayoutConfirm.Content = information[1];
+            deleteLayoutConfirm.btnConfirmText = information[2];
+            deleteLayoutConfirm.Show();
         }
     }
 }

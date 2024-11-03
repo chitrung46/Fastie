@@ -13,6 +13,7 @@ using BLL.DecentralizationBLL;
 using Fastie.Components.LayoutDecentralization;
 using Fastie.Components.LayoutDepartment;
 using Fastie.Components.LayoutDepartmen;
+using Fastie.Components.LayoutPersonnel;
 using BLL.DepartmentBLL;
 namespace Fastie
 {
@@ -23,6 +24,7 @@ namespace Fastie
         private LayoutDecentralizationForm decentralizationForm;
         private LayoutPositionForm layoutPositionForm;
         private LayoutDepartmentForm layoutDepartmentForm;
+        private LayoutPersonnelForm layoutPersonnelForm;
 
         PositionBLL positionBLL = new PositionBLL();
         PersonnelBLL personnelBLL = new PersonnelBLL();
@@ -52,6 +54,12 @@ namespace Fastie
             InitializeComponent();
             this.accountName = accountName;
             this.layoutDepartmentForm = layoutDepartment;
+        }
+        public LayoutConfirmForm(LayoutPersonnelForm layoutPersonnel, string accountName)
+        {
+            InitializeComponent();
+            this.accountName = accountName;
+            this.layoutPersonnelForm = layoutPersonnel;
         }
 
         public string AccountName { get => accountName; set => accountName = value; }   
@@ -102,7 +110,13 @@ namespace Fastie
                 case "Xóa bộ phận":
                     departmentBLL.DeleteDepartment(layoutDepartmentForm.IdDepartment);
                     layoutDepartmentForm.loadDataDepartment();
-                    MessageBox.Show("Xóa chức vụ thành công");
+                    MessageBox.Show("Xóa bộ phận thành công");
+                    this.Close();
+                    break;
+                case "Xóa nhân sự":
+                    personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
+                    layoutPersonnelForm.loadDataPersonnel();
+                    MessageBox.Show("Xóa nhân sự thành công");
                     this.Close();
                     break;
                 case "Cập nhật":
@@ -112,8 +126,9 @@ namespace Fastie
                     MessageBox.Show("Thêm thành công");
                     break;
                 case "Đăng xuất":
-                    //LoginForm loginForm = new LoginForm();
-                    //loginForm.Show();
+                    this.Close();
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
                     break;
                 default:
                     break;

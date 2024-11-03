@@ -35,6 +35,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblNumber = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDeletePersonnel = new GUI.CustomButton();
+            this.btnEditPersonnel = new GUI.CustomButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -43,8 +45,6 @@
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblDateOfWork = new System.Windows.Forms.Label();
-            this.btnDeletePersonnel = new GUI.CustomButton();
-            this.btnEditPersonnel = new GUI.CustomButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -61,7 +61,7 @@
             this.lblPersonnelName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonnelName.Location = new System.Drawing.Point(2, 16);
             this.lblPersonnelName.Name = "lblPersonnelName";
-            this.lblPersonnelName.Size = new System.Drawing.Size(108, 21);
+            this.lblPersonnelName.Size = new System.Drawing.Size(102, 21);
             this.lblPersonnelName.TabIndex = 0;
             this.lblPersonnelName.Text = "Tên nhân sự";
             // 
@@ -71,7 +71,7 @@
             this.lblNumberPhone.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumberPhone.Location = new System.Drawing.Point(7, 16);
             this.lblNumberPhone.Name = "lblNumberPhone";
-            this.lblNumberPhone.Size = new System.Drawing.Size(117, 21);
+            this.lblNumberPhone.Size = new System.Drawing.Size(109, 21);
             this.lblNumberPhone.TabIndex = 0;
             this.lblNumberPhone.Text = "Số điện thoại";
             // 
@@ -118,78 +118,6 @@
             this.panel3.Size = new System.Drawing.Size(91, 54);
             this.panel3.TabIndex = 25;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.lblEmail);
-            this.panel6.Location = new System.Drawing.Point(273, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(249, 54);
-            this.panel6.TabIndex = 23;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(-1, 17);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(55, 21);
-            this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "Email";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.lblGender);
-            this.panel7.Location = new System.Drawing.Point(526, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(85, 54);
-            this.panel7.TabIndex = 24;
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(0, 16);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(80, 21);
-            this.lblGender.TabIndex = 0;
-            this.lblGender.Text = "Giới tính";
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.lblDateOfBirth);
-            this.panel8.Location = new System.Drawing.Point(615, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(106, 54);
-            this.panel8.TabIndex = 25;
-            // 
-            // lblDateOfBirth
-            // 
-            this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirth.Location = new System.Drawing.Point(0, 16);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(91, 21);
-            this.lblDateOfBirth.TabIndex = 0;
-            this.lblDateOfBirth.Text = "Ngày sinh";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.lblDateOfWork);
-            this.panel9.Location = new System.Drawing.Point(725, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(158, 54);
-            this.panel9.TabIndex = 26;
-            // 
-            // lblDateOfWork
-            // 
-            this.lblDateOfWork.AutoSize = true;
-            this.lblDateOfWork.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfWork.Location = new System.Drawing.Point(0, 16);
-            this.lblDateOfWork.Name = "lblDateOfWork";
-            this.lblDateOfWork.Size = new System.Drawing.Size(118, 21);
-            this.lblDateOfWork.TabIndex = 0;
-            this.lblDateOfWork.Text = "Ngày vào làm";
-            // 
             // btnDeletePersonnel
             // 
             this.btnDeletePersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -207,6 +135,7 @@
             this.btnDeletePersonnel.Size = new System.Drawing.Size(40, 40);
             this.btnDeletePersonnel.TabIndex = 19;
             this.btnDeletePersonnel.UseVisualStyleBackColor = false;
+            this.btnDeletePersonnel.Click += new System.EventHandler(this.btnDeletePersonnel_Click);
             // 
             // btnEditPersonnel
             // 
@@ -225,6 +154,79 @@
             this.btnEditPersonnel.Size = new System.Drawing.Size(40, 40);
             this.btnEditPersonnel.TabIndex = 20;
             this.btnEditPersonnel.UseVisualStyleBackColor = false;
+            this.btnEditPersonnel.Click += new System.EventHandler(this.btnEditPersonnel_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.lblEmail);
+            this.panel6.Location = new System.Drawing.Point(273, 2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(249, 54);
+            this.panel6.TabIndex = 23;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(-1, 17);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(53, 21);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "Email";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.lblGender);
+            this.panel7.Location = new System.Drawing.Point(526, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(85, 54);
+            this.panel7.TabIndex = 24;
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(0, 16);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(74, 21);
+            this.lblGender.TabIndex = 0;
+            this.lblGender.Text = "Giới tính";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.lblDateOfBirth);
+            this.panel8.Location = new System.Drawing.Point(615, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(106, 54);
+            this.panel8.TabIndex = 25;
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.Location = new System.Drawing.Point(0, 16);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(85, 21);
+            this.lblDateOfBirth.TabIndex = 0;
+            this.lblDateOfBirth.Text = "Ngày sinh";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.lblDateOfWork);
+            this.panel9.Location = new System.Drawing.Point(725, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(158, 54);
+            this.panel9.TabIndex = 26;
+            // 
+            // lblDateOfWork
+            // 
+            this.lblDateOfWork.AutoSize = true;
+            this.lblDateOfWork.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfWork.Location = new System.Drawing.Point(0, 16);
+            this.lblDateOfWork.Name = "lblDateOfWork";
+            this.lblDateOfWork.Size = new System.Drawing.Size(113, 21);
+            this.lblDateOfWork.TabIndex = 0;
+            this.lblDateOfWork.Text = "Ngày vào làm";
             // 
             // LayoutPersonnelForm
             // 
