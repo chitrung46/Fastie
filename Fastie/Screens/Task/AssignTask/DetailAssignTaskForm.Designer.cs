@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.customButton6 = new GUI.CustomButton();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -37,12 +36,7 @@
             this.lblFileName = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnUploadFile = new GUI.CustomButton();
-            this.customButton7 = new GUI.CustomButton();
             this.pnl2 = new GUI.TruniControls.CustomPanel();
-            this.customButton3 = new GUI.CustomButton();
-            this.customButton5 = new GUI.CustomButton();
-            this.customButton4 = new GUI.CustomButton();
-            this.customButton2 = new GUI.CustomButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.cbxPersonnel = new GUI.TruniControls.CustomComboBox();
@@ -58,6 +52,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txbTaskName = new GUI.TruniControls.CustomTextBox();
             this.lblTaskName = new System.Windows.Forms.Label();
+            this.btnCancel = new GUI.CustomButton();
+            this.btnAdd = new GUI.CustomButton();
+            this.customButton1 = new GUI.CustomButton();
+            this.btnGetInformation = new GUI.CustomButton();
+            this.customButton3 = new GUI.CustomButton();
+            this.customButton5 = new GUI.CustomButton();
+            this.customButton4 = new GUI.CustomButton();
+            this.customButton2 = new GUI.CustomButton();
             this.customPanel2.SuspendLayout();
             this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,22 +78,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Giao việc";
             // 
-            // customButton6
-            // 
-            this.customButton6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.customButton6.BorderColor = System.Drawing.Color.White;
-            this.customButton6.BorderRadius = 8;
-            this.customButton6.BorderSize = 2;
-            this.customButton6.FlatAppearance.BorderSize = 0;
-            this.customButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton6.ForeColor = System.Drawing.Color.White;
-            this.customButton6.Location = new System.Drawing.Point(1041, 596);
-            this.customButton6.Name = "customButton6";
-            this.customButton6.Size = new System.Drawing.Size(81, 35);
-            this.customButton6.TabIndex = 44;
-            this.customButton6.Text = "Hủy";
-            this.customButton6.UseVisualStyleBackColor = false;
-            // 
             // customPanel2
             // 
             this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -108,7 +94,7 @@
             this.customPanel2.GradientAngle = 90F;
             this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.Location = new System.Drawing.Point(22, 498);
+            this.customPanel2.Location = new System.Drawing.Point(20, 504);
             this.customPanel2.Name = "customPanel2";
             this.customPanel2.Size = new System.Drawing.Size(1100, 76);
             this.customPanel2.TabIndex = 39;
@@ -189,22 +175,6 @@
             this.btnUploadFile.UseVisualStyleBackColor = false;
             this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
             // 
-            // customButton7
-            // 
-            this.customButton7.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.customButton7.BorderColor = System.Drawing.Color.White;
-            this.customButton7.BorderRadius = 8;
-            this.customButton7.BorderSize = 2;
-            this.customButton7.FlatAppearance.BorderSize = 0;
-            this.customButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton7.ForeColor = System.Drawing.Color.White;
-            this.customButton7.Location = new System.Drawing.Point(946, 596);
-            this.customButton7.Name = "customButton7";
-            this.customButton7.Size = new System.Drawing.Size(81, 35);
-            this.customButton7.TabIndex = 43;
-            this.customButton7.Text = "Lưu";
-            this.customButton7.UseVisualStyleBackColor = false;
-            // 
             // pnl2
             // 
             this.pnl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -226,74 +196,10 @@
             this.pnl2.GradientAngle = 90F;
             this.pnl2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnl2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnl2.Location = new System.Drawing.Point(652, 62);
+            this.pnl2.Location = new System.Drawing.Point(650, 68);
             this.pnl2.Name = "pnl2";
             this.pnl2.Size = new System.Drawing.Size(470, 430);
             this.pnl2.TabIndex = 37;
-            // 
-            // customButton3
-            // 
-            this.customButton3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.customButton3.BorderColor = System.Drawing.Color.White;
-            this.customButton3.BorderRadius = 15;
-            this.customButton3.BorderSize = 0;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Image = global::Fastie.Properties.Resources.icons8_delete_23;
-            this.customButton3.Location = new System.Drawing.Point(400, 257);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(42, 36);
-            this.customButton3.TabIndex = 47;
-            this.customButton3.UseVisualStyleBackColor = false;
-            // 
-            // customButton5
-            // 
-            this.customButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.customButton5.BorderColor = System.Drawing.Color.White;
-            this.customButton5.BorderRadius = 15;
-            this.customButton5.BorderSize = 0;
-            this.customButton5.FlatAppearance.BorderSize = 0;
-            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton5.ForeColor = System.Drawing.Color.White;
-            this.customButton5.Image = global::Fastie.Properties.Resources.icons8_plus_23;
-            this.customButton5.Location = new System.Drawing.Point(352, 257);
-            this.customButton5.Name = "customButton5";
-            this.customButton5.Size = new System.Drawing.Size(42, 36);
-            this.customButton5.TabIndex = 46;
-            this.customButton5.UseVisualStyleBackColor = false;
-            // 
-            // customButton4
-            // 
-            this.customButton4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.customButton4.BorderColor = System.Drawing.Color.White;
-            this.customButton4.BorderRadius = 15;
-            this.customButton4.BorderSize = 0;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Image = global::Fastie.Properties.Resources.icons8_delete_23;
-            this.customButton4.Location = new System.Drawing.Point(400, 51);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Size = new System.Drawing.Size(42, 36);
-            this.customButton4.TabIndex = 45;
-            this.customButton4.UseVisualStyleBackColor = false;
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.customButton2.BorderColor = System.Drawing.Color.White;
-            this.customButton2.BorderRadius = 15;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Image = global::Fastie.Properties.Resources.icons8_plus_23;
-            this.customButton2.Location = new System.Drawing.Point(352, 51);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(42, 36);
-            this.customButton2.TabIndex = 43;
-            this.customButton2.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -394,7 +300,7 @@
             this.customPanel1.GradientAngle = 90F;
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel1.Location = new System.Drawing.Point(22, 62);
+            this.customPanel1.Location = new System.Drawing.Point(20, 68);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(624, 430);
             this.customPanel1.TabIndex = 1;
@@ -408,6 +314,7 @@
             this.dtpTimeCompleted.Name = "dtpTimeCompleted";
             this.dtpTimeCompleted.Size = new System.Drawing.Size(282, 27);
             this.dtpTimeCompleted.TabIndex = 42;
+            this.dtpTimeCompleted.Value = new System.DateTime(2024, 11, 19, 0, 0, 0, 0);
             this.dtpTimeCompleted.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // customComboBox1
@@ -512,15 +419,165 @@
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Tên công việc: ";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnCancel.BorderRadius = 15;
+            this.btnCancel.BorderSize = 1;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(1023, 595);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnCancel.Size = new System.Drawing.Size(94, 40);
+            this.btnCancel.TabIndex = 45;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnAdd.BorderRadius = 15;
+            this.btnAdd.BorderSize = 0;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(896, 595);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnAdd.Size = new System.Drawing.Size(121, 40);
+            this.btnAdd.TabIndex = 46;
+            this.btnAdd.Text = "Xác nhận";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customButton1.BorderColor = System.Drawing.Color.White;
+            this.customButton1.BorderRadius = 15;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton1.Location = new System.Drawing.Point(984, 14);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.customButton1.Size = new System.Drawing.Size(133, 40);
+            this.customButton1.TabIndex = 47;
+            this.customButton1.Text = "Xóa";
+            this.customButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // btnGetInformation
+            // 
+            this.btnGetInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnGetInformation.BorderColor = System.Drawing.Color.White;
+            this.btnGetInformation.BorderRadius = 15;
+            this.btnGetInformation.BorderSize = 0;
+            this.btnGetInformation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGetInformation.FlatAppearance.BorderSize = 0;
+            this.btnGetInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGetInformation.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetInformation.ForeColor = System.Drawing.Color.White;
+            this.btnGetInformation.Image = global::Fastie.Properties.Resources.icons8_pencil_23;
+            this.btnGetInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGetInformation.Location = new System.Drawing.Point(845, 14);
+            this.btnGetInformation.Name = "btnGetInformation";
+            this.btnGetInformation.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.btnGetInformation.Size = new System.Drawing.Size(133, 40);
+            this.btnGetInformation.TabIndex = 47;
+            this.btnGetInformation.Text = "Chỉnh sửa";
+            this.btnGetInformation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGetInformation.UseVisualStyleBackColor = false;
+            // 
+            // customButton3
+            // 
+            this.customButton3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.customButton3.BorderColor = System.Drawing.Color.White;
+            this.customButton3.BorderRadius = 15;
+            this.customButton3.BorderSize = 0;
+            this.customButton3.FlatAppearance.BorderSize = 0;
+            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton3.ForeColor = System.Drawing.Color.White;
+            this.customButton3.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.customButton3.Location = new System.Drawing.Point(400, 257);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Size = new System.Drawing.Size(42, 36);
+            this.customButton3.TabIndex = 47;
+            this.customButton3.UseVisualStyleBackColor = false;
+            // 
+            // customButton5
+            // 
+            this.customButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.customButton5.BorderColor = System.Drawing.Color.White;
+            this.customButton5.BorderRadius = 15;
+            this.customButton5.BorderSize = 0;
+            this.customButton5.FlatAppearance.BorderSize = 0;
+            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton5.ForeColor = System.Drawing.Color.White;
+            this.customButton5.Image = global::Fastie.Properties.Resources.icons8_plus_23;
+            this.customButton5.Location = new System.Drawing.Point(352, 257);
+            this.customButton5.Name = "customButton5";
+            this.customButton5.Size = new System.Drawing.Size(42, 36);
+            this.customButton5.TabIndex = 46;
+            this.customButton5.UseVisualStyleBackColor = false;
+            // 
+            // customButton4
+            // 
+            this.customButton4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.customButton4.BorderColor = System.Drawing.Color.White;
+            this.customButton4.BorderRadius = 15;
+            this.customButton4.BorderSize = 0;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.ForeColor = System.Drawing.Color.White;
+            this.customButton4.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.customButton4.Location = new System.Drawing.Point(400, 51);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Size = new System.Drawing.Size(42, 36);
+            this.customButton4.TabIndex = 45;
+            this.customButton4.UseVisualStyleBackColor = false;
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.customButton2.BorderColor = System.Drawing.Color.White;
+            this.customButton2.BorderRadius = 15;
+            this.customButton2.BorderSize = 0;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.White;
+            this.customButton2.Image = global::Fastie.Properties.Resources.icons8_plus_23;
+            this.customButton2.Location = new System.Drawing.Point(352, 51);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(42, 36);
+            this.customButton2.TabIndex = 43;
+            this.customButton2.UseVisualStyleBackColor = false;
+            // 
             // DetailAssignTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1142, 653);
-            this.Controls.Add(this.customButton6);
+            this.ClientSize = new System.Drawing.Size(1142, 646);
+            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.btnGetInformation);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.customButton7);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.customPanel1);
@@ -570,7 +627,9 @@
         private GUI.CustomButton customButton3;
         private GUI.CustomButton customButton5;
         private GUI.CustomButton customButton4;
-        private GUI.CustomButton customButton6;
-        private GUI.CustomButton customButton7;
+        private GUI.CustomButton btnCancel;
+        private GUI.CustomButton btnAdd;
+        private GUI.CustomButton btnGetInformation;
+        private GUI.CustomButton customButton1;
     }
 }

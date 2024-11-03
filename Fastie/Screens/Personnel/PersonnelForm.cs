@@ -8,7 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.DepartmentBLL;
 using DTO;
+using Fastie.Components.LayoutDepartmen;
+using Fastie.Components.LayoutPersonnel;
 namespace Fastie
 {
     public partial class PersonnelForm : Form
@@ -41,11 +44,6 @@ namespace Fastie
         }
 
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void PersonnelForm_Load(object sender, EventArgs e)
         {
 
         }
@@ -114,6 +112,40 @@ namespace Fastie
             {
                 MessageBox.Show("Vui lòng chọn một chức vụ để xóa.");
             }
+        }
+
+        private void PersonnelForm_Load(object sender, EventArgs e)
+        {
+            loadDataPersonnel();
+        }
+
+        private void loadDataPersonnel ()
+        {
+            flowLayoutPanelPersonnel.Controls.Clear();
+            List<Personnel> departmentList = personnelBLL.GetPersonnelList();
+            int i = 0;
+            foreach (Personnel department in departmentList)
+            {
+                var layoutPersonnelForm = new LayoutPersonnelForm(this)
+                {
+                    Number = (i + 1).ToString(),
+                    PersonnelName = department.Ten,
+                    Email = department.Email,
+                    Gender = department.GioiTinh,
+                    DateOfBirth = department.NgaySinh.ToString(),
+                    DateOfWork = department.NgayVaoLam.ToString(),
+                    IdPersonnel = department.Id,
+                    NumberPhone = department.Sdt
+                };
+                flowLayoutPanelPersonnel.Controls.Add(layoutPersonnelForm);
+                i++;
+            }
+        }
+
+        private void btnAddPersonnel_Click(object sender, EventArgs e)
+        {
+            CreatePersonnelForm createPersonnelForm = new CreatePersonnelForm();
+            createPersonnelForm.Show();
         }
     }
 }

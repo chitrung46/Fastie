@@ -46,7 +46,7 @@ namespace Fastie
             {
                 MessageBox.Show(ex.Message, "Error");
             }
-            departmentForm.LoadDepartmentData();
+            departmentForm.LoadDataDepartment();
             this.Close();
             
         }
