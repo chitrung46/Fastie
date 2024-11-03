@@ -68,13 +68,13 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(79, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(308, 69);
+            this.panel2.Size = new System.Drawing.Size(343, 69);
             this.panel2.TabIndex = 2;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(273, 3);
+            this.panel4.Location = new System.Drawing.Point(307, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(32, 63);
             this.panel4.TabIndex = 2;
@@ -96,7 +96,7 @@
             this.panel3.Controls.Add(this.lblTaskName);
             this.panel3.Location = new System.Drawing.Point(4, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(268, 63);
+            this.panel3.Size = new System.Drawing.Size(292, 63);
             this.panel3.TabIndex = 1;
             // 
             // lblAssignerName
@@ -127,7 +127,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "NotificationForm";
-            this.Size = new System.Drawing.Size(397, 75);
+            this.Size = new System.Drawing.Size(425, 75);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

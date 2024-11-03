@@ -10,19 +10,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using BLL.DecentralizationBLL;
+using Fastie.Components.LayoutDecentralization;
 namespace Fastie
 {
     public partial class LayoutConfirmForm : Form
     {
         private string accountName;
-        private DecentralizationForm decentralizationForm;
+        //private DecentralizationForm decentralizationForm;
+        LayoutDecentralizationForm decentralizationForm;
         DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
         public LayoutConfirmForm()
         {
             InitializeComponent();
         }
 
-        public LayoutConfirmForm(DecentralizationForm decentralization ,string accountName)
+        public LayoutConfirmForm(LayoutDecentralizationForm decentralization ,string accountName) //DecentralizationForm decentralization ,string accountName
         {
             InitializeComponent();
             this.accountName = accountName;
@@ -60,8 +62,9 @@ namespace Fastie
                     if(result)
                     {
                         MessageBox.Show("Xóa quyền thành công");
-                        decentralizationForm.DisableDeleteAndAdd();
-                        decentralizationForm.loadData();
+                        decentralizationForm.loadDataFromDecentralization();
+                        //decentralizationForm.DisableDeleteAndAdd();
+                        //decentralizationForm.loadData();
                     }
                     else
                     {

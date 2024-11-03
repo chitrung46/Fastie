@@ -52,16 +52,16 @@
             this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel2.Location = new System.Drawing.Point(636, 2);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(482, 563);
+            this.customPanel2.Size = new System.Drawing.Size(482, 573);
             this.customPanel2.TabIndex = 0;
             // 
             // flowLayoutPanelNotification
             // 
             this.flowLayoutPanelNotification.AutoScroll = true;
             this.flowLayoutPanelNotification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.flowLayoutPanelNotification.Location = new System.Drawing.Point(25, 71);
+            this.flowLayoutPanelNotification.Location = new System.Drawing.Point(25, 83);
             this.flowLayoutPanelNotification.Name = "flowLayoutPanelNotification";
-            this.flowLayoutPanelNotification.Size = new System.Drawing.Size(432, 477);
+            this.flowLayoutPanelNotification.Size = new System.Drawing.Size(482, 477);
             this.flowLayoutPanelNotification.TabIndex = 1;
             this.flowLayoutPanelNotification.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelNotification_Paint);
             // 
@@ -71,7 +71,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 19);
+            this.label1.Location = new System.Drawing.Point(20, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 28);
             this.label1.TabIndex = 0;
@@ -91,16 +91,16 @@
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.Location = new System.Drawing.Point(2, 2);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(628, 563);
+            this.customPanel1.Size = new System.Drawing.Size(620, 573);
             this.customPanel1.TabIndex = 0;
             // 
             // flowLayoutPanelTask
             // 
             this.flowLayoutPanelTask.AutoScroll = true;
             this.flowLayoutPanelTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.flowLayoutPanelTask.Location = new System.Drawing.Point(26, 71);
+            this.flowLayoutPanelTask.Location = new System.Drawing.Point(26, 83);
             this.flowLayoutPanelTask.Name = "flowLayoutPanelTask";
-            this.flowLayoutPanelTask.Size = new System.Drawing.Size(578, 477);
+            this.flowLayoutPanelTask.Size = new System.Drawing.Size(627, 477);
             this.flowLayoutPanelTask.TabIndex = 1;
             this.flowLayoutPanelTask.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelNotification_Paint);
             // 
@@ -110,7 +110,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 19);
+            this.label2.Location = new System.Drawing.Point(21, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 28);
             this.label2.TabIndex = 0;

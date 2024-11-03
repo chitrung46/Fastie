@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fastie.Components.LayoutRole
+namespace Fastie.Components.LayoutTask
 {
-    public partial class LayoutGetTaskForm : UserControl
+    public partial class LayoutReportTaskForm : UserControl
     {
         private string taskName;
         private string taskTime;
         private string taskStatus;
         private string taskJobAssigner;
-
-        public LayoutGetTaskForm()
+        private string taskDetail;
+        public LayoutReportTaskForm()
         {
             InitializeComponent();
         }
@@ -25,27 +25,28 @@ namespace Fastie.Components.LayoutRole
         public string TaskName
         {
             get { return taskName; }
-            set { taskName = value; lblTitleTask.Text = value; }
+            set { taskName = value; lblTaskName.Text = value; }
         }
         public string TaskTime
         {
             get { return taskTime; }
             set { taskTime = value; lblTaskTime.Text = value; }
         }
-
         public string TaskStatus
         {
             get { return taskStatus; }
             set { taskStatus = value; btnTaskStatus.Text = value; }
         }
-        public string JobAssigner
+        public string TaskJobAssigner
         {
             get { return taskJobAssigner; }
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        public string TaskDetail
         {
-
+            get { return taskDetail; }
+            set { taskDetail = value; btnTaskDetail.Text = value; }
         }
+
     }
 }

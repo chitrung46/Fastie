@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Fastie.Components.LayoutRole;
+using Fastie.Components.LayoutTask;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,5 +36,29 @@ namespace Fastie.Screens.Task
             DetailAssignPositiveTaskForm detailAssignPositiveTaskForm = new DetailAssignPositiveTaskForm();
             detailAssignPositiveTaskForm.Show();
         }
+
+        private void LoadDataTaskTable()
+        {
+            flowLayoutPanelTasks.Controls.Clear();
+            LayoutAssignTaskForm[] layoutAssignTaskForms = new LayoutAssignTaskForm[20];
+            for (int i = 0; i < 20; i++)
+            {
+                layoutAssignTaskForms[i] = new LayoutAssignTaskForm
+                {
+                    TaskName = "Task " + i,
+                    TaskTime = "Time " + i,
+                    TaskStatus = "Status " + i,
+                    TaskJobAssigner = "Job Assigner " + i
+                };
+                flowLayoutPanelTasks.Controls.Add(layoutAssignTaskForms[i]);
+            }
+        }
+
+        private void AssignTaskForm_Load(object sender, EventArgs e)
+        {
+            LoadDataTaskTable();
+        }
+
+ 
     }
 }
