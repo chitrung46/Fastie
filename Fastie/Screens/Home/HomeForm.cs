@@ -1,6 +1,7 @@
 ﻿using BLL.PermissionBLL;
 using DTO;
 using Fastie.Components.NoPermissionAccessForm;
+using Fastie.Screens.Decentralization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,7 +57,8 @@ namespace Fastie
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0001"); //Q0001 is permission to access DecentralizationForm
             if (idChucVu == "CV001" || checkPermission)
             {
-                DecentralizationForm decentralization = new DecentralizationForm();
+                //DecentralizationForm decentralization = new DecentralizationForm();
+                DecentralizationBackupForm decentralization = new DecentralizationBackupForm();
                 addFormInMainLayout(decentralization);
             } else
             {
@@ -97,7 +99,8 @@ namespace Fastie
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0001");
             if (idChucVu == "CV001" || checkPermission)
             {
-                DecentralizationForm decentralization = new DecentralizationForm();
+                //DecentralizationForm decentralization = new DecentralizationForm();
+                DecentralizationBackupForm decentralization = new DecentralizationBackupForm();
                 addFormInMainLayout(decentralization);
             }
             else

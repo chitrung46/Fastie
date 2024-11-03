@@ -46,17 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\LayoutDecentralization\LayoutDecentralizationForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutDecentralization\LayoutDecentralizationForm.Designer.cs">
+      <DependentUpon>LayoutDecentralizationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\LayoutNotification\NotificationForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\LayoutNotification\NotificationForm.Designer.cs">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\LayoutTask\LayoutAssignTaskForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutAssignTaskForm.Designer.cs">
+      <DependentUpon>LayoutAssignTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\LayoutTask\LayoutGetTaskForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\LayoutTask\LayoutGetTaskForm.Designer.cs">
       <DependentUpon>LayoutGetTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutReportTaskForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutReportTaskForm.Designer.cs">
+      <DependentUpon>LayoutReportTaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\LayoutTask\LayoutTaskForm.cs">
       <SubType>UserControl</SubType>
@@ -75,6 +93,12 @@
     </Compile>
     <Compile Include="Screens\Analytics\Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Decentralization\DecentralizationBackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Decentralization\DecentralizationBackupForm.Designer.cs">
+      <DependentUpon>DecentralizationBackupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Login\ForgetPassword\ForgetPasswordForm.cs">
       <SubType>Form</SubType>
@@ -228,6 +252,12 @@
     <Compile Include="Screens\Task\AssignTask\DetailAssignTaskForm.Designer.cs">
       <DependentUpon>DetailAssignTaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Task\ReportTask\ReportTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\ReportTask\ReportTaskForm.Designer.cs">
+      <DependentUpon>ReportTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Task\TaskAssignForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,11 +291,20 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\LayoutDecentralization\LayoutDecentralizationForm.resx">
+      <DependentUpon>LayoutDecentralizationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutNotification\NotificationForm.resx">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutAssignTaskForm.resx">
+      <DependentUpon>LayoutAssignTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutTask\LayoutGetTaskForm.resx">
       <DependentUpon>LayoutGetTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutReportTaskForm.resx">
+      <DependentUpon>LayoutReportTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutTask\LayoutTaskForm.resx">
       <DependentUpon>LayoutTaskForm.cs</DependentUpon>
@@ -278,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Account\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Decentralization\DecentralizationBackupForm.resx">
+      <DependentUpon>DecentralizationBackupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
@@ -361,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\AssignTask\DetailAssignTaskForm.resx">
       <DependentUpon>DetailAssignTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\ReportTask\ReportTaskForm.resx">
+      <DependentUpon>ReportTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\TaskAssignForm.resx">
       <DependentUpon>TaskAssignForm.cs</DependentUpon>
@@ -532,6 +577,9 @@
       <Project>{f9469dd2-23d1-4b54-8be7-8ffaa41c818b}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-document-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
