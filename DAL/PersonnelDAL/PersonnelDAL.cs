@@ -9,7 +9,7 @@ using DTO;
 
 namespace DAL
 {
-    public class PersonnelDAL
+    public class PersonnelDAL : DatabaseAccess
     {
         public static void InsertPersonnel(Personnel personnel)
         {

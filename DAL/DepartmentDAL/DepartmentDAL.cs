@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DepartmentDAL
 {
-    public class DepartmentDAL
+    public class DepartmentDAL : DatabaseAccess
     {
         //Them Bo Phan
         public static void InsertDepartment(Department deparment)
