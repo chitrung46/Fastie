@@ -54,6 +54,8 @@ namespace Fastie
 
         private void btnAssignTask_Click(object sender, EventArgs e)
         {
+            AssignTaskForm assignTaskForm = new AssignTaskForm();
+            addFormInMainLayout(assignTaskForm);
             setStateButton(btnAssignTask);
         }
 

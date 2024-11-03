@@ -1,19 +1,11 @@
-﻿using BLL;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-
+using BLL;
 namespace Fastie.Screens.Login.ForgetPassword
 {
     public partial class ResetPasswordForm : Form
     {
-        private AccountBLL accountBLL = new AccountBLL();
+        ResetPasswordBLL resetPasswordBLL = new ResetPasswordBLL();
         private string userEmail;
 
         // Khởi tạo với email được truyền từ `GetCodeConfirmForm`
@@ -43,7 +35,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             }
 
             // Gọi BLL để cập nhật mật khẩu trong cơ sở dữ liệu
-            bool isUpdated = accountBLL.UpdatePassword(userEmail, newPassword);
+            bool isUpdated = resetPasswordBLL.UpdateNewPassword(userEmail, newPassword);
             if (isUpdated)
             {
                 MessageBox.Show("Đặt lại mật khẩu thành công!");

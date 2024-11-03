@@ -526,7 +526,7 @@
             this.Controls.Add(this.customPanel1);
             this.Name = "DetailAssignTaskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm Giao việc";
+            this.Text = "Fastie - Thêm giao việc";
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
             this.pnl2.ResumeLayout(false);

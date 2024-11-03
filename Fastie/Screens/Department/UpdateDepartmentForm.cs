@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.DepartmentBLL;
 using DTO;
 namespace Fastie
 {
     public partial class UpdateDepartmentForm : Form
     {
         private readonly Department needEdit;
-        DepartmentBLL departmentBLL = new DepartmentBLL();
+        DepartmentBLL departmentBLL = new DepartmentBLL();  
         DepartmentForm departmentForm;
 
         public UpdateDepartmentForm(DepartmentForm departmentForm, Department editDepartment)
@@ -45,7 +46,7 @@ namespace Fastie
             //string id = needEdit.Id;
             needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
             needEdit.MoTa = cTBDescribe.Text;
-            departmentBLL.UpdateDepartmentBLL(needEdit);
+            departmentBLL.UpdateDepartment(needEdit);
             MessageBox.Show("Sửa Bộ phận thành công!", "Success");
             this.Close();
             departmentForm.LoadDepartmentData();

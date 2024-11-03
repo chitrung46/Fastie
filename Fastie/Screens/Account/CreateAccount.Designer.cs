@@ -63,7 +63,7 @@
             this.label4.Location = new System.Drawing.Point(29, 105);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 21);
+            this.label4.Size = new System.Drawing.Size(90, 21);
             this.label4.TabIndex = 30;
             this.label4.Text = "Mật khẩu:";
             // 
@@ -124,7 +124,7 @@
             this.lblName.Location = new System.Drawing.Point(29, 20);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(145, 21);
+            this.lblName.Size = new System.Drawing.Size(139, 21);
             this.lblName.TabIndex = 20;
             this.lblName.Text = "Tên đăng nhập: ";
             // 
@@ -181,7 +181,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
             this.Name = "CreateAccount";
-            this.Text = "Tạo tài khoản";
+            this.Text = "Fastie - Tạo tài khoản";
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);
