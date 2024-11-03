@@ -94,11 +94,11 @@
     <Compile Include="Screens\Analytics\Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Decentralization\DecentralizationBackupForm.cs">
+    <Compile Include="Screens\Decentralization\DecentralizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Decentralization\DecentralizationBackupForm.Designer.cs">
-      <DependentUpon>DecentralizationBackupForm.cs</DependentUpon>
+    <Compile Include="Screens\Decentralization\DecentralizationForm.Designer.cs">
+      <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Login\ForgetPassword\ForgetPasswordForm.cs">
       <SubType>Form</SubType>
@@ -174,12 +174,6 @@
     </Compile>
     <Compile Include="Screens\Decentralization\UpdateDecentralizationForm.Designer.cs">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Decentralization\DecentralizationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Decentralization\DecentralizationForm.Designer.cs">
-      <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Account\EditAccount.Designer.cs">
       <DependentUpon>EditAccount.cs</DependentUpon>
@@ -318,14 +312,11 @@
     <EmbeddedResource Include="Screens\Account\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Decentralization\DecentralizationBackupForm.resx">
-      <DependentUpon>DecentralizationBackupForm.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Decentralization\DecentralizationForm.resx">
+      <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Decentralization\DecentralizationForm.resx">
-      <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Account\CreateAccount.resx">
       <DependentUpon>CreateAccount.cs</DependentUpon>

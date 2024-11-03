@@ -1,6 +1,7 @@
-﻿using BLL;
-using BLL.DecentralizationBLL;
+﻿using BLL.DecentralizationBLL;
 using DTO;
+using Fastie.Components.LayoutDecentralization;
+using Fastie.Components.LayoutRole;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,148 +12,67 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fastie
+namespace Fastie.Screens.Decentralization
 {
     public partial class DecentralizationForm : Form
     {
         DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
-        private string accountName;
-        private string tenNhanSu;
+        private string stateCurrentList;
         private bool isLoaded = false;
-
         private string selectedDepartmentId;
         private string selectedPositionId;
+
+        public string StateCurrentList { get => stateCurrentList; set => stateCurrentList = value; }
 
         public DecentralizationForm()
         {
             InitializeComponent();
         }
-
-        public DecentralizationForm(string accountName)
+        private void setStateButton(Button stateBtn)
         {
-            InitializeComponent();
-            this.accountName = accountName;
-        }
-        private void Decentralization_Load(object sender, EventArgs e)
-        {
-            isLoaded = false;
-
-            //loadData();
-            loadDataDepartmentList();
-            loadDataPositionList();
-            showByPositionIdAndDepartmentId();
-
-            isLoaded = true;
-        }
-
-        public string AccountName { get => accountName; set => accountName = value; }
-        public string TenNhanSu { get => tenNhanSu; set => tenNhanSu = value; }
-
-        public void loadData()
-        {
-            showByPositionIdAndDepartmentId();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            /*UpdateDecentralizationForm createDecentralization = new UpdateDecentralizationForm(this, this.accountName);
-            createDecentralization.OnFormClosing += () =>
+            Button[] button = { btnHaveRole, btnRoleless};
+            for (int i = 0; i < button.Length; i++)
             {
-                Unable decentralization
-                btnAdd.Enabled = false;
-                btnAdd.Image = Properties.Resources.icons8_pencil_23_black;
-                btnAdd.ForeColor = Color.FromArgb(0, 0, 0);
-
-                Unable delete
-                btnDelete.Enabled = false;
-                btnDelete.Image = Properties.Resources.icons8_delete_23_black;
-                btnDelete.ForeColor = Color.FromArgb(0, 0, 0);
-
-            };
-            createDecentralization.Show();
-            */
-
-        } //Đang test lại
-
-        //Disable button Delete and Add after deleting
-        public void DisableDeleteAndAdd()
-        {
-
-           disableDeleteAndAdd();
-        }
-        private void disableDeleteAndAdd()
-        {
-
-           //Unable decentralization
-            btnAdd.Enabled = false;
-            btnAdd.Image = Properties.Resources.icons8_pencil_23_black;
-            btnAdd.ForeColor = Color.FromArgb(0, 0, 0);
-
-            //Unable delete
-            btnDelete.Enabled = false;
-            btnDelete.Image = Properties.Resources.icons8_delete_23_black;
-            btnDelete.ForeColor = Color.FromArgb(0, 0, 0);
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            /*string[] information = { "Bạn có chắc chắn xóa toàn bộ quyền?", $"{this.tenNhanSu} sẽ mất toàn bộ quyền trong hệ thống", "Xóa quyền" };
-            LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.accountName);
-            deleteLayoutConfirm.Title = information[0];
-            deleteLayoutConfirm.Content = information[1];
-            deleteLayoutConfirm.btnConfirmText = information[2];
-            deleteLayoutConfirm.Show();*/
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            //UpdateDecentralizationForm updateDecentralization = new UpdateDecentralizationForm(this, this.accountName);
-            //updateDecentralization.Show();
-
-        }
-
-        private void dataGridViewPersonnel_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridViewPersonnel.Rows[e.RowIndex];
-                string accountName = row.Tag.ToString();
-                string tenNhanSu = row.Cells[1].Value.ToString();
-                if(accountName!=null)
+                if (button[i] != stateBtn)
                 {
-                    //enale decentralization
-                    btnAdd.Enabled = true;
-                    btnAdd.Image = Properties.Resources.icons8_pencil_23;
-                    btnAdd.ForeColor = Color.FromArgb(255,255,255);
-
-                    //enable delete
-                    btnDelete.Enabled = true;
-                    btnDelete.Image = Properties.Resources.icons8_delete_23;
-                    btnDelete.ForeColor = Color.FromArgb(255,255,255);
-
-                    this.accountName = accountName;
-                    this.tenNhanSu = tenNhanSu;
+                    button[i].BackColor = Color.Transparent;
                 }
+            }
+            stateBtn.BackColor = Color.IndianRed;
+        }
+
+        private void LoadDataPersonnel(List<AccountInfo> accountInfos)
+        {
+            flowLayoutPanelPersonnel.Controls.Clear();
+            switch (this.stateCurrentList)
+            {
+                case "Role":
+                    loadDataFormat(accountInfos);
+                    break;
+                case "RoleLess":
+                    loadDataFormat(accountInfos);
+                    break;
+                default:
+                    loadDataFormat(accountInfos);
+                    break;
             }
         }
 
-        private void dataGridViewRoleless_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void loadDataFormat(List<AccountInfo> accountInfos)
         {
-            if (e.RowIndex >= 0)
+            int i = 0;
+            foreach (AccountInfo accountInfo in accountInfos)
             {
-                DataGridViewRow row = dataGridViewRoleless.Rows[e.RowIndex];
-                string accountName = row.Tag.ToString();
-                string tenNhanSu = row.Cells[1].Value.ToString();
-                if (accountName != null)
+                var layoutDecentralizationForm = new LayoutDecentralizationForm(this)
                 {
-                    //enale decentralization
-                    btnAdd.Enabled = true;
-                    btnAdd.Image = Properties.Resources.icons8_pencil_23;
-                    btnAdd.ForeColor = Color.FromArgb(255, 255, 255);
-
-                    this.accountName = accountName;
-                    this.tenNhanSu = tenNhanSu;
-                }
+                    Number = (i + 1).ToString(),
+                    PersonnelName = accountInfo.TenNhanSu,
+                    PositionName = accountInfo.TenBoPhan,
+                    DepartmentName = accountInfo.TenChucVu,
+                    AccountName = accountInfo.TenDangNhap
+                };
+                flowLayoutPanelPersonnel.Controls.Add(layoutDecentralizationForm);
+                i++;
             }
         }
 
@@ -184,22 +104,56 @@ namespace Fastie
             if (departmentInfos != null)
             {
                 cbDepartment.Items.Clear();
-                cbDepartment.Items.Add(new KeyValuePair<string, string>(null, "Tất cả")); 
+                cbDepartment.Items.Add(new KeyValuePair<string, string>(null, "Tất cả"));
 
                 foreach (DepartmentInfo department in departmentInfos)
                 {
                     cbDepartment.Items.Add(new KeyValuePair<string, string>(department.IdBoPhan, department.TenBoPhan));
                 }
 
-                cbDepartment.DisplayMember = "Value"; 
-                cbDepartment.ValueMember = "Key";  
+                cbDepartment.DisplayMember = "Value";
+                cbDepartment.ValueMember = "Key";
 
                 cbDepartment.SelectedIndex = 0;
             }
         }
+        public void loadDataForRole()
+        {
+            List<AccountInfo> accountInfoPersonnel = decentralizationBLL.getAllAccountInfo();
+            this.stateCurrentList = "Role";
+            LoadDataPersonnel(accountInfoPersonnel);
+        }
+        public void loadDataForRoleLess()
+        {
+            List<AccountInfo> accountInfoRoleless = decentralizationBLL.getAllPersonnelRoleLess();
+            this.stateCurrentList = "Roleless";
+            LoadDataPersonnel(accountInfoRoleless);
+        }
+
+        private void DecentralizationBackupForm_Load(object sender, EventArgs e)
+        {
+            isLoaded = false;
+            loadDataForRole();
+            loadDataDepartmentList();
+            loadDataPositionList();
+            isLoaded = true;
+        }
+
+        private void btnHaveRole_Click(object sender, EventArgs e)
+        {
+            setStateButton(btnHaveRole);
+            loadDataForRole();
+        }
+
+        private void btnRoleless_Click(object sender, EventArgs e)
+        {
+            setStateButton(btnRoleless);
+            loadDataForRoleLess();
+        }
+
         private void cbDepartment_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if(isLoaded)
+            if (isLoaded)
             {
                 var selectedId = ((KeyValuePair<string, string>)cbDepartment.SelectedItem).Key;
                 this.selectedDepartmentId = selectedId;
@@ -217,67 +171,53 @@ namespace Fastie
             }
         }
 
-        private void loadDataFormat(DataGridView dataGridView, List<AccountInfo> accountInfo)
-        {
-
-            dataGridView.Rows.Clear();
-            if (dataGridView.Columns.Count == 0)
-            {
-                dataGridView.Columns.Add("soThuTu", "STT");
-                dataGridView.Columns.Add("tenNhanSu", "Tên Nhân Sự");
-                dataGridView.Columns.Add("tenBoPhan", "Tên Bộ Phận");
-                dataGridView.Columns.Add("tenChucVu", "Tên Chức Vụ");
-            }
-            if (accountInfo != null)
-            {
-                int count = 1;
-                foreach (AccountInfo account in accountInfo)
-                {
-                    DataGridViewRow rows = new DataGridViewRow();
-                    rows.CreateCells(dataGridView);
-                    rows.Cells[0].Value = count++;
-                    rows.Cells[1].Value = account.TenNhanSu;
-                    rows.Cells[2].Value = account.TenBoPhan;
-                    rows.Cells[3].Value = account.TenChucVu;
-                    rows.Tag = account.TenDangNhap;
-                    dataGridView.Rows.Add(rows);
-                }
-            }
-        }
-
         private void showByPositionIdAndDepartmentId()
         {
-            if(selectedDepartmentId != null && selectedPositionId != null)
+            switch (this.stateCurrentList)
             {
-                List<AccountInfo> accountInfo = decentralizationBLL.getListByDepartmentIdAndPositionId(this.selectedDepartmentId, this.selectedPositionId);
-                loadDataFormat(dataGridViewPersonnel, accountInfo);
-
-                List<AccountInfo> accountInfoRoleless = decentralizationBLL.getListByDepartmentIdAndPositionIdRoleLess(this.selectedDepartmentId, this.selectedPositionId);
-                loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
-
-            }
-            else if(selectedDepartmentId != null && selectedPositionId == null)
-            {
-                List <AccountInfo> accountInfo = decentralizationBLL.getDepartmentListwithAllPosition(this.selectedDepartmentId);
-                loadDataFormat(dataGridViewPersonnel, accountInfo);
-
-                List<AccountInfo> accountInfoRoleless = decentralizationBLL.getDepartmentListwithAllPositionRoleLess(this.selectedDepartmentId);
-                loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
-
-            } else if (selectedDepartmentId == null && selectedPositionId != null)
-            {
-                List<AccountInfo> accountInfo = decentralizationBLL.getPositionListwithAllDepartment(this.selectedPositionId);
-                loadDataFormat(dataGridViewPersonnel, accountInfo);
-
-                List<AccountInfo> accountInfoRoleless = decentralizationBLL.getPositionListwithAllDepartmentRoleLess(this.selectedPositionId);
-                loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
-            } else
-            {
-                List<AccountInfo> accountInfoPersonnel = decentralizationBLL.getAllAccountInfo();
-                loadDataFormat(dataGridViewPersonnel, accountInfoPersonnel);
-
-                List<AccountInfo> accountInfoRoleless = decentralizationBLL.getAllPersonnelRoleLess();
-                loadDataFormat(dataGridViewRoleless, accountInfoRoleless);
+                case "Role":
+                    if (selectedDepartmentId != null && selectedPositionId != null)
+                    {
+                        List<AccountInfo> accountInfo = decentralizationBLL.getListByDepartmentIdAndPositionId(this.selectedDepartmentId, this.selectedPositionId);
+                        LoadDataPersonnel(accountInfo);
+                    } else if (selectedDepartmentId != null && selectedPositionId == null)
+                    {
+                        List<AccountInfo> accountInfo = decentralizationBLL.getDepartmentListwithAllPosition(this.selectedDepartmentId);
+                        LoadDataPersonnel(accountInfo);
+                    } else if (selectedDepartmentId == null && selectedPositionId != null)
+                    {
+                        List<AccountInfo> accountInfo = decentralizationBLL.getPositionListwithAllDepartment(this.selectedPositionId);
+                        LoadDataPersonnel(accountInfo);
+                    } else
+                    {
+                        List<AccountInfo> accountInfoPersonnel = decentralizationBLL.getAllAccountInfo();
+                        LoadDataPersonnel(accountInfoPersonnel);
+                    }
+                        break;
+                case "Roleless":
+                    if (selectedDepartmentId != null && selectedPositionId != null)
+                    {
+                        List<AccountInfo> accountInfoRoleless = decentralizationBLL.getListByDepartmentIdAndPositionIdRoleLess(this.selectedDepartmentId, this.selectedPositionId);
+                        LoadDataPersonnel(accountInfoRoleless);
+                    }
+                    else if (selectedDepartmentId != null && selectedPositionId == null)
+                    {
+                        List<AccountInfo> accountInfoRoleless = decentralizationBLL.getDepartmentListwithAllPositionRoleLess(this.selectedDepartmentId);
+                        LoadDataPersonnel(accountInfoRoleless);
+                    }
+                    else if (selectedDepartmentId == null && selectedPositionId != null)
+                    {
+                        List<AccountInfo> accountInfoRoleless = decentralizationBLL.getPositionListwithAllDepartmentRoleLess(this.selectedPositionId);
+                        LoadDataPersonnel(accountInfoRoleless);
+                    }
+                    else
+                    {
+                        List<AccountInfo> accountInfoRoleless = decentralizationBLL.getAllPersonnelRoleLess();
+                        LoadDataPersonnel(accountInfoRoleless);
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     }

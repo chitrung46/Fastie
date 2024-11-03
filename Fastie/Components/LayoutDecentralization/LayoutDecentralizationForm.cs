@@ -19,13 +19,13 @@ namespace Fastie.Components.LayoutDecentralization
         private string departmentName;
 
         private string accountName;
-        private DecentralizationBackupForm decentralizationBackupForm;
+        private DecentralizationForm decentralizationBackupForm;
         public LayoutDecentralizationForm()
         {
             InitializeComponent();
         }
 
-        public LayoutDecentralizationForm(DecentralizationBackupForm decentralizationBackupForm)
+        public LayoutDecentralizationForm(DecentralizationForm decentralizationBackupForm)
         {
             InitializeComponent();
             this.decentralizationBackupForm = decentralizationBackupForm;

@@ -57,8 +57,7 @@ namespace Fastie
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0001"); //Q0001 is permission to access DecentralizationForm
             if (idChucVu == "CV001" || checkPermission)
             {
-                //DecentralizationForm decentralization = new DecentralizationForm();
-                DecentralizationBackupForm decentralization = new DecentralizationBackupForm();
+                DecentralizationForm decentralization = new DecentralizationForm();
                 addFormInMainLayout(decentralization);
             } else
             {
@@ -99,8 +98,7 @@ namespace Fastie
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0001");
             if (idChucVu == "CV001" || checkPermission)
             {
-                //DecentralizationForm decentralization = new DecentralizationForm();
-                DecentralizationBackupForm decentralization = new DecentralizationBackupForm();
+                DecentralizationForm decentralization = new DecentralizationForm();
                 addFormInMainLayout(decentralization);
             }
             else
