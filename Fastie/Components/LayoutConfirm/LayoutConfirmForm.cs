@@ -11,14 +11,26 @@ using System.Windows.Forms;
 using BLL;
 using BLL.DecentralizationBLL;
 using Fastie.Components.LayoutDecentralization;
+using Fastie.Components.LayoutDepartment;
+using Fastie.Components.LayoutDepartmen;
+using BLL.DepartmentBLL;
+using Fastie.Components.LayoutPersonnel;
 namespace Fastie
 {
     public partial class LayoutConfirmForm : Form
     {
         private string accountName;
         //private DecentralizationForm decentralizationForm;
-        LayoutDecentralizationForm decentralizationForm;
+        private LayoutDecentralizationForm decentralizationForm;
+        private LayoutPositionForm layoutPositionForm;
+        private LayoutDepartmentForm layoutDepartmentForm;
+        private LayoutPersonnelForm layoutPersonnelForm;
+
+        PositionBLL positionBLL = new PositionBLL();
+        PersonnelBLL personnelBLL = new PersonnelBLL();
+        DepartmentBLL departmentBLL = new DepartmentBLL();
         DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
+
         public LayoutConfirmForm()
         {
             InitializeComponent();
@@ -29,6 +41,25 @@ namespace Fastie
             InitializeComponent();
             this.accountName = accountName;
             this.decentralizationForm = decentralization;   
+        }
+
+        public LayoutConfirmForm(LayoutPositionForm layoutPositionForm, string accountName) 
+        {
+            InitializeComponent();
+            this.accountName = accountName;
+            this.layoutPositionForm = layoutPositionForm;
+        }
+        public LayoutConfirmForm(LayoutDepartmentForm layoutDepartment, string accountName)
+        {
+            InitializeComponent();
+            this.accountName = accountName;
+            this.layoutDepartmentForm = layoutDepartment;
+        }
+        public LayoutConfirmForm(LayoutPersonnelForm layoutPersonnelForm, string accountName)
+        {
+            InitializeComponent();
+            this.accountName = accountName;
+            this.layoutPersonnelForm = layoutPersonnelForm;
         }
 
         public string AccountName { get => accountName; set => accountName = value; }   
@@ -63,13 +94,29 @@ namespace Fastie
                     {
                         MessageBox.Show("Xóa quyền thành công");
                         decentralizationForm.loadDataFromDecentralization();
-                        //decentralizationForm.DisableDeleteAndAdd();
-                        //decentralizationForm.loadData();
                     }
                     else
                     {
                         MessageBox.Show("Xóa quyền thất bại");
                     }
+                    this.Close();
+                    break;
+                case "Xóa chức vụ":
+                    positionBLL.DeletePosition(layoutPositionForm.IdPosition);
+                    layoutPositionForm.LoadPositionData();
+                    MessageBox.Show("Xóa chức vụ thành công");
+                    this.Close();
+                    break;
+                case "Xóa bộ phận":
+                    departmentBLL.DeleteDepartment(layoutDepartmentForm.IdDepartment);
+                    layoutDepartmentForm.loadDataDepartment();
+                    MessageBox.Show("Xóa bộ phận thành công");
+                    this.Close();
+                    break;
+                case "Xóa nhân sự":
+                    MessageBox.Show("Xóa nhân sự thành công", layoutPersonnelForm.IdPersonnel);
+                    personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
+                    layoutPersonnelForm.loadDataPersonnel();
                     this.Close();
                     break;
                 case "Cập nhật":

@@ -120,7 +120,7 @@
             this.txtConfirmPassword.PlaceholderColor = System.Drawing.Color.White;
             this.txtConfirmPassword.PlaceholderText = "";
             this.txtConfirmPassword.Size = new System.Drawing.Size(286, 35);
-            this.txtConfirmPassword.TabIndex = 9;
+            this.txtConfirmPassword.TabIndex = 2;
             this.txtConfirmPassword.UnderlinedStyle = false;
             // 
             // txtNewPassword
@@ -141,7 +141,7 @@
             this.txtNewPassword.PlaceholderColor = System.Drawing.Color.White;
             this.txtNewPassword.PlaceholderText = "";
             this.txtNewPassword.Size = new System.Drawing.Size(286, 35);
-            this.txtNewPassword.TabIndex = 9;
+            this.txtNewPassword.TabIndex = 1;
             this.txtNewPassword.UnderlinedStyle = false;
             // 
             // btnGetPassword
@@ -160,7 +160,7 @@
             this.btnGetPassword.Name = "btnGetPassword";
             this.btnGetPassword.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnGetPassword.Size = new System.Drawing.Size(286, 40);
-            this.btnGetPassword.TabIndex = 6;
+            this.btnGetPassword.TabIndex = 3;
             this.btnGetPassword.Text = "Đổi mật khẩu";
             this.btnGetPassword.UseVisualStyleBackColor = false;
             this.btnGetPassword.Click += new System.EventHandler(this.btnGetPassword_Click);

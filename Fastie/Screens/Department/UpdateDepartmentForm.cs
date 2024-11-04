@@ -10,19 +10,20 @@ using System.Windows.Forms;
 using BLL;
 using BLL.DepartmentBLL;
 using DTO;
+using Fastie.Components.LayoutDepartmen;
 namespace Fastie
 {
     public partial class UpdateDepartmentForm : Form
     {
         private readonly Department needEdit;
         DepartmentBLL departmentBLL = new DepartmentBLL();  
-        DepartmentForm departmentForm;
+        private LayoutDepartmentForm departmentForm;
 
-        public UpdateDepartmentForm(DepartmentForm departmentForm, Department editDepartment)
+        public UpdateDepartmentForm(LayoutDepartmentForm layoutDepartmentForm, Department editDepartment)  //DepartmentForm departmentForm, Department editDepartment
         {
             InitializeComponent();
             this.needEdit = editDepartment;
-            this.departmentForm = departmentForm;
+            this.departmentForm = layoutDepartmentForm;
         }
 
         private void UpdateDepartmentForm_Load(object sender, EventArgs e)
@@ -31,25 +32,24 @@ namespace Fastie
             cTBDescribe.Text = needEdit.MoTa;
         }
 
-        private void customButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void customButton1_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cTBName.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên bộ phận.", "Thông báo");
-                return; // Dừng lại không thực hiện thao tác thêm
+                return;
             }
-            //string id = needEdit.Id;
-            needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
+            needEdit.Ten = cTBName.Text;
             needEdit.MoTa = cTBDescribe.Text;
             departmentBLL.UpdateDepartment(needEdit);
             MessageBox.Show("Sửa Bộ phận thành công!", "Success");
+            departmentForm.loadDataDepartment();
             this.Close();
-            departmentForm.LoadDepartmentData();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

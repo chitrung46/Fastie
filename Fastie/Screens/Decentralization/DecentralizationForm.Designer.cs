@@ -36,25 +36,28 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.customPanel2 = new GUI.TruniControls.CustomPanel();
-            this.btnDelete = new GUI.CustomButton();
-            this.btnAdd = new GUI.CustomButton();
             this.cbPosition = new GUI.TruniControls.CustomComboBox();
             this.cbDepartment = new GUI.TruniControls.CustomComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.pnlTabBar.SuspendLayout();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.customPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelPersonnel
             // 
             this.flowLayoutPanelPersonnel.AutoScroll = true;
-            this.flowLayoutPanelPersonnel.Location = new System.Drawing.Point(28, 286);
+            this.flowLayoutPanelPersonnel.Location = new System.Drawing.Point(28, 222);
             this.flowLayoutPanelPersonnel.Name = "flowLayoutPanelPersonnel";
-            this.flowLayoutPanelPersonnel.Size = new System.Drawing.Size(1194, 386);
+            this.flowLayoutPanelPersonnel.Size = new System.Drawing.Size(1194, 450);
             this.flowLayoutPanelPersonnel.TabIndex = 8;
             // 
             // pnlTabBar
@@ -71,7 +74,7 @@
             this.pnlTabBar.GradientAngle = 90F;
             this.pnlTabBar.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnlTabBar.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnlTabBar.Location = new System.Drawing.Point(765, 204);
+            this.pnlTabBar.Location = new System.Drawing.Point(765, 108);
             this.pnlTabBar.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTabBar.Name = "pnlTabBar";
             this.pnlTabBar.Size = new System.Drawing.Size(383, 65);
@@ -170,73 +173,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Phân quyền";
             // 
-            // customPanel2
-            // 
-            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.BorderColor = System.Drawing.Color.Black;
-            this.customPanel2.BorderRadius = 30;
-            this.customPanel2.BorderSize = 0;
-            this.customPanel2.Controls.Add(this.btnDelete);
-            this.customPanel2.Controls.Add(this.btnAdd);
-            this.customPanel2.Controls.Add(this.cbPosition);
-            this.customPanel2.Controls.Add(this.cbDepartment);
-            this.customPanel2.Controls.Add(this.label3);
-            this.customPanel2.Controls.Add(this.label2);
-            this.customPanel2.ForeColor = System.Drawing.Color.Black;
-            this.customPanel2.GradientAngle = 90F;
-            this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.Location = new System.Drawing.Point(28, 92);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1120, 96);
-            this.customPanel2.TabIndex = 7;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnDelete.BorderRadius = 15;
-            this.btnDelete.BorderSize = 0;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Enabled = false;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Image = global::Fastie.Properties.Resources.icons8_delete_23_black;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(969, 39);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
-            this.btnDelete.Size = new System.Drawing.Size(125, 40);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Enabled = false;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Image = global::Fastie.Properties.Resources.icons8_pencil_23_black;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(782, 39);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Padding = new System.Windows.Forms.Padding(18, 0, 18, 0);
-            this.btnAdd.Size = new System.Drawing.Size(171, 40);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Phân quyền";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
             // cbPosition
             // 
             this.cbPosition.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -249,7 +185,7 @@
             this.cbPosition.IconColor = System.Drawing.Color.Black;
             this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
             this.cbPosition.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbPosition.Location = new System.Drawing.Point(314, 49);
+            this.cbPosition.Location = new System.Drawing.Point(293, 131);
             this.cbPosition.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Padding = new System.Windows.Forms.Padding(1);
@@ -270,7 +206,7 @@
             this.cbDepartment.IconColor = System.Drawing.Color.Black;
             this.cbDepartment.ListBackColor = System.Drawing.Color.WhiteSmoke;
             this.cbDepartment.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbDepartment.Location = new System.Drawing.Point(24, 49);
+            this.cbDepartment.Location = new System.Drawing.Point(28, 131);
             this.cbDepartment.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Padding = new System.Windows.Forms.Padding(1);
@@ -285,7 +221,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(310, 16);
+            this.label3.Location = new System.Drawing.Point(289, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 0;
@@ -297,33 +233,105 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 16);
+            this.label2.Location = new System.Drawing.Point(24, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Bộ phận";
             // 
-            // DecentralizationBackupForm
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Location = new System.Drawing.Point(31, 185);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1117, 29);
+            this.panel1.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(135, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 21);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Tên nhân sự";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(865, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 21);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Hành động";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(651, 4);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 21);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Tên chức vụ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(425, 4);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 21);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Tên bộ phận";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(1, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 21);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Số thứ tự";
+            // 
+            // DecentralizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1182, 695);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.pnlTabBar);
+            this.Controls.Add(this.cbDepartment);
             this.Controls.Add(this.flowLayoutPanelPersonnel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
-            this.Controls.Add(this.customPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DecentralizationBackupForm";
+            this.Name = "DecentralizationForm";
             this.Text = "DecentralizationBackupForm";
             this.Load += new System.EventHandler(this.DecentralizationBackupForm_Load);
             this.pnlTabBar.ResumeLayout(false);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.customPanel2.ResumeLayout(false);
-            this.customPanel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -332,16 +340,19 @@
         private System.Windows.Forms.Label label6;
         private GUI.TruniControls.CustomPanel customPanel1;
         private System.Windows.Forms.Label label1;
-        private GUI.CustomButton btnDelete;
-        private GUI.CustomButton btnAdd;
         private GUI.TruniControls.CustomComboBox cbPosition;
         private GUI.TruniControls.CustomComboBox cbDepartment;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private GUI.TruniControls.CustomPanel customPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPersonnel;
         private GUI.TruniControls.CustomPanel pnlTabBar;
         private GUI.CustomButton btnRoleless;
         private GUI.CustomButton btnHaveRole;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label5;
     }
 }

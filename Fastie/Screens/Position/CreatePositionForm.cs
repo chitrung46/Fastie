@@ -9,18 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using Fastie.Components.LayoutDepartment;
 namespace Fastie
 {
     public partial class CreatePositionForm : Form
     {
         PositionBLL positionBLL = new PositionBLL();
-        PositionForm positionForm;
-        public CreatePositionForm(PositionForm positionForm)
+        private PositionForm positionForm;
+        public CreatePositionForm(PositionForm positionForm) 
         {
             InitializeComponent();
             this.positionForm = positionForm;
         }
-        private void customButton1_Click(object sender, EventArgs e)
+        
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
@@ -31,17 +33,17 @@ namespace Fastie
                 };
                 positionBLL.InsertPosition(newPosition);
                 MessageBox.Show("Thêm Chức vụ mới thành công!", "Success");
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
-            positionForm.LoadPositionData();
+            positionForm.LoadDataPosition();
             this.Close();
         }
 
-        private void customButton2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
