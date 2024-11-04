@@ -45,29 +45,29 @@ namespace Fastie
                     Sdt = cTBNumberPhone.Text
                 };
                 nhanSuBLL.InsertPersonnel(newNhanSu);
-<<<<<<< HEAD
+//<<<<<<< HEAD
                 MessageBox.Show("Thêm Nhân sự mới thành công!", "Success");
                 //string ngaySinhFormatted = newNhanSu.NgaySinh.ToString("yyyy-MM-dd");
                 //string ngayVaoLamFormatted = newNhanSu.NgayVaoLam.ToString("yyyy-MM-dd");
 
                 //MessageBox.Show($"Thêm Nhân sự mới thành công!);\nNgày Sinh: {ngaySinhFormatted}\nNgày Vào Làm: {ngayVaoLamFormatted}", "Success");
                 
-=======
-                string ngaySinhFormatted = newNhanSu.NgaySinh.ToString("yyyy-MM-dd");
-                string ngayVaoLamFormatted = newNhanSu.NgayVaoLam.ToString("yyyy-MM-dd");
+//=======
+                //string ngaySinhFormatted = newNhanSu.NgaySinh.ToString("yyyy-MM-dd");
+                //string ngayVaoLamFormatted = newNhanSu.NgayVaoLam.ToString("yyyy-MM-dd");
 
-                MessageBox.Show($"Thêm Nhân sự mới thành công!\nNgày Sinh: {ngaySinhFormatted}\nNgày Vào Làm: {ngayVaoLamFormatted}", "Success");
-                personnelForm.LoadDataPersonnel();
->>>>>>> origin/Toan
+                //MessageBox.Show($"Thêm Nhân sự mới thành công!\nNgày Sinh: {ngaySinhFormatted}\nNgày Vào Làm: {ngayVaoLamFormatted}", "Success");
+                //personnelForm.LoadDataPersonnel();
+//>>>>>>> origin/Toan
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
-<<<<<<< HEAD
+//<<<<<<< HEAD
             personnelForm.LoadDataPersonnel();
-=======
->>>>>>> origin/Toan
+//=======
+//>>>>>>> origin/Toan
             this.Close();
         }
 
@@ -83,7 +83,7 @@ namespace Fastie
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {
+        {/***
             try
             {
                 Personnel newNhanSu = new Personnel
@@ -106,6 +106,42 @@ namespace Fastie
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+            this.Close();***/
+            try
+            {
+                Personnel newNhanSu = new Personnel
+                {
+                    Ten = cTBName.Text,
+                    Email = cTBEmail.Text,
+                    GioiTinh = cCBSex.SelectedItem.ToString(),
+                    NgaySinh = dTPBirthday.Value.Date,
+                    NgayVaoLam = dTPDayOfWork.Value.Date,
+                    Sdt = cTBNumberPhone.Text
+                };
+                nhanSuBLL.InsertPersonnel(newNhanSu);
+                //<<<<<<< HEAD
+                MessageBox.Show("Thêm Nhân sự mới thành công!", "Success");
+                //string ngaySinhFormatted = newNhanSu.NgaySinh.ToString("yyyy-MM-dd");
+                //string ngayVaoLamFormatted = newNhanSu.NgayVaoLam.ToString("yyyy-MM-dd");
+
+                //MessageBox.Show($"Thêm Nhân sự mới thành công!);\nNgày Sinh: {ngaySinhFormatted}\nNgày Vào Làm: {ngayVaoLamFormatted}", "Success");
+
+                //=======
+                //string ngaySinhFormatted = newNhanSu.NgaySinh.ToString("yyyy-MM-dd");
+                //string ngayVaoLamFormatted = newNhanSu.NgayVaoLam.ToString("yyyy-MM-dd");
+
+                //MessageBox.Show($"Thêm Nhân sự mới thành công!\nNgày Sinh: {ngaySinhFormatted}\nNgày Vào Làm: {ngayVaoLamFormatted}", "Success");
+                //personnelForm.LoadDataPersonnel();
+                //>>>>>>> origin/Toan
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            //<<<<<<< HEAD
+            personnelForm.LoadDataPersonnel();
+            //=======
+            //>>>>>>> origin/Toan
             this.Close();
         }
 

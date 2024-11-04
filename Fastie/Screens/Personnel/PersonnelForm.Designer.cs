@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
             this.customPanel3 = new GUI.TruniControls.CustomPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddPersonnel = new GUI.CustomButton();
->>>>>>> origin/Toan
+//>>>>>>> origin/Toan
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -44,18 +44,19 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.flowLayoutPanelPersonnel = new System.Windows.Forms.FlowLayoutPanel();
-<<<<<<< HEAD
-            this.btnAddPersonnel = new GUI.CustomButton();
-            this.customPanel3 = new GUI.TruniControls.CustomPanel();
-            this.label1 = new System.Windows.Forms.Label();
-=======
+//<<<<<<< HEAD
+            //this.btnAddPersonnel = new GUI.CustomButton();
+            //this.customPanel3 = new GUI.TruniControls.CustomPanel();
+            //this.label1 = new System.Windows.Forms.Label();
+//=======
             this.customPanel3.SuspendLayout();
->>>>>>> origin/Toan
+//>>>>>>> origin/Toan
             this.panel1.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
-<<<<<<< HEAD
+//<<<<<<< HEAD
+/***
             // panel1
             // 
             this.panel1.Controls.Add(this.label12);
@@ -188,8 +189,9 @@
             this.btnAddPersonnel.UseVisualStyleBackColor = false;
             this.btnAddPersonnel.Click += new System.EventHandler(this.btnAddPersonnel_Click);
             // 
-=======
->>>>>>> origin/Toan
+//=======
+***/
+//>>>>>>> origin/Toan
             // customPanel3
             // 
             this.customPanel3.BackColor = System.Drawing.Color.White;
@@ -218,8 +220,8 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhân sự";
             // 
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
             // btnAddPersonnel
             // 
             this.btnAddPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -352,7 +354,7 @@
             this.flowLayoutPanelPersonnel.Size = new System.Drawing.Size(1213, 500);
             this.flowLayoutPanelPersonnel.TabIndex = 21;
             // 
->>>>>>> origin/Toan
+//>>>>>>> origin/Toan
             // PersonnelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -368,11 +370,11 @@
             this.Name = "PersonnelForm";
             this.Text = "Personnel";
             this.Load += new System.EventHandler(this.PersonnelForm_Load);
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
             this.customPanel3.ResumeLayout(false);
             this.customPanel3.PerformLayout();
->>>>>>> origin/Toan
+//>>>>>>> origin/Toan
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.customPanel3.ResumeLayout(false);

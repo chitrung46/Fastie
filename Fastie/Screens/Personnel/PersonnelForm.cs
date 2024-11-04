@@ -20,7 +20,7 @@ namespace Fastie
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -37,8 +37,8 @@ namespace Fastie
 
         }
 
-=======
->>>>>>> origin/Toan
+//=======
+//>>>>>>> origin/Toan
         private void PersonnelForm_Load(object sender, EventArgs e)
         {
             LoadDataPersonnel();
@@ -48,30 +48,30 @@ namespace Fastie
         {
             loadDataPersonnel();
         }
-<<<<<<< HEAD
-=======
-
+//<<<<<<< HEAD
+//=======
+/***
         public void LoadDataPersonnel()
         {
             loadDataPersonnel();
         }
-
->>>>>>> origin/Toan
+***/
+//>>>>>>> origin/Toan
         private void loadDataPersonnel ()
         {
             flowLayoutPanelPersonnel.Controls.Clear();
             List<Personnel> personnelList = personnelBLL.GetPersonnelList();
             int i = 0;
-<<<<<<< HEAD
+//<<<<<<< HEAD
             foreach (Personnel personnel in personnelList)
-=======
-            foreach (Personnel persomell in departmentList)
->>>>>>> origin/Toan
+//=======
+            //foreach (Personnel persomell in departmentList)
+//>>>>>>> origin/Toan
             {
                 var layoutPersonnelForm = new LayoutPersonnelForm(this)
                 {
                     Number = (i + 1).ToString(),
-<<<<<<< HEAD
+//<<<<<<< HEAD
                     PersonnelName = personnel.Ten,
                     Email = personnel.Email,
                     Gender = personnel.GioiTinh,
@@ -79,15 +79,15 @@ namespace Fastie
                     DateOfWork = personnel.NgayVaoLam,
                     IdPersonnel = personnel.Id,
                     NumberPhone = personnel.Sdt
-=======
-                    PersonnelName = persomell.Ten,
+//=======
+                   /*** PersonnelName = persomell.Ten,
                     Email = persomell.Email,
                     Gender = persomell.GioiTinh,
                     DateOfBirth = persomell.NgaySinh.ToString(),
                     DateOfWork = persomell.NgayVaoLam.ToString(),
                     IdPersonnel = persomell.Id,
-                    NumberPhone = persomell.Sdt
->>>>>>> origin/Toan
+                    NumberPhone = persomell.Sdt***/
+//>>>>>>> origin/Toan
                 };
                 flowLayoutPanelPersonnel.Controls.Add(layoutPersonnelForm);
                 i++;

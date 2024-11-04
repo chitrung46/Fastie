@@ -56,19 +56,19 @@ namespace Fastie
             this.accountName = accountName;
             this.layoutDepartmentForm = layoutDepartment;
         }
-<<<<<<< HEAD
+/***<<<<<<< HEAD
         public LayoutConfirmForm(LayoutPersonnelForm layoutPersonnel, string accountName)
         {
             InitializeComponent();
             this.accountName = accountName;
             this.layoutPersonnelForm = layoutPersonnel;
-=======
+=======***/
         public LayoutConfirmForm(LayoutPersonnelForm layoutPersonnelForm, string accountName)
         {
             InitializeComponent();
             this.accountName = accountName;
             this.layoutPersonnelForm = layoutPersonnelForm;
->>>>>>> origin/Toan
+//>>>>>>> origin/Toan
         }
 
         public string AccountName { get => accountName; set => accountName = value; }   
@@ -123,15 +123,15 @@ namespace Fastie
                     this.Close();
                     break;
                 case "Xóa nhân sự":
-<<<<<<< HEAD
+/***<<<<<<< HEAD
                     personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
                     layoutPersonnelForm.loadDataPersonnel();
                     MessageBox.Show("Xóa nhân sự thành công");
-=======
+=======***/
                     MessageBox.Show("Xóa nhân sự thành công", layoutPersonnelForm.IdPersonnel);
                     personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
                     layoutPersonnelForm.loadDataPersonnel();
->>>>>>> origin/Toan
+//>>>>>>> origin/Toan
                     this.Close();
                     break;
                 case "Cập nhật":
