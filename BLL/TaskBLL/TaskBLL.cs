@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using DTO.Task;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,16 @@ namespace BLL
         {
             return TaskAccess.GetTasksFromDatabase(); 
         }
+
+        public List<TaskWithPersonel> GetTaskPersonelBLL()
+        {
+            return TaskAccess.GetTaskWithPersonnel();
+        }
+
+        public void UpdateTaskStatus(string CongviecID, string newStatus)
+        {
+            TaskAccess.UpdateTaskStatus(CongviecID, newStatus);
+        }
+
     }
 }

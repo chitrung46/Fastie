@@ -54,7 +54,7 @@
             this.lblTitleTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleTask.Location = new System.Drawing.Point(19, 19);
             this.lblTitleTask.Name = "lblTitleTask";
-            this.lblTitleTask.Size = new System.Drawing.Size(182, 21);
+            this.lblTitleTask.Size = new System.Drawing.Size(171, 21);
             this.lblTitleTask.TabIndex = 0;
             this.lblTitleTask.Text = "Sửa chữa bồn vệ sinh";
             // 
@@ -91,6 +91,7 @@
             this.btnGetTask.TabIndex = 0;
             this.btnGetTask.Text = "Nhận việc";
             this.btnGetTask.UseVisualStyleBackColor = false;
+            this.btnGetTask.Click += new System.EventHandler(this.btnGetTask_Click);
             // 
             // customButton1
             // 
@@ -132,7 +133,7 @@
             this.lblJobAssigner.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobAssigner.Location = new System.Drawing.Point(13, 16);
             this.lblJobAssigner.Name = "lblJobAssigner";
-            this.lblJobAssigner.Size = new System.Drawing.Size(146, 21);
+            this.lblJobAssigner.Size = new System.Drawing.Size(137, 21);
             this.lblJobAssigner.TabIndex = 0;
             this.lblJobAssigner.Text = "Lương Chí Trung";
             // 
@@ -175,7 +176,7 @@
             this.lblTaskTime.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaskTime.Location = new System.Drawing.Point(13, 16);
             this.lblTaskTime.Name = "lblTaskTime";
-            this.lblTaskTime.Size = new System.Drawing.Size(85, 21);
+            this.lblTaskTime.Size = new System.Drawing.Size(82, 21);
             this.lblTaskTime.TabIndex = 0;
             this.lblTaskTime.Text = "9/12/2024";
             // 

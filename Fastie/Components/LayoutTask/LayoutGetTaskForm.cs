@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL;
+using Fastie.Screens.Task;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,8 @@ namespace Fastie.Components.LayoutRole
         private string taskTime;
         private string taskStatus;
         private string taskJobAssigner;
+
+        public string CongViecID { get; set; } 
 
         public LayoutGetTaskForm()
         {
@@ -43,9 +47,38 @@ namespace Fastie.Components.LayoutRole
             get { return taskJobAssigner; }
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void btnGetTask_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(CongViecID))
+            {
+                
+                TaskAccess.UpdateTaskStatus(CongViecID, "Đang tiến hành");
+
+               
+                if (this.ParentForm is AcceptTaskForm parentForm)
+                {
+                    parentForm.LoadDataTaskTable("Chưa hoàn thành");
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy form cha để tải lại dữ liệu.", "Lỗi");
+                }
+
+                if (this.Parent != null)
+                {
+                    this.Parent.Controls.Remove(this);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy ID công việc để nhận.", "Lỗi");
+            }
         }
+
+
+
+
+
     }
 }

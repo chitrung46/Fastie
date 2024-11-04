@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO.Task;
 using Fastie.Components.LayoutRole;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace Fastie.Screens.Task
 
         private void AcceptTaskForm_Load(object sender, EventArgs e)
         {
-            LoadDataTaskTable("Việc chủ động");
+            LoadDataTaskTable("Chưa hoàn thành");
         }
         private void setStateButton(Button stateButton)
         {
@@ -37,22 +38,36 @@ namespace Fastie.Screens.Task
             stateButton.BackColor = Color.IndianRed;
         }
 
-        private void LoadDataTaskTable(string data) //mokup data, we will replace 'string data = List<T> data'
+        public void LoadDataTaskTable(string taskType)
         {
-            flowLayoutPanelTasks.Controls.Clear(); 
-            LayoutGetTaskForm[] layoutGetTaskForm = new LayoutGetTaskForm[20];
-            for (int i = 0; i < 20; i++)
+            flowLayoutPanelTasks.Controls.Clear();
+
+            List<TaskWithPersonel> tasks = taskBLL.GetTaskPersonelBLL()
+                                                  .Where(task => task.GhiChu == "Chờ nhận")
+                                                  .ToList();
+            if (tasks != null && tasks.Count > 0)
             {
-                layoutGetTaskForm[i] = new LayoutGetTaskForm
+                foreach (var task in tasks)
                 {
-                    TaskName = data + " " + i,
-                    TaskTime = "11/1/2025 ",
-                    TaskStatus = "Đã hoàn thành ",
-                    JobAssigner = "Đặng Nhật Toàn "
-                };
-                flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm[i]);
+                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm
+                    {
+                        TaskName = task.TenCongViec,
+                        TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
+                        TaskStatus = task.GhiChu,
+                        JobAssigner = task.TenNhanSuGiaoViec,
+                        CongViecID = task.CongViecID
+                    };
+
+                    flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có công việc nào chưa hoàn thành để hiển thị.", "Thông báo");
             }
         }
+
+
 
 
 

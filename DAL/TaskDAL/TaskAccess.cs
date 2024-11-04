@@ -7,10 +7,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO.Task;
 
 namespace DAL
 {
-    public class TaskAccess:DatabaseAccess
+    public class TaskAccess : DatabaseAccess
     {
         /***
         public List<TaskInfo> GetTaskListDAL()
@@ -30,7 +31,7 @@ namespace DAL
                     con.Open();
                     using (SqlCommand command = new SqlCommand(query, con))
                     {
-                        command.CommandType = CommandType.StoredProcedure; // Đặt kiểu lệnh là Stored Procedure
+                        command.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -64,7 +65,71 @@ namespace DAL
             return tasks;
         }
 
+        public static List<TaskWithPersonel> GetTaskWithPersonnel()
+        {
+            List<TaskWithPersonel> taskList = new List<TaskWithPersonel>();
+            string query = "proc_getTaskWithPersonel";
+
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                taskList.Add(new TaskWithPersonel
+                                {
+                                    CongViecID = reader["CongViecID"].ToString(),
+                                    TenCongViec = reader["TenCongViec"].ToString(),
+                                    MoTaCongViec = reader["MoTaCongViec"].ToString(),
+                                    ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                    ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
+                                    ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                    GhiChu = reader["ghiChu"].ToString(),
+                                    TenBoPhan = reader["TenBoPhan"].ToString(),
+                                    TenLoaiCongViec = reader["TenLoaiCongViec"].ToString(),
+                                    TenTienDoCongViec = reader["TenTienDoCongViec"].ToString(),
+                                    TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy dữ liệu công việc với thông tin nhân sự: " + ex.Message);
+            }
+
+            return taskList;
+        }
+
+        public static void UpdateTaskStatus(string congViecID, string newStatus)
+        {
+            string query = "UPDATE CongViec SET ghiChu = @NewStatus WHERE id = @CongViecID";
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.Parameters.AddWithValue("@CongViecID", congViecID);
+                    command.Parameters.AddWithValue("@NewStatus", newStatus);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+
+
     }
 
-    
 }
