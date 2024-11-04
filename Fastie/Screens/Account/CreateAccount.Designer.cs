@@ -69,23 +69,23 @@
             // 
             // cTBDescribe
             // 
-            this.cTBDescribe.BackColor = System.Drawing.SystemColors.Window;
+            this.cTBDescribe.BackColor = System.Drawing.Color.White;
             this.cTBDescribe.BorderColor = System.Drawing.Color.DarkGray;
             this.cTBDescribe.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBDescribe.BorderRadius = 8;
             this.cTBDescribe.BorderSize = 2;
             this.cTBDescribe.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTBDescribe.ForeColor = System.Drawing.Color.DimGray;
+            this.cTBDescribe.ForeColor = System.Drawing.Color.Black;
             this.cTBDescribe.Location = new System.Drawing.Point(23, 137);
             this.cTBDescribe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cTBDescribe.Multiline = false;
             this.cTBDescribe.Name = "cTBDescribe";
             this.cTBDescribe.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.cTBDescribe.PasswordChar = false;
-            this.cTBDescribe.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.cTBDescribe.PlaceholderColor = System.Drawing.Color.Black;
             this.cTBDescribe.PlaceholderText = "";
             this.cTBDescribe.Size = new System.Drawing.Size(511, 36);
-            this.cTBDescribe.TabIndex = 24;
+            this.cTBDescribe.TabIndex = 2;
             this.cTBDescribe.UnderlinedStyle = false;
             // 
             // customButton1
@@ -130,23 +130,23 @@
             // 
             // cTBName
             // 
-            this.cTBName.BackColor = System.Drawing.SystemColors.Window;
+            this.cTBName.BackColor = System.Drawing.Color.White;
             this.cTBName.BorderColor = System.Drawing.Color.DarkGray;
             this.cTBName.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBName.BorderRadius = 8;
             this.cTBName.BorderSize = 2;
             this.cTBName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTBName.ForeColor = System.Drawing.Color.DimGray;
+            this.cTBName.ForeColor = System.Drawing.Color.Black;
             this.cTBName.Location = new System.Drawing.Point(24, 51);
             this.cTBName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cTBName.Multiline = false;
             this.cTBName.Name = "cTBName";
             this.cTBName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.cTBName.PasswordChar = false;
-            this.cTBName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.cTBName.PlaceholderColor = System.Drawing.Color.Black;
             this.cTBName.PlaceholderText = "";
             this.cTBName.Size = new System.Drawing.Size(511, 36);
-            this.cTBName.TabIndex = 31;
+            this.cTBName.TabIndex = 1;
             this.cTBName.UnderlinedStyle = false;
             // 
             // customPanel1

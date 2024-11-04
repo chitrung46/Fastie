@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using Fastie.Components.LayoutPersonnel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,22 +15,14 @@ namespace Fastie
 {
     public partial class UpdatePersonnelForm : Form
     {
-        private readonly Personnel needEdit;
-        PersonnelForm personnelForm;
         PersonnelBLL personnelBLL = new PersonnelBLL();
-        public UpdatePersonnelForm(PersonnelForm personnelForm, Personnel nhanSu)
-        {
+        private Personnel personnel;
+        private PersonnelForm personnelForm;
+        private LayoutPersonnelForm layoutPersonnelForm;
+        public UpdatePersonnelForm(LayoutPersonnelForm layoutPersonnelForm, Personnel personnel) {
             InitializeComponent();
-            needEdit = nhanSu;
-            this.personnelForm = personnelForm;
-            // Thiết lập định dạng cho DateTimePicker trong form
-            dTPBirthday.Format = DateTimePickerFormat.Custom;
-            dTPBirthday.CustomFormat = "dd/MM/yyyy";
-            // Thiết lập định dạng cho DateTimePicker trong form
-            dTPDayOfWork.Format = DateTimePickerFormat.Custom;
-            dTPDayOfWork.CustomFormat = "dd/MM/yyyy";
-            cCBSex.Items.Add("Nam");
-            cCBSex.Items.Add("Nữ");
+            this.layoutPersonnelForm = layoutPersonnelForm;
+            this.personnel = personnel;
         }
 
         private void customButton2_Click(object sender, EventArgs e)
@@ -37,34 +30,55 @@ namespace Fastie
             this.Close();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void UpdatePersonnelForm_Load(object sender, EventArgs e)
         {
-            cTBName.Text = needEdit.Ten;
-            cTBEmail.Text = needEdit.Email;
-            cTBNumberPhone.Text = needEdit.Sdt;
-            cCBSex.ValueMember = needEdit.GioiTinh;
-            dTPBirthday.Value = needEdit.NgaySinh;
-            dTPDayOfWork.Value = needEdit.NgayVaoLam;
+            dTPBirthday.Format = DateTimePickerFormat.Custom;
+            dTPBirthday.CustomFormat = "dd/MM/yyyy";
+            dTPDayOfWork.Format = DateTimePickerFormat.Custom;
+            dTPDayOfWork.CustomFormat = "dd/MM/yyyy";
+            cCBSex.Items.Add("Nam");
+            cCBSex.Items.Add("Nữ");
 
+            cTBName.Text = layoutPersonnelForm.PersonnelName;
+            cTBEmail.Text = layoutPersonnelForm.Email;
+            cTBNumberPhone.Text = layoutPersonnelForm.NumberPhone;
+            cCBSex.Texts = layoutPersonnelForm.Gender;
+            dTPBirthday.Value = DateTime.Parse(layoutPersonnelForm.DateOfBirth);
+            dTPDayOfWork.Value = DateTime.Parse(layoutPersonnelForm.DateOfWork);
         }
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-            
-            needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
-            needEdit.Email = cTBEmail.Text;
-            needEdit.GioiTinh = cCBSex.ValueMember;
-            needEdit.NgaySinh = dTPBirthday.Value;
-            needEdit.NgayVaoLam = dTPDayOfWork.Value;
-            needEdit.Sdt = cTBNumberPhone.Text;
-            personnelBLL.UpdatePersonnel(needEdit);
+            personnel.Id = layoutPersonnelForm.IdPersonnel;
+            personnel.Ten = cTBName.Text;         
+            personnel.Email = cTBEmail.Text;
+            personnel.GioiTinh = cCBSex.Texts;
+            personnel.NgaySinh = dTPBirthday.Value;
+            personnel.NgayVaoLam = dTPDayOfWork.Value;
+            personnel.Sdt = cTBNumberPhone.Text;
+            personnelBLL.UpdatePersonnel(personnel);
+            this.Close();
             MessageBox.Show("Sửa Nhân sự thành công!", "Success");
-            personnelForm.LoadPersonnelData();
+            layoutPersonnelForm.loadDataPersonnel();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            personnel.Id = layoutPersonnelForm.IdPersonnel;
+            personnel.Ten = cTBName.Text;
+            personnel.Email = cTBEmail.Text;
+            personnel.GioiTinh = cCBSex.Texts;
+            personnel.NgaySinh = dTPBirthday.Value;
+            personnel.NgayVaoLam = dTPDayOfWork.Value;
+            personnel.Sdt = cTBNumberPhone.Text;
+            personnelBLL.UpdatePersonnel(personnel);
+            this.Close();
+            MessageBox.Show("Sửa Nhân sự thành công!", "Success");
+            layoutPersonnelForm.loadDataPersonnel();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

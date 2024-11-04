@@ -44,7 +44,7 @@
             // 
             // btnDetailAssignTask
             // 
-            this.btnDetailAssignTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnDetailAssignTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnDetailAssignTask.BorderColor = System.Drawing.Color.White;
             this.btnDetailAssignTask.BorderRadius = 15;
             this.btnDetailAssignTask.BorderSize = 0;
@@ -62,7 +62,7 @@
             // 
             // btnDetailAssignPositiveTask
             // 
-            this.btnDetailAssignPositiveTask.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnDetailAssignPositiveTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnDetailAssignPositiveTask.BorderColor = System.Drawing.Color.White;
             this.btnDetailAssignPositiveTask.BorderRadius = 15;
             this.btnDetailAssignPositiveTask.BorderSize = 0;
@@ -81,7 +81,7 @@
             // 
             // btnDetailAssignFastingTask
             // 
-            this.btnDetailAssignFastingTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.btnDetailAssignFastingTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnDetailAssignFastingTask.BorderColor = System.Drawing.Color.White;
             this.btnDetailAssignFastingTask.BorderRadius = 15;
             this.btnDetailAssignFastingTask.BorderSize = 0;

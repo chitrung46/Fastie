@@ -24,9 +24,9 @@ namespace Fastie
             this.departmentForm= departmentForm;    
         }
 
-        private void customButton1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cTBName.Text) )
+            if (string.IsNullOrWhiteSpace(cTBName.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên bộ phận.", "Thông báo");
                 return;
@@ -48,10 +48,9 @@ namespace Fastie
             }
             departmentForm.LoadDataDepartment();
             this.Close();
-            
         }
 
-        private void customButton2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }

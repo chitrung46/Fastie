@@ -21,7 +21,8 @@ namespace Fastie
             InitializeComponent();
             this.positionForm = positionForm;
         }
-        private void customButton1_Click(object sender, EventArgs e)
+        
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
@@ -32,7 +33,7 @@ namespace Fastie
                 };
                 positionBLL.InsertPosition(newPosition);
                 MessageBox.Show("Thêm Chức vụ mới thành công!", "Success");
-                
+
             }
             catch (Exception ex)
             {
@@ -42,7 +43,7 @@ namespace Fastie
             this.Close();
         }
 
-        private void customButton2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
