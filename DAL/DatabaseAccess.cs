@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
+    /***SSSSSSSSSSSSSSSSOOOOOOOOOOOOOOOOOOSSSSSSSSSSSSSSSS/ ***/
+
+
+
     public class SqlConnectionData
     {
         public static SqlConnection Connect()
