@@ -16,5 +16,35 @@ namespace Fastie.Screens.Task
         {
             InitializeComponent();
         }
+
+        private void customComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbTaskName_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxDepartment_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cTBDescribeTask_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxPersonnel_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

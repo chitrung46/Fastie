@@ -30,8 +30,6 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.customButton2 = new GUI.CustomButton();
-            this.customButton1 = new GUI.CustomButton();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.cTBEmail = new GUI.TruniControls.CustomTextBox();
@@ -45,6 +43,8 @@
             this.lblBirthDay = new System.Windows.Forms.Label();
             this.dTPBirthday = new System.Windows.Forms.DateTimePicker();
             this.cCBSex = new GUI.TruniControls.CustomComboBox();
+            this.btnCancel = new GUI.CustomButton();
+            this.btnUpdate = new GUI.CustomButton();
             this.customPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,40 +68,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(761, 2);
             this.panel1.TabIndex = 8;
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.customButton2.BorderColor = System.Drawing.Color.White;
-            this.customButton2.BorderRadius = 8;
-            this.customButton2.BorderSize = 2;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(494, 342);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(81, 39);
-            this.customButton2.TabIndex = 12;
-            this.customButton2.Text = "Hủy";
-            this.customButton2.UseVisualStyleBackColor = false;
-            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.customButton1.BorderColor = System.Drawing.Color.White;
-            this.customButton1.BorderRadius = 8;
-            this.customButton1.BorderSize = 2;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(391, 342);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(81, 39);
-            this.customButton1.TabIndex = 11;
-            this.customButton1.Text = "Lưu";
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // customPanel1
             // 
@@ -144,39 +110,39 @@
             // 
             // cTBEmail
             // 
-            this.cTBEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.cTBEmail.BackColor = System.Drawing.Color.White;
             this.cTBEmail.BorderColor = System.Drawing.Color.DarkGray;
             this.cTBEmail.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBEmail.BorderRadius = 8;
             this.cTBEmail.BorderSize = 2;
-            this.cTBEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.cTBEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.cTBEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cTBEmail.ForeColor = System.Drawing.Color.Black;
             this.cTBEmail.Location = new System.Drawing.Point(26, 126);
             this.cTBEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cTBEmail.Multiline = false;
             this.cTBEmail.Name = "cTBEmail";
             this.cTBEmail.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.cTBEmail.PasswordChar = false;
-            this.cTBEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.cTBEmail.PlaceholderColor = System.Drawing.Color.Black;
             this.cTBEmail.PlaceholderText = "";
-            this.cTBEmail.Size = new System.Drawing.Size(266, 35);
-            this.cTBEmail.TabIndex = 24;
+            this.cTBEmail.Size = new System.Drawing.Size(266, 38);
+            this.cTBEmail.TabIndex = 2;
             this.cTBEmail.UnderlinedStyle = false;
             // 
             // dTPDayOfWork
             // 
             this.dTPDayOfWork.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold);
-            this.dTPDayOfWork.Location = new System.Drawing.Point(308, 225);
+            this.dTPDayOfWork.Location = new System.Drawing.Point(308, 211);
             this.dTPDayOfWork.Name = "dTPDayOfWork";
             this.dTPDayOfWork.Size = new System.Drawing.Size(226, 27);
-            this.dTPDayOfWork.TabIndex = 32;
+            this.dTPDayOfWork.TabIndex = 6;
             this.dTPDayOfWork.Value = new System.DateTime(2024, 10, 24, 1, 12, 8, 0);
             // 
             // lblSex
             // 
             this.lblSex.AutoSize = true;
             this.lblSex.ForeColor = System.Drawing.Color.White;
-            this.lblSex.Location = new System.Drawing.Point(29, 189);
+            this.lblSex.Location = new System.Drawing.Point(29, 179);
             this.lblSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(81, 18);
@@ -187,7 +153,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(153, 189);
+            this.label1.Location = new System.Drawing.Point(154, 179);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 18);
@@ -210,7 +176,7 @@
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(29, 10);
+            this.lblName.Location = new System.Drawing.Point(29, 20);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(68, 18);
@@ -219,51 +185,51 @@
             // 
             // cTBNumberPhone
             // 
-            this.cTBNumberPhone.BackColor = System.Drawing.SystemColors.Window;
+            this.cTBNumberPhone.BackColor = System.Drawing.Color.White;
             this.cTBNumberPhone.BorderColor = System.Drawing.Color.DarkGray;
             this.cTBNumberPhone.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBNumberPhone.BorderRadius = 8;
             this.cTBNumberPhone.BorderSize = 2;
-            this.cTBNumberPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.cTBNumberPhone.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
             this.cTBNumberPhone.ForeColor = System.Drawing.Color.DimGray;
-            this.cTBNumberPhone.Location = new System.Drawing.Point(148, 219);
+            this.cTBNumberPhone.Location = new System.Drawing.Point(148, 205);
             this.cTBNumberPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cTBNumberPhone.Multiline = false;
             this.cTBNumberPhone.Name = "cTBNumberPhone";
             this.cTBNumberPhone.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.cTBNumberPhone.PasswordChar = false;
-            this.cTBNumberPhone.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.cTBNumberPhone.PlaceholderColor = System.Drawing.Color.Black;
             this.cTBNumberPhone.PlaceholderText = "";
-            this.cTBNumberPhone.Size = new System.Drawing.Size(144, 35);
-            this.cTBNumberPhone.TabIndex = 27;
+            this.cTBNumberPhone.Size = new System.Drawing.Size(144, 38);
+            this.cTBNumberPhone.TabIndex = 5;
             this.cTBNumberPhone.UnderlinedStyle = false;
             // 
             // cTBName
             // 
-            this.cTBName.BackColor = System.Drawing.SystemColors.Window;
-            this.cTBName.BorderColor = System.Drawing.Color.DarkGray;
+            this.cTBName.BackColor = System.Drawing.Color.White;
+            this.cTBName.BorderColor = System.Drawing.Color.Black;
             this.cTBName.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBName.BorderRadius = 8;
             this.cTBName.BorderSize = 2;
-            this.cTBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.cTBName.ForeColor = System.Drawing.Color.DimGray;
-            this.cTBName.Location = new System.Drawing.Point(24, 39);
+            this.cTBName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cTBName.ForeColor = System.Drawing.Color.Black;
+            this.cTBName.Location = new System.Drawing.Point(24, 45);
             this.cTBName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cTBName.Multiline = false;
             this.cTBName.Name = "cTBName";
             this.cTBName.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.cTBName.PasswordChar = false;
-            this.cTBName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.cTBName.PlaceholderColor = System.Drawing.Color.Black;
             this.cTBName.PlaceholderText = "";
-            this.cTBName.Size = new System.Drawing.Size(511, 35);
-            this.cTBName.TabIndex = 31;
+            this.cTBName.Size = new System.Drawing.Size(511, 38);
+            this.cTBName.TabIndex = 1;
             this.cTBName.UnderlinedStyle = false;
             // 
             // lblBirthDay
             // 
             this.lblBirthDay.AutoSize = true;
             this.lblBirthDay.ForeColor = System.Drawing.Color.White;
-            this.lblBirthDay.Location = new System.Drawing.Point(311, 190);
+            this.lblBirthDay.Location = new System.Drawing.Point(311, 179);
             this.lblBirthDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBirthDay.Name = "lblBirthDay";
             this.lblBirthDay.Size = new System.Drawing.Size(120, 18);
@@ -276,29 +242,70 @@
             this.dTPBirthday.Location = new System.Drawing.Point(308, 133);
             this.dTPBirthday.Name = "dTPBirthday";
             this.dTPBirthday.Size = new System.Drawing.Size(225, 27);
-            this.dTPBirthday.TabIndex = 25;
+            this.dTPBirthday.TabIndex = 3;
             this.dTPBirthday.Value = new System.DateTime(2024, 10, 24, 1, 12, 8, 0);
-            this.dTPBirthday.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // cCBSex
             // 
-            this.cCBSex.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cCBSex.BackColor = System.Drawing.Color.White;
             this.cCBSex.BorderColor = System.Drawing.Color.Gainsboro;
             this.cCBSex.BorderRadius = 8;
             this.cCBSex.BorderSize = 1;
             this.cCBSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cCBSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.cCBSex.ForeColor = System.Drawing.Color.DimGray;
+            this.cCBSex.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cCBSex.ForeColor = System.Drawing.Color.Black;
             this.cCBSex.IconColor = System.Drawing.Color.Black;
-            this.cCBSex.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cCBSex.ListTextColor = System.Drawing.Color.DimGray;
-            this.cCBSex.Location = new System.Drawing.Point(26, 220);
+            this.cCBSex.ListBackColor = System.Drawing.Color.White;
+            this.cCBSex.ListTextColor = System.Drawing.Color.Black;
+            this.cCBSex.Location = new System.Drawing.Point(26, 207);
             this.cCBSex.MinimumSize = new System.Drawing.Size(100, 25);
             this.cCBSex.Name = "cCBSex";
             this.cCBSex.Padding = new System.Windows.Forms.Padding(1);
             this.cCBSex.Size = new System.Drawing.Size(106, 32);
-            this.cCBSex.TabIndex = 26;
+            this.cCBSex.TabIndex = 4;
             this.cCBSex.Texts = "";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnCancel.BorderRadius = 15;
+            this.btnCancel.BorderSize = 1;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(487, 341);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnCancel.Size = new System.Drawing.Size(94, 40);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnUpdate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnUpdate.BorderRadius = 15;
+            this.btnUpdate.BorderSize = 0;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(357, 341);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnUpdate.Size = new System.Drawing.Size(121, 40);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // UpdatePersonnelForm
             // 
@@ -307,13 +314,14 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(602, 393);
-            this.Controls.Add(this.customButton2);
-            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UpdatePersonnelForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Cập nhật thông tin nhân sự";
             this.Load += new System.EventHandler(this.UpdatePersonnelForm_Load);
             this.customPanel1.ResumeLayout(false);
@@ -324,14 +332,11 @@
         }
 
         #endregion
-
-        private GUI.CustomButton customButton2;
         private System.Windows.Forms.Label label4;
         private GUI.TruniControls.CustomTextBox cTBEmail;
         private System.Windows.Forms.DateTimePicker dTPDayOfWork;
         private System.Windows.Forms.Label lblSex;
         private System.Windows.Forms.Label label1;
-        private GUI.CustomButton customButton1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblName;
@@ -342,5 +347,7 @@
         private GUI.TruniControls.CustomComboBox cCBSex;
         private GUI.TruniControls.CustomPanel customPanel1;
         private System.Windows.Forms.Panel panel1;
+        private GUI.CustomButton btnCancel;
+        private GUI.CustomButton btnUpdate;
     }
 }

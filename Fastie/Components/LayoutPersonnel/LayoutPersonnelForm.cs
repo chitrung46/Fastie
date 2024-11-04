@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 ﻿using DTO;
 using BLL;
+=======
+﻿using BLL;
+using DTO;
+>>>>>>> origin/Toan
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -74,11 +79,16 @@ namespace Fastie.Components.LayoutPersonnel
             get { return numberPhone; }
             set { numberPhone = value; lblNumberPhone.Text = numberPhone; }
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Toan
         public void loadDataPersonnel()
         {
             personnelForm.LoadDataPersonnel();
         }
 
+<<<<<<< HEAD
         private void btnEditPersonnel_Click(object sender, EventArgs e)
         {
             var updatePersonnel = new Personnel
@@ -99,10 +109,37 @@ namespace Fastie.Components.LayoutPersonnel
         {
             string[] information = { "Bạn có chắc chắn xóa nhân sự này?", $"{this.personnelName} sẽ được xóa khỏi hệ thống", "Xóa nhân sự" };
             LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.idPersonnel);
+=======
+        private void btnDeletePersonnel_Click(object sender, EventArgs e)
+        {
+            string[] information = { "Bạn có chắc chắn xóa nhân sự này?", $"{this.personnelName} sẽ được xóa khỏi hệ thống", "Xóa nhân sự" };
+            LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.IdPersonnel);
+>>>>>>> origin/Toan
             deleteLayoutConfirm.Title = information[0];
             deleteLayoutConfirm.Content = information[1];
             deleteLayoutConfirm.btnConfirmText = information[2];
             deleteLayoutConfirm.Show();
+<<<<<<< HEAD
+=======
+
+        }
+
+        private void btnEditPersonnel_Click(object sender, EventArgs e)
+        {
+            {
+                var updatePersonnel = new Personnel
+                {
+                    Id = this.personnelName,
+                    Ten = this.personnelName,
+                    Email = this.gender,
+                    NgaySinh = DateTime.Parse(this.dateOfBirth),
+                    NgayVaoLam = DateTime.Parse(this.dateOfWork),
+                    Sdt = this.numberPhone
+                }; 
+                UpdatePersonnelForm updatePersonnelForm = new UpdatePersonnelForm(this, updatePersonnel);
+                updatePersonnelForm.Show();
+            }
+>>>>>>> origin/Toan
         }
     }
 }

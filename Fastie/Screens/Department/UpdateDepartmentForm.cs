@@ -17,7 +17,6 @@ namespace Fastie
     {
         private readonly Department needEdit;
         DepartmentBLL departmentBLL = new DepartmentBLL();  
-        //DepartmentForm departmentForm;
         private LayoutDepartmentForm departmentForm;
 
         public UpdateDepartmentForm(LayoutDepartmentForm layoutDepartmentForm, Department editDepartment)  //DepartmentForm departmentForm, Department editDepartment
@@ -33,23 +32,23 @@ namespace Fastie
             cTBDescribe.Text = needEdit.MoTa;
         }
 
-        private void customButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void customButton1_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cTBName.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên bộ phận.", "Thông báo");
                 return;
             }
-            needEdit.Ten = cTBName.Text;         
+            needEdit.Ten = cTBName.Text;
             needEdit.MoTa = cTBDescribe.Text;
             departmentBLL.UpdateDepartment(needEdit);
             MessageBox.Show("Sửa Bộ phận thành công!", "Success");
-           departmentForm.loadDataDepartment();
+            departmentForm.loadDataDepartment();
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
