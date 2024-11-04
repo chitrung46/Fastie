@@ -16,5 +16,6 @@ namespace Fastie.Screens.Task
         {
             InitializeComponent();
         }
+
     }
 }

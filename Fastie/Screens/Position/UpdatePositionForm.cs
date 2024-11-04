@@ -15,10 +15,9 @@ namespace Fastie
     public partial class UpdatePositionForm : Form
     {
         private readonly Position needEdit;
-        //PositionForm positionForm;
         private LayoutPositionForm positionForm;
         PositionBLL positionBLL = new PositionBLL();
-        public UpdatePositionForm(LayoutPositionForm positionForm, Position chucVu) //PositionForm positionForm, Position chucVu
+        public UpdatePositionForm(LayoutPositionForm positionForm, Position chucVu)
         {
             InitializeComponent();
             needEdit = chucVu;
@@ -36,18 +35,17 @@ namespace Fastie
             cTBDesribe.Text = needEdit.MoTa;
         }
 
-        private void customButton1_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
+            needEdit.Ten = cTBName.Text;        
             needEdit.MoTa = cTBDesribe.Text;
             positionBLL.UpdatePosition(needEdit);
             MessageBox.Show("Sửa Bộ phận thành công!", "Success");
-            //positionForm.LoadPositionData();
             positionForm.LoadPositionData();
             this.Close();
         }
 
-        private void customButton2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }

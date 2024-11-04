@@ -28,52 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.customButton2 = new GUI.CustomButton();
-            this.customButton1 = new GUI.CustomButton();
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.cTBDescribe = new GUI.TruniControls.CustomTextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.cTBName = new GUI.TruniControls.CustomTextBox();
+            this.btnCancel = new GUI.CustomButton();
+            this.btnUpdate = new GUI.CustomButton();
             this.customPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.customButton2.BorderColor = System.Drawing.Color.White;
-            this.customButton2.BorderRadius = 8;
-            this.customButton2.BorderSize = 2;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(500, 342);
-            this.customButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(81, 35);
-            this.customButton2.TabIndex = 11;
-            this.customButton2.Text = "Hủy";
-            this.customButton2.UseVisualStyleBackColor = false;
-            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.customButton1.BorderColor = System.Drawing.Color.White;
-            this.customButton1.BorderRadius = 8;
-            this.customButton1.BorderSize = 2;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(405, 342);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(81, 35);
-            this.customButton1.TabIndex = 11;
-            this.customButton1.Text = "Lưu";
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // label2
             // 
@@ -121,23 +85,23 @@
             // 
             // cTBDescribe
             // 
-            this.cTBDescribe.BackColor = System.Drawing.SystemColors.Window;
+            this.cTBDescribe.BackColor = System.Drawing.Color.White;
             this.cTBDescribe.BorderColor = System.Drawing.Color.DarkGray;
             this.cTBDescribe.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBDescribe.BorderRadius = 8;
             this.cTBDescribe.BorderSize = 2;
-            this.cTBDescribe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTBDescribe.ForeColor = System.Drawing.Color.DimGray;
+            this.cTBDescribe.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cTBDescribe.ForeColor = System.Drawing.Color.Black;
             this.cTBDescribe.Location = new System.Drawing.Point(26, 138);
             this.cTBDescribe.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cTBDescribe.Multiline = true;
             this.cTBDescribe.Name = "cTBDescribe";
             this.cTBDescribe.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.cTBDescribe.PasswordChar = false;
-            this.cTBDescribe.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.cTBDescribe.PlaceholderColor = System.Drawing.Color.Black;
             this.cTBDescribe.PlaceholderText = "";
             this.cTBDescribe.Size = new System.Drawing.Size(509, 72);
-            this.cTBDescribe.TabIndex = 24;
+            this.cTBDescribe.TabIndex = 2;
             this.cTBDescribe.UnderlinedStyle = false;
             // 
             // lblName
@@ -154,24 +118,66 @@
             // 
             // cTBName
             // 
-            this.cTBName.BackColor = System.Drawing.SystemColors.Window;
+            this.cTBName.BackColor = System.Drawing.Color.White;
             this.cTBName.BorderColor = System.Drawing.Color.DarkGray;
             this.cTBName.BorderFocusColor = System.Drawing.Color.Black;
             this.cTBName.BorderRadius = 8;
             this.cTBName.BorderSize = 2;
-            this.cTBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTBName.ForeColor = System.Drawing.Color.DimGray;
+            this.cTBName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cTBName.ForeColor = System.Drawing.Color.Black;
             this.cTBName.Location = new System.Drawing.Point(24, 51);
             this.cTBName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cTBName.Multiline = false;
             this.cTBName.Name = "cTBName";
             this.cTBName.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.cTBName.PasswordChar = false;
-            this.cTBName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.cTBName.PlaceholderColor = System.Drawing.Color.Black;
             this.cTBName.PlaceholderText = "";
-            this.cTBName.Size = new System.Drawing.Size(511, 35);
-            this.cTBName.TabIndex = 31;
+            this.cTBName.Size = new System.Drawing.Size(511, 38);
+            this.cTBName.TabIndex = 1;
             this.cTBName.UnderlinedStyle = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnCancel.BorderRadius = 15;
+            this.btnCancel.BorderSize = 1;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(488, 333);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnCancel.Size = new System.Drawing.Size(94, 40);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnUpdate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnUpdate.BorderRadius = 15;
+            this.btnUpdate.BorderSize = 0;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(358, 333);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnUpdate.Size = new System.Drawing.Size(121, 40);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // UpdateDepartmentForm
             // 
@@ -179,9 +185,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(608, 399);
-            this.Controls.Add(this.customButton2);
-            this.Controls.Add(this.customButton1);
+            this.ClientSize = new System.Drawing.Size(608, 391);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
@@ -198,14 +204,13 @@
         }
 
         #endregion
-
-        private GUI.CustomButton customButton2;
-        private GUI.CustomButton customButton1;
         private System.Windows.Forms.Label label2;
         private GUI.TruniControls.CustomPanel customPanel1;
         private System.Windows.Forms.Label label4;
         private GUI.TruniControls.CustomTextBox cTBDescribe;
         private System.Windows.Forms.Label lblName;
         private GUI.TruniControls.CustomTextBox cTBName;
+        private GUI.CustomButton btnCancel;
+        private GUI.CustomButton btnUpdate;
     }
 }

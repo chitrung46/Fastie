@@ -205,7 +205,7 @@
             this.customTextBox_mail.PlaceholderColor = System.Drawing.Color.White;
             this.customTextBox_mail.PlaceholderText = "";
             this.customTextBox_mail.Size = new System.Drawing.Size(286, 35);
-            this.customTextBox_mail.TabIndex = 9;
+            this.customTextBox_mail.TabIndex = 1;
             this.customTextBox_mail.UnderlinedStyle = false;
             // 
             // btnGetPassword
@@ -224,7 +224,7 @@
             this.btnGetPassword.Name = "btnGetPassword";
             this.btnGetPassword.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnGetPassword.Size = new System.Drawing.Size(286, 40);
-            this.btnGetPassword.TabIndex = 6;
+            this.btnGetPassword.TabIndex = 2;
             this.btnGetPassword.Text = "Lấy lại mật khẩu";
             this.btnGetPassword.UseVisualStyleBackColor = false;
             this.btnGetPassword.Click += new System.EventHandler(this.btnGetPassword_Click);
