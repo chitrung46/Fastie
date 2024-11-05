@@ -420,7 +420,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(764, 23);
+            this.label9.Location = new System.Drawing.Point(630, 23);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(167, 21);
             this.label9.TabIndex = 40;
@@ -445,7 +445,7 @@
             this.btnUploadImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUploadImage.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUploadImage.ForeColor = System.Drawing.Color.White;
-            this.btnUploadImage.Location = new System.Drawing.Point(630, 13);
+            this.btnUploadImage.Location = new System.Drawing.Point(496, 13);
             this.btnUploadImage.Name = "btnUploadImage";
             this.btnUploadImage.Size = new System.Drawing.Size(128, 40);
             this.btnUploadImage.TabIndex = 11;

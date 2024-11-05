@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using BLL.DecentralizationBLL;
+using BLL.ListRoleBLL;
 using DTO;
+using DTO.ListRoleDTO;
 using Fastie.Components.LayoutDecentralization;
 
 namespace Fastie
@@ -24,6 +26,7 @@ namespace Fastie
         private LayoutDecentralizationForm decentralizationForm;
         public delegate void FormClosingHandler();
         public event FormClosingHandler OnFormClosing;
+        ListRoleBLL listRoleBLL = new ListRoleBLL();
 
         public UpdateDecentralizationForm(LayoutDecentralizationForm decentralizationForm,string accountName) //replace by DecentralizationForm decentralizationForm ,string accountName
         {
@@ -234,101 +237,23 @@ namespace Fastie
         {
             try
             {
+                List<ListRole> listRoles = listRoleBLL.LayDanhSachQuyen();
                 List<string> permissionsList = new List<string>();
 
-                // Quản lý nhân sự
-                if (checkboxPersonnelManagement.Checked ||
-                    (checkboxAddPersonnel.Checked &&
-                     checkboxUpdatePersonnel.Checked &&
-                     checkboxDeletePersonnel.Checked))
+                foreach (var role in listRoles)
                 {
-                    permissionsList.Add("Quản lý nhân sự");
+                    if (permissionCheckboxMap.ContainsKey(role.TenQuyen) && permissionCheckboxMap[role.TenQuyen].Checked)
+                    {
+                        permissionsList.Add(role.TenQuyen);
+                    }
                 }
-                if (checkboxAddPersonnel.Checked)
-                    permissionsList.Add("Thêm nhân sự");
-                if (checkboxUpdatePersonnel.Checked)
-                    permissionsList.Add("Cập nhật nhân sự");
-                if (checkboxDeletePersonnel.Checked)
-                    permissionsList.Add("Xóa nhân sự");
-
-                // Quản lý bộ phận
-                if (checkboxPartManagement.Checked ||
-                    (checkboxAddPart.Checked &&
-                     checkboxUpdatePart.Checked &&
-                     checkboxDeletePart.Checked))
-                {
-                    permissionsList.Add("Quản lý bộ phận");
-                }
-                if (checkboxAddPart.Checked)
-                    permissionsList.Add("Thêm bộ phận");
-                if (checkboxUpdatePart.Checked)
-                    permissionsList.Add("Cập nhật bộ phận");
-                if (checkboxDeletePart.Checked)
-                    permissionsList.Add("Xóa bộ phận");
-
-                // Quản lý chức vụ
-                if (checkboxPositionManagement.Checked ||
-                    (checkboxAddPosition.Checked &&
-                     checkboxUpdatePosition.Checked &&
-                     checkboxDeletePosition.Checked))
-                {
-                    permissionsList.Add("Quản lý chức vụ");
-                }
-                if (checkboxAddPosition.Checked)
-                    permissionsList.Add("Thêm chức vụ");
-                if (checkboxUpdatePosition.Checked)
-                    permissionsList.Add("Cập nhật chức vụ");
-                if (checkboxDeletePosition.Checked)
-                    permissionsList.Add("Xóa chức vụ");
-
-                // Quản lý tài khoản
-                if (checkboxAccountManagement.Checked ||
-                    (checkboxAddAccount.Checked &&
-                     checkboxUpdateAccount.Checked &&
-                     checkboxDeleteAccount.Checked))
-                {
-                    permissionsList.Add("Quản lý tài khoản");
-                }
-                if (checkboxAddAccount.Checked)
-                    permissionsList.Add("Thêm tài khoản");
-                if (checkboxUpdateAccount.Checked)
-                    permissionsList.Add("Cập nhật tài khoản");
-                if (checkboxDeleteAccount.Checked)
-                    permissionsList.Add("Xóa tài khoản");
-
-                // Quản lý công việc
-                if (checkboxTasksManagement.Checked ||
-                    (checkboxSendNotification.Checked &&
-                     checkboxAssignTasks.Checked &&
-                     checkboxUpdateTasks.Checked &&
-                     checkboxDeleteTasks.Checked &&
-                     checkBoxGetTasks.Checked &&
-                     checkBoxReportTasks.Checked))
-                {
-                    permissionsList.Add("Quản lý công việc");
-                }
-                if (checkboxSendNotification.Checked)
-                    permissionsList.Add("Ra thông báo");
-                if (checkboxAssignTasks.Checked)
-                    permissionsList.Add("Giao việc");
-                if (checkboxUpdateTasks.Checked)
-                    permissionsList.Add("Cập nhật công việc");
-                if (checkboxDeleteTasks.Checked)
-                    permissionsList.Add("Xóa công việc");
-                if (checkBoxGetTasks.Checked)
-                    permissionsList.Add("Nhận việc");
-                if (checkBoxReportTasks.Checked)
-                    permissionsList.Add("Báo cáo công việc");
-
                 string selectedPermissions = string.Join(",", permissionsList);
 
-                // Kiểm tra và gọi phương thức cập nhật
                 if (!string.IsNullOrEmpty(selectedPermissions))
                 {
                     bool result = decentralizationBLL.updateRoles(this.accountName, selectedPermissions);
                     if (result)
                     {
-                        //decentralizationForm.loadData();
                         decentralizationForm.loadDataFromDecentralization();
                         MessageBox.Show("Cập nhật quyền thành công!");
                         this.Close();
@@ -345,8 +270,13 @@ namespace Fastie
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message);
             }
+        }
+
+        private void checkboxAddPersonnel_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

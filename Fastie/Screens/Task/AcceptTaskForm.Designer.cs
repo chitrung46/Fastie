@@ -30,12 +30,12 @@
         {
             this.flowLayoutPanelTasks = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.pnlTabBar = new GUI.TruniControls.CustomPanel();
             this.btnAssignTask = new GUI.CustomButton();
             this.btnInitialtiveTask = new GUI.CustomButton();
@@ -64,6 +64,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1117, 29);
             this.panel1.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(893, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 21);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Hành động";
             // 
             // label5
             // 
@@ -119,17 +130,6 @@
             this.label1.Size = new System.Drawing.Size(121, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên công việc";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(893, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Hành động";
             // 
             // pnlTabBar
             // 
@@ -196,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1120, 587);
+            this.ClientSize = new System.Drawing.Size(1120, 573);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTabBar);
             this.Controls.Add(this.flowLayoutPanelTasks);

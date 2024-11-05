@@ -1,4 +1,5 @@
 ﻿using BLL;
+using BLL.PermissionBLL;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Fastie.Components.LayoutPersonnel
         private string idPersonnel;
         private string numberPhone;
         private PersonnelForm personnelForm;
+        PermissionBLL permissionBLL = new PermissionBLL();
         public LayoutPersonnelForm()
         {
             InitializeComponent();
@@ -82,17 +84,25 @@ namespace Fastie.Components.LayoutPersonnel
 
         private void btnDeletePersonnel_Click(object sender, EventArgs e)
         {
-            string[] information = { "Bạn có chắc chắn xóa nhân sự này?", $"{this.personnelName} sẽ được xóa khỏi hệ thống", "Xóa nhân sự" };
-            LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.IdPersonnel);
-            deleteLayoutConfirm.Title = information[0];
-            deleteLayoutConfirm.Content = information[1];
-            deleteLayoutConfirm.btnConfirmText = information[2];
-            deleteLayoutConfirm.Show();
+            bool checkPermission = permissionBLL.checkPermission(personnelForm.IdTaiKhoan, "Q0017");
+            if(checkPermission)
+            {
+                string[] information = { "Bạn có chắc chắn xóa nhân sự này?", $"{this.personnelName} sẽ được xóa khỏi hệ thống", "Xóa nhân sự" };
+                LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.IdPersonnel);
+                deleteLayoutConfirm.Title = information[0];
+                deleteLayoutConfirm.Content = information[1];
+                deleteLayoutConfirm.btnConfirmText = information[2];
+                deleteLayoutConfirm.Show();
+            } else {                 
+                MessageBox.Show("Bạn không có quyền xóa nhân viên");
+            }
 
         }
 
         private void btnEditPersonnel_Click(object sender, EventArgs e)
         {
+            bool checkPermission = permissionBLL.checkPermission(personnelForm.IdTaiKhoan, "Q0016");
+            if (checkPermission)
             {
                 var updatePersonnel = new Personnel
                 {
@@ -105,6 +115,9 @@ namespace Fastie.Components.LayoutPersonnel
                 }; 
                 UpdatePersonnelForm updatePersonnelForm = new UpdatePersonnelForm(this, updatePersonnel);
                 updatePersonnelForm.Show();
+            } else
+            {
+                MessageBox.Show("Bạn không có quyền sửa nhân viên");
             }
         }
     }

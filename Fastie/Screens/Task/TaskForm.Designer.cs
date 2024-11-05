@@ -40,10 +40,11 @@
             // 
             // mainLayout
             // 
+            this.mainLayout.AutoScroll = true;
             this.mainLayout.Location = new System.Drawing.Point(28, 95);
             this.mainLayout.Margin = new System.Windows.Forms.Padding(4);
             this.mainLayout.Name = "mainLayout";
-            this.mainLayout.Size = new System.Drawing.Size(1120, 587);
+            this.mainLayout.Size = new System.Drawing.Size(1120, 573);
             this.mainLayout.TabIndex = 2;
             // 
             // pnlTabBar

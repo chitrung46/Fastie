@@ -132,7 +132,7 @@
             this.panel5.Controls.Add(this.btnGetTask);
             this.panel5.Location = new System.Drawing.Point(1030, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(75, 54);
+            this.panel5.Size = new System.Drawing.Size(84, 54);
             this.panel5.TabIndex = 6;
             // 
             // btnGetTask
@@ -191,7 +191,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Name = "LayoutAssignTaskForm";
-            this.Size = new System.Drawing.Size(1108, 60);
+            this.Size = new System.Drawing.Size(1117, 60);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

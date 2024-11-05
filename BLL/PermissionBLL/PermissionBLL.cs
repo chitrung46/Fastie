@@ -7,8 +7,8 @@ namespace BLL.PermissionBLL
     {
         public bool checkPermission(string accountId, string permissionId)
         {
-            try
-            {
+            try { 
+            
                 return PermissionDAL.checkPermission(accountId, permissionId);
             }
             catch (Exception ex)

@@ -282,6 +282,7 @@
             this.checkboxAddPersonnel.TabIndex = 4;
             this.checkboxAddPersonnel.Text = "Thêm nhân sự";
             this.checkboxAddPersonnel.UseVisualStyleBackColor = false;
+            this.checkboxAddPersonnel.CheckedChanged += new System.EventHandler(this.checkboxAddPersonnel_CheckedChanged);
             // 
             // customPanel3
             // 
@@ -666,7 +667,7 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // CreateDecentralizationForm
+            // UpdateDecentralizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -686,7 +687,7 @@
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.label1);
-            this.Name = "CreateDecentralizationForm";
+            this.Name = "UpdateDecentralizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Tạo phân quyền";
             this.Load += new System.EventHandler(this.CreateDecentralizationForm_Load);

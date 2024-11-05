@@ -76,6 +76,12 @@
     <Compile Include="Components\LayoutNotification\NotificationForm.Designer.cs">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\LayoutTask\LayoutAssignmentAdjustmentForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutAssignmentAdjustmentForm.Designer.cs">
+      <DependentUpon>LayoutAssignmentAdjustmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\LayoutTask\LayoutAssignTaskForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     <Compile Include="Screens\Decentralization\DecentralizationForm.Designer.cs">
       <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Department\DetailsDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Department\DetailsDepartmentForm.Designer.cs">
+      <DependentUpon>DetailsDepartmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Login\ForgetPassword\ForgetPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,12 @@
     <Compile Include="Screens\Personnel\CreatePersonnelForm.Designer.cs">
       <DependentUpon>CreatePersonnelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Personnel\DetailsPersonnelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Personnel\DetailsPersonnelForm.Designer.cs">
+      <DependentUpon>DetailsPersonnelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Personnel\UpdatePersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +171,12 @@
     </Compile>
     <Compile Include="Screens\Position\CreatePositionForm.Designer.cs">
       <DependentUpon>CreatePositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Position\DetailsPositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Position\DetailsPositionForm.Designer.cs">
+      <DependentUpon>DetailsPositionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Position\UpdatePositionForm.cs">
       <SubType>Form</SubType>
@@ -240,6 +264,12 @@
     <Compile Include="Screens\Task\AcceptTaskForm.Designer.cs">
       <DependentUpon>AcceptTaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Task\AssignmentAdjustmentTask\AssignmentAdjustmentTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\AssignmentAdjustmentTask\AssignmentAdjustmentTaskForm.Designer.cs">
+      <DependentUpon>AssignmentAdjustmentTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Task\AssignTask\AssignTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +293,12 @@
     </Compile>
     <Compile Include="Screens\Task\AssignTask\DetailAssignTaskForm.Designer.cs">
       <DependentUpon>DetailAssignTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Task\DetailsTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\DetailsTaskForm.Designer.cs">
+      <DependentUpon>DetailsTaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Task\ReportTask\ReportTaskForm.cs">
       <SubType>Form</SubType>
@@ -318,6 +354,9 @@
     <EmbeddedResource Include="Components\LayoutNotification\NotificationForm.resx">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutAssignmentAdjustmentForm.resx">
+      <DependentUpon>LayoutAssignmentAdjustmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutTask\LayoutAssignTaskForm.resx">
       <DependentUpon>LayoutAssignTaskForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,6 +390,9 @@
     <EmbeddedResource Include="Screens\Department\CreateDepartmentForm.resx">
       <DependentUpon>CreateDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Department\DetailsDepartmentForm.resx">
+      <DependentUpon>DetailsDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Login\ForgetPassword\ForgetPasswordForm.resx">
       <DependentUpon>ForgetPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Login\ForgetPassword\ResetPasswordForm.resx">
       <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Personnel\DetailsPersonnelForm.resx">
+      <DependentUpon>DetailsPersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Position\CreatePositionForm.resx">
       <DependentUpon>CreatePositionForm.cs</DependentUpon>
@@ -374,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Personnel\UpdatePersonnelForm.resx">
       <DependentUpon>UpdatePersonnelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Position\DetailsPositionForm.resx">
+      <DependentUpon>DetailsPositionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Position\UpdatePositionForm.resx">
       <DependentUpon>UpdatePositionForm.cs</DependentUpon>
@@ -410,6 +458,9 @@
       <DependentUpon>AcceptTaskForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\AssignmentAdjustmentTask\AssignmentAdjustmentTaskForm.resx">
+      <DependentUpon>AssignmentAdjustmentTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\AssignTask\AssignTaskForm.resx">
       <DependentUpon>AssignTaskForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\AssignTask\DetailAssignTaskForm.resx">
       <DependentUpon>DetailAssignTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\DetailsTaskForm.resx">
+      <DependentUpon>DetailsTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\ReportTask\ReportTaskForm.resx">
       <DependentUpon>ReportTaskForm.cs</DependentUpon>
@@ -598,6 +652,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-document-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z5866322563222_7c9b9873ee9ceed252ea45f87aeb13ff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

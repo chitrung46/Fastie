@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using BLL.DepartmentBLL;
+using BLL.PermissionBLL;
 using DTO;
 using Fastie.Components.LayoutDepartmen;
 using Fastie.Components.LayoutPersonnel;
@@ -17,10 +18,19 @@ namespace Fastie
     public partial class PersonnelForm : Form
     {
         PersonnelBLL personnelBLL = new PersonnelBLL();
-        public PersonnelForm()
+        PermissionBLL permissionBLL = new PermissionBLL(); 
+        private string idTaiKhoan;
+        private string idChucVu;
+        public PersonnelForm(string idTaiKhoan, string idChucVu)
         {
             InitializeComponent();
+            this.idTaiKhoan = idTaiKhoan;
+            this.idChucVu = idChucVu;
         }
+
+        public string IdTaiKhoan { get => idTaiKhoan; set => idTaiKhoan = value; }
+        public string IdChucVu { get => idChucVu; set => idChucVu = value; }
+
         private void PersonnelForm_Load(object sender, EventArgs e)
         {
             loadDataPersonnel();
@@ -56,8 +66,16 @@ namespace Fastie
 
         private void btnAddPersonnel_Click(object sender, EventArgs e)
         {
-            CreatePersonnelForm createPersonnelForm = new CreatePersonnelForm(this);
-            createPersonnelForm.Show();
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0015");
+            if(checkPermission)
+            {
+                CreatePersonnelForm createPersonnelForm = new CreatePersonnelForm(this);
+                createPersonnelForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền thêm nhân viên");
+            }
         }
     }
 }

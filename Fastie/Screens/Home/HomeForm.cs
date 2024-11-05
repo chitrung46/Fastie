@@ -111,10 +111,11 @@ namespace Fastie
 
         private void btnPart_Click(object sender, EventArgs e)
         {
-            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0006");
+            string permissionId = "Q0006,Q0007,Q0008,Q0009";
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, permissionId);
             if (checkPermission)
             {
-                DepartmentForm departmentForm = new DepartmentForm();
+                DepartmentForm departmentForm = new DepartmentForm(this.idTaiKhoan, this.idChucVu);
                 addFormInMainLayout(departmentForm);
             }
             else
@@ -127,10 +128,11 @@ namespace Fastie
 
         private void btnPosition_Click(object sender, EventArgs e)
         {
-            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0010");
+            string permissionId = "Q0010,Q0011,Q0012,Q0013";
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, permissionId);
             if (checkPermission)
             {
-                PositionForm position = new PositionForm();
+                PositionForm position = new PositionForm(this.idTaiKhoan, this.idChucVu);
                 addFormInMainLayout(position);
             }
             else
@@ -143,10 +145,11 @@ namespace Fastie
 
         private void btnPersonnel_Click(object sender, EventArgs e)
         {
-            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0014");
+            string permissionId = "Q0014,Q0015,Q0016,Q0017";
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, permissionId);
             if (checkPermission)
             {
-                PersonnelForm personnel = new PersonnelForm();
+                PersonnelForm personnel = new PersonnelForm(this.idTaiKhoan, this.idChucVu);
                 addFormInMainLayout(personnel);
             }
             else
@@ -159,10 +162,11 @@ namespace Fastie
 
         private void btnWork_Click(object sender, EventArgs e)
         {
-            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0018");
+            string permissionId = "Q0018,Q0019,Q0020,Q0021,Q0022,Q0023,Q0024";
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, permissionId);
             if (checkPermission)
             {
-                TaskForm work = new TaskForm();
+                TaskForm work = new TaskForm(this.idTaiKhoan, this.idChucVu);
                 addFormInMainLayout(work);
             }
             else

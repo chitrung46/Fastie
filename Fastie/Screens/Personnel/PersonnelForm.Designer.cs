@@ -202,7 +202,7 @@
             this.flowLayoutPanelPersonnel.AutoScroll = true;
             this.flowLayoutPanelPersonnel.Location = new System.Drawing.Point(31, 183);
             this.flowLayoutPanelPersonnel.Name = "flowLayoutPanelPersonnel";
-            this.flowLayoutPanelPersonnel.Size = new System.Drawing.Size(1213, 500);
+            this.flowLayoutPanelPersonnel.Size = new System.Drawing.Size(1213, 491);
             this.flowLayoutPanelPersonnel.TabIndex = 21;
             // 
             // PersonnelForm

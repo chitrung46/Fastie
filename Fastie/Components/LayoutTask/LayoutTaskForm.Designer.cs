@@ -107,6 +107,7 @@
             this.btnGetInformation.TabIndex = 0;
             this.btnGetInformation.Text = "Xem chi tiết";
             this.btnGetInformation.UseVisualStyleBackColor = false;
+            this.btnGetInformation.Click += new System.EventHandler(this.btnGetInformation_Click);
             // 
             // LayoutTaskForm
             // 

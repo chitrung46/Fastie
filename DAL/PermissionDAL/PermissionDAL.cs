@@ -19,7 +19,7 @@ namespace DAL.PermissionDAL
                 SqlCommand cmd = new SqlCommand("proc_checkPermissionAccess", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idTaiKhoan", accountId);
-                cmd.Parameters.AddWithValue("@idQuyen", permissionId);
+                cmd.Parameters.AddWithValue("@dsIdQuyen", permissionId);
                 return (int)cmd.ExecuteScalar() == 1 ? true : false;
 
             }

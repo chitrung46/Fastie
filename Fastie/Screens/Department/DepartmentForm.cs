@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using BLL.DepartmentBLL;
+using BLL.PermissionBLL;
 using DAL;
 using DTO;
 using Fastie.Components.LayoutDepartmen;
@@ -19,11 +20,20 @@ namespace Fastie
     public partial class DepartmentForm : Form
     {
         DepartmentBLL departmentBLL = new DepartmentBLL();
-        public DepartmentForm()
+        PermissionBLL permissionBLL = new PermissionBLL();
+        private string idTaiKhoan;
+        private string idChucVu;
+
+        public DepartmentForm(string idTaiKhoan, string idChucVu)
         {
             InitializeComponent();
-
+            this.idChucVu = idChucVu;
+            this.idTaiKhoan = idTaiKhoan;
         }
+
+        public string IdTaiKhoan { get => idTaiKhoan; set => idTaiKhoan = value; }
+        public string IdChucVu { get => idChucVu; set => idChucVu = value; }
+
         private void DepartmentForm_Load(object sender, EventArgs e)
         {
             loadDataDepartment();
@@ -54,8 +64,16 @@ namespace Fastie
 
         private void btnAddDepartment_Click(object sender, EventArgs e)
         {
-            CreateDepartmentForm createDepartmentForm = new CreateDepartmentForm(this);
-            createDepartmentForm.Show();
+            bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0007");
+            MessageBox.Show(this.idTaiKhoan + "-" + checkPermission, "Thông báo");
+            if (checkPermission)
+            {
+                CreateDepartmentForm createDepartmentForm = new CreateDepartmentForm(this);
+                createDepartmentForm.Show();
+            } else
+            {
+                MessageBox.Show("Bạn không có quyền thêm bộ phận", "Thông báo");
+            }
         }
     }
 }

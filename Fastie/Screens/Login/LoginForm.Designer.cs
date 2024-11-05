@@ -38,10 +38,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new GUI.TruniControls.CustomTextBox();
             this.lblForgetPassword = new System.Windows.Forms.Label();
+            this.txtEmail = new GUI.TruniControls.CustomTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEmail = new GUI.TruniControls.CustomTextBox();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -198,6 +198,27 @@
             this.lblForgetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblForgetPassword.Click += new System.EventHandler(this.lblForgetPassword_Click);
             // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtEmail.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtEmail.BorderRadius = 15;
+            this.txtEmail.BorderSize = 1;
+            this.txtEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.Location = new System.Drawing.Point(59, 129);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.PlaceholderColor = System.Drawing.Color.White;
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.Size = new System.Drawing.Size(286, 36);
+            this.txtEmail.TabIndex = 1;
+            this.txtEmail.UnderlinedStyle = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -219,9 +240,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(128, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 32);
+            this.label1.Size = new System.Drawing.Size(20, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Đăng nhập";
+            this.label1.Text = ".";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -236,27 +257,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Email";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.txtEmail.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtEmail.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtEmail.BorderRadius = 15;
-            this.txtEmail.BorderSize = 1;
-            this.txtEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.Color.White;
-            this.txtEmail.Location = new System.Drawing.Point(59, 129);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEmail.Multiline = false;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(40, 7, 25, 7);
-            this.txtEmail.PasswordChar = false;
-            this.txtEmail.PlaceholderColor = System.Drawing.Color.White;
-            this.txtEmail.PlaceholderText = "";
-            this.txtEmail.Size = new System.Drawing.Size(286, 36);
-            this.txtEmail.TabIndex = 1;
-            this.txtEmail.UnderlinedStyle = false;
             // 
             // LoginForm
             // 

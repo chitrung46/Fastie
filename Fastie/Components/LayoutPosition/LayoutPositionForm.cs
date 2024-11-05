@@ -1,4 +1,5 @@
 ﻿using BLL;
+using BLL.PermissionBLL;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Fastie.Components.LayoutDepartment
         private string decriptionPosition;
         private string idPosition;
         private PositionForm positionForm;
+        PermissionBLL permissionBLL = new PermissionBLL();  
         public LayoutPositionForm()
         {
             InitializeComponent();
@@ -59,25 +61,39 @@ namespace Fastie.Components.LayoutDepartment
 
         private void btnEditPosition_Click(object sender, EventArgs e)
         {
-            var updatePosition = new Position
+            bool checkPermission = permissionBLL.checkPermission(positionForm.IdTaiKhoan, "Q0012");
+            if(checkPermission)
             {
-                Id = this.idPosition,
-                Ten = this.namePosition,
-                MoTa = this.decriptionPosition
+                var updatePosition = new Position
+                {
+                    Id = this.idPosition,
+                    Ten = this.namePosition,
+                    MoTa = this.decriptionPosition
 
-            };
-            UpdatePositionForm updatePositionForm = new UpdatePositionForm(this, updatePosition);
-            updatePositionForm.Show();
+                };
+                UpdatePositionForm updatePositionForm = new UpdatePositionForm(this, updatePosition);
+                updatePositionForm.Show();
+            } else
+            {
+                MessageBox.Show("Bạn không có quyền sửa chức vụ", "Thông báo"); 
+            }
         }
 
         private void btnDeletePosition_Click(object sender, EventArgs e)
         {
-            string[] information = { "Bạn có chắc chắn xóa chức vụ này?", $"{this.namePosition} sẽ mất toàn bộ quyền trong hệ thống", "Xóa chức vụ" };
-            LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.idPosition);
-            deleteLayoutConfirm.Title = information[0];
-            deleteLayoutConfirm.Content = information[1];
-            deleteLayoutConfirm.btnConfirmText = information[2];
-            deleteLayoutConfirm.Show();
+            bool checkPermission = permissionBLL.checkPermission(positionForm.IdTaiKhoan, "Q0013");
+            if(checkPermission)
+            {
+                string[] information = { "Bạn có chắc chắn xóa chức vụ này?", $"{this.namePosition} sẽ mất toàn bộ quyền trong hệ thống", "Xóa chức vụ" };
+                LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.idPosition);
+                deleteLayoutConfirm.Title = information[0];
+                deleteLayoutConfirm.Content = information[1];
+                deleteLayoutConfirm.btnConfirmText = information[2];
+                deleteLayoutConfirm.Show();
+            } else
+            {
+                MessageBox.Show("Bạn không có quyền xóa chức vụ", "Thông báo");
+            }
         }
     }
 }

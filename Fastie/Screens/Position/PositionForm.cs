@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.PermissionBLL;
 using DTO;
 using Fastie.Components.LayoutDecentralization;
 using Fastie.Components.LayoutDepartment;
@@ -17,11 +18,18 @@ namespace Fastie
     public partial class PositionForm : Form
     {
         PositionBLL positionBLL = new PositionBLL();
-        public PositionForm()
+        PermissionBLL permissionBLL = new PermissionBLL();
+        private string idTaiKhoan;
+        private string idChucVu;
+        public PositionForm(string idTaiKhoan, string idChucVu)
         {
             InitializeComponent();
+            this.idTaiKhoan = idTaiKhoan;
+            this.idChucVu = idChucVu;
         }
 
+        public string IdTaiKhoan { get => idTaiKhoan; set => idTaiKhoan = value; }
+        public string IdChucVu { get => idChucVu; set => idChucVu = value; }
 
         private void customButton3_Click(object sender, EventArgs e)
         {
@@ -71,9 +79,15 @@ namespace Fastie
 
         private void btnAddPosition_Click(object sender, EventArgs e)
         {
+            bool checckPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0011"); 
+            if(checckPermission)
             {
                 CreatePositionForm createPositionForm = new CreatePositionForm(this);
                 createPositionForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền thêm chức vụ", "Thông báo");
             }
         }
     }

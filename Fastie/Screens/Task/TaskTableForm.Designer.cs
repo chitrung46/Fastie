@@ -61,7 +61,7 @@
             this.flowLayoutPanelNotification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.flowLayoutPanelNotification.Location = new System.Drawing.Point(25, 83);
             this.flowLayoutPanelNotification.Name = "flowLayoutPanelNotification";
-            this.flowLayoutPanelNotification.Size = new System.Drawing.Size(482, 477);
+            this.flowLayoutPanelNotification.Size = new System.Drawing.Size(482, 476);
             this.flowLayoutPanelNotification.TabIndex = 1;
             this.flowLayoutPanelNotification.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelNotification_Paint);
             // 
@@ -100,7 +100,7 @@
             this.flowLayoutPanelTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.flowLayoutPanelTask.Location = new System.Drawing.Point(26, 83);
             this.flowLayoutPanelTask.Name = "flowLayoutPanelTask";
-            this.flowLayoutPanelTask.Size = new System.Drawing.Size(627, 477);
+            this.flowLayoutPanelTask.Size = new System.Drawing.Size(627, 476);
             this.flowLayoutPanelTask.TabIndex = 1;
             this.flowLayoutPanelTask.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelNotification_Paint);
             // 
@@ -121,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1120, 587);
+            this.ClientSize = new System.Drawing.Size(1120, 573);
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

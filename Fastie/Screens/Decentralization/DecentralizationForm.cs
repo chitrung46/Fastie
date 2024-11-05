@@ -143,12 +143,14 @@ namespace Fastie.Screens.Decentralization
         {
             setStateButton(btnHaveRole);
             loadDataForRole();
+            showByPositionIdAndDepartmentId();
         }
 
         private void btnRoleless_Click(object sender, EventArgs e)
         {
             setStateButton(btnRoleless);
             loadDataForRoleLess();
+            showByPositionIdAndDepartmentId();
         }
 
         private void cbDepartment_OnSelectedIndexChanged(object sender, EventArgs e)

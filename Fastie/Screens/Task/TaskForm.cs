@@ -1,5 +1,8 @@
-﻿using Fastie.Components.LayoutRole;
+﻿using BLL.PermissionBLL;
+using Fastie.Components.LayoutRole;
+using Fastie.Components.NoPermissionAccessForm;
 using Fastie.Screens.Task;
+using Fastie.Screens.Task.AssignmentAdjustmentTask;
 using Fastie.Screens.Task.ReportTask;
 using System;
 using System.Collections.Generic;
@@ -15,13 +18,32 @@ namespace Fastie
 {
     public partial class TaskForm: Form
     {
-        public TaskForm()
+        PermissionBLL permissionBLL = new PermissionBLL();
+
+        private string idTaiKhoan;
+        private string idChucVu;    
+        public TaskForm(string idTaiKhoan, string idChucVu)
         {
             InitializeComponent();
+            this.idTaiKhoan = idTaiKhoan;
+            this.idChucVu = idChucVu;
+
+            bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0019");
             setStateButton(btnTaskTable);
-            TaskTableForm taskTableForm = new TaskTableForm();
-            addFormInMainLayout(taskTableForm);
+            if (checkPermission) {
+
+                TaskTableForm taskTableForm = new TaskTableForm(mainLayout);
+                addFormInMainLayout(taskTableForm);
+
+            } else {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
         }
+ 
+        public string IdTaiKhoan { get => idTaiKhoan; set => idTaiKhoan = value; }
+        public string IdChucVu { get => idChucVu; set => idChucVu = value; }
+
 
         //Check other panel is not click
         private void setStateButton(Button stateButton)
@@ -46,37 +68,77 @@ namespace Fastie
             userControl.Dock = DockStyle.Fill;
             userControl.Show();
         }
-        private void btnTaskTable_Click(object sender, EventArgs e)
+        private void btnTaskTable_Click(object sender, EventArgs e) 
         {
-            TaskTableForm taskTableForm = new TaskTableForm();
+            bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0019");
             setStateButton(btnTaskTable);
-            addFormInMainLayout(taskTableForm);
+            if (checkPermission)
+            {
+                TaskTableForm taskTableForm = new TaskTableForm(mainLayout);
+                addFormInMainLayout(taskTableForm);
+            } else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
         }
 
         private void btnAssignTask_Click(object sender, EventArgs e)
         {
-            AssignTaskForm assignTaskForm = new AssignTaskForm();
-            addFormInMainLayout(assignTaskForm);
+            bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0020");
             setStateButton(btnAssignTask);
+            if (checkPermission)
+            {
+                AssignTaskForm assignTaskForm = new AssignTaskForm();
+                addFormInMainLayout(assignTaskForm);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
+
         }
 
         private void btnAcceptTask_Click(object sender, EventArgs e)
         {
-            AcceptTaskForm acceptTaskForm = new AcceptTaskForm();
+            bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0021");
             setStateButton(btnAcceptTask);
-            addFormInMainLayout(acceptTaskForm);
+            if (checkPermission)
+            {
+                AcceptTaskForm acceptTaskForm = new AcceptTaskForm();
+                addFormInMainLayout(acceptTaskForm);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
+;
             
         }
 
         private void btnReportTask_Click(object sender, EventArgs e)
         {
-            ReportTaskForm reportTaskForm = new ReportTaskForm();
-            addFormInMainLayout(reportTaskForm);
+            bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0022");
             setStateButton(btnReportTask);
+            if (checkPermission)
+            {
+                ReportTaskForm reportTaskForm = new ReportTaskForm();
+                addFormInMainLayout(reportTaskForm);
+            }
+            else
+            {
+                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
+                addFormInMainLayout(noPermissionAccessForm);
+            }
+            
         }
 
         private void btnAdjustTask_Click(object sender, EventArgs e)
         {
+            AssignmentAdjustmentTaskForm assignmentAdjustmentTaskForm = new AssignmentAdjustmentTaskForm();
+            addFormInMainLayout(assignmentAdjustmentTaskForm);
             setStateButton(btnAdjustTask);
         }
 

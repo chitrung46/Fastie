@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ListRoleBLL\ListRoleBLL.cs" />
     <Compile Include="ResetPasswordBLL\ResetPasswordBLL.cs" />
     <Compile Include="DecentralizationBLL\DecentralizationBLL.cs" />
     <Compile Include="DepartmentBLL\DepartmentBLL.cs" />

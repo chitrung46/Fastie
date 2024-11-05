@@ -33,12 +33,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnDetailsPosition = new GUI.CustomButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblNumber = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnDeletePosition = new GUI.CustomButton();
             this.btnEditPosition = new GUI.CustomButton();
-            this.btnDetailsPosition = new GUI.CustomButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -87,8 +87,26 @@
             this.panel4.Controls.Add(this.btnDetailsPosition);
             this.panel4.Location = new System.Drawing.Point(1027, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(91, 54);
+            this.panel4.Size = new System.Drawing.Size(87, 54);
             this.panel4.TabIndex = 14;
+            // 
+            // btnDetailsPosition
+            // 
+            this.btnDetailsPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.btnDetailsPosition.BorderColor = System.Drawing.Color.White;
+            this.btnDetailsPosition.BorderRadius = 15;
+            this.btnDetailsPosition.BorderSize = 0;
+            this.btnDetailsPosition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDetailsPosition.FlatAppearance.BorderSize = 0;
+            this.btnDetailsPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetailsPosition.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetailsPosition.ForeColor = System.Drawing.Color.White;
+            this.btnDetailsPosition.Image = global::Fastie.Properties.Resources.icons8_document_24;
+            this.btnDetailsPosition.Location = new System.Drawing.Point(11, 6);
+            this.btnDetailsPosition.Name = "btnDetailsPosition";
+            this.btnDetailsPosition.Size = new System.Drawing.Size(40, 40);
+            this.btnDetailsPosition.TabIndex = 1;
+            this.btnDetailsPosition.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -155,24 +173,6 @@
             this.btnEditPosition.UseVisualStyleBackColor = false;
             this.btnEditPosition.Click += new System.EventHandler(this.btnEditPosition_Click);
             // 
-            // btnDetailsPosition
-            // 
-            this.btnDetailsPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.btnDetailsPosition.BorderColor = System.Drawing.Color.White;
-            this.btnDetailsPosition.BorderRadius = 15;
-            this.btnDetailsPosition.BorderSize = 0;
-            this.btnDetailsPosition.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDetailsPosition.FlatAppearance.BorderSize = 0;
-            this.btnDetailsPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetailsPosition.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetailsPosition.ForeColor = System.Drawing.Color.White;
-            this.btnDetailsPosition.Image = global::Fastie.Properties.Resources.icons8_document_24;
-            this.btnDetailsPosition.Location = new System.Drawing.Point(11, 6);
-            this.btnDetailsPosition.Name = "btnDetailsPosition";
-            this.btnDetailsPosition.Size = new System.Drawing.Size(40, 40);
-            this.btnDetailsPosition.TabIndex = 1;
-            this.btnDetailsPosition.UseVisualStyleBackColor = false;
-            // 
             // LayoutPositionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -184,7 +184,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "LayoutPositionForm";
-            this.Size = new System.Drawing.Size(1121, 59);
+            this.Size = new System.Drawing.Size(1117, 59);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

@@ -15,9 +15,11 @@ namespace Fastie.Screens.Task
 {
     public partial class TaskTableForm : Form
     {
-        public TaskTableForm()
+       private Panel mainLayout;
+        public TaskTableForm(Panel mainLayout)
         {
             InitializeComponent();
+            this.mainLayout = mainLayout;
         }
         private void TaskTableForm_Load_1(object sender, EventArgs e)
         {
@@ -44,7 +46,7 @@ namespace Fastie.Screens.Task
             flowLayoutPanelTask.Controls.Clear();
             for(int i = 0 ; i < 20 ; i++)
             {
-                var taskForm = new LayoutTaskForm
+                var taskForm = new LayoutTaskForm(mainLayout)
                 {
                     TitleTask = "Title" + i,
                     Status = "Status" + i

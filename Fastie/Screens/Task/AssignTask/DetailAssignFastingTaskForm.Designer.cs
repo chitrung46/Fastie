@@ -154,7 +154,7 @@
             // 
             // customButton4
             // 
-            this.customButton4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.customButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.customButton4.BorderColor = System.Drawing.Color.White;
             this.customButton4.BorderRadius = 15;
             this.customButton4.BorderSize = 0;
@@ -181,7 +181,7 @@
             // 
             // customButton2
             // 
-            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.customButton2.BorderColor = System.Drawing.Color.White;
             this.customButton2.BorderRadius = 15;
             this.customButton2.BorderSize = 0;

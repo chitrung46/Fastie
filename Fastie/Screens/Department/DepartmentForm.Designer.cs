@@ -64,7 +64,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(31, 148);
+            this.panel1.Location = new System.Drawing.Point(28, 148);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1117, 29);
             this.panel1.TabIndex = 18;
@@ -127,9 +127,9 @@
             // flowLayoutPanelDepartment
             // 
             this.flowLayoutPanelDepartment.AutoScroll = true;
-            this.flowLayoutPanelDepartment.Location = new System.Drawing.Point(31, 183);
+            this.flowLayoutPanelDepartment.Location = new System.Drawing.Point(28, 183);
             this.flowLayoutPanelDepartment.Name = "flowLayoutPanelDepartment";
-            this.flowLayoutPanelDepartment.Size = new System.Drawing.Size(1213, 500);
+            this.flowLayoutPanelDepartment.Size = new System.Drawing.Size(1213, 491);
             this.flowLayoutPanelDepartment.TabIndex = 17;
             // 
             // btnAddDepartment

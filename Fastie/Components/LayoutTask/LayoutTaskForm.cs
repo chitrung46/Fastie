@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Task;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +15,11 @@ namespace Fastie.Components.LayoutTask
     {
         private string titleTask;
         private string status;
-
-        public LayoutTaskForm()
+        private Panel mainLayout;
+        public LayoutTaskForm(Panel mainLayout)
         {
             InitializeComponent();
+            this.mainLayout = mainLayout;
         }
 
         public string TitleTask
@@ -30,6 +32,23 @@ namespace Fastie.Components.LayoutTask
         {
             get { return status; }
             set { status = value; btnStatus.Text = value; }
+        }
+
+        
+        //Add form in main layout
+        private void addFormInMainLayout(Form userControl)
+        {
+            mainLayout.Controls.Clear();
+            userControl.TopLevel = false;
+            mainLayout.Controls.Add(userControl);
+            userControl.Dock = DockStyle.Fill;
+            userControl.Show();
+        }
+
+        private void btnGetInformation_Click(object sender, EventArgs e)
+        {
+            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(mainLayout);
+            addFormInMainLayout(detailsTaskForm);
         }
     }
 }

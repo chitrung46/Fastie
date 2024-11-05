@@ -191,7 +191,7 @@
             this.cTBNumberPhone.BorderRadius = 8;
             this.cTBNumberPhone.BorderSize = 2;
             this.cTBNumberPhone.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.cTBNumberPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.cTBNumberPhone.ForeColor = System.Drawing.Color.Black;
             this.cTBNumberPhone.Location = new System.Drawing.Point(148, 205);
             this.cTBNumberPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cTBNumberPhone.Multiline = false;

@@ -31,12 +31,12 @@
             this.lblDepartmentName = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnDetailsDepartment = new GUI.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblNumber = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnDetailsDepartment = new GUI.CustomButton();
             this.btnDeleteDepartment = new GUI.CustomButton();
             this.btnEditDepartment = new GUI.CustomButton();
             this.panel4.SuspendLayout();
@@ -73,6 +73,24 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(91, 54);
             this.panel4.TabIndex = 19;
+            // 
+            // btnDetailsDepartment
+            // 
+            this.btnDetailsDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.btnDetailsDepartment.BorderColor = System.Drawing.Color.White;
+            this.btnDetailsDepartment.BorderRadius = 15;
+            this.btnDetailsDepartment.BorderSize = 0;
+            this.btnDetailsDepartment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDetailsDepartment.FlatAppearance.BorderSize = 0;
+            this.btnDetailsDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetailsDepartment.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetailsDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnDetailsDepartment.Image = global::Fastie.Properties.Resources.icons8_document_24;
+            this.btnDetailsDepartment.Location = new System.Drawing.Point(11, 6);
+            this.btnDetailsDepartment.Name = "btnDetailsDepartment";
+            this.btnDetailsDepartment.Size = new System.Drawing.Size(40, 40);
+            this.btnDetailsDepartment.TabIndex = 1;
+            this.btnDetailsDepartment.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -116,24 +134,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(126, 54);
             this.panel3.TabIndex = 20;
-            // 
-            // btnDetailsDepartment
-            // 
-            this.btnDetailsDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.btnDetailsDepartment.BorderColor = System.Drawing.Color.White;
-            this.btnDetailsDepartment.BorderRadius = 15;
-            this.btnDetailsDepartment.BorderSize = 0;
-            this.btnDetailsDepartment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDetailsDepartment.FlatAppearance.BorderSize = 0;
-            this.btnDetailsDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetailsDepartment.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetailsDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnDetailsDepartment.Image = global::Fastie.Properties.Resources.icons8_document_24;
-            this.btnDetailsDepartment.Location = new System.Drawing.Point(11, 6);
-            this.btnDetailsDepartment.Name = "btnDetailsDepartment";
-            this.btnDetailsDepartment.Size = new System.Drawing.Size(40, 40);
-            this.btnDetailsDepartment.TabIndex = 1;
-            this.btnDetailsDepartment.UseVisualStyleBackColor = false;
             // 
             // btnDeleteDepartment
             // 
@@ -184,7 +184,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Name = "LayoutDepartmentForm";
-            this.Size = new System.Drawing.Size(1121, 59);
+            this.Size = new System.Drawing.Size(1117, 59);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

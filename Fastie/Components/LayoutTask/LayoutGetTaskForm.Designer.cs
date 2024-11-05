@@ -191,7 +191,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Name = "LayoutGetTaskForm";
-            this.Size = new System.Drawing.Size(1108, 60);
+            this.Size = new System.Drawing.Size(1117, 60);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);

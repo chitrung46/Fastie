@@ -52,7 +52,7 @@
             this.btnDetailAssignTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetailAssignTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetailAssignTask.ForeColor = System.Drawing.Color.White;
-            this.btnDetailAssignTask.Location = new System.Drawing.Point(780, 15);
+            this.btnDetailAssignTask.Location = new System.Drawing.Point(798, 15);
             this.btnDetailAssignTask.Name = "btnDetailAssignTask";
             this.btnDetailAssignTask.Size = new System.Drawing.Size(104, 47);
             this.btnDetailAssignTask.TabIndex = 1;
@@ -71,7 +71,7 @@
             this.btnDetailAssignPositiveTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetailAssignPositiveTask.ForeColor = System.Drawing.Color.White;
             this.btnDetailAssignPositiveTask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetailAssignPositiveTask.Location = new System.Drawing.Point(1000, 15);
+            this.btnDetailAssignPositiveTask.Location = new System.Drawing.Point(1016, 15);
             this.btnDetailAssignPositiveTask.Name = "btnDetailAssignPositiveTask";
             this.btnDetailAssignPositiveTask.Size = new System.Drawing.Size(104, 47);
             this.btnDetailAssignPositiveTask.TabIndex = 3;
@@ -90,7 +90,7 @@
             this.btnDetailAssignFastingTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetailAssignFastingTask.ForeColor = System.Drawing.Color.White;
             this.btnDetailAssignFastingTask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetailAssignFastingTask.Location = new System.Drawing.Point(890, 15);
+            this.btnDetailAssignFastingTask.Location = new System.Drawing.Point(907, 15);
             this.btnDetailAssignFastingTask.Name = "btnDetailAssignFastingTask";
             this.btnDetailAssignFastingTask.Size = new System.Drawing.Size(104, 47);
             this.btnDetailAssignFastingTask.TabIndex = 2;
@@ -103,7 +103,7 @@
             this.flowLayoutPanelTasks.AutoScroll = true;
             this.flowLayoutPanelTasks.Location = new System.Drawing.Point(12, 115);
             this.flowLayoutPanelTasks.Name = "flowLayoutPanelTasks";
-            this.flowLayoutPanelTasks.Size = new System.Drawing.Size(1168, 460);
+            this.flowLayoutPanelTasks.Size = new System.Drawing.Size(1168, 457);
             this.flowLayoutPanelTasks.TabIndex = 5;
             // 
             // panel1
@@ -190,7 +190,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1120, 587);
+            this.ClientSize = new System.Drawing.Size(1120, 573);
             this.Controls.Add(this.flowLayoutPanelTasks);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDetailAssignPositiveTask);

@@ -80,7 +80,7 @@
             this.panel2.Controls.Add(this.lblNumberPhone);
             this.panel2.Location = new System.Drawing.Point(882, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(139, 54);
+            this.panel2.Size = new System.Drawing.Size(126, 54);
             this.panel2.TabIndex = 21;
             // 
             // panel1
@@ -113,9 +113,9 @@
             // 
             this.panel3.Controls.Add(this.btnDeletePersonnel);
             this.panel3.Controls.Add(this.btnEditPersonnel);
-            this.panel3.Location = new System.Drawing.Point(1027, 2);
+            this.panel3.Location = new System.Drawing.Point(1012, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(91, 54);
+            this.panel3.Size = new System.Drawing.Size(106, 54);
             this.panel3.TabIndex = 25;
             // 
             // btnDeletePersonnel
@@ -130,7 +130,7 @@
             this.btnDeletePersonnel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletePersonnel.ForeColor = System.Drawing.Color.White;
             this.btnDeletePersonnel.Image = global::Fastie.Properties.Resources.icons8_delete_23;
-            this.btnDeletePersonnel.Location = new System.Drawing.Point(48, 7);
+            this.btnDeletePersonnel.Location = new System.Drawing.Point(53, 7);
             this.btnDeletePersonnel.Name = "btnDeletePersonnel";
             this.btnDeletePersonnel.Size = new System.Drawing.Size(40, 40);
             this.btnDeletePersonnel.TabIndex = 19;
@@ -149,7 +149,7 @@
             this.btnEditPersonnel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditPersonnel.ForeColor = System.Drawing.Color.White;
             this.btnEditPersonnel.Image = global::Fastie.Properties.Resources.icons8_pencil_23;
-            this.btnEditPersonnel.Location = new System.Drawing.Point(3, 7);
+            this.btnEditPersonnel.Location = new System.Drawing.Point(8, 7);
             this.btnEditPersonnel.Name = "btnEditPersonnel";
             this.btnEditPersonnel.Size = new System.Drawing.Size(40, 40);
             this.btnEditPersonnel.TabIndex = 20;
@@ -242,7 +242,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Name = "LayoutPersonnelForm";
-            this.Size = new System.Drawing.Size(1121, 59);
+            this.Size = new System.Drawing.Size(1117, 59);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

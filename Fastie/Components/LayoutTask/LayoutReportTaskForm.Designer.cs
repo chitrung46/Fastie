@@ -73,7 +73,7 @@
             this.panel4.Controls.Add(this.lblJobAssigner);
             this.panel4.Location = new System.Drawing.Point(654, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(259, 54);
+            this.panel4.Size = new System.Drawing.Size(244, 54);
             this.panel4.TabIndex = 2;
             // 
             // lblJobAssigner
@@ -130,7 +130,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnTaskDetail);
-            this.panel1.Location = new System.Drawing.Point(1065, 3);
+            this.panel1.Location = new System.Drawing.Point(1050, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(62, 54);
             this.panel1.TabIndex = 7;
@@ -156,7 +156,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.btnReport);
-            this.panel6.Location = new System.Drawing.Point(919, 3);
+            this.panel6.Location = new System.Drawing.Point(904, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(143, 54);
             this.panel6.TabIndex = 6;
@@ -191,7 +191,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
             this.Name = "LayoutReportTaskForm";
-            this.Size = new System.Drawing.Size(1130, 60);
+            this.Size = new System.Drawing.Size(1117, 60);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
