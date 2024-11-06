@@ -15,7 +15,7 @@ using Fastie.Components.LayoutDepartment;
 using Fastie.Components.LayoutDepartmen;
 using Fastie.Components.LayoutPersonnel;
 using BLL.DepartmentBLL;
-using Fastie.Components.LayoutPersonnel;
+//using Fastie.Components.LayoutPersonnel;
 namespace Fastie
 {
     public partial class LayoutConfirmForm : Form

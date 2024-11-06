@@ -42,17 +42,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDTO\Account.cs" />
+    <Compile Include="AccountDTO\AccountId.cs" />
     <Compile Include="AccountDTO\AccountInfo.cs" />
     <Compile Include="CheckRoleDTO\Permission.cs" />
     <Compile Include="CheckRoleDTO\UserAccountSession.cs" />
     <Compile Include="DepartmentDTO\Department.cs" />
     <Compile Include="DepartmentDTO\DepartmentInfo.cs" />
     <Compile Include="ListRoleDTO\ListRole.cs" />
+    <Compile Include="PersonnelDTO\AcceptTaskPersonnel.cs" />
     <Compile Include="PersonnelDTO\Personnel.cs" />
     <Compile Include="PositionDTO\Position.cs" />
     <Compile Include="PositionDTO\PositionInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task\TaskInfo.cs" />
+    <Compile Include="TaskDTO\AssignTask.cs" />
+    <Compile Include="TaskDTO\TaskInfo.cs" />
+    <Compile Include="TaskDTO\TaskType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

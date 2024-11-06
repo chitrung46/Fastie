@@ -6,11 +6,11 @@ namespace DTO
     {
         private static UserAccountSession instance;
 
-        public List<(string Id, string IdNhanSu, string IdBoPhan, string IdChucVu)> UserInfo { get; private set; }
+        public List<AccountId> UserInfo { get; private set; }
 
         private UserAccountSession()
         {
-            UserInfo = new List<(string Id, string IdNhanSu, string IdBoPhan, string IdChucVu)>();
+            UserInfo = new List<AccountId>();
         }
 
         public static UserAccountSession Instance
@@ -25,7 +25,7 @@ namespace DTO
             }
         }
 
-        public void SetUserInfo(List<(string Id, string IdNhanSu, string IdBoPhan, string IdChucVu)> userInfo)
+        public void SetUserInfo(List<AccountId> userInfo)
         {
             UserInfo = userInfo;
         }

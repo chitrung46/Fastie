@@ -26,5 +26,9 @@ namespace BLL.DepartmentBLL
         {
             DepartmentDAL.DeleteDepartment(departmentId);
         } 
+        public List<AcceptTaskPersonnel> LayQuanLiBoPhan(string idBoPhan)
+        {
+            return DepartmentDAL.LayQuanLiBoPhan(idBoPhan);
+        }
     }
 }

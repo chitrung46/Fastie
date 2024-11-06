@@ -17,7 +17,10 @@ namespace Fastie
     public partial class HomeForm : Form
     {
         private string idTaiKhoan;
+        private string idNhanSu;
         private string idChucVu;
+        private string idBoPhan;
+        AccountId accountId  = new AccountId();
         PermissionBLL permissionBLL = new PermissionBLL();
         public HomeForm()
         {
@@ -25,19 +28,24 @@ namespace Fastie
             if(UserAccountSession.Instance.UserInfo.Count == 0)
             {
                 MessageBox.Show("Bạn chưa đăng nhập! bạn đang trong chế độ phát triển phần mềm. Tài khoản mặc định là TK0000000001. Nhấn OK để tiếp tục");
-                //Create temporary account
+                //Create temporary account TK0000000001 - CV001 - NS0000000001 - BP011
                 this.idTaiKhoan = "TK0000000001";
                 this.idChucVu = "CV001";
+                this.idBoPhan = "BP011";
+                this.idNhanSu = "NS0000000001";
             } else
             {
                 var user = UserAccountSession.Instance.UserInfo[0];
-                if (user.Id != null && user.Id != null)
+                if (user.IdTaiKhoan != null && user.IdChucVu != null && user.IdNhanSu != null && user.IdBoPhan != null)
                 {
-                    this.idTaiKhoan = user.Id;
+                    this.idTaiKhoan = user.IdTaiKhoan;
                     this.idChucVu = user.IdChucVu;
+                    this.idNhanSu = user.IdNhanSu;
+                    this.idBoPhan = user.IdBoPhan;
                 }
             }
-            Console.WriteLine(this.idTaiKhoan + " - " + this.idChucVu);
+            Console.WriteLine(this.IdTaiKhoan + " - " + this.idChucVu + " - " + this.idNhanSu + " - " + this.idBoPhan);
+
         }
 
         public string IdTaiKhoan
@@ -51,7 +59,6 @@ namespace Fastie
             get { return idChucVu; }
             set { idChucVu = value; }
         }
-
         private void FormLayout_Load(object sender, EventArgs e)
         {
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0001"); //Q0001 is permission to access DecentralizationForm
@@ -166,7 +173,7 @@ namespace Fastie
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, permissionId);
             if (checkPermission)
             {
-                TaskForm work = new TaskForm(this.idTaiKhoan, this.idChucVu);
+                TaskForm work = new TaskForm(this.idTaiKhoan, this.idBoPhan, this.idChucVu);
                 addFormInMainLayout(work);
             }
             else

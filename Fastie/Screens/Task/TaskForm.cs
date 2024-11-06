@@ -13,7 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Fastie
 {
     public partial class TaskForm: Form
@@ -21,12 +20,14 @@ namespace Fastie
         PermissionBLL permissionBLL = new PermissionBLL();
 
         private string idTaiKhoan;
-        private string idChucVu;    
-        public TaskForm(string idTaiKhoan, string idChucVu)
+        private string idChucVu;
+        private string idBoPhan;
+        public TaskForm(string idTaiKhoan, string idBoPhan, string idChucVu)
         {
             InitializeComponent();
             this.idTaiKhoan = idTaiKhoan;
             this.idChucVu = idChucVu;
+            this.idBoPhan = idBoPhan;
 
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0019");
             setStateButton(btnTaskTable);
@@ -89,7 +90,7 @@ namespace Fastie
             setStateButton(btnAssignTask);
             if (checkPermission)
             {
-                AssignTaskForm assignTaskForm = new AssignTaskForm();
+                AssignTaskForm assignTaskForm = new AssignTaskForm(this.IdTaiKhoan, this.idBoPhan, this.mainLayout);
                 addFormInMainLayout(assignTaskForm);
             }
             else

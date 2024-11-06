@@ -12,8 +12,6 @@ namespace DAL
     
     public class SqlConnectionData
     {
-        private static readonly string connectionString = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-
         public static SqlConnection Connect()
         {
             string connectionString = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True";

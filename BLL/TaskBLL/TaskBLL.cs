@@ -1,5 +1,7 @@
 ﻿using DAL;
+using DAL.TaskDAL;
 using DTO;
+using DTO.TaskDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +11,14 @@ namespace BLL
 {
     public class TaskBLL
     {
-        TaskAccess taskAccess = new TaskAccess();
+        
+        TaskDAL taskDAL = new TaskDAL();
 
         public void capNhatTrangThaiCongViec(string CongviecID, string newStatus)
         {
             try
             {
-                taskAccess.capNhatTrangThaiCongViec(CongviecID, newStatus);
+                taskDAL.capNhatTrangThaiCongViec(CongviecID, newStatus);
             }
             catch (Exception ex)
             {
@@ -23,15 +26,15 @@ namespace BLL
             }
         }
 
-        public List<TaskInfo> layCongViecTheoID(string idTaiKhoan)
+        public List<TaskInfo> layCongViecTheoID(string accountId)
         {
             try
             {
-                return taskAccess.layCongViecTheoID(idTaiKhoan);
+                return taskDAL.layCongViecTheoID(accountId);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Lỗi khi lấy danh sách công việc cho tài khoản ID: {idTaiKhoan}.", ex);
+                throw new Exception($"Lỗi khi lấy danh sách công việc cho tài khoản ID: {accountId}.", ex);
             }
         }
 
@@ -39,7 +42,7 @@ namespace BLL
         {
             try
             {
-                taskAccess.giaoViecChoTaiKhoan(accountId, taskId);
+                taskDAL.giaoViecChoTaiKhoan(accountId, taskId);
             }
             catch (Exception ex)
             {
@@ -51,7 +54,7 @@ namespace BLL
         {
             try
             {
-                return taskAccess.nhanCongViecChuaDuocGiaoTuTaiKhoan(accountId);
+                return taskDAL.nhanCongViecChuaDuocGiaoTuTaiKhoan(accountId);
             }
             catch (Exception ex)
             {
@@ -63,12 +66,46 @@ namespace BLL
         {
             try
             {
-                return taskAccess.nhanNhiemVuDuocGiaoTuTaiKhoan(accountId);
+                return taskDAL.nhanNhiemVuDuocGiaoTuTaiKhoan(accountId);
             }
             catch (Exception ex)
             {
                 throw new Exception($"Lỗi khi lấy danh sách công việc đã gán cho tài khoản ID: {accountId}.", ex);
             }
+        }
+
+        public List<TaskType> LayDanhSachLoaiCongViec()
+        {
+            return taskDAL.LayDanhSachLoaiCongViec();
+        }
+
+        public bool ThemCongViecGiaoViec(TaskInfo task)
+        {
+            return taskDAL.ThemCongViecGiaoViec(task);
+        }
+
+        public string TaoCongViecId(string idLoaiCongViec, string idBoPhan)
+        {
+            return taskDAL.TaoCongViecId(idLoaiCongViec, idBoPhan);
+        }
+        public string TaoLichSuId()
+        {
+            return taskDAL.TaoLichSuId();
+        }
+
+        public string LayIdLoaiCongViecTuTen(string tenLoaiCongViec)
+        {
+            return taskDAL.LayIdLoaiCongViecTuTen(tenLoaiCongViec);
+        }
+
+        public bool LuuBoPhanNhanViec(string idBoPhanNhanViec, string idCongViec)
+        {
+            return taskDAL.LuuBoPhanNhanViec(idBoPhanNhanViec, idCongViec);
+        }
+
+        public bool LuuTaiKhoanNhanViec(string idTaiKhoanNhanViec, string idCongViec)
+        {
+            return taskDAL.LuuTaiKhoanNhanViec(idTaiKhoanNhanViec, idCongViec);
         }
     }
 

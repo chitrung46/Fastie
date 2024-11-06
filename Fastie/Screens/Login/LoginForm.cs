@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using System.Web;
 using BLL.LoginBLL;
 using DTO;
-
 namespace Fastie.Screens.Login
 {
     public partial class LoginForm : Form
@@ -73,9 +72,9 @@ namespace Fastie.Screens.Login
                 return;
             }
 
-            List<(string, string, string, string)> userData = new List<(string, string, string, string)>
+            List<AccountId> userData = new List<AccountId>
             {
-                (getUser[0], getUser[1], getUser[2], getUser[3])
+                new AccountId(getUser[0], getUser[1], getUser[2], getUser[3])
             };
             UserAccountSession.Instance.SetUserInfo(userData);
             HomeForm home = new HomeForm();

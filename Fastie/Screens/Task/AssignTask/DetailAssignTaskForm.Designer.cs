@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
+            this.customButton1 = new GUI.CustomButton();
+            this.btnGetInformation = new GUI.CustomButton();
+            this.btnCancel = new GUI.CustomButton();
+            this.btnAdd = new GUI.CustomButton();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -42,6 +46,9 @@
             this.customButton4 = new GUI.CustomButton();
             this.customButton2 = new GUI.CustomButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idBoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenBoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.cbxPersonnel = new GUI.TruniControls.CustomComboBox();
             this.cbxDepartment = new GUI.TruniControls.CustomComboBox();
@@ -56,8 +63,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txbTaskName = new GUI.TruniControls.CustomTextBox();
             this.lblTaskName = new System.Windows.Forms.Label();
-            this.btnCancel = new GUI.CustomButton();
-            this.btnAdd = new GUI.CustomButton();
+            this.idNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customPanel2.SuspendLayout();
             this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -72,9 +79,94 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(22, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 32);
+            this.label3.Size = new System.Drawing.Size(119, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Giao việc";
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customButton1.BorderColor = System.Drawing.Color.White;
+            this.customButton1.BorderRadius = 15;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton1.Location = new System.Drawing.Point(984, 14);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.customButton1.Size = new System.Drawing.Size(133, 40);
+            this.customButton1.TabIndex = 47;
+            this.customButton1.Text = "Xóa";
+            this.customButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // btnGetInformation
+            // 
+            this.btnGetInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnGetInformation.BorderColor = System.Drawing.Color.White;
+            this.btnGetInformation.BorderRadius = 15;
+            this.btnGetInformation.BorderSize = 0;
+            this.btnGetInformation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGetInformation.FlatAppearance.BorderSize = 0;
+            this.btnGetInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGetInformation.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetInformation.ForeColor = System.Drawing.Color.White;
+            this.btnGetInformation.Image = global::Fastie.Properties.Resources.icons8_pencil_23;
+            this.btnGetInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGetInformation.Location = new System.Drawing.Point(845, 14);
+            this.btnGetInformation.Name = "btnGetInformation";
+            this.btnGetInformation.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.btnGetInformation.Size = new System.Drawing.Size(133, 40);
+            this.btnGetInformation.TabIndex = 47;
+            this.btnGetInformation.Text = "Chỉnh sửa";
+            this.btnGetInformation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGetInformation.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnCancel.BorderRadius = 15;
+            this.btnCancel.BorderSize = 1;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(1023, 595);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnCancel.Size = new System.Drawing.Size(94, 40);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnAdd.BorderRadius = 15;
+            this.btnAdd.BorderSize = 0;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(896, 595);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnAdd.Size = new System.Drawing.Size(121, 40);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "Xác nhận";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // customPanel2
             // 
@@ -104,7 +196,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(630, 29);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 21);
+            this.label9.Size = new System.Drawing.Size(154, 21);
             this.label9.TabIndex = 40;
             this.label9.Text = "objectdiagram.png";
             // 
@@ -142,7 +234,7 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(162, 29);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(73, 21);
+            this.lblFileName.Size = new System.Drawing.Size(69, 21);
             this.lblFileName.TabIndex = 2;
             this.lblFileName.Text = "n2.docx";
             // 
@@ -214,6 +306,7 @@
             this.customButton3.Size = new System.Drawing.Size(42, 36);
             this.customButton3.TabIndex = 47;
             this.customButton3.UseVisualStyleBackColor = false;
+            this.customButton3.Click += new System.EventHandler(this.customButton3_Click);
             // 
             // customButton5
             // 
@@ -230,6 +323,7 @@
             this.customButton5.Size = new System.Drawing.Size(42, 36);
             this.customButton5.TabIndex = 46;
             this.customButton5.UseVisualStyleBackColor = false;
+            this.customButton5.Click += new System.EventHandler(this.customButton5_Click);
             // 
             // customButton4
             // 
@@ -246,6 +340,7 @@
             this.customButton4.Size = new System.Drawing.Size(42, 36);
             this.customButton4.TabIndex = 45;
             this.customButton4.UseVisualStyleBackColor = false;
+            this.customButton4.Click += new System.EventHandler(this.customButton4_Click);
             // 
             // customButton2
             // 
@@ -262,11 +357,16 @@
             this.customButton2.Size = new System.Drawing.Size(42, 36);
             this.customButton2.TabIndex = 43;
             this.customButton2.UseVisualStyleBackColor = false;
+            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idBoPhan,
+            this.tenBoPhan,
+            this.moTa});
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(33, 110);
             this.dataGridView1.Name = "dataGridView1";
@@ -275,10 +375,37 @@
             this.dataGridView1.Size = new System.Drawing.Size(409, 96);
             this.dataGridView1.TabIndex = 6;
             // 
+            // idBoPhan
+            // 
+            this.idBoPhan.HeaderText = "Mã Bộ phận";
+            this.idBoPhan.MinimumWidth = 6;
+            this.idBoPhan.Name = "idBoPhan";
+            this.idBoPhan.ReadOnly = true;
+            this.idBoPhan.Width = 125;
+            // 
+            // tenBoPhan
+            // 
+            this.tenBoPhan.HeaderText = "Tên ";
+            this.tenBoPhan.MinimumWidth = 6;
+            this.tenBoPhan.Name = "tenBoPhan";
+            this.tenBoPhan.ReadOnly = true;
+            this.tenBoPhan.Width = 125;
+            // 
+            // moTa
+            // 
+            this.moTa.HeaderText = "Mô tả";
+            this.moTa.MinimumWidth = 6;
+            this.moTa.Name = "moTa";
+            this.moTa.Visible = false;
+            this.moTa.Width = 125;
+            // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idNhanSu,
+            this.ten});
             this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView2.Location = new System.Drawing.Point(32, 316);
             this.dataGridView2.Name = "dataGridView2";
@@ -331,7 +458,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(29, 221);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 21);
+            this.label5.Size = new System.Drawing.Size(136, 21);
             this.label5.TabIndex = 33;
             this.label5.Text = "Người nhận việc:";
             // 
@@ -341,7 +468,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(29, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 21);
+            this.label6.Size = new System.Drawing.Size(154, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bộ phận nhận việc:";
             // 
@@ -428,7 +555,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(28, 349);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(186, 21);
+            this.label7.Size = new System.Drawing.Size(175, 21);
             this.label7.TabIndex = 41;
             this.label7.Text = "Thời hạn hoàn thành: ";
             // 
@@ -438,7 +565,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(29, 185);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 21);
+            this.label2.Size = new System.Drawing.Size(137, 21);
             this.label2.TabIndex = 35;
             this.label2.Text = "Mô tả công việc: ";
             // 
@@ -448,7 +575,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(29, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 21);
+            this.label1.Size = new System.Drawing.Size(126, 21);
             this.label1.TabIndex = 33;
             this.label1.Text = "Loại công việc: ";
             // 
@@ -479,49 +606,25 @@
             this.lblTaskName.ForeColor = System.Drawing.Color.White;
             this.lblTaskName.Location = new System.Drawing.Point(28, 17);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(129, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(121, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Tên công việc: ";
             // 
-            // btnCancel
+            // idNhanSu
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.btnCancel.BorderRadius = 15;
-            this.btnCancel.BorderSize = 1;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(1023, 595);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.btnCancel.Size = new System.Drawing.Size(94, 40);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = false;
+            this.idNhanSu.HeaderText = "Mã Nhân sự";
+            this.idNhanSu.MinimumWidth = 6;
+            this.idNhanSu.Name = "idNhanSu";
+            this.idNhanSu.ReadOnly = true;
+            this.idNhanSu.Width = 125;
             // 
-            // btnAdd
+            // ten
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(896, 595);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.btnAdd.Size = new System.Drawing.Size(121, 40);
-            this.btnAdd.TabIndex = 11;
-            this.btnAdd.Text = "Xác nhận";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.ten.HeaderText = "Tên";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.ReadOnly = true;
+            this.ten.Width = 125;
             // 
             // DetailAssignTaskForm
             // 
@@ -529,6 +632,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1142, 646);
+            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.btnGetInformation);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.customPanel2);
@@ -583,5 +688,12 @@
         private GUI.CustomButton customButton4;
         private GUI.CustomButton btnCancel;
         private GUI.CustomButton btnAdd;
+        private GUI.CustomButton btnGetInformation;
+        private GUI.CustomButton customButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBoPhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenBoPhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNhanSu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
     }
 }

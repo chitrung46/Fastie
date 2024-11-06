@@ -16,13 +16,13 @@ namespace Fastie.Screens.Task
     public partial class AcceptTaskForm : Form
     {
         TaskBLL taskBLL = new TaskBLL();
-        private string currentUserId;
+        private string idTaiKhoan;
         public string CurrentTaskType { get; set; }
 
-        public AcceptTaskForm(string userId)
+        public AcceptTaskForm(string idTaiKhoan)
         {
             InitializeComponent();
-            currentUserId = userId;
+            this.idTaiKhoan = idTaiKhoan;
         }
 
         private void AcceptTaskForm_Load(object sender, EventArgs e)
@@ -51,18 +51,18 @@ namespace Fastie.Screens.Task
 
             if (taskType == "Việc được giao")
             {
-                tasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(currentUserId);
+                tasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(this.idTaiKhoan);
             }
             else
             {
-                tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(currentUserId);
+                tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(this.idTaiKhoan);
             }
 
             if (tasks != null && tasks.Count > 0)
             {
                 foreach (var task in tasks)
                 {
-                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(currentUserId)
+                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(this.idTaiKhoan)
                     {
                         TaskName = task.Ten,
                         TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",

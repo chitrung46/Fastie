@@ -8,11 +8,12 @@ namespace BLL.DecentralizationBLL
 {
     public class DecentralizationBLL
     {
+        DecentralizationDAL decentralizationDAL = new DecentralizationDAL();
         public AccountInfo getAccountInfo(string accountId)
         {
             try
             {
-                return DecentralizationDAL.getAccountInfo(accountId);
+                return decentralizationDAL.getAccountInfo(accountId);
             }
             catch (Exception ex)
             {
@@ -23,7 +24,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getAllAccountInfo();
+                return decentralizationDAL.getAllAccountInfo();
             }
             catch (Exception ex)
             {
@@ -34,7 +35,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getAllPermissionsByAccountId(accountId);
+                return decentralizationDAL.getAllPermissionsByAccountId(accountId);
             }
             catch (Exception ex)
             {
@@ -52,7 +53,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.deleteAllRoles(accountId);
+                return decentralizationDAL.deleteAllRoles(accountId);
             }
             catch (Exception ex)
             {
@@ -64,7 +65,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getAllPersonnelRoleLess();
+                return decentralizationDAL.getAllPersonnelRoleLess();
             }
             catch (Exception ex)
             {
@@ -76,7 +77,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.updateRoles(accountId, listNameRoles);
+                return decentralizationDAL.updateRoles(accountId, listNameRoles);
             }
             catch (Exception ex)
             {
@@ -88,7 +89,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getPositionList();
+                return decentralizationDAL.getPositionList();
             }
             catch (Exception ex)
             {
@@ -100,7 +101,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getDepartmentList();
+                return decentralizationDAL.getDepartmentList();
             }
             catch (Exception ex)
             {
@@ -113,7 +114,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getListByDepartmentIdAndPositionId(idDepartment, idPosition);
+                return decentralizationDAL.getListByDepartmentIdAndPositionId(idDepartment, idPosition);
             }
             catch (Exception ex)
             {
@@ -124,7 +125,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getDepartmentListwithAllPosition(idDepartment);
+                return decentralizationDAL.getDepartmentListwithAllPosition(idDepartment);
             }
             catch (Exception ex)
             {
@@ -135,7 +136,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getPositionListwithAllDepartment(idPosition);
+                return decentralizationDAL.getPositionListwithAllDepartment(idPosition);
             }
             catch (Exception ex)
             {
@@ -147,7 +148,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getListByDepartmentIdAndPositionIdRoleLess(idDepartment, idPosition);
+                return decentralizationDAL.getListByDepartmentIdAndPositionIdRoleLess(idDepartment, idPosition);
             }
             catch (Exception ex)
             {
@@ -158,7 +159,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getDepartmentListwithAllPositionRoleLess(idDepartment);
+                return decentralizationDAL.getDepartmentListwithAllPositionRoleLess(idDepartment);
             }
             catch (Exception ex)
             {
@@ -169,7 +170,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.getPositionListwithAllDepartmentRoleLess(idPosition);
+                return decentralizationDAL.getPositionListwithAllDepartmentRoleLess(idPosition);
             }
             catch (Exception ex)
             {
@@ -182,7 +183,7 @@ namespace BLL.DecentralizationBLL
         {
             try
             {
-                return DecentralizationDAL.checkPermission(accountId, permissionId);
+                return decentralizationDAL.checkPermission(accountId, permissionId);
             }
             catch (Exception ex)
             {

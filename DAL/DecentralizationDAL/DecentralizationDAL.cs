@@ -9,20 +9,10 @@ using System.Threading.Tasks;
 
 namespace DAL.DecentralizationDAL
 {
-
-    public static class SqlConnectionData
-    {
-        private static readonly string connectionString = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-
-        public static SqlConnection Connect()
-        {
-            return new SqlConnection(connectionString);
-        }
-    }
     public class DecentralizationDAL : DatabaseAccess
     {
         //For Decentralization
-        public static AccountInfo getAccountInfo(string accountId)
+        public AccountInfo getAccountInfo(string accountId)
         {
             AccountInfo info = null;
             SqlConnection conn = SqlConnectionData.Connect();
@@ -55,7 +45,7 @@ namespace DAL.DecentralizationDAL
             }
             return info;
         }
-        public static List<AccountInfo> getAllAccountInfo()
+        public List<AccountInfo> getAllAccountInfo()
         {
             SqlConnection conn = SqlConnectionData.Connect();
             List<AccountInfo> personnel = new List<AccountInfo>();
@@ -88,7 +78,7 @@ namespace DAL.DecentralizationDAL
             }
             return personnel;
         }
-        public static List<Permission> getAllPermissionsByAccountId(string accountId)
+        public List<Permission> getAllPermissionsByAccountId(string accountId)
         {
             List<Permission> permissions = new List<Permission>();
             SqlConnection conn = SqlConnectionData.Connect();
@@ -125,7 +115,7 @@ namespace DAL.DecentralizationDAL
             return permissions;
         }
 
-        public static bool deleteAllRoles(string accountId)
+        public bool deleteAllRoles(string accountId)
         {
             SqlConnection conn = SqlConnectionData.Connect();
             try
@@ -144,7 +134,7 @@ namespace DAL.DecentralizationDAL
             return true;
         }
 
-        public static List<AccountInfo> getAllPersonnelRoleLess()
+        public List<AccountInfo> getAllPersonnelRoleLess()
         {
             SqlConnection conn = SqlConnectionData.Connect();
             List<AccountInfo> personnelRoleless = new List<AccountInfo>();
@@ -174,7 +164,7 @@ namespace DAL.DecentralizationDAL
             return personnelRoleless;
         }
 
-        public static bool updateRoles(string accountId, string listNameRoles)
+        public bool updateRoles(string accountId, string listNameRoles)
         {
             SqlConnection conn = SqlConnectionData.Connect();
             try
@@ -194,7 +184,7 @@ namespace DAL.DecentralizationDAL
             return true;
         }
 
-        public static List<PositionInfo> getPositionList()
+        public List<PositionInfo> getPositionList()
         {
             SqlConnection conn = SqlConnectionData.Connect();
             List<PositionInfo> positionList = new List<PositionInfo>();
@@ -223,7 +213,7 @@ namespace DAL.DecentralizationDAL
             return positionList;
         }
 
-        public static List<DepartmentInfo> getDepartmentList()
+        public List<DepartmentInfo> getDepartmentList()
         {
             SqlConnection conn = SqlConnectionData.Connect();
             List<DepartmentInfo> positionList = new List<DepartmentInfo>();
@@ -254,7 +244,7 @@ namespace DAL.DecentralizationDAL
 
 
         //Define format for role and roleless
-        private static List<AccountInfo> getListForRoleAndRoleless(string procedureName, string[] procParameters, string[] parameters)
+        private List<AccountInfo> getListForRoleAndRoleless(string procedureName, string[] procParameters, string[] parameters)
         {
             SqlConnection conn = SqlConnectionData.Connect();
             List<AccountInfo> listInfo = new List<AccountInfo>();
@@ -288,14 +278,14 @@ namespace DAL.DecentralizationDAL
             }
         }
         //For role
-        public static List<AccountInfo> getListByDepartmentIdAndPositionId(string idDepartment, string idPosition)
+        public List<AccountInfo> getListByDepartmentIdAndPositionId(string idDepartment, string idPosition)
         {
             string procedureName = "proc_getAccountListHavePermissionByDepartmentIdAndPositionId";
             string[] procParameters = { "@departmentId", "@positionId" };
             string[] parameters = { idDepartment, idPosition };
             return getListForRoleAndRoleless(procedureName, procParameters, parameters);
         }
-        public static List<AccountInfo> getDepartmentListwithAllPosition(string idDepartment)
+        public List<AccountInfo> getDepartmentListwithAllPosition(string idDepartment)
         {
             string procedureName = "proc_getAccountListHavePermissionByDepartmentIdInAllPosition";
             string[] procParameters = { "@departmentId" };
@@ -303,7 +293,7 @@ namespace DAL.DecentralizationDAL
             return getListForRoleAndRoleless(procedureName, procParameters, parameters);
         }
 
-        public static List<AccountInfo> getPositionListwithAllDepartment(string idPosition)
+        public List<AccountInfo> getPositionListwithAllDepartment(string idPosition)
         {
             string procedureName = "proc_getAccountListHavePermissionByPositionIdInAllDepartment";
             string[] procParameters = { "@positionId" };
@@ -312,21 +302,21 @@ namespace DAL.DecentralizationDAL
         }
 
         //For roleless
-        public static List<AccountInfo> getListByDepartmentIdAndPositionIdRoleLess(string idDepartment, string idPosition)
+        public List<AccountInfo> getListByDepartmentIdAndPositionIdRoleLess(string idDepartment, string idPosition)
         {
             string procedureName = "proc_getAccountListHavePermissionByDepartmentIdAndPositionIdRoleless";
             string[] procParameters = { "@departmentId", "@positionId" };
             string[] parameters = { idDepartment, idPosition };
             return getListForRoleAndRoleless(procedureName, procParameters, parameters);
         }
-        public static List<AccountInfo> getDepartmentListwithAllPositionRoleLess(string idDepartment)
+        public List<AccountInfo> getDepartmentListwithAllPositionRoleLess(string idDepartment)
         {
             string procedureName = "proc_getAccountListHavePermissionByDepartmentIdInAllPositionRoleless";
             string[] procParameters = { "@departmentId" };
             string[] parameters = { idDepartment };
             return getListForRoleAndRoleless(procedureName, procParameters, parameters);
         }
-        public static List<AccountInfo> getPositionListwithAllDepartmentRoleLess(string idPosition)
+        public List<AccountInfo> getPositionListwithAllDepartmentRoleLess(string idPosition)
         {
             string procedureName = "proc_getAccountListHavePermissionByPositionIdInAllDepartmentRoleless";
             string[] procParameters = { "@positionId" };
@@ -335,7 +325,7 @@ namespace DAL.DecentralizationDAL
         }
 
         //Check permission for accessing
-        public static bool checkPermission(string accountId, string permissionId)
+        public bool checkPermission(string accountId, string permissionId)
         {
             SqlConnection conn = SqlConnectionData.Connect();
             try
