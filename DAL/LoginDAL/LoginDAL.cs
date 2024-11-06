@@ -23,7 +23,7 @@ namespace DAL.LoginDAL
     {
         public static string[] checkLogin(Account acc)
         {
-            string[] user = new string[4];
+            string[] user = new string[5];
             SqlConnection conn = SqlConnectionData.Connect();
             conn.Open();
             SqlCommand command = new SqlCommand("proc_checkLogin", conn);
@@ -41,6 +41,7 @@ namespace DAL.LoginDAL
                     user[1] = reader["idNhanSu"].ToString();
                     user[2] = reader["idBoPhan"].ToString();
                     user[3] = reader["idChucVu"].ToString();
+                    user[4] = reader["trangThai"].ToString();
                 }
                 reader.Close();
                 conn.Close();

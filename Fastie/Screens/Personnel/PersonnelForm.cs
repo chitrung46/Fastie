@@ -52,7 +52,6 @@ namespace Fastie
                     Email = personnel.Email,
                     Gender = personnel.GioiTinh,
                     DateOfBirth = personnel.NgaySinh,
-                    DateOfWork = personnel.NgayVaoLam,
                     IdPersonnel = personnel.Id,
                     NumberPhone = personnel.Sdt
                 };
@@ -74,5 +73,6 @@ namespace Fastie
                 MessageBox.Show("Bạn không có quyền thêm nhân viên");
             }
         }
+
     }
 }

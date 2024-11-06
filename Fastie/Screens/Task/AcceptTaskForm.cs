@@ -16,13 +16,14 @@ namespace Fastie.Screens.Task
     public partial class AcceptTaskForm : Form
     {
         TaskBLL taskBLL = new TaskBLL();
-        private string idTaiKhoan;
+        private TaskForm taskForm;
+
         public string CurrentTaskType { get; set; }
 
-        public AcceptTaskForm(string idTaiKhoan)
+        public AcceptTaskForm(TaskForm taskForm)
         {
             InitializeComponent();
-            this.idTaiKhoan = idTaiKhoan;
+            this.taskForm = taskForm;
         }
 
         private void AcceptTaskForm_Load(object sender, EventArgs e)
@@ -51,24 +52,24 @@ namespace Fastie.Screens.Task
 
             if (taskType == "Việc được giao")
             {
-                tasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(this.idTaiKhoan);
+                tasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan);
             }
             else
             {
-                tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(this.idTaiKhoan);
+                tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan);
             }
 
             if (tasks != null && tasks.Count > 0)
             {
                 foreach (var task in tasks)
                 {
-                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(this.idTaiKhoan)
+                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(taskForm)
                     {
                         TaskName = task.Ten,
                         TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
                         TaskStatus = task.GhiChu,
                         JobAssigner = task.TenNhanSuGiaoViec,
-                        CongViecID = task.Id
+                        TaskId = task.Id
                     };
                     flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm);
                 }
