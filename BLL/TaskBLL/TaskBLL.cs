@@ -10,19 +10,6 @@ namespace BLL
     public class TaskBLL
     {
         private readonly TaskAccess taskAccess = new TaskAccess();
-        /*
-        public List<TaskInfo> GetTaskListBLL()
-        {
-            try
-            {
-                return taskAccess.layCongViecTuCosoDuLieu(includePersonnel: false);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi lấy danh sách công việc.", ex);
-            }
-        }
-        */
 
         public void capNhatTrangThaiCongViec(string CongviecID, string newStatus)
         {

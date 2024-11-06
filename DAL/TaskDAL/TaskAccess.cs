@@ -12,59 +12,6 @@ namespace DAL
 {
     public class TaskAccess : DatabaseAccess
     {
-        /*
-        public List<TaskInfo> layCongViecTuCosoDuLieu(bool includePersonnel = false)
-        {
-            List<TaskInfo> tasks = new List<TaskInfo>();
-            string query = includePersonnel ? "proc_layCongViecDuaTrenNhansu" : "proc_layCongViec";
-
-            using (SqlConnection con = SqlConnectionData.Connect())
-            {
-                con.Open();
-                using (SqlCommand command = new SqlCommand(query, con))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            TaskInfo task = new TaskInfo
-                            {
-                                Id = reader["id"].ToString(),
-                                Ten = reader["ten"].ToString(),
-                                MoTa = reader["moTa"].ToString(),
-                                ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
-                                ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
-                                ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
-                                GhiChu = reader["ghiChu"].ToString(),
-                                IdTaiKhoanGiaoViec = reader["idTaiKhoanGiaoViec"].ToString(),
-                                IdBoPhanGiaoViec = reader["idBoPhanGiaoViec"].ToString(),
-                                IdLoaiCongViec = reader["idLoaiCongViec"].ToString(),
-                                IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
-                                IdLichSuMacDinh = reader["idLichSuMacDinh"].ToString()
-                            };
-
-                            // Chỉ thêm thông tin nhân sự nếu có
-                            if (includePersonnel)
-                            {
-                                task.TenBoPhan = reader["TenBoPhan"].ToString();
-                                task.TenLoaiCongViec = reader["TenLoaiCongViec"].ToString();
-                                task.TenTienDoCongViec = reader["TenTienDoCongViec"].ToString();
-                                task.TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString();
-                            }
-
-                            tasks.Add(task);
-                        }
-                    }
-                }
-            }
-
-            return tasks;
-        }
-
-        */
-        // Lấy tên trạng thái tiến độ theo ID
         public string GetProgressNameById(string progressId)
         {
             string progressName = string.Empty;

@@ -67,9 +67,9 @@ namespace Fastie.Screens.Task
                         TaskName = task.Ten,
                         TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
                         TaskStatus = task.GhiChu,
-                        JobAssigner = task.TenNhanSuGiaoViec,
-                        CongViecID = task.Id
+                        JobAssigner = task.TenNhanSuGiaoViec
                     };
+                    layoutGetTaskForm.SetCongViecID(task.Id); 
                     flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm);
                 }
             }
