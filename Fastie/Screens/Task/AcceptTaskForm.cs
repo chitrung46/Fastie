@@ -41,7 +41,7 @@ namespace Fastie.Screens.Task
             LayoutGetTaskForm[] layoutGetTaskForm = new LayoutGetTaskForm[20];
             for (int i = 0; i < 20; i++)
             {
-                layoutGetTaskForm[i] = new LayoutGetTaskForm
+                layoutGetTaskForm[i] = new LayoutGetTaskForm()
                 {
                     TaskName = data + " " + i,
                     TaskTime = "11/1/2025 ",

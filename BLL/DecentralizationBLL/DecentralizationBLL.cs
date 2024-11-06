@@ -8,7 +8,6 @@ namespace BLL.DecentralizationBLL
 {
     public class DecentralizationBLL
     {
-        //For Decentralization
         public AccountInfo getAccountInfo(string accountId)
         {
             try
@@ -20,7 +19,7 @@ namespace BLL.DecentralizationBLL
                 throw new Exception("Lỗi BLL: " + ex.Message);
             }
         }
-        public List<AccountInfo> getAllAccountInfo()
+    public List<AccountInfo> getAllAccountInfo()
         {
             try
             {

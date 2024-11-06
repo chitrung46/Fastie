@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Task;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +45,11 @@ namespace Fastie.Components.LayoutRole
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
         {
 
         }

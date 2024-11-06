@@ -109,6 +109,7 @@
             this.customButton1.Size = new System.Drawing.Size(48, 40);
             this.customButton1.TabIndex = 2;
             this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // panel2
             // 

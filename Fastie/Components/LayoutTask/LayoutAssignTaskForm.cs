@@ -21,8 +21,6 @@ namespace Fastie.Components.LayoutTask
         private string taskTime;
         private string taskStatus;
         private string taskJobAssigner;
-        private string taskDetail;
-        private string AssignArisingTask;
 
         public string TaskName
         {
