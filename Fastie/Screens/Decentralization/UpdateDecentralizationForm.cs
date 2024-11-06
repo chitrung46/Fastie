@@ -244,6 +244,7 @@ namespace Fastie
                 {
                     if (permissionCheckboxMap.ContainsKey(role.TenQuyen) && permissionCheckboxMap[role.TenQuyen].Checked)
                     {
+                        Console.Write(role.TenQuyen + " ,  ");
                         permissionsList.Add(role.TenQuyen);
                     }
                 }
