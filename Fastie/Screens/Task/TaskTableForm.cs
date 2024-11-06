@@ -20,9 +20,11 @@ namespace Fastie.Screens.Task
     {
  
         private readonly TaskBLL taskBLL = new TaskBLL();
-        public TaskTableForm()
+        private string currentUserId;
+        public TaskTableForm(string userId)
         {
             InitializeComponent();
+            currentUserId = userId;
         }
         private void TaskTableForm_Load_1(object sender, EventArgs e)
         {
@@ -47,7 +49,8 @@ namespace Fastie.Screens.Task
         private void LoadDataTask()
         {
             flowLayoutPanelTask.Controls.Clear();
-            List<TaskInfo> tasks = taskBLL.GetTaskListBLL(); 
+
+            List<TaskInfo> tasks = taskBLL.layCongViecTheoID(currentUserId);
 
             foreach (var task in tasks)
             {

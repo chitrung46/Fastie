@@ -8,6 +8,7 @@ namespace DTO
 {
     public class TaskInfo
     {
+        // Thuộc tính cơ bản của công việc
         private string id;
         private string ten;
         private string moTa;
@@ -21,8 +22,16 @@ namespace DTO
         private string idTienDoCongViec;
         private string idLichSuMacDinh;
 
+        // Thuộc tính bổ sung từ TaskWithPersonel
+        private string tenBoPhan;
+        private string tenLoaiCongViec;
+        private string tenTienDoCongViec;
+        private string tenNhanSuGiaoViec;
+
+        // Constructor đầy đủ
         public TaskInfo(string id, string ten, string moTa, DateTime? thoiGianGiaoViec, DateTime? thoiGianHoanThanh, DateTime? thoiHanHoanThanh,
-                string ghiChu, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string idLoaiCongViec, string idTienDoCongViec, string idLichSuMacDinh)
+                        string ghiChu, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string idLoaiCongViec, string idTienDoCongViec, string idLichSuMacDinh,
+                        string tenBoPhan, string tenLoaiCongViec, string tenTienDoCongViec, string tenNhanSuGiaoViec)
         {
             this.id = id;
             this.ten = ten;
@@ -36,11 +45,16 @@ namespace DTO
             this.idLoaiCongViec = idLoaiCongViec;
             this.idTienDoCongViec = idTienDoCongViec;
             this.idLichSuMacDinh = idLichSuMacDinh;
+            this.tenBoPhan = tenBoPhan;
+            this.tenLoaiCongViec = tenLoaiCongViec;
+            this.tenTienDoCongViec = tenTienDoCongViec;
+            this.tenNhanSuGiaoViec = tenNhanSuGiaoViec;
         }
 
-
+        // Constructor tối giản (nếu chỉ có các thuộc tính cơ bản)
         public TaskInfo() { }
 
+        // Các thuộc tính công khai
         public string Id { get => id; set => id = value; }
         public string Ten { get => ten; set => ten = value; }
         public string MoTa { get => moTa; set => moTa = value; }
@@ -54,5 +68,10 @@ namespace DTO
         public string IdTienDoCongViec { get => idTienDoCongViec; set => idTienDoCongViec = value; }
         public string IdLichSuMacDinh { get => idLichSuMacDinh; set => idLichSuMacDinh = value; }
 
+        // Thuộc tính nhân sự bổ sung
+        public string TenBoPhan { get => tenBoPhan; set => tenBoPhan = value; }
+        public string TenLoaiCongViec { get => tenLoaiCongViec; set => tenLoaiCongViec = value; }
+        public string TenTienDoCongViec { get => tenTienDoCongViec; set => tenTienDoCongViec = value; }
+        public string TenNhanSuGiaoViec { get => tenNhanSuGiaoViec; set => tenNhanSuGiaoViec = value; }
     }
 }

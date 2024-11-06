@@ -15,11 +15,15 @@ namespace Fastie
 {
     public partial class TaskForm: Form
     {
-        public TaskForm()
+        private string currentUserId;
+        public TaskForm(string userId)
         {
             InitializeComponent();
+            currentUserId = userId;
             setStateButton(btnTaskTable);
-            TaskTableForm taskTableForm = new TaskTableForm();
+
+            // Truyền userId vào TaskTableForm
+            TaskTableForm taskTableForm = new TaskTableForm(currentUserId);
             addFormInMainLayout(taskTableForm);
         }
 
@@ -48,7 +52,7 @@ namespace Fastie
         }
         private void btnTaskTable_Click(object sender, EventArgs e)
         {
-            TaskTableForm taskTableForm = new TaskTableForm();
+            TaskTableForm taskTableForm = new TaskTableForm(currentUserId);
             setStateButton(btnTaskTable);
             addFormInMainLayout(taskTableForm);
         }
@@ -62,7 +66,7 @@ namespace Fastie
 
         private void btnAcceptTask_Click(object sender, EventArgs e)
         {
-            AcceptTaskForm acceptTaskForm = new AcceptTaskForm();
+            AcceptTaskForm acceptTaskForm = new AcceptTaskForm(currentUserId);
             setStateButton(btnAcceptTask);
             addFormInMainLayout(acceptTaskForm);
             

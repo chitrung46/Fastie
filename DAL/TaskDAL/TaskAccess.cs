@@ -7,22 +7,104 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO.Task;
 
 namespace DAL
 {
     public class TaskAccess : DatabaseAccess
     {
-        /***
-        public List<TaskInfo> GetTaskListDAL()
-        {
-            List<TaskInfo> list = DatabaseAccess.GetTasksFromDatabase();
-            return list;
-        }***/
-        public static List<TaskInfo> GetTasksFromDatabase()
+        /*
+        public List<TaskInfo> layCongViecTuCosoDuLieu(bool includePersonnel = false)
         {
             List<TaskInfo> tasks = new List<TaskInfo>();
-            string query = "proc_getTask";
+            string query = includePersonnel ? "proc_layCongViecDuaTrenNhansu" : "proc_layCongViec";
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TaskInfo task = new TaskInfo
+                            {
+                                Id = reader["id"].ToString(),
+                                Ten = reader["ten"].ToString(),
+                                MoTa = reader["moTa"].ToString(),
+                                ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
+                                ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                GhiChu = reader["ghiChu"].ToString(),
+                                IdTaiKhoanGiaoViec = reader["idTaiKhoanGiaoViec"].ToString(),
+                                IdBoPhanGiaoViec = reader["idBoPhanGiaoViec"].ToString(),
+                                IdLoaiCongViec = reader["idLoaiCongViec"].ToString(),
+                                IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
+                                IdLichSuMacDinh = reader["idLichSuMacDinh"].ToString()
+                            };
+
+                            // Chỉ thêm thông tin nhân sự nếu có
+                            if (includePersonnel)
+                            {
+                                task.TenBoPhan = reader["TenBoPhan"].ToString();
+                                task.TenLoaiCongViec = reader["TenLoaiCongViec"].ToString();
+                                task.TenTienDoCongViec = reader["TenTienDoCongViec"].ToString();
+                                task.TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString();
+                            }
+
+                            tasks.Add(task);
+                        }
+                    }
+                }
+            }
+
+            return tasks;
+        }
+
+        */
+        // Lấy tên trạng thái tiến độ theo ID
+        public string GetProgressNameById(string progressId)
+        {
+            string progressName = string.Empty;
+            string query = "proc_layTrangThaiTienDo";
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.Parameters.AddWithValue("@ProgressId", progressId);
+                    progressName = command.ExecuteScalar()?.ToString();
+                }
+            }
+
+            return progressName;
+        }
+
+
+        // Cập nhật trạng thái công việc
+        public void capNhatTrangThaiCongViec(string congViecID, string newStatusId)
+        {
+            string query = "proc_capNhatTrangThai";
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@CongViecID", congViecID);
+                    command.Parameters.AddWithValue("@NewStatusId", newStatusId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public List<TaskInfo> layCongViecTheoID(string accountId)
+        {
+            List<TaskInfo> tasks = new List<TaskInfo>();
+            string query = "proc_layCongViecDuaTrenIDTK";
 
             try
             {
@@ -32,6 +114,7 @@ namespace DAL
                     using (SqlCommand command = new SqlCommand(query, con))
                     {
                         command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@AccountId", accountId);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -59,68 +142,24 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi lấy dữ liệu công việc: " + ex.Message);
+                Console.WriteLine("Lỗi khi lấy danh sách công việc theo ID tài khoản: " + ex.Message);
             }
 
             return tasks;
         }
 
-        public static List<TaskWithPersonel> GetTaskWithPersonnel()
+        public void giaoViecChoTaiKhoan(string accountId, string taskId)
         {
-            List<TaskWithPersonel> taskList = new List<TaskWithPersonel>();
-            string query = "proc_getTaskWithPersonel";
-
-            try
-            {
-                using (SqlConnection con = SqlConnectionData.Connect())
-                {
-                    con.Open();
-                    using (SqlCommand command = new SqlCommand(query, con))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                taskList.Add(new TaskWithPersonel
-                                {
-                                    CongViecID = reader["CongViecID"].ToString(),
-                                    TenCongViec = reader["TenCongViec"].ToString(),
-                                    MoTaCongViec = reader["MoTaCongViec"].ToString(),
-                                    ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
-                                    ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
-                                    ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
-                                    GhiChu = reader["ghiChu"].ToString(),
-                                    TenBoPhan = reader["TenBoPhan"].ToString(),
-                                    TenLoaiCongViec = reader["TenLoaiCongViec"].ToString(),
-                                    TenTienDoCongViec = reader["TenTienDoCongViec"].ToString(),
-                                    TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString()
-                                });
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi lấy dữ liệu công việc với thông tin nhân sự: " + ex.Message);
-            }
-
-            return taskList;
-        }
-
-        public static void UpdateTaskStatus(string congViecID, string newStatus)
-        {
-            string query = "UPDATE CongViec SET ghiChu = @NewStatus WHERE id = @CongViecID";
+            string query = "proc_GanCongViecVaoTaiKhoan"; 
 
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
-                    command.Parameters.AddWithValue("@CongViecID", congViecID);
-                    command.Parameters.AddWithValue("@NewStatus", newStatus);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@AccountId", accountId);
+                    command.Parameters.AddWithValue("@TaskId", taskId);
                     command.ExecuteNonQuery();
                 }
             }
@@ -128,8 +167,80 @@ namespace DAL
 
 
 
+        public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string accountId)
+        {
+            List<TaskInfo> tasks = new List<TaskInfo>();
+            string query = "proc_layCongViecTuTKChuDuocNhan";
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@AccountId", accountId);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            tasks.Add(new TaskInfo
+                            {
+                                Id = reader["id"].ToString(),
+                                Ten = reader["ten"].ToString(),
+                                MoTa = reader["moTa"].ToString(),
+                                ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
+                                ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                GhiChu = reader["ghiChu"].ToString(),
+                                IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
+                                TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+
+            return tasks;
+        }
 
 
+        public List<TaskInfo> nhanNhiemVuDuocGiaoTuTaiKhoan(string accountId)
+        {
+            List<TaskInfo> tasks = new List<TaskInfo>();
+            string query = "proc_layCongViecDuocGiao";
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@AccountId", accountId);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            tasks.Add(new TaskInfo
+                            {
+                                Id = reader["id"].ToString(),
+                                Ten = reader["ten"].ToString(),
+                                MoTa = reader["moTa"].ToString(),
+                                ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
+                                ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                GhiChu = reader["ghiChu"].ToString(),
+                                IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
+                                TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+
+            return tasks;
+        }
     }
 
 }

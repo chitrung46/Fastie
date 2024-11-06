@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BLL;
+using DAL;
 using Fastie.Screens.Task;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,15 @@ namespace Fastie.Components.LayoutRole
         private string taskTime;
         private string taskStatus;
         private string taskJobAssigner;
+        private readonly TaskBLL taskBLL = new TaskBLL();
+        private string currentUserId;
 
-        public string CongViecID { get; set; } 
+        public string CongViecID { get; set; }
 
-        public LayoutGetTaskForm()
+        public LayoutGetTaskForm(string userId)
         {
             InitializeComponent();
+            currentUserId = userId;
         }
 
         public string TaskName
@@ -47,22 +51,17 @@ namespace Fastie.Components.LayoutRole
             get { return taskJobAssigner; }
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
-
+        
         private void btnGetTask_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(CongViecID))
+            if (!string.IsNullOrEmpty(CongViecID) && !string.IsNullOrEmpty(currentUserId))
             {
-                
-                TaskAccess.UpdateTaskStatus(CongViecID, "Đang tiến hành");
+                taskBLL.giaoViecChoTaiKhoan(currentUserId, CongViecID);
+                taskBLL.capNhatTrangThaiCongViec(CongViecID, "TD002"); 
 
-               
                 if (this.ParentForm is AcceptTaskForm parentForm)
                 {
-                    parentForm.LoadDataTaskTable("Chưa hoàn thành");
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy form cha để tải lại dữ liệu.", "Lỗi");
+                    parentForm.LoadDataTaskTable(parentForm.CurrentTaskType);
                 }
 
                 if (this.Parent != null)
@@ -72,9 +71,12 @@ namespace Fastie.Components.LayoutRole
             }
             else
             {
-                MessageBox.Show("Không tìm thấy ID công việc để nhận.", "Lỗi");
+                //MessageBox.Show("Không tìm thấy ID công việc hoặc ID tài khoản để nhận.", "Lỗi");
             }
         }
+
+
+
 
 
 

@@ -162,7 +162,7 @@ namespace Fastie
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0018");
             if (checkPermission)
             {
-                TaskForm work = new TaskForm();
+                TaskForm work = new TaskForm(idTaiKhoan); // Truyền idTaiKhoan vào đây
                 addFormInMainLayout(work);
             }
             else
