@@ -23,6 +23,7 @@ namespace Fastie
         private string idTaiKhoan;
         private string idChucVu;
         private string idBoPhan;
+        private string formCurrent;
         public TaskForm(string idTaiKhoan, string idBoPhan, string idChucVu)
         {
             InitializeComponent();
@@ -33,8 +34,8 @@ namespace Fastie
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0019");
             setStateButton(btnTaskTable);
             if (checkPermission) {
-
-                TaskTableForm taskTableForm = new TaskTableForm(this.idTaiKhoan, mainLayout);
+                this.formCurrent = "TaskTableForm";
+                TaskTableForm taskTableForm = new TaskTableForm(this);
                 addFormInMainLayout(taskTableForm);
 
             } else {
@@ -46,6 +47,8 @@ namespace Fastie
         public string IdTaiKhoan { get => idTaiKhoan; set => idTaiKhoan = value; }
         public string IdChucVu { get => idChucVu; set => idChucVu = value; }
 
+        public string IdBoPhan { get => idBoPhan; set => idBoPhan = value; }
+        public string FormCurrent { get => formCurrent; set => formCurrent = value; }
 
         //Check other panel is not click
         private void setStateButton(Button stateButton)
@@ -62,6 +65,10 @@ namespace Fastie
         }
 
         //Add form in main layout
+        public void AddFormInMainLayout(Form userControl)
+        {
+            addFormInMainLayout(userControl);
+        }
         private void addFormInMainLayout(Form userControl)
         {
             mainLayout.Controls.Clear();
@@ -72,11 +79,12 @@ namespace Fastie
         }
         private void btnTaskTable_Click(object sender, EventArgs e) 
         {
+            this.formCurrent = "TaskTableForm";
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0019");
             setStateButton(btnTaskTable);
             if (checkPermission)
             {
-                TaskTableForm taskTableForm = new TaskTableForm(this.idTaiKhoan, this.mainLayout);
+                TaskTableForm taskTableForm = new TaskTableForm(this);
                 addFormInMainLayout(taskTableForm);
             } else
             {
@@ -104,11 +112,12 @@ namespace Fastie
 
         private void btnAcceptTask_Click(object sender, EventArgs e)
         {
+            this.formCurrent = "AcceptTaskForm";
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0021");
             setStateButton(btnAcceptTask);
             if (checkPermission)
             {
-                AcceptTaskForm acceptTaskForm = new AcceptTaskForm(this.idTaiKhoan);
+                AcceptTaskForm acceptTaskForm = new AcceptTaskForm(this);
                 addFormInMainLayout(acceptTaskForm);
             }
             else

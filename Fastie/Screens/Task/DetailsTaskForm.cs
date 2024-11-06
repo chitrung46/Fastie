@@ -12,36 +12,44 @@ namespace Fastie.Screens.Task
 {
     public partial class DetailsTaskForm : Form
     {
-        private Panel mainLayout;
-        public DetailsTaskForm(Panel mainLayout)
+        private TaskForm taskForm;
+        private string idTask;
+        public DetailsTaskForm(TaskForm taskForm, string idTask)
         {
             InitializeComponent();
-            this.mainLayout = mainLayout;
+            this.taskForm = taskForm;   
+            this.idTask = idTask;
         }
 
         private void customPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
-        private void addFormInMainLayout(Form userControl)
-        {
-            mainLayout.Controls.Clear();
-            userControl.TopLevel = false;
-            mainLayout.Controls.Add(userControl);
-            userControl.Dock = DockStyle.Fill;
-            userControl.Show();
-        }
 
         private void lblBack_Click(object sender, EventArgs e)
         {
-            //TaskTableForm taskTableForm = new TaskTableForm(,mainLayout);
-            //addFormInMainLayout(taskTableForm);
+            BackForm();
         }
 
         private void pictureBack_Click(object sender, EventArgs e)
         {
-            //TaskTableForm taskTableForm = new TaskTableForm(mainLayout);
-            //addFormInMainLayout(taskTableForm);
+            BackForm();
+        }
+
+        private void BackForm ()
+        {
+            switch (taskForm.FormCurrent)
+            {
+                case "TaskTableForm":
+                    TaskTableForm taskTableForm = new TaskTableForm(taskForm);
+                    taskForm.AddFormInMainLayout(taskTableForm);
+                    break;
+                case "AcceptTaskForm":
+                    AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
+                    taskForm.AddFormInMainLayout(acceptTaskForm);
+                    break;
+
+            }
         }
     }
 }

@@ -21,11 +21,11 @@ namespace Fastie
     public partial class LayoutConfirmForm : Form
     {
         private string accountName;
-        //private DecentralizationForm decentralizationForm;
         private LayoutDecentralizationForm decentralizationForm;
         private LayoutPositionForm layoutPositionForm;
         private LayoutDepartmentForm layoutDepartmentForm;
         private LayoutPersonnelForm layoutPersonnelForm;
+        private HomeForm homeForm;
 
         PositionBLL positionBLL = new PositionBLL();
         PersonnelBLL personnelBLL = new PersonnelBLL();
@@ -36,7 +36,12 @@ namespace Fastie
         {
             InitializeComponent();
         }
+        public LayoutConfirmForm(HomeForm homeFomm)
+        {
+            InitializeComponent();
+            this.homeForm = homeFomm;
 
+        }
         public LayoutConfirmForm(LayoutDecentralizationForm decentralization ,string accountName) //DecentralizationForm decentralization ,string accountName
         {
             InitializeComponent();
@@ -56,19 +61,12 @@ namespace Fastie
             this.accountName = accountName;
             this.layoutDepartmentForm = layoutDepartment;
         }
-/***<<<<<<< HEAD
-        public LayoutConfirmForm(LayoutPersonnelForm layoutPersonnel, string accountName)
-        {
-            InitializeComponent();
-            this.accountName = accountName;
-            this.layoutPersonnelForm = layoutPersonnel;
-=======***/
+
         public LayoutConfirmForm(LayoutPersonnelForm layoutPersonnelForm, string accountName)
         {
             InitializeComponent();
             this.accountName = accountName;
             this.layoutPersonnelForm = layoutPersonnelForm;
-//>>>>>>> origin/Toan
         }
 
         public string AccountName { get => accountName; set => accountName = value; }   
@@ -123,15 +121,9 @@ namespace Fastie
                     this.Close();
                     break;
                 case "Xóa nhân sự":
-/***<<<<<<< HEAD
-                    personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
-                    layoutPersonnelForm.loadDataPersonnel();
-                    MessageBox.Show("Xóa nhân sự thành công");
-=======***/
                     MessageBox.Show("Xóa nhân sự thành công", layoutPersonnelForm.IdPersonnel);
                     personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
                     layoutPersonnelForm.loadDataPersonnel();
-//>>>>>>> origin/Toan
                     this.Close();
                     break;
                 case "Cập nhật":
@@ -141,6 +133,7 @@ namespace Fastie
                     MessageBox.Show("Thêm thành công");
                     break;
                 case "Đăng xuất":
+                    homeForm.Close();   
                     this.Close();
                     LoginForm loginForm = new LoginForm();
                     loginForm.Show();

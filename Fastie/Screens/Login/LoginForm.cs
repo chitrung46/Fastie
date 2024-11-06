@@ -58,6 +58,13 @@ namespace Fastie.Screens.Login
                 return;
             }
 
+            if (getUser[4] == "Vô hiệu hóa")
+            {
+                lblError.Text = "Tài khoản của bạn đã bị vô hiệu hóa!";
+                lblError.Visible = true;
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(acc.TenDangNhap))
             {
                 lblError.Text = "Email không được để trống";

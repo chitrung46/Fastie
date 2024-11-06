@@ -20,13 +20,11 @@ namespace Fastie.Screens.Task
     {
  
         TaskBLL taskBLL = new TaskBLL();
-        private string idTaiKhoan;
-        private Panel mainLayout;
-        public TaskTableForm(string idTaiKhoan, Panel mainLayout)
+        private TaskForm taskForm;
+        public TaskTableForm(TaskForm taskform)
         {
             InitializeComponent();
-            this.mainLayout = mainLayout;
-            this.idTaiKhoan = idTaiKhoan;
+            this.taskForm = taskform;
         }
         private void TaskTableForm_Load_1(object sender, EventArgs e)
         {
@@ -52,14 +50,15 @@ namespace Fastie.Screens.Task
         {
             flowLayoutPanelTask.Controls.Clear();
 
-            List<TaskInfo> tasks = taskBLL.layCongViecTheoID(this.idTaiKhoan);
+            List<TaskInfo> tasks = taskBLL.layCongViecTheoID(this.taskForm.IdTaiKhoan);
 
             foreach (var task in tasks)
             {
-                var taskForm = new LayoutTaskForm(mainLayout)
+                var taskForm = new LayoutTaskForm(this.taskForm)
                 {
                     TitleTask = task.Ten,
                     Status = task.GhiChu,
+                    IdTask = task.Id
                 };
 
                 flowLayoutPanelTask.Controls.Add(taskForm);

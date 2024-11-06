@@ -19,15 +19,20 @@ namespace Fastie.Components.LayoutRole
         private string taskTime;
         private string taskStatus;
         private string taskJobAssigner;
+        private string taskId;
         TaskBLL taskBLL = new TaskBLL();
-        private string currentUserId;
+        private TaskForm taskForm;
 
-        public string CongViecID { get; set; }
+        public string TaskId
+        {
+            get { return taskId; }
+            set { taskId = value; }
+        }
 
-        public LayoutGetTaskForm(string userId)
+        public LayoutGetTaskForm(TaskForm taskForm)
         {
             InitializeComponent();
-            currentUserId = userId;
+            this.taskForm = taskForm;
         }
 
         public string TaskName
@@ -54,10 +59,10 @@ namespace Fastie.Components.LayoutRole
         
         private void btnGetTask_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(CongViecID) && !string.IsNullOrEmpty(currentUserId))
+            if (!string.IsNullOrEmpty(taskId) && !string.IsNullOrEmpty(taskForm.IdTaiKhoan))
             {
-                taskBLL.giaoViecChoTaiKhoan(currentUserId, CongViecID);
-                taskBLL.capNhatTrangThaiCongViec(CongViecID, "TD002"); 
+                taskBLL.giaoViecChoTaiKhoan(taskForm.IdTaiKhoan, taskId);
+                taskBLL.capNhatTrangThaiCongViec(taskId, "TD002"); 
 
                 if (this.ParentForm is AcceptTaskForm parentForm)
                 {
@@ -75,12 +80,10 @@ namespace Fastie.Components.LayoutRole
             }
         }
 
-
-
-
-
-
-
-
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, taskId);
+            taskForm.AddFormInMainLayout(detailsTaskForm);
+        }
     }
 }

@@ -301,12 +301,11 @@ namespace Fastie
         {
             string[] information = { "Bạn có chắc chắn muốn đăng xuất?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Đăng xuất" };
             
-            LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm();
+            LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm(this);
             layoutConfirmForm.Title = information[0];
             layoutConfirmForm.Content = information[1];
             layoutConfirmForm.btnConfirmText = information[2];
             layoutConfirmForm.Show();
-            this.Close();
         }
 
     }
