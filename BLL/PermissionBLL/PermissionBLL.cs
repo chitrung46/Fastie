@@ -8,12 +8,12 @@ namespace BLL.PermissionBLL
         public bool checkPermission(string accountId, string permissionId)
         {
             try { 
-            
+                Console.WriteLine("-----------" + accountId + "----------" + permissionId);
                 return PermissionDAL.checkPermission(accountId, permissionId);
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi BLL" + ex.Message);
+                throw new Exception("Lỗi BLL" + ex.Message + "---------" + accountId + "----------" + permissionId);
             }
         }
     }

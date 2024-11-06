@@ -12,15 +12,7 @@ namespace DAL.ListRoleDAL
 {
     public class ListRoleDAL
     {
-        public static class SqlConnectionData
-        {
-            private static readonly string connectionString = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;";
-
-            public static SqlConnection Connect()
-            {
-                return new SqlConnection(connectionString);
-            }
-        }
+        
         public static List<ListRole> LayDanhSachQuyen()
         {
             SqlConnection conn = SqlConnectionData.Connect();

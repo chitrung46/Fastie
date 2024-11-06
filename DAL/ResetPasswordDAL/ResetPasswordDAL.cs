@@ -10,18 +10,7 @@ using System.Threading.Tasks;
 using DTO;
 
 namespace DAL
-{/***
-    public static class SqlConnectionData
-    {
-        private static readonly string connectionString = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;";
-
-        public static SqlConnection Connect()
-
-        {
-            return new SqlConnection(connectionString);
-        }
-    }
-***/
+{
     public class ResetPasswordDAL
     {
         // Lấy tất cả tài khoản
