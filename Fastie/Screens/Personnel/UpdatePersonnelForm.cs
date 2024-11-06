@@ -18,7 +18,6 @@ using BLL;
 using BLL.DepartmentBLL;
 using DTO;
 using Fastie.Components.LayoutDepartmen;
-using Fastie.Components.LayoutPersonnel;
 
 namespace Fastie
 {

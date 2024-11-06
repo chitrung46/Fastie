@@ -2,8 +2,6 @@
 using Fastie.Components.LayoutRole;
 using Fastie.Components.NoPermissionAccessForm;
 using Fastie.Screens.Task;
-using Fastie.Screens.Task.AssignmentAdjustmentTask;
-using Fastie.Screens.Task.ReportTask;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Fastie.Screens.Task.AssignmentAdjustmentTask;
+using Fastie.Screens.Task.ReportTask;
+
 namespace Fastie
 {
     public partial class TaskForm: Form
