@@ -20,7 +20,6 @@ namespace Fastie.Components.LayoutPersonnel
         private string email;
         private string gender;
         private DateTime dateOfBirth;
-        private DateTime dateOfWork;
         private string idPersonnel;
         private string numberPhone;
         private PersonnelForm personnelForm;
@@ -61,11 +60,7 @@ namespace Fastie.Components.LayoutPersonnel
             get { return dateOfBirth; }
             set { dateOfBirth = value; lblDateOfBirth.Text = dateOfBirth.ToString("dd/MM/yyyy"); }
         }
-        public DateTime DateOfWork
-        {
-            get { return dateOfWork; }
-            set { dateOfWork = value; lblDateOfWork.Text = dateOfWork.ToString("dd/MM/yyyy"); }
-        }
+
         public string IdPersonnel
         {
             get { return idPersonnel; }
@@ -110,7 +105,6 @@ namespace Fastie.Components.LayoutPersonnel
                     Ten = this.personnelName,
                     Email = this.gender,
                     NgaySinh = this.dateOfBirth,
-                    NgayVaoLam = this.dateOfWork,
                     Sdt = this.numberPhone
                 }; 
                 UpdatePersonnelForm updatePersonnelForm = new UpdatePersonnelForm(this, updatePersonnel);

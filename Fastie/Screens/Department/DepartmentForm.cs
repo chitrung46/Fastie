@@ -64,7 +64,6 @@ namespace Fastie
         private void btnAddDepartment_Click(object sender, EventArgs e)
         {
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0007");
-            MessageBox.Show(this.idTaiKhoan + "-" + checkPermission, "Thông báo");
             if (checkPermission)
             {
                 CreateDepartmentForm createDepartmentForm = new CreateDepartmentForm(this);
