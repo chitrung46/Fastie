@@ -54,7 +54,7 @@ namespace Fastie
                 {
                     Number = (i + 1).ToString(),
                     NameDepartment = department.Ten,
-                    Description = department.MoTa + "Mô tả",
+                    Description = department.MoTa,
                     IdDepartment = department.Id
                 };
                 flowLayoutPanelDepartment.Controls.Add(layoutDepartmentForm);

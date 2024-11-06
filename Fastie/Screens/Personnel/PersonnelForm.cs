@@ -8,10 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
-using BLL.DepartmentBLL;
 using BLL.PermissionBLL;
 using DTO;
-using Fastie.Components.LayoutDepartmen;
 using Fastie.Components.LayoutPersonnel;
 namespace Fastie
 {
@@ -33,31 +31,30 @@ namespace Fastie
 
         private void PersonnelForm_Load(object sender, EventArgs e)
         {
-            loadDataPersonnel();
+            LoadDataPersonnel();
         }
 
-        public void LoadDataPersonnel()
+        public void LoadDataPersonnel() 
         {
             loadDataPersonnel();
         }
-
         private void loadDataPersonnel ()
         {
             flowLayoutPanelPersonnel.Controls.Clear();
-            List<Personnel> departmentList = personnelBLL.GetPersonnelList();
+            List<Personnel> personnelList = personnelBLL.GetPersonnelList();
             int i = 0;
-            foreach (Personnel persomell in departmentList)
+            foreach (Personnel personnel in personnelList)
             {
                 var layoutPersonnelForm = new LayoutPersonnelForm(this)
                 {
                     Number = (i + 1).ToString(),
-                    PersonnelName = persomell.Ten,
-                    Email = persomell.Email,
-                    Gender = persomell.GioiTinh,
-                    DateOfBirth = persomell.NgaySinh.ToString(),
-                    DateOfWork = persomell.NgayVaoLam.ToString(),
-                    IdPersonnel = persomell.Id,
-                    NumberPhone = persomell.Sdt
+                    PersonnelName = personnel.Ten,
+                    Email = personnel.Email,
+                    Gender = personnel.GioiTinh,
+                    DateOfBirth = personnel.NgaySinh,
+                    DateOfWork = personnel.NgayVaoLam,
+                    IdPersonnel = personnel.Id,
+                    NumberPhone = personnel.Sdt
                 };
                 flowLayoutPanelPersonnel.Controls.Add(layoutPersonnelForm);
                 i++;

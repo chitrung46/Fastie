@@ -13,6 +13,7 @@ using BLL.DecentralizationBLL;
 using Fastie.Components.LayoutDecentralization;
 using Fastie.Components.LayoutDepartment;
 using Fastie.Components.LayoutDepartmen;
+using Fastie.Components.LayoutPersonnel;
 using BLL.DepartmentBLL;
 using Fastie.Components.LayoutPersonnel;
 namespace Fastie
@@ -55,11 +56,19 @@ namespace Fastie
             this.accountName = accountName;
             this.layoutDepartmentForm = layoutDepartment;
         }
+/***<<<<<<< HEAD
+        public LayoutConfirmForm(LayoutPersonnelForm layoutPersonnel, string accountName)
+        {
+            InitializeComponent();
+            this.accountName = accountName;
+            this.layoutPersonnelForm = layoutPersonnel;
+=======***/
         public LayoutConfirmForm(LayoutPersonnelForm layoutPersonnelForm, string accountName)
         {
             InitializeComponent();
             this.accountName = accountName;
             this.layoutPersonnelForm = layoutPersonnelForm;
+//>>>>>>> origin/Toan
         }
 
         public string AccountName { get => accountName; set => accountName = value; }   
@@ -114,9 +123,15 @@ namespace Fastie
                     this.Close();
                     break;
                 case "Xóa nhân sự":
+/***<<<<<<< HEAD
+                    personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
+                    layoutPersonnelForm.loadDataPersonnel();
+                    MessageBox.Show("Xóa nhân sự thành công");
+=======***/
                     MessageBox.Show("Xóa nhân sự thành công", layoutPersonnelForm.IdPersonnel);
                     personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
                     layoutPersonnelForm.loadDataPersonnel();
+//>>>>>>> origin/Toan
                     this.Close();
                     break;
                 case "Cập nhật":
@@ -126,8 +141,9 @@ namespace Fastie
                     MessageBox.Show("Thêm thành công");
                     break;
                 case "Đăng xuất":
-                    //LoginForm loginForm = new LoginForm();
-                    //loginForm.Show();
+                    this.Close();
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
                     break;
                 default:
                     break;

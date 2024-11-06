@@ -61,7 +61,7 @@
             this.lblPersonnelName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonnelName.Location = new System.Drawing.Point(2, 16);
             this.lblPersonnelName.Name = "lblPersonnelName";
-            this.lblPersonnelName.Size = new System.Drawing.Size(108, 21);
+            this.lblPersonnelName.Size = new System.Drawing.Size(102, 21);
             this.lblPersonnelName.TabIndex = 0;
             this.lblPersonnelName.Text = "Tên nhân sự";
             // 
@@ -71,7 +71,7 @@
             this.lblNumberPhone.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumberPhone.Location = new System.Drawing.Point(7, 16);
             this.lblNumberPhone.Name = "lblNumberPhone";
-            this.lblNumberPhone.Size = new System.Drawing.Size(117, 21);
+            this.lblNumberPhone.Size = new System.Drawing.Size(109, 21);
             this.lblNumberPhone.TabIndex = 0;
             this.lblNumberPhone.Text = "Số điện thoại";
             // 
@@ -170,7 +170,11 @@
             this.lblEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(-1, 17);
             this.lblEmail.Name = "lblEmail";
+//<<<<<<< HEAD
+      //      this.lblEmail.Size = new System.Drawing.Size(53, 21);
+//=======
             this.lblEmail.Size = new System.Drawing.Size(55, 21);
+//>>>>>>> origin/Toan
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email";
             // 
@@ -188,7 +192,11 @@
             this.lblGender.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.Location = new System.Drawing.Point(0, 16);
             this.lblGender.Name = "lblGender";
+//<<<<<<< HEAD
+    //        this.lblGender.Size = new System.Drawing.Size(74, 21);
+//=======
             this.lblGender.Size = new System.Drawing.Size(80, 21);
+//>>>>>>> origin/Toan
             this.lblGender.TabIndex = 0;
             this.lblGender.Text = "Giới tính";
             // 
@@ -206,7 +214,11 @@
             this.lblDateOfBirth.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirth.Location = new System.Drawing.Point(0, 16);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
+//<<<<<<< HEAD
+          //  this.lblDateOfBirth.Size = new System.Drawing.Size(85, 21);
+//=======
             this.lblDateOfBirth.Size = new System.Drawing.Size(91, 21);
+//>>>>>>> origin/Toan
             this.lblDateOfBirth.TabIndex = 0;
             this.lblDateOfBirth.Text = "Ngày sinh";
             // 
@@ -224,7 +236,11 @@
             this.lblDateOfWork.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfWork.Location = new System.Drawing.Point(0, 16);
             this.lblDateOfWork.Name = "lblDateOfWork";
+//<<<<<<< HEAD
+            //this.lblDateOfWork.Size = new System.Drawing.Size(113, 21);
+//=======
             this.lblDateOfWork.Size = new System.Drawing.Size(118, 21);
+//>>>>>>> origin/Toan
             this.lblDateOfWork.TabIndex = 0;
             this.lblDateOfWork.Text = "Ngày vào làm";
             // 

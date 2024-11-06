@@ -1,4 +1,4 @@
-﻿using BLL;
+using BLL;
 using BLL.PermissionBLL;
 using DTO;
 using System;
@@ -19,8 +19,8 @@ namespace Fastie.Components.LayoutPersonnel
         private string personnelName;
         private string email;
         private string gender;
-        private string dateOfBirth;
-        private string dateOfWork;
+        private DateTime dateOfBirth;
+        private DateTime dateOfWork;
         private string idPersonnel;
         private string numberPhone;
         private PersonnelForm personnelForm;
@@ -56,15 +56,15 @@ namespace Fastie.Components.LayoutPersonnel
             get { return gender; }
             set { gender = value; lblGender.Text = gender; }
         }
-        public string DateOfBirth
+        public DateTime DateOfBirth
             {
             get { return dateOfBirth; }
-            set { dateOfBirth = value; lblDateOfBirth.Text = dateOfBirth; }
+            set { dateOfBirth = value; lblDateOfBirth.Text = dateOfBirth.ToString("dd/MM/yyyy"); }
         }
-        public string DateOfWork
+        public DateTime DateOfWork
         {
             get { return dateOfWork; }
-            set { dateOfWork = value; lblDateOfWork.Text = dateOfWork; }
+            set { dateOfWork = value; lblDateOfWork.Text = dateOfWork.ToString("dd/MM/yyyy"); }
         }
         public string IdPersonnel
         {
@@ -109,8 +109,8 @@ namespace Fastie.Components.LayoutPersonnel
                     Id = this.personnelName,
                     Ten = this.personnelName,
                     Email = this.gender,
-                    NgaySinh = DateTime.Parse(this.dateOfBirth),
-                    NgayVaoLam = DateTime.Parse(this.dateOfWork),
+                    NgaySinh = this.dateOfBirth,
+                    NgayVaoLam = this.dateOfWork,
                     Sdt = this.numberPhone
                 }; 
                 UpdatePersonnelForm updatePersonnelForm = new UpdatePersonnelForm(this, updatePersonnel);
