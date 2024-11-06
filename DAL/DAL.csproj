@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseAccess.cs" />
     <Compile Include="DecentralizationDAL\DecentralizationDAL.cs" />
     <Compile Include="DepartmentDAL\DepartmentDAL.cs" />
     <Compile Include="ListRoleDAL\ListRoleDAL.cs" />
@@ -55,6 +56,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="TaskDAL\TaskAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Settings.settings">

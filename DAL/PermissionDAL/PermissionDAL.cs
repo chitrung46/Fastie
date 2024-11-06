@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.PermissionDAL
 {
-    public class PermissionDAL
+    public class PermissionDAL:DatabaseAccess
     {
         public static bool checkPermission(string accountId, string permissionId)
         {

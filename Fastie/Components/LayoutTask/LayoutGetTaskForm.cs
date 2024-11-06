@@ -1,4 +1,6 @@
-﻿using Fastie.Screens.Task;
+﻿using BLL;
+using DAL;
+using Fastie.Screens.Task;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +19,15 @@ namespace Fastie.Components.LayoutRole
         private string taskTime;
         private string taskStatus;
         private string taskJobAssigner;
+        TaskBLL taskBLL = new TaskBLL();
+        private string currentUserId;
 
-        public LayoutGetTaskForm()
+        public string CongViecID { get; set; }
+
+        public LayoutGetTaskForm(string userId)
         {
             InitializeComponent();
+            currentUserId = userId;
         }
 
         public string TaskName
@@ -44,14 +51,36 @@ namespace Fastie.Components.LayoutRole
             get { return taskJobAssigner; }
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        
+        private void btnGetTask_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(CongViecID) && !string.IsNullOrEmpty(currentUserId))
+            {
+                taskBLL.giaoViecChoTaiKhoan(currentUserId, CongViecID);
+                taskBLL.capNhatTrangThaiCongViec(CongViecID, "TD002"); 
 
+                if (this.ParentForm is AcceptTaskForm parentForm)
+                {
+                    parentForm.LoadDataTaskTable(parentForm.CurrentTaskType);
+                }
+
+                if (this.Parent != null)
+                {
+                    this.Parent.Controls.Remove(this);
+                }
+            }
+            else
+            {
+                //MessageBox.Show("Không tìm thấy ID công việc hoặc ID tài khoản để nhận.", "Lỗi");
+            }
         }
 
-        private void customButton1_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
+
+
+
+
     }
 }

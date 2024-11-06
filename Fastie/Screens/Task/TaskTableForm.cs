@@ -1,10 +1,13 @@
-﻿using Fastie.Components.LayoutNotification;
+﻿using BLL;
+using DTO;
+using Fastie.Components.LayoutNotification;
 using Fastie.Components.LayoutRole;
 using Fastie.Components.LayoutTask;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,11 +18,15 @@ namespace Fastie.Screens.Task
 {
     public partial class TaskTableForm : Form
     {
-       private Panel mainLayout;
-        public TaskTableForm(Panel mainLayout)
+ 
+        TaskBLL taskBLL = new TaskBLL();
+        private string idTaiKhoan;
+        private Panel mainLayout;
+        public TaskTableForm(string idTaiKhoan, Panel mainLayout)
         {
             InitializeComponent();
             this.mainLayout = mainLayout;
+            this.idTaiKhoan = idTaiKhoan;
         }
         private void TaskTableForm_Load_1(object sender, EventArgs e)
         {
@@ -44,22 +51,20 @@ namespace Fastie.Screens.Task
         private void LoadDataTask()
         {
             flowLayoutPanelTask.Controls.Clear();
-            for(int i = 0 ; i < 20 ; i++)
+
+            List<TaskInfo> tasks = taskBLL.layCongViecTheoID(this.idTaiKhoan);
+
+            foreach (var task in tasks)
             {
                 var taskForm = new LayoutTaskForm(mainLayout)
                 {
-                    TitleTask = "Title" + i,
-                    Status = "Status" + i
+                    TitleTask = task.Ten,
+                    Status = task.GhiChu,
                 };
+
                 flowLayoutPanelTask.Controls.Add(taskForm);
             }
         }
-
-        private void flowLayoutPanelNotification_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
     }
+
 }

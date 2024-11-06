@@ -34,14 +34,14 @@ namespace Fastie.Screens.Task
 
         private void lblBack_Click(object sender, EventArgs e)
         {
-            TaskTableForm taskTableForm = new TaskTableForm(mainLayout);
-            addFormInMainLayout(taskTableForm);
+            //TaskTableForm taskTableForm = new TaskTableForm(,mainLayout);
+            //addFormInMainLayout(taskTableForm);
         }
 
         private void pictureBack_Click(object sender, EventArgs e)
         {
-            TaskTableForm taskTableForm = new TaskTableForm(mainLayout);
-            addFormInMainLayout(taskTableForm);
+            //TaskTableForm taskTableForm = new TaskTableForm(mainLayout);
+            //addFormInMainLayout(taskTableForm);
         }
     }
 }

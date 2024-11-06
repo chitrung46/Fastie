@@ -1,4 +1,6 @@
-﻿using Fastie.Components.LayoutRole;
+﻿using BLL;
+using DTO;
+using Fastie.Components.LayoutRole;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,18 +15,23 @@ namespace Fastie.Screens.Task
 {
     public partial class AcceptTaskForm : Form
     {
-        public AcceptTaskForm()
+        TaskBLL taskBLL = new TaskBLL();
+        private string currentUserId;
+        public string CurrentTaskType { get; set; }
+
+        public AcceptTaskForm(string userId)
         {
             InitializeComponent();
+            currentUserId = userId;
         }
 
         private void AcceptTaskForm_Load(object sender, EventArgs e)
         {
-            LoadDataTaskTable("Việc chủ động");
+            LoadDataTaskTable("Chưa hoàn thành");
         }
         private void setStateButton(Button stateButton)
         {
-            Button[] button = { btnInitialtiveTask, btnAssignTask};
+            Button[] button = { btnInitialtiveTask, btnAssignTask };
             for (int i = 0; i < button.Length; i++)
             {
                 if (button[i] != stateButton)
@@ -35,20 +42,40 @@ namespace Fastie.Screens.Task
             stateButton.BackColor = Color.IndianRed;
         }
 
-        private void LoadDataTaskTable(string data) //mokup data, we will replace 'string data = List<T> data'
+        public void LoadDataTaskTable(string taskType)
         {
-            flowLayoutPanelTasks.Controls.Clear(); 
-            LayoutGetTaskForm[] layoutGetTaskForm = new LayoutGetTaskForm[20];
-            for (int i = 0; i < 20; i++)
+            CurrentTaskType = taskType;  
+            flowLayoutPanelTasks.Controls.Clear();
+
+            List<TaskInfo> tasks;
+
+            if (taskType == "Việc được giao")
             {
-                layoutGetTaskForm[i] = new LayoutGetTaskForm()
+                tasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(currentUserId);
+            }
+            else
+            {
+                tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(currentUserId);
+            }
+
+            if (tasks != null && tasks.Count > 0)
+            {
+                foreach (var task in tasks)
                 {
-                    TaskName = data + " " + i,
-                    TaskTime = "11/1/2025 ",
-                    TaskStatus = "Đã hoàn thành ",
-                    JobAssigner = "Đặng Nhật Toàn "
-                };
-                flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm[i]);
+                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(currentUserId)
+                    {
+                        TaskName = task.Ten,
+                        TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
+                        TaskStatus = task.GhiChu,
+                        JobAssigner = task.TenNhanSuGiaoViec,
+                        CongViecID = task.Id
+                    };
+                    flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có công việc nào phù hợp để hiển thị.", "Thông báo");
             }
         }
 

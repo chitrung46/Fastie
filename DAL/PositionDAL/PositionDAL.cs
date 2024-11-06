@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PositionDAL
+    public class PositionDAL:DatabaseAccess
     {
         //Them Chuc Vu
         public static void InsertPosition(Position position)

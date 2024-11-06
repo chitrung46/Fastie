@@ -32,7 +32,7 @@ namespace Fastie
             setStateButton(btnTaskTable);
             if (checkPermission) {
 
-                TaskTableForm taskTableForm = new TaskTableForm(mainLayout);
+                TaskTableForm taskTableForm = new TaskTableForm(this.idTaiKhoan, mainLayout);
                 addFormInMainLayout(taskTableForm);
 
             } else {
@@ -74,7 +74,7 @@ namespace Fastie
             setStateButton(btnTaskTable);
             if (checkPermission)
             {
-                TaskTableForm taskTableForm = new TaskTableForm(mainLayout);
+                TaskTableForm taskTableForm = new TaskTableForm(this.idTaiKhoan, this.mainLayout);
                 addFormInMainLayout(taskTableForm);
             } else
             {
@@ -106,7 +106,7 @@ namespace Fastie
             setStateButton(btnAcceptTask);
             if (checkPermission)
             {
-                AcceptTaskForm acceptTaskForm = new AcceptTaskForm();
+                AcceptTaskForm acceptTaskForm = new AcceptTaskForm(this.idTaiKhoan);
                 addFormInMainLayout(acceptTaskForm);
             }
             else
