@@ -71,7 +71,7 @@ namespace Fastie.Components.LayoutRole
             }
             else
             {
-                //MessageBox.Show("Không tìm thấy ID công việc hoặc ID tài khoản để nhận.", "Lỗi");
+                MessageBox.Show("Không tìm thấy ID công việc hoặc ID tài khoản để nhận.", "Lỗi");
             }
         }
 

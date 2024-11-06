@@ -66,6 +66,14 @@ namespace Fastie.Screens.Task
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string testIdLichSu = taskBLL.TaoLichSuId();
+            if(testIdLichSu!= null)
+            {
+                MessageBox.Show("Tạo ID lịch sử thành công", testIdLichSu);
+            } else
+            {
+                MessageBox.Show("Tạo ID lịch sử thất bại"); 
+            }
             var task = new TaskInfo()
             {
                 IdLoaiCongViec = taskBLL.LayIdLoaiCongViecTuTen(customComboBox1.Texts),
