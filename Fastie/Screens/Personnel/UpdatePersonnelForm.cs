@@ -60,7 +60,6 @@ namespace Fastie
 
         private void UpdatePersonnelForm_Load(object sender, EventArgs e)
         {
-//<<<<<<< HEAD
             cTBName.Text = needEdit.Ten;
             cTBEmail.Text = needEdit.Email;
             cTBNumberPhone.Text = needEdit.Sdt;
@@ -74,33 +73,24 @@ namespace Fastie
             }
             dTPBirthday.Value = needEdit.NgaySinh;
             dTPDayOfWork.Value = needEdit.NgayVaoLam;
-//=======
             dTPBirthday.Format = DateTimePickerFormat.Custom;
             dTPBirthday.CustomFormat = "yyyy/MM/dd";
             dTPDayOfWork.Format = DateTimePickerFormat.Custom;
             dTPDayOfWork.CustomFormat = "yyyy/MM/dd";
             cCBSex.Items.Add("Nam");
             cCBSex.Items.Add("Nữ");
-//>>>>>>> origin/Toan
-/***
-            cTBName.Text = layoutPersonnelForm.PersonnelName;
-            cTBEmail.Text = layoutPersonnelForm.Email;
-            cTBNumberPhone.Text = layoutPersonnelForm.NumberPhone;
-            cCBSex.Texts = layoutPersonnelForm.Gender;
-            dTPBirthday.Value = DateTime.Parse(layoutPersonnelForm.DateOfBirth);
-            dTPDayOfWork.Value = DateTime.Parse(layoutPersonnelForm.DateOfWork);***/
+
         }
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-//<<<<<<< HEAD
             if (string.IsNullOrWhiteSpace(cTBName.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên nhân sự.", "Thông báo");
                 return;
             }
             needEdit.Id = personnelForm.IdPersonnel;
-            needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
+            needEdit.Ten = cTBName.Text;        
             needEdit.Email = cTBEmail.Text;
             needEdit.GioiTinh = cCBSex.SelectedItem?.ToString();
             needEdit.NgaySinh = dTPBirthday.Value;
@@ -110,40 +100,17 @@ namespace Fastie
             this.Close();
             MessageBox.Show("Sửa Nhân sự thành công!", "Success");
             personnelForm.loadDataPersonnel();
-//=======
-            //personnel.Id = layoutPersonnelForm.IdPersonnel;
-           // personnel.Ten = cTBName.Text;         
-           // personnel.Email = cTBEmail.Text;
-           // personnel.GioiTinh = cCBSex.Texts;
-           // personnel.NgaySinh = dTPBirthday.Value;
-           // personnel.NgayVaoLam = dTPDayOfWork.Value;
-           // personnel.Sdt = cTBNumberPhone.Text;
-           // personnelBLL.UpdatePersonnel(personnel);
-            
-            //MessageBox.Show("Sửa Nhân sự thành công!", "Success");
-            //layoutPersonnelForm.loadDataPersonnel();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {/***
-            personnel.Id = layoutPersonnelForm.IdPersonnel;
-            personnel.Ten = cTBName.Text;
-            personnel.Email = cTBEmail.Text;
-            personnel.GioiTinh = cCBSex.Texts;
-            personnel.NgaySinh = dTPBirthday.Value;
-            personnel.NgayVaoLam = dTPDayOfWork.Value;
-            personnel.Sdt = cTBNumberPhone.Text;
-            personnelBLL.UpdatePersonnel(personnel);
-            this.Close();
-            MessageBox.Show("Sửa Nhân sự thành công!", "Success");
-            layoutPersonnelForm.loadDataPersonnel();***/
+        {
             if (string.IsNullOrWhiteSpace(cTBName.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên nhân sự.", "Thông báo");
                 return;
             }
-            //needEdit.Id = personnelForm.IdPersonnel;
-            needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
+            needEdit.Ten = cTBName.Text;        
             needEdit.Email = cTBEmail.Text;
             needEdit.GioiTinh = cCBSex.SelectedItem?.ToString();
             needEdit.NgaySinh = dTPBirthday.Value;
@@ -157,7 +124,6 @@ namespace Fastie
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-//>>>>>>> origin/Toan
             this.Close();
         }
     }
