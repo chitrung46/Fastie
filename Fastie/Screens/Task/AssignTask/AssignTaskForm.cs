@@ -9,19 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DTO;
 namespace Fastie.Screens.Task
 {
     public partial class AssignTaskForm : Form
     {
-        public AssignTaskForm()
+        readonly AccountId accountId = new AccountId();
+        public AssignTaskForm(AccountId accountId)
         {
             InitializeComponent();
+            this.accountId = accountId;
         }
 
         private void btnDetailAssignTask_Click(object sender, EventArgs e)
         {
-            DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm();
+            DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm(accountId);
             detailAssignTaskForm.Show();
         }
 

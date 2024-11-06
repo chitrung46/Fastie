@@ -10,15 +10,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DTO;
 namespace Fastie
 {
     public partial class TaskForm: Form
     {
-        public TaskForm()
+        private readonly string idTaiKhoan;
+        private readonly string idBoPhan;
+        readonly AccountId accountId = new AccountId();  
+        public TaskForm(AccountId accountId)
         {
             InitializeComponent();
             setStateButton(btnTaskTable);
+            this.accountId = accountId;   
             TaskTableForm taskTableForm = new TaskTableForm();
             addFormInMainLayout(taskTableForm);
         }
@@ -55,7 +59,7 @@ namespace Fastie
 
         private void btnAssignTask_Click(object sender, EventArgs e)
         {
-            AssignTaskForm assignTaskForm = new AssignTaskForm();
+            AssignTaskForm assignTaskForm = new AssignTaskForm(accountId);
             addFormInMainLayout(assignTaskForm);
             setStateButton(btnAssignTask);
         }

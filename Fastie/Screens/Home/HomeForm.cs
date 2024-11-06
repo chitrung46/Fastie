@@ -18,6 +18,8 @@ namespace Fastie
     {
         private string idTaiKhoan;
         private string idChucVu;
+        private string idBoPhan;
+        AccountId accountId  = new AccountId();
         PermissionBLL permissionBLL = new PermissionBLL();
         public HomeForm()
         {
@@ -35,6 +37,11 @@ namespace Fastie
                 {
                     this.idTaiKhoan = user.Id;
                     this.idChucVu = user.IdChucVu;
+                    accountId.IdTaiKhoan = user.Id;
+                    accountId.IdChucVu = user.IdChucVu;
+                    accountId.IdNhanSu = user.IdNhanSu;
+                    accountId.IdBoPhan = user.IdBoPhan;
+
                 }
             }
             Console.WriteLine(this.idTaiKhoan + " - " + this.idChucVu);
@@ -51,7 +58,6 @@ namespace Fastie
             get { return idChucVu; }
             set { idChucVu = value; }
         }
-
         private void FormLayout_Load(object sender, EventArgs e)
         {
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0001"); //Q0001 is permission to access DecentralizationForm
@@ -162,7 +168,7 @@ namespace Fastie
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0018");
             if (checkPermission)
             {
-                TaskForm work = new TaskForm();
+                TaskForm work = new TaskForm(accountId);
                 addFormInMainLayout(work);
             }
             else
