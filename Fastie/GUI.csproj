@@ -58,6 +58,12 @@
     <Compile Include="Components\LayoutDepartment\LayoutDepartmentForm.Designer.cs">
       <DependentUpon>LayoutDepartmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\LayoutNotification\NotificationForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutNotification\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\LayoutPersonnel\LayoutPersonnelForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -69,12 +75,6 @@
     </Compile>
     <Compile Include="Components\LayoutPosition\LayoutPositionForm.Designer.cs">
       <DependentUpon>LayoutPositionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Components\LayoutNotification\NotificationForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\LayoutNotification\NotificationForm.Designer.cs">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\LayoutTask\LayoutAssignmentAdjustmentForm.cs">
       <SubType>UserControl</SubType>
@@ -117,12 +117,6 @@
     </Compile>
     <Compile Include="Screens\Analytics\Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Decentralization\DecentralizationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Decentralization\DecentralizationForm.Designer.cs">
-      <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Department\DetailsDepartmentForm.cs">
       <SubType>Form</SubType>
@@ -216,6 +210,12 @@
     </Compile>
     <Compile Include="Screens\Decentralization\UpdateDecentralizationForm.Designer.cs">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Decentralization\DecentralizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Decentralization\DecentralizationForm.Designer.cs">
+      <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Account\EditAccount.Designer.cs">
       <DependentUpon>EditAccount.cs</DependentUpon>
@@ -345,14 +345,14 @@
     <EmbeddedResource Include="Components\LayoutDepartment\LayoutDepartmentForm.resx">
       <DependentUpon>LayoutDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutNotification\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutPersonnel\LayoutPersonnelForm.resx">
       <DependentUpon>LayoutPersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutPosition\LayoutPositionForm.resx">
       <DependentUpon>LayoutPositionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Components\LayoutNotification\NotificationForm.resx">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutTask\LayoutAssignmentAdjustmentForm.resx">
       <DependentUpon>LayoutAssignmentAdjustmentForm.cs</DependentUpon>
@@ -378,11 +378,11 @@
     <EmbeddedResource Include="Screens\Account\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Decentralization\DecentralizationForm.resx">
-      <DependentUpon>DecentralizationForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Decentralization\DecentralizationForm.resx">
+      <DependentUpon>DecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Account\CreateAccount.resx">
       <DependentUpon>CreateAccount.cs</DependentUpon>
@@ -649,15 +649,6 @@
       <Project>{f9469dd2-23d1-4b54-8be7-8ffaa41c818b}</Project>
       <Name>DTO</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-document-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\z5866322563222_7c9b9873ee9ceed252ea45f87aeb13ff.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-back-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

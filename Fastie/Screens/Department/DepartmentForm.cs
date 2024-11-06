@@ -13,7 +13,6 @@ using BLL.PermissionBLL;
 using DAL;
 using DTO;
 using Fastie.Components.LayoutDepartmen;
-using Fastie.Components.LayoutDepartment;
 using GUI.TruniControls;
 namespace Fastie
 {
