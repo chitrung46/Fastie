@@ -64,8 +64,9 @@ namespace Fastie.Components.LayoutPersonnel
         public DateTime DateOfWork
         {
             get { return dateOfWork; }
-            set { dateOfWork = value; lblDateOfWork.Text = dateOfWork.ToString("dd/MM/yyyy"); }
+            set { dateOfWork = value;  }
         }
+
         public string IdPersonnel
         {
             get { return idPersonnel; }
@@ -106,9 +107,10 @@ namespace Fastie.Components.LayoutPersonnel
             {
                 var updatePersonnel = new Personnel
                 {
-                    Id = this.personnelName,
+                    Id = this.idPersonnel,
                     Ten = this.personnelName,
-                    Email = this.gender,
+                    Email = this.email,
+                    GioiTinh = this.gender,
                     NgaySinh = this.dateOfBirth,
                     NgayVaoLam = this.dateOfWork,
                     Sdt = this.numberPhone

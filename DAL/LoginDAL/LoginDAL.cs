@@ -12,7 +12,7 @@ namespace DAL.LoginDAL
     
     public static class SqlConnectionData
     {
-        private static readonly string connectionString = @"Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private static readonly string connectionString = @"Data Source=ANH-QUAN;Initial Catalog=FASTIE;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         public static SqlConnection Connect()
         {
@@ -21,9 +21,9 @@ namespace DAL.LoginDAL
     }
     public class LoginDAL:DatabaseAccess
     {
-        public static string[] checkLogin(Account acc)
+        public string[] checkLogin(Account acc)
         {
-            string[] user = new string[4];
+            string[] user = new string[5];
             SqlConnection conn = SqlConnectionData.Connect();
             conn.Open();
             SqlCommand command = new SqlCommand("proc_checkLogin", conn);
@@ -41,6 +41,7 @@ namespace DAL.LoginDAL
                     user[1] = reader["idNhanSu"].ToString();
                     user[2] = reader["idBoPhan"].ToString();
                     user[3] = reader["idChucVu"].ToString();
+                    user[4] = reader["trangThai"].ToString();
                 }
                 reader.Close();
                 conn.Close();

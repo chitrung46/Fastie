@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnGetTask = new GUI.CustomButton();
-            this.customButton1 = new GUI.CustomButton();
+            this.btnDetail = new GUI.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblJobAssigner = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.lblTitleTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleTask.Location = new System.Drawing.Point(19, 19);
             this.lblTitleTask.Name = "lblTitleTask";
-            this.lblTitleTask.Size = new System.Drawing.Size(171, 21);
+            this.lblTitleTask.Size = new System.Drawing.Size(182, 21);
             this.lblTitleTask.TabIndex = 0;
             this.lblTitleTask.Text = "Sửa chữa bồn vệ sinh";
             // 
@@ -93,27 +93,28 @@
             this.btnGetTask.UseVisualStyleBackColor = false;
             this.btnGetTask.Click += new System.EventHandler(this.btnGetTask_Click);
             // 
-            // customButton1
+            // btnDetail
             // 
-            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.customButton1.BorderColor = System.Drawing.Color.White;
-            this.customButton1.BorderRadius = 15;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Image = global::Fastie.Properties.Resources.icons8_document_24;
-            this.customButton1.Location = new System.Drawing.Point(3, 6);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(48, 40);
-            this.customButton1.TabIndex = 2;
-            this.customButton1.UseVisualStyleBackColor = false;
+            this.btnDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.btnDetail.BorderColor = System.Drawing.Color.White;
+            this.btnDetail.BorderRadius = 15;
+            this.btnDetail.BorderSize = 0;
+            this.btnDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDetail.FlatAppearance.BorderSize = 0;
+            this.btnDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetail.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetail.ForeColor = System.Drawing.Color.White;
+            this.btnDetail.Image = global::Fastie.Properties.Resources.icons8_document_24;
+            this.btnDetail.Location = new System.Drawing.Point(3, 6);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(48, 40);
+            this.btnDetail.TabIndex = 2;
+            this.btnDetail.UseVisualStyleBackColor = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.customButton1);
+            this.panel2.Controls.Add(this.btnDetail);
             this.panel2.Location = new System.Drawing.Point(1043, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(62, 54);
@@ -133,7 +134,7 @@
             this.lblJobAssigner.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobAssigner.Location = new System.Drawing.Point(13, 16);
             this.lblJobAssigner.Name = "lblJobAssigner";
-            this.lblJobAssigner.Size = new System.Drawing.Size(137, 21);
+            this.lblJobAssigner.Size = new System.Drawing.Size(146, 21);
             this.lblJobAssigner.TabIndex = 0;
             this.lblJobAssigner.Text = "Lương Chí Trung";
             // 
@@ -176,7 +177,7 @@
             this.lblTaskTime.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaskTime.Location = new System.Drawing.Point(13, 16);
             this.lblTaskTime.Name = "lblTaskTime";
-            this.lblTaskTime.Size = new System.Drawing.Size(82, 21);
+            this.lblTaskTime.Size = new System.Drawing.Size(85, 21);
             this.lblTaskTime.TabIndex = 0;
             this.lblTaskTime.Text = "9/12/2024";
             // 
@@ -212,7 +213,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private GUI.CustomButton btnGetTask;
-        private GUI.CustomButton customButton1;
+        private GUI.CustomButton btnDetail;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblJobAssigner;

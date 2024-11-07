@@ -9,6 +9,7 @@ namespace BLL.LoginBLL
 {
     public class LoginBLL
     {
+        LoginDAL loginDAL = new LoginDAL();
         public string[] checkLogin(Account acc)
         {
             if (acc.TenDangNhap == "")
@@ -21,8 +22,9 @@ namespace BLL.LoginBLL
                 return new string[] { "required_password" };
             }
 
-            return LoginDAL.checkLogin(acc);
+            return loginDAL.checkLogin(acc);
 
         }
+
     }
 }

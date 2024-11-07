@@ -12,11 +12,18 @@ namespace DTO
         private String idNhanSu;
         private String idBoPhan;
         private String idChucVu;
+        private String tenNhanSu;
+        private String tenBoPhan;
+        private String tenChucVu;
 
         public String IdTaiKhoan { get => idTaiKhoan; set => idTaiKhoan = value; }
         public String IdNhanSu { get => idNhanSu; set => idNhanSu = value; }
         public String IdBoPhan { get => idBoPhan; set => idBoPhan = value; }
         public String IdChucVu { get => idChucVu; set => idChucVu = value; }
+        public String TenNhanSu { get => tenNhanSu; set => tenNhanSu = value; }
+        public String TenBoPhan { get => tenBoPhan; set => tenBoPhan = value; }
+        public String TenChucVu { get => tenChucVu; set => tenChucVu = value; }
+
         public AccountId() {}
         public AccountId(string idTaiKhoan, String idNhanSu, String idBoPhan, String idChucVu)
         {
@@ -26,6 +33,15 @@ namespace DTO
             IdNhanSu = idNhanSu;
         }
 
+        public AccountId(string idTaiKhoan, String idNhanSu, String idBoPhan, String idChucVu, string tenNhanSu, string tenBoPhan)
+        {
+            this.idTaiKhoan = idTaiKhoan;
+            this.idNhanSu = idNhanSu;
+            this.idBoPhan = idBoPhan;
+            this.idChucVu = idChucVu;
+            this.tenNhanSu = tenNhanSu;
+            this.tenBoPhan = tenBoPhan;
+        }
 
 
     }

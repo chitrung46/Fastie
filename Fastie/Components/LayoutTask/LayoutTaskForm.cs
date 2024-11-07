@@ -15,11 +15,13 @@ namespace Fastie.Components.LayoutTask
     {
         private string titleTask;
         private string status;
-        private Panel mainLayout;
-        public LayoutTaskForm(Panel mainLayout)
+        private string idTask;
+        private TaskForm taskForm;
+
+        public LayoutTaskForm(TaskForm taskForm)
         {
             InitializeComponent();
-            this.mainLayout = mainLayout;
+            this.taskForm = taskForm;
         }
 
         public string TitleTask
@@ -34,21 +36,19 @@ namespace Fastie.Components.LayoutTask
             set { status = value; btnStatus.Text = value; }
         }
 
-        
-        //Add form in main layout
-        private void addFormInMainLayout(Form userControl)
+        public string IdTask
         {
-            mainLayout.Controls.Clear();
-            userControl.TopLevel = false;
-            mainLayout.Controls.Add(userControl);
-            userControl.Dock = DockStyle.Fill;
-            userControl.Show();
+            get { return idTask; }
+            set { idTask = value; }
         }
-
         private void btnGetInformation_Click(object sender, EventArgs e)
         {
-            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(mainLayout);
-            addFormInMainLayout(detailsTaskForm);
+            Console.WriteLine($"Opening DetailsTaskForm with idTask: {this.idTask}");
+            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(this.taskForm, this.idTask);
+            taskForm.AddFormInMainLayout(detailsTaskForm);
         }
+
+
+
     }
 }

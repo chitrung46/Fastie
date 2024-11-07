@@ -16,13 +16,14 @@ namespace Fastie.Screens.Task
     public partial class AcceptTaskForm : Form
     {
         TaskBLL taskBLL = new TaskBLL();
-        private string idTaiKhoan;
+        private TaskForm taskForm;
+
         public string CurrentTaskType { get; set; }
 
-        public AcceptTaskForm(string idTaiKhoan)
+        public AcceptTaskForm(TaskForm taskForm)
         {
             InitializeComponent();
-            this.idTaiKhoan = idTaiKhoan;
+            this.taskForm = taskForm;
         }
 
         private void AcceptTaskForm_Load(object sender, EventArgs e)
@@ -44,31 +45,35 @@ namespace Fastie.Screens.Task
 
         public void LoadDataTaskTable(string taskType)
         {
-            CurrentTaskType = taskType;  
+            CurrentTaskType = taskType;
             flowLayoutPanelTasks.Controls.Clear();
 
-            List<TaskInfo> tasks;
+            List<TaskInfo> filteredTasks;
 
             if (taskType == "Việc được giao")
             {
-                tasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(this.idTaiKhoan);
+                // Load tasks assigned to the current account, excluding those assigned by the same account
+                filteredTasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan)
+                                       .Where(task => task.IdTaiKhoanGiaoViec != taskForm.IdTaiKhoan) // Exclude tasks assigned by the same account
+                                       .ToList();
             }
             else
             {
-                tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(this.idTaiKhoan);
+                // Load tasks not yet assigned to any account
+                filteredTasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan);
             }
 
-            if (tasks != null && tasks.Count > 0)
+            if (filteredTasks != null && filteredTasks.Count > 0)
             {
-                foreach (var task in tasks)
+                foreach (var task in filteredTasks)
                 {
-                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(this.idTaiKhoan)
+                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(taskForm)
                     {
                         TaskName = task.Ten,
                         TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
                         TaskStatus = task.GhiChu,
                         JobAssigner = task.TenNhanSuGiaoViec,
-                        CongViecID = task.Id
+                        TaskId = task.Id
                     };
                     flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm);
                 }
@@ -78,6 +83,7 @@ namespace Fastie.Screens.Task
                 MessageBox.Show("Không có công việc nào phù hợp để hiển thị.", "Thông báo");
             }
         }
+
 
         private void flowLayoutPanelTasks_Paint(object sender, PaintEventArgs e)
         {

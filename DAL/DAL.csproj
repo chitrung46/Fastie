@@ -45,6 +45,7 @@
     <Compile Include="DecentralizationDAL\DecentralizationDAL.cs" />
     <Compile Include="DepartmentDAL\DepartmentDAL.cs" />
     <Compile Include="ListRoleDAL\ListRoleDAL.cs" />
+    <Compile Include="LoginDAL\GetInFoLoginDAL.cs" />
     <Compile Include="LoginDAL\LoginDAL.cs" />
     <Compile Include="PermissionDAL\PermissionDAL.cs" />
     <Compile Include="PersonnelDAL\PersonnelDAL.cs" />
