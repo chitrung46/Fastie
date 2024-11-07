@@ -115,7 +115,7 @@ namespace DAL.TaskDAL
         public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string idBoPhan)
         {
             List<TaskInfo> tasks = new List<TaskInfo>();
-            string query = "proc_layCongViecTuTKChuDuocNhan";
+            string query = "proc_layCongViecTuTkChuDuocNhan";
 
             using (SqlConnection con = SqlConnectionData.Connect())
             {
@@ -123,7 +123,7 @@ namespace DAL.TaskDAL
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@idBoPhan", idBoPhan);
+                    command.Parameters.AddWithValue("@idBoPhan", idBoPhan); 
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
