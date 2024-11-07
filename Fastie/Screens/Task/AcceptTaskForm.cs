@@ -28,7 +28,7 @@ namespace Fastie.Screens.Task
 
         private void AcceptTaskForm_Load(object sender, EventArgs e)
         {
-            LoadDataTaskTable("Chưa hoàn thành");
+            LoadDataTaskTable();
         }
         private void setStateButton(Button stateButton)
         {
@@ -43,7 +43,7 @@ namespace Fastie.Screens.Task
             stateButton.BackColor = Color.IndianRed;
         }
 
-        public void LoadDataTaskTable(string taskType)
+        public void LoadDataTaskTable(string taskType = null)
         {
             CurrentTaskType = taskType;
             flowLayoutPanelTasks.Controls.Clear();

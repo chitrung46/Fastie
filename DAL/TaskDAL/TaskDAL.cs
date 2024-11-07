@@ -117,38 +117,45 @@ namespace DAL.TaskDAL
             List<TaskInfo> tasks = new List<TaskInfo>();
             string query = "proc_layCongViecTuTkChuDuocNhan";
 
-            using (SqlConnection con = SqlConnectionData.Connect())
+            try
             {
-                con.Open();
-                using (SqlCommand command = new SqlCommand(query, con))
+                using (SqlConnection con = SqlConnectionData.Connect())
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    Console.WriteLine(idBoPhan);
-                    command.Parameters.AddWithValue("@idBoPhan", idBoPhan); 
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
                     {
-                        while (reader.Read())
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@idBoPhan", idBoPhan);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            tasks.Add(new TaskInfo
+                            while (reader.Read())
                             {
-                                Id = reader["id"].ToString(),
-                                Ten = reader["ten"].ToString(),
-                                MoTa = reader["moTa"].ToString(),
-                                ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
-                                ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
-                                ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
-                                GhiChu = reader["ghiChu"].ToString(),
-                                IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
-                                TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString()
-                            });
+                                tasks.Add(new TaskInfo
+                                {
+                                    Id = reader["CongViecID"].ToString(),
+                                    Ten = reader["TenCongViec"].ToString(),
+                                    MoTa = reader["MoTaCongViec"].ToString(),
+                                    ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                    ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                    GhiChu = reader["ghiChu"].ToString(),
+                                    TenBoPhan = reader["TenBoPhan"].ToString(),
+                                    TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString(),
+                                    TenTienDoCongViec = reader["TenTienDoCongViec"].ToString()
+                                });
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy danh sách công việc chưa được giao cho tài khoản: " + ex.Message);
+            }
 
             return tasks;
         }
+
 
         public List<TaskInfo> nhanNhiemVuDuocGiaoTuTaiKhoan(string accountId)
         {
@@ -222,8 +229,13 @@ namespace DAL.TaskDAL
             return danhSachLoaiCongViec;
         }
 
-        public bool ThemCongViecGiaoViec(TaskInfo task) 
+        public bool ThemCongViecGiaoViec(TaskInfo task)
         {
+            if (string.IsNullOrEmpty(task.IdLichSuMacDinh))
+            {
+                throw new ArgumentException("IdLichSuMacDinh is required and cannot be null or empty.");
+            }
+
             string query = "proc_themCongViec";
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
@@ -240,12 +252,13 @@ namespace DAL.TaskDAL
                 cmd.Parameters.AddWithValue("@idLoaiCongViec", task.IdLoaiCongViec);
                 cmd.Parameters.AddWithValue("@idTienDoCongViec", task.IdTienDoCongViec);
                 cmd.Parameters.AddWithValue("@idHanhDong", "HD003");
-                cmd.Parameters.AddWithValue("@idLichSuMacDinh", task.IdLichSuMacDinh);
+                cmd.Parameters.AddWithValue("@idLichSuMacDinh", task.IdLichSuMacDinh); 
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 return true;
             }
         }
+
 
         public string TaoCongViecId (string idLoaiCongViec, string idBoPhan)
         {
@@ -402,5 +415,7 @@ namespace DAL.TaskDAL
                 conn.Close();
             }
         }
+
+
     }
 }

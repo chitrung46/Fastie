@@ -130,6 +130,9 @@ namespace BLL
                 throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
             }
         }
+
+
+
     }
 
 }
