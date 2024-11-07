@@ -17,9 +17,9 @@ namespace Fastie.Screens.Task
     {
         TaskBLL taskBLL = new TaskBLL();
         private TaskForm taskForm;
+        private string currentTaskType;
 
-        public string CurrentTaskType { get; set; }
-
+        public string CurrentTaskType { get => currentTaskType; set => currentTaskType = value; }
         public AcceptTaskForm(TaskForm taskForm)
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace Fastie.Screens.Task
 
         public void LoadDataTaskTable(string taskType)
         {
-            CurrentTaskType = taskType;
+            this.currentTaskType = taskType;
             flowLayoutPanelTasks.Controls.Clear();
 
             List<TaskInfo> filteredTasks = null;
@@ -66,7 +66,7 @@ namespace Fastie.Screens.Task
             {
                 foreach (var task in filteredTasks)
                 {
-                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(taskForm)
+                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(taskForm, this.currentTaskType)
                     {
                         TaskName = task.Ten,
                         TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",

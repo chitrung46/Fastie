@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Fastie.Components.LayoutTask
 {
-    public partial class LayoutDetailReportTaskForm1 : UserControl
+    public partial class LayoutDetailReportForm : UserControl
     {
-        public LayoutDetailReportTaskForm1()
+        public LayoutDetailReportForm()
         {
             InitializeComponent();
         }
@@ -22,7 +22,11 @@ namespace Fastie.Components.LayoutTask
         private string fileName;
         private string imageName;
         private string idReport;
-
+        public string ReportContent
+        {
+            get { return reportContent; }
+            set { reportContent = value; lblReportContent.Text = reportContent; }
+        }
 
         public string IdReport
         {
@@ -30,27 +34,21 @@ namespace Fastie.Components.LayoutTask
             set { idReport = value; }
         }
 
-        public string ReportContent
-        {
-            get { return reportContent; }
-            set { reportContent = value; lblReportContent.Text = value; }
-        }
-        public string FileName
-        { 
-            get { return fileName; }
-            set { fileName = value; lblFileName.Text = value; }
-        }
         public string ReportDate
         {
             get { return reportDate; }
-            set { reportDate = value; lblReportDate.Text = value; }
+            set { reportDate = value; lblReportDate.Text = reportDate; }
         }
-
+        public string FileName
+        {
+            get { return fileName; }
+            set { fileName = value; lblFileName.Text = fileName; }
+        }
         public string ImageName
         {
             get { return imageName; }
-            set { imageName = value; lblImageName.Text = value; }
+            set { imageName = value; lblImageName.Text = imageName; }
         }
-        
+
     }
 }

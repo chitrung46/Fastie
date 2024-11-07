@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Task.ReportTask;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,55 +11,51 @@ using System.Windows.Forms;
 
 namespace Fastie.Components.LayoutTask
 {
-    public partial class LayoutDetailReportTaskForm : UserControl
+    public partial class LayoutReportTaskForm : UserControl
     {
-        private string reportContent;
-        private string reportDate;
-        private string fileName;
-        private string imageName;
-        private string idReport;
-
-        public LayoutDetailReportTaskForm()
+        private ReportTaskForm reportTaskForm;
+        public LayoutReportTaskForm(ReportTaskForm reportTaskForm)
         {
             InitializeComponent();
+            this.reportTaskForm = reportTaskForm;
         }
 
+        private string taskName;
+        private string taskTime;
+        private string taskStatus;
+        private string taskJobAssigner;
+        private string taskDetail;
 
-        public string ReportContent
+        public string TaskName
         {
-            get { return reportContent; }
-            set { reportContent = value; lblReportContent.Text = reportContent; }
+            get { return taskName; }
+            set { taskName = value; lblTaskName.Text = value; }
+        }
+        public string TaskTime
+        {
+            get { return taskTime; }
+            set { taskTime = value; lblTaskTime.Text = value; }
+        }
+        public string TaskStatus
+        {
+            get { return taskStatus; }
+            set { taskStatus = value; btnTaskStatus.Text = value; }
+        }
+        public string TaskJobAssigner
+        {
+            get { return taskJobAssigner; }
+            set { taskJobAssigner = value; lblJobAssigner.Text = value; }
+        }
+        public string TaskDetail
+        {
+            get { return taskDetail; }
+            set { taskDetail = value; btnTaskDetail.Text = value; }
         }
 
-        public string IdReport
+        private void btnReport_Click(object sender, EventArgs e)
         {
-            get { return idReport; }
-            set { idReport = value; }
-        }
-
-        public string ReportDate
-        {
-            get { return reportDate; }
-            set { reportDate = value; lblReportDate.Text = reportDate; }
-        }
-        public string FileName
-        {
-            get { return fileName; }
-            set { fileName = value; lblFileName.Text = fileName;}
-        }
-        public string ImageName
-        {
-            get { return imageName; }
-            set { imageName = value; lblImageName.Text = imageName; }
-        }
-
-        private void btnDetail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LayoutDetailReportTaskForm_Load(object sender, EventArgs e)
-        {
+            DoReportForm doReportForm = new DoReportForm();
+            doReportForm.Show();
         }
     }
 }

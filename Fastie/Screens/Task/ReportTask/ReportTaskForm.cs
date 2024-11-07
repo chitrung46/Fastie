@@ -22,10 +22,11 @@ namespace Fastie.Screens.Task.ReportTask
         private void LoadDataTaskTable()
         {
             flowLayoutPanelTasks.Controls.Clear();
-            LayoutDetailReportTaskForm1[] layoutReportTaskForm = new LayoutDetailReportTaskForm1[20];
+
+            LayoutReportTaskForm[] layoutReportTaskForm = new LayoutReportTaskForm[20];
             for (int i = 0; i < 20; i++)
             {
-                layoutReportTaskForm[i] = new LayoutDetailReportTaskForm1
+                layoutReportTaskForm[i] = new LayoutReportTaskForm(this)
                 {
                     TaskName = "Task " + i,
                     TaskTime = "Time " + i,

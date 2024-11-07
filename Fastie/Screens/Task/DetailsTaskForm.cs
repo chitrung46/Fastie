@@ -58,11 +58,10 @@ namespace Fastie.Screens.Task
             int length = 5; //Change report data length
             if (length > 0)
             {
-                pnlReport.Visible = true;
                 flowLayoutPanelReport.Controls.Clear();
                 for (int i = 0; i < length; i++)
                 {
-                    LayoutDetailReportTaskForm1 layoutDetailReportTaskForm = new LayoutDetailReportTaskForm1()
+                    LayoutDetailReportForm layoutDetailReportForm = new LayoutDetailReportForm()
                     {
                         ReportContent = "Đây là nội dung báo cáo " + i,
                         ReportDate = "20/11/2024",
@@ -71,12 +70,8 @@ namespace Fastie.Screens.Task
                         IdReport = "ID" + i
                     };
 
-                    flowLayoutPanelReport.Controls.Add(layoutDetailReportTaskForm);
+                    flowLayoutPanelReport.Controls.Add(layoutDetailReportForm);
                 }
-            }
-            else
-            {
-                pnlReport.Visible = false;
             }
         }
 
@@ -90,8 +85,15 @@ namespace Fastie.Screens.Task
                     taskForm.AddFormInMainLayout(taskTableForm);
                     break;
                 case "AcceptTaskForm":
-                    AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
-                    taskForm.AddFormInMainLayout(acceptTaskForm);
+                    if(layoutGetTaskForm.CurrentTaskType == "Việc chủ động")
+                    {
+                        AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
+                        taskForm.AddFormInMainLayout(acceptTaskForm);
+                    } else if(layoutGetTaskForm.CurrentTaskType == "Việc được giao")
+                    {
+                        AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
+                        taskForm.AddFormInMainLayout(acceptTaskForm);
+                    }
                     break;
                 case "AssignTaskForm":
                     AssignTaskForm assignTaskForm = new AssignTaskForm(taskForm);
@@ -113,6 +115,11 @@ namespace Fastie.Screens.Task
                     LoadDataTaskTable();
                     break;
             }   
+        }
+
+        private void flowLayoutPanelReport_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

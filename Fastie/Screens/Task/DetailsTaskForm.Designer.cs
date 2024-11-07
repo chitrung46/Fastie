@@ -31,20 +31,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.lblBack = new System.Windows.Forms.Label();
-            this.customPanel2 = new GUI.TruniControls.CustomPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pnlReport = new GUI.TruniControls.CustomPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelReport = new System.Windows.Forms.FlowLayoutPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.customButton1 = new GUI.CustomButton();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.customPanel7 = new GUI.TruniControls.CustomPanel();
@@ -73,10 +59,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnUploadFile = new GUI.CustomButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.flowLayoutPanelReport = new System.Windows.Forms.FlowLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
-            this.customPanel2.SuspendLayout();
-            this.pnlReport.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.customPanel1.SuspendLayout();
             this.customPanel7.SuspendLayout();
             this.customPanel6.SuspendLayout();
@@ -87,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.customPanel9.SuspendLayout();
             this.customPanel8.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -124,166 +118,6 @@
             this.lblBack.TabIndex = 41;
             this.lblBack.Text = "Quay lại";
             this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
-            // 
-            // customPanel2
-            // 
-            this.customPanel2.BackColor = System.Drawing.Color.White;
-            this.customPanel2.BorderColor = System.Drawing.Color.White;
-            this.customPanel2.BorderRadius = 30;
-            this.customPanel2.BorderSize = 0;
-            this.customPanel2.Controls.Add(this.label10);
-            this.customPanel2.Controls.Add(this.label8);
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.GradientAngle = 90F;
-            this.customPanel2.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel2.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(12, 549);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1073, 4);
-            this.customPanel2.TabIndex = 45;
-            this.customPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel2_Paint);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(666, 29);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 21);
-            this.label10.TabIndex = 42;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(198, 29);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 21);
-            this.label8.TabIndex = 39;
-            // 
-            // pnlReport
-            // 
-            this.pnlReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnlReport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnlReport.BorderRadius = 30;
-            this.pnlReport.BorderSize = 0;
-            this.pnlReport.Controls.Add(this.panel1);
-            this.pnlReport.Controls.Add(this.flowLayoutPanelReport);
-            this.pnlReport.Controls.Add(this.label18);
-            this.pnlReport.Controls.Add(this.label16);
-            this.pnlReport.Controls.Add(this.label17);
-            this.pnlReport.ForeColor = System.Drawing.Color.White;
-            this.pnlReport.GradientAngle = 90F;
-            this.pnlReport.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnlReport.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnlReport.Location = new System.Drawing.Point(12, 569);
-            this.pnlReport.Name = "pnlReport";
-            this.pnlReport.Size = new System.Drawing.Size(1073, 286);
-            this.pnlReport.TabIndex = 46;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.label24);
-            this.panel1.Location = new System.Drawing.Point(23, 44);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1021, 29);
-            this.panel1.TabIndex = 49;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(907, 4);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 21);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Chi tiết";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(1040, 4);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(70, 21);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Chi tiết";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(694, 4);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(74, 21);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Tên ảnh";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(439, 4);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(69, 21);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Tên file";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(1, 4);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(152, 21);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Nội dung báo cáo";
-            // 
-            // flowLayoutPanelReport
-            // 
-            this.flowLayoutPanelReport.AutoScroll = true;
-            this.flowLayoutPanelReport.Location = new System.Drawing.Point(23, 81);
-            this.flowLayoutPanelReport.Name = "flowLayoutPanelReport";
-            this.flowLayoutPanelReport.Size = new System.Drawing.Size(1086, 182);
-            this.flowLayoutPanelReport.TabIndex = 48;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(17, 7);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(214, 32);
-            this.label18.TabIndex = 47;
-            this.label18.Text = "Báo cáo gần đây";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(666, 29);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(0, 21);
-            this.label16.TabIndex = 42;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(198, 29);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(0, 21);
-            this.label17.TabIndex = 39;
             // 
             // customButton1
             // 
@@ -675,15 +509,124 @@
             this.btnUploadFile.Text = "Tải xuống file";
             this.btnUploadFile.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Location = new System.Drawing.Point(35, 639);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1021, 29);
+            this.panel1.TabIndex = 52;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(345, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 21);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Ngày báo cáo";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(907, 4);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(70, 21);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Chi tiết";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(1040, 4);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(70, 21);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Chi tiết";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(759, 4);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(74, 21);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Tên ảnh";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(550, 4);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(69, 21);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Tên file";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(1, 4);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(152, 21);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Nội dung báo cáo";
+            // 
+            // flowLayoutPanelReport
+            // 
+            this.flowLayoutPanelReport.AutoScroll = true;
+            this.flowLayoutPanelReport.Location = new System.Drawing.Point(35, 674);
+            this.flowLayoutPanelReport.Name = "flowLayoutPanelReport";
+            this.flowLayoutPanelReport.Size = new System.Drawing.Size(1050, 202);
+            this.flowLayoutPanelReport.TabIndex = 51;
+            this.flowLayoutPanelReport.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelReport_Paint);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(29, 592);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(214, 32);
+            this.label18.TabIndex = 50;
+            this.label18.Text = "Báo cáo gần đây";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(41, 562);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1044, 4);
+            this.panel2.TabIndex = 53;
+            // 
             // DetailsTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(1120, 863);
-            this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.pnlReport);
+            this.ClientSize = new System.Drawing.Size(1120, 900);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flowLayoutPanelReport);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.pictureBack);
             this.Controls.Add(this.customButton1);
             this.Controls.Add(this.customPanel1);
@@ -691,17 +634,10 @@
             this.Controls.Add(this.lblBack);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1120, 573);
             this.Name = "DetailsTaskForm";
             this.Text = "DetailsTaskForm";
             this.Load += new System.EventHandler(this.DetailsTaskForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
-            this.customPanel2.ResumeLayout(false);
-            this.customPanel2.PerformLayout();
-            this.pnlReport.ResumeLayout(false);
-            this.pnlReport.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.customPanel7.ResumeLayout(false);
@@ -721,6 +657,8 @@
             this.customPanel9.PerformLayout();
             this.customPanel8.ResumeLayout(false);
             this.customPanel8.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -735,10 +673,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private GUI.TruniControls.CustomPanel pnl2;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblFileName;
-        private System.Windows.Forms.Label label8;
-        private GUI.TruniControls.CustomPanel customPanel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private GUI.CustomButton customButton1;
@@ -761,16 +696,15 @@
         private System.Windows.Forms.Label label15;
         private GUI.TruniControls.CustomPanel customPanel8;
         private System.Windows.Forms.Label label14;
-        private GUI.TruniControls.CustomPanel pnlReport;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelReport;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelReport;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel2;
     }
 }
