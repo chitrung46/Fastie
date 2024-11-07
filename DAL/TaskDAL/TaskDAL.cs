@@ -198,8 +198,7 @@ namespace DAL.TaskDAL
                     con.Open();
                     using (SqlCommand command = new SqlCommand(query, con))
                     {
-                        command.CommandType = CommandType.StoredProcedure; // Đặt kiểu lệnh là Stored Procedure
-
+                        command.CommandType = CommandType.StoredProcedure; 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())

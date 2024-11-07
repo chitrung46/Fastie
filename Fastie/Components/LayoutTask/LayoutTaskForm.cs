@@ -43,8 +43,12 @@ namespace Fastie.Components.LayoutTask
         }
         private void btnGetInformation_Click(object sender, EventArgs e)
         {
+            Console.WriteLine($"Opening DetailsTaskForm with idTask: {this.idTask}");
             DetailsTaskForm detailsTaskForm = new DetailsTaskForm(this.taskForm, this.idTask);
             taskForm.AddFormInMainLayout(detailsTaskForm);
         }
+
+
+
     }
 }

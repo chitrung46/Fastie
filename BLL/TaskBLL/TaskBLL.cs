@@ -107,6 +107,12 @@ namespace BLL
         {
             return taskDAL.LuuTaiKhoanNhanViec(idTaiKhoanNhanViec, idCongViec);
         }
+
+        public TaskInfo GetTaskDetailsById(string taskId)
+        {
+            return taskDAL.layCongViecTheoID(taskId).FirstOrDefault();
+        }
+
     }
 
 }
