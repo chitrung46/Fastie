@@ -246,7 +246,9 @@ namespace GUI.TruniControls
         public string Texts
         {
             get { return lblText.Text; }
-            set { lblText.Text = value; }
+            set { lblText.Text = value;
+                cmbList.Text = value;
+            }
         }
 
         [Category("Appearance")]

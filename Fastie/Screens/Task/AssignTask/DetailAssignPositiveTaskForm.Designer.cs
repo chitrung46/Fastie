@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dtpTimeCompleted = new System.Windows.Forms.DateTimePicker();
-            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
             this.cTBDescribeTask = new GUI.TruniControls.CustomTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +37,7 @@
             this.lblTaskName = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
-            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
+            this.txbSoNhanSuChuDong = new GUI.TruniControls.CustomTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxDepartment = new GUI.TruniControls.CustomComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,6 +59,12 @@
             this.lblNameOfForm = new System.Windows.Forms.Label();
             this.btnCancel = new GUI.CustomButton();
             this.btnUpdate = new GUI.CustomButton();
+            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
+            this.idBoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.pnl2.SuspendLayout();
@@ -78,26 +83,6 @@
             this.dtpTimeCompleted.Name = "dtpTimeCompleted";
             this.dtpTimeCompleted.Size = new System.Drawing.Size(365, 27);
             this.dtpTimeCompleted.TabIndex = 4;
-            // 
-            // customComboBox1
-            // 
-            this.customComboBox1.BackColor = System.Drawing.Color.White;
-            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox1.BorderRadius = 8;
-            this.customComboBox1.BorderSize = 0;
-            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.customComboBox1.ForeColor = System.Drawing.Color.White;
-            this.customComboBox1.IconColor = System.Drawing.Color.Black;
-            this.customComboBox1.ListBackColor = System.Drawing.Color.White;
-            this.customComboBox1.ListTextColor = System.Drawing.Color.Black;
-            this.customComboBox1.Location = new System.Drawing.Point(25, 129);
-            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Size = new System.Drawing.Size(567, 36);
-            this.customComboBox1.TabIndex = 2;
-            this.customComboBox1.Texts = "";
-            this.customComboBox1.OnSelectedIndexChanged += new System.EventHandler(this.customComboBox1_OnSelectedIndexChanged);
             // 
             // cTBDescribeTask
             // 
@@ -128,7 +113,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(25, 346);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(186, 21);
+            this.label7.Size = new System.Drawing.Size(175, 21);
             this.label7.TabIndex = 41;
             this.label7.Text = "Thời hạn hoàn thành: ";
             // 
@@ -138,7 +123,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(26, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 21);
+            this.label2.Size = new System.Drawing.Size(137, 21);
             this.label2.TabIndex = 35;
             this.label2.Text = "Mô tả công việc: ";
             // 
@@ -148,7 +133,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(26, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 21);
+            this.label1.Size = new System.Drawing.Size(126, 21);
             this.label1.TabIndex = 33;
             this.label1.Text = "Loại công việc: ";
             // 
@@ -180,7 +165,7 @@
             this.lblTaskName.ForeColor = System.Drawing.Color.White;
             this.lblTaskName.Location = new System.Drawing.Point(25, 14);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(129, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(121, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Tên công việc: ";
             // 
@@ -188,6 +173,10 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idBoPhan,
+            this.ten,
+            this.moTa});
             this.dataGridView1.Location = new System.Drawing.Point(30, 104);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -202,10 +191,10 @@
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
             this.customPanel1.BorderSize = 0;
-            this.customPanel1.Controls.Add(this.customTextBox1);
+            this.customPanel1.Controls.Add(this.customComboBox1);
+            this.customPanel1.Controls.Add(this.txbSoNhanSuChuDong);
             this.customPanel1.Controls.Add(this.label3);
             this.customPanel1.Controls.Add(this.dtpTimeCompleted);
-            this.customPanel1.Controls.Add(this.customComboBox1);
             this.customPanel1.Controls.Add(this.cTBDescribeTask);
             this.customPanel1.Controls.Add(this.label7);
             this.customPanel1.Controls.Add(this.label2);
@@ -222,26 +211,26 @@
             this.customPanel1.Size = new System.Drawing.Size(624, 442);
             this.customPanel1.TabIndex = 45;
             // 
-            // customTextBox1
+            // txbSoNhanSuChuDong
             // 
-            this.customTextBox1.BackColor = System.Drawing.Color.White;
-            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox1.BorderRadius = 8;
-            this.customTextBox1.BorderSize = 2;
-            this.customTextBox1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox1.Location = new System.Drawing.Point(284, 388);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.Black;
-            this.customTextBox1.PlaceholderText = "";
-            this.customTextBox1.Size = new System.Drawing.Size(60, 36);
-            this.customTextBox1.TabIndex = 5;
-            this.customTextBox1.UnderlinedStyle = false;
+            this.txbSoNhanSuChuDong.BackColor = System.Drawing.Color.White;
+            this.txbSoNhanSuChuDong.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbSoNhanSuChuDong.BorderFocusColor = System.Drawing.Color.Black;
+            this.txbSoNhanSuChuDong.BorderRadius = 8;
+            this.txbSoNhanSuChuDong.BorderSize = 2;
+            this.txbSoNhanSuChuDong.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSoNhanSuChuDong.ForeColor = System.Drawing.Color.Black;
+            this.txbSoNhanSuChuDong.Location = new System.Drawing.Point(284, 388);
+            this.txbSoNhanSuChuDong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txbSoNhanSuChuDong.Multiline = false;
+            this.txbSoNhanSuChuDong.Name = "txbSoNhanSuChuDong";
+            this.txbSoNhanSuChuDong.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txbSoNhanSuChuDong.PasswordChar = false;
+            this.txbSoNhanSuChuDong.PlaceholderColor = System.Drawing.Color.Black;
+            this.txbSoNhanSuChuDong.PlaceholderText = "";
+            this.txbSoNhanSuChuDong.Size = new System.Drawing.Size(60, 36);
+            this.txbSoNhanSuChuDong.TabIndex = 5;
+            this.txbSoNhanSuChuDong.UnderlinedStyle = false;
             // 
             // label3
             // 
@@ -250,7 +239,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(25, 396);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(237, 21);
+            this.label3.Size = new System.Drawing.Size(222, 21);
             this.label3.TabIndex = 43;
             this.label3.Text = "Số lượng nhân sự chủ động:";
             // 
@@ -280,7 +269,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(26, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 21);
+            this.label5.Size = new System.Drawing.Size(136, 21);
             this.label5.TabIndex = 33;
             this.label5.Text = "Người nhận việc:";
             // 
@@ -325,6 +314,7 @@
             this.customButton3.Size = new System.Drawing.Size(42, 36);
             this.customButton3.TabIndex = 47;
             this.customButton3.UseVisualStyleBackColor = false;
+            this.customButton3.Click += new System.EventHandler(this.customButton3_Click);
             // 
             // customButton5
             // 
@@ -341,6 +331,7 @@
             this.customButton5.Size = new System.Drawing.Size(42, 36);
             this.customButton5.TabIndex = 46;
             this.customButton5.UseVisualStyleBackColor = false;
+            this.customButton5.Click += new System.EventHandler(this.customButton5_Click);
             // 
             // customButton4
             // 
@@ -357,6 +348,7 @@
             this.customButton4.Size = new System.Drawing.Size(42, 36);
             this.customButton4.TabIndex = 45;
             this.customButton4.UseVisualStyleBackColor = false;
+            this.customButton4.Click += new System.EventHandler(this.customButton4_Click);
             // 
             // customButton2
             // 
@@ -373,11 +365,15 @@
             this.customButton2.Size = new System.Drawing.Size(42, 36);
             this.customButton2.TabIndex = 43;
             this.customButton2.UseVisualStyleBackColor = false;
+            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
             // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idNhanSu,
+            this.dataGridViewTextBoxColumn1});
             this.dataGridView2.Location = new System.Drawing.Point(29, 317);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
@@ -411,7 +407,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(26, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 21);
+            this.label6.Size = new System.Drawing.Size(154, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bộ phận nhận việc:";
             // 
@@ -422,7 +418,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(630, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 21);
+            this.label9.Size = new System.Drawing.Size(154, 21);
             this.label9.TabIndex = 40;
             this.label9.Text = "objectdiagram.png";
             // 
@@ -459,7 +455,7 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(159, 23);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(73, 21);
+            this.lblFileName.Size = new System.Drawing.Size(69, 21);
             this.lblFileName.TabIndex = 2;
             this.lblFileName.Text = "n2.docx";
             // 
@@ -517,7 +513,7 @@
             this.lblNameOfForm.ForeColor = System.Drawing.Color.White;
             this.lblNameOfForm.Location = new System.Drawing.Point(22, 18);
             this.lblNameOfForm.Name = "lblNameOfForm";
-            this.lblNameOfForm.Size = new System.Drawing.Size(247, 32);
+            this.lblNameOfForm.Size = new System.Drawing.Size(239, 32);
             this.lblNameOfForm.TabIndex = 46;
             this.lblNameOfForm.Text = "Giao việc chủ động";
             // 
@@ -560,6 +556,67 @@
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Lưu";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // customComboBox1
+            // 
+            this.customComboBox1.BackColor = System.Drawing.Color.White;
+            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
+            this.customComboBox1.BorderRadius = 8;
+            this.customComboBox1.BorderSize = 0;
+            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.customComboBox1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.customComboBox1.ForeColor = System.Drawing.Color.Black;
+            this.customComboBox1.IconColor = System.Drawing.Color.Black;
+            this.customComboBox1.ListBackColor = System.Drawing.Color.White;
+            this.customComboBox1.ListTextColor = System.Drawing.Color.Black;
+            this.customComboBox1.Location = new System.Drawing.Point(25, 128);
+            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
+            this.customComboBox1.Name = "customComboBox1";
+            this.customComboBox1.Size = new System.Drawing.Size(567, 36);
+            this.customComboBox1.TabIndex = 44;
+            this.customComboBox1.Texts = "";
+            // 
+            // idBoPhan
+            // 
+            this.idBoPhan.HeaderText = "Mã Bộ phận";
+            this.idBoPhan.MinimumWidth = 6;
+            this.idBoPhan.Name = "idBoPhan";
+            this.idBoPhan.ReadOnly = true;
+            this.idBoPhan.Width = 125;
+            // 
+            // ten
+            // 
+            this.ten.HeaderText = "Tên Bộ phận";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.ReadOnly = true;
+            this.ten.Width = 125;
+            // 
+            // moTa
+            // 
+            this.moTa.HeaderText = "Mô tả";
+            this.moTa.MinimumWidth = 6;
+            this.moTa.Name = "moTa";
+            this.moTa.ReadOnly = true;
+            this.moTa.Visible = false;
+            this.moTa.Width = 125;
+            // 
+            // idNhanSu
+            // 
+            this.idNhanSu.HeaderText = "Mã Tài khoản";
+            this.idNhanSu.MinimumWidth = 6;
+            this.idNhanSu.Name = "idNhanSu";
+            this.idNhanSu.ReadOnly = true;
+            this.idNhanSu.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Tên Nhân sự";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // DetailAssignPositiveTaskForm
             // 
@@ -592,7 +649,6 @@
         #endregion
         private GUI.CustomButton customButton2;
         private System.Windows.Forms.DateTimePicker dtpTimeCompleted;
-        private GUI.TruniControls.CustomComboBox customComboBox1;
         private GUI.TruniControls.CustomTextBox cTBDescribeTask;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
@@ -618,9 +674,15 @@
         private GUI.CustomButton customButton5;
         private System.Windows.Forms.DataGridView dataGridView2;
         private GUI.TruniControls.CustomComboBox cbxPersonnel;
-        private GUI.TruniControls.CustomTextBox customTextBox1;
+        private GUI.TruniControls.CustomTextBox txbSoNhanSuChuDong;
         private System.Windows.Forms.Label label3;
         private GUI.CustomButton btnCancel;
         private GUI.CustomButton btnUpdate;
+        private GUI.TruniControls.CustomComboBox customComboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBoPhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNhanSu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

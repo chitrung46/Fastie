@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace Fastie.Screens.Task
 {
@@ -32,7 +33,7 @@ namespace Fastie.Screens.Task
 
         private void customPanel2_Paint(object sender, PaintEventArgs e)
         {
-
+            // Custom paint logic, if needed
         }
 
         private void lblBack_Click(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace Fastie.Screens.Task
             BackForm();
         }
 
-        private void BackForm ()
+        private void BackForm()
         {
             switch (taskForm.FormCurrent)
             {
@@ -57,6 +58,15 @@ namespace Fastie.Screens.Task
                     AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
                     taskForm.AddFormInMainLayout(acceptTaskForm);
                     break;
+            }
+        }
+
+        private void LoadTaskDetails()
+        {
+            Console.WriteLine($"Attempting to load task details for ID: {idTask}"); // Log the task ID
+
+            // Fetch task details
+            var taskInfo = taskBLL.GetTaskDetailsById(idTask);
 
             }
         }

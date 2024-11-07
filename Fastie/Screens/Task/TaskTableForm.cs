@@ -50,7 +50,6 @@ namespace Fastie.Screens.Task
         private void LoadDataTask()
         {
             flowLayoutPanelTask.Controls.Clear();
-
             List<TaskInfo> tasks = taskBLL.layCongViecTheoID(this.taskForm.IdTaiKhoan);
             if(tasks.Count == 0)
             {
@@ -68,6 +67,8 @@ namespace Fastie.Screens.Task
                 flowLayoutPanelTask.Controls.Add(taskForm);
             }
         }
+
+
     }
 
 }

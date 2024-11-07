@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DAL.DepartmentDAL;
+using DAL.TaskDAL;
 using DTO;
 
 namespace BLL.DepartmentBLL
 {
     public class DepartmentBLL
     {
+        DepartmentDAL DepartmentDAL = new DepartmentDAL();
         public void InsertDepartment(Department deparment)
         {
             DepartmentDAL.InsertDepartment(deparment);
@@ -29,6 +32,19 @@ namespace BLL.DepartmentBLL
         public List<AcceptTaskPersonnel> LayQuanLiBoPhan(string idBoPhan)
         {
             return DepartmentDAL.LayQuanLiBoPhan(idBoPhan);
+        }
+
+        public List<AcceptTaskPersonnel> LayNhanSuBoPhan(string idBoPhan)
+        {
+            
+            try
+            {
+                return DepartmentDAL.LayNhanSuBoPhan(idBoPhan);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi nhận mã bộ phận: {idBoPhan}.", ex);
+            }
         }
     }
 }

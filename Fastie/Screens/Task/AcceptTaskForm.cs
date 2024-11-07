@@ -45,14 +45,17 @@ namespace Fastie.Screens.Task
 
         public void LoadDataTaskTable(string taskType)
         {
-            CurrentTaskType = taskType;  
+            CurrentTaskType = taskType;
             flowLayoutPanelTasks.Controls.Clear();
 
-            List<TaskInfo> tasks;
+            List<TaskInfo> filteredTasks;
 
             if (taskType == "Việc được giao")
-            { 
-                tasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan);
+            {
+                // Load tasks assigned to the current account, excluding those assigned by the same account
+                filteredTasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan)
+                                       .Where(task => task.IdTaiKhoanGiaoViec != taskForm.IdTaiKhoan) // Exclude tasks assigned by the same account
+                                       .ToList();
             }
             else
             {
@@ -60,9 +63,9 @@ namespace Fastie.Screens.Task
                 tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdBoPhan);
             }
 
-            if (tasks != null && tasks.Count > 0)
+            if (filteredTasks != null && filteredTasks.Count > 0)
             {
-                foreach (var task in tasks)
+                foreach (var task in filteredTasks)
                 {
                     LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(taskForm)
                     {
@@ -80,6 +83,7 @@ namespace Fastie.Screens.Task
                 MessageBox.Show("Không có công việc nào phù hợp để hiển thị.", "Thông báo");
             }
         }
+
 
         private void flowLayoutPanelTasks_Paint(object sender, PaintEventArgs e)
         {

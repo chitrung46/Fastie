@@ -66,6 +66,12 @@ namespace Fastie.Screens.Task
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txbTaskName.Text) || string.IsNullOrWhiteSpace(customComboBox1.Texts) ||
+            string.IsNullOrWhiteSpace(cTBDescribeTask.Text) || dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method if validation fails
+            }
             string testIdLichSu = taskBLL.TaoLichSuId();
             if(testIdLichSu!= null)
             {
@@ -134,9 +140,9 @@ namespace Fastie.Screens.Task
             dataGridView1.Rows.Add(selectedDepartment.Id, selectedDepartment.Ten);
 
             // Populate comboBoxNguoiNhan with managers of all departments in dgvDepartments
-            LayQuanLiBoPhanDuocChon();
+            LayQuanLiHoacNhanSuTheoBoPhanDuocChon();
         }
-        private void LayQuanLiBoPhanDuocChon()
+        private void LayQuanLiHoacNhanSuTheoBoPhanDuocChon()
         {
             List<AcceptTaskPersonnel> managers = new List<AcceptTaskPersonnel>();
 
@@ -145,9 +151,18 @@ namespace Fastie.Screens.Task
                 string idBoPhanValue = row.Cells["idBoPhan"].Value?.ToString();
                 if (!string.IsNullOrEmpty(idBoPhanValue))
                 {
+                    if (idBoPhanValue == this.idBoPhanKhiDangNhap)
+                    {
+                        List<AcceptTaskPersonnel> departmentPersonnel = departmentBLL.LayNhanSuBoPhan(idBoPhanValue);
+                        managers.AddRange(departmentPersonnel);
+                    }
+                    else
+                    {
+                        List<AcceptTaskPersonnel> departmentManagers = departmentBLL.LayQuanLiBoPhan(idBoPhanValue);
+                        managers.AddRange(departmentManagers);
+                    }
                     // Get managers for each department in dgvDepartments
-                    List<AcceptTaskPersonnel> departmentManagers = departmentBLL.LayQuanLiBoPhan(idBoPhanValue);
-                    managers.AddRange(departmentManagers);
+                    
                 }
             }
 
@@ -183,7 +198,7 @@ namespace Fastie.Screens.Task
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-                LayQuanLiBoPhanDuocChon();  // Refresh managers after removing a department
+                LayQuanLiHoacNhanSuTheoBoPhanDuocChon();  // Refresh managers after removing a department
             }
             else
             {

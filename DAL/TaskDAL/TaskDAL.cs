@@ -115,7 +115,7 @@ namespace DAL.TaskDAL
         public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string idBoPhan)
         {
             List<TaskInfo> tasks = new List<TaskInfo>();
-            string query = "proc_layCongViecTuTKChuDuocNhan";
+            string query = "proc_layCongViecTuTkChuDuocNhan";
 
             using (SqlConnection con = SqlConnectionData.Connect())
             {
@@ -123,7 +123,7 @@ namespace DAL.TaskDAL
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@idBoPhan", idBoPhan);
+                    command.Parameters.AddWithValue("@idBoPhan", idBoPhan); 
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -198,8 +198,7 @@ namespace DAL.TaskDAL
                     con.Open();
                     using (SqlCommand command = new SqlCommand(query, con))
                     {
-                        command.CommandType = CommandType.StoredProcedure; // Đặt kiểu lệnh là Stored Procedure
-
+                        command.CommandType = CommandType.StoredProcedure; 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -340,6 +339,64 @@ namespace DAL.TaskDAL
                 cmd.ExecuteNonQuery();
                 //MessageBox.Show("Công việc đã được thêm thành công!", "Thông báo");
                 return true;
+            }
+        }
+
+        public List<TaskInfo> LayDanhSachCongViecDaGiao(string idNguoiDung)
+        {
+            List<TaskInfo> danhSachCongViec = new List<TaskInfo>();
+            SqlConnection conn = SqlConnectionData.Connect();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_layDanhSachCongViecDaGiao", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idNguoiDung", idNguoiDung);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    TaskInfo congViec = new TaskInfo
+                    {
+                        Id = reader["id"].ToString(),
+                        Ten = reader["ten"].ToString(),
+                        ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                        TenTienDoCongViec = reader["tienDoCongViec"].ToString(),
+                        TenNhanSuGiaoViec = reader["NguoiGiaoViec"].ToString()
+                    };
+                    danhSachCongViec.Add(congViec);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy danh sách công việc: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return danhSachCongViec;
+        }
+        public bool ThemCongViecChuDong(string idCongViec, int soLuongNhanSuChuDong)
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_themCongViecChuDong", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", idCongViec);
+                cmd.Parameters.AddWithValue("@soLuongNhanSuChuDong", soLuongNhanSuChuDong);
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }
