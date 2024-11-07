@@ -61,6 +61,7 @@ namespace Fastie.Screens.Task
                 filteredTasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdBoPhan);
             }
 
+
             if (filteredTasks != null && filteredTasks.Count > 0)
             {
                 foreach (var task in filteredTasks)
