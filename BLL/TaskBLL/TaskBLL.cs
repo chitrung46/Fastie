@@ -107,6 +107,29 @@ namespace BLL
         {
             return taskDAL.LuuTaiKhoanNhanViec(idTaiKhoanNhanViec, idCongViec);
         }
+
+        public List<TaskInfo> LayDanhSachCongViecDaGiao(string idNguoiDung)
+        {
+            try
+            {
+                return taskDAL.LayDanhSachCongViecDaGiao(idNguoiDung);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy danh sách công việc do người dùng ID: {idNguoiDung} giao.", ex);
+            }
+        }
+        public bool ThemCongViecChuDong(string idCongViec, int soLuongNhanSuChuDong)
+        {
+            try
+            {
+                return taskDAL.ThemCongViecChuDong(idCongViec, soLuongNhanSuChuDong);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
+            }
+        }
     }
 
 }

@@ -83,7 +83,33 @@ namespace DAL.DepartmentDAL
         public static List<AcceptTaskPersonnel> LayQuanLiBoPhan(string idBoPhan)
         {
             List<AcceptTaskPersonnel> managers = new List<AcceptTaskPersonnel>();
-            string query = "proc_LayQuanLiBoPhan";
+            string query = "proc_layQuanLiBoPhan";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idBoPhan", idBoPhan);
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    AcceptTaskPersonnel manager = new AcceptTaskPersonnel
+                    {
+                        Id = reader["Id"].ToString(),
+                        Ten = reader["Ten"].ToString()
+                    };
+                    managers.Add(manager);
+                }
+            }
+
+            return managers;
+        }
+
+        public static List<AcceptTaskPersonnel> LayNhanSuBoPhan(string idBoPhan)
+        {
+            List<AcceptTaskPersonnel> managers = new List<AcceptTaskPersonnel>();
+            string query = "proc_layNhanSuBoPhan";
             using (SqlConnection conn = SqlConnectionData.Connect())
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
