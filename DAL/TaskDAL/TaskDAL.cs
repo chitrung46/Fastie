@@ -112,7 +112,7 @@ namespace DAL.TaskDAL
             }
         }
 
-        public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string accountId)
+        public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string idBoPhan)
         {
             List<TaskInfo> tasks = new List<TaskInfo>();
             string query = "proc_layCongViecTuTKChuDuocNhan";
@@ -123,7 +123,7 @@ namespace DAL.TaskDAL
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@AccountId", accountId);
+                    command.Parameters.AddWithValue("@idBoPhan", idBoPhan);
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {

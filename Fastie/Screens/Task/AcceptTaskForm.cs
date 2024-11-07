@@ -51,12 +51,12 @@ namespace Fastie.Screens.Task
             List<TaskInfo> tasks;
 
             if (taskType == "Việc được giao")
-            {
+            { 
                 tasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan);
             }
             else
             {
-                tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan);
+                tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdBoPhan);
             }
 
             if (tasks != null && tasks.Count > 0)
