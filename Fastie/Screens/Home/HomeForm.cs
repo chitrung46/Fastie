@@ -20,8 +20,12 @@ namespace Fastie
         private string idNhanSu;
         private string idChucVu;
         private string idBoPhan;
+        private string tenNhanSu;
+        private string tenBoPhan;
+
         AccountId accountId  = new AccountId();
         PermissionBLL permissionBLL = new PermissionBLL();
+
         public HomeForm()
         {
             InitializeComponent();
@@ -33,6 +37,8 @@ namespace Fastie
                 this.idChucVu = "CV001";
                 this.idBoPhan = "BP011";
                 this.idNhanSu = "NS0000000001";
+                this.tenNhanSu = "Lương Chí Trung";
+                this.TenBoPhan = "Giám đốc";
             } else
             {
                 var user = UserAccountSession.Instance.UserInfo[0];
@@ -42,9 +48,11 @@ namespace Fastie
                     this.idChucVu = user.IdChucVu;
                     this.idNhanSu = user.IdNhanSu;
                     this.idBoPhan = user.IdBoPhan;
+                    this.tenNhanSu = user.TenNhanSu;
+                    this.tenBoPhan = user.TenBoPhan;
                 }
+                Console.WriteLine(this.IdTaiKhoan + " - " + this.idChucVu + " - " + this.idNhanSu + " - " + this.idBoPhan + " - " + this.tenNhanSu + " - " + this.tenBoPhan);
             }
-            Console.WriteLine(this.IdTaiKhoan + " - " + this.idChucVu + " - " + this.idNhanSu + " - " + this.idBoPhan);
 
         }
 
@@ -59,8 +67,21 @@ namespace Fastie
             get { return idChucVu; }
             set { idChucVu = value; }
         }
+
+        public string TenNhanSu
+        {
+            get { return tenNhanSu; }
+            set { tenNhanSu = value; }
+        }
+        public string TenBoPhan
+        {
+            get { return tenBoPhan; }
+            set { tenBoPhan = value; }
+        }
         private void FormLayout_Load(object sender, EventArgs e)
         {
+            lblPersonnelName.Text = this.tenNhanSu;
+            lblDepartmentName.Text = this.tenBoPhan;
             bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0001"); //Q0001 is permission to access DecentralizationForm
             if (idChucVu == "CV001" || checkPermission)
             {

@@ -21,7 +21,7 @@ namespace DAL.LoginDAL
     }
     public class LoginDAL:DatabaseAccess
     {
-        public static string[] checkLogin(Account acc)
+        public string[] checkLogin(Account acc)
         {
             string[] user = new string[5];
             SqlConnection conn = SqlConnectionData.Connect();

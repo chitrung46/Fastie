@@ -16,6 +16,7 @@ namespace Fastie.Screens.Login
     public partial class LoginForm : Form
     {
         LoginBLL loginBLL = new LoginBLL();
+        GetInFoLoginBLL getInFoLoginBLL = new GetInFoLoginBLL();    
         Account acc = new Account();
         public LoginForm()
         {
@@ -51,20 +52,6 @@ namespace Fastie.Screens.Login
             lblError.Text = "";
             string[] getUser = loginBLL.checkLogin(acc);
 
-            if (getUser.Length == 1 && getUser[0] == "Email hoặc mật khẩu không chính xác!")
-            {
-                lblError.Text = "Email hoặc mật khẩu không chính xác!";
-                lblError.Visible = true;
-                return;
-            }
-
-            if (getUser[4] == "Vô hiệu hóa")
-            {
-                lblError.Text = "Tài khoản của bạn đã bị vô hiệu hóa!";
-                lblError.Visible = true;
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(acc.TenDangNhap))
             {
                 lblError.Text = "Email không được để trống";
@@ -79,14 +66,35 @@ namespace Fastie.Screens.Login
                 return;
             }
 
+            if (getUser.Length == 1 && getUser[0] == "Email hoặc mật khẩu không chính xác!")
+            {
+                lblError.Text = "Email hoặc mật khẩu không chính xác!";
+                lblError.Visible = true;
+                return;
+            }
+
+            if (getUser[4] == "Vô hiệu hóa")
+            {
+                lblError.Text = "Tài khoản của bạn đã bị vô hiệu hóa!";
+                lblError.Visible = true;
+                return;
+            }
+            string[] getInfoUser = getInFoLoginBLL.LayTenNhanSuVaBoPhan(getUser[0]);
+            string tenNhanSu = getInfoUser[0];
+            string tenBoPhan = getInfoUser[1];
             List<AccountId> userData = new List<AccountId>
             {
-                new AccountId(getUser[0], getUser[1], getUser[2], getUser[3])
+                new AccountId(getUser[0], getUser[1], getUser[2], getUser[3], tenNhanSu, tenBoPhan)
             };
             UserAccountSession.Instance.SetUserInfo(userData);
             HomeForm home = new HomeForm();
             home.Show();
             this.Hide();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnLogin;
         }
     }
 

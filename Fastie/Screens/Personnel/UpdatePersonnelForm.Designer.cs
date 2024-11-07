@@ -136,7 +136,7 @@
             this.dTPDayOfWork.Name = "dTPDayOfWork";
             this.dTPDayOfWork.Size = new System.Drawing.Size(226, 27);
             this.dTPDayOfWork.TabIndex = 6;
-            this.dTPDayOfWork.Value = new System.DateTime(2024, 10, 24, 1, 12, 8, 0);
+            this.dTPDayOfWork.Value = new System.DateTime(2024, 10, 25, 0, 0, 0, 0);
             // 
             // lblSex
             // 
@@ -243,7 +243,7 @@
             this.dTPBirthday.Name = "dTPBirthday";
             this.dTPBirthday.Size = new System.Drawing.Size(225, 27);
             this.dTPBirthday.TabIndex = 3;
-            this.dTPBirthday.Value = new System.DateTime(2024, 10, 24, 1, 12, 8, 0);
+            this.dTPBirthday.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
             // 
             // cCBSex
             // 
