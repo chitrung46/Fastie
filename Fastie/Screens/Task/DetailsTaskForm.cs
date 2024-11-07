@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DTO;
 
 namespace Fastie.Screens.Task
 {
@@ -18,6 +19,7 @@ namespace Fastie.Screens.Task
         private TaskForm taskForm;
         private LayoutGetTaskForm layoutGetTaskForm;
         private LayoutTaskForm layoutTaskForm;
+        private LayoutAssignTaskForm layoutAssignTaskForm;
         public DetailsTaskForm(TaskForm taskForm, LayoutGetTaskForm layoutGetTaskForm)
         {
             InitializeComponent();
@@ -30,10 +32,15 @@ namespace Fastie.Screens.Task
             this.taskForm = taskForm;
             this.layoutTaskForm = layoutTaskForm;
         }
+        public DetailsTaskForm(TaskForm taskForm, LayoutAssignTaskForm layoutAssignTaskForm)
+        {
+            InitializeComponent();
+            this.taskForm = taskForm;
+            this.layoutAssignTaskForm = layoutAssignTaskForm;
+        }
 
         private void customPanel2_Paint(object sender, PaintEventArgs e)
         {
-            // Custom paint logic, if needed
         }
 
         private void lblBack_Click(object sender, EventArgs e)
@@ -45,6 +52,34 @@ namespace Fastie.Screens.Task
         {
             BackForm();
         }
+
+        public void LoadDataTaskTable()
+        {
+            int length = 5; //Change report data length
+            if (length > 0)
+            {
+                pnlReport.Visible = true;
+                flowLayoutPanelReport.Controls.Clear();
+                for (int i = 0; i < length; i++)
+                {
+                    LayoutDetailReportTaskForm1 layoutDetailReportTaskForm = new LayoutDetailReportTaskForm1()
+                    {
+                        ReportContent = "Đây là nội dung báo cáo " + i,
+                        ReportDate = "20/11/2024",
+                        FileName = "file_" + i + ".txt",
+                        ImageName = "image_" + i + ".png",
+                        IdReport = "ID" + i
+                    };
+
+                    flowLayoutPanelReport.Controls.Add(layoutDetailReportTaskForm);
+                }
+            }
+            else
+            {
+                pnlReport.Visible = false;
+            }
+        }
+
 
         private void BackForm()
         {
@@ -58,26 +93,24 @@ namespace Fastie.Screens.Task
                     AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
                     taskForm.AddFormInMainLayout(acceptTaskForm);
                     break;
-            }
-        }
-
-        private void LoadTaskDetails()
-        {
-            Console.WriteLine($"Attempting to load task details for ID: {idTask}"); // Log the task ID
-
-            // Fetch task details
-            var taskInfo = taskBLL.GetTaskDetailsById(idTask);
+                case "AssignTaskForm":
+                    AssignTaskForm assignTaskForm = new AssignTaskForm(taskForm);
+                    taskForm.AddFormInMainLayout(assignTaskForm);
+                    break;
 
             }
         }
+
 
         private void DetailsTaskForm_Load(object sender, EventArgs e)
         {
             switch (taskForm.FormCurrent) {                
                 case "TaskTableForm":
-
                     break;
                 case "AcceptTaskForm":
+                    break;
+                case "AssignTaskForm":
+                    LoadDataTaskTable();
                     break;
             }   
         }

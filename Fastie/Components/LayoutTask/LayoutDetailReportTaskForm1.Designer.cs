@@ -1,6 +1,6 @@
 ﻿namespace Fastie.Components.LayoutTask
 {
-    partial class LayoutDetailReportTaskForm
+    partial class LayoutDetailReportTaskForm1
     {
         /// <summary> 
         /// Required designer variable.
@@ -33,11 +33,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblImageName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDetail = new GUI.CustomButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblFileName = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblReportDate = new System.Windows.Forms.Label();
-            this.btnDetail = new GUI.CustomButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,7 +61,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(327, 54);
-            this.panel1.TabIndex = 9;
+            this.panel1.TabIndex = 14;
             // 
             // panel4
             // 
@@ -69,7 +69,7 @@
             this.panel4.Location = new System.Drawing.Point(736, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(214, 54);
-            this.panel4.TabIndex = 11;
+            this.panel4.TabIndex = 16;
             // 
             // lblImageName
             // 
@@ -87,43 +87,7 @@
             this.panel2.Location = new System.Drawing.Point(956, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(62, 54);
-            this.panel2.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lblFileName);
-            this.panel3.Location = new System.Drawing.Point(536, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(194, 54);
-            this.panel3.TabIndex = 12;
-            // 
-            // lblFileName
-            // 
-            this.lblFileName.AutoSize = true;
-            this.lblFileName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFileName.Location = new System.Drawing.Point(13, 19);
-            this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(69, 21);
-            this.lblFileName.TabIndex = 1;
-            this.lblFileName.Text = "Tên file";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lblReportDate);
-            this.panel5.Location = new System.Drawing.Point(336, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(194, 54);
-            this.panel5.TabIndex = 13;
-            // 
-            // lblReportDate
-            // 
-            this.lblReportDate.AutoSize = true;
-            this.lblReportDate.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReportDate.Location = new System.Drawing.Point(13, 19);
-            this.lblReportDate.Name = "lblReportDate";
-            this.lblReportDate.Size = new System.Drawing.Size(118, 21);
-            this.lblReportDate.TabIndex = 1;
-            this.lblReportDate.Text = "Ngày báo cáo";
+            this.panel2.TabIndex = 15;
             // 
             // btnDetail
             // 
@@ -142,21 +106,54 @@
             this.btnDetail.Size = new System.Drawing.Size(48, 40);
             this.btnDetail.TabIndex = 2;
             this.btnDetail.UseVisualStyleBackColor = false;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
-            // LayoutDetailReportTaskForm
+            // panel3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.lblFileName);
+            this.panel3.Location = new System.Drawing.Point(536, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(194, 54);
+            this.panel3.TabIndex = 17;
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.AutoSize = true;
+            this.lblFileName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFileName.Location = new System.Drawing.Point(13, 19);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(69, 21);
+            this.lblFileName.TabIndex = 1;
+            this.lblFileName.Text = "Tên file";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.lblReportDate);
+            this.panel5.Location = new System.Drawing.Point(336, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(194, 54);
+            this.panel5.TabIndex = 18;
+            // 
+            // lblReportDate
+            // 
+            this.lblReportDate.AutoSize = true;
+            this.lblReportDate.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReportDate.Location = new System.Drawing.Point(13, 19);
+            this.lblReportDate.Name = "lblReportDate";
+            this.lblReportDate.Size = new System.Drawing.Size(118, 21);
+            this.lblReportDate.TabIndex = 1;
+            this.lblReportDate.Text = "Ngày báo cáo";
+            // 
+            // LayoutReportTaskForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Name = "LayoutDetailReportTaskForm";
+            this.Controls.Add(this.panel5);
+            this.Name = "LayoutReportTaskForm";
             this.Size = new System.Drawing.Size(1021, 60);
-            this.Load += new System.EventHandler(this.LayoutDetailReportTaskForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -174,11 +171,11 @@
 
         private System.Windows.Forms.Label lblReportContent;
         private System.Windows.Forms.Panel panel1;
-        private GUI.CustomButton btnDetail;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblImageName;
+        private System.Windows.Forms.Panel panel2;
+        private GUI.CustomButton btnDetail;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblFileName;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblReportDate;

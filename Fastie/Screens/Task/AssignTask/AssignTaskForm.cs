@@ -15,22 +15,18 @@ namespace Fastie.Screens.Task
 {
     public partial class AssignTaskForm : Form
     {
-        private string idTaiKhoan;
-        private string idBoPhan;
-        private Panel mainLayout;
+
         TaskBLL taskBLL = new TaskBLL();
         private TaskForm taskForm;
-        public AssignTaskForm(string idTaiKhoan, string idBoPhan, Panel mainLayout)
+        public AssignTaskForm(TaskForm taskForm)
         {
             InitializeComponent();
-            this.idTaiKhoan = idTaiKhoan;
-            this.idBoPhan = idBoPhan;
-            this.mainLayout = mainLayout;
+            this.taskForm = taskForm;
         }
 
         private void btnDetailAssignTask_Click(object sender, EventArgs e)
         {
-            DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm(this.idTaiKhoan, this.idBoPhan);
+            DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm(taskForm.IdTaiKhoan, taskForm.IdBoPhan);
             detailAssignTaskForm.FormClosed += (s, args) => LoadDataTaskTable();
             detailAssignTaskForm.Show();
         }
@@ -43,7 +39,7 @@ namespace Fastie.Screens.Task
 
         private void btnDetailAssignPositiveTask_Click(object sender, EventArgs e)
         {
-            DetailAssignPositiveTaskForm detailAssignPositiveTaskForm = new DetailAssignPositiveTaskForm(this.idTaiKhoan, this.idBoPhan);
+            DetailAssignPositiveTaskForm detailAssignPositiveTaskForm = new DetailAssignPositiveTaskForm(taskForm.IdTaiKhoan, taskForm.IdBoPhan);
             detailAssignPositiveTaskForm.Show();
         }
 
@@ -51,16 +47,17 @@ namespace Fastie.Screens.Task
         {
             flowLayoutPanelTasks.Controls.Clear();
 
-            List<TaskInfo> danhSachCongViec = taskBLL.LayDanhSachCongViecDaGiao(idTaiKhoan);
+            List<TaskInfo> danhSachCongViec = taskBLL.LayDanhSachCongViecDaGiao(taskForm.IdTaiKhoan);
 
             foreach (TaskInfo congViec in danhSachCongViec)
             {
-                LayoutAssignTaskForm layoutCongViec = new LayoutAssignTaskForm
+                LayoutAssignTaskForm layoutCongViec = new LayoutAssignTaskForm(taskForm)
                 {
                     TaskName = congViec.Ten,
                     TaskTime = congViec.ThoiHanHoanThanh.HasValue ? congViec.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
                     TaskStatus = congViec.TenTienDoCongViec,
-                    TaskJobAssigner = congViec.TenNhanSuGiaoViec
+                    TaskJobAssigner = congViec.TenNhanSuGiaoViec,
+                    IdTask = congViec.Id
                 };
 
                 flowLayoutPanelTasks.Controls.Add(layoutCongViec);

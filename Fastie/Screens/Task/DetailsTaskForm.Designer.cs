@@ -31,49 +31,62 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.lblBack = new System.Windows.Forms.Label();
+            this.customPanel2 = new GUI.TruniControls.CustomPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pnlReport = new GUI.TruniControls.CustomPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.flowLayoutPanelReport = new System.Windows.Forms.FlowLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.customButton1 = new GUI.CustomButton();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.customPanel7 = new GUI.TruniControls.CustomPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.customPanel6 = new GUI.TruniControls.CustomPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.customPanel5 = new GUI.TruniControls.CustomPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.customPanel4 = new GUI.TruniControls.CustomPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.customPanel3 = new GUI.TruniControls.CustomPanel();
+            this.lblPersonnelName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTaskName = new System.Windows.Forms.Label();
             this.pnl2 = new GUI.TruniControls.CustomPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.customPanel2 = new GUI.TruniControls.CustomPanel();
-            this.customButton2 = new GUI.CustomButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.lblFileName = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnUploadFile = new GUI.CustomButton();
-            this.customPanel3 = new GUI.TruniControls.CustomPanel();
-            this.lblPersonnelName = new System.Windows.Forms.Label();
-            this.customPanel4 = new GUI.TruniControls.CustomPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.customPanel5 = new GUI.TruniControls.CustomPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.customPanel6 = new GUI.TruniControls.CustomPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.customPanel7 = new GUI.TruniControls.CustomPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.customPanel8 = new GUI.TruniControls.CustomPanel();
-            this.label14 = new System.Windows.Forms.Label();
+            this.customButton2 = new GUI.CustomButton();
             this.customPanel9 = new GUI.TruniControls.CustomPanel();
             this.label15 = new System.Windows.Forms.Label();
+            this.customPanel8 = new GUI.TruniControls.CustomPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnUploadFile = new GUI.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
-            this.customPanel1.SuspendLayout();
-            this.pnl2.SuspendLayout();
             this.customPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.customPanel3.SuspendLayout();
-            this.customPanel4.SuspendLayout();
-            this.customPanel5.SuspendLayout();
-            this.customPanel6.SuspendLayout();
+            this.pnlReport.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.customPanel1.SuspendLayout();
             this.customPanel7.SuspendLayout();
-            this.customPanel8.SuspendLayout();
+            this.customPanel6.SuspendLayout();
+            this.customPanel5.SuspendLayout();
+            this.customPanel4.SuspendLayout();
+            this.customPanel3.SuspendLayout();
+            this.pnl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.customPanel9.SuspendLayout();
+            this.customPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -83,7 +96,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(34, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 32);
+            this.label3.Size = new System.Drawing.Size(227, 32);
             this.label3.TabIndex = 41;
             this.label3.Text = "Chi tiết công việc";
             // 
@@ -111,6 +124,166 @@
             this.lblBack.TabIndex = 41;
             this.lblBack.Text = "Quay lại";
             this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.BorderColor = System.Drawing.Color.White;
+            this.customPanel2.BorderRadius = 30;
+            this.customPanel2.BorderSize = 0;
+            this.customPanel2.Controls.Add(this.label10);
+            this.customPanel2.Controls.Add(this.label8);
+            this.customPanel2.ForeColor = System.Drawing.Color.White;
+            this.customPanel2.GradientAngle = 90F;
+            this.customPanel2.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel2.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel2.Location = new System.Drawing.Point(12, 549);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(1073, 4);
+            this.customPanel2.TabIndex = 45;
+            this.customPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel2_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(666, 29);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 21);
+            this.label10.TabIndex = 42;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(198, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 21);
+            this.label8.TabIndex = 39;
+            // 
+            // pnlReport
+            // 
+            this.pnlReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnlReport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnlReport.BorderRadius = 30;
+            this.pnlReport.BorderSize = 0;
+            this.pnlReport.Controls.Add(this.panel1);
+            this.pnlReport.Controls.Add(this.flowLayoutPanelReport);
+            this.pnlReport.Controls.Add(this.label18);
+            this.pnlReport.Controls.Add(this.label16);
+            this.pnlReport.Controls.Add(this.label17);
+            this.pnlReport.ForeColor = System.Drawing.Color.White;
+            this.pnlReport.GradientAngle = 90F;
+            this.pnlReport.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnlReport.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnlReport.Location = new System.Drawing.Point(12, 569);
+            this.pnlReport.Name = "pnlReport";
+            this.pnlReport.Size = new System.Drawing.Size(1073, 286);
+            this.pnlReport.TabIndex = 46;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Location = new System.Drawing.Point(23, 44);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1021, 29);
+            this.panel1.TabIndex = 49;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(907, 4);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(70, 21);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Chi tiết";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(1040, 4);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(70, 21);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Chi tiết";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(694, 4);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(74, 21);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Tên ảnh";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(439, 4);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(69, 21);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Tên file";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(1, 4);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(152, 21);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Nội dung báo cáo";
+            // 
+            // flowLayoutPanelReport
+            // 
+            this.flowLayoutPanelReport.AutoScroll = true;
+            this.flowLayoutPanelReport.Location = new System.Drawing.Point(23, 81);
+            this.flowLayoutPanelReport.Name = "flowLayoutPanelReport";
+            this.flowLayoutPanelReport.Size = new System.Drawing.Size(1086, 182);
+            this.flowLayoutPanelReport.TabIndex = 48;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(17, 7);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(214, 32);
+            this.label18.TabIndex = 47;
+            this.label18.Text = "Báo cáo gần đây";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(666, 29);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 21);
+            this.label16.TabIndex = 42;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(198, 29);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 21);
+            this.label17.TabIndex = 39;
             // 
             // customButton1
             // 
@@ -155,276 +328,33 @@
             this.customPanel1.Size = new System.Drawing.Size(610, 430);
             this.customPanel1.TabIndex = 40;
             // 
-            // label4
+            // customPanel7
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(347, 349);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 21);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Số lượng nhân sự chủ động:";
+            this.customPanel7.AutoScroll = true;
+            this.customPanel7.BackColor = System.Drawing.Color.White;
+            this.customPanel7.BorderColor = System.Drawing.Color.Black;
+            this.customPanel7.BorderRadius = 15;
+            this.customPanel7.BorderSize = 0;
+            this.customPanel7.Controls.Add(this.label13);
+            this.customPanel7.ForeColor = System.Drawing.Color.Black;
+            this.customPanel7.GradientAngle = 90F;
+            this.customPanel7.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel7.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel7.Location = new System.Drawing.Point(345, 376);
+            this.customPanel7.Name = "customPanel7";
+            this.customPanel7.Size = new System.Drawing.Size(239, 40);
+            this.customPanel7.TabIndex = 51;
             // 
-            // label7
+            // label13
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(28, 349);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 21);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "Thời hạn hoàn thành: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(29, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 21);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Mô tả công việc: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 21);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Loại công việc: ";
-            // 
-            // lblTaskName
-            // 
-            this.lblTaskName.AutoSize = true;
-            this.lblTaskName.ForeColor = System.Drawing.Color.White;
-            this.lblTaskName.Location = new System.Drawing.Point(28, 17);
-            this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(121, 21);
-            this.lblTaskName.TabIndex = 0;
-            this.lblTaskName.Text = "Tên công việc: ";
-            // 
-            // pnl2
-            // 
-            this.pnl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnl2.BorderColor = System.Drawing.Color.Black;
-            this.pnl2.BorderRadius = 30;
-            this.pnl2.BorderSize = 0;
-            this.pnl2.Controls.Add(this.pictureBox1);
-            this.pnl2.Controls.Add(this.lblFileName);
-            this.pnl2.Controls.Add(this.customButton2);
-            this.pnl2.Controls.Add(this.customPanel9);
-            this.pnl2.Controls.Add(this.customPanel8);
-            this.pnl2.Controls.Add(this.label5);
-            this.pnl2.Controls.Add(this.label6);
-            this.pnl2.Controls.Add(this.btnUploadFile);
-            this.pnl2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnl2.ForeColor = System.Drawing.Color.Black;
-            this.pnl2.GradientAngle = 90F;
-            this.pnl2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnl2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnl2.Location = new System.Drawing.Point(628, 113);
-            this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(457, 430);
-            this.pnl2.TabIndex = 44;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(28, 96);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 21);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Người nhận việc:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(29, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 21);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Bộ phận nhận việc:";
-            // 
-            // customPanel2
-            // 
-            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.BorderColor = System.Drawing.Color.White;
-            this.customPanel2.BorderRadius = 30;
-            this.customPanel2.BorderSize = 0;
-            this.customPanel2.Controls.Add(this.label10);
-            this.customPanel2.Controls.Add(this.label8);
-            this.customPanel2.ForeColor = System.Drawing.Color.Black;
-            this.customPanel2.GradientAngle = 90F;
-            this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel2.Location = new System.Drawing.Point(12, 549);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1073, 286);
-            this.customPanel2.TabIndex = 45;
-            this.customPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel2_Paint);
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.customButton2.BorderColor = System.Drawing.Color.White;
-            this.customButton2.BorderRadius = 15;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(34, 204);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(141, 40);
-            this.customButton2.TabIndex = 44;
-            this.customButton2.Text = "Tải xuống ảnh";
-            this.customButton2.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Fastie.Properties.Resources.z5866322563222_7c9b9873ee9ceed252ea45f87aeb13ff;
-            this.pictureBox1.Location = new System.Drawing.Point(32, 257);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 43;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(666, 29);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 21);
-            this.label10.TabIndex = 42;
-            // 
-            // lblFileName
-            // 
-            this.lblFileName.AutoSize = true;
-            this.lblFileName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFileName.ForeColor = System.Drawing.Color.White;
-            this.lblFileName.Location = new System.Drawing.Point(296, 257);
-            this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(69, 21);
-            this.lblFileName.TabIndex = 2;
-            this.lblFileName.Text = "n2.docx";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(198, 29);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 21);
-            this.label8.TabIndex = 39;
-            // 
-            // btnUploadFile
-            // 
-            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnUploadFile.BorderColor = System.Drawing.Color.White;
-            this.btnUploadFile.BorderRadius = 15;
-            this.btnUploadFile.BorderSize = 0;
-            this.btnUploadFile.FlatAppearance.BorderSize = 0;
-            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadFile.Location = new System.Drawing.Point(300, 204);
-            this.btnUploadFile.Name = "btnUploadFile";
-            this.btnUploadFile.Size = new System.Drawing.Size(128, 40);
-            this.btnUploadFile.TabIndex = 9;
-            this.btnUploadFile.Text = "Tải xuống file";
-            this.btnUploadFile.UseVisualStyleBackColor = false;
-            // 
-            // customPanel3
-            // 
-            this.customPanel3.AutoScroll = true;
-            this.customPanel3.BackColor = System.Drawing.Color.White;
-            this.customPanel3.BorderColor = System.Drawing.Color.Black;
-            this.customPanel3.BorderRadius = 15;
-            this.customPanel3.BorderSize = 0;
-            this.customPanel3.Controls.Add(this.lblPersonnelName);
-            this.customPanel3.ForeColor = System.Drawing.Color.Black;
-            this.customPanel3.GradientAngle = 90F;
-            this.customPanel3.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel3.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel3.Location = new System.Drawing.Point(29, 47);
-            this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(555, 40);
-            this.customPanel3.TabIndex = 48;
-            // 
-            // lblPersonnelName
-            // 
-            this.lblPersonnelName.AutoSize = true;
-            this.lblPersonnelName.Location = new System.Drawing.Point(15, 10);
-            this.lblPersonnelName.MaximumSize = new System.Drawing.Size(510, 300);
-            this.lblPersonnelName.MinimumSize = new System.Drawing.Size(510, 18);
-            this.lblPersonnelName.Name = "lblPersonnelName";
-            this.lblPersonnelName.Size = new System.Drawing.Size(510, 21);
-            this.lblPersonnelName.TabIndex = 0;
-            this.lblPersonnelName.Text = "Vệ sinh";
-            // 
-            // customPanel4
-            // 
-            this.customPanel4.AutoScroll = true;
-            this.customPanel4.BackColor = System.Drawing.Color.White;
-            this.customPanel4.BorderColor = System.Drawing.Color.Black;
-            this.customPanel4.BorderRadius = 15;
-            this.customPanel4.BorderSize = 0;
-            this.customPanel4.Controls.Add(this.label9);
-            this.customPanel4.ForeColor = System.Drawing.Color.Black;
-            this.customPanel4.GradientAngle = 90F;
-            this.customPanel4.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel4.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel4.Location = new System.Drawing.Point(28, 128);
-            this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(555, 40);
-            this.customPanel4.TabIndex = 49;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 10);
-            this.label9.MaximumSize = new System.Drawing.Size(510, 300);
-            this.label9.MinimumSize = new System.Drawing.Size(510, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(510, 21);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Thông báo";
-            // 
-            // customPanel5
-            // 
-            this.customPanel5.AutoScroll = true;
-            this.customPanel5.BackColor = System.Drawing.Color.White;
-            this.customPanel5.BorderColor = System.Drawing.Color.Black;
-            this.customPanel5.BorderRadius = 15;
-            this.customPanel5.BorderSize = 0;
-            this.customPanel5.Controls.Add(this.label11);
-            this.customPanel5.ForeColor = System.Drawing.Color.Black;
-            this.customPanel5.GradientAngle = 90F;
-            this.customPanel5.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel5.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel5.Location = new System.Drawing.Point(29, 213);
-            this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(555, 129);
-            this.customPanel5.TabIndex = 50;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 10);
-            this.label11.MaximumSize = new System.Drawing.Size(510, 300);
-            this.label11.MinimumSize = new System.Drawing.Size(510, 18);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(510, 21);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Vệ sinh toàn bộ khu vực tòa nhà";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(15, 10);
+            this.label13.MaximumSize = new System.Drawing.Size(225, 300);
+            this.label13.MinimumSize = new System.Drawing.Size(205, 18);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(205, 21);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "12/11/2024";
             // 
             // customPanel6
             // 
@@ -454,61 +384,203 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "12/11/2024";
             // 
-            // customPanel7
+            // customPanel5
             // 
-            this.customPanel7.AutoScroll = true;
-            this.customPanel7.BackColor = System.Drawing.Color.White;
-            this.customPanel7.BorderColor = System.Drawing.Color.Black;
-            this.customPanel7.BorderRadius = 15;
-            this.customPanel7.BorderSize = 0;
-            this.customPanel7.Controls.Add(this.label13);
-            this.customPanel7.ForeColor = System.Drawing.Color.Black;
-            this.customPanel7.GradientAngle = 90F;
-            this.customPanel7.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel7.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel7.Location = new System.Drawing.Point(345, 376);
-            this.customPanel7.Name = "customPanel7";
-            this.customPanel7.Size = new System.Drawing.Size(239, 40);
-            this.customPanel7.TabIndex = 51;
+            this.customPanel5.AutoScroll = true;
+            this.customPanel5.BackColor = System.Drawing.Color.White;
+            this.customPanel5.BorderColor = System.Drawing.Color.Black;
+            this.customPanel5.BorderRadius = 15;
+            this.customPanel5.BorderSize = 0;
+            this.customPanel5.Controls.Add(this.label11);
+            this.customPanel5.ForeColor = System.Drawing.Color.Black;
+            this.customPanel5.GradientAngle = 90F;
+            this.customPanel5.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel5.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel5.Location = new System.Drawing.Point(29, 213);
+            this.customPanel5.Name = "customPanel5";
+            this.customPanel5.Size = new System.Drawing.Size(555, 129);
+            this.customPanel5.TabIndex = 50;
             // 
-            // label13
+            // label11
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 10);
-            this.label13.MaximumSize = new System.Drawing.Size(225, 300);
-            this.label13.MinimumSize = new System.Drawing.Size(205, 18);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(205, 21);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "12/11/2024";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(15, 10);
+            this.label11.MaximumSize = new System.Drawing.Size(510, 300);
+            this.label11.MinimumSize = new System.Drawing.Size(510, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(510, 21);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Vệ sinh toàn bộ khu vực tòa nhà";
             // 
-            // customPanel8
+            // customPanel4
             // 
-            this.customPanel8.AutoScroll = true;
-            this.customPanel8.BackColor = System.Drawing.Color.White;
-            this.customPanel8.BorderColor = System.Drawing.Color.Black;
-            this.customPanel8.BorderRadius = 15;
-            this.customPanel8.BorderSize = 0;
-            this.customPanel8.Controls.Add(this.label14);
-            this.customPanel8.ForeColor = System.Drawing.Color.Black;
-            this.customPanel8.GradientAngle = 90F;
-            this.customPanel8.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel8.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel8.Location = new System.Drawing.Point(32, 47);
-            this.customPanel8.Name = "customPanel8";
-            this.customPanel8.Size = new System.Drawing.Size(396, 40);
-            this.customPanel8.TabIndex = 52;
+            this.customPanel4.AutoScroll = true;
+            this.customPanel4.BackColor = System.Drawing.Color.White;
+            this.customPanel4.BorderColor = System.Drawing.Color.Black;
+            this.customPanel4.BorderRadius = 15;
+            this.customPanel4.BorderSize = 0;
+            this.customPanel4.Controls.Add(this.label9);
+            this.customPanel4.ForeColor = System.Drawing.Color.Black;
+            this.customPanel4.GradientAngle = 90F;
+            this.customPanel4.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel4.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel4.Location = new System.Drawing.Point(28, 128);
+            this.customPanel4.Name = "customPanel4";
+            this.customPanel4.Size = new System.Drawing.Size(555, 40);
+            this.customPanel4.TabIndex = 49;
             // 
-            // label14
+            // label9
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 10);
-            this.label14.MaximumSize = new System.Drawing.Size(225, 300);
-            this.label14.MinimumSize = new System.Drawing.Size(205, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(205, 21);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Vệ sinh";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 10);
+            this.label9.MaximumSize = new System.Drawing.Size(510, 300);
+            this.label9.MinimumSize = new System.Drawing.Size(510, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(510, 21);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Thông báo";
+            // 
+            // customPanel3
+            // 
+            this.customPanel3.AutoScroll = true;
+            this.customPanel3.BackColor = System.Drawing.Color.White;
+            this.customPanel3.BorderColor = System.Drawing.Color.Black;
+            this.customPanel3.BorderRadius = 15;
+            this.customPanel3.BorderSize = 0;
+            this.customPanel3.Controls.Add(this.lblPersonnelName);
+            this.customPanel3.ForeColor = System.Drawing.Color.Black;
+            this.customPanel3.GradientAngle = 90F;
+            this.customPanel3.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel3.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel3.Location = new System.Drawing.Point(29, 47);
+            this.customPanel3.Name = "customPanel3";
+            this.customPanel3.Size = new System.Drawing.Size(555, 40);
+            this.customPanel3.TabIndex = 48;
+            // 
+            // lblPersonnelName
+            // 
+            this.lblPersonnelName.AutoSize = true;
+            this.lblPersonnelName.Location = new System.Drawing.Point(15, 10);
+            this.lblPersonnelName.MaximumSize = new System.Drawing.Size(510, 300);
+            this.lblPersonnelName.MinimumSize = new System.Drawing.Size(510, 18);
+            this.lblPersonnelName.Name = "lblPersonnelName";
+            this.lblPersonnelName.Size = new System.Drawing.Size(510, 21);
+            this.lblPersonnelName.TabIndex = 0;
+            this.lblPersonnelName.Text = "Vệ sinh";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(347, 349);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(237, 21);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Số lượng nhân sự chủ động:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(28, 349);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(186, 21);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Thời hạn hoàn thành: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(29, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 21);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Mô tả công việc: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(29, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 21);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Loại công việc: ";
+            // 
+            // lblTaskName
+            // 
+            this.lblTaskName.AutoSize = true;
+            this.lblTaskName.ForeColor = System.Drawing.Color.White;
+            this.lblTaskName.Location = new System.Drawing.Point(28, 17);
+            this.lblTaskName.Name = "lblTaskName";
+            this.lblTaskName.Size = new System.Drawing.Size(129, 21);
+            this.lblTaskName.TabIndex = 0;
+            this.lblTaskName.Text = "Tên công việc: ";
+            // 
+            // pnl2
+            // 
+            this.pnl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnl2.BorderColor = System.Drawing.Color.Black;
+            this.pnl2.BorderRadius = 30;
+            this.pnl2.BorderSize = 0;
+            this.pnl2.Controls.Add(this.pictureBox1);
+            this.pnl2.Controls.Add(this.lblFileName);
+            this.pnl2.Controls.Add(this.customButton2);
+            this.pnl2.Controls.Add(this.customPanel9);
+            this.pnl2.Controls.Add(this.customPanel8);
+            this.pnl2.Controls.Add(this.label5);
+            this.pnl2.Controls.Add(this.label6);
+            this.pnl2.Controls.Add(this.btnUploadFile);
+            this.pnl2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnl2.ForeColor = System.Drawing.Color.Black;
+            this.pnl2.GradientAngle = 90F;
+            this.pnl2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnl2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnl2.Location = new System.Drawing.Point(628, 113);
+            this.pnl2.Name = "pnl2";
+            this.pnl2.Size = new System.Drawing.Size(457, 430);
+            this.pnl2.TabIndex = 44;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Fastie.Properties.Resources.z5866322563222_7c9b9873ee9ceed252ea45f87aeb13ff;
+            this.pictureBox1.Location = new System.Drawing.Point(32, 257);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(203, 159);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.AutoSize = true;
+            this.lblFileName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFileName.ForeColor = System.Drawing.Color.White;
+            this.lblFileName.Location = new System.Drawing.Point(296, 257);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(73, 21);
+            this.lblFileName.TabIndex = 2;
+            this.lblFileName.Text = "n2.docx";
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.customButton2.BorderColor = System.Drawing.Color.White;
+            this.customButton2.BorderRadius = 15;
+            this.customButton2.BorderSize = 0;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton2.ForeColor = System.Drawing.Color.White;
+            this.customButton2.Location = new System.Drawing.Point(34, 204);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(141, 40);
+            this.customButton2.TabIndex = 44;
+            this.customButton2.Text = "Tải xuống ảnh";
+            this.customButton2.UseVisualStyleBackColor = false;
             // 
             // customPanel9
             // 
@@ -538,18 +610,84 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Kiều Thanh, Chí Trung";
             // 
+            // customPanel8
+            // 
+            this.customPanel8.AutoScroll = true;
+            this.customPanel8.BackColor = System.Drawing.Color.White;
+            this.customPanel8.BorderColor = System.Drawing.Color.Black;
+            this.customPanel8.BorderRadius = 15;
+            this.customPanel8.BorderSize = 0;
+            this.customPanel8.Controls.Add(this.label14);
+            this.customPanel8.ForeColor = System.Drawing.Color.Black;
+            this.customPanel8.GradientAngle = 90F;
+            this.customPanel8.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel8.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel8.Location = new System.Drawing.Point(32, 47);
+            this.customPanel8.Name = "customPanel8";
+            this.customPanel8.Size = new System.Drawing.Size(396, 40);
+            this.customPanel8.TabIndex = 52;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(15, 10);
+            this.label14.MaximumSize = new System.Drawing.Size(225, 300);
+            this.label14.MinimumSize = new System.Drawing.Size(205, 18);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(205, 21);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Vệ sinh";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(28, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(147, 21);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Người nhận việc:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(29, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(165, 21);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Bộ phận nhận việc:";
+            // 
+            // btnUploadFile
+            // 
+            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnUploadFile.BorderColor = System.Drawing.Color.White;
+            this.btnUploadFile.BorderRadius = 15;
+            this.btnUploadFile.BorderSize = 0;
+            this.btnUploadFile.FlatAppearance.BorderSize = 0;
+            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
+            this.btnUploadFile.Location = new System.Drawing.Point(300, 204);
+            this.btnUploadFile.Name = "btnUploadFile";
+            this.btnUploadFile.Size = new System.Drawing.Size(128, 40);
+            this.btnUploadFile.TabIndex = 9;
+            this.btnUploadFile.Text = "Tải xuống file";
+            this.btnUploadFile.UseVisualStyleBackColor = false;
+            // 
             // DetailsTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(1120, 847);
+            this.ClientSize = new System.Drawing.Size(1120, 863);
+            this.Controls.Add(this.customPanel2);
+            this.Controls.Add(this.pnlReport);
             this.Controls.Add(this.pictureBack);
             this.Controls.Add(this.customButton1);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.pnl2);
-            this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.lblBack);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -558,27 +696,31 @@
             this.Text = "DetailsTaskForm";
             this.Load += new System.EventHandler(this.DetailsTaskForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
-            this.customPanel1.ResumeLayout(false);
-            this.customPanel1.PerformLayout();
-            this.pnl2.ResumeLayout(false);
-            this.pnl2.PerformLayout();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.customPanel3.ResumeLayout(false);
-            this.customPanel3.PerformLayout();
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel4.PerformLayout();
-            this.customPanel5.ResumeLayout(false);
-            this.customPanel5.PerformLayout();
-            this.customPanel6.ResumeLayout(false);
-            this.customPanel6.PerformLayout();
+            this.pnlReport.ResumeLayout(false);
+            this.pnlReport.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.customPanel1.ResumeLayout(false);
+            this.customPanel1.PerformLayout();
             this.customPanel7.ResumeLayout(false);
             this.customPanel7.PerformLayout();
-            this.customPanel8.ResumeLayout(false);
-            this.customPanel8.PerformLayout();
+            this.customPanel6.ResumeLayout(false);
+            this.customPanel6.PerformLayout();
+            this.customPanel5.ResumeLayout(false);
+            this.customPanel5.PerformLayout();
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel4.PerformLayout();
+            this.customPanel3.ResumeLayout(false);
+            this.customPanel3.PerformLayout();
+            this.pnl2.ResumeLayout(false);
+            this.pnl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.customPanel9.ResumeLayout(false);
             this.customPanel9.PerformLayout();
+            this.customPanel8.ResumeLayout(false);
+            this.customPanel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,5 +761,16 @@
         private System.Windows.Forms.Label label15;
         private GUI.TruniControls.CustomPanel customPanel8;
         private System.Windows.Forms.Label label14;
+        private GUI.TruniControls.CustomPanel pnlReport;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelReport;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
     }
 }

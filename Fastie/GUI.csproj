@@ -88,17 +88,23 @@
     <Compile Include="Components\LayoutTask\LayoutAssignTaskForm.Designer.cs">
       <DependentUpon>LayoutAssignTaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\LayoutTask\LayoutReportTaskForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutReportTaskForm.Designer.cs">
+      <DependentUpon>LayoutReportTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\LayoutTask\LayoutGetTaskForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\LayoutTask\LayoutGetTaskForm.Designer.cs">
       <DependentUpon>LayoutGetTaskForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\LayoutTask\LayoutReportTaskForm.cs">
+    <Compile Include="Components\LayoutTask\LayoutDetailReportTaskForm1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\LayoutTask\LayoutReportTaskForm.Designer.cs">
-      <DependentUpon>LayoutReportTaskForm.cs</DependentUpon>
+    <Compile Include="Components\LayoutTask\LayoutDetailReportTaskForm1.Designer.cs">
+      <DependentUpon>LayoutDetailReportTaskForm1.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\LayoutTask\LayoutTaskForm.cs">
       <SubType>UserControl</SubType>
@@ -360,11 +366,14 @@
     <EmbeddedResource Include="Components\LayoutTask\LayoutAssignTaskForm.resx">
       <DependentUpon>LayoutAssignTaskForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutReportTaskForm.resx">
+      <DependentUpon>LayoutReportTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutTask\LayoutGetTaskForm.resx">
       <DependentUpon>LayoutGetTaskForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\LayoutTask\LayoutReportTaskForm.resx">
-      <DependentUpon>LayoutReportTaskForm.cs</DependentUpon>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutDetailReportTaskForm1.resx">
+      <DependentUpon>LayoutDetailReportTaskForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutTask\LayoutTaskForm.resx">
       <DependentUpon>LayoutTaskForm.cs</DependentUpon>

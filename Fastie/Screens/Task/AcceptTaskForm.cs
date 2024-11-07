@@ -48,7 +48,7 @@ namespace Fastie.Screens.Task
             CurrentTaskType = taskType;
             flowLayoutPanelTasks.Controls.Clear();
 
-            List<TaskInfo> filteredTasks;
+            List<TaskInfo> filteredTasks = null;
 
             if (taskType == "Việc được giao")
             {
@@ -59,8 +59,7 @@ namespace Fastie.Screens.Task
             }
             else
             {
-                Console.WriteLine(taskForm.IdBoPhan);
-                tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdBoPhan);
+                taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdBoPhan);
             }
 
             if (filteredTasks != null && filteredTasks.Count > 0)
