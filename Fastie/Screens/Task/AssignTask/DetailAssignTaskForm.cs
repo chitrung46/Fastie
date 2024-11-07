@@ -134,9 +134,9 @@ namespace Fastie.Screens.Task
             dataGridView1.Rows.Add(selectedDepartment.Id, selectedDepartment.Ten);
 
             // Populate comboBoxNguoiNhan with managers of all departments in dgvDepartments
-            LayQuanLiBoPhanDuocChon();
+            LayQuanLiHoacNhanSuTheoBoPhanDuocChon();
         }
-        private void LayQuanLiBoPhanDuocChon()
+        private void LayQuanLiHoacNhanSuTheoBoPhanDuocChon()
         {
             List<AcceptTaskPersonnel> managers = new List<AcceptTaskPersonnel>();
 
@@ -145,9 +145,18 @@ namespace Fastie.Screens.Task
                 string idBoPhanValue = row.Cells["idBoPhan"].Value?.ToString();
                 if (!string.IsNullOrEmpty(idBoPhanValue))
                 {
+                    if (idBoPhanValue == this.idBoPhanKhiDangNhap)
+                    {
+                        List<AcceptTaskPersonnel> departmentPersonnel = departmentBLL.LayNhanSuBoPhan(idBoPhanValue);
+                        managers.AddRange(departmentPersonnel);
+                    }
+                    else
+                    {
+                        List<AcceptTaskPersonnel> departmentManagers = departmentBLL.LayQuanLiBoPhan(idBoPhanValue);
+                        managers.AddRange(departmentManagers);
+                    }
                     // Get managers for each department in dgvDepartments
-                    List<AcceptTaskPersonnel> departmentManagers = departmentBLL.LayQuanLiBoPhan(idBoPhanValue);
-                    managers.AddRange(departmentManagers);
+                    
                 }
             }
 
@@ -183,7 +192,7 @@ namespace Fastie.Screens.Task
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-                LayQuanLiBoPhanDuocChon();  // Refresh managers after removing a department
+                LayQuanLiHoacNhanSuTheoBoPhanDuocChon();  // Refresh managers after removing a department
             }
             else
             {
