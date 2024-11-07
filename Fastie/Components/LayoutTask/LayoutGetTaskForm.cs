@@ -82,7 +82,7 @@ namespace Fastie.Components.LayoutRole
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, taskId);
+            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, this);
             taskForm.AddFormInMainLayout(detailsTaskForm);
         }
     }

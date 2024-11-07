@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fastie.Screens.Task
+namespace Fastie.Screens.Task.LayoutNoHaveTasks
 {
-    public partial class TaskAssignForm : Form
+    public partial class LayoutNoHaveTasksForm : Form
     {
-        public TaskAssignForm()
+        public LayoutNoHaveTasksForm()
         {
             InitializeComponent();
-        }
-
-        private void TaskAssignForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

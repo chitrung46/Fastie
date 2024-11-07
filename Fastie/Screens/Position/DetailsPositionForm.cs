@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Components.LayoutDepartment;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace Fastie.Screens.Position
 {
     public partial class DetailsPositionForm : Form
     {
-        public DetailsPositionForm()
+        private LayoutPositionForm layoutPositionForm;
+        public DetailsPositionForm(LayoutPositionForm layoutPosition)
         {
             InitializeComponent();
+            this.layoutPositionForm = layoutPosition;
+        }
+
+        private void DetailsPositionForm_Load(object sender, EventArgs e)
+        {
+            lblPositionName.Text = layoutPositionForm.NamePosition;
+            lblPositionContent.Text = layoutPositionForm.DecriptionPosition;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Fastie.Components.LayoutRole;
+using Fastie.Components.LayoutTask;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +15,19 @@ namespace Fastie.Screens.Task
     public partial class DetailsTaskForm : Form
     {
         private TaskForm taskForm;
-        private string idTask;
-        public DetailsTaskForm(TaskForm taskForm, string idTask)
+        private LayoutGetTaskForm layoutGetTaskForm;
+        private LayoutTaskForm layoutTaskForm;
+        public DetailsTaskForm(TaskForm taskForm, LayoutGetTaskForm layoutGetTaskForm)
         {
             InitializeComponent();
-            this.taskForm = taskForm;   
-            this.idTask = idTask;
+            this.taskForm = taskForm;
+            this.layoutGetTaskForm = layoutGetTaskForm;
+        }
+        public DetailsTaskForm(TaskForm taskForm, LayoutTaskForm layoutTaskForm)
+        {
+            InitializeComponent();
+            this.taskForm = taskForm;
+            this.layoutTaskForm = layoutTaskForm;
         }
 
         private void customPanel2_Paint(object sender, PaintEventArgs e)
@@ -50,6 +59,17 @@ namespace Fastie.Screens.Task
                     break;
 
             }
+        }
+
+        private void DetailsTaskForm_Load(object sender, EventArgs e)
+        {
+            switch (taskForm.FormCurrent) {                
+                case "TaskTableForm":
+
+                    break;
+                case "AcceptTaskForm":
+                    break;
+            }   
         }
     }
 }

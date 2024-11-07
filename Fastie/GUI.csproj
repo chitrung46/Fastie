@@ -300,17 +300,17 @@
     <Compile Include="Screens\Task\DetailsTaskForm.Designer.cs">
       <DependentUpon>DetailsTaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.Designer.cs">
+      <DependentUpon>LayoutNoHaveTasksForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Task\ReportTask\ReportTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screens\Task\ReportTask\ReportTaskForm.Designer.cs">
       <DependentUpon>ReportTaskForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Task\TaskAssignForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Task\TaskAssignForm.Designer.cs">
-      <DependentUpon>TaskAssignForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Task\TaskTableForm.cs">
       <SubType>Form</SubType>
@@ -476,11 +476,11 @@
     <EmbeddedResource Include="Screens\Task\DetailsTaskForm.resx">
       <DependentUpon>DetailsTaskForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.resx">
+      <DependentUpon>LayoutNoHaveTasksForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\ReportTask\ReportTaskForm.resx">
       <DependentUpon>ReportTaskForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Task\TaskAssignForm.resx">
-      <DependentUpon>TaskAssignForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\TaskForm.resx">
       <DependentUpon>TaskForm.cs</DependentUpon>

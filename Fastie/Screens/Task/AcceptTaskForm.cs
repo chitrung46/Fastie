@@ -56,6 +56,7 @@ namespace Fastie.Screens.Task
             }
             else
             {
+                Console.WriteLine(taskForm.IdBoPhan);
                 tasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdBoPhan);
             }
 

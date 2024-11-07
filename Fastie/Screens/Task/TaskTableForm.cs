@@ -3,6 +3,7 @@ using DTO;
 using Fastie.Components.LayoutNotification;
 using Fastie.Components.LayoutRole;
 using Fastie.Components.LayoutTask;
+using Fastie.Components.NoPermissionAccessForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,9 @@ namespace Fastie.Screens.Task
             flowLayoutPanelTask.Controls.Clear();
 
             List<TaskInfo> tasks = taskBLL.layCongViecTheoID(this.taskForm.IdTaiKhoan);
+            if(tasks.Count == 0)
+            {
+            }
 
             foreach (var task in tasks)
             {

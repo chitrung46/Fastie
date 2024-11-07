@@ -37,6 +37,11 @@ namespace Fastie
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cTBName.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên chức vụ", "Thông báo");
+                return;
+            }
             needEdit.Ten = cTBName.Text;        
             needEdit.MoTa = cTBDesribe.Text;
             positionBLL.UpdatePosition(needEdit);

@@ -133,8 +133,14 @@ namespace Fastie
                     MessageBox.Show("Thêm thành công");
                     break;
                 case "Đăng xuất":
-                    homeForm.Close();   
-                    this.Close();
+                    foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
+                    {
+                        if(form.Name != "LoginForm")
+                        {
+                            form.Close();
+                        }
+                    }
+
                     LoginForm loginForm = new LoginForm();
                     loginForm.Show();
                     break;

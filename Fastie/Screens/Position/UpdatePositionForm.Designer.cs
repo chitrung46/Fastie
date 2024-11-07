@@ -191,6 +191,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UpdatePositionForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Cập nhân thông tin chức vụ";
             this.Load += new System.EventHandler(this.EditPositionForm_Load);
             this.customPanel1.ResumeLayout(false);

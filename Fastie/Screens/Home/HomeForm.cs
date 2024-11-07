@@ -200,7 +200,7 @@ namespace Fastie
             else
             {
                 NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
-                addFormInMainLayout(noPermissionAccessForm);
+                addFormInMainLayout(noPermissionAccessForm); 
             }
             setStatePanel(stateWork);
         }

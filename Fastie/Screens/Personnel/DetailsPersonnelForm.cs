@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Components.LayoutPersonnel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,20 @@ namespace Fastie.Screens.Personnel
 {
     public partial class DetailsPersonnelForm : Form
     {
-        public DetailsPersonnelForm()
+        private LayoutPersonnelForm layoutPersonnelForm;
+        public DetailsPersonnelForm(LayoutPersonnelForm layoutPersonnelForm)
         {
             InitializeComponent();
+            this.layoutPersonnelForm = layoutPersonnelForm;
+        }
+
+        private void DetailsPersonnelForm_Load(object sender, EventArgs e)
+        {
+            lblName.Text = layoutPersonnelForm.PersonnelName;
+            lblEmail.Text = layoutPersonnelForm.Email;
+            lblGender.Text = layoutPersonnelForm.Gender;
+            lblDateOfBirth.Text = layoutPersonnelForm.DateOfBirth.ToString();
+            lblDateOfWork.Text = layoutPersonnelForm.DateOfWork.ToString();
         }
     }
 }
