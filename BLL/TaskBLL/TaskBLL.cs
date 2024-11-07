@@ -50,15 +50,15 @@ namespace BLL
             }
         }
 
-        public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string accountId)
+        public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string idBoPhan)
         {
             try
             {
-                return taskDAL.nhanCongViecChuaDuocGiaoTuTaiKhoan(accountId);
+                return taskDAL.nhanCongViecChuaDuocGiaoTuTaiKhoan(idBoPhan);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Lỗi khi lấy danh sách công việc chưa gán cho tài khoản ID: {accountId}.", ex);
+                throw new Exception($"Lỗi khi lấy danh sách công việc chưa gán cho tài khoản ID: {idBoPhan}.", ex);
             }
         }
 
