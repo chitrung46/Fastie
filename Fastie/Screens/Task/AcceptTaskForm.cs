@@ -52,15 +52,13 @@ namespace Fastie.Screens.Task
 
             if (taskType == "Việc được giao")
             {
-                // Load tasks assigned to the current account, excluding those assigned by the same account
                 filteredTasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan)
-                                       .Where(task => task.IdTaiKhoanGiaoViec != taskForm.IdTaiKhoan) // Exclude tasks assigned by the same account
+                                       .Where(task => task.IdTaiKhoanGiaoViec != taskForm.IdTaiKhoan) 
                                        .ToList();
             }
             else
             {
-                // Load tasks not yet assigned to any account
-                filteredTasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan);
+                filteredTasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdBoPhan);
             }
 
             if (filteredTasks != null && filteredTasks.Count > 0)

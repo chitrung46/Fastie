@@ -123,6 +123,7 @@ namespace DAL.TaskDAL
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
                     command.CommandType = CommandType.StoredProcedure;
+                    Console.WriteLine(idBoPhan);
                     command.Parameters.AddWithValue("@idBoPhan", idBoPhan); 
 
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -356,6 +357,7 @@ namespace DAL.TaskDAL
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    Console.WriteLine("Đang đọc công việc: " + reader["ten"].ToString()); 
                     TaskInfo congViec = new TaskInfo
                     {
                         Id = reader["id"].ToString(),
@@ -366,6 +368,7 @@ namespace DAL.TaskDAL
                     };
                     danhSachCongViec.Add(congViec);
                 }
+
                 reader.Close();
             }
             catch (Exception ex)

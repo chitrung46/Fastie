@@ -32,10 +32,10 @@ namespace Fastie
             if(UserAccountSession.Instance.UserInfo.Count == 0)
             {
                 MessageBox.Show("Bạn chưa đăng nhập! bạn đang trong chế độ phát triển phần mềm. Tài khoản mặc định là TK0000000001. Nhấn OK để tiếp tục");
-                //Create temporary account TK0000000001 - CV001 - NS0000000001 - BP011
+                //Create temporary account TK0000000001 - CV001 - NS0000000001 - BP001
                 this.idTaiKhoan = "TK0000000001";
                 this.idChucVu = "CV001";
-                this.idBoPhan = "BP011";
+                this.idBoPhan = "BP001";
                 this.idNhanSu = "NS0000000001";
                 this.tenNhanSu = "Lương Chí Trung";
                 this.TenBoPhan = "Giám đốc";

@@ -57,27 +57,7 @@ namespace Fastie.Screens.Task
 
         private void LoadTaskDetails()
         {
-            Console.WriteLine($"Attempting to load task details for ID: {idTask}"); // Log the task ID
-
-            // Fetch task details
-            var taskInfo = taskBLL.GetTaskDetailsById(idTask);
-
-            if (taskInfo != null)
-            {
-                // Populate form fields with task details
-                txbTaskName.Text = taskInfo.Ten; // Set task name
-                cboTypeJob.Text = taskInfo.TenLoaiCongViec; // Set job type
-                cTBDescribeTask.Text = taskInfo.MoTa; // Set task description
-                dtpTimeCompleted.Value = taskInfo.ThoiHanHoanThanh ?? DateTime.Now; // Set completion deadline or default to current date
-                cbxDepartment.Text = taskInfo.TenBoPhan; // Set department name
-                cbxPersonnel.Text = taskInfo.TenNhanSuGiaoViec; // Set personnel name
-                dataGridView2.Text = taskInfo.GhiChu; // Set notes or comments
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy chi tiết công việc.", "Lỗi");
-                Console.WriteLine("No task details found for the given ID.");
-            }
+            
         }
     }
 }
