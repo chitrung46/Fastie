@@ -66,6 +66,12 @@ namespace Fastie.Screens.Task
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txbTaskName.Text) || string.IsNullOrWhiteSpace(customComboBox1.Texts) ||
+            string.IsNullOrWhiteSpace(cTBDescribeTask.Text) || dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method if validation fails
+            }
             string testIdLichSu = taskBLL.TaoLichSuId();
             if(testIdLichSu!= null)
             {

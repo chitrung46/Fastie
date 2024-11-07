@@ -81,6 +81,12 @@ namespace Fastie.Screens.Task
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txbTaskName.Text) || string.IsNullOrWhiteSpace(customComboBox1.Texts) ||
+            string.IsNullOrWhiteSpace(cTBDescribeTask.Text) || dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now || string.IsNullOrWhiteSpace(txbSoNhanSuChuDong.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method if validation fails
+            }
             string testIdLichSu = taskBLL.TaoLichSuId();
             if (testIdLichSu != null)
             {
@@ -114,7 +120,24 @@ namespace Fastie.Screens.Task
                 {
                     taskBLL.ThemCongViecChuDong(task.Id, soLuongNhanSuChuDong);
                 }
-
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    string departmentId = row.Cells["idBoPhan"].Value?.ToString();
+                    if (!string.IsNullOrEmpty(departmentId))
+                    {
+                        // Save department assignment to BoPhanNhanViec table
+                        taskBLL.LuuBoPhanNhanViec(departmentId, task.Id);
+                    }
+                }
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    string recipientId = row.Cells["idNhanSu"].Value?.ToString();
+                    if (!string.IsNullOrEmpty(recipientId))
+                    {
+                        // Save recipient assignment to TaiKhoanNhanViec table
+                        taskBLL.LuuTaiKhoanNhanViec(recipientId, task.Id);
+                    }
+                }
                 MessageBox.Show("Công việc đã được thêm thành công!", "Thông báo");
                 this.Close();
             }
