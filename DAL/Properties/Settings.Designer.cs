@@ -26,7 +26,7 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G1KLLU0;Initial Catalog=FASTIE;Integrated Security=True;Trust" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HA-VY;Initial Catalog=FASTIE;Integrated Security=True;Trust" +
             "ServerCertificate=True")]
         public string FASTIEConnectionString {
             get {

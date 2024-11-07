@@ -53,7 +53,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(18, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(209, 32);
+            this.label3.Size = new System.Drawing.Size(203, 32);
             this.label3.TabIndex = 46;
             this.label3.Text = "Giao việc nhanh";
             // 
@@ -127,7 +127,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(26, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 21);
+            this.label1.Size = new System.Drawing.Size(245, 21);
             this.label1.TabIndex = 52;
             this.label1.Text = "Chọn các cột giá trị tương ứng:";
             // 
@@ -175,7 +175,7 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(164, 374);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(73, 21);
+            this.lblFileName.Size = new System.Drawing.Size(69, 21);
             this.lblFileName.TabIndex = 2;
             this.lblFileName.Text = "n2.docx";
             // 
@@ -239,6 +239,7 @@
             this.btnUploadFile.TabIndex = 2;
             this.btnUploadFile.Text = "Upload file";
             this.btnUploadFile.UseVisualStyleBackColor = false;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
             // 
             // label6
             // 
@@ -246,7 +247,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(25, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 21);
+            this.label6.Size = new System.Drawing.Size(136, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bắt đầu từ dòng:";
             // 
@@ -263,6 +264,7 @@
             this.Name = "DetailAssignFastingTaskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giao việc nhanh";
+            this.Load += new System.EventHandler(this.DetailAssignFastingTaskForm_Load);
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssignTaskFast)).EndInit();

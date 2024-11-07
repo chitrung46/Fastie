@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Task;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,5 +44,9 @@ namespace Fastie.Components.LayoutTask
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
 
+        private void btnGetTask_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
