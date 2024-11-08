@@ -33,7 +33,7 @@ namespace Fastie.Screens.Task
 
         private void btnDetailAssignFastingTask_Click(object sender, EventArgs e)
         {
-            DetailAssignFastingTaskForm detailAssignFastingTask = new DetailAssignFastingTaskForm();
+            DetailAssignFastingTaskForm detailAssignFastingTask = new DetailAssignFastingTaskForm(taskForm.IdTaiKhoan, taskForm.IdBoPhan);
             detailAssignFastingTask.Show();
         }
 

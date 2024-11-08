@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace DAL.ListRoleDAL
 {
-    public class ListRoleDAL
+    public class ListRoleDAL:DatabaseAccess
     {
+        
         public static List<ListRole> LayDanhSachQuyen()
         {
             SqlConnection conn = SqlConnectionData.Connect();

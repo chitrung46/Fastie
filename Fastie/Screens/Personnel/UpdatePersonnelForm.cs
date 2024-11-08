@@ -97,7 +97,7 @@ namespace Fastie
 
             needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
             needEdit.Email = cTBEmail.Text;
-            needEdit.GioiTinh = cCBSex.SelectedItem?.ToString();
+            needEdit.GioiTinh = cCBSex.Texts;
             needEdit.NgaySinh = dTPBirthday.Value;
             needEdit.NgayVaoLam = dTPDayOfWork.Value;
             needEdit.Sdt = cTBNumberPhone.Text;
