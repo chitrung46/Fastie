@@ -35,6 +35,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblNumber = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDeletePersonnel = new GUI.CustomButton();
+            this.btnEditPersonnel = new GUI.CustomButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -43,8 +45,6 @@
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnDetailsPosition = new GUI.CustomButton();
-            this.btnDeletePersonnel = new GUI.CustomButton();
-            this.btnEditPersonnel = new GUI.CustomButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -118,12 +118,50 @@
             this.panel3.Size = new System.Drawing.Size(106, 54);
             this.panel3.TabIndex = 25;
             // 
+            // btnDeletePersonnel
+            // 
+            this.btnDeletePersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnDeletePersonnel.BorderColor = System.Drawing.Color.White;
+            this.btnDeletePersonnel.BorderRadius = 15;
+            this.btnDeletePersonnel.BorderSize = 0;
+            this.btnDeletePersonnel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeletePersonnel.FlatAppearance.BorderSize = 0;
+            this.btnDeletePersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletePersonnel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletePersonnel.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePersonnel.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.btnDeletePersonnel.Location = new System.Drawing.Point(53, 7);
+            this.btnDeletePersonnel.Name = "btnDeletePersonnel";
+            this.btnDeletePersonnel.Size = new System.Drawing.Size(40, 40);
+            this.btnDeletePersonnel.TabIndex = 19;
+            this.btnDeletePersonnel.UseVisualStyleBackColor = false;
+            this.btnDeletePersonnel.Click += new System.EventHandler(this.btnDeletePersonnel_Click);
+            // 
+            // btnEditPersonnel
+            // 
+            this.btnEditPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnEditPersonnel.BorderColor = System.Drawing.Color.White;
+            this.btnEditPersonnel.BorderRadius = 15;
+            this.btnEditPersonnel.BorderSize = 0;
+            this.btnEditPersonnel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditPersonnel.FlatAppearance.BorderSize = 0;
+            this.btnEditPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditPersonnel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPersonnel.ForeColor = System.Drawing.Color.White;
+            this.btnEditPersonnel.Image = global::Fastie.Properties.Resources.icons8_pencil_23;
+            this.btnEditPersonnel.Location = new System.Drawing.Point(8, 7);
+            this.btnEditPersonnel.Name = "btnEditPersonnel";
+            this.btnEditPersonnel.Size = new System.Drawing.Size(40, 40);
+            this.btnEditPersonnel.TabIndex = 20;
+            this.btnEditPersonnel.UseVisualStyleBackColor = false;
+            this.btnEditPersonnel.Click += new System.EventHandler(this.btnEditPersonnel_Click);
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.lblEmail);
             this.panel6.Location = new System.Drawing.Point(273, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(272, 54);
+            this.panel6.Size = new System.Drawing.Size(257, 54);
             this.panel6.TabIndex = 23;
             // 
             // lblEmail
@@ -197,44 +235,7 @@
             this.btnDetailsPosition.Size = new System.Drawing.Size(40, 40);
             this.btnDetailsPosition.TabIndex = 1;
             this.btnDetailsPosition.UseVisualStyleBackColor = false;
-            // 
-            // btnDeletePersonnel
-            // 
-            this.btnDeletePersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.btnDeletePersonnel.BorderColor = System.Drawing.Color.White;
-            this.btnDeletePersonnel.BorderRadius = 15;
-            this.btnDeletePersonnel.BorderSize = 0;
-            this.btnDeletePersonnel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeletePersonnel.FlatAppearance.BorderSize = 0;
-            this.btnDeletePersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletePersonnel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletePersonnel.ForeColor = System.Drawing.Color.White;
-            this.btnDeletePersonnel.Image = global::Fastie.Properties.Resources.icons8_delete_23;
-            this.btnDeletePersonnel.Location = new System.Drawing.Point(53, 7);
-            this.btnDeletePersonnel.Name = "btnDeletePersonnel";
-            this.btnDeletePersonnel.Size = new System.Drawing.Size(40, 40);
-            this.btnDeletePersonnel.TabIndex = 19;
-            this.btnDeletePersonnel.UseVisualStyleBackColor = false;
-            this.btnDeletePersonnel.Click += new System.EventHandler(this.btnDeletePersonnel_Click);
-            // 
-            // btnEditPersonnel
-            // 
-            this.btnEditPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnEditPersonnel.BorderColor = System.Drawing.Color.White;
-            this.btnEditPersonnel.BorderRadius = 15;
-            this.btnEditPersonnel.BorderSize = 0;
-            this.btnEditPersonnel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditPersonnel.FlatAppearance.BorderSize = 0;
-            this.btnEditPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditPersonnel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditPersonnel.ForeColor = System.Drawing.Color.White;
-            this.btnEditPersonnel.Image = global::Fastie.Properties.Resources.icons8_pencil_23;
-            this.btnEditPersonnel.Location = new System.Drawing.Point(8, 7);
-            this.btnEditPersonnel.Name = "btnEditPersonnel";
-            this.btnEditPersonnel.Size = new System.Drawing.Size(40, 40);
-            this.btnEditPersonnel.TabIndex = 20;
-            this.btnEditPersonnel.UseVisualStyleBackColor = false;
-            this.btnEditPersonnel.Click += new System.EventHandler(this.btnEditPersonnel_Click);
+            this.btnDetailsPosition.Click += new System.EventHandler(this.btnDetailsPosition_Click);
             // 
             // LayoutPersonnelForm
             // 

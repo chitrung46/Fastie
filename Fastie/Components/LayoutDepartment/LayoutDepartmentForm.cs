@@ -2,6 +2,7 @@
 using BLL.PermissionBLL;
 using DAL.PermissionDAL;
 using DTO;
+using Fastie.Screens.Department;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,6 +97,12 @@ namespace Fastie.Components.LayoutDepartmen
             {
                 MessageBox.Show("Bạn không có quyền xóa bộ phận", "Thông báo");
             }
+        }
+
+        private void btnDetailsDepartment_Click(object sender, EventArgs e)
+        {
+            DetailsDepartmentForm detailsDepartmentForm = new DetailsDepartmentForm(this);
+            detailsDepartmentForm.Show();
         }
     }
 }

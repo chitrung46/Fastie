@@ -85,6 +85,8 @@
             // 
             // cTBDescribe
             // 
+            this.cTBDescribe.AutoScroll = true;
+            this.cTBDescribe.AutoSize = true;
             this.cTBDescribe.BackColor = System.Drawing.Color.White;
             this.cTBDescribe.BorderColor = System.Drawing.Color.DarkGray;
             this.cTBDescribe.BorderFocusColor = System.Drawing.Color.Black;

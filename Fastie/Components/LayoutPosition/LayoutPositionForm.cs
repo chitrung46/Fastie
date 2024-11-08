@@ -1,6 +1,7 @@
 ﻿using BLL;
 using BLL.PermissionBLL;
 using DTO;
+using Fastie.Screens.Position;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,6 +95,12 @@ namespace Fastie.Components.LayoutDepartment
             {
                 MessageBox.Show("Bạn không có quyền xóa chức vụ", "Thông báo");
             }
+        }
+
+        private void btnDetailsPosition_Click(object sender, EventArgs e)
+        {
+            DetailsPositionForm detailsPositionForm = new DetailsPositionForm(this);
+            detailsPositionForm.Show();
         }
     }
 }

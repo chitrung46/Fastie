@@ -239,5 +239,10 @@ namespace Fastie.Screens.Task
                 MessageBox.Show("Please select a recipient to remove.");
             }
         }
+
+        private void DetailAssignPositiveTaskForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

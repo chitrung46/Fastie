@@ -22,17 +22,24 @@ namespace Fastie.Components.LayoutRole
         private string taskId;
         TaskBLL taskBLL = new TaskBLL();
         private TaskForm taskForm;
+        private string currentTaskType;
 
+        public string CurrentTaskType
+        {
+            get { return currentTaskType; }
+            set { currentTaskType = value; }
+        }
         public string TaskId
         {
             get { return taskId; }
             set { taskId = value; }
         }
 
-        public LayoutGetTaskForm(TaskForm taskForm)
+        public LayoutGetTaskForm(TaskForm taskForm, string currentTaskType)
         {
             InitializeComponent();
             this.taskForm = taskForm;
+            this.currentTaskType = currentTaskType;
         }
 
         public string TaskName
@@ -82,7 +89,7 @@ namespace Fastie.Components.LayoutRole
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, taskId);
+            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, this);
             taskForm.AddFormInMainLayout(detailsTaskForm);
         }
     }

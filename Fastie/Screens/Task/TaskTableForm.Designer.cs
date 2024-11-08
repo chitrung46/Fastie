@@ -31,11 +31,11 @@
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.flowLayoutPanelNotification = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.pnlTaskTable = new GUI.TruniControls.CustomPanel();
             this.flowLayoutPanelTask = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel2.SuspendLayout();
-            this.customPanel1.SuspendLayout();
+            this.pnlTaskTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // customPanel2
@@ -76,22 +76,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông báo";
             // 
-            // customPanel1
+            // pnlTaskTable
             // 
-            this.customPanel1.BackColor = System.Drawing.Color.White;
-            this.customPanel1.BorderColor = System.Drawing.Color.Black;
-            this.customPanel1.BorderRadius = 30;
-            this.customPanel1.BorderSize = 0;
-            this.customPanel1.Controls.Add(this.flowLayoutPanelTask);
-            this.customPanel1.Controls.Add(this.label2);
-            this.customPanel1.ForeColor = System.Drawing.Color.Black;
-            this.customPanel1.GradientAngle = 90F;
-            this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customPanel1.Location = new System.Drawing.Point(2, 2);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(620, 573);
-            this.customPanel1.TabIndex = 0;
+            this.pnlTaskTable.BackColor = System.Drawing.Color.White;
+            this.pnlTaskTable.BorderColor = System.Drawing.Color.Black;
+            this.pnlTaskTable.BorderRadius = 30;
+            this.pnlTaskTable.BorderSize = 0;
+            this.pnlTaskTable.Controls.Add(this.flowLayoutPanelTask);
+            this.pnlTaskTable.Controls.Add(this.label2);
+            this.pnlTaskTable.ForeColor = System.Drawing.Color.Black;
+            this.pnlTaskTable.GradientAngle = 90F;
+            this.pnlTaskTable.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnlTaskTable.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnlTaskTable.Location = new System.Drawing.Point(2, 2);
+            this.pnlTaskTable.Name = "pnlTaskTable";
+            this.pnlTaskTable.Size = new System.Drawing.Size(620, 573);
+            this.pnlTaskTable.TabIndex = 0;
             // 
             // flowLayoutPanelTask
             // 
@@ -101,7 +101,6 @@
             this.flowLayoutPanelTask.Name = "flowLayoutPanelTask";
             this.flowLayoutPanelTask.Size = new System.Drawing.Size(627, 476);
             this.flowLayoutPanelTask.TabIndex = 1;
-            
             // 
             // label2
             // 
@@ -122,22 +121,22 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1120, 573);
             this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.customPanel1);
+            this.Controls.Add(this.pnlTaskTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TaskTableForm";
             this.Text = "TaskTableForm";
             this.Load += new System.EventHandler(this.TaskTableForm_Load_1);
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
-            this.customPanel1.ResumeLayout(false);
-            this.customPanel1.PerformLayout();
+            this.pnlTaskTable.ResumeLayout(false);
+            this.pnlTaskTable.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private GUI.TruniControls.CustomPanel customPanel1;
+        private GUI.TruniControls.CustomPanel pnlTaskTable;
         private GUI.TruniControls.CustomPanel customPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

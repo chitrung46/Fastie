@@ -69,7 +69,7 @@ namespace Fastie
                 {
                     Number = (i + 1).ToString(),
                     NamePosition = position.Ten,
-                    DecriptionPosition = position.MoTa + "Mô tả",
+                    DecriptionPosition = position.MoTa,
                     IdPosition = position.Id
                 };
                 flowLayoutPanelPosition.Controls.Add(layoutPositionForms);

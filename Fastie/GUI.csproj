@@ -120,6 +120,12 @@
     <Compile Include="Components\LayoutTask\LayoutAssignTaskForm.Designer.cs">
       <DependentUpon>LayoutAssignTaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\LayoutTask\LayoutDetailReportForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutTask\LayoutDetailReportForm.Designer.cs">
+      <DependentUpon>LayoutDetailReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\LayoutTask\LayoutGetTaskForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -332,17 +338,23 @@
     <Compile Include="Screens\Task\DetailsTaskForm.Designer.cs">
       <DependentUpon>DetailsTaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.Designer.cs">
+      <DependentUpon>LayoutNoHaveTasksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Task\ReportTask\DoReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\ReportTask\DoReportForm.Designer.cs">
+      <DependentUpon>DoReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Task\ReportTask\ReportTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screens\Task\ReportTask\ReportTaskForm.Designer.cs">
       <DependentUpon>ReportTaskForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Task\TaskAssignForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Task\TaskAssignForm.Designer.cs">
-      <DependentUpon>TaskAssignForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Task\TaskTableForm.cs">
       <SubType>Form</SubType>
@@ -391,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutTask\LayoutAssignTaskForm.resx">
       <DependentUpon>LayoutAssignTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\LayoutTask\LayoutDetailReportForm.resx">
+      <DependentUpon>LayoutDetailReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutTask\LayoutGetTaskForm.resx">
       <DependentUpon>LayoutGetTaskForm.cs</DependentUpon>
@@ -508,11 +523,14 @@
     <EmbeddedResource Include="Screens\Task\DetailsTaskForm.resx">
       <DependentUpon>DetailsTaskForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.resx">
+      <DependentUpon>LayoutNoHaveTasksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\ReportTask\DoReportForm.resx">
+      <DependentUpon>DoReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\ReportTask\ReportTaskForm.resx">
       <DependentUpon>ReportTaskForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Task\TaskAssignForm.resx">
-      <DependentUpon>TaskAssignForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\TaskForm.resx">
       <DependentUpon>TaskForm.cs</DependentUpon>

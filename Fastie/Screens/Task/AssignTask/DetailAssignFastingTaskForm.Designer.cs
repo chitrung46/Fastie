@@ -225,7 +225,7 @@
             // 
             // btnUploadFile
             // 
-            this.btnUploadFile.BackColor = System.Drawing.Color.Black;
+            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.btnUploadFile.BorderColor = System.Drawing.Color.White;
             this.btnUploadFile.BorderRadius = 15;
             this.btnUploadFile.BorderSize = 0;
