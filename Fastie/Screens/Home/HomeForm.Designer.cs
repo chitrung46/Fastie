@@ -51,16 +51,16 @@
             this.lblPersonnelName = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.topbarLayout = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblDepartmentName = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.sidebarLayout.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.topbarLayout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebarLayout
@@ -360,6 +360,19 @@
             this.topbarLayout.Size = new System.Drawing.Size(1182, 65);
             this.topbarLayout.TabIndex = 2;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.lblDepartmentName);
+            this.panel1.Controls.Add(this.lblPersonnelName);
+            this.panel1.Controls.Add(this.pictureBox13);
+            this.panel1.Location = new System.Drawing.Point(1016, 7);
+            this.panel1.MinimumSize = new System.Drawing.Size(135, 53);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(135, 53);
+            this.panel1.TabIndex = 0;
+            // 
             // lblDepartmentName
             // 
             this.lblDepartmentName.AutoSize = true;
@@ -381,19 +394,6 @@
             this.pictureBox13.TabIndex = 4;
             this.pictureBox13.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.lblDepartmentName);
-            this.panel1.Controls.Add(this.lblPersonnelName);
-            this.panel1.Controls.Add(this.pictureBox13);
-            this.panel1.Location = new System.Drawing.Point(1013, 7);
-            this.panel1.MinimumSize = new System.Drawing.Size(135, 53);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(135, 53);
-            this.panel1.TabIndex = 0;
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -411,9 +411,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.topbarLayout.ResumeLayout(false);
             this.topbarLayout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
 
         }
