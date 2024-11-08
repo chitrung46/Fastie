@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\LayoutAccount\LayoutAccountForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutAccount\LayoutAccountForm.Designer.cs">
+      <DependentUpon>LayoutAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\LayoutDecentralization\LayoutDecentralizationForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\LayoutAccount\LayoutAccountForm.resx">
+      <DependentUpon>LayoutAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutDecentralization\LayoutDecentralizationForm.resx">
       <DependentUpon>LayoutDecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
