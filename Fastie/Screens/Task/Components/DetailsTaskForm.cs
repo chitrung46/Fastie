@@ -53,29 +53,7 @@ namespace Fastie.Screens.Task
             BackForm();
         }
 
-        public void LoadDataTaskTable()
-        {
-            int length = 5; //Change report data length
-            if (length > 0)
-            {
-                flowLayoutPanelReport.Controls.Clear();
-                for (int i = 0; i < length; i++)
-                {
-                    LayoutDetailReportForm layoutDetailReportForm = new LayoutDetailReportForm()
-                    {
-                        ReportContent = "Đây là nội dung báo cáo " + i,
-                        ReportDate = "20/11/2024",
-                        FileName = "file_" + i + ".txt",
-                        ImageName = "image_" + i + ".png",
-                        IdReport = "ID" + i
-                    };
-
-                    flowLayoutPanelReport.Controls.Add(layoutDetailReportForm);
-                }
-            }
-        }
-
-
+       
         private void BackForm()
         {
             switch (taskForm.FormCurrent)
@@ -103,6 +81,14 @@ namespace Fastie.Screens.Task
             }
         }
 
+        private void addFormInPanelReport(Form userControl)
+        {
+            pnlReport.Controls.Clear();
+            userControl.TopLevel = false;
+            pnlReport.Controls.Add(userControl);
+            userControl.Dock = DockStyle.Fill;
+            userControl.Show();
+        }
 
         private void DetailsTaskForm_Load(object sender, EventArgs e)
         {
@@ -112,7 +98,8 @@ namespace Fastie.Screens.Task
                 case "AcceptTaskForm":
                     break;
                 case "AssignTaskForm":
-                    LoadDataTaskTable();
+                    NearlyReportForm nearlyReport = new NearlyReportForm();
+                    addFormInPanelReport(nearlyReport);
                     break;
             }   
         }

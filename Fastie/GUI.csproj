@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\LayoutAccount\LayoutAccountForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\LayoutAccount\LayoutAccountForm.Designer.cs">
+      <DependentUpon>LayoutAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\LayoutDecentralization\LayoutDecentralizationForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -332,10 +338,10 @@
     <Compile Include="Screens\Task\AssignTask\DetailAssignTaskForm.Designer.cs">
       <DependentUpon>DetailAssignTaskForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Task\DetailsTaskForm.cs">
+    <Compile Include="Screens\Task\Components\DetailsTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Task\DetailsTaskForm.Designer.cs">
+    <Compile Include="Screens\Task\Components\DetailsTaskForm.Designer.cs">
       <DependentUpon>DetailsTaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.cs">
@@ -343,6 +349,12 @@
     </Compile>
     <Compile Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.Designer.cs">
       <DependentUpon>LayoutNoHaveTasksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Task\Components\NearlyReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\Components\NearlyReportForm.Designer.cs">
+      <DependentUpon>NearlyReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Task\ReportTask\DoReportForm.cs">
       <SubType>Form</SubType>
@@ -383,6 +395,9 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\LayoutAccount\LayoutAccountForm.resx">
+      <DependentUpon>LayoutAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\LayoutDecentralization\LayoutDecentralizationForm.resx">
       <DependentUpon>LayoutDecentralizationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -520,8 +535,11 @@
     <EmbeddedResource Include="Screens\Task\AssignTask\DetailAssignTaskForm.resx">
       <DependentUpon>DetailAssignTaskForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Task\DetailsTaskForm.resx">
+    <EmbeddedResource Include="Screens\Task\Components\DetailsTaskForm.resx">
       <DependentUpon>DetailsTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\Components\NearlyReportForm.resx">
+      <DependentUpon>NearlyReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.resx">
       <DependentUpon>LayoutNoHaveTasksForm.cs</DependentUpon>
