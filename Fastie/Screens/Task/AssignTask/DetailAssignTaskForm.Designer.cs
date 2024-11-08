@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.customButton1 = new GUI.CustomButton();
-            this.btnGetInformation = new GUI.CustomButton();
             this.btnCancel = new GUI.CustomButton();
             this.btnAdd = new GUI.CustomButton();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
@@ -82,50 +80,6 @@
             this.label3.Size = new System.Drawing.Size(124, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Giao việc";
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.customButton1.BorderColor = System.Drawing.Color.White;
-            this.customButton1.BorderRadius = 15;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Image = global::Fastie.Properties.Resources.icons8_delete_23;
-            this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton1.Location = new System.Drawing.Point(984, 14);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
-            this.customButton1.Size = new System.Drawing.Size(133, 40);
-            this.customButton1.TabIndex = 47;
-            this.customButton1.Text = "Xóa";
-            this.customButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.customButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnGetInformation
-            // 
-            this.btnGetInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.btnGetInformation.BorderColor = System.Drawing.Color.White;
-            this.btnGetInformation.BorderRadius = 15;
-            this.btnGetInformation.BorderSize = 0;
-            this.btnGetInformation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGetInformation.FlatAppearance.BorderSize = 0;
-            this.btnGetInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGetInformation.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetInformation.ForeColor = System.Drawing.Color.White;
-            this.btnGetInformation.Image = global::Fastie.Properties.Resources.icons8_pencil_23;
-            this.btnGetInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGetInformation.Location = new System.Drawing.Point(845, 14);
-            this.btnGetInformation.Name = "btnGetInformation";
-            this.btnGetInformation.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.btnGetInformation.Size = new System.Drawing.Size(133, 40);
-            this.btnGetInformation.TabIndex = 47;
-            this.btnGetInformation.Text = "Chỉnh sửa";
-            this.btnGetInformation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGetInformation.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
@@ -633,8 +587,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1142, 646);
-            this.Controls.Add(this.customButton1);
-            this.Controls.Add(this.btnGetInformation);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.customPanel2);
@@ -689,8 +641,6 @@
         private GUI.CustomButton customButton4;
         private GUI.CustomButton btnCancel;
         private GUI.CustomButton btnAdd;
-        private GUI.CustomButton btnGetInformation;
-        private GUI.CustomButton customButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBoPhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenBoPhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
