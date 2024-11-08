@@ -76,52 +76,13 @@ namespace Fastie.Screens.Task
             BackForm();
         }
 
-        /*
-        private void BackForm()
-        {
-            switch (taskForm.FormCurrent)
-            {
-                case "TaskTableForm":
-                    TaskTableForm taskTableForm = new TaskTableForm(taskForm);
-                    taskForm.AddFormInMainLayout(taskTableForm);
-                    break;
-                case "AcceptTaskForm":
-                    string taskType = layoutGetTaskForm?.CurrentTaskType ?? "Việc chủ động";
-
-                    if (taskType == "Việc chủ động")
-                    {
-                        AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
-                        taskForm.AddFormInMainLayout(acceptTaskForm);
-                    }
-                    else if (taskType == "Việc được giao")
-                    {
-                        AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
-                        taskForm.AddFormInMainLayout(acceptTaskForm);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không xác định được loại công việc.", "Lỗi");
-                    }
-                    break;
-                case "AssignTaskForm":
-                    AssignTaskForm assignTaskForm = new AssignTaskForm(taskForm);
-                    taskForm.AddFormInMainLayout(assignTaskForm);
-                    break;
-            }
-        }
-        */
-
-
         private void BackForm()
         {
             switch (taskForm.FormCurrent)
             {
                 case "AcceptTaskForm":
-                    // Create a new instance of AcceptTaskForm and set the currentTaskType to load the correct tab
                     var acceptTaskForm = new AcceptTaskForm(taskForm);
                     taskForm.AddFormInMainLayout(acceptTaskForm);
-                    //MessageBox.Show(currentTaskType);
-                    // Check if the current state is "Việc chủ động" or "Việc được giao"
                     if (currentTaskType == "Việc chủ động")
                     {
                         
@@ -165,7 +126,7 @@ namespace Fastie.Screens.Task
         private void LoadTaskDetails()
         {
             // Ghi log idTask ra console
-            Console.WriteLine($"ID công việc: {idTask}");
+            MessageBox.Show($"ID công việc: {idTask}");
 
             // Gọi phương thức LayChiTietCongViec từ TaskBLL để lấy thông tin chi tiết công việc
             TaskInfo task = taskBLL.LayChiTietCongViec(idTask);
@@ -210,6 +171,23 @@ namespace Fastie.Screens.Task
         private void flowLayoutPanelReport_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            AssignTaskForm assignTaskForm = new AssignTaskForm(taskForm);
+            taskForm.AddFormInMainLayout(assignTaskForm);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string[] information = { "Bạn có chắc chắn xóa công việc này?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Đăng xuất" };
+
+            LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm();
+            layoutConfirmForm.Title = information[0];
+            layoutConfirmForm.Content = information[1];
+            layoutConfirmForm.btnConfirmText = information[2];
+            layoutConfirmForm.Show();
         }
     }
 }
