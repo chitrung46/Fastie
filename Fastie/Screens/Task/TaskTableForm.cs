@@ -35,17 +35,25 @@ namespace Fastie.Screens.Task
         private void LoadDataNotification()
         {
             flowLayoutPanelNotification.Controls.Clear();
-            for (int i = 0; i < 20; i++)
+
+            List<TaskInfo> workHistoryList = taskBLL.LayLichSuCongViec(this.taskForm.IdTaiKhoan);
+
+            if (workHistoryList.Count == 0)
+            {
+                MessageBox.Show("Không có thông báo nào để hiển thị.", "Thông báo");
+            }
+
+            foreach (var history in workHistoryList)
             {
                 var notificationForm = new NotificationForm
                 {
-                    TaskName = "Task " + i,
-                    AssignerName = "Assigner " + i
+                    TaskName = history.Ten,
+                    AssignerName = history.GhiChu // Sử dụng ghi chú làm tên người giao việc trong ví dụ này
                 };
-
                 flowLayoutPanelNotification.Controls.Add(notificationForm);
             }
         }
+
 
         private void LoadDataTask()
         {

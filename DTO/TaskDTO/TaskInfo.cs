@@ -30,6 +30,9 @@ namespace DTO
         private string soLuongNhanSuChuDong;
         private string tenNhanSuNhanViec;
 
+
+        
+
         // Constructor đầy đủ
         public TaskInfo(string id, string ten, string moTa, DateTime? thoiGianGiaoViec, DateTime? thoiGianHoanThanh, DateTime? thoiHanHoanThanh,
                         string ghiChu, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string idLoaiCongViec, string idTienDoCongViec, string idLichSuMacDinh,

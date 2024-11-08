@@ -458,6 +458,34 @@ namespace DAL.TaskDAL
             }
             return task;
         }
+        public List<TaskInfo> LayLichSuCongViec(string idNguoiDung)
+        {
+            List<TaskInfo> resultList = new List<TaskInfo>();
+
+            using (SqlConnection connection = SqlConnectionData.Connect())
+            {
+                using (SqlCommand command = new SqlCommand("proc_LayLichSuCongViecChiTiet", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@idTaiKhoan", idNguoiDung);
+
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TaskInfo taskInfo = new TaskInfo
+                            {
+                                GhiChu = reader["ghiChu"].ToString(),
+                                Ten = reader["tenCongViec"].ToString()
+                            };
+                            resultList.Add(taskInfo);
+                        }
+                    }
+                }
+            }
+            return resultList;
+        }
 
 
 

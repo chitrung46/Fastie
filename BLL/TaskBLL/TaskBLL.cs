@@ -143,6 +143,17 @@ namespace BLL
                 throw new Exception($"Lỗi khi lấy chi tiết công việc với ID: {idTask}.", ex);
             }
         }
+        public List<TaskInfo> LayLichSuCongViec(string idNguoiDung)
+        {
+            try
+            {
+                return taskDAL.LayLichSuCongViec(idNguoiDung);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy lịch sử công việc cho tài khoản ID: {idNguoiDung}.", ex);
+            }
+        }
 
 
 
