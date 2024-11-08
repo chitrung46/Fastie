@@ -20,6 +20,8 @@ namespace Fastie.Screens.Task
         private LayoutGetTaskForm layoutGetTaskForm;
         private LayoutTaskForm layoutTaskForm;
         private LayoutAssignTaskForm layoutAssignTaskForm;
+        private TaskInfo taskInfo;
+        TaskBLL taskBLL = new TaskBLL();
         public DetailsTaskForm(TaskForm taskForm, LayoutGetTaskForm layoutGetTaskForm)
         {
             InitializeComponent();
@@ -37,6 +39,12 @@ namespace Fastie.Screens.Task
             InitializeComponent();
             this.taskForm = taskForm;
             this.layoutAssignTaskForm = layoutAssignTaskForm;
+            this.taskInfo = taskBLL.LayChiTietCongViecTheoIdCongViec(layoutAssignTaskForm.IdTask);
+            lblPersonnelName.Text = taskInfo.Ten;
+            label9.Text = taskInfo.TenLoaiCongViec;
+            label11.Text = taskInfo.MoTa;
+            label12.Text = taskInfo.ThoiHanHoanThanh.ToString();
+            label13.Text = taskBLL.LaySoLuongNhanSuChuDongTheoIdCongViec(layoutAssignTaskForm.IdTask).ToString();
         }
 
         private void customPanel2_Paint(object sender, PaintEventArgs e)

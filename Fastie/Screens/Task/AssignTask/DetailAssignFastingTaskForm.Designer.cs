@@ -69,13 +69,14 @@
             this.btnCancel.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(398, 528);
+            this.btnCancel.Location = new System.Drawing.Point(398, 461);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnCancel.Size = new System.Drawing.Size(94, 40);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
             // 
@@ -89,13 +90,14 @@
             this.btnUpdate.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(298, 528);
+            this.btnUpdate.Location = new System.Drawing.Point(298, 461);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnUpdate.Size = new System.Drawing.Size(94, 40);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Lưu";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // pnl2
             // 
@@ -118,7 +120,7 @@
             this.pnl2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnl2.Location = new System.Drawing.Point(24, 62);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(470, 450);
+            this.pnl2.Size = new System.Drawing.Size(470, 381);
             this.pnl2.TabIndex = 47;
             // 
             // label1
@@ -173,7 +175,7 @@
             this.lblFileName.AutoSize = true;
             this.lblFileName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFileName.ForeColor = System.Drawing.Color.White;
-            this.lblFileName.Location = new System.Drawing.Point(164, 374);
+            this.lblFileName.Location = new System.Drawing.Point(164, 328);
             this.lblFileName.Name = "lblFileName";
             this.lblFileName.Size = new System.Drawing.Size(69, 21);
             this.lblFileName.TabIndex = 2;
@@ -197,7 +199,13 @@
             // 
             // dgvAssignTaskFast
             // 
-            this.dgvAssignTaskFast.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvAssignTaskFast.AllowUserToAddRows = false;
+            this.dgvAssignTaskFast.AllowUserToDeleteRows = false;
+            this.dgvAssignTaskFast.AllowUserToResizeColumns = false;
+            this.dgvAssignTaskFast.AllowUserToResizeRows = false;
+            this.dgvAssignTaskFast.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAssignTaskFast.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dgvAssignTaskFast.BackgroundColor = System.Drawing.Color.White;
             this.dgvAssignTaskFast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssignTaskFast.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.typeValue,
@@ -206,7 +214,7 @@
             this.dgvAssignTaskFast.Name = "dgvAssignTaskFast";
             this.dgvAssignTaskFast.RowHeadersWidth = 51;
             this.dgvAssignTaskFast.RowTemplate.Height = 24;
-            this.dgvAssignTaskFast.Size = new System.Drawing.Size(409, 241);
+            this.dgvAssignTaskFast.Size = new System.Drawing.Size(409, 185);
             this.dgvAssignTaskFast.TabIndex = 42;
             // 
             // typeValue
@@ -214,14 +222,13 @@
             this.typeValue.HeaderText = "Loại giá trị";
             this.typeValue.MinimumWidth = 6;
             this.typeValue.Name = "typeValue";
-            this.typeValue.Width = 125;
+            this.typeValue.ReadOnly = true;
             // 
             // Column
             // 
             this.Column.HeaderText = "Cột";
             this.Column.MinimumWidth = 6;
             this.Column.Name = "Column";
-            this.Column.Width = 125;
             // 
             // btnUploadFile
             // 
@@ -233,7 +240,7 @@
             this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUploadFile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadFile.Location = new System.Drawing.Point(30, 364);
+            this.btnUploadFile.Location = new System.Drawing.Point(30, 318);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(128, 40);
             this.btnUploadFile.TabIndex = 2;
@@ -256,7 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(518, 581);
+            this.ClientSize = new System.Drawing.Size(518, 516);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label3);
@@ -282,11 +289,11 @@
         private GUI.TruniControls.CustomPanel pnl2;
         private System.Windows.Forms.DataGridView dgvAssignTaskFast;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column;
         private System.Windows.Forms.Label label1;
         private GUI.TruniControls.CustomTextBox customTextBox1;
         private GUI.CustomButton btnCancel;
         private GUI.CustomButton btnUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column;
     }
 }
