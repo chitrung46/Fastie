@@ -91,13 +91,14 @@
             this.btnDetailsDepartment.Size = new System.Drawing.Size(40, 40);
             this.btnDetailsDepartment.TabIndex = 1;
             this.btnDetailsDepartment.UseVisualStyleBackColor = false;
+            this.btnDetailsDepartment.Click += new System.EventHandler(this.btnDetailsDepartment_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lblDescription);
             this.panel2.Location = new System.Drawing.Point(432, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(456, 54);
+            this.panel2.Size = new System.Drawing.Size(415, 54);
             this.panel2.TabIndex = 16;
             // 
             // panel1

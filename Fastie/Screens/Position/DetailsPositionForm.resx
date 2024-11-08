@@ -117,4 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblPositionContent.Text" xml:space="preserve">
+    <value>"Chức vụ" thường được dùng để chỉ một đơn vị hoặc một phần của một tổ chức, hệ thống, hoặc thiết bị, đảm nhận một chức năng hoặc nhiệm vụ cụ thể. Dưới đây là một số mô tả chung về các loại bộ phận trong các lĩnh vực khác nhau
+</value>
+  </data>
 </root>

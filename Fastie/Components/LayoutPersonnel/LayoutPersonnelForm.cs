@@ -1,6 +1,7 @@
 using BLL;
 using BLL.PermissionBLL;
 using DTO;
+using Fastie.Screens.Personnel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,6 +122,12 @@ namespace Fastie.Components.LayoutPersonnel
             {
                 MessageBox.Show("Bạn không có quyền sửa nhân viên");
             }
+        }
+
+        private void btnDetailsPosition_Click(object sender, EventArgs e)
+        {
+            DetailsPersonnelForm detailsPersonnelForm = new DetailsPersonnelForm(this);
+            detailsPersonnelForm.Show();
         }
     }
 }

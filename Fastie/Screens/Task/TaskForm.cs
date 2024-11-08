@@ -95,11 +95,12 @@ namespace Fastie
 
         private void btnAssignTask_Click(object sender, EventArgs e)
         {
+            this.formCurrent = "AssignTaskForm";
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0020");
             setStateButton(btnAssignTask);
             if (checkPermission)
             {
-                AssignTaskForm assignTaskForm = new AssignTaskForm(this.IdTaiKhoan, this.idBoPhan, this.mainLayout);
+                AssignTaskForm assignTaskForm = new AssignTaskForm(this);
                 addFormInMainLayout(assignTaskForm);
             }
             else

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Fastie.Components.LayoutRole;
+using Fastie.Components.LayoutTask;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,20 +17,30 @@ namespace Fastie.Screens.Task
     public partial class DetailsTaskForm : Form
     {
         private TaskForm taskForm;
-        private TaskBLL taskBLL = new TaskBLL();
-        private string idTask;
-
-        public DetailsTaskForm(TaskForm taskForm, string idTask)
+        private LayoutGetTaskForm layoutGetTaskForm;
+        private LayoutTaskForm layoutTaskForm;
+        private LayoutAssignTaskForm layoutAssignTaskForm;
+        public DetailsTaskForm(TaskForm taskForm, LayoutGetTaskForm layoutGetTaskForm)
         {
             InitializeComponent();
             this.taskForm = taskForm;
-            this.idTask = idTask;
-            LoadTaskDetails();
+            this.layoutGetTaskForm = layoutGetTaskForm;
+        }
+        public DetailsTaskForm(TaskForm taskForm, LayoutTaskForm layoutTaskForm)
+        {
+            InitializeComponent();
+            this.taskForm = taskForm;
+            this.layoutTaskForm = layoutTaskForm;
+        }
+        public DetailsTaskForm(TaskForm taskForm, LayoutAssignTaskForm layoutAssignTaskForm)
+        {
+            InitializeComponent();
+            this.taskForm = taskForm;
+            this.layoutAssignTaskForm = layoutAssignTaskForm;
         }
 
         private void customPanel2_Paint(object sender, PaintEventArgs e)
         {
-            // Custom paint logic, if needed
         }
 
         private void lblBack_Click(object sender, EventArgs e)
@@ -41,6 +53,29 @@ namespace Fastie.Screens.Task
             BackForm();
         }
 
+        public void LoadDataTaskTable()
+        {
+            int length = 5; //Change report data length
+            if (length > 0)
+            {
+                flowLayoutPanelReport.Controls.Clear();
+                for (int i = 0; i < length; i++)
+                {
+                    LayoutDetailReportForm layoutDetailReportForm = new LayoutDetailReportForm()
+                    {
+                        ReportContent = "Đây là nội dung báo cáo " + i,
+                        ReportDate = "20/11/2024",
+                        FileName = "file_" + i + ".txt",
+                        ImageName = "image_" + i + ".png",
+                        IdReport = "ID" + i
+                    };
+
+                    flowLayoutPanelReport.Controls.Add(layoutDetailReportForm);
+                }
+            }
+        }
+
+
         private void BackForm()
         {
             switch (taskForm.FormCurrent)
@@ -50,17 +85,41 @@ namespace Fastie.Screens.Task
                     taskForm.AddFormInMainLayout(taskTableForm);
                     break;
                 case "AcceptTaskForm":
-                    AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
-                    taskForm.AddFormInMainLayout(acceptTaskForm);
+                    if(layoutGetTaskForm.CurrentTaskType == "Việc chủ động")
+                    {
+                        AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
+                        taskForm.AddFormInMainLayout(acceptTaskForm);
+                    } else if(layoutGetTaskForm.CurrentTaskType == "Việc được giao")
+                    {
+                        AcceptTaskForm acceptTaskForm = new AcceptTaskForm(taskForm);
+                        taskForm.AddFormInMainLayout(acceptTaskForm);
+                    }
                     break;
+                case "AssignTaskForm":
+                    AssignTaskForm assignTaskForm = new AssignTaskForm(taskForm);
+                    taskForm.AddFormInMainLayout(assignTaskForm);
+                    break;
+
             }
         }
 
-        private void LoadTaskDetails()
+
+        private void DetailsTaskForm_Load(object sender, EventArgs e)
         {
-            
+            switch (taskForm.FormCurrent) {                
+                case "TaskTableForm":
+                    break;
+                case "AcceptTaskForm":
+                    break;
+                case "AssignTaskForm":
+                    LoadDataTaskTable();
+                    break;
+            }   
         }
 
+        private void flowLayoutPanelReport_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

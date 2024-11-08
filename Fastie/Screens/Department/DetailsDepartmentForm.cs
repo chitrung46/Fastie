@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Components.LayoutDepartmen;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace Fastie.Screens.Department
 {
     public partial class DetailsDepartmentForm : Form
     {
-        public DetailsDepartmentForm()
+        private LayoutDepartmentForm layoutDepartment;
+        public DetailsDepartmentForm(LayoutDepartmentForm layoutDepartment)
         {
             InitializeComponent();
+            this.layoutDepartment = layoutDepartment;
+        }
+
+        private void DetailsDepartmentForm_Load(object sender, EventArgs e)
+        {
+            lblDepartmentName.Text = layoutDepartment.NameDepartment;
+            lblDepartmentContent.Text = layoutDepartment.Description;
         }
     }
 }

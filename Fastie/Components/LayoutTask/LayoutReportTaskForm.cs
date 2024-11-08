@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Task.ReportTask;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,18 @@ namespace Fastie.Components.LayoutTask
 {
     public partial class LayoutReportTaskForm : UserControl
     {
+        private ReportTaskForm reportTaskForm;
+        public LayoutReportTaskForm(ReportTaskForm reportTaskForm)
+        {
+            InitializeComponent();
+            this.reportTaskForm = reportTaskForm;
+        }
+
         private string taskName;
         private string taskTime;
         private string taskStatus;
         private string taskJobAssigner;
         private string taskDetail;
-        public LayoutReportTaskForm()
-        {
-            InitializeComponent();
-        }
 
         public string TaskName
         {
@@ -48,5 +52,10 @@ namespace Fastie.Components.LayoutTask
             set { taskDetail = value; btnTaskDetail.Text = value; }
         }
 
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            DoReportForm doReportForm = new DoReportForm();
+            doReportForm.Show();
+        }
     }
 }

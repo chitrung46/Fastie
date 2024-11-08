@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Task;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,24 @@ namespace Fastie.Components.LayoutTask
 {
     public partial class LayoutAssignTaskForm : UserControl
     {
-        public LayoutAssignTaskForm()
-        {
-            InitializeComponent();
-        }
-
         private string taskName;
         private string taskTime;
         private string taskStatus;
         private string taskJobAssigner;
+        private string idTask;
+
+        private TaskForm taskForm;
+        public LayoutAssignTaskForm(TaskForm taskForm)
+        {
+            InitializeComponent();
+            this.taskForm = taskForm;
+        }
+
+        public string IdTask
+        {
+            get { return idTask; }
+            set { idTask = value; }
+        }
 
         public string TaskName
         {
@@ -43,5 +53,10 @@ namespace Fastie.Components.LayoutTask
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
 
+        private void btnGetTask_Click(object sender, EventArgs e)
+        {
+            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, this);
+            taskForm.AddFormInMainLayout(detailsTaskForm);
+        }
     }
 }

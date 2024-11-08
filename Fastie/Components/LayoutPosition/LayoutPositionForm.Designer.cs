@@ -71,7 +71,7 @@
             this.panel2.Controls.Add(this.lblDescription);
             this.panel2.Location = new System.Drawing.Point(433, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(456, 54);
+            this.panel2.Size = new System.Drawing.Size(426, 54);
             this.panel2.TabIndex = 9;
             // 
             // panel1
@@ -107,6 +107,7 @@
             this.btnDetailsPosition.Size = new System.Drawing.Size(40, 40);
             this.btnDetailsPosition.TabIndex = 1;
             this.btnDetailsPosition.UseVisualStyleBackColor = false;
+            this.btnDetailsPosition.Click += new System.EventHandler(this.btnDetailsPosition_Click);
             // 
             // panel5
             // 

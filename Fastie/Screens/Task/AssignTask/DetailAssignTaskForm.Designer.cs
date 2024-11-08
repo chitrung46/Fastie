@@ -50,6 +50,8 @@
             this.tenBoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxPersonnel = new GUI.TruniControls.CustomComboBox();
             this.cbxDepartment = new GUI.TruniControls.CustomComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txbTaskName = new GUI.TruniControls.CustomTextBox();
             this.lblTaskName = new System.Windows.Forms.Label();
-            this.idNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customPanel2.SuspendLayout();
             this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -79,7 +79,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(22, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 32);
+            this.label3.Size = new System.Drawing.Size(124, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Giao việc";
             // 
@@ -196,7 +196,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(630, 29);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 21);
+            this.label9.Size = new System.Drawing.Size(167, 21);
             this.label9.TabIndex = 40;
             this.label9.Text = "objectdiagram.png";
             // 
@@ -234,7 +234,7 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(162, 29);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(69, 21);
+            this.lblFileName.Size = new System.Drawing.Size(73, 21);
             this.lblFileName.TabIndex = 2;
             this.lblFileName.Text = "n2.docx";
             // 
@@ -414,6 +414,22 @@
             this.dataGridView2.Size = new System.Drawing.Size(410, 96);
             this.dataGridView2.TabIndex = 8;
             // 
+            // idNhanSu
+            // 
+            this.idNhanSu.HeaderText = "Mã Nhân sự";
+            this.idNhanSu.MinimumWidth = 6;
+            this.idNhanSu.Name = "idNhanSu";
+            this.idNhanSu.ReadOnly = true;
+            this.idNhanSu.Width = 125;
+            // 
+            // ten
+            // 
+            this.ten.HeaderText = "Tên";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.ReadOnly = true;
+            this.ten.Width = 125;
+            // 
             // cbxPersonnel
             // 
             this.cbxPersonnel.BackColor = System.Drawing.Color.White;
@@ -458,7 +474,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(29, 221);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 21);
+            this.label5.Size = new System.Drawing.Size(147, 21);
             this.label5.TabIndex = 33;
             this.label5.Text = "Người nhận việc:";
             // 
@@ -468,7 +484,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(29, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 21);
+            this.label6.Size = new System.Drawing.Size(165, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bộ phận nhận việc:";
             // 
@@ -498,8 +514,9 @@
             // 
             // dtpTimeCompleted
             // 
+            this.dtpTimeCompleted.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpTimeCompleted.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpTimeCompleted.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTimeCompleted.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTimeCompleted.Location = new System.Drawing.Point(28, 385);
             this.dtpTimeCompleted.MaximumSize = new System.Drawing.Size(500, 30);
             this.dtpTimeCompleted.Name = "dtpTimeCompleted";
@@ -555,7 +572,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(28, 349);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 21);
+            this.label7.Size = new System.Drawing.Size(186, 21);
             this.label7.TabIndex = 41;
             this.label7.Text = "Thời hạn hoàn thành: ";
             // 
@@ -565,7 +582,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(29, 185);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 21);
+            this.label2.Size = new System.Drawing.Size(145, 21);
             this.label2.TabIndex = 35;
             this.label2.Text = "Mô tả công việc: ";
             // 
@@ -575,7 +592,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(29, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 21);
+            this.label1.Size = new System.Drawing.Size(133, 21);
             this.label1.TabIndex = 33;
             this.label1.Text = "Loại công việc: ";
             // 
@@ -606,25 +623,9 @@
             this.lblTaskName.ForeColor = System.Drawing.Color.White;
             this.lblTaskName.Location = new System.Drawing.Point(28, 17);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(121, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(129, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Tên công việc: ";
-            // 
-            // idNhanSu
-            // 
-            this.idNhanSu.HeaderText = "Mã Nhân sự";
-            this.idNhanSu.MinimumWidth = 6;
-            this.idNhanSu.Name = "idNhanSu";
-            this.idNhanSu.ReadOnly = true;
-            this.idNhanSu.Width = 125;
-            // 
-            // ten
-            // 
-            this.ten.HeaderText = "Tên";
-            this.ten.MinimumWidth = 6;
-            this.ten.Name = "ten";
-            this.ten.ReadOnly = true;
-            this.ten.Width = 125;
             // 
             // DetailAssignTaskForm
             // 

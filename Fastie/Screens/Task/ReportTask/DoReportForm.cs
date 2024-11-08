@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fastie.Screens.Task
+namespace Fastie.Screens.Task.ReportTask
 {
-    public partial class TaskAssignForm : Form
+    public partial class DoReportForm : Form
     {
-        public TaskAssignForm()
+        public DoReportForm()
         {
             InitializeComponent();
         }
 
-        private void TaskAssignForm_Load(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

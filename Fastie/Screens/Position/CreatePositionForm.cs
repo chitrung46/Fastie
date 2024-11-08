@@ -24,6 +24,11 @@ namespace Fastie
         
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrWhiteSpace(cTBName.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên chức vụ", "Thông báo");
+                return;
+            }
             try
             {
                 Position newPosition = new Position
@@ -32,7 +37,7 @@ namespace Fastie
                     MoTa = cTBDescribe.Text
                 };
                 positionBLL.InsertPosition(newPosition);
-                MessageBox.Show("Thêm Chức vụ mới thành công!", "Success");
+                MessageBox.Show("Thêm Chức vụ mới thành công!", "Thông báo");
 
             }
             catch (Exception ex)
