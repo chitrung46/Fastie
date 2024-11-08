@@ -70,17 +70,11 @@ namespace Fastie.Components.LayoutRole
             {
                 taskBLL.giaoViecChoTaiKhoan(taskForm.IdTaiKhoan, taskId);
 
-              
                 if (this.ParentForm is AcceptTaskForm parentForm)
                 {
-                    if (parentForm.CurrentTaskType == "Việc chủ động")
-                    {
-                        taskBLL.capNhatTrangThaiCongViec(taskId, "TD002"); 
-                    }
-                    else if (parentForm.CurrentTaskType == "Việc được giao")
-                    {
-                        taskBLL.capNhatTrangThaiCongViec(taskId, "TD002"); 
-                    }
+                    // Cập nhật trạng thái dựa vào loại công việc
+                    string newStatusId = parentForm.CurrentTaskType == "Việc chủ động" ? "TD002" : "TD002";
+                    taskBLL.capNhatTrangThaiCongViec(taskId, newStatusId);
                 }
 
                 if (this.Parent != null)
@@ -99,8 +93,11 @@ namespace Fastie.Components.LayoutRole
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, this);
+            var detailsTaskForm = new DetailsTaskForm(taskForm, this.TaskId, this.currentTaskType);
             taskForm.AddFormInMainLayout(detailsTaskForm);
         }
+
+
+
     }
 }

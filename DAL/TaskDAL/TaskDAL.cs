@@ -111,50 +111,53 @@ namespace DAL.TaskDAL
                 }
             }
         }
-
-        public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string idBoPhan)
+        public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string idBoPhan, string accountId)
         {
             List<TaskInfo> tasks = new List<TaskInfo>();
             string query = "proc_layCongViecTuTkChuDuocNhan";
 
-            try
+            using (SqlConnection con = SqlConnectionData.Connect())
             {
-                using (SqlConnection con = SqlConnectionData.Connect())
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
                 {
-                    con.Open();
-                    using (SqlCommand command = new SqlCommand(query, con))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@idBoPhan", idBoPhan);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@idBoPhan", idBoPhan);
+                    command.Parameters.AddWithValue("@AccountId", accountId);
 
-                        using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
                         {
-                            while (reader.Read())
+                            TaskInfo task = new TaskInfo
                             {
-                                tasks.Add(new TaskInfo
-                                {
-                                    Id = reader["CongViecID"].ToString(),
-                                    Ten = reader["TenCongViec"].ToString(),
-                                    MoTa = reader["MoTaCongViec"].ToString(),
-                                    ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
-                                    ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
-                                    GhiChu = reader["ghiChu"].ToString(),
-                                    TenBoPhan = reader["TenBoPhan"].ToString(),
-                                    TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString(),
-                                    TenTienDoCongViec = reader["TenTienDoCongViec"].ToString()
-                                });
-                            }
+                                Id = reader["CongViecID"].ToString(),
+                                Ten = reader["TenCongViec"].ToString(),
+                                MoTa = reader["MoTaCongViec"].ToString(),
+                                ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,  // Xử lý NULL
+                                ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                GhiChu = reader["ghiChu"].ToString(),
+                                // Các thuộc tính bổ sung
+                                TenBoPhan = reader["TenBoPhan"]?.ToString(),
+                                TenLoaiCongViec = reader["TenLoaiCongViec"]?.ToString(),
+                                TenTienDoCongViec = reader["TenTienDoCongViec"]?.ToString(),
+                                TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"]?.ToString(),
+                                SoLuongNhanSuChuDong = reader["SoLuongNhanSuChuDong"]?.ToString(),
+                                TenNhanSuNhanViec = reader["TenNhanSuNhanViec"]?.ToString()
+                            };
+
+                            tasks.Add(task);
                         }
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi lấy danh sách công việc chưa được giao cho tài khoản: " + ex.Message);
-            }
 
             return tasks;
         }
+
+
+
 
 
         public List<TaskInfo> nhanNhiemVuDuocGiaoTuTaiKhoan(string accountId)
@@ -415,6 +418,48 @@ namespace DAL.TaskDAL
                 conn.Close();
             }
         }
+
+        public TaskInfo LayChiTietCongViec(string idTask)
+        {
+            TaskInfo task = null;
+            string query = "proc_layChiTietCongViec"; 
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdTask", idTask);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            task = new TaskInfo
+                            {
+                                Id = reader["id"].ToString(),
+                                Ten = reader["ten"].ToString(),
+                                MoTa = reader["moTa"].ToString(),
+                                ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
+                                ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                GhiChu = reader["ghiChu"].ToString(),
+                                IdTaiKhoanGiaoViec = reader["idTaiKhoanGiaoViec"].ToString(),
+                                TenBoPhan = reader["tenBoPhan"].ToString(),
+                                TenLoaiCongViec = reader["tenLoaiCongViec"].ToString(),
+                                TenTienDoCongViec = reader["tenTienDoCongViec"].ToString(),
+                                TenNhanSuNhanViec = reader["tenNhanSuNhanViec"].ToString(),
+                                SoLuongNhanSuChuDong = reader["soLuongNhanSuChuDong"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            return task;
+        }
+
+
 
 
     }

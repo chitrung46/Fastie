@@ -19,6 +19,7 @@ namespace Fastie.Screens.Task
         private TaskForm taskForm;
         private string currentTaskType;
 
+
         public string CurrentTaskType { get => currentTaskType; set => currentTaskType = value; }
         public AcceptTaskForm(TaskForm taskForm)
         {
@@ -42,7 +43,7 @@ namespace Fastie.Screens.Task
             }
             stateButton.BackColor = Color.IndianRed;
         }
-
+        /*
         public void LoadDataTaskTable(string taskType = null)
         {
             this.currentTaskType = taskType;
@@ -82,6 +83,46 @@ namespace Fastie.Screens.Task
                 MessageBox.Show("Không có công việc nào phù hợp để hiển thị.", "Thông báo");
             }
         }
+        */
+        public void LoadDataTaskTable(string taskType = null)
+        {
+            this.currentTaskType = taskType;
+            flowLayoutPanelTasks.Controls.Clear();
+
+            List<TaskInfo> filteredTasks = null;
+
+            if (taskType == "Việc được giao")
+            {
+                filteredTasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan)
+                                       .Where(task => task.IdTaiKhoanGiaoViec != taskForm.IdTaiKhoan)
+                                       .ToList();
+            }
+            else
+            {
+                filteredTasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdBoPhan, taskForm.IdTaiKhoan);
+            }
+            if (filteredTasks != null && filteredTasks.Count > 0)
+            {
+                foreach (var task in filteredTasks)
+                {
+                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(taskForm, this.currentTaskType)
+                    {
+                        TaskName = task.Ten,
+                        TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
+                        TaskStatus = task.GhiChu,
+                        JobAssigner = task.TenNhanSuGiaoViec,
+                        TaskId = task.Id
+                    };
+                    flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm);
+                }
+            }
+            else
+            {
+   
+                MessageBox.Show("Không có công việc nào phù hợp để hiển thị.", "Thông báo");
+            }
+        }
+
 
 
         private void flowLayoutPanelTasks_Paint(object sender, PaintEventArgs e)
@@ -91,14 +132,27 @@ namespace Fastie.Screens.Task
 
         private void btnInitialtiveTask_Click(object sender, EventArgs e)
         {
-            LoadDataTaskTable("Việc chủ động");
-            setStateButton(btnInitialtiveTask);
+            btnStateTask("Việc chủ động");
         }
-
+        private void btnStateTask(string taskType)
+        {
+            this.currentTaskType = taskType;
+            //MessageBox.Show(currentTaskType);
+            LoadDataTaskTable(currentTaskType);
+            if(this.currentTaskType == "Việc chủ động")
+            {
+                setStateButton(btnInitialtiveTask);
+            }
+            else
+            {
+                setStateButton(btnAssignTask);
+            }
+        }
+        public void BtnStateTask(string taskType) { btnStateTask(taskType); }
         private void btnAssignTask_Click(object sender, EventArgs e)
         {
-            LoadDataTaskTable("Việc được giao");
-            setStateButton(btnAssignTask);
+            btnStateTask("Việc được giao");
         }
+
     }
 }

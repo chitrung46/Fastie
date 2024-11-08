@@ -26,6 +26,7 @@ namespace BLL
             }
         }
 
+
         public List<TaskInfo> layCongViecTheoID(string accountId)
         {
             try
@@ -50,17 +51,18 @@ namespace BLL
             }
         }
 
-        public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string idBoPhan)
+        public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string idBoPhan, string accountId)
         {
             try
             {
-                return taskDAL.nhanCongViecChuaDuocGiaoTuTaiKhoan(idBoPhan);
+                return taskDAL.nhanCongViecChuaDuocGiaoTuTaiKhoan(idBoPhan, accountId);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Lỗi khi lấy danh sách công việc chưa gán cho tài khoản ID: {idBoPhan}.", ex);
+                throw new Exception($"Lỗi khi lấy danh sách công việc chờ nhận cho bộ phận ID: {idBoPhan} và tài khoản ID: {accountId}.", ex);
             }
         }
+
 
         public List<TaskInfo> nhanNhiemVuDuocGiaoTuTaiKhoan(string accountId)
         {
@@ -128,6 +130,17 @@ namespace BLL
             catch (Exception ex)
             {
                 throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
+            }
+        }
+        public TaskInfo LayChiTietCongViec(string idTask)
+        {
+            try
+            {
+                return taskDAL.LayChiTietCongViec(idTask);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy chi tiết công việc với ID: {idTask}.", ex);
             }
         }
 
