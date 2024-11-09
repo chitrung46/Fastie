@@ -132,6 +132,29 @@ namespace BLL
                 throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
             }
         }
+        public TaskInfo LayChiTietCongViecTheoIdCongViec(string IdTask)
+        {
+            try
+            {
+                return taskDAL.LayChiTietCongViecTheoIdCongViec(IdTask);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy chi tiết công việc với ID: {IdTask}.", ex);
+            }
+        }
+
+        public int LaySoLuongNhanSuChuDongTheoIdCongViec(string idCongViec)
+        {
+            try
+            {
+                return taskDAL.LaySoLuongNhanSuChuDongTheoIdCongViec(idCongViec);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy chi tiết công việc với ID: {idCongViec}.", ex);
+            }
+        }
         public TaskInfo LayChiTietCongViec(string idTask)
         {
             try

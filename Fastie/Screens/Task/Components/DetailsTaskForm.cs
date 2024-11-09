@@ -23,6 +23,7 @@ namespace Fastie.Screens.Task
         private TaskBLL taskBLL = new TaskBLL();
         private string idTask;
         private string currentTaskType;
+        private TaskInfo taskInfo;
 
         public DetailsTaskForm(TaskForm taskForm, string idTask, string currentTaskType)
         {
@@ -59,7 +60,14 @@ namespace Fastie.Screens.Task
             InitializeComponent();
             this.taskForm = taskForm;
             this.layoutAssignTaskForm = layoutAssignTaskForm;
-            LoadTaskDetails();
+            this.taskInfo = taskBLL.LayChiTietCongViecTheoIdCongViec(layoutAssignTaskForm.IdTask);
+            lblTaskNamee.Text = taskInfo.Ten;
+            lblTypeJob.Text = taskInfo.TenLoaiCongViec;
+            lblDescribeTask.Text = taskInfo.MoTa;
+            dtpTimeCompleted.Text = taskInfo.ThoiHanHoanThanh.ToString();
+            lblNumber.Text = taskBLL.LaySoLuongNhanSuChuDongTheoIdCongViec(layoutAssignTaskForm.IdTask).ToString();
+            //LoadTaskDetails();
+
         }
 
         private void customPanel2_Paint(object sender, PaintEventArgs e)
@@ -152,13 +160,14 @@ namespace Fastie.Screens.Task
 
         private void DetailsTaskForm_Load(object sender, EventArgs e)
         {
-            LoadTaskDetails();
+            //LoadTaskDetails();
 
             switch (taskForm.FormCurrent)
             {
                 case "TaskTableForm":
                     break;
                 case "AcceptTaskForm":
+                    LoadTaskDetails();
                     break;
                 case "AssignTaskForm":
                     NearlyReportForm nearlyReport = new NearlyReportForm();
