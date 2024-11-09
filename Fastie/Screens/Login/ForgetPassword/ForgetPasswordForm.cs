@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using Fastie.Components.Toastify;
 
 namespace Fastie.Screens.Login.ForgetPassword
 {
@@ -25,6 +26,12 @@ namespace Fastie.Screens.Login.ForgetPassword
             InitializeComponent();
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnGetPassword_Click(object sender, EventArgs e)
         {
             string email = customTextBox_mail.Text.Trim();
@@ -33,7 +40,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             Account account = resetPassword.GetAccountByEmail(email);
             if (account == null)
             {
-                MessageBox.Show("Email không tồn tại trong hệ thống!");
+                showMessage("Email không tồn tại trong hệ thống!", "error");
                 return;
             }
 
@@ -44,7 +51,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             bool isSent = SendVerificationCode(email, verificationCode);
             if (isSent)
             {
-                MessageBox.Show("Mã xác nhận đã được gửi qua email!");
+                showMessage("Mã xác nhận đã được gửi qua email!", "success");
 
                 // Mở form xác nhận mã với mã đã gửi
                 // Mở form xác nhận mã với mã và email đã gửi
@@ -55,7 +62,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             }
             else
             {
-                MessageBox.Show("Lỗi khi gửi email!");
+                showMessage("Lỗi khi gửi email!", "error");
             }
         }
 

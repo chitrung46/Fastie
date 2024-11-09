@@ -11,6 +11,7 @@ using BLL;
 using BLL.DepartmentBLL;
 using DTO;
 using Fastie.Components.LayoutDepartmen;
+using Fastie.Components.Toastify;
 namespace Fastie
 {
     public partial class UpdateDepartmentForm : Form
@@ -25,7 +26,12 @@ namespace Fastie
             this.needEdit = editDepartment;
             this.departmentForm = layoutDepartmentForm;
         }
-
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void UpdateDepartmentForm_Load(object sender, EventArgs e)
         {
             cTBName.Text = needEdit.Ten;
@@ -36,13 +42,13 @@ namespace Fastie
         {
             if (string.IsNullOrWhiteSpace(cTBName.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên bộ phận.", "Thông báo");
+                showMessage("Vui lòng nhập đầy đủ thông tin cho Tên bộ phận.", "error");
                 return;
             }
             needEdit.Ten = cTBName.Text;
             needEdit.MoTa = cTBDescribe.Text;
             departmentBLL.UpdateDepartment(needEdit);
-            MessageBox.Show("Sửa Bộ phận thành công!", "Success");
+            showMessage("Sửa Bộ phận thành công!", "success");
             departmentForm.loadDataDepartment();
             this.Close();
         }

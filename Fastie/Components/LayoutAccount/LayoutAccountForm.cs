@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL.PermissionBLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,11 +20,15 @@ namespace Fastie.Components.LayoutAccount
         private string hasAccount;
         private string idAccount;
 
+        PermissionBLL permissionBLL = new PermissionBLL();  
+
         private AccountForm accountForm;
-        public LayoutAccountForm(AccountForm accountForm)
+        private HomeForm homeForm;  
+        public LayoutAccountForm(AccountForm accountForm, HomeForm homeForm)
         {
             InitializeComponent();
             this.accountForm = accountForm;
+            this.homeForm = homeForm;
         }
 
         public string PersonnelName
@@ -60,17 +65,33 @@ namespace Fastie.Components.LayoutAccount
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            CreateAccount createAccount = new CreateAccount();
+            createAccount.Show();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            EditAccount editAccount = new EditAccount();    
+            editAccount.Show();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            string idTaiKhoan = homeForm.IdTaiKhoan;
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0005");
+            if (checkPermission)
+            {
+                string[] information = { "Bạn có chắc chắn xóa tài khoản này?", $"{this.personnelName} sẽ được xóa khỏi hệ thống", "Xóa tài khoản" };
+                LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.idAccount);
+                deleteLayoutConfirm.Title = information[0];
+                deleteLayoutConfirm.Content = information[1];
+                deleteLayoutConfirm.btnConfirmText = information[2];
+                deleteLayoutConfirm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền xóa tài khoản", "Thông báo");
+            }
         }
     }
 }

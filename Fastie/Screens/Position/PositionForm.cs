@@ -13,6 +13,7 @@ using DTO;
 using Fastie.Components.LayoutDecentralization;
 using Fastie.Components.LayoutDepartment;
 using Fastie.Components.LayoutRole;
+using Fastie.Components.Toastify;
 namespace Fastie
 {
     public partial class PositionForm : Form
@@ -77,6 +78,13 @@ namespace Fastie
             }
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
+
         private void btnAddPosition_Click(object sender, EventArgs e)
         {
             bool checckPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0011"); 
@@ -87,7 +95,7 @@ namespace Fastie
             }
             else
             {
-                MessageBox.Show("Bạn không có quyền thêm chức vụ", "Thông báo");
+                showMessage("Bạn không có quyền thêm chức vụ", "Thông báo");
             }
         }
     }

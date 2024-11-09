@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,16 +16,18 @@ namespace Fastie
 {
     public partial class AccountForm : Form
     {
-        public AccountForm()
+        private HomeForm homeForm;
+        public AccountForm(HomeForm homeForm)
         {
             InitializeComponent();
+            this.homeForm = homeForm;
         }
 
         private void loadDataAccount()
         {
             for (int i = 0; i < 10; i++)
             {
-                var layoutAccountForm = new LayoutAccountForm(this)
+                var layoutAccountForm = new LayoutAccountForm(this, homeForm)
                 {
                     PersonnelName = "Nhật Toàn",
                     PositionName = "Quản lý",

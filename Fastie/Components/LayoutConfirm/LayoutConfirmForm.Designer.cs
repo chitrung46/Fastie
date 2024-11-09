@@ -73,7 +73,7 @@
             this.btnConfirm.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirm.Location = new System.Drawing.Point(35, 5);
+            this.btnConfirm.Location = new System.Drawing.Point(23, 5);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnConfirm.Size = new System.Drawing.Size(136, 40);

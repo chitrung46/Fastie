@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel = new GUI.TruniControls.CustomPanel();
-            this.lblError = new System.Windows.Forms.Label();
             this.btnLogin = new GUI.CustomButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureEye = new System.Windows.Forms.PictureBox();
@@ -72,7 +71,6 @@
             this.panel.BorderColor = System.Drawing.Color.Black;
             this.panel.BorderRadius = 50;
             this.panel.BorderSize = 0;
-            this.panel.Controls.Add(this.lblError);
             this.panel.Controls.Add(this.btnLogin);
             this.panel.Controls.Add(this.pictureBox3);
             this.panel.Controls.Add(this.pictureEye);
@@ -92,20 +90,6 @@
             this.panel.Size = new System.Drawing.Size(400, 456);
             this.panel.TabIndex = 8;
             // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.BackColor = System.Drawing.Color.Transparent;
-            this.lblError.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(55, 257);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(250, 21);
-            this.lblError.TabIndex = 0;
-            this.lblError.Text = "Vui lòng nhập đầy đủ thông tin";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblError.Visible = false;
-            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.White;
@@ -118,7 +102,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.Black;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(59, 288);
+            this.btnLogin.Location = new System.Drawing.Point(59, 293);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnLogin.Size = new System.Drawing.Size(286, 40);
@@ -131,7 +115,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pictureBox3.Image = global::Fastie.Properties.Resources.icons8_lock_50;
-            this.pictureBox3.Location = new System.Drawing.Point(71, 220);
+            this.pictureBox3.Location = new System.Drawing.Point(71, 240);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 20);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,7 +127,7 @@
             this.pictureEye.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pictureEye.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureEye.Image = global::Fastie.Properties.Resources.icons8_eye_23;
-            this.pictureEye.Location = new System.Drawing.Point(308, 220);
+            this.pictureEye.Location = new System.Drawing.Point(308, 240);
             this.pictureEye.Name = "pictureEye";
             this.pictureEye.Size = new System.Drawing.Size(25, 20);
             this.pictureEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -155,7 +139,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pictureBox2.Image = global::Fastie.Properties.Resources.icons8_email_30;
-            this.pictureBox2.Location = new System.Drawing.Point(71, 137);
+            this.pictureBox2.Location = new System.Drawing.Point(71, 157);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,7 +155,7 @@
             this.txtPassword.BorderSize = 1;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(59, 212);
+            this.txtPassword.Location = new System.Drawing.Point(59, 232);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
@@ -190,7 +174,7 @@
             this.lblForgetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblForgetPassword.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgetPassword.ForeColor = System.Drawing.Color.White;
-            this.lblForgetPassword.Location = new System.Drawing.Point(55, 342);
+            this.lblForgetPassword.Location = new System.Drawing.Point(55, 348);
             this.lblForgetPassword.Name = "lblForgetPassword";
             this.lblForgetPassword.Size = new System.Drawing.Size(138, 21);
             this.lblForgetPassword.TabIndex = 4;
@@ -207,7 +191,7 @@
             this.txtEmail.BorderSize = 1;
             this.txtEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.White;
-            this.txtEmail.Location = new System.Drawing.Point(59, 129);
+            this.txtEmail.Location = new System.Drawing.Point(59, 149);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
@@ -225,7 +209,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(55, 183);
+            this.label5.Location = new System.Drawing.Point(55, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 21);
             this.label5.TabIndex = 0;
@@ -238,7 +222,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(128, 44);
+            this.label1.Location = new System.Drawing.Point(128, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 32);
             this.label1.TabIndex = 0;
@@ -251,7 +235,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(55, 101);
+            this.label2.Location = new System.Drawing.Point(55, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 21);
             this.label2.TabIndex = 0;
@@ -292,7 +276,6 @@
         private System.Windows.Forms.PictureBox pictureEye;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label lblError;
         private GUI.TruniControls.CustomTextBox txtEmail;
     }
 }

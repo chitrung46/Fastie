@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using Fastie.Components.Toastify;
 
 
 
@@ -28,6 +29,13 @@ namespace Fastie.Screens.Login.ForgetPassword
 
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
+
         private void btnConfirmCode_Click(object sender, EventArgs e)
         {
             string enteredCode = txtCode1.Text + txtCode2.Text + txtCode3.Text + txtCode4.Text;
@@ -44,14 +52,14 @@ namespace Fastie.Screens.Login.ForgetPassword
                attemptCount++;
                 if(attemptCount >= 3)
                 {
-                    MessageBox.Show("Bạn đã nhập sai quá 3 lần. Vui lòng nhập lại mail");
+                    showMessage("Bạn đã nhập sai quá 3 lần. Vui lòng nhập lại mail", "error");
                     ForgetPasswordForm forgetPasswordForm = new ForgetPasswordForm();
                     forgetPasswordForm.Show();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Mã xác nhận không đúng! Bạn còn " + (3 - attemptCount) + " lần thử.");
+                    showMessage("Mã xác nhận không đúng! Bạn còn " + (3 - attemptCount) + " lần nhập.", "error");
 
                     ClearCodeFields();
                 }

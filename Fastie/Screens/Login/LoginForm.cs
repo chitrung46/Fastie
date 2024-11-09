@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Web;
 using BLL.LoginBLL;
 using DTO;
+using Fastie.Components.Toastify;
 namespace Fastie.Screens.Login
 {
     public partial class LoginForm : Form
@@ -22,7 +23,12 @@ namespace Fastie.Screens.Login
         {
             InitializeComponent();
         }
-
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void pictureEye_Click(object sender, EventArgs e)
         {
             if(txtPassword.PasswordChar == true)
@@ -48,37 +54,32 @@ namespace Fastie.Screens.Login
         {
             acc.TenDangNhap = txtEmail.Text;
             acc.MatKhau = txtPassword.Text;
-            lblError.Visible = false;
-            lblError.Text = "";
             string[] getUser = loginBLL.checkLogin(acc);
 
             if (string.IsNullOrWhiteSpace(acc.TenDangNhap))
             {
-                lblError.Text = "Email không được để trống";
-                lblError.Visible = true;
+                showMessage("Email không được để trống", "error");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(acc.MatKhau))
             {
-                lblError.Text = "Mật khẩu không được để trống";
-                lblError.Visible = true;
+                showMessage("Mật khẩu không được để trống", "error");
                 return;
             }
 
             if (getUser.Length == 1 && getUser[0] == "Email hoặc mật khẩu không chính xác!")
             {
-                lblError.Text = "Email hoặc mật khẩu không chính xác!";
-                lblError.Visible = true;
+                showMessage("Email hoặc mật khẩu không đúng!", "error");
                 return;
             }
 
             if (getUser[4] == "Vô hiệu hóa")
             {
-                lblError.Text = "Tài khoản của bạn đã bị vô hiệu hóa!";
-                lblError.Visible = true;
+                showMessage("Tài khoản của bạn đã bị vô hiệu hóa!", "error");
                 return;
             }
+
             string[] getInfoUser = getInFoLoginBLL.LayTenNhanSuVaBoPhan(getUser[0]);
             string tenNhanSu = getInfoUser[0];
             string tenBoPhan = getInfoUser[1];

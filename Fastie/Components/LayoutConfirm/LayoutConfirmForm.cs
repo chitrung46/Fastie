@@ -15,7 +15,9 @@ using Fastie.Components.LayoutDepartment;
 using Fastie.Components.LayoutDepartmen;
 using Fastie.Components.LayoutPersonnel;
 using BLL.DepartmentBLL;
-//using Fastie.Components.LayoutPersonnel;
+using Fastie.Components.LayoutAccount;
+using Fastie.Components.Toastify;
+
 namespace Fastie
 {
     public partial class LayoutConfirmForm : Form
@@ -25,6 +27,7 @@ namespace Fastie
         private LayoutPositionForm layoutPositionForm;
         private LayoutDepartmentForm layoutDepartmentForm;
         private LayoutPersonnelForm layoutPersonnelForm;
+        private LayoutAccountForm layoutAccountForm;
         private HomeForm homeForm;
 
         PositionBLL positionBLL = new PositionBLL();
@@ -68,12 +71,25 @@ namespace Fastie
             this.accountName = accountName;
             this.layoutPersonnelForm = layoutPersonnelForm;
         }
+        public LayoutConfirmForm(LayoutAccountForm layoutAccountForm, string accountName)
+        {
+            InitializeComponent();
+            this.accountName = accountName;
+            this.layoutAccountForm = layoutAccountForm;
+        }
 
         public string AccountName { get => accountName; set => accountName = value; }   
         public string Title { get => lblTitle.Text; set => lblTitle.Text = value; }
         public string Content { get => lblContent.Text; set => lblContent.Text = value; }
         public string btnConfirmText { get => btnConfirm.Text; set => btnConfirm.Text = value; }
 
+
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void pictureClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -99,38 +115,38 @@ namespace Fastie
                     bool result = decentralizationBLL.deleteAllRoles(this.accountName);
                     if(result)
                     {
-                        MessageBox.Show("Xóa quyền thành công");
+                        showMessage("Xóa quyền thành công", "success");
                         decentralizationForm.loadDataFromDecentralization();
                     }
                     else
                     {
-                        MessageBox.Show("Xóa quyền thất bại");
+                        showMessage("Xóa quyền thất bại", "error");
                     }
                     this.Close();
                     break;
                 case "Xóa chức vụ":
                     positionBLL.DeletePosition(layoutPositionForm.IdPosition);
                     layoutPositionForm.LoadPositionData();
-                    MessageBox.Show("Xóa chức vụ thành công");
+                    showMessage("Xóa chức vụ thành công", "success");
                     this.Close();
                     break;
                 case "Xóa bộ phận":
                     departmentBLL.DeleteDepartment(layoutDepartmentForm.IdDepartment);
                     layoutDepartmentForm.loadDataDepartment();
-                    MessageBox.Show("Xóa bộ phận thành công");
+                    showMessage("Xóa bộ phận thành công", "success");
                     this.Close();
                     break;
                 case "Xóa nhân sự":
-                    MessageBox.Show("Xóa nhân sự thành công", layoutPersonnelForm.IdPersonnel);
                     personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
+                    showMessage("Xóa nhân sự thành công", "success");
                     layoutPersonnelForm.loadDataPersonnel();
                     this.Close();
                     break;
                 case "Cập nhật":
-                    MessageBox.Show("Cập nhật thành công");
+                    MessageBox.Show("Cập nhật thành công", "success");
                     break;
                 case "Thêm":
-                    MessageBox.Show("Thêm thành công");
+                    MessageBox.Show("Thêm thành công", "success");
                     break;
                 case "Đăng xuất":
                     foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
@@ -140,9 +156,12 @@ namespace Fastie
                             form.Close();
                         }
                     }
-
                     LoginForm loginForm = new LoginForm();
                     loginForm.Show();
+                    break;
+                case "Xóa tài khoản":
+                    showMessage("Xóa nhân sự thành công", "success");
+                    this.Close();
                     break;
                 default:
                     break;

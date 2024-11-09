@@ -154,9 +154,29 @@ namespace Fastie.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_back_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-back-1001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bell_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bell-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_check_240 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-check-240", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -284,6 +304,26 @@ namespace Fastie.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_error_144 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-error-144", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_error_1441 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-error-1441", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_eye_23 {
             get {
                 object obj = ResourceManager.GetObject("icons8-eye-23", resourceCulture);
@@ -297,6 +337,16 @@ namespace Fastie.Properties {
         internal static System.Drawing.Bitmap icons8_eye_60 {
             get {
                 object obj = ResourceManager.GetObject("icons8-eye-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_fail_144 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fail-144", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

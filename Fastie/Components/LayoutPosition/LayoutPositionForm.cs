@@ -1,6 +1,7 @@
 ﻿using BLL;
 using BLL.PermissionBLL;
 using DTO;
+using Fastie.Components.Toastify;
 using Fastie.Screens.Position;
 using System;
 using System.Collections.Generic;
@@ -60,6 +61,12 @@ namespace Fastie.Components.LayoutDepartment
             positionForm.LoadDataPosition();
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnEditPosition_Click(object sender, EventArgs e)
         {
             bool checkPermission = permissionBLL.checkPermission(positionForm.IdTaiKhoan, "Q0012");
@@ -76,7 +83,7 @@ namespace Fastie.Components.LayoutDepartment
                 updatePositionForm.Show();
             } else
             {
-                MessageBox.Show("Bạn không có quyền sửa chức vụ", "Thông báo"); 
+                showMessage("Bạn không có quyền sửa chức vụ", "error");
             }
         }
 
@@ -93,7 +100,7 @@ namespace Fastie.Components.LayoutDepartment
                 deleteLayoutConfirm.Show();
             } else
             {
-                MessageBox.Show("Bạn không có quyền xóa chức vụ", "Thông báo");
+                showMessage("Bạn không có quyền xóa chức vụ", "error");
             }
         }
 

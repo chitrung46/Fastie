@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BLL;
 using DTO;
 using Fastie.Components.LayoutDepartment;
+using Fastie.Components.Toastify;
 namespace Fastie
 {
     public partial class UpdatePositionForm : Form
@@ -35,17 +36,23 @@ namespace Fastie
             cTBDesribe.Text = needEdit.MoTa;
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cTBName.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên chức vụ", "Thông báo");
+                showMessage("Vui lòng nhập tên chức vụ", "error");
                 return;
             }
             needEdit.Ten = cTBName.Text;        
             needEdit.MoTa = cTBDesribe.Text;
             positionBLL.UpdatePosition(needEdit);
-            MessageBox.Show("Sửa Bộ phận thành công!", "Success");
+            showMessage("Sửa chức vụ thành công!", "success");
             positionForm.LoadPositionData();
             this.Close();
         }

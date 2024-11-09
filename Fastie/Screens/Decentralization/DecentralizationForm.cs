@@ -2,6 +2,7 @@
 using DTO;
 using Fastie.Components.LayoutDecentralization;
 using Fastie.Components.LayoutRole;
+using Fastie.Components.Toastify;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,7 @@ namespace Fastie.Screens.Decentralization
                     break;
             }
         }
+
 
         private void loadDataFormat(List<AccountInfo> accountInfos)
         {

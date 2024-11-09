@@ -67,6 +67,7 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -156,17 +157,41 @@
     <Compile Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.Designer.cs">
       <DependentUpon>NoPermissionAccessForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Toastify\LayoutToastifyForm.cs">
+    <Compile Include="Components\Toastify\LayoutToastify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Toastify\LayoutToastifyForm.Designer.cs">
-      <DependentUpon>LayoutToastifyForm.cs</DependentUpon>
+    <Compile Include="Components\Toastify\LayoutToastify.Designer.cs">
+      <DependentUpon>LayoutToastify.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Analytics\Analytics.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screens\Analytics\Analytics.Designer.cs">
       <DependentUpon>Analytics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Analytics\ChartCompoundColumnAcceptTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Analytics\ChartCompoundColumnAcceptTaskForm.Designer.cs">
+      <DependentUpon>ChartCompoundColumnAcceptTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Analytics\ChartCompoundColumnCompleteTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Analytics\ChartCompoundColumnCompleteTaskForm.Designer.cs">
+      <DependentUpon>ChartCompoundColumnCompleteTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Analytics\PieChartTaskCompletionRateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Analytics\PieChartTaskCompletionRateForm.Designer.cs">
+      <DependentUpon>PieChartTaskCompletionRateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Analytics\PieChartStatusTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Analytics\PieChartStatusTaskForm.Designer.cs">
+      <DependentUpon>PieChartStatusTaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Department\DetailsDepartmentForm.cs">
       <SubType>Form</SubType>
@@ -440,14 +465,26 @@
     <EmbeddedResource Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.resx">
       <DependentUpon>NoPermissionAccessForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Toastify\LayoutToastifyForm.resx">
-      <DependentUpon>LayoutToastifyForm.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Toastify\LayoutToastify.resx">
+      <DependentUpon>LayoutToastify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Account\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Analytics\ChartCompoundColumnAcceptTaskForm.resx">
+      <DependentUpon>ChartCompoundColumnAcceptTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Analytics\ChartCompoundColumnCompleteTaskForm.resx">
+      <DependentUpon>ChartCompoundColumnCompleteTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Analytics\PieChartTaskCompletionRateForm.resx">
+      <DependentUpon>PieChartTaskCompletionRateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Analytics\PieChartStatusTaskForm.resx">
+      <DependentUpon>PieChartStatusTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
@@ -727,6 +764,21 @@
       <Project>{f9469dd2-23d1-4b54-8be7-8ffaa41c818b}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-1001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-check-240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fail-144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-error-144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-error-1441.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

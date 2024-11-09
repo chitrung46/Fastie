@@ -19,16 +19,16 @@ namespace Fastie.Components.LayoutDecentralization
         private string departmentName;
 
         private string accountName;
-        private DecentralizationForm decentralizationBackupForm;
+        private DecentralizationForm decentralizationForm;
         public LayoutDecentralizationForm()
         {
             InitializeComponent();
         }
 
-        public LayoutDecentralizationForm(DecentralizationForm decentralizationBackupForm)
+        public LayoutDecentralizationForm(DecentralizationForm decentralizationForm)
         {
             InitializeComponent();
-            this.decentralizationBackupForm = decentralizationBackupForm;
+            this.decentralizationForm = decentralizationForm;
         }
 
         public string Number
@@ -59,18 +59,18 @@ namespace Fastie.Components.LayoutDecentralization
         }
         private void btnUpdateDecentralization_Click(object sender, EventArgs e)
         {
-            UpdateDecentralizationForm createDecentralization = new UpdateDecentralizationForm(this,this.accountName);
+            UpdateDecentralizationForm createDecentralization = new UpdateDecentralizationForm(this,decentralizationForm);
             createDecentralization.Show();
         }
 
         public void loadDataFromDecentralization()
         {
-            switch (decentralizationBackupForm.StateCurrentList) {
+            switch (decentralizationForm.StateCurrentList) {
                 case "Role":
-                    decentralizationBackupForm.loadDataForRole();
+                    decentralizationForm.loadDataForRole();
                     break;
                 case "Roleless":
-                    decentralizationBackupForm.loadDataForRoleLess();
+                    decentralizationForm.loadDataForRoleLess();
                     break;
                 default:
                     break;
@@ -78,7 +78,7 @@ namespace Fastie.Components.LayoutDecentralization
         }
         private void btnDeleteAllPermission_Click(object sender, EventArgs e)
         {
-            if(decentralizationBackupForm.StateCurrentList == "Role")
+            if(decentralizationForm.StateCurrentList == "Role")
             {
                 string[] information = { "Bạn có chắc chắn xóa toàn bộ quyền?", $"{this.personnelName} sẽ mất toàn bộ quyền trong hệ thống", "Xóa quyền" };
                 LayoutConfirmForm deleteLayoutConfirm = new LayoutConfirmForm(this, this.accountName);
@@ -90,7 +90,7 @@ namespace Fastie.Components.LayoutDecentralization
         }
         private void hideDeleteButton()
         {
-            if (decentralizationBackupForm.StateCurrentList == "Roleless")
+            if (decentralizationForm.StateCurrentList == "Roleless")
             {
                 btnDeleteAllPermission.Visible = false;
             }

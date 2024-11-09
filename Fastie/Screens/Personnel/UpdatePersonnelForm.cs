@@ -1,11 +1,8 @@
-//<<<<<<< HEAD
 ﻿using System;
-//=======
 ﻿using BLL;
 using DTO;
 using Fastie.Components.LayoutPersonnel;
 using System;
-//>>>>>>> origin/Toan
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
 using BLL.DepartmentBLL;
-using DTO;
 using Fastie.Components.LayoutDepartmen;
+using Fastie.Components.Toastify;
 
 namespace Fastie
 {
@@ -26,13 +22,13 @@ namespace Fastie
 
         private readonly Personnel needEdit;
   
-        private LayoutPersonnelForm personnelForm;
+        private LayoutPersonnelForm layoutpersonnelForm;
         PersonnelBLL personnelBLL = new PersonnelBLL();
-        public UpdatePersonnelForm(LayoutPersonnelForm personnelForm, Personnel nhanSu)
+        public UpdatePersonnelForm(LayoutPersonnelForm layoutpersonnelForm, Personnel nhanSu)
         {
             InitializeComponent();
             needEdit = nhanSu;
-            this.personnelForm = personnelForm;
+            this.layoutpersonnelForm = layoutpersonnelForm;
 
         }
 
@@ -41,6 +37,12 @@ namespace Fastie
             this.Close();
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void UpdatePersonnelForm_Load(object sender, EventArgs e)
         {
             cCBSex.Texts = this.needEdit.GioiTinh;
@@ -65,32 +67,12 @@ namespace Fastie
             cCBSex.Items.Add("Nữ");
         }
 
-        private void customButton1_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(cTBName.Text))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên nhân sự.", "Thông báo");
-                return;
-            }
-            needEdit.Id = personnelForm.IdPersonnel;
-            needEdit.Ten = cTBName.Text;        
-            needEdit.Email = cTBEmail.Text;
-            needEdit.GioiTinh = cCBSex.SelectedItem?.ToString();
-            needEdit.NgaySinh = dTPBirthday.Value;
-            needEdit.NgayVaoLam = dTPDayOfWork.Value;
-            needEdit.Sdt = cTBNumberPhone.Text;
-            personnelBLL.UpdatePersonnel(needEdit);
-            this.Close();
-            MessageBox.Show("Sửa Nhân sự thành công!", "Success");
-            personnelForm.loadDataPersonnel();
-
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cTBName.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên nhân sự.", "Thông báo");
+                showMessage("Vui lòng nhập đầy đủ thông tin", "error");
                 return;
             }
             needEdit.Ten = cTBName.Text;        
@@ -103,8 +85,8 @@ namespace Fastie
             needEdit.Sdt = cTBNumberPhone.Text;
             personnelBLL.UpdatePersonnel(needEdit);
             this.Close();
-            MessageBox.Show("Sửa Nhân sự thành công!", "Success");
-            personnelForm.loadDataPersonnel();
+            showMessage("Sửa nhân sự thành công!", "success");
+            layoutpersonnelForm.loadDataPersonnel();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

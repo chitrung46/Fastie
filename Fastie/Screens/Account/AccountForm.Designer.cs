@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.btnBack = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.flowLayoutPanelAcoount = new System.Windows.Forms.FlowLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
-            this.cbPosition = new GUI.TruniControls.CustomComboBox();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbDepartment = new GUI.TruniControls.CustomComboBox();
+            this.cbPosition = new GUI.TruniControls.CustomComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
             this.panel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -64,42 +64,6 @@
             this.btnBack.TabIndex = 6;
             this.btnBack.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(289, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Chức vụ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 21);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Bộ phận";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(558, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 21);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Nhân sự";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label12);
@@ -113,6 +77,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1117, 29);
             this.panel1.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(1040, 4);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(70, 21);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Chi tiết";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(762, 4);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 21);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Tài khoản";
             // 
             // label5
             // 
@@ -177,68 +163,6 @@
             this.flowLayoutPanelAcoount.Size = new System.Drawing.Size(1190, 450);
             this.flowLayoutPanelAcoount.TabIndex = 14;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(762, 4);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 21);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Tài khoản";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(1040, 4);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 21);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Chi tiết";
-            // 
-            // customComboBox1
-            // 
-            this.customComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox1.BorderRadius = 8;
-            this.customComboBox1.BorderSize = 1;
-            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.IconColor = System.Drawing.Color.Black;
-            this.customComboBox1.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.Location = new System.Drawing.Point(562, 131);
-            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox1.Size = new System.Drawing.Size(233, 30);
-            this.customComboBox1.TabIndex = 13;
-            this.customComboBox1.Texts = "";
-            // 
-            // cbPosition
-            // 
-            this.cbPosition.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPosition.BorderColor = System.Drawing.Color.Black;
-            this.cbPosition.BorderRadius = 8;
-            this.cbPosition.BorderSize = 1;
-            this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbPosition.ForeColor = System.Drawing.Color.DimGray;
-            this.cbPosition.IconColor = System.Drawing.Color.Black;
-            this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPosition.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbPosition.Location = new System.Drawing.Point(293, 131);
-            this.cbPosition.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbPosition.Name = "cbPosition";
-            this.cbPosition.Padding = new System.Windows.Forms.Padding(1);
-            this.cbPosition.Size = new System.Drawing.Size(233, 30);
-            this.cbPosition.TabIndex = 4;
-            this.cbPosition.Texts = "";
-            // 
             // customPanel2
             // 
             this.customPanel2.BackColor = System.Drawing.Color.White;
@@ -292,6 +216,30 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tài khoản";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(24, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 21);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Bộ phận";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(289, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 21);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Chức vụ";
+            // 
             // cbDepartment
             // 
             this.cbDepartment.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -311,6 +259,58 @@
             this.cbDepartment.Size = new System.Drawing.Size(233, 30);
             this.cbDepartment.TabIndex = 5;
             this.cbDepartment.Texts = "";
+            // 
+            // cbPosition
+            // 
+            this.cbPosition.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPosition.BorderColor = System.Drawing.Color.Black;
+            this.cbPosition.BorderRadius = 8;
+            this.cbPosition.BorderSize = 1;
+            this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbPosition.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPosition.IconColor = System.Drawing.Color.Black;
+            this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPosition.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPosition.Location = new System.Drawing.Point(293, 131);
+            this.cbPosition.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Padding = new System.Windows.Forms.Padding(1);
+            this.cbPosition.Size = new System.Drawing.Size(233, 30);
+            this.cbPosition.TabIndex = 4;
+            this.cbPosition.Texts = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(558, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 21);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Nhân sự";
+            // 
+            // customComboBox1
+            // 
+            this.customComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
+            this.customComboBox1.BorderRadius = 8;
+            this.customComboBox1.BorderSize = 1;
+            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.customComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customComboBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.customComboBox1.IconColor = System.Drawing.Color.Black;
+            this.customComboBox1.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.customComboBox1.ListTextColor = System.Drawing.Color.DimGray;
+            this.customComboBox1.Location = new System.Drawing.Point(562, 131);
+            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
+            this.customComboBox1.Name = "customComboBox1";
+            this.customComboBox1.Padding = new System.Windows.Forms.Padding(1);
+            this.customComboBox1.Size = new System.Drawing.Size(233, 30);
+            this.customComboBox1.TabIndex = 13;
+            this.customComboBox1.Texts = "";
             // 
             // AccountForm
             // 
@@ -349,12 +349,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
-        private GUI.TruniControls.CustomComboBox cbPosition;
-        private GUI.TruniControls.CustomComboBox cbDepartment;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private GUI.TruniControls.CustomComboBox customComboBox1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
@@ -364,5 +358,11 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAcoount;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private GUI.TruniControls.CustomComboBox cbDepartment;
+        private GUI.TruniControls.CustomComboBox cbPosition;
+        private System.Windows.Forms.Label label4;
+        private GUI.TruniControls.CustomComboBox customComboBox1;
     }
 }

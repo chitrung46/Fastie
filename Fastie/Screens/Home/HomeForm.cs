@@ -1,6 +1,7 @@
 ﻿using BLL.PermissionBLL;
 using DTO;
 using Fastie.Components.NoPermissionAccessForm;
+using Fastie.Components.Toastify;
 using Fastie.Screens.Decentralization;
 using System;
 using System.Collections.Generic;
@@ -222,10 +223,11 @@ namespace Fastie
         }
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0002");
+            string permissionId = "Q0002,Q0003,Q0004,Q0005";
+            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, permissionId);
             if (checkPermission)
             {
-                AccountForm account = new AccountForm();
+                AccountForm account = new AccountForm(this);
                 addFormInMainLayout(account);
             }
             else

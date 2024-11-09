@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DTO;
 using BLL;
 using Fastie.Components.LayoutDepartment;
+using Fastie.Components.Toastify;
 namespace Fastie
 {
     public partial class CreatePositionForm : Form
@@ -21,12 +22,18 @@ namespace Fastie
             InitializeComponent();
             this.positionForm = positionForm;
         }
-        
+
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrWhiteSpace(cTBName.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên chức vụ", "Thông báo");
+                showMessage("Vui lòng nhập đầy đủ thông tin", "error");
                 return;
             }
             try
@@ -37,12 +44,12 @@ namespace Fastie
                     MoTa = cTBDescribe.Text
                 };
                 positionBLL.InsertPosition(newPosition);
-                MessageBox.Show("Thêm Chức vụ mới thành công!", "Thông báo");
+                showMessage("Thêm Chức vụ mới thành công!", "success");
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                throw new Exception(ex.Message);    
             }
             positionForm.LoadDataPosition();
             this.Close();

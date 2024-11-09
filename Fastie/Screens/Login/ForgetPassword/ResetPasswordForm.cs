@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using BLL;
+using Fastie.Components.Toastify;
 namespace Fastie.Screens.Login.ForgetPassword
 {
     public partial class ResetPasswordForm : Form
@@ -15,6 +16,12 @@ namespace Fastie.Screens.Login.ForgetPassword
             userEmail = email;
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnGetPassword_Click(object sender, EventArgs e)
         {
             string newPassword = txtNewPassword.Text.Trim();
@@ -23,14 +30,14 @@ namespace Fastie.Screens.Login.ForgetPassword
             // Kiểm tra xem mật khẩu có khớp không
             if (newPassword != confirmPassword)
             {
-                MessageBox.Show("Mật khẩu và xác nhận mật khẩu không khớp!");
+                showMessage("Mật khẩu và xác nhận mật khẩu không khớp!", "error");
                 return;
             }
 
             // Kiểm tra tính hợp lệ của mật khẩu mới (ví dụ: độ dài tối thiểu)
             if (string.IsNullOrEmpty(newPassword) || newPassword.Length < 6)
             {
-                MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự!");
+                showMessage("Mật khẩu phải có ít nhất 6 ký tự!", "error");
                 return;
             }
 
@@ -38,12 +45,12 @@ namespace Fastie.Screens.Login.ForgetPassword
             bool isUpdated = resetPasswordBLL.UpdateNewPassword(userEmail, newPassword);
             if (isUpdated)
             {
-                MessageBox.Show("Đặt lại mật khẩu thành công!");
+                showMessage("Đặt lại mật khẩu thành công!", "success");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Có lỗi xảy ra khi đặt lại mật khẩu.");
+                showMessage("Có lỗi xảy ra khi đặt lại mật khẩu.", "error");
             }
         }
     }

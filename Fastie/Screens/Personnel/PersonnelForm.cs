@@ -11,6 +11,7 @@ using BLL;
 using BLL.PermissionBLL;
 using DTO;
 using Fastie.Components.LayoutPersonnel;
+using Fastie.Components.Toastify;
 namespace Fastie
 {
     public partial class PersonnelForm : Form
@@ -59,6 +60,12 @@ namespace Fastie
                 i++;
             }
         }
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
 
         private void btnAddPersonnel_Click(object sender, EventArgs e)
         {
@@ -70,7 +77,7 @@ namespace Fastie
             }
             else
             {
-                MessageBox.Show("Bạn không có quyền thêm nhân viên");
+                showMessage("Bạn không có quyền thêm nhân viên", "error");
             }
         }
 

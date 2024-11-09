@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL.DepartmentBLL;
+using Fastie.Components.Toastify;
 
 namespace Fastie
 {
@@ -24,11 +25,18 @@ namespace Fastie
             this.departmentForm= departmentForm;    
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cTBName.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho Tên bộ phận.", "Thông báo");
+                showMessage("Vui lòng nhập đầy đủ thông tin", "error");
                 return;
             }
             try
@@ -39,12 +47,12 @@ namespace Fastie
                     MoTa = cTBDescribe.Text
                 };
                 departmentBLL.InsertDepartment(newBoPhan);
-                MessageBox.Show("Thêm Bộ phận mới thành công!", "Success");
+                showMessage("Thêm Bộ phận mới thành công!", "success");
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                throw new Exception(ex.Message);    
             }
             departmentForm.LoadDataDepartment();
             this.Close();

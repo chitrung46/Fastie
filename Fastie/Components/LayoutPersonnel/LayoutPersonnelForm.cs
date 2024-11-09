@@ -1,6 +1,7 @@
 using BLL;
 using BLL.PermissionBLL;
 using DTO;
+using Fastie.Components.Toastify;
 using Fastie.Screens.Personnel;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,13 @@ namespace Fastie.Components.LayoutPersonnel
             personnelForm.LoadDataPersonnel();
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
+
         private void btnDeletePersonnel_Click(object sender, EventArgs e)
         {
             bool checkPermission = permissionBLL.checkPermission(personnelForm.IdTaiKhoan, "Q0017");
@@ -95,8 +103,8 @@ namespace Fastie.Components.LayoutPersonnel
                 deleteLayoutConfirm.Content = information[1];
                 deleteLayoutConfirm.btnConfirmText = information[2];
                 deleteLayoutConfirm.Show();
-            } else {                 
-                MessageBox.Show("Bạn không có quyền xóa nhân viên");
+            } else {             
+                showMessage("Bạn không có quyền xóa nhân viên", "error");
             }
 
         }
@@ -120,7 +128,7 @@ namespace Fastie.Components.LayoutPersonnel
                 updatePersonnelForm.Show();
             } else
             {
-                MessageBox.Show("Bạn không có quyền sửa nhân viên");
+                showMessage("Bạn không có quyền sửa nhân viên", "error");
             }
         }
 

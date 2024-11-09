@@ -13,6 +13,7 @@ using BLL.PermissionBLL;
 using DAL;
 using DTO;
 using Fastie.Components.LayoutDepartmen;
+using Fastie.Components.Toastify;
 using GUI.TruniControls;
 namespace Fastie
 {
@@ -61,6 +62,12 @@ namespace Fastie
             }
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnAddDepartment_Click(object sender, EventArgs e)
         {
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0007");
@@ -70,7 +77,7 @@ namespace Fastie
                 createDepartmentForm.Show();
             } else
             {
-                MessageBox.Show("Bạn không có quyền thêm bộ phận", "Thông báo");
+                showMessage("Bạn không có quyền thêm bộ phận", "error");
             }
         }
     }

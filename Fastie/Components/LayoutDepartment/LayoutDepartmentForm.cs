@@ -2,6 +2,7 @@
 using BLL.PermissionBLL;
 using DAL.PermissionDAL;
 using DTO;
+using Fastie.Components.Toastify;
 using Fastie.Screens.Department;
 using System;
 using System.Collections.Generic;
@@ -58,7 +59,12 @@ namespace Fastie.Components.LayoutDepartmen
         {
             departmentForm.LoadDataDepartment();
         }
-
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnEditDepartment_Click(object sender, EventArgs e)
         {
             string idTaiKhoan = departmentForm.IdTaiKhoan;
@@ -76,7 +82,7 @@ namespace Fastie.Components.LayoutDepartmen
             }
             else
             {
-                MessageBox.Show("Bạn không có quyền chỉnh sửa bộ phận", "Thông báo");
+                showMessage("Bạn không có quyền chỉnh sửa bộ phận", "error");
             }
             
         }
@@ -95,7 +101,7 @@ namespace Fastie.Components.LayoutDepartmen
                 deleteLayoutConfirm.Show();
             } else
             {
-                MessageBox.Show("Bạn không có quyền xóa bộ phận", "Thông báo");
+                showMessage("Bạn không có quyền xóa bộ phận", "error");
             }
         }
 

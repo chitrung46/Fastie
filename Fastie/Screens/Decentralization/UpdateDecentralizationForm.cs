@@ -13,6 +13,8 @@ using BLL.ListRoleBLL;
 using DTO;
 using DTO.ListRoleDTO;
 using Fastie.Components.LayoutDecentralization;
+using Fastie.Components.Toastify;
+using Fastie.Screens.Decentralization;
 
 namespace Fastie
 {
@@ -22,20 +24,21 @@ namespace Fastie
         private DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
         private Dictionary<string, CheckBox> permissionCheckboxMap;
         private string accountName;
-        //private DecentralizationForm decentralizationForm;
-        private LayoutDecentralizationForm decentralizationForm;
+
+        private LayoutDecentralizationForm layoutdecentralizationForm;
+        private DecentralizationForm decentralizationForm;
         public delegate void FormClosingHandler();
         public event FormClosingHandler OnFormClosing;
         ListRoleBLL listRoleBLL = new ListRoleBLL();
 
-        public UpdateDecentralizationForm(LayoutDecentralizationForm decentralizationForm,string accountName) //replace by DecentralizationForm decentralizationForm ,string accountName
+        public UpdateDecentralizationForm(LayoutDecentralizationForm layoutdecentralizationForm,DecentralizationForm decentralizationForm) //replace by DecentralizationForm decentralizationForm ,string accountName
         {
             InitializeComponent();
             InitializePermissionCheckboxMap();
-            this.accountName = accountName;
+            this.accountName = layoutdecentralizationForm.AccountName;
             this.decentralizationForm = decentralizationForm;
+            this.layoutdecentralizationForm = layoutdecentralizationForm;
         }
-
 
         private void checkboxPersonnelManagement_CheckedChanged(object sender, EventArgs e)
         {
@@ -229,10 +232,16 @@ namespace Fastie
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                throw new Exception("Lỗi" +  ex.Message);
             }
         }
 
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -255,23 +264,24 @@ namespace Fastie
                     bool result = decentralizationBLL.updateRoles(this.accountName, selectedPermissions);
                     if (result)
                     {
-                        decentralizationForm.loadDataFromDecentralization();
-                        MessageBox.Show("Cập nhật quyền thành công!");
+                        layoutdecentralizationForm.loadDataFromDecentralization();
+                        showMessage("Cập nhật quyền thành công!", "success");
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật quyền thất bại!");
+                        showMessage("Cập nhật quyền thất bại!", "error");
+                        this.Close();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn ít nhất một quyền!");
+                    showMessage("Vui lòng chọn ít nhất một quyền!", "error");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message);
+                throw new Exception("Lỗi khi cập nhật: " + ex.Message);
             }
         }
 
