@@ -63,17 +63,18 @@ namespace Fastie.Components.LayoutRole
             get { return taskJobAssigner; }
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
-        
+
         private void btnGetTask_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(taskId) && !string.IsNullOrEmpty(taskForm.IdTaiKhoan))
             {
                 taskBLL.giaoViecChoTaiKhoan(taskForm.IdTaiKhoan, taskId);
-                taskBLL.capNhatTrangThaiCongViec(taskId, "TD002"); 
 
                 if (this.ParentForm is AcceptTaskForm parentForm)
                 {
-                    parentForm.LoadDataTaskTable(parentForm.CurrentTaskType);
+                    // Cập nhật trạng thái dựa vào loại công việc
+                    string newStatusId = parentForm.CurrentTaskType == "Việc chủ động" ? "TD002" : "TD002";
+                    taskBLL.capNhatTrangThaiCongViec(taskId, newStatusId);
                 }
 
                 if (this.Parent != null)
@@ -87,10 +88,16 @@ namespace Fastie.Components.LayoutRole
             }
         }
 
+
+
+
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, this);
+            var detailsTaskForm = new DetailsTaskForm(taskForm, this.TaskId, this.currentTaskType);
             taskForm.AddFormInMainLayout(detailsTaskForm);
         }
+
+
+
     }
 }

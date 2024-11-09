@@ -156,6 +156,12 @@
     <Compile Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.Designer.cs">
       <DependentUpon>NoPermissionAccessForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Toastify\LayoutToastifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Toastify\LayoutToastifyForm.Designer.cs">
+      <DependentUpon>LayoutToastifyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Analytics\Analytics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\NoPermissionAccessForm\NoPermissionAccessForm.resx">
       <DependentUpon>NoPermissionAccessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Toastify\LayoutToastifyForm.resx">
+      <DependentUpon>LayoutToastifyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>

@@ -34,16 +34,16 @@
             this.pnlReport = new System.Windows.Forms.Panel();
             this.customButton1 = new GUI.CustomButton();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
-            this.customPanel7 = new GUI.TruniControls.CustomPanel();
-            this.label13 = new System.Windows.Forms.Label();
             this.customPanel6 = new GUI.TruniControls.CustomPanel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblNumber = new System.Windows.Forms.Label();
             this.customPanel5 = new GUI.TruniControls.CustomPanel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.dtpTimeCompleted = new System.Windows.Forms.Label();
             this.customPanel4 = new GUI.TruniControls.CustomPanel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblDescribeTask = new System.Windows.Forms.Label();
             this.customPanel3 = new GUI.TruniControls.CustomPanel();
-            this.lblPersonnelName = new System.Windows.Forms.Label();
+            this.lblTypeJob = new System.Windows.Forms.Label();
+            this.customPanel2 = new GUI.TruniControls.CustomPanel();
+            this.lblTaskNamee = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,24 +53,26 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFileName = new System.Windows.Forms.Label();
             this.customButton2 = new GUI.CustomButton();
-            this.customPanel9 = new GUI.TruniControls.CustomPanel();
-            this.label15 = new System.Windows.Forms.Label();
             this.customPanel8 = new GUI.TruniControls.CustomPanel();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblPersonnel = new System.Windows.Forms.Label();
+            this.customPanel7 = new GUI.TruniControls.CustomPanel();
+            this.lblDepartment = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnUploadFile = new GUI.CustomButton();
+            this.btnDelete = new GUI.CustomButton();
+            this.btnEdit = new GUI.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             this.customPanel1.SuspendLayout();
-            this.customPanel7.SuspendLayout();
             this.customPanel6.SuspendLayout();
             this.customPanel5.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
+            this.customPanel2.SuspendLayout();
             this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.customPanel9.SuspendLayout();
             this.customPanel8.SuspendLayout();
+            this.customPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -80,7 +82,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(34, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 32);
+            this.label3.Size = new System.Drawing.Size(227, 32);
             this.label3.TabIndex = 41;
             this.label3.Text = "Chi tiết công việc";
             // 
@@ -139,11 +141,11 @@
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
             this.customPanel1.BorderSize = 0;
-            this.customPanel1.Controls.Add(this.customPanel7);
             this.customPanel1.Controls.Add(this.customPanel6);
             this.customPanel1.Controls.Add(this.customPanel5);
             this.customPanel1.Controls.Add(this.customPanel4);
             this.customPanel1.Controls.Add(this.customPanel3);
+            this.customPanel1.Controls.Add(this.customPanel2);
             this.customPanel1.Controls.Add(this.label4);
             this.customPanel1.Controls.Add(this.label7);
             this.customPanel1.Controls.Add(this.label2);
@@ -159,34 +161,6 @@
             this.customPanel1.Size = new System.Drawing.Size(610, 430);
             this.customPanel1.TabIndex = 40;
             // 
-            // customPanel7
-            // 
-            this.customPanel7.AutoScroll = true;
-            this.customPanel7.BackColor = System.Drawing.Color.White;
-            this.customPanel7.BorderColor = System.Drawing.Color.Black;
-            this.customPanel7.BorderRadius = 15;
-            this.customPanel7.BorderSize = 0;
-            this.customPanel7.Controls.Add(this.label13);
-            this.customPanel7.ForeColor = System.Drawing.Color.Black;
-            this.customPanel7.GradientAngle = 90F;
-            this.customPanel7.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel7.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel7.Location = new System.Drawing.Point(345, 376);
-            this.customPanel7.Name = "customPanel7";
-            this.customPanel7.Size = new System.Drawing.Size(239, 40);
-            this.customPanel7.TabIndex = 51;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 10);
-            this.label13.MaximumSize = new System.Drawing.Size(225, 300);
-            this.label13.MinimumSize = new System.Drawing.Size(205, 18);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(205, 21);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "12/11/2024";
-            // 
             // customPanel6
             // 
             this.customPanel6.AutoScroll = true;
@@ -194,26 +168,26 @@
             this.customPanel6.BorderColor = System.Drawing.Color.Black;
             this.customPanel6.BorderRadius = 15;
             this.customPanel6.BorderSize = 0;
-            this.customPanel6.Controls.Add(this.label12);
+            this.customPanel6.Controls.Add(this.lblNumber);
             this.customPanel6.ForeColor = System.Drawing.Color.Black;
             this.customPanel6.GradientAngle = 90F;
             this.customPanel6.GradientBottomColor = System.Drawing.Color.White;
             this.customPanel6.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel6.Location = new System.Drawing.Point(29, 376);
+            this.customPanel6.Location = new System.Drawing.Point(345, 376);
             this.customPanel6.Name = "customPanel6";
             this.customPanel6.Size = new System.Drawing.Size(239, 40);
-            this.customPanel6.TabIndex = 50;
+            this.customPanel6.TabIndex = 51;
             // 
-            // label12
+            // lblNumber
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 10);
-            this.label12.MaximumSize = new System.Drawing.Size(205, 300);
-            this.label12.MinimumSize = new System.Drawing.Size(205, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(205, 21);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "12/11/2024";
+            this.lblNumber.AutoSize = true;
+            this.lblNumber.Location = new System.Drawing.Point(15, 10);
+            this.lblNumber.MaximumSize = new System.Drawing.Size(225, 300);
+            this.lblNumber.MinimumSize = new System.Drawing.Size(205, 18);
+            this.lblNumber.Name = "lblNumber";
+            this.lblNumber.Size = new System.Drawing.Size(205, 21);
+            this.lblNumber.TabIndex = 0;
+            this.lblNumber.Text = "12/11/2024";
             // 
             // customPanel5
             // 
@@ -222,26 +196,26 @@
             this.customPanel5.BorderColor = System.Drawing.Color.Black;
             this.customPanel5.BorderRadius = 15;
             this.customPanel5.BorderSize = 0;
-            this.customPanel5.Controls.Add(this.label11);
+            this.customPanel5.Controls.Add(this.dtpTimeCompleted);
             this.customPanel5.ForeColor = System.Drawing.Color.Black;
             this.customPanel5.GradientAngle = 90F;
             this.customPanel5.GradientBottomColor = System.Drawing.Color.White;
             this.customPanel5.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel5.Location = new System.Drawing.Point(29, 213);
+            this.customPanel5.Location = new System.Drawing.Point(29, 376);
             this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(555, 129);
+            this.customPanel5.Size = new System.Drawing.Size(239, 40);
             this.customPanel5.TabIndex = 50;
             // 
-            // label11
+            // dtpTimeCompleted
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 10);
-            this.label11.MaximumSize = new System.Drawing.Size(510, 300);
-            this.label11.MinimumSize = new System.Drawing.Size(510, 18);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(510, 21);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Vệ sinh toàn bộ khu vực tòa nhà";
+            this.dtpTimeCompleted.AutoSize = true;
+            this.dtpTimeCompleted.Location = new System.Drawing.Point(15, 10);
+            this.dtpTimeCompleted.MaximumSize = new System.Drawing.Size(205, 300);
+            this.dtpTimeCompleted.MinimumSize = new System.Drawing.Size(205, 18);
+            this.dtpTimeCompleted.Name = "dtpTimeCompleted";
+            this.dtpTimeCompleted.Size = new System.Drawing.Size(205, 21);
+            this.dtpTimeCompleted.TabIndex = 0;
+            this.dtpTimeCompleted.Text = "12/11/2024";
             // 
             // customPanel4
             // 
@@ -250,26 +224,26 @@
             this.customPanel4.BorderColor = System.Drawing.Color.Black;
             this.customPanel4.BorderRadius = 15;
             this.customPanel4.BorderSize = 0;
-            this.customPanel4.Controls.Add(this.label9);
+            this.customPanel4.Controls.Add(this.lblDescribeTask);
             this.customPanel4.ForeColor = System.Drawing.Color.Black;
             this.customPanel4.GradientAngle = 90F;
             this.customPanel4.GradientBottomColor = System.Drawing.Color.White;
             this.customPanel4.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel4.Location = new System.Drawing.Point(28, 128);
+            this.customPanel4.Location = new System.Drawing.Point(29, 213);
             this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(555, 40);
-            this.customPanel4.TabIndex = 49;
+            this.customPanel4.Size = new System.Drawing.Size(555, 129);
+            this.customPanel4.TabIndex = 50;
             // 
-            // label9
+            // lblDescribeTask
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 10);
-            this.label9.MaximumSize = new System.Drawing.Size(510, 300);
-            this.label9.MinimumSize = new System.Drawing.Size(510, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(510, 21);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Thông báo";
+            this.lblDescribeTask.AutoSize = true;
+            this.lblDescribeTask.Location = new System.Drawing.Point(15, 10);
+            this.lblDescribeTask.MaximumSize = new System.Drawing.Size(510, 300);
+            this.lblDescribeTask.MinimumSize = new System.Drawing.Size(510, 18);
+            this.lblDescribeTask.Name = "lblDescribeTask";
+            this.lblDescribeTask.Size = new System.Drawing.Size(510, 21);
+            this.lblDescribeTask.TabIndex = 0;
+            this.lblDescribeTask.Text = "Vệ sinh toàn bộ khu vực tòa nhà";
             // 
             // customPanel3
             // 
@@ -278,26 +252,54 @@
             this.customPanel3.BorderColor = System.Drawing.Color.Black;
             this.customPanel3.BorderRadius = 15;
             this.customPanel3.BorderSize = 0;
-            this.customPanel3.Controls.Add(this.lblPersonnelName);
+            this.customPanel3.Controls.Add(this.lblTypeJob);
             this.customPanel3.ForeColor = System.Drawing.Color.Black;
             this.customPanel3.GradientAngle = 90F;
             this.customPanel3.GradientBottomColor = System.Drawing.Color.White;
             this.customPanel3.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel3.Location = new System.Drawing.Point(29, 47);
+            this.customPanel3.Location = new System.Drawing.Point(28, 128);
             this.customPanel3.Name = "customPanel3";
             this.customPanel3.Size = new System.Drawing.Size(555, 40);
-            this.customPanel3.TabIndex = 48;
+            this.customPanel3.TabIndex = 49;
             // 
-            // lblPersonnelName
+            // lblTypeJob
             // 
-            this.lblPersonnelName.AutoSize = true;
-            this.lblPersonnelName.Location = new System.Drawing.Point(15, 10);
-            this.lblPersonnelName.MaximumSize = new System.Drawing.Size(510, 300);
-            this.lblPersonnelName.MinimumSize = new System.Drawing.Size(510, 18);
-            this.lblPersonnelName.Name = "lblPersonnelName";
-            this.lblPersonnelName.Size = new System.Drawing.Size(510, 21);
-            this.lblPersonnelName.TabIndex = 0;
-            this.lblPersonnelName.Text = "Vệ sinh";
+            this.lblTypeJob.AutoSize = true;
+            this.lblTypeJob.Location = new System.Drawing.Point(15, 10);
+            this.lblTypeJob.MaximumSize = new System.Drawing.Size(510, 300);
+            this.lblTypeJob.MinimumSize = new System.Drawing.Size(510, 18);
+            this.lblTypeJob.Name = "lblTypeJob";
+            this.lblTypeJob.Size = new System.Drawing.Size(510, 21);
+            this.lblTypeJob.TabIndex = 0;
+            this.lblTypeJob.Text = "Thông báo";
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.AutoScroll = true;
+            this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.BorderColor = System.Drawing.Color.Black;
+            this.customPanel2.BorderRadius = 15;
+            this.customPanel2.BorderSize = 0;
+            this.customPanel2.Controls.Add(this.lblTaskNamee);
+            this.customPanel2.ForeColor = System.Drawing.Color.Black;
+            this.customPanel2.GradientAngle = 90F;
+            this.customPanel2.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel2.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel2.Location = new System.Drawing.Point(29, 47);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(555, 40);
+            this.customPanel2.TabIndex = 48;
+            // 
+            // lblTaskNamee
+            // 
+            this.lblTaskNamee.AutoSize = true;
+            this.lblTaskNamee.Location = new System.Drawing.Point(15, 10);
+            this.lblTaskNamee.MaximumSize = new System.Drawing.Size(510, 300);
+            this.lblTaskNamee.MinimumSize = new System.Drawing.Size(510, 18);
+            this.lblTaskNamee.Name = "lblTaskNamee";
+            this.lblTaskNamee.Size = new System.Drawing.Size(510, 21);
+            this.lblTaskNamee.TabIndex = 0;
+            this.lblTaskNamee.Text = "Vệ sinh";
             // 
             // label4
             // 
@@ -306,7 +308,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(347, 349);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 21);
+            this.label4.Size = new System.Drawing.Size(237, 21);
             this.label4.TabIndex = 47;
             this.label4.Text = "Số lượng nhân sự chủ động:";
             // 
@@ -317,7 +319,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(28, 349);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 21);
+            this.label7.Size = new System.Drawing.Size(186, 21);
             this.label7.TabIndex = 41;
             this.label7.Text = "Thời hạn hoàn thành: ";
             // 
@@ -327,7 +329,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(29, 181);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 21);
+            this.label2.Size = new System.Drawing.Size(145, 21);
             this.label2.TabIndex = 35;
             this.label2.Text = "Mô tả công việc: ";
             // 
@@ -337,7 +339,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(29, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 21);
+            this.label1.Size = new System.Drawing.Size(133, 21);
             this.label1.TabIndex = 33;
             this.label1.Text = "Loại công việc: ";
             // 
@@ -347,7 +349,7 @@
             this.lblTaskName.ForeColor = System.Drawing.Color.White;
             this.lblTaskName.Location = new System.Drawing.Point(28, 17);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(121, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(129, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Tên công việc: ";
             // 
@@ -360,8 +362,8 @@
             this.pnl2.Controls.Add(this.pictureBox1);
             this.pnl2.Controls.Add(this.lblFileName);
             this.pnl2.Controls.Add(this.customButton2);
-            this.pnl2.Controls.Add(this.customPanel9);
             this.pnl2.Controls.Add(this.customPanel8);
+            this.pnl2.Controls.Add(this.customPanel7);
             this.pnl2.Controls.Add(this.label5);
             this.pnl2.Controls.Add(this.label6);
             this.pnl2.Controls.Add(this.btnUploadFile);
@@ -392,7 +394,7 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(296, 257);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(69, 21);
+            this.lblFileName.Size = new System.Drawing.Size(73, 21);
             this.lblFileName.TabIndex = 2;
             this.lblFileName.Text = "n2.docx";
             // 
@@ -413,34 +415,6 @@
             this.customButton2.Text = "Tải xuống ảnh";
             this.customButton2.UseVisualStyleBackColor = false;
             // 
-            // customPanel9
-            // 
-            this.customPanel9.AutoScroll = true;
-            this.customPanel9.BackColor = System.Drawing.Color.White;
-            this.customPanel9.BorderColor = System.Drawing.Color.Black;
-            this.customPanel9.BorderRadius = 15;
-            this.customPanel9.BorderSize = 0;
-            this.customPanel9.Controls.Add(this.label15);
-            this.customPanel9.ForeColor = System.Drawing.Color.Black;
-            this.customPanel9.GradientAngle = 90F;
-            this.customPanel9.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel9.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel9.Location = new System.Drawing.Point(32, 128);
-            this.customPanel9.Name = "customPanel9";
-            this.customPanel9.Size = new System.Drawing.Size(396, 40);
-            this.customPanel9.TabIndex = 53;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 10);
-            this.label15.MaximumSize = new System.Drawing.Size(225, 300);
-            this.label15.MinimumSize = new System.Drawing.Size(205, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(205, 21);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Kiều Thanh, Chí Trung";
-            // 
             // customPanel8
             // 
             this.customPanel8.AutoScroll = true;
@@ -448,26 +422,54 @@
             this.customPanel8.BorderColor = System.Drawing.Color.Black;
             this.customPanel8.BorderRadius = 15;
             this.customPanel8.BorderSize = 0;
-            this.customPanel8.Controls.Add(this.label14);
+            this.customPanel8.Controls.Add(this.lblPersonnel);
             this.customPanel8.ForeColor = System.Drawing.Color.Black;
             this.customPanel8.GradientAngle = 90F;
             this.customPanel8.GradientBottomColor = System.Drawing.Color.White;
             this.customPanel8.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel8.Location = new System.Drawing.Point(32, 47);
+            this.customPanel8.Location = new System.Drawing.Point(32, 128);
             this.customPanel8.Name = "customPanel8";
             this.customPanel8.Size = new System.Drawing.Size(396, 40);
-            this.customPanel8.TabIndex = 52;
+            this.customPanel8.TabIndex = 53;
             // 
-            // label14
+            // lblPersonnel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 10);
-            this.label14.MaximumSize = new System.Drawing.Size(225, 300);
-            this.label14.MinimumSize = new System.Drawing.Size(205, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(205, 21);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Vệ sinh";
+            this.lblPersonnel.AutoSize = true;
+            this.lblPersonnel.Location = new System.Drawing.Point(15, 10);
+            this.lblPersonnel.MaximumSize = new System.Drawing.Size(225, 300);
+            this.lblPersonnel.MinimumSize = new System.Drawing.Size(205, 18);
+            this.lblPersonnel.Name = "lblPersonnel";
+            this.lblPersonnel.Size = new System.Drawing.Size(205, 21);
+            this.lblPersonnel.TabIndex = 0;
+            this.lblPersonnel.Text = "Kiều Thanh, Chí Trung";
+            // 
+            // customPanel7
+            // 
+            this.customPanel7.AutoScroll = true;
+            this.customPanel7.BackColor = System.Drawing.Color.White;
+            this.customPanel7.BorderColor = System.Drawing.Color.Black;
+            this.customPanel7.BorderRadius = 15;
+            this.customPanel7.BorderSize = 0;
+            this.customPanel7.Controls.Add(this.lblDepartment);
+            this.customPanel7.ForeColor = System.Drawing.Color.Black;
+            this.customPanel7.GradientAngle = 90F;
+            this.customPanel7.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel7.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel7.Location = new System.Drawing.Point(32, 47);
+            this.customPanel7.Name = "customPanel7";
+            this.customPanel7.Size = new System.Drawing.Size(396, 40);
+            this.customPanel7.TabIndex = 52;
+            // 
+            // lblDepartment
+            // 
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.Location = new System.Drawing.Point(15, 10);
+            this.lblDepartment.MaximumSize = new System.Drawing.Size(225, 300);
+            this.lblDepartment.MinimumSize = new System.Drawing.Size(205, 18);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(205, 21);
+            this.lblDepartment.TabIndex = 0;
+            this.lblDepartment.Text = "Vệ sinh";
             // 
             // label5
             // 
@@ -475,7 +477,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(28, 96);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 21);
+            this.label5.Size = new System.Drawing.Size(147, 21);
             this.label5.TabIndex = 33;
             this.label5.Text = "Người nhận việc:";
             // 
@@ -485,7 +487,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(29, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 21);
+            this.label6.Size = new System.Drawing.Size(165, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bộ phận nhận việc:";
             // 
@@ -506,6 +508,52 @@
             this.btnUploadFile.Text = "Tải xuống file";
             this.btnUploadFile.UseVisualStyleBackColor = false;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnDelete.BorderColor = System.Drawing.Color.White;
+            this.btnDelete.BorderRadius = 15;
+            this.btnDelete.BorderSize = 0;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(780, 59);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.btnDelete.Size = new System.Drawing.Size(133, 40);
+            this.btnDelete.TabIndex = 55;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnEdit.BorderColor = System.Drawing.Color.White;
+            this.btnEdit.BorderRadius = 15;
+            this.btnEdit.BorderSize = 0;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Image = global::Fastie.Properties.Resources.icons8_pencil_23;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(641, 59);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.btnEdit.Size = new System.Drawing.Size(133, 40);
+            this.btnEdit.TabIndex = 56;
+            this.btnEdit.Text = "Chỉnh sửa";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // DetailsTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -513,6 +561,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(1120, 900);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.pnlReport);
             this.Controls.Add(this.pictureBack);
             this.Controls.Add(this.customButton1);
@@ -527,8 +577,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
-            this.customPanel7.ResumeLayout(false);
-            this.customPanel7.PerformLayout();
             this.customPanel6.ResumeLayout(false);
             this.customPanel6.PerformLayout();
             this.customPanel5.ResumeLayout(false);
@@ -537,13 +585,15 @@
             this.customPanel4.PerformLayout();
             this.customPanel3.ResumeLayout(false);
             this.customPanel3.PerformLayout();
+            this.customPanel2.ResumeLayout(false);
+            this.customPanel2.PerformLayout();
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.customPanel9.ResumeLayout(false);
-            this.customPanel9.PerformLayout();
             this.customPanel8.ResumeLayout(false);
             this.customPanel8.PerformLayout();
+            this.customPanel7.ResumeLayout(false);
+            this.customPanel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,20 +617,22 @@
         private GUI.CustomButton btnUploadFile;
         private System.Windows.Forms.PictureBox pictureBack;
         private System.Windows.Forms.Label lblBack;
-        private GUI.TruniControls.CustomPanel customPanel3;
-        private System.Windows.Forms.Label lblPersonnelName;
-        private GUI.TruniControls.CustomPanel customPanel6;
-        private System.Windows.Forms.Label label12;
+        private GUI.TruniControls.CustomPanel customPanel2;
         private GUI.TruniControls.CustomPanel customPanel5;
-        private System.Windows.Forms.Label label11;
         private GUI.TruniControls.CustomPanel customPanel4;
-        private System.Windows.Forms.Label label9;
+        private GUI.TruniControls.CustomPanel customPanel3;
+        private GUI.TruniControls.CustomPanel customPanel6;
         private GUI.TruniControls.CustomPanel customPanel7;
-        private System.Windows.Forms.Label label13;
-        private GUI.TruniControls.CustomPanel customPanel9;
-        private System.Windows.Forms.Label label15;
-        private GUI.TruniControls.CustomPanel customPanel8;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel pnlReport;
+        private GUI.TruniControls.CustomPanel customPanel8;
+        private System.Windows.Forms.Label lblNumber;
+        private System.Windows.Forms.Label dtpTimeCompleted;
+        private System.Windows.Forms.Label lblDescribeTask;
+        private System.Windows.Forms.Label lblTypeJob;
+        private System.Windows.Forms.Label lblTaskNamee;
+        private System.Windows.Forms.Label lblPersonnel;
+        private System.Windows.Forms.Label lblDepartment;
+        private GUI.CustomButton btnDelete;
+        private GUI.CustomButton btnEdit;
     }
 }
