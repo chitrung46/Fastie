@@ -418,6 +418,84 @@ namespace DAL.TaskDAL
                 conn.Close();
             }
         }
+        public TaskInfo LayChiTietCongViecTheoIdCongViec(string IdTask)
+        {
+            TaskInfo task = new TaskInfo();
+            string query = "proc_layChiTietCongViecTheoIdCongViec";
+
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@idCongViec", IdTask);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                task = new TaskInfo
+                                {
+                                    Id = reader["id"].ToString(),
+                                    Ten = reader["ten"].ToString(),
+                                    MoTa = reader["moTa"].ToString(),
+                                    ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                    ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
+                                    ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                    GhiChu = reader["ghiChu"].ToString(),
+                                    IdTaiKhoanGiaoViec = reader["idTaiKhoanGiaoViec"].ToString(),
+                                    IdBoPhanGiaoViec = reader["idBoPhanGiaoViec"].ToString(),
+                                    IdLoaiCongViec = reader["idLoaiCongViec"].ToString(),
+                                    IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
+                                    IdLichSuMacDinh = reader["idLichSuMacDinh"].ToString(),
+                                    TenLoaiCongViec = reader["tenLoaiCongViec"].ToString()
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy danh sách công việc theo ID tài khoản: " + ex.Message);
+            }
+
+            return task;
+        }
+
+        public int LaySoLuongNhanSuChuDongTheoIdCongViec(string idCongViec)
+        {
+            int soLuong = 0;
+            string query = "proc_laySoLuongNhanSuChuDongTheoIdCongViec";
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@idCongViec", idCongViec);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                soLuong = (int)reader["soLuongNhanSuChuDong"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy ID công việc: " + ex.Message);
+            }
+            return soLuong;
+        }
 
         public TaskInfo LayChiTietCongViec(string idTask)
         {
