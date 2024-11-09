@@ -115,14 +115,11 @@ namespace Fastie.Screens.Task
                         string taskDescription = worksheet.Cells[i, ExcelColumnLetterToNumber(taskDescriptionColumn)].Text;
                         string completionDeadlineText = worksheet.Cells[i, ExcelColumnLetterToNumber(completionDeadlineColumn)].Text;
 
-                        DateTime completionDeadline = DateTime.TryParseExact(
-                            completionDeadlineText,
-                            "MM/dd/yyyy HH:mm",
-                            CultureInfo.InvariantCulture,
-                            DateTimeStyles.None,
-                            out var parsedDate)
-                            ? parsedDate
-                            : DateTime.Now;
+                        DateTime completionDeadline = DateTime.TryParseExact(completionDeadlineText,
+                                                                            "MM/dd/yyyy HH:mm",
+                                                                            CultureInfo.InvariantCulture,
+                                                                            DateTimeStyles.None,
+                                                                            out var parsedDate) ? parsedDate : DateTime.Now;
 
                         var task = new TaskInfo
                         {

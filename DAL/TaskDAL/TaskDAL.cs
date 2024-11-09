@@ -23,7 +23,7 @@ namespace DAL.TaskDAL
                 con.Open();
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
-                    command.Parameters.AddWithValue("@ProgressId", progressId);
+                    command.Parameters.AddWithValue("@ProgressId", progressId); 
                     progressName = command.ExecuteScalar()?.ToString();
                 }
             }
