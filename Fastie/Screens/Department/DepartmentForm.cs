@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.DecentralizationBLL;
 using BLL.DepartmentBLL;
 using BLL.PermissionBLL;
 using DAL;
@@ -36,17 +37,18 @@ namespace Fastie
 
         private void DepartmentForm_Load(object sender, EventArgs e)
         {
-            loadDataDepartment();
+            List<Department> departmentList = departmentBLL.GetDepartmentList();
+            loadDataDepartment(departmentList);
         }
         public void LoadDataDepartment()
         {
-            loadDataDepartment();
+            List<Department> departmentList = departmentBLL.GetDepartmentList();
+            loadDataDepartment(departmentList);
         }
 
-        private void loadDataDepartment()
+        private void loadDataDepartment(List<Department> departmentList)
         {
             flowLayoutPanelDepartment.Controls.Clear();
-            List<Department> departmentList = departmentBLL.GetDepartmentList();
             int i = 0;
             foreach (Department department in departmentList)
             {
@@ -78,6 +80,21 @@ namespace Fastie
             } else
             {
                 showMessage("Bạn không có quyền thêm bộ phận", "error");
+            }
+        }
+
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = txtSearch.Text;
+            if (searchValue == "")
+            {
+                List<Department> departmentList = departmentBLL.GetDepartmentList();
+                loadDataDepartment(departmentList);
+            }
+            else
+            {
+                List<Department> departments = departmentBLL.TimKiemBoPhan(searchValue);
+                loadDataDepartment(departments);
             }
         }
     }

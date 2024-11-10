@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.DepartmentBLL;
 using BLL.PermissionBLL;
 using DTO;
 using Fastie.Components.LayoutDecentralization;
@@ -51,18 +52,19 @@ namespace Fastie
 
         private void PositionForm_Load(object sender, EventArgs e)
         {
-            loadDataPosition();
+            List<Position> positionList = positionBLL.GetPositionList();
+            loadDataPosition(positionList);
         }
 
         public void LoadDataPosition()
         {
-            loadDataPosition();
+            List<Position> positionList = positionBLL.GetPositionList();
+            loadDataPosition(positionList);
         }
 
-        private void loadDataPosition() 
+        private void loadDataPosition(List<Position> positionList) 
         {
             flowLayoutPanelPosition.Controls.Clear();
-            List<Position> positionList = positionBLL.GetPositionList();
             int i = 0;
             foreach (Position position in positionList)
             {
@@ -96,6 +98,21 @@ namespace Fastie
             else
             {
                 showMessage("Bạn không có quyền thêm chức vụ", "Thông báo");
+            }
+        }
+
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = txtSearch.Text;
+            if (searchValue == "")
+            {
+                List<Position> positionList = positionBLL.GetPositionList();
+                loadDataPosition(positionList);
+            }
+            else
+            {
+                List<Position> positionList = positionBLL.TimKiemChucVu(searchValue);
+                loadDataPosition(positionList);
             }
         }
     }

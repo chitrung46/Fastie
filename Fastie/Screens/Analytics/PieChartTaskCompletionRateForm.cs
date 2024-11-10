@@ -45,10 +45,7 @@ namespace Fastie.Screens.Analytics
             chartPieTaskCompletionRate.Series.Clear(); // Xóa các Series cũ nếu có
             chartPieTaskCompletionRate.Series.Add(series);
 
-            // Cấu hình để hiển thị giá trị và nhãn trên mỗi phần
-            series.IsValueShownAsLabel = true;
-            series.Label = "#PERCENT"; // Hiển thị % cho từng phần
-            series.LegendText = "#VALX"; // Hiển thị tên hạng mục trong phần chú thích
+
 
             // Thêm chú thích cho biểu đồ
             if (chartPieTaskCompletionRate.Legends.Count == 0)

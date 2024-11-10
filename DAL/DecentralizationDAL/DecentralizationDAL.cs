@@ -343,5 +343,76 @@ namespace DAL.DecentralizationDAL
                 throw new Exception("Lỗi khi kiểm tra quyền: " + ex.Message);
             }
         }
+
+        //Chức năng tìm kiếm
+        public List<AccountInfo> TimKiemNhanSuChuaCoQuyen(string searchValue)
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
+            List<AccountInfo> personnel = new List<AccountInfo>();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_TimKiemTheoNhanSuBoPhanChucVuChuaCoQuyen", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@tenTimKiem", searchValue);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    AccountInfo info = new AccountInfo
+                    {
+                        TenDangNhap = reader["IdDangNhap"].ToString(),
+                        TenNhanSu = reader["TenNhanSu"].ToString(),
+                        TenBoPhan = reader["TenBoPhan"].ToString(),
+                        TenChucVu = reader["TenChucVu"].ToString()
+                    };
+                    personnel.Add(info);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm nhân sự: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return personnel;
+        }
+        
+        public List<AccountInfo> TimKiemNhanSuCoQuyen(string searchValue)
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
+            List<AccountInfo> personnel = new List<AccountInfo>();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_TimKiemTheoNhanSuBoPhanChucVuCoQuyen", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@tenTimKiem", searchValue);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    AccountInfo info = new AccountInfo
+                    {
+                        TenDangNhap = reader["IdDangNhap"].ToString(),
+                        TenNhanSu = reader["TenNhanSu"].ToString(),
+                        TenBoPhan = reader["TenBoPhan"].ToString(),
+                        TenChucVu = reader["TenChucVu"].ToString()
+                    };
+                    personnel.Add(info);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm nhân sự: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return personnel;
+        }
     }
 }

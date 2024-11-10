@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Task.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,12 @@ namespace Fastie.Components.LayoutNotification
         {
             get { return AssignerName; }
             set { assignerName = value; lblAssignerName.Text = value; }
+        }
+
+        private void pictureboxDetail_Click(object sender, EventArgs e)
+        {
+            DetailNotificationForm detailNotificationForm = new DetailNotificationForm(this);
+            detailNotificationForm.Show();
         }
     }
 }

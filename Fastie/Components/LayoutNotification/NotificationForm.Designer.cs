@@ -32,7 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureboxDetail = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblAssignerName = new System.Windows.Forms.Label();
             this.lblTaskName = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxDetail)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,22 +73,23 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Controls.Add(this.pictureboxDetail);
             this.panel4.Location = new System.Drawing.Point(307, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(32, 63);
             this.panel4.TabIndex = 2;
             // 
-            // pictureBox2
+            // pictureboxDetail
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::Fastie.Properties.Resources.icons8_menu_23;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pictureboxDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureboxDetail.Image = global::Fastie.Properties.Resources.icons8_menu_23;
+            this.pictureboxDetail.Location = new System.Drawing.Point(5, 7);
+            this.pictureboxDetail.Name = "pictureboxDetail";
+            this.pictureboxDetail.Size = new System.Drawing.Size(24, 50);
+            this.pictureboxDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureboxDetail.TabIndex = 0;
+            this.pictureboxDetail.TabStop = false;
+            this.pictureboxDetail.Click += new System.EventHandler(this.pictureboxDetail_Click);
             // 
             // panel3
             // 
@@ -132,7 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxDetail)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -148,6 +149,6 @@
         private System.Windows.Forms.Label lblAssignerName;
         private System.Windows.Forms.Label lblTaskName;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureboxDetail;
     }
 }

@@ -38,9 +38,9 @@
             this.flowLayoutPanelDepartment = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddDepartment = new GUI.CustomButton();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new GUI.TruniControls.CustomTextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -159,8 +159,8 @@
             this.customPanel2.BorderColor = System.Drawing.Color.Black;
             this.customPanel2.BorderRadius = 30;
             this.customPanel2.BorderSize = 0;
+            this.customPanel2.Controls.Add(this.txtSearch);
             this.customPanel2.Controls.Add(this.pictureBox8);
-            this.customPanel2.Controls.Add(this.label6);
             this.customPanel2.Controls.Add(this.label1);
             this.customPanel2.ForeColor = System.Drawing.Color.Black;
             this.customPanel2.GradientAngle = 90F;
@@ -170,29 +170,6 @@
             this.customPanel2.Name = "customPanel2";
             this.customPanel2.Size = new System.Drawing.Size(1120, 74);
             this.customPanel2.TabIndex = 10;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = global::Fastie.Properties.Resources.icons8_search_100;
-            this.pictureBox8.Location = new System.Drawing.Point(963, 22);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(1009, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 21);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Tìm kiếm";
             // 
             // label1
             // 
@@ -205,6 +182,40 @@
             this.label1.Size = new System.Drawing.Size(116, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bộ phận";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.AutoSize = true;
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtSearch.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BorderRadius = 0;
+            this.txtSearch.BorderSize = 1;
+            this.txtSearch.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.White;
+            this.txtSearch.Location = new System.Drawing.Point(1004, 20);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Multiline = false;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtSearch.PasswordChar = false;
+            this.txtSearch.PlaceholderColor = System.Drawing.Color.White;
+            this.txtSearch.PlaceholderText = "Tìm kiếm";
+            this.txtSearch.Size = new System.Drawing.Size(97, 36);
+            this.txtSearch.TabIndex = 13;
+            this.txtSearch.UnderlinedStyle = false;
+            this.txtSearch._TextChanged += new System.EventHandler(this.txtSearch__TextChanged);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = global::Fastie.Properties.Resources.icons8_search_100;
+            this.pictureBox8.Location = new System.Drawing.Point(960, 21);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 12;
+            this.pictureBox8.TabStop = false;
             // 
             // DepartmentForm
             // 
@@ -235,8 +246,6 @@
 
         private System.Windows.Forms.Button btnBack;
         private GUI.TruniControls.CustomPanel customPanel2;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
@@ -246,5 +255,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelDepartment;
         private GUI.CustomButton btnAddDepartment;
+        private GUI.TruniControls.CustomTextBox txtSearch;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

@@ -8,30 +8,30 @@ namespace BLL.DepartmentBLL
 {
     public class DepartmentBLL
     {
-        DepartmentDAL DepartmentDAL = new DepartmentDAL();
+        DepartmentDAL departmentDAL = new DepartmentDAL();
         public void InsertDepartment(Department deparment)
         {
-            DepartmentDAL.InsertDepartment(deparment);
+            departmentDAL.InsertDepartment(deparment);
         }
 
         public void UpdateDepartment(Department deparment)
         {
-            DepartmentDAL.UpdateDepartment(deparment);
+            departmentDAL.UpdateDepartment(deparment);
         }
 
         public List<Department> GetDepartmentList()
         {
-            List<Department> list = DepartmentDAL.GetDepartmentList();
+            List<Department> list = departmentDAL.GetDepartmentList();
             return list;
         }
 
         public void DeleteDepartment(string departmentId)
         {
-            DepartmentDAL.DeleteDepartment(departmentId);
+            departmentDAL.DeleteDepartment(departmentId);
         } 
         public List<AcceptTaskPersonnel> LayQuanLiBoPhan(string idBoPhan)
         {
-            return DepartmentDAL.LayQuanLiBoPhan(idBoPhan);
+            return departmentDAL.LayQuanLiBoPhan(idBoPhan);
         }
 
         public List<AcceptTaskPersonnel> LayNhanSuBoPhan(string idBoPhan)
@@ -39,12 +39,22 @@ namespace BLL.DepartmentBLL
             
             try
             {
-                return DepartmentDAL.LayNhanSuBoPhan(idBoPhan);
+                return departmentDAL.LayNhanSuBoPhan(idBoPhan);
             }
             catch (Exception ex)
             {
                 throw new Exception($"Lỗi khi nhận mã bộ phận: {idBoPhan}.", ex);
             }
+        }
+        public List<Department> TimKiemBoPhan(string searchValue)
+        {
+            try
+            {
+                return departmentDAL.TimKiemBoPhan(searchValue);
+            } catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi tìm kiếm bộ phận: {searchValue}.", ex);
+            }   
         }
     }
 }

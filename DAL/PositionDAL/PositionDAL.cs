@@ -13,7 +13,7 @@ namespace DAL
     public class PositionDAL:DatabaseAccess
     {
         //Them Chuc Vu
-        public static void InsertPosition(Position position)
+        public void InsertPosition(Position position)
         {
             string query = "proc_insertPosition";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -29,7 +29,7 @@ namespace DAL
 
 
         //Show Toan Bo Chuc Vu
-        public static List<Position> GetPositionList()
+        public List<Position> GetPositionList()
         {
             List<Position> list = new List<Position>();
             string query = "proc_getPositionList";
@@ -53,7 +53,7 @@ namespace DAL
             return list;
         }
         //Sua Chuc Vu
-        public static void UpdatePosition(Position position)
+        public void UpdatePosition(Position position)
         {
             string query = "proc_updatePosition";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -68,7 +68,7 @@ namespace DAL
             }
         }
         //Xoa Chuc Vu
-        public static void DeletePosition(string positionId)
+        public void DeletePosition(string positionId)
         {
             string query = "proc_deletePosition";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -81,7 +81,31 @@ namespace DAL
             }
         }
 
-
-
+        //Tìm kiếm chức vụ
+        public List<Position> TimKiemChucVu(string searchValue)
+        {
+            List<Position> list = new List<Position>();
+            string query = "proc_TimKiemChucVu";
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@tenTimKiem", searchValue);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new Position
+                        {
+                            Id = reader["IdChucVu"].ToString(),
+                            Ten = reader["TenChucVu"].ToString(),
+                            MoTa = reader["MoTa"].ToString()
+                        });
+                    }
+                }
+            }
+            return list;
+        }
     }
 }

@@ -41,25 +41,25 @@
             this.chartCompleteTask.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartCompleteTask.Legends.Add(legend1);
-            this.chartCompleteTask.Location = new System.Drawing.Point(12, 12);
+            this.chartCompleteTask.Location = new System.Drawing.Point(1, 2);
             this.chartCompleteTask.Name = "chartCompleteTask";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartCompleteTask.Series.Add(series1);
-            this.chartCompleteTask.Size = new System.Drawing.Size(1070, 643);
+            this.chartCompleteTask.Size = new System.Drawing.Size(1094, 564);
             this.chartCompleteTask.TabIndex = 12;
             this.chartCompleteTask.Text = "Thống kê công việc";
             // 
-            // chartCompoundColumnCompleteTask
+            // ChartCompoundColumnCompleteTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1094, 666);
+            this.ClientSize = new System.Drawing.Size(1094, 622);
             this.Controls.Add(this.chartCompleteTask);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "chartCompoundColumnCompleteTask";
+            this.Name = "ChartCompoundColumnCompleteTaskForm";
             this.Text = "chartCompoundColumnCompleteTask";
             ((System.ComponentModel.ISupportInitialize)(this.chartCompleteTask)).EndInit();
             this.ResumeLayout(false);

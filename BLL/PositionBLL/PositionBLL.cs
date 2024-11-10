@@ -6,23 +6,30 @@ namespace BLL
 {
     public class PositionBLL
     {
+
+        PositionDAL positionDAL = new PositionDAL();
         public List<Position> GetPositionList()
         {
-            return PositionDAL.GetPositionList();
+            return positionDAL.GetPositionList();
         }
         public void InsertPosition(Position position)
         {
-            PositionDAL.InsertPosition(position);
+            positionDAL.InsertPosition(position);
         }
 
         public void UpdatePosition(Position position)
         {
-            PositionDAL.UpdatePosition(position);
+            positionDAL.UpdatePosition(position);
         }
 
         public void DeletePosition(string id) 
         {
-            PositionDAL.DeletePosition(id);
+            positionDAL.DeletePosition(id);
+        }
+
+        public List<Position> TimKiemChucVu(string searchValue)
+        {
+            return positionDAL.TimKiemChucVu(searchValue);
         }
     }
 }

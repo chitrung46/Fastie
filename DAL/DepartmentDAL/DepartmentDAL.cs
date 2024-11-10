@@ -12,7 +12,7 @@ namespace DAL.DepartmentDAL
     public class DepartmentDAL : DatabaseAccess
     {
         //Them Bo Phan
-        public static void InsertDepartment(Department deparment)
+        public void InsertDepartment(Department deparment)
         {
             string query = "proc_insertDepartment";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -27,7 +27,7 @@ namespace DAL.DepartmentDAL
         }
 
         //Sua Bo Phan
-        public static void UpdateDepartment(Department deparment)
+        public void UpdateDepartment(Department deparment)
         {
             string query = "proc_updateDepartment";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -43,7 +43,7 @@ namespace DAL.DepartmentDAL
         }
 
         //Show Toan Bo Bo Phan
-        public static List<Department> GetDepartmentList()
+        public List<Department> GetDepartmentList()
         {
             List<Department> list = new List<Department>();
             string query = "proc_getDepartmentList";
@@ -68,7 +68,7 @@ namespace DAL.DepartmentDAL
         }
 
         //Xoa Bo Phan
-        public static void DeleteDepartment(string departmentId)
+        public void DeleteDepartment(string departmentId)
         {
             string query = "proc_deleteDepartment";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -80,7 +80,7 @@ namespace DAL.DepartmentDAL
                 command.ExecuteNonQuery();
             }
         }
-        public static List<AcceptTaskPersonnel> LayQuanLiBoPhan(string idBoPhan)
+        public List<AcceptTaskPersonnel> LayQuanLiBoPhan(string idBoPhan)
         {
             List<AcceptTaskPersonnel> managers = new List<AcceptTaskPersonnel>();
             string query = "proc_layQuanLiBoPhan";
@@ -106,7 +106,7 @@ namespace DAL.DepartmentDAL
             return managers;
         }
 
-        public static List<AcceptTaskPersonnel> LayNhanSuBoPhan(string idBoPhan)
+        public List<AcceptTaskPersonnel> LayNhanSuBoPhan(string idBoPhan)
         {
             List<AcceptTaskPersonnel> managers = new List<AcceptTaskPersonnel>();
             string query = "proc_layNhanSuBoPhan";
@@ -131,5 +131,32 @@ namespace DAL.DepartmentDAL
 
             return managers;
         }
+
+        //Tìm kiếm bộ phận
+        public List<Department> TimKiemBoPhan(string searchValue)
+        {
+            List<Department> list = new List<Department>();
+            string query = "proc_TimKiemBoPhan";
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@tenTimKiem", searchValue);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new Department
+                        {
+                            Id = reader["IdBoPhan"].ToString(),
+                            Ten = reader["TenBoPhan"].ToString(),
+                            MoTa = reader["MoTa"].ToString()
+                        });
+                    }
+                }
+            }
+            return list;
+        }   
     }
 }

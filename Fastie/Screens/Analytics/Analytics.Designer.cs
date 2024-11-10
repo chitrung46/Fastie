@@ -35,17 +35,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.PanelChart = new System.Windows.Forms.Panel();
+            this.cbAnalytics = new GUI.TruniControls.CustomComboBox();
+            this.btnUploadFile = new GUI.CustomButton();
+            this.cbPersonnel = new GUI.TruniControls.CustomComboBox();
             this.cbPosition = new GUI.TruniControls.CustomComboBox();
             this.cbDepartment = new GUI.TruniControls.CustomComboBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUploadFile = new GUI.CustomButton();
-            this.customComboBox2 = new GUI.TruniControls.CustomComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.PanelChart = new System.Windows.Forms.Panel();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +91,7 @@
             this.dTPBirthday.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold);
             this.dTPBirthday.Location = new System.Drawing.Point(28, 221);
             this.dTPBirthday.Name = "dTPBirthday";
-            this.dTPBirthday.Size = new System.Drawing.Size(225, 27);
+            this.dTPBirthday.Size = new System.Drawing.Size(233, 27);
             this.dTPBirthday.TabIndex = 20;
             this.dTPBirthday.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
             // 
@@ -124,29 +124,86 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold);
             this.dateTimePicker1.Location = new System.Drawing.Point(293, 221);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(225, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(233, 27);
             this.dateTimePicker1.TabIndex = 22;
             this.dateTimePicker1.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
             // 
-            // customComboBox1
+            // label8
             // 
-            this.customComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox1.BorderRadius = 8;
-            this.customComboBox1.BorderSize = 1;
-            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.IconColor = System.Drawing.Color.Black;
-            this.customComboBox1.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.Location = new System.Drawing.Point(562, 143);
-            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox1.Size = new System.Drawing.Size(233, 30);
-            this.customComboBox1.TabIndex = 19;
-            this.customComboBox1.Texts = "";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(558, 191);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 21);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Thông kê";
+            // 
+            // PanelChart
+            // 
+            this.PanelChart.AutoScroll = true;
+            this.PanelChart.Location = new System.Drawing.Point(28, 273);
+            this.PanelChart.Name = "PanelChart";
+            this.PanelChart.Size = new System.Drawing.Size(1094, 622);
+            this.PanelChart.TabIndex = 27;
+            // 
+            // cbAnalytics
+            // 
+            this.cbAnalytics.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbAnalytics.BorderColor = System.Drawing.Color.Black;
+            this.cbAnalytics.BorderRadius = 8;
+            this.cbAnalytics.BorderSize = 1;
+            this.cbAnalytics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbAnalytics.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbAnalytics.ForeColor = System.Drawing.Color.DimGray;
+            this.cbAnalytics.IconColor = System.Drawing.Color.Black;
+            this.cbAnalytics.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbAnalytics.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbAnalytics.Location = new System.Drawing.Point(562, 219);
+            this.cbAnalytics.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbAnalytics.Name = "cbAnalytics";
+            this.cbAnalytics.Padding = new System.Windows.Forms.Padding(1);
+            this.cbAnalytics.Size = new System.Drawing.Size(233, 30);
+            this.cbAnalytics.TabIndex = 26;
+            this.cbAnalytics.Texts = "";
+            // 
+            // btnUploadFile
+            // 
+            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnUploadFile.BorderColor = System.Drawing.Color.White;
+            this.btnUploadFile.BorderRadius = 15;
+            this.btnUploadFile.BorderSize = 0;
+            this.btnUploadFile.FlatAppearance.BorderSize = 0;
+            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
+            this.btnUploadFile.Location = new System.Drawing.Point(994, 133);
+            this.btnUploadFile.Name = "btnUploadFile";
+            this.btnUploadFile.Size = new System.Drawing.Size(128, 40);
+            this.btnUploadFile.TabIndex = 12;
+            this.btnUploadFile.Text = "Xuất file";
+            this.btnUploadFile.UseVisualStyleBackColor = false;
+            // 
+            // cbPersonnel
+            // 
+            this.cbPersonnel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPersonnel.BorderColor = System.Drawing.Color.Black;
+            this.cbPersonnel.BorderRadius = 8;
+            this.cbPersonnel.BorderSize = 1;
+            this.cbPersonnel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbPersonnel.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPersonnel.IconColor = System.Drawing.Color.Black;
+            this.cbPersonnel.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPersonnel.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPersonnel.Location = new System.Drawing.Point(562, 143);
+            this.cbPersonnel.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbPersonnel.Name = "cbPersonnel";
+            this.cbPersonnel.Padding = new System.Windows.Forms.Padding(1);
+            this.cbPersonnel.Size = new System.Drawing.Size(233, 30);
+            this.cbPersonnel.TabIndex = 19;
+            this.cbPersonnel.Texts = "";
             // 
             // cbPosition
             // 
@@ -241,63 +298,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thống kê";
             // 
-            // btnUploadFile
-            // 
-            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.btnUploadFile.BorderColor = System.Drawing.Color.White;
-            this.btnUploadFile.BorderRadius = 15;
-            this.btnUploadFile.BorderSize = 0;
-            this.btnUploadFile.FlatAppearance.BorderSize = 0;
-            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadFile.Location = new System.Drawing.Point(994, 133);
-            this.btnUploadFile.Name = "btnUploadFile";
-            this.btnUploadFile.Size = new System.Drawing.Size(128, 40);
-            this.btnUploadFile.TabIndex = 12;
-            this.btnUploadFile.Text = "Xuất file";
-            this.btnUploadFile.UseVisualStyleBackColor = false;
-            // 
-            // customComboBox2
-            // 
-            this.customComboBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox2.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox2.BorderRadius = 8;
-            this.customComboBox2.BorderSize = 1;
-            this.customComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox2.IconColor = System.Drawing.Color.Black;
-            this.customComboBox2.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox2.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox2.Location = new System.Drawing.Point(562, 219);
-            this.customComboBox2.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox2.Name = "customComboBox2";
-            this.customComboBox2.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox2.Size = new System.Drawing.Size(233, 30);
-            this.customComboBox2.TabIndex = 26;
-            this.customComboBox2.Texts = "";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(558, 191);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 21);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Thông kê";
-            // 
-            // PanelChart
-            // 
-            this.PanelChart.AutoScroll = true;
-            this.PanelChart.Location = new System.Drawing.Point(28, 273);
-            this.PanelChart.Name = "PanelChart";
-            this.PanelChart.Size = new System.Drawing.Size(1094, 666);
-            this.PanelChart.TabIndex = 27;
-            // 
             // Analytics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -306,14 +306,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1164, 907);
             this.Controls.Add(this.PanelChart);
-            this.Controls.Add(this.customComboBox2);
+            this.Controls.Add(this.cbAnalytics);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnUploadFile);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dTPBirthday);
-            this.Controls.Add(this.customComboBox1);
+            this.Controls.Add(this.cbPersonnel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.cbDepartment);
@@ -340,7 +340,7 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private GUI.TruniControls.CustomComboBox customComboBox1;
+        private GUI.TruniControls.CustomComboBox cbPersonnel;
         private System.Windows.Forms.Label label4;
         private GUI.TruniControls.CustomComboBox cbPosition;
         private GUI.TruniControls.CustomComboBox cbDepartment;
@@ -351,7 +351,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private GUI.CustomButton btnUploadFile;
-        private GUI.TruniControls.CustomComboBox customComboBox2;
+        private GUI.TruniControls.CustomComboBox cbAnalytics;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel PanelChart;
     }

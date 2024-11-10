@@ -190,5 +190,29 @@ namespace BLL.DecentralizationBLL
                 throw new Exception("Lỗi BLL" + ex.Message);
             }
         }
+
+        //Tìm kiếm nhân sự
+        public List<AccountInfo> TimKiemNhanSuChuaCoQuyen(string searchValue)
+        {
+            try
+            {
+                return decentralizationDAL.TimKiemNhanSuChuaCoQuyen(searchValue);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
+        public List<AccountInfo> TimKiemNhanSuCoQuyen(string searchValue)
+        {
+            try
+            {
+                return decentralizationDAL.TimKiemNhanSuCoQuyen(searchValue);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi BLL" + ex.Message);
+            }
+        }
     }
 }

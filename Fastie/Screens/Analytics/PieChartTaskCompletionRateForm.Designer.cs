@@ -41,24 +41,25 @@
             this.chartPieTaskCompletionRate.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartPieTaskCompletionRate.Legends.Add(legend1);
-            this.chartPieTaskCompletionRate.Location = new System.Drawing.Point(12, 12);
+            this.chartPieTaskCompletionRate.Location = new System.Drawing.Point(0, 2);
             this.chartPieTaskCompletionRate.Name = "chartPieTaskCompletionRate";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartPieTaskCompletionRate.Series.Add(series1);
-            this.chartPieTaskCompletionRate.Size = new System.Drawing.Size(1070, 643);
+            this.chartPieTaskCompletionRate.Size = new System.Drawing.Size(1094, 564);
             this.chartPieTaskCompletionRate.TabIndex = 13;
             this.chartPieTaskCompletionRate.Text = "Thống kê công việc";
             // 
-            // PieChartTaskCompletionRate
+            // PieChartTaskCompletionRateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1094, 666);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.ClientSize = new System.Drawing.Size(1094, 622);
             this.Controls.Add(this.chartPieTaskCompletionRate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PieChartTaskCompletionRate";
+            this.Name = "PieChartTaskCompletionRateForm";
             this.Text = "PieChartTaskCompletionRate";
             ((System.ComponentModel.ISupportInitialize)(this.chartPieTaskCompletionRate)).EndInit();
             this.ResumeLayout(false);

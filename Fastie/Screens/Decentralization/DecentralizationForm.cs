@@ -153,6 +153,7 @@ namespace Fastie.Screens.Decentralization
             setStateButton(btnRoleless);
             loadDataForRoleLess();
             showByPositionIdAndDepartmentId();
+
         }
 
         private void cbDepartment_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -221,6 +222,38 @@ namespace Fastie.Screens.Decentralization
                     }
                     break;
                 default:
+                    break;
+            }
+        }
+
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = txtSearch.Text;
+            switch (this.stateCurrentList)
+            {
+                case "Role":
+                    if (searchValue == "")
+                    {
+                        loadDataForRole();
+                    }
+                    else
+                    {
+                        List<AccountInfo> accountInfoPersonnel = decentralizationBLL.TimKiemNhanSuCoQuyen(searchValue);
+                        this.stateCurrentList = "Role";
+                        LoadDataPersonnel(accountInfoPersonnel);
+                    }
+                    break;
+                case "Roleless":
+                    if (searchValue == "")
+                    {
+                        loadDataForRoleLess();
+                    }
+                    else
+                    {
+                        List<AccountInfo> accountInfoPersonnel = decentralizationBLL.TimKiemNhanSuChuaCoQuyen(searchValue);
+                        this.stateCurrentList = "Roleless";
+                        LoadDataPersonnel(accountInfoPersonnel);
+                    }
                     break;
             }
         }
