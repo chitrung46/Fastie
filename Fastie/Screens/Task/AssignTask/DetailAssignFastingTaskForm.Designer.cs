@@ -34,9 +34,7 @@
             this.pnl2 = new GUI.TruniControls.CustomPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
-            this.customButton4 = new GUI.CustomButton();
             this.lblFileName = new System.Windows.Forms.Label();
-            this.customButton2 = new GUI.CustomButton();
             this.dgvAssignTaskFast = new System.Windows.Forms.DataGridView();
             this.typeValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,9 +105,7 @@
             this.pnl2.BorderSize = 0;
             this.pnl2.Controls.Add(this.label1);
             this.pnl2.Controls.Add(this.customTextBox1);
-            this.pnl2.Controls.Add(this.customButton4);
             this.pnl2.Controls.Add(this.lblFileName);
-            this.pnl2.Controls.Add(this.customButton2);
             this.pnl2.Controls.Add(this.dgvAssignTaskFast);
             this.pnl2.Controls.Add(this.btnUploadFile);
             this.pnl2.Controls.Add(this.label6);
@@ -154,22 +150,6 @@
             this.customTextBox1.TabIndex = 1;
             this.customTextBox1.UnderlinedStyle = false;
             // 
-            // customButton4
-            // 
-            this.customButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.customButton4.BorderColor = System.Drawing.Color.White;
-            this.customButton4.BorderRadius = 15;
-            this.customButton4.BorderSize = 0;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Image = global::Fastie.Properties.Resources.icons8_delete_23;
-            this.customButton4.Location = new System.Drawing.Point(397, 56);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Size = new System.Drawing.Size(42, 36);
-            this.customButton4.TabIndex = 45;
-            this.customButton4.UseVisualStyleBackColor = false;
-            // 
             // lblFileName
             // 
             this.lblFileName.AutoSize = true;
@@ -177,25 +157,9 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(164, 328);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(69, 21);
+            this.lblFileName.Size = new System.Drawing.Size(142, 21);
             this.lblFileName.TabIndex = 2;
-            this.lblFileName.Text = "n2.docx";
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.customButton2.BorderColor = System.Drawing.Color.White;
-            this.customButton2.BorderRadius = 15;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Image = global::Fastie.Properties.Resources.icons8_plus_23;
-            this.customButton2.Location = new System.Drawing.Point(349, 56);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(42, 36);
-            this.customButton2.TabIndex = 43;
-            this.customButton2.UseVisualStyleBackColor = false;
+            this.lblFileName.Text = "Vui lòng chọn file";
             // 
             // dgvAssignTaskFast
             // 
@@ -281,8 +245,6 @@
         }
 
         #endregion
-        private GUI.CustomButton customButton4;
-        private GUI.CustomButton customButton2;
         private System.Windows.Forms.Label lblFileName;
         private GUI.CustomButton btnUploadFile;
         private System.Windows.Forms.Label label3;

@@ -113,7 +113,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(25, 346);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(186, 21);
+            this.label7.Size = new System.Drawing.Size(175, 21);
             this.label7.TabIndex = 41;
             this.label7.Text = "Thời hạn hoàn thành: ";
             // 
@@ -123,7 +123,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(26, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 21);
+            this.label2.Size = new System.Drawing.Size(137, 21);
             this.label2.TabIndex = 35;
             this.label2.Text = "Mô tả công việc: ";
             // 
@@ -133,7 +133,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(26, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 21);
+            this.label1.Size = new System.Drawing.Size(126, 21);
             this.label1.TabIndex = 33;
             this.label1.Text = "Loại công việc: ";
             // 
@@ -165,7 +165,7 @@
             this.lblTaskName.ForeColor = System.Drawing.Color.White;
             this.lblTaskName.Location = new System.Drawing.Point(25, 14);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(129, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(121, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Tên công việc: ";
             // 
@@ -283,7 +283,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(25, 396);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(237, 21);
+            this.label3.Size = new System.Drawing.Size(222, 21);
             this.label3.TabIndex = 43;
             this.label3.Text = "Số lượng nhân sự chủ động:";
             // 
@@ -313,7 +313,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(26, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 21);
+            this.label5.Size = new System.Drawing.Size(136, 21);
             this.label5.TabIndex = 33;
             this.label5.Text = "Người nhận việc:";
             // 
@@ -467,7 +467,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(26, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 21);
+            this.label6.Size = new System.Drawing.Size(154, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bộ phận nhận việc:";
             // 
@@ -478,9 +478,9 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(630, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 21);
+            this.label9.Size = new System.Drawing.Size(149, 21);
             this.label9.TabIndex = 40;
-            this.label9.Text = "objectdiagram.png";
+            this.label9.Text = "Vui lòng chọn ảnh";
             // 
             // label10
             // 
@@ -515,9 +515,9 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(159, 23);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(73, 21);
+            this.lblFileName.Size = new System.Drawing.Size(142, 21);
             this.lblFileName.TabIndex = 2;
-            this.lblFileName.Text = "n2.docx";
+            this.lblFileName.Text = "Vui lòng chọn file";
             // 
             // label8
             // 
@@ -573,7 +573,7 @@
             this.lblNameOfForm.ForeColor = System.Drawing.Color.White;
             this.lblNameOfForm.Location = new System.Drawing.Point(22, 18);
             this.lblNameOfForm.Name = "lblNameOfForm";
-            this.lblNameOfForm.Size = new System.Drawing.Size(247, 32);
+            this.lblNameOfForm.Size = new System.Drawing.Size(239, 32);
             this.lblNameOfForm.TabIndex = 46;
             this.lblNameOfForm.Text = "Giao việc chủ động";
             // 
@@ -596,6 +596,7 @@
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
             // 
