@@ -217,5 +217,10 @@ namespace Fastie.Screens.Task
                 MessageBox.Show("Please select a recipient to remove.");
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -34,12 +34,14 @@ namespace Fastie.Screens.Task
         private void btnDetailAssignFastingTask_Click(object sender, EventArgs e)
         {
             DetailAssignFastingTaskForm detailAssignFastingTask = new DetailAssignFastingTaskForm(taskForm.IdTaiKhoan, taskForm.IdBoPhan);
+            detailAssignFastingTask.FormClosed += (s, args) => LoadDataTaskTable();
             detailAssignFastingTask.Show();
         }
 
         private void btnDetailAssignPositiveTask_Click(object sender, EventArgs e)
         {
             DetailAssignPositiveTaskForm detailAssignPositiveTaskForm = new DetailAssignPositiveTaskForm(taskForm.IdTaiKhoan, taskForm.IdBoPhan);
+            detailAssignPositiveTaskForm.FormClosed += (s, args) => LoadDataTaskTable();
             detailAssignPositiveTaskForm.Show();
         }
 
