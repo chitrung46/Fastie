@@ -61,7 +61,7 @@ namespace Fastie.Components.LayoutPersonnel
         public DateTime DateOfBirth
             {
             get { return dateOfBirth; }
-            set { dateOfBirth = value; lblDateOfBirth.Text = dateOfBirth.ToString("dd/MM/yyyy"); }
+            set { dateOfBirth = value;}
         }
         public DateTime DateOfWork
         {

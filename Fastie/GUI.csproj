@@ -789,5 +789,14 @@
   <ItemGroup>
     <None Include="Resources\icons8-error-1441.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

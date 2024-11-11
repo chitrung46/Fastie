@@ -208,18 +208,9 @@ namespace Fastie
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
-            bool checkPermission = permissionBLL.checkPermission(idTaiKhoan, "Q0026");
-            if (checkPermission)
-            {
-                Analytics analytics = new Analytics();
-                addFormInMainLayout(analytics);
-            }
-            else
-            {
-                NoPermissionAccessForm noPermissionAccessForm = new NoPermissionAccessForm();
-                addFormInMainLayout(noPermissionAccessForm);
-            }
-            setStatePanel(stateAnalytics);
+            Analytics analytics = new Analytics();
+            addFormInMainLayout(analytics);
+
         }
         private void btnAccount_Click(object sender, EventArgs e)
         {

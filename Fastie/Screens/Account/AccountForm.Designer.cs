@@ -42,12 +42,6 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbDepartment = new GUI.TruniControls.CustomComboBox();
-            this.cbPosition = new GUI.TruniControls.CustomComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
             this.panel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -73,7 +67,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(31, 185);
+            this.panel1.Location = new System.Drawing.Point(28, 116);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1117, 29);
             this.panel1.TabIndex = 15;
@@ -158,9 +152,9 @@
             // flowLayoutPanelAcoount
             // 
             this.flowLayoutPanelAcoount.AutoScroll = true;
-            this.flowLayoutPanelAcoount.Location = new System.Drawing.Point(28, 222);
+            this.flowLayoutPanelAcoount.Location = new System.Drawing.Point(25, 153);
             this.flowLayoutPanelAcoount.Name = "flowLayoutPanelAcoount";
-            this.flowLayoutPanelAcoount.Size = new System.Drawing.Size(1190, 450);
+            this.flowLayoutPanelAcoount.Size = new System.Drawing.Size(1190, 530);
             this.flowLayoutPanelAcoount.TabIndex = 14;
             // 
             // customPanel2
@@ -216,102 +210,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tài khoản";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 21);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Bộ phận";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(289, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Chức vụ";
-            // 
-            // cbDepartment
-            // 
-            this.cbDepartment.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbDepartment.BorderColor = System.Drawing.Color.Black;
-            this.cbDepartment.BorderRadius = 8;
-            this.cbDepartment.BorderSize = 1;
-            this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbDepartment.ForeColor = System.Drawing.Color.DimGray;
-            this.cbDepartment.IconColor = System.Drawing.Color.Black;
-            this.cbDepartment.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbDepartment.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbDepartment.Location = new System.Drawing.Point(28, 131);
-            this.cbDepartment.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbDepartment.Name = "cbDepartment";
-            this.cbDepartment.Padding = new System.Windows.Forms.Padding(1);
-            this.cbDepartment.Size = new System.Drawing.Size(233, 30);
-            this.cbDepartment.TabIndex = 5;
-            this.cbDepartment.Texts = "";
-            // 
-            // cbPosition
-            // 
-            this.cbPosition.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPosition.BorderColor = System.Drawing.Color.Black;
-            this.cbPosition.BorderRadius = 8;
-            this.cbPosition.BorderSize = 1;
-            this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbPosition.ForeColor = System.Drawing.Color.DimGray;
-            this.cbPosition.IconColor = System.Drawing.Color.Black;
-            this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPosition.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbPosition.Location = new System.Drawing.Point(293, 131);
-            this.cbPosition.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbPosition.Name = "cbPosition";
-            this.cbPosition.Padding = new System.Windows.Forms.Padding(1);
-            this.cbPosition.Size = new System.Drawing.Size(233, 30);
-            this.cbPosition.TabIndex = 4;
-            this.cbPosition.Texts = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(558, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 21);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Nhân sự";
-            // 
-            // customComboBox1
-            // 
-            this.customComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox1.BorderRadius = 8;
-            this.customComboBox1.BorderSize = 1;
-            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.IconColor = System.Drawing.Color.Black;
-            this.customComboBox1.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.customComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.customComboBox1.Location = new System.Drawing.Point(562, 131);
-            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBox1.Size = new System.Drawing.Size(233, 30);
-            this.customComboBox1.TabIndex = 13;
-            this.customComboBox1.Texts = "";
-            // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -320,14 +218,8 @@
             this.ClientSize = new System.Drawing.Size(1182, 695);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanelAcoount);
-            this.Controls.Add(this.customComboBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.cbDepartment);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AccountForm";
             this.Text = "Tài khoản";
@@ -338,7 +230,6 @@
             this.customPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -358,11 +249,5 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAcoount;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private GUI.TruniControls.CustomComboBox cbDepartment;
-        private GUI.TruniControls.CustomComboBox cbPosition;
-        private System.Windows.Forms.Label label4;
-        private GUI.TruniControls.CustomComboBox customComboBox1;
     }
 }
