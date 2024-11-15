@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.DepartmentBLL;
 using BLL.PermissionBLL;
+using DAL.DepartmentDAL;
 using DTO;
 using Fastie.Components.LayoutPersonnel;
 using Fastie.Components.Toastify;
@@ -37,12 +39,12 @@ namespace Fastie
 
         public void LoadDataPersonnel() 
         {
-            loadDataPersonnel();
+            List<Personnel> personnelList = personnelBLL.GetPersonnelList();
+            loadDataPersonnel(personnelList);
         }
-        private void loadDataPersonnel ()
+        private void loadDataPersonnel (List<Personnel> personnelList)
         {
             flowLayoutPanelPersonnel.Controls.Clear();
-            List<Personnel> personnelList = personnelBLL.GetPersonnelList();
             int i = 0;
             foreach (Personnel personnel in personnelList)
             {
@@ -81,5 +83,19 @@ namespace Fastie
             }
         }
 
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = txtSearch.Text;
+            if (searchValue == "")
+            {
+                List<Personnel> personnelList = personnelBLL.GetPersonnelList();
+                loadDataPersonnel(personnelList);
+            }
+            else
+            {
+                List<Personnel> personnelList = personnelBLL.TimKiemNhanSu(searchValue);
+                loadDataPersonnel(personnelList);
+            }
+        }
     }
 }

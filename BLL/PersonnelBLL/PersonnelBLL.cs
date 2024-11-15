@@ -6,23 +6,30 @@ namespace BLL
 {
     public class PersonnelBLL
     {
+        PersonnelDAL personnelDAL = new PersonnelDAL();
         public List<Personnel> GetPersonnelList()
         {
-            return PersonnelDAL.GetPersonnelList();
+            return personnelDAL.GetPersonnelList();
         }
         public void InsertPersonnel(Personnel personnel)
         {
-            PersonnelDAL.InsertPersonnel(personnel);
+            personnelDAL.InsertPersonnel(personnel);
         }
 
         public void UpdatePersonnel(Personnel personnel)
         {
-            PersonnelDAL.UpdatePersonnel(personnel);
+            personnelDAL.UpdatePersonnel(personnel);
         }
 
         public void DeletePersonnel(string id)
         {
-            PersonnelDAL.DeletePersonnel(id);
+            personnelDAL.DeletePersonnel(id);
         }
+
+        public List<Personnel> TimKiemNhanSu(string searchValue)
+        {
+            return personnelDAL.TimKiemNhanSu(searchValue);
+        }
+        
     }
 }
