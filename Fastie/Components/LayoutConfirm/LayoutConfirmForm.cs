@@ -163,6 +163,10 @@ namespace Fastie
                     showMessage("Xóa nhân sự thành công", "success");
                     this.Close();
                     break;
+                case "Xóa việc":
+                    showMessage("Xóa việc thành công", "success");
+                    this.Close();
+                    break;
                 default:
                     break;
             }

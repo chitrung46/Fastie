@@ -35,15 +35,15 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblNumber = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.customButton1 = new GUI.CustomButton();
+            this.btnDeletePersonnel = new GUI.CustomButton();
+            this.btnEditPersonnel = new GUI.CustomButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblGender = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnDetailsPosition = new GUI.CustomButton();
-            this.customButton1 = new GUI.CustomButton();
-            this.btnDeletePersonnel = new GUI.CustomButton();
-            this.btnEditPersonnel = new GUI.CustomButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -59,7 +59,7 @@
             this.lblPersonnelName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonnelName.Location = new System.Drawing.Point(2, 16);
             this.lblPersonnelName.Name = "lblPersonnelName";
-            this.lblPersonnelName.Size = new System.Drawing.Size(108, 21);
+            this.lblPersonnelName.Size = new System.Drawing.Size(102, 21);
             this.lblPersonnelName.TabIndex = 0;
             this.lblPersonnelName.Text = "Tên nhân sự";
             // 
@@ -69,7 +69,7 @@
             this.lblNumberPhone.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumberPhone.Location = new System.Drawing.Point(7, 16);
             this.lblNumberPhone.Name = "lblNumberPhone";
-            this.lblNumberPhone.Size = new System.Drawing.Size(117, 21);
+            this.lblNumberPhone.Size = new System.Drawing.Size(109, 21);
             this.lblNumberPhone.TabIndex = 0;
             this.lblNumberPhone.Text = "Số điện thoại";
             // 
@@ -117,69 +117,6 @@
             this.panel3.Size = new System.Drawing.Size(141, 54);
             this.panel3.TabIndex = 25;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.lblEmail);
-            this.panel6.Location = new System.Drawing.Point(339, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(280, 54);
-            this.panel6.TabIndex = 23;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(-1, 17);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(55, 21);
-            this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "Email";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.lblGender);
-            this.panel7.Location = new System.Drawing.Point(623, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(100, 54);
-            this.panel7.TabIndex = 24;
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(5, 16);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(80, 21);
-            this.lblGender.TabIndex = 0;
-            this.lblGender.Text = "Giới tính";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnDetailsPosition);
-            this.panel4.Location = new System.Drawing.Point(1037, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(77, 54);
-            this.panel4.TabIndex = 26;
-            // 
-            // btnDetailsPosition
-            // 
-            this.btnDetailsPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.btnDetailsPosition.BorderColor = System.Drawing.Color.White;
-            this.btnDetailsPosition.BorderRadius = 15;
-            this.btnDetailsPosition.BorderSize = 0;
-            this.btnDetailsPosition.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDetailsPosition.FlatAppearance.BorderSize = 0;
-            this.btnDetailsPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetailsPosition.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetailsPosition.ForeColor = System.Drawing.Color.White;
-            this.btnDetailsPosition.Image = global::Fastie.Properties.Resources.icons8_document_24;
-            this.btnDetailsPosition.Location = new System.Drawing.Point(12, 6);
-            this.btnDetailsPosition.Name = "btnDetailsPosition";
-            this.btnDetailsPosition.Size = new System.Drawing.Size(40, 40);
-            this.btnDetailsPosition.TabIndex = 1;
-            this.btnDetailsPosition.UseVisualStyleBackColor = false;
-            this.btnDetailsPosition.Click += new System.EventHandler(this.btnDetailsPosition_Click);
-            // 
             // customButton1
             // 
             this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -197,6 +134,7 @@
             this.customButton1.Size = new System.Drawing.Size(40, 40);
             this.customButton1.TabIndex = 21;
             this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // btnDeletePersonnel
             // 
@@ -235,6 +173,69 @@
             this.btnEditPersonnel.TabIndex = 20;
             this.btnEditPersonnel.UseVisualStyleBackColor = false;
             this.btnEditPersonnel.Click += new System.EventHandler(this.btnEditPersonnel_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.lblEmail);
+            this.panel6.Location = new System.Drawing.Point(339, 2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(280, 54);
+            this.panel6.TabIndex = 23;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(-1, 17);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(53, 21);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "Email";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.lblGender);
+            this.panel7.Location = new System.Drawing.Point(623, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(100, 54);
+            this.panel7.TabIndex = 24;
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(5, 16);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(74, 21);
+            this.lblGender.TabIndex = 0;
+            this.lblGender.Text = "Giới tính";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnDetailsPosition);
+            this.panel4.Location = new System.Drawing.Point(1037, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(77, 54);
+            this.panel4.TabIndex = 26;
+            // 
+            // btnDetailsPosition
+            // 
+            this.btnDetailsPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.btnDetailsPosition.BorderColor = System.Drawing.Color.White;
+            this.btnDetailsPosition.BorderRadius = 15;
+            this.btnDetailsPosition.BorderSize = 0;
+            this.btnDetailsPosition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDetailsPosition.FlatAppearance.BorderSize = 0;
+            this.btnDetailsPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetailsPosition.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetailsPosition.ForeColor = System.Drawing.Color.White;
+            this.btnDetailsPosition.Image = global::Fastie.Properties.Resources.icons8_document_24;
+            this.btnDetailsPosition.Location = new System.Drawing.Point(12, 6);
+            this.btnDetailsPosition.Name = "btnDetailsPosition";
+            this.btnDetailsPosition.Size = new System.Drawing.Size(40, 40);
+            this.btnDetailsPosition.TabIndex = 1;
+            this.btnDetailsPosition.UseVisualStyleBackColor = false;
+            this.btnDetailsPosition.Click += new System.EventHandler(this.btnDetailsPosition_Click);
             // 
             // LayoutPersonnelForm
             // 

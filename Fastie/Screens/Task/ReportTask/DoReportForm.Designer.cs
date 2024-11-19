@@ -82,6 +82,7 @@
             this.btnReport.TabIndex = 4;
             this.btnReport.Text = "Báo cáo";
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // label2
             // 
@@ -124,7 +125,7 @@
             this.chkCompleteTask.ForeColor = System.Drawing.Color.White;
             this.chkCompleteTask.Location = new System.Drawing.Point(33, 313);
             this.chkCompleteTask.Name = "chkCompleteTask";
-            this.chkCompleteTask.Size = new System.Drawing.Size(206, 25);
+            this.chkCompleteTask.Size = new System.Drawing.Size(195, 25);
             this.chkCompleteTask.TabIndex = 24;
             this.chkCompleteTask.Text = "Hoàn thành công việc";
             this.chkCompleteTask.UseVisualStyleBackColor = true;
@@ -136,7 +137,7 @@
             this.lblImageName.ForeColor = System.Drawing.Color.White;
             this.lblImageName.Location = new System.Drawing.Point(429, 261);
             this.lblImageName.Name = "lblImageName";
-            this.lblImageName.Size = new System.Drawing.Size(92, 21);
+            this.lblImageName.Size = new System.Drawing.Size(85, 21);
             this.lblImageName.TabIndex = 22;
             this.lblImageName.Text = "image.jpg";
             // 
@@ -147,7 +148,7 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(167, 261);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(73, 21);
+            this.lblFileName.Size = new System.Drawing.Size(69, 21);
             this.lblFileName.TabIndex = 22;
             this.lblFileName.Text = "n2.docx";
             // 
@@ -167,6 +168,7 @@
             this.btnUploadImage.TabIndex = 3;
             this.btnUploadImage.Text = "Upload ảnh";
             this.btnUploadImage.UseVisualStyleBackColor = false;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
             // btnUploadFile
             // 
@@ -184,6 +186,7 @@
             this.btnUploadFile.TabIndex = 2;
             this.btnUploadFile.Text = "Upload file";
             this.btnUploadFile.UseVisualStyleBackColor = false;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
             // 
             // txtReportContent
             // 
@@ -214,7 +217,7 @@
             this.lblName.Location = new System.Drawing.Point(29, 20);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(152, 21);
+            this.lblName.Size = new System.Drawing.Size(145, 21);
             this.lblName.TabIndex = 20;
             this.lblName.Text = "Nội dung báo cáo";
             // 

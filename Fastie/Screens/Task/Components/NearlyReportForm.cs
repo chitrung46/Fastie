@@ -8,35 +8,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DTO;
+using BLL;
 namespace Fastie.Screens.Task
 {
     public partial class NearlyReportForm : Form
     {
-        public NearlyReportForm()
+        TaskBLL taskBLL = new TaskBLL();
+        private TaskForm taskForm;
+        private string idCongViec;
+        public NearlyReportForm(TaskForm taskForm, string idCongViec)
         {
             InitializeComponent();
+            this.taskForm = taskForm;
+            this.idCongViec = idCongViec;  
         }
 
         public void LoadDataTaskTable()
         {
-            int length = 5; //Change report data length
-            if (length > 0)
+            flowLayoutPanelReport.Controls.Clear();
+            List<DanhSachBaoCao> danhSachBaoCao = taskBLL.LayDanhSachBaoCao(idCongViec);
+            foreach (var baoCao in danhSachBaoCao)
             {
-                flowLayoutPanelReport.Controls.Clear();
-                for (int i = 0; i < length; i++)
+                LayoutDetailReportForm layoutDetailReportForm = new LayoutDetailReportForm()
                 {
-                    LayoutDetailReportForm layoutDetailReportForm = new LayoutDetailReportForm()
-                    {
-                        ReportContent = "Đây là nội dung báo cáo " + i,
-                        ReportDate = "20/11/2024",
-                        FileName = "file_" + i + ".txt",
-                        ImageName = "image_" + i + ".png",
-                        IdReport = "ID" + i
-                    };
-
-                    flowLayoutPanelReport.Controls.Add(layoutDetailReportForm);
-                }
+                    ReportContent = baoCao.NoiDung,
+                    ReportDate = baoCao.NgayBaoCao.HasValue ? baoCao.NgayBaoCao.Value.ToString("dd/MM/yyyy") : "N/A",
+                    FileName = baoCao.TenFile,
+                    ImageName = baoCao.TenAnh
+                };
+                flowLayoutPanelReport.Controls.Add(layoutDetailReportForm);
             }
         }
 

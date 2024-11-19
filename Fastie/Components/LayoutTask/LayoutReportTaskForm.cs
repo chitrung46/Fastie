@@ -25,7 +25,13 @@ namespace Fastie.Components.LayoutTask
         private string taskStatus;
         private string taskJobAssigner;
         private string taskDetail;
+        private string taskId;
 
+        public string TaskId
+        {
+            get { return taskId; }
+            set { taskId = value;}
+        }
         public string TaskName
         {
             get { return taskName; }
@@ -54,7 +60,7 @@ namespace Fastie.Components.LayoutTask
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            DoReportForm doReportForm = new DoReportForm();
+            DoReportForm doReportForm = new DoReportForm(reportTaskForm, TaskId);
             doReportForm.Show();
         }
     }

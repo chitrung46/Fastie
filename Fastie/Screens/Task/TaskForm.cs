@@ -136,7 +136,7 @@ namespace Fastie
             setStateButton(btnReportTask);
             if (checkPermission)
             {
-                ReportTaskForm reportTaskForm = new ReportTaskForm();
+                ReportTaskForm reportTaskForm = new ReportTaskForm(this);
                 addFormInMainLayout(reportTaskForm);
             }
             else

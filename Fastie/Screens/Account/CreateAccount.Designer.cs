@@ -30,6 +30,10 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.lblChucVu = new System.Windows.Forms.Label();
+            this.cbPosition = new GUI.TruniControls.CustomComboBox();
+            this.lblBoPhan = new System.Windows.Forms.Label();
+            this.cbDepartment = new GUI.TruniControls.CustomComboBox();
             this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -56,6 +60,10 @@
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
             this.customPanel1.BorderSize = 0;
+            this.customPanel1.Controls.Add(this.lblChucVu);
+            this.customPanel1.Controls.Add(this.cbPosition);
+            this.customPanel1.Controls.Add(this.lblBoPhan);
+            this.customPanel1.Controls.Add(this.cbDepartment);
             this.customPanel1.Controls.Add(this.customTextBox1);
             this.customPanel1.Controls.Add(this.label4);
             this.customPanel1.Controls.Add(this.lblName);
@@ -66,8 +74,72 @@
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
             this.customPanel1.Location = new System.Drawing.Point(19, 84);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(563, 201);
+            this.customPanel1.Size = new System.Drawing.Size(563, 303);
             this.customPanel1.TabIndex = 13;
+            // 
+            // lblChucVu
+            // 
+            this.lblChucVu.AutoSize = true;
+            this.lblChucVu.ForeColor = System.Drawing.Color.White;
+            this.lblChucVu.Location = new System.Drawing.Point(299, 201);
+            this.lblChucVu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblChucVu.Name = "lblChucVu";
+            this.lblChucVu.Size = new System.Drawing.Size(54, 16);
+            this.lblChucVu.TabIndex = 35;
+            this.lblChucVu.Text = "Chức vụ";
+            // 
+            // cbPosition
+            // 
+            this.cbPosition.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPosition.BorderColor = System.Drawing.Color.Black;
+            this.cbPosition.BorderRadius = 8;
+            this.cbPosition.BorderSize = 1;
+            this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbPosition.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPosition.IconColor = System.Drawing.Color.Black;
+            this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPosition.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPosition.Location = new System.Drawing.Point(302, 232);
+            this.cbPosition.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Padding = new System.Windows.Forms.Padding(1);
+            this.cbPosition.Size = new System.Drawing.Size(233, 30);
+            this.cbPosition.TabIndex = 34;
+            this.cbPosition.Texts = "";
+            this.cbPosition.OnSelectedIndexChanged += new System.EventHandler(this.cbPosition_OnSelectedIndexChanged);
+            // 
+            // lblBoPhan
+            // 
+            this.lblBoPhan.AutoSize = true;
+            this.lblBoPhan.ForeColor = System.Drawing.Color.White;
+            this.lblBoPhan.Location = new System.Drawing.Point(29, 201);
+            this.lblBoPhan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBoPhan.Name = "lblBoPhan";
+            this.lblBoPhan.Size = new System.Drawing.Size(57, 16);
+            this.lblBoPhan.TabIndex = 33;
+            this.lblBoPhan.Text = "Bộ phận";
+            // 
+            // cbDepartment
+            // 
+            this.cbDepartment.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbDepartment.BorderColor = System.Drawing.Color.Black;
+            this.cbDepartment.BorderRadius = 8;
+            this.cbDepartment.BorderSize = 1;
+            this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbDepartment.ForeColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.IconColor = System.Drawing.Color.Black;
+            this.cbDepartment.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbDepartment.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.Location = new System.Drawing.Point(24, 232);
+            this.cbDepartment.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbDepartment.Name = "cbDepartment";
+            this.cbDepartment.Padding = new System.Windows.Forms.Padding(1);
+            this.cbDepartment.Size = new System.Drawing.Size(233, 30);
+            this.cbDepartment.TabIndex = 32;
+            this.cbDepartment.Texts = "";
+            this.cbDepartment.OnSelectedIndexChanged += new System.EventHandler(this.cbDepartment_OnSelectedIndexChanged);
             // 
             // customTextBox1
             // 
@@ -146,7 +218,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(488, 302);
+            this.btnCancel.Location = new System.Drawing.Point(374, 419);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnCancel.Size = new System.Drawing.Size(94, 40);
@@ -167,13 +239,14 @@
             this.btnAdd.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(388, 302);
+            this.btnAdd.Location = new System.Drawing.Point(488, 419);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnAdd.Size = new System.Drawing.Size(94, 40);
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // CreateAccount
             // 
@@ -181,7 +254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(608, 357);
+            this.ClientSize = new System.Drawing.Size(611, 608);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.btnCancel);
@@ -189,6 +262,7 @@
             this.Name = "CreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Tạo tài khoản";
+            this.Load += new System.EventHandler(this.CreateAccount_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -206,5 +280,9 @@
         private GUI.CustomButton btnCancel;
         private GUI.CustomButton btnAdd;
         private GUI.TruniControls.CustomTextBox customTextBox1;
+        private System.Windows.Forms.Label lblBoPhan;
+        private GUI.TruniControls.CustomComboBox cbDepartment;
+        private System.Windows.Forms.Label lblChucVu;
+        private GUI.TruniControls.CustomComboBox cbPosition;
     }
 }
