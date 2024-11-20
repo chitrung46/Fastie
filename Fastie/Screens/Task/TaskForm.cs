@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fastie.Screens.Task.AssignmentAdjustmentTask;
 using Fastie.Screens.Task.ReportTask;
+using Fastie.Screens.Task.ReportTaskOnline;
 
 namespace Fastie
 {
@@ -156,6 +157,12 @@ namespace Fastie
 
         private void TaskForm_Load(object sender, EventArgs e)
         {
+        }
+
+        private void btnReportOnline_Click(object sender, EventArgs e)
+        {
+            ReportTaskOnlineForm reportTaskOnlineForm = new ReportTaskOnlineForm();
+            reportTaskOnlineForm.Show();
         }
     }
 }

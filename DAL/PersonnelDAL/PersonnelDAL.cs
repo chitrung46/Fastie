@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using DAL;
 
 namespace DAL
 {
     public class PersonnelDAL:DatabaseAccess
     {
-        public static void InsertPersonnel(Personnel personnel)
+        public void InsertPersonnel(Personnel personnel)
         {
             string query = "proc_insertPersonnel";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -29,7 +30,7 @@ namespace DAL
             }
         }
 
-        public static List<Personnel> GetPersonnelList()
+        public List<Personnel> GetPersonnelList()
         {
             List<Personnel> list = new List<Personnel>();
             string query = "proc_getPersonnelList";
@@ -57,7 +58,7 @@ namespace DAL
             return list;
         }
 
-        public static void DeletePersonnel(string id)
+        public void DeletePersonnel(string id)
         {
             string query = "proc_deletePersonnel";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -69,7 +70,7 @@ namespace DAL
                 command.ExecuteNonQuery();
             }
         }
-        public static void UpdatePersonnel(Personnel personnel)
+        public void UpdatePersonnel(Personnel personnel)
         {
             string query = "proc_updatePersonnel";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -87,5 +88,38 @@ namespace DAL
                 command.ExecuteNonQuery();
             }
         }
+
+        //Tim kiem nhan su
+        public List<Personnel> TimKiemNhanSu(string searchValue)
+        {
+            List<Personnel> list = new List<Personnel>();
+            string query = "proc_TimKiemNhanSu";
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@tenTimKiem", searchValue);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new Personnel
+                        {
+                            Id = reader["id"].ToString(),
+                            Ten = reader["ten"].ToString(),
+                            Email = reader["email"].ToString(),
+                            GioiTinh = reader["gioiTinh"].ToString(),
+                            NgaySinh = reader.GetDateTime(reader.GetOrdinal("ngaySinh")),
+                            NgayVaoLam = reader.GetDateTime(reader.GetOrdinal("ngayVaoLam")),
+                            Sdt = reader["sdt"].ToString()
+                        });
+                    }
+                }
+            }
+            return list;
+        }
     }
 }
+
+

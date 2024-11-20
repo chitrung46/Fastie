@@ -38,9 +38,9 @@
             this.flowLayoutPanelDepartment = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddDepartment = new GUI.CustomButton();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new GUI.TruniControls.CustomTextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -171,18 +171,6 @@
             this.customPanel2.Size = new System.Drawing.Size(1120, 74);
             this.customPanel2.TabIndex = 10;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bộ phận";
-            // 
             // txtSearch
             // 
             this.txtSearch.AutoSize = true;
@@ -216,6 +204,18 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 12;
             this.pictureBox8.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(18, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bộ phận";
             // 
             // DepartmentForm
             // 
