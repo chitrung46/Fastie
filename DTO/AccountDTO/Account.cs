@@ -10,6 +10,9 @@ namespace DTO
         private DateTime khoiTaoLuc;
         private DateTime capNhatLuc;
         private string trangThai;
+        private string idNhanSu;
+        private string idBoPhan;
+        private string idChucVu;
 
         public Account() { }
         public Account(string id, string tenDangNhap, string matKhau, DateTime khoiTaoLuc, DateTime capNhatLuc, string trangThai)
@@ -22,10 +25,13 @@ namespace DTO
             this.trangThai = trangThai;
         }
 
-        public Account(string tenDangNhap, string matKhau)
+        public Account(string tenDangNhap, string matKhau, string idNhanSu, string idBoPhan, string idChucVu)
         {
             this.tenDangNhap = tenDangNhap;
             this.matKhau = matKhau;
+            this.idChucVu = idChucVu;
+            this.idBoPhan = idBoPhan;
+            this.idNhanSu = idNhanSu;   
         }
 
         public string Id { get => id; set => id = value; }
@@ -34,7 +40,11 @@ namespace DTO
         public DateTime KhoiTaoLuc { get => khoiTaoLuc; set => khoiTaoLuc = value; }
         public DateTime CapNhatLuc { get => capNhatLuc; set => capNhatLuc = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
-   
+
+        public string IdNhanSu { get => idNhanSu; set => idNhanSu = value; }
+        public string IdBoPhan { get => idBoPhan; set => idBoPhan = value; }
+        public string IdChucVu { get => idChucVu; set => idChucVu = value; }
+
 
     }
 

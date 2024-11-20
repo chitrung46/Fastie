@@ -81,7 +81,8 @@ namespace DAL.TaskDAL
                                     IdLoaiCongViec = reader["idLoaiCongViec"].ToString(),
                                     IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
                                     IdLichSuMacDinh = reader["idLichSuMacDinh"].ToString(),
-                                    TenTienDoCongViec = reader["tenTienDoCongViec"].ToString()
+                                    TenTienDoCongViec = reader["tienDoCongViec"].ToString(),
+                                    TenNhanSuGiaoViec = reader["NguoiGiaoViec"].ToString(),
                                 });
                             }
                         }
@@ -563,9 +564,149 @@ namespace DAL.TaskDAL
             }
             return resultList;
         }
+        public string BaoCaoDangTienHanhCongViec(string idCongViec, string idTaiKhoanKhoiTao, string ghiChu)
+        {
+            string query = "proc_baoCaoDangTienHanhCongViec";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                // Add parameters
+                cmd.Parameters.AddWithValue("@idCongViec", idCongViec);
+                cmd.Parameters.AddWithValue("@idTaiKhoanKhoiTao", idTaiKhoanKhoiTao);
+                cmd.Parameters.AddWithValue("@ghiChu", ghiChu);
 
+                // Define the output parameter
+                SqlParameter outputParam = new SqlParameter("@idLichSuCongViec", SqlDbType.VarChar, 20);
+                outputParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(outputParam);
 
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return outputParam.Value.ToString();  // Return the output parameter value
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception
+                    return string.Empty;  // Return empty if error occurs
+                }
+            }
+        }
+        public string BaoCaoHoanThanhCongViec(string idCongViec, string idTaiKhoanKhoiTao, string ghiChu)
+        {
+            string query = "proc_baoCaoHoanThanhCongViec";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                // Add parameters
+                cmd.Parameters.AddWithValue("@idCongViec", idCongViec);
+                cmd.Parameters.AddWithValue("@idTaiKhoanKhoiTao", idTaiKhoanKhoiTao);
+                cmd.Parameters.AddWithValue("@ghiChu", ghiChu);
+
+                // Define the output parameter
+                SqlParameter outputParam = new SqlParameter("@idLichSuCongViec", SqlDbType.VarChar, 20);
+                outputParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(outputParam);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return outputParam.Value.ToString();  // Return the output parameter value
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception
+                    return string.Empty;  // Return empty if error occurs
+                }
+            }
+        }
+        public bool ThemTaiLieu(BaoCao baoCao)
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_themTaiLieu", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ten", baoCao.Ten);
+                cmd.Parameters.AddWithValue("@loai", baoCao.Loai);
+                cmd.Parameters.AddWithValue("@duongDan", baoCao.DuongDan);
+                cmd.Parameters.AddWithValue("@idLichSuCongViec", baoCao.IdLichSuCongViec);
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public bool ThemHinhAnh(BaoCao baoCao)
+        {
+            SqlConnection conn = SqlConnectionData.Connect();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_themHinhAnh", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ten", baoCao.Ten);
+                cmd.Parameters.AddWithValue("@loai", baoCao.Loai);
+                cmd.Parameters.AddWithValue("@duongDan", baoCao.DuongDan);
+                cmd.Parameters.AddWithValue("@idLichSuCongViec", baoCao.IdLichSuCongViec);
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public List<DanhSachBaoCao> LayDanhSachBaoCao(string idCongViec)
+        {
+            List<DanhSachBaoCao> danhSachCongViec = new List<DanhSachBaoCao>();
+            SqlConnection conn = SqlConnectionData.Connect();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("proc_layDanhSachBaoCao", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idCongViec", idCongViec);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    DanhSachBaoCao baoCao = new DanhSachBaoCao
+                    {
+                        NoiDung = reader["ghiChu"].ToString(),
+                        NgayBaoCao = reader["thoGianKhoiTao"] as DateTime?,
+                        TenAnh = reader["tenHinhAnh"].ToString(),
+                        TenFile = reader["tenTaiLieu"].ToString()
+                    };
+                    danhSachCongViec.Add(baoCao);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy danh sách công việc: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return danhSachCongViec;
+        }
     }
 }

@@ -12,6 +12,7 @@ using BLL;
 using BLL.DepartmentBLL;
 using DTO;
 using DTO.TaskDTO;
+using Fastie.Components.Toastify;
 
 namespace Fastie.Screens.Task
 {
@@ -78,24 +79,30 @@ namespace Fastie.Screens.Task
         {
 
         }
-
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txbTaskName.Text) || string.IsNullOrWhiteSpace(customComboBox1.Texts) ||
             string.IsNullOrWhiteSpace(cTBDescribeTask.Text) || dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now || string.IsNullOrWhiteSpace(txbSoNhanSuChuDong.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                showMessage("Vui lòng nhập đủ thông tin!", "error");
+                //MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Exit the method if validation fails
             }
             string testIdLichSu = taskBLL.TaoLichSuId();
-            if (testIdLichSu != null)
-            {
-                MessageBox.Show("Tạo ID lịch sử thành công", testIdLichSu);
-            }
-            else
-            {
-                MessageBox.Show("Tạo ID lịch sử thất bại");
-            }
+            //if (testIdLichSu != null)
+            //{
+            //    //MessageBox.Show("Tạo ID lịch sử thành công", testIdLichSu);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Tạo ID lịch sử thất bại");
+            //}
 
             var task = new TaskInfo()
             {

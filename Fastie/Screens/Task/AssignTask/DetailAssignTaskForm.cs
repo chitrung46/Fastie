@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Google.Apis.Auth.OAuth2;
+using Google.Apis.Drive.v3;
+using Google.Apis.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +16,21 @@ using BLL;
 using BLL.DepartmentBLL;
 using DTO;
 using DTO.TaskDTO;
+using Fastie.Components.Toastify;
 namespace Fastie.Screens.Task
 {
     public partial class DetailAssignTaskForm : Form
     {
+        private DriveService driveService;
         TaskBLL taskBLL = new TaskBLL();
         private string idTaiKhoan;
         private string idBoPhanKhiDangNhap;
         DepartmentBLL departmentBLL = new DepartmentBLL();
+        private string fileName;
+        private string imageName;
         public DetailAssignTaskForm(string idTaiKhoan, string idBoPhan)
         {
+            InitializeGoogleDriveService();
             InitializeComponent();
             this.idTaiKhoan = idTaiKhoan;
             this.idBoPhanKhiDangNhap = idBoPhan;
@@ -46,18 +55,104 @@ namespace Fastie.Screens.Task
             customComboBox1.ValueMember = "Id";     // Giá trị là ID của loại công việc
             customComboBox1.SelectedIndex = -1;
         }
+        private void InitializeGoogleDriveService()
+        {
+            string apiKey = "AIzaSyCHVUVNsmnAkuyVb6dStMTRd0nF9Q2uGdI"; // Thay thế bằng API Key thực của bạn.
+
+            // Khởi tạo dịch vụ Google Drive
+            driveService = new DriveService(new BaseClientService.Initializer
+            {
+                ApiKey = apiKey,
+                ApplicationName = "FileAndImageUploader"
+            });
+
+            MessageBox.Show("Google Drive service initialized successfully with API Key!");
+        }
+
 
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
             btnUploadFile.ForeColor = Color.FromArgb(59, 171, 201);
             btnUploadImage.ForeColor = Color.FromArgb(255, 255, 255);
+            SelectFile();
+            lblFileName.Text = fileName;
+            //UploadToGoogleDrive("application/octet-stream", fileName);
+        }
+        private void SelectFile()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Text Files|*.txt;*.csv|Word Documents|*.doc;*.docx|Excel Files|*.xls;*.xlsx";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    fileName = openFileDialog.FileName;
+                }
+            }
         }
 
         private void btnUploadImage_Click(object sender, EventArgs e)
         {
             btnUploadImage.ForeColor = Color.FromArgb(59, 171, 201);
             btnUploadFile.ForeColor = Color.FromArgb(255, 255, 255);
+            SelectImage();
+            label9.Text = imageName;
+            //UploadToGoogleDrive("image/jpeg", imageName);
         }
+        private void UploadToGoogleDrive(string mimeType, string fileName)
+        {
+            if (string.IsNullOrEmpty(fileName))
+            {
+                MessageBox.Show("No file or image selected.");
+                return;
+            }
+
+            // Chọn folderId dựa trên mimeType
+            string folderId = mimeType == "image/jpeg"
+                ? "1EdDf2u_LCZEPwcTXIVhtzuBacK9J3MYI" // imageFolderId
+                : "178rcweIiY0X6MZbkJDC6NZdLqsE6oH_C"; // fileFolderId
+
+            // Tạo metadata cho tệp
+            var fileMetadata = new Google.Apis.Drive.v3.Data.File
+            {
+                Name = Path.GetFileName(fileName),
+                Parents = new[] { folderId }
+            };
+
+            using (var stream = new FileStream(fileName, FileMode.Open))
+            {
+                var request = driveService.Files.Create(fileMetadata, stream, mimeType);
+                request.Fields = "id";
+                var result = request.Upload();
+
+                if (result.Status == Google.Apis.Upload.UploadStatus.Completed)
+                {
+                    MessageBox.Show($"Uploaded successfully! File ID: {request.ResponseBody.Id}");
+                }
+                else
+                {
+                    MessageBox.Show($"Upload failed: {result.Exception?.Message}");
+                }
+            }
+        }
+        private void SelectImage()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    imageName = openFileDialog.FileName;
+                }
+            }
+        }
+
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
+
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
@@ -69,17 +164,19 @@ namespace Fastie.Screens.Task
             if (string.IsNullOrWhiteSpace(txbTaskName.Text) || string.IsNullOrWhiteSpace(customComboBox1.Texts) ||
             string.IsNullOrWhiteSpace(cTBDescribeTask.Text) || dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now)
             {
+                showMessage("Vui lòng nhập đủ thông tin!", "error");
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Exit the method if validation fails
             }
             string testIdLichSu = taskBLL.TaoLichSuId();
-            if(testIdLichSu!= null)
-            {
-                MessageBox.Show("Tạo ID lịch sử thành công", testIdLichSu);
-            } else
-            {
-                MessageBox.Show("Tạo ID lịch sử thất bại"); 
-            }
+            //if(testIdLichSu!= null)
+            //{
+
+            //    //MessageBox.Show("Tạo ID lịch sử thành công", testIdLichSu);
+            //} else
+            //{
+            //    MessageBox.Show("Tạo ID lịch sử thất bại"); 
+            //}
             var task = new TaskInfo()
             {
                 IdLoaiCongViec = taskBLL.LayIdLoaiCongViecTuTen(customComboBox1.Texts),

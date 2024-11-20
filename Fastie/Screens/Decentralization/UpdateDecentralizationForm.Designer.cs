@@ -804,7 +804,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "UpdateDecentralizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Fastie - Tạo phân quyền";
+            this.Text = "Fastie - Cập nhật phân quyền";
             this.Load += new System.EventHandler(this.CreateDecentralizationForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();

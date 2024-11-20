@@ -177,7 +177,61 @@ namespace BLL
                 throw new Exception($"Lỗi khi lấy lịch sử công việc cho tài khoản ID: {idNguoiDung}.", ex);
             }
         }
-
+        public string BaoCaoDangTienHanhCongViec(string idCongViec, string idTaiKhoanKhoiTao, string ghiChu)
+        {
+            try
+            {
+                return taskDAL.BaoCaoDangTienHanhCongViec(idCongViec, idTaiKhoanKhoiTao, ghiChu);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi báo cáo đang tiến hành: " + ex.Message);
+            }
+        }
+        public string BaoCaoHoanThanhCongViec(string idCongViec, string idTaiKhoanKhoiTao, string ghiChu)
+        {
+            try
+            {
+                return taskDAL.BaoCaoHoanThanhCongViec(idCongViec, idTaiKhoanKhoiTao, ghiChu);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi báo cáo hoàn thành: " + ex.Message);
+            }
+        }
+        public bool ThemTaiLieu (BaoCao baoCao)
+        {
+            try
+            {
+                return taskDAL.ThemTaiLieu(baoCao);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
+            }
+        }
+        public bool ThemHinhAnh(BaoCao baoCao)
+        {
+            try
+            {
+                return taskDAL.ThemHinhAnh(baoCao);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
+            }
+        }
+        public List<DanhSachBaoCao> LayDanhSachBaoCao(string idCongViec)
+        {
+            try
+            {
+                return taskDAL.LayDanhSachBaoCao(idCongViec);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy danh sách báo cáo: {idCongViec} giao.", ex);
+            }
+        }
 
 
     }

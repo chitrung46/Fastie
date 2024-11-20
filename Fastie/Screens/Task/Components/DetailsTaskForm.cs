@@ -134,7 +134,7 @@ namespace Fastie.Screens.Task
         private void LoadTaskDetails()
         {
             // Ghi log idTask ra console
-            MessageBox.Show($"ID công việc: {idTask}");
+            //MessageBox.Show($"ID công việc: {idTask}");
 
             // Gọi phương thức LayChiTietCongViec từ TaskBLL để lấy thông tin chi tiết công việc
             TaskInfo task = taskBLL.LayChiTietCongViec(idTask);
@@ -170,7 +170,7 @@ namespace Fastie.Screens.Task
                     LoadTaskDetails();
                     break;
                 case "AssignTaskForm":
-                    NearlyReportForm nearlyReport = new NearlyReportForm();
+                    NearlyReportForm nearlyReport = new NearlyReportForm(taskForm, layoutAssignTaskForm.IdTask);
                     addFormInPanelReport(nearlyReport);
                     break;
             }
@@ -184,7 +184,7 @@ namespace Fastie.Screens.Task
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (int.Parse(lblNumber.Text) == 0)
+            if (string.IsNullOrEmpty(lblNumber.Text) || !int.TryParse(lblNumber.Text, out int number) || number == 0)
             {
                 this.Close();
                 DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm(taskInfo.IdTaiKhoanGiaoViec, taskInfo.IdBoPhanGiaoViec);
@@ -202,7 +202,7 @@ namespace Fastie.Screens.Task
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string[] information = { "Bạn có chắc chắn xóa công việc này?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Đăng xuất" };
+            string[] information = { "Bạn có chắc chắn xóa công việc này?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Xóa việc" };
 
             LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm();
             layoutConfirmForm.Title = information[0];

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using BLL;
 using BLL.DepartmentBLL;
 using DTO;
+using Fastie.Components.Toastify;
 using GUI.TruniControls;
 using OfficeOpenXml;
 using LicenseContext = OfficeOpenXml.LicenseContext;
@@ -69,12 +70,18 @@ namespace Fastie.Screens.Task
                 MessageBox.Show($"File '{excelFileName}' selected successfully!", "File Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void ProcessExcelData()
         {
             if (string.IsNullOrEmpty(excelFilePath))
             {
-                MessageBox.Show("No file selected. Please upload an Excel file first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                showMessage("Vui lòng chọn File", "error");
+                //MessageBox.Show("No file selected. Please upload an Excel file first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -100,7 +107,8 @@ namespace Fastie.Screens.Task
                     string.IsNullOrWhiteSpace(taskDescriptionColumn) ||
                     string.IsNullOrWhiteSpace(completionDeadlineColumn))
                 {
-                    MessageBox.Show("Please specify all column letters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    showMessage("Vui lòng điền đủ thôn tin", "error");
+                    //MessageBox.Show("Please specify all column letters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -155,7 +163,8 @@ namespace Fastie.Screens.Task
                 }
                 else
                 {
-                    MessageBox.Show("All tasks were added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showMessage("Thêm các công việc thành công !", "success");
+                    //MessageBox.Show("All tasks were added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

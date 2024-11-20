@@ -65,8 +65,8 @@ namespace Fastie.Components.LayoutAccount
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CreateAccount createAccount = new CreateAccount();
-            createAccount.Show();
+            //CreateAccount createAccount = new CreateAccount();
+            //createAccount.Show();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

@@ -137,5 +137,11 @@ namespace Fastie.Components.LayoutPersonnel
             DetailsPersonnelForm detailsPersonnelForm = new DetailsPersonnelForm(this);
             detailsPersonnelForm.Show();
         }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            CreateAccount createAccount = new CreateAccount(this);
+            createAccount.Show();
+        }
     }
 }

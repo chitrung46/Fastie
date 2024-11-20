@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailsTaskForm));
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.lblBack = new System.Windows.Forms.Label();
@@ -89,7 +90,7 @@
             // pictureBack
             // 
             this.pictureBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBack.Image = global::Fastie.Properties.Resources.icons8_back_100;
+            this.pictureBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBack.Image")));
             this.pictureBack.Location = new System.Drawing.Point(35, 16);
             this.pictureBack.Name = "pictureBack";
             this.pictureBack.Size = new System.Drawing.Size(20, 20);
@@ -113,6 +114,7 @@
             // 
             // pnlReport
             // 
+            this.pnlReport.AutoScroll = true;
             this.pnlReport.Location = new System.Drawing.Point(12, 551);
             this.pnlReport.Name = "pnlReport";
             this.pnlReport.Size = new System.Drawing.Size(1073, 305);
@@ -187,7 +189,6 @@
             this.lblNumber.Name = "lblNumber";
             this.lblNumber.Size = new System.Drawing.Size(205, 21);
             this.lblNumber.TabIndex = 0;
-            this.lblNumber.Text = "12/11/2024";
             // 
             // customPanel5
             // 
@@ -379,7 +380,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Fastie.Properties.Resources.z5866322563222_7c9b9873ee9ceed252ea45f87aeb13ff;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(32, 257);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(203, 159);
@@ -441,7 +442,6 @@
             this.lblPersonnel.Name = "lblPersonnel";
             this.lblPersonnel.Size = new System.Drawing.Size(205, 21);
             this.lblPersonnel.TabIndex = 0;
-            this.lblPersonnel.Text = "Kiều Thanh, Chí Trung";
             // 
             // customPanel7
             // 
@@ -469,7 +469,6 @@
             this.lblDepartment.Name = "lblDepartment";
             this.lblDepartment.Size = new System.Drawing.Size(205, 21);
             this.lblDepartment.TabIndex = 0;
-            this.lblDepartment.Text = "Vệ sinh";
             // 
             // label5
             // 
@@ -519,7 +518,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = global::Fastie.Properties.Resources.icons8_delete_23;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete.Location = new System.Drawing.Point(780, 59);
             this.btnDelete.Name = "btnDelete";
@@ -542,7 +541,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Image = global::Fastie.Properties.Resources.icons8_pencil_23;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Location = new System.Drawing.Point(641, 59);
             this.btnEdit.Name = "btnEdit";

@@ -51,6 +51,9 @@
     <Reference Include="Google.Apis.Core, Version=1.68.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.Core.1.68.0\lib\net462\Google.Apis.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.68.0.3587, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Drive.v3.1.68.0.3587\lib\net462\Google.Apis.Drive.v3.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis.Sheets.v4, Version=1.68.0.3568, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.Sheets.v4.1.68.0.3568\lib\net462\Google.Apis.Sheets.v4.dll</HintPath>
     </Reference>

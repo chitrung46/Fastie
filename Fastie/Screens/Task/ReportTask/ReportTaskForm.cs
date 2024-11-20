@@ -1,4 +1,6 @@
-﻿using Fastie.Components.LayoutRole;
+﻿using BLL;
+using DTO;
+using Fastie.Components.LayoutRole;
 using Fastie.Components.LayoutTask;
 using System;
 using System.Collections.Generic;
@@ -14,27 +16,31 @@ namespace Fastie.Screens.Task.ReportTask
 {
     public partial class ReportTaskForm : Form
     {
-        public ReportTaskForm()
+        TaskBLL taskBLL = new TaskBLL();
+        public TaskForm taskForm;
+        public ReportTaskForm(TaskForm taskForm)
         {
             InitializeComponent();
+            this.taskForm = taskForm;
         }
 
-        private void LoadDataTaskTable()
+        public void LoadDataTaskTable()
         {
             flowLayoutPanelTasks.Controls.Clear();
-
-            LayoutReportTaskForm[] layoutReportTaskForm = new LayoutReportTaskForm[20];
-            for (int i = 0; i < 20; i++)
+            List<TaskInfo> tasks = taskBLL.layCongViecTheoID(this.taskForm.IdTaiKhoan);
+            foreach (TaskInfo congViec in tasks)
             {
-                layoutReportTaskForm[i] = new LayoutReportTaskForm(this)
+                LayoutReportTaskForm layoutCongViec = new LayoutReportTaskForm(this)
                 {
-                    TaskName = "Task " + i,
-                    TaskTime = "Time " + i,
-                    TaskStatus = "Status " + i,
-                    TaskJobAssigner = "Job Assigner " + i
+                    TaskName = congViec.Ten,
+                    TaskTime = congViec.ThoiHanHoanThanh.HasValue ? congViec.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
+                    TaskStatus = congViec.TenTienDoCongViec,
+                    TaskJobAssigner = congViec.TenNhanSuGiaoViec,
+                    TaskId = congViec.Id
                 };
-                flowLayoutPanelTasks.Controls.Add(layoutReportTaskForm[i]);
+                flowLayoutPanelTasks.Controls.Add(layoutCongViec);
             }
+            
         }
 
         private void flowLayoutPanelTasks_Paint(object sender, PaintEventArgs e)
