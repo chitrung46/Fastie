@@ -68,7 +68,7 @@ namespace Fastie.Screens.Task
                 var taskForm = new LayoutTaskForm(this.taskForm)
                 {
                     TitleTask = task.Ten,
-                    Status = task.GhiChu,
+                    Status = task.TenTienDoCongViec,
                     IdTask = task.Id
                 };
 

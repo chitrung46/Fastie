@@ -37,9 +37,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblJobAssigner = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnGetTask = new GUI.CustomButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAssignArisingTask = new GUI.CustomButton();
+            this.customButton1 = new GUI.CustomButton();
+            this.btnGetTask = new GUI.CustomButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -54,7 +55,7 @@
             this.lblTaskName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaskName.Location = new System.Drawing.Point(19, 19);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(171, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(182, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Sửa chữa bồn vệ sinh";
             // 
@@ -64,14 +65,14 @@
             this.lblTaskTime.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaskTime.Location = new System.Drawing.Point(7, 16);
             this.lblTaskTime.Name = "lblTaskTime";
-            this.lblTaskTime.Size = new System.Drawing.Size(82, 21);
+            this.lblTaskTime.Size = new System.Drawing.Size(85, 21);
             this.lblTaskTime.TabIndex = 0;
             this.lblTaskTime.Text = "9/12/2024";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnTaskStatus);
-            this.panel3.Location = new System.Drawing.Point(463, 3);
+            this.panel3.Location = new System.Drawing.Point(417, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(169, 54);
             this.panel3.TabIndex = 2;
@@ -96,9 +97,9 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lblTaskTime);
-            this.panel2.Location = new System.Drawing.Point(303, 3);
+            this.panel2.Location = new System.Drawing.Point(272, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(157, 54);
+            this.panel2.Size = new System.Drawing.Size(141, 54);
             this.panel2.TabIndex = 3;
             // 
             // panel1
@@ -106,15 +107,15 @@
             this.panel1.Controls.Add(this.lblTaskName);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(294, 54);
+            this.panel1.Size = new System.Drawing.Size(264, 54);
             this.panel1.TabIndex = 4;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.lblJobAssigner);
-            this.panel4.Location = new System.Drawing.Point(638, 3);
+            this.panel4.Location = new System.Drawing.Point(592, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(268, 54);
+            this.panel4.Size = new System.Drawing.Size(231, 54);
             this.panel4.TabIndex = 5;
             // 
             // lblJobAssigner
@@ -123,41 +124,23 @@
             this.lblJobAssigner.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobAssigner.Location = new System.Drawing.Point(13, 16);
             this.lblJobAssigner.Name = "lblJobAssigner";
-            this.lblJobAssigner.Size = new System.Drawing.Size(137, 21);
+            this.lblJobAssigner.Size = new System.Drawing.Size(146, 21);
             this.lblJobAssigner.TabIndex = 0;
             this.lblJobAssigner.Text = "Lương Chí Trung";
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.customButton1);
             this.panel5.Controls.Add(this.btnGetTask);
-            this.panel5.Location = new System.Drawing.Point(1030, 3);
+            this.panel5.Location = new System.Drawing.Point(947, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(84, 54);
+            this.panel5.Size = new System.Drawing.Size(167, 54);
             this.panel5.TabIndex = 6;
-            // 
-            // btnGetTask
-            // 
-            this.btnGetTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.btnGetTask.BorderColor = System.Drawing.Color.White;
-            this.btnGetTask.BorderRadius = 15;
-            this.btnGetTask.BorderSize = 0;
-            this.btnGetTask.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGetTask.FlatAppearance.BorderSize = 0;
-            this.btnGetTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGetTask.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetTask.ForeColor = System.Drawing.Color.White;
-            this.btnGetTask.Image = global::Fastie.Properties.Resources.icons8_document_24;
-            this.btnGetTask.Location = new System.Drawing.Point(3, 7);
-            this.btnGetTask.Name = "btnGetTask";
-            this.btnGetTask.Size = new System.Drawing.Size(48, 40);
-            this.btnGetTask.TabIndex = 0;
-            this.btnGetTask.UseVisualStyleBackColor = false;
-            this.btnGetTask.Click += new System.EventHandler(this.btnGetTask_Click);
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.btnAssignArisingTask);
-            this.panel6.Location = new System.Drawing.Point(912, 3);
+            this.panel6.Location = new System.Drawing.Point(829, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(112, 54);
             this.panel6.TabIndex = 7;
@@ -179,6 +162,43 @@
             this.btnAssignArisingTask.TabIndex = 0;
             this.btnAssignArisingTask.Text = "Phát sinh";
             this.btnAssignArisingTask.UseVisualStyleBackColor = false;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.LimeGreen;
+            this.customButton1.BorderColor = System.Drawing.Color.White;
+            this.customButton1.BorderRadius = 15;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Image = global::Fastie.Properties.Resources.icons8_check_24;
+            this.customButton1.Location = new System.Drawing.Point(85, 6);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(48, 40);
+            this.customButton1.TabIndex = 1;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // btnGetTask
+            // 
+            this.btnGetTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.btnGetTask.BorderColor = System.Drawing.Color.White;
+            this.btnGetTask.BorderRadius = 15;
+            this.btnGetTask.BorderSize = 0;
+            this.btnGetTask.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGetTask.FlatAppearance.BorderSize = 0;
+            this.btnGetTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGetTask.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetTask.ForeColor = System.Drawing.Color.White;
+            this.btnGetTask.Image = global::Fastie.Properties.Resources.icons8_document_24;
+            this.btnGetTask.Location = new System.Drawing.Point(4, 7);
+            this.btnGetTask.Name = "btnGetTask";
+            this.btnGetTask.Size = new System.Drawing.Size(48, 40);
+            this.btnGetTask.TabIndex = 0;
+            this.btnGetTask.UseVisualStyleBackColor = false;
+            this.btnGetTask.Click += new System.EventHandler(this.btnGetTask_Click);
             // 
             // LayoutAssignTaskForm
             // 
@@ -220,5 +240,6 @@
         private GUI.CustomButton btnGetTask;
         private System.Windows.Forms.Panel panel6;
         private GUI.CustomButton btnAssignArisingTask;
+        private GUI.CustomButton customButton1;
     }
 }

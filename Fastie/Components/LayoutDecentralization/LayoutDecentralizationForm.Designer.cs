@@ -58,6 +58,8 @@
             // 
             // lblPersonnelName
             // 
+            this.lblPersonnelName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonnelName.AutoSize = true;
             this.lblPersonnelName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonnelName.Location = new System.Drawing.Point(7, 16);
@@ -68,6 +70,8 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.lblPositionName);
             this.panel3.Location = new System.Drawing.Point(427, 3);
             this.panel3.Name = "panel3";
@@ -76,6 +80,8 @@
             // 
             // lblPositionName
             // 
+            this.lblPositionName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPositionName.AutoSize = true;
             this.lblPositionName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPositionName.Location = new System.Drawing.Point(3, 16);
@@ -86,6 +92,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.lblPersonnelName);
             this.panel2.Location = new System.Drawing.Point(127, 3);
             this.panel2.Name = "panel2";
@@ -94,6 +102,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.lblNumber);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -102,6 +112,8 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.lblDepartmentName);
             this.panel4.Location = new System.Drawing.Point(648, 3);
             this.panel4.Name = "panel4";
@@ -110,6 +122,8 @@
             // 
             // lblDepartmentName
             // 
+            this.lblDepartmentName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDepartmentName.AutoSize = true;
             this.lblDepartmentName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartmentName.Location = new System.Drawing.Point(13, 16);
@@ -120,6 +134,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.btnUpdateDecentralization);
             this.flowLayoutPanel1.Controls.Add(this.btnDeleteAllPermission);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(863, 8);
@@ -169,12 +184,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel4);
+            this.MaximumSize = new System.Drawing.Size(3000, 61);
+            this.MinimumSize = new System.Drawing.Size(1120, 61);
             this.Name = "LayoutDecentralizationForm";
             this.Size = new System.Drawing.Size(1120, 61);
             this.Load += new System.EventHandler(this.LayoutDecentralizationForm_Load);

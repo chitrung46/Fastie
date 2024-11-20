@@ -80,7 +80,8 @@ namespace DAL.TaskDAL
                                     IdBoPhanGiaoViec = reader["idBoPhanGiaoViec"].ToString(),
                                     IdLoaiCongViec = reader["idLoaiCongViec"].ToString(),
                                     IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
-                                    IdLichSuMacDinh = reader["idLichSuMacDinh"].ToString()
+                                    IdLichSuMacDinh = reader["idLichSuMacDinh"].ToString(),
+                                    TenTienDoCongViec = reader["tenTienDoCongViec"].ToString()
                                 });
                             }
                         }
@@ -138,13 +139,12 @@ namespace DAL.TaskDAL
                                 ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,  // Xử lý NULL
                                 ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
                                 GhiChu = reader["ghiChu"].ToString(),
-                                // Các thuộc tính bổ sung
-                                TenBoPhan = reader["TenBoPhan"]?.ToString(),
-                                TenLoaiCongViec = reader["TenLoaiCongViec"]?.ToString(),
-                                TenTienDoCongViec = reader["TenTienDoCongViec"]?.ToString(),
-                                TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"]?.ToString(),
-                                SoLuongNhanSuChuDong = reader["SoLuongNhanSuChuDong"]?.ToString(),
-                                TenNhanSuNhanViec = reader["TenNhanSuNhanViec"]?.ToString()
+                                TenBoPhan = reader["TenBoPhan"].ToString(),
+                                TenLoaiCongViec = reader["TenLoaiCongViec"].ToString(),
+                                TenTienDoCongViec = reader["TenTienDoCongViec"].ToString(),
+                                TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString(),
+                                SoLuongNhanSuChuDong = reader["SoLuongNhanSuChuDong"].ToString(),
+                                TenNhanSuNhanViec = reader["TenNhanSuNhanViec"].ToString()
                             };
 
                             tasks.Add(task);
@@ -152,7 +152,6 @@ namespace DAL.TaskDAL
                     }
                 }
             }
-
             return tasks;
         }
 

@@ -43,47 +43,7 @@ namespace Fastie.Screens.Task
             }
             stateButton.BackColor = Color.IndianRed;
         }
-        /*
-        public void LoadDataTaskTable(string taskType = null)
-        {
-            this.currentTaskType = taskType;
-            flowLayoutPanelTasks.Controls.Clear();
 
-            List<TaskInfo> filteredTasks = null;
-
-            if (taskType == "Việc được giao")
-            {
-                filteredTasks = taskBLL.nhanNhiemVuDuocGiaoTuTaiKhoan(taskForm.IdTaiKhoan)
-                                       .Where(task => task.IdTaiKhoanGiaoViec != taskForm.IdTaiKhoan) 
-                                       .ToList();
-            }
-            else
-            {
-                filteredTasks = taskBLL.nhanCongViecChuaDuocGiaoTuTaiKhoan(taskForm.IdBoPhan);
-            }
-
-
-            if (filteredTasks != null && filteredTasks.Count > 0)
-            {
-                foreach (var task in filteredTasks)
-                {
-                    LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(taskForm, this.currentTaskType)
-                    {
-                        TaskName = task.Ten,
-                        TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
-                        TaskStatus = task.GhiChu,
-                        JobAssigner = task.TenNhanSuGiaoViec,
-                        TaskId = task.Id
-                    };
-                    flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Không có công việc nào phù hợp để hiển thị.", "Thông báo");
-            }
-        }
-        */
         public void LoadDataTaskTable(string taskType = null)
         {
             this.currentTaskType = taskType;
@@ -105,11 +65,12 @@ namespace Fastie.Screens.Task
             {
                 foreach (var task in filteredTasks)
                 {
+                    MessageBox.Show(task.Ten);
                     LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(taskForm, this.currentTaskType)
                     {
                         TaskName = task.Ten,
                         TaskTime = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
-                        TaskStatus = task.GhiChu,
+                        TaskStatus = task.TenTienDoCongViec,
                         JobAssigner = task.TenNhanSuGiaoViec,
                         TaskId = task.Id
                     };

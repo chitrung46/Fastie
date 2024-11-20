@@ -76,6 +76,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,6 +91,9 @@
             // 
             // customPanel1
             // 
+            this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
@@ -109,6 +115,9 @@
             // 
             // txtDepartment
             // 
+            this.txtDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDepartment.BackColor = System.Drawing.SystemColors.Window;
             this.txtDepartment.BorderColor = System.Drawing.Color.DarkGray;
             this.txtDepartment.BorderFocusColor = System.Drawing.Color.Black;
@@ -131,6 +140,9 @@
             // 
             // txtPosition
             // 
+            this.txtPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPosition.BackColor = System.Drawing.SystemColors.Window;
             this.txtPosition.BorderColor = System.Drawing.Color.DarkGray;
             this.txtPosition.BorderFocusColor = System.Drawing.Color.Black;
@@ -153,6 +165,9 @@
             // 
             // txtPersonnel
             // 
+            this.txtPersonnel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPersonnel.BackColor = System.Drawing.SystemColors.Window;
             this.txtPersonnel.BorderColor = System.Drawing.Color.DarkGray;
             this.txtPersonnel.BorderFocusColor = System.Drawing.Color.Black;
@@ -175,6 +190,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,6 +205,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,6 +220,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,6 +235,9 @@
             // 
             // checkboxPersonnelManagement
             // 
+            this.checkboxPersonnelManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxPersonnelManagement.AutoSize = true;
             this.checkboxPersonnelManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkboxPersonnelManagement.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
@@ -225,6 +252,9 @@
             // 
             // customPanel2
             // 
+            this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel2.BackColor = System.Drawing.Color.White;
             this.customPanel2.BorderColor = System.Drawing.Color.Black;
             this.customPanel2.BorderRadius = 30;
@@ -243,6 +273,9 @@
             // 
             // checkboxUpdatePersonnel
             // 
+            this.checkboxUpdatePersonnel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxUpdatePersonnel.AutoSize = true;
             this.checkboxUpdatePersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxUpdatePersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -257,6 +290,9 @@
             // 
             // checkboxDeletePersonnel
             // 
+            this.checkboxDeletePersonnel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxDeletePersonnel.AutoSize = true;
             this.checkboxDeletePersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxDeletePersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -271,6 +307,9 @@
             // 
             // checkboxAddPersonnel
             // 
+            this.checkboxAddPersonnel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxAddPersonnel.AutoSize = true;
             this.checkboxAddPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxAddPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -286,6 +325,9 @@
             // 
             // customPanel3
             // 
+            this.customPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel3.BackColor = System.Drawing.Color.White;
             this.customPanel3.BorderColor = System.Drawing.Color.Black;
             this.customPanel3.BorderRadius = 30;
@@ -304,6 +346,9 @@
             // 
             // checkboxUpdatePart
             // 
+            this.checkboxUpdatePart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxUpdatePart.AutoSize = true;
             this.checkboxUpdatePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxUpdatePart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -318,6 +363,9 @@
             // 
             // checkboxDeletePart
             // 
+            this.checkboxDeletePart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxDeletePart.AutoSize = true;
             this.checkboxDeletePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxDeletePart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -332,6 +380,9 @@
             // 
             // checkboxAddPart
             // 
+            this.checkboxAddPart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxAddPart.AutoSize = true;
             this.checkboxAddPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxAddPart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -346,6 +397,9 @@
             // 
             // checkboxPartManagement
             // 
+            this.checkboxPartManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxPartManagement.AutoSize = true;
             this.checkboxPartManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkboxPartManagement.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
@@ -360,6 +414,9 @@
             // 
             // customPanel4
             // 
+            this.customPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel4.BackColor = System.Drawing.Color.White;
             this.customPanel4.BorderColor = System.Drawing.Color.Black;
             this.customPanel4.BorderRadius = 30;
@@ -378,6 +435,9 @@
             // 
             // checkboxUpdatePosition
             // 
+            this.checkboxUpdatePosition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxUpdatePosition.AutoSize = true;
             this.checkboxUpdatePosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxUpdatePosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -392,6 +452,9 @@
             // 
             // checkboxDeletePosition
             // 
+            this.checkboxDeletePosition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxDeletePosition.AutoSize = true;
             this.checkboxDeletePosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxDeletePosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -406,6 +469,9 @@
             // 
             // checkboxAddPosition
             // 
+            this.checkboxAddPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxAddPosition.AutoSize = true;
             this.checkboxAddPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxAddPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -420,6 +486,9 @@
             // 
             // checkboxPositionManagement
             // 
+            this.checkboxPositionManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxPositionManagement.AutoSize = true;
             this.checkboxPositionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkboxPositionManagement.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
@@ -434,6 +503,9 @@
             // 
             // customPanel5
             // 
+            this.customPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel5.BackColor = System.Drawing.Color.White;
             this.customPanel5.BorderColor = System.Drawing.Color.Black;
             this.customPanel5.BorderRadius = 30;
@@ -452,6 +524,9 @@
             // 
             // checkboxUpdateAccount
             // 
+            this.checkboxUpdateAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxUpdateAccount.AutoSize = true;
             this.checkboxUpdateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxUpdateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -466,6 +541,9 @@
             // 
             // checkboxDeleteAccount
             // 
+            this.checkboxDeleteAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxDeleteAccount.AutoSize = true;
             this.checkboxDeleteAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -480,6 +558,9 @@
             // 
             // checkboxAddAccount
             // 
+            this.checkboxAddAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxAddAccount.AutoSize = true;
             this.checkboxAddAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxAddAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -494,6 +575,9 @@
             // 
             // checkboxAccountManagement
             // 
+            this.checkboxAccountManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxAccountManagement.AutoSize = true;
             this.checkboxAccountManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkboxAccountManagement.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
@@ -508,6 +592,9 @@
             // 
             // customPanel6
             // 
+            this.customPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel6.BackColor = System.Drawing.Color.White;
             this.customPanel6.BorderColor = System.Drawing.Color.Black;
             this.customPanel6.BorderRadius = 30;
@@ -529,6 +616,9 @@
             // 
             // checkBoxGetTasks
             // 
+            this.checkBoxGetTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxGetTasks.AutoSize = true;
             this.checkBoxGetTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkBoxGetTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -543,6 +633,9 @@
             // 
             // checkboxAssignTasks
             // 
+            this.checkboxAssignTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxAssignTasks.AutoSize = true;
             this.checkboxAssignTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxAssignTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -557,6 +650,9 @@
             // 
             // checkboxSendNotification
             // 
+            this.checkboxSendNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxSendNotification.AutoSize = true;
             this.checkboxSendNotification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxSendNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -571,6 +667,9 @@
             // 
             // checkBoxReportTasks
             // 
+            this.checkBoxReportTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxReportTasks.AutoSize = true;
             this.checkBoxReportTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkBoxReportTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -585,6 +684,9 @@
             // 
             // checkboxDeleteTasks
             // 
+            this.checkboxDeleteTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxDeleteTasks.AutoSize = true;
             this.checkboxDeleteTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxDeleteTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -599,6 +701,9 @@
             // 
             // checkboxUpdateTasks
             // 
+            this.checkboxUpdateTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxUpdateTasks.AutoSize = true;
             this.checkboxUpdateTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.checkboxUpdateTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -613,6 +718,9 @@
             // 
             // checkboxTasksManagement
             // 
+            this.checkboxTasksManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkboxTasksManagement.AutoSize = true;
             this.checkboxTasksManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkboxTasksManagement.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
@@ -627,6 +735,9 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.btnAdd.BorderRadius = 15;
@@ -648,6 +759,9 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnCancel.BorderRadius = 15;
@@ -687,6 +801,7 @@
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "UpdateDecentralizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Tạo phân quyền";

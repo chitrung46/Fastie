@@ -50,12 +50,21 @@ namespace Fastie.Screens.Task.ReportTaskOnline
         private async void handleImportDataGridView()
         {
             var values = await handleDataSheet();
-            for(int i = 0; i < values.Count; i++)
+            if (values == null)
             {
-                lblTime.Text = values[i][0].ToString();
-                lblName.Text = values[i][1].ToString();
-                lblCode.Text = values[i][2].ToString();
-                lblStatus.Text = values[i][3].ToString();
+                Console.WriteLine("No data available.");
+                return;
+            }
+
+            for (int i = 0; i < values.Count; i++)
+            {
+                Console.WriteLine(values[i][0]?.ToString());
+                Console.WriteLine(values[i][1]?.ToString());
+                Console.WriteLine(values[i][2]?.ToString());
+                Console.WriteLine(values[i][3]?.ToString());
+                Console.WriteLine(values[i][4]?.ToString());
+                Console.WriteLine(values[i][5]?.ToString());
+                Console.WriteLine(values[i][6]?.ToString());
             }
         }
 
@@ -63,8 +72,8 @@ namespace Fastie.Screens.Task.ReportTaskOnline
         {
             // API Key của bạn
             string apiKey = "AIzaSyCHVUVNsmnAkuyVb6dStMTRd0nF9Q2uGdI";
-            string spreadsheetId = "19xOMFz-ycTT34BggfbmYYiJIes_SdT5jDqbKXq7eB88";  // Thay bằng Spreadsheet ID
-            string range = "'Answer_1'!A2:E";  // Dải dữ liệu cần đọc
+            string spreadsheetId = "1d0GYgmQ2-GFwFIF40c5BkaHUMMl2AMe5RK-5CNn3uuo";  // Thay bằng Spreadsheet ID
+            string range = "'Answer_1'!A2:G";  // Dải dữ liệu cần đọc
 
             // URL để truy cập dữ liệu từ Google Sheets
             string url = $"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}?key={apiKey}";

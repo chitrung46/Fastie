@@ -54,16 +54,21 @@
             // 
             // flowLayoutPanelPersonnel
             // 
+            this.flowLayoutPanelPersonnel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelPersonnel.AutoScroll = true;
+            this.flowLayoutPanelPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.flowLayoutPanelPersonnel.Location = new System.Drawing.Point(28, 222);
+            this.flowLayoutPanelPersonnel.MaximumSize = new System.Drawing.Size(3000, 1500);
+            this.flowLayoutPanelPersonnel.MinimumSize = new System.Drawing.Size(1194, 450);
             this.flowLayoutPanelPersonnel.Name = "flowLayoutPanelPersonnel";
             this.flowLayoutPanelPersonnel.Size = new System.Drawing.Size(1194, 450);
             this.flowLayoutPanelPersonnel.TabIndex = 8;
             // 
             // pnlTabBar
             // 
-            this.pnlTabBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTabBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTabBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnlTabBar.BorderColor = System.Drawing.Color.Black;
             this.pnlTabBar.BorderRadius = 50;
@@ -82,6 +87,7 @@
             // 
             // btnRoleless
             // 
+            this.btnRoleless.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRoleless.BackColor = System.Drawing.Color.Transparent;
             this.btnRoleless.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnRoleless.BorderRadius = 40;
@@ -102,6 +108,7 @@
             // 
             // btnHaveRole
             // 
+            this.btnHaveRole.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnHaveRole.BackColor = System.Drawing.Color.IndianRed;
             this.btnHaveRole.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnHaveRole.BorderRadius = 40;
@@ -122,6 +129,8 @@
             // 
             // customPanel1
             // 
+            this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel1.BackColor = System.Drawing.Color.White;
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
@@ -134,12 +143,15 @@
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.Location = new System.Drawing.Point(28, 12);
+            this.customPanel1.MaximumSize = new System.Drawing.Size(3000, 74);
+            this.customPanel1.MinimumSize = new System.Drawing.Size(1120, 74);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(1120, 74);
             this.customPanel1.TabIndex = 4;
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtSearch.AutoSize = true;
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -163,6 +175,7 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::Fastie.Properties.Resources.icons8_search_100;
             this.pictureBox8.Location = new System.Drawing.Point(959, 21);
@@ -174,6 +187,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -252,18 +266,23 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Location = new System.Drawing.Point(31, 185);
+            this.panel1.MaximumSize = new System.Drawing.Size(3000, 29);
+            this.panel1.MinimumSize = new System.Drawing.Size(1117, 29);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1117, 29);
             this.panel1.TabIndex = 10;
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
@@ -275,6 +294,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
@@ -286,6 +306,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
@@ -297,6 +318,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
@@ -308,6 +330,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
@@ -319,8 +342,8 @@
             // 
             // DecentralizationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1182, 695);
             this.Controls.Add(this.panel1);

@@ -73,6 +73,7 @@
             this.btnStatus.TabIndex = 0;
             this.btnStatus.Text = "Đang thực hiện";
             this.btnStatus.UseVisualStyleBackColor = false;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
             // 
             // panel1
             // 

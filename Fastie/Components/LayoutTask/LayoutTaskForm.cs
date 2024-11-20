@@ -48,8 +48,9 @@ namespace Fastie.Components.LayoutTask
             taskForm.AddFormInMainLayout(detailsTaskForm);
         }
 
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

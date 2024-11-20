@@ -210,6 +210,7 @@ namespace Fastie
         {
             Analytics analytics = new Analytics();
             addFormInMainLayout(analytics);
+            setStatePanel(stateAnalytics);
 
         }
         private void btnAccount_Click(object sender, EventArgs e)

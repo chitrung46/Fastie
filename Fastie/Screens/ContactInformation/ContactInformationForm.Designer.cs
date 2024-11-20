@@ -1,6 +1,6 @@
-﻿namespace Fastie.Screens.Task.ReportTaskOnline
+﻿namespace Fastie.Screens.ContactInformation
 {
-    partial class ReportTaskOnlineForm
+    partial class ContactInformationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // ReportTaskOnlineForm
+            // ContactInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(951, 450);
-            this.Name = "ReportTaskOnlineForm";
-            this.Text = "ReportTaskOnlineForm";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.ClientSize = new System.Drawing.Size(1164, 648);
+            this.Name = "ContactInformationForm";
+            this.Text = "Fastie - Thông tin liên hệ";
             this.ResumeLayout(false);
 
         }
