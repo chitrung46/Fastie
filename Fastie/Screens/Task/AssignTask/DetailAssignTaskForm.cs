@@ -57,18 +57,21 @@ namespace Fastie.Screens.Task
         }
         private void InitializeGoogleDriveService()
         {
-            string apiKey = "AIzaSyCHVUVNsmnAkuyVb6dStMTRd0nF9Q2uGdI"; // Thay thế bằng API Key thực của bạn.
 
-            // Khởi tạo dịch vụ Google Drive
+            string serviceAccountKeyPath = "credential_fastie.json";
+
+            // Xác thực với Google Drive API
+            var credential = GoogleCredential.FromFile(serviceAccountKeyPath)
+                .CreateScoped(DriveService.Scope.Drive);
+
             driveService = new DriveService(new BaseClientService.Initializer
             {
-                ApiKey = apiKey,
+                HttpClientInitializer = credential,
                 ApplicationName = "FileAndImageUploader"
             });
 
-            MessageBox.Show("Google Drive service initialized successfully with API Key!");
+            //MessageBox.Show("Google Drive service initialized successfully!");
         }
-
 
         private void btnUploadFile_Click(object sender, EventArgs e)
         {

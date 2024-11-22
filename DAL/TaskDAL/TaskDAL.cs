@@ -626,6 +626,71 @@ namespace DAL.TaskDAL
                 }
             }
         }
+
+        public string BaoCaoDangTienHanhCongViecOnline(string idCongViec, string idTaiKhoanKhoiTao, string thoiGianBaoCao, string ghiChu)
+        {
+            string query = "proc_baoCaoDangTienHanhCongViecOnline";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Add parameters
+                cmd.Parameters.AddWithValue("@idCongViec", idCongViec);
+                cmd.Parameters.AddWithValue("@idTaiKhoanKhoiTao", idTaiKhoanKhoiTao);
+                cmd.Parameters.AddWithValue("@thoiGianBaoCao", thoiGianBaoCao);
+                cmd.Parameters.AddWithValue("@ghiChu", ghiChu);
+
+                // Define the output parameter
+                SqlParameter outputParam = new SqlParameter("@idLichSuCongViec", SqlDbType.VarChar, 20);
+                outputParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(outputParam);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return outputParam.Value.ToString();  // Return the output parameter value
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception
+                    return string.Empty;  // Return empty if error occurs
+                }
+            }
+        }
+        public string BaoCaoHoanThanhCongViecOnline(string idCongViec, string idTaiKhoanKhoiTao, string thoiGianBaoCao, string ghiChu)
+        {
+            string query = "proc_baoCaoHoanThanhCongViecOnline";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Add parameters
+                cmd.Parameters.AddWithValue("@idCongViec", idCongViec);
+                cmd.Parameters.AddWithValue("@idTaiKhoanKhoiTao", idTaiKhoanKhoiTao);
+                cmd.Parameters.AddWithValue("@thoiGianBaoCao", thoiGianBaoCao);
+                cmd.Parameters.AddWithValue("@ghiChu", ghiChu);
+
+                // Define the output parameter
+                SqlParameter outputParam = new SqlParameter("@idLichSuCongViec", SqlDbType.VarChar, 20);
+                outputParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(outputParam);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return outputParam.Value.ToString();  // Return the output parameter value
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception
+                    return string.Empty;  // Return empty if error occurs
+                }
+            }
+        }
         public bool ThemTaiLieu(BaoCao baoCao)
         {
             SqlConnection conn = SqlConnectionData.Connect();

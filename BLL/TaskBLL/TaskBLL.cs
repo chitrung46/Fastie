@@ -199,6 +199,28 @@ namespace BLL
                 throw new Exception("Lỗi khi báo cáo hoàn thành: " + ex.Message);
             }
         }
+        public string BaoCaoDangTienHanhCongViecOnline(string idCongViec, string idTaiKhoanKhoiTao, string thoiGianBaoCao, string ghiChu)
+        {
+            try
+            {
+                return taskDAL.BaoCaoDangTienHanhCongViecOnline(idCongViec, idTaiKhoanKhoiTao, thoiGianBaoCao, ghiChu);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi báo cáo đang tiến hành Online: " + ex.Message);
+            }
+        }
+        public string BaoCaoHoanThanhCongViecOnline(string idCongViec, string idTaiKhoanKhoiTao, string thoiGianBaoCao, string ghiChu)
+        {
+            try
+            {
+                return taskDAL.BaoCaoHoanThanhCongViecOnline(idCongViec, idTaiKhoanKhoiTao, thoiGianBaoCao, ghiChu);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi báo cáo hoàn thành Online: " + ex.Message);
+            }
+        }
         public bool ThemTaiLieu (BaoCao baoCao)
         {
             try
@@ -207,7 +229,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
+                throw new Exception("Lỗi khi thêm tài liệu: " + ex.Message);
             }
         }
         public bool ThemHinhAnh(BaoCao baoCao)
@@ -218,7 +240,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi thêm công việc chủ động: " + ex.Message);
+                throw new Exception("Lỗi khi thêm hình ảnh: " + ex.Message);
             }
         }
         public List<DanhSachBaoCao> LayDanhSachBaoCao(string idCongViec)

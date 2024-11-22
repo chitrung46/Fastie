@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mainLayout = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlTabBar = new GUI.TruniControls.CustomPanel();
             this.btnAdjustTask = new GUI.CustomButton();
             this.btnReportTask = new GUI.CustomButton();
             this.btnAcceptTask = new GUI.CustomButton();
             this.btnAssignTask = new GUI.CustomButton();
             this.btnTaskTable = new GUI.CustomButton();
-            this.btnReportOnline = new GUI.CustomButton();
             this.pnlTabBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,11 @@
             this.mainLayout.Size = new System.Drawing.Size(1120, 573);
             this.mainLayout.TabIndex = 2;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // pnlTabBar
             // 
             this.pnlTabBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -56,7 +62,6 @@
             this.pnlTabBar.BorderColor = System.Drawing.Color.Black;
             this.pnlTabBar.BorderRadius = 50;
             this.pnlTabBar.BorderSize = 0;
-            this.pnlTabBar.Controls.Add(this.btnReportOnline);
             this.pnlTabBar.Controls.Add(this.btnAdjustTask);
             this.pnlTabBar.Controls.Add(this.btnReportTask);
             this.pnlTabBar.Controls.Add(this.btnAcceptTask);
@@ -167,25 +172,6 @@
             this.btnTaskTable.UseVisualStyleBackColor = false;
             this.btnTaskTable.Click += new System.EventHandler(this.btnTaskTable_Click);
             // 
-            // btnReportOnline
-            // 
-            this.btnReportOnline.BackColor = System.Drawing.Color.Red;
-            this.btnReportOnline.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.btnReportOnline.BorderRadius = 40;
-            this.btnReportOnline.BorderSize = 0;
-            this.btnReportOnline.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportOnline.FlatAppearance.BorderSize = 0;
-            this.btnReportOnline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportOnline.ForeColor = System.Drawing.Color.White;
-            this.btnReportOnline.Location = new System.Drawing.Point(981, 11);
-            this.btnReportOnline.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReportOnline.Name = "btnReportOnline";
-            this.btnReportOnline.Size = new System.Drawing.Size(122, 54);
-            this.btnReportOnline.TabIndex = 8;
-            this.btnReportOnline.Text = "Test báo cáo online";
-            this.btnReportOnline.UseVisualStyleBackColor = false;
-            this.btnReportOnline.Click += new System.EventHandler(this.btnReportOnline_Click);
-            // 
             // TaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -214,6 +200,6 @@
         private GUI.CustomButton btnAdjustTask;
         private GUI.CustomButton btnReportTask;
         private System.Windows.Forms.Panel mainLayout;
-        private GUI.CustomButton btnReportOnline;
+        private System.Windows.Forms.Timer timer1;
     }
 }

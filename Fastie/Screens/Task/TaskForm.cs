@@ -13,13 +13,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fastie.Screens.Task.AssignmentAdjustmentTask;
 using Fastie.Screens.Task.ReportTask;
-using Fastie.Screens.Task.ReportTaskOnline;
+using BLL;
+using DTO;
+using Fastie.Components.Toastify;
+using System.Net.Http;
 
 namespace Fastie
 {
     public partial class TaskForm: Form
     {
         PermissionBLL permissionBLL = new PermissionBLL();
+        TaskBLL taskBLL = new TaskBLL();
+
+        private string thoiGianBaoCao;
+        private string idTaiKhoanBaoCao;
+        private string idCongViec;
+        private string tienDoHoanThanh;
+        private string noiDungBaoCao;
+        private string urlTaiLieu;
+        private string urlHinhAnh;
+        private string idLichSuCongViec;
 
         private string idTaiKhoan;
         private string idChucVu;
@@ -28,6 +41,7 @@ namespace Fastie
         public TaskForm(string idTaiKhoan, string idBoPhan, string idChucVu)
         {
             InitializeComponent();
+            timer1.Enabled = true;
             this.idTaiKhoan = idTaiKhoan;
             this.idChucVu = idChucVu;
             this.idBoPhan = idBoPhan;
@@ -159,10 +173,113 @@ namespace Fastie
         {
         }
 
-        private void btnReportOnline_Click(object sender, EventArgs e)
+        //load report task online
+        private async void handleImportDataGridView()
         {
-            ReportTaskOnlineForm reportTaskOnlineForm = new ReportTaskOnlineForm();
-            reportTaskOnlineForm.Show();
+            var values = await handleDataSheet();
+            if (values == null)
+            {
+                Console.WriteLine("No data available.");
+                return;
+            }
+
+            for (int i = 0; i < values.Count; i++)
+            {
+                this.thoiGianBaoCao = values[i][0]?.ToString();
+                this.idTaiKhoanBaoCao = values[i][1]?.ToString();
+                this.idCongViec = values[i][2]?.ToString();
+                this.tienDoHoanThanh = values[i][3]?.ToString();
+                this.noiDungBaoCao = values[i][4]?.ToString();
+                this.urlTaiLieu = values[i][5]?.ToString();
+                this.urlHinhAnh = values[i][6]?.ToString();
+                reportOnline();
+            }
+        }
+
+        private async Task<IList<IList<Object>>> handleDataSheet()
+        {
+            // API Key của bạn
+            string apiKey = "AIzaSyCHVUVNsmnAkuyVb6dStMTRd0nF9Q2uGdI";
+            string spreadsheetId = "1d0GYgmQ2-GFwFIF40c5BkaHUMMl2AMe5RK-5CNn3uuo";  // Thay bằng Spreadsheet ID
+            string range = "'Answer_1'!A2:G";  // Dải dữ liệu cần đọc
+
+            // URL để truy cập dữ liệu từ Google Sheets
+            string url = $"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}?key={apiKey}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = await response.Content.ReadAsStringAsync();
+
+                    // Phân tích dữ liệu JSON trả về
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<GoogleSheetResponse>(json);
+
+                    if (result != null && result.Values != null)
+                    {
+                        return result.Values;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"Lỗi khi truy cập Google Sheets: {response.ReasonPhrase}");
+                }
+            }
+
+            return null;
+        }
+
+        public class GoogleSheetResponse
+        {
+            public IList<IList<object>> Values { get; set; }
+        }
+
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
+
+        private void reportOnline()
+        {
+            if (this.tienDoHoanThanh == "Đang thực hiện")
+            {
+                idLichSuCongViec = taskBLL.BaoCaoDangTienHanhCongViecOnline(this.idCongViec, this.idTaiKhoanBaoCao, this.thoiGianBaoCao, this.noiDungBaoCao);
+            }
+            else
+            {
+                idLichSuCongViec = taskBLL.BaoCaoHoanThanhCongViecOnline(this.idCongViec, this.idTaiKhoanBaoCao, this.thoiGianBaoCao, this.noiDungBaoCao);
+            }
+            if (this.urlTaiLieu != null && string.IsNullOrEmpty(this.idLichSuCongViec) == false)
+            {
+                var baoCao = new BaoCao()
+                {
+                    Ten = "tai_lieu",
+                    Loai = "tài liệu",
+                    DuongDan = this.urlTaiLieu,
+                    IdLichSuCongViec = this.idLichSuCongViec
+                };
+                taskBLL.ThemTaiLieu(baoCao);
+            }
+            if (this.urlTaiLieu != null && string.IsNullOrEmpty(this.idLichSuCongViec) == false)
+            {
+                var baoCao = new BaoCao()
+                {
+                    Ten = "hinh_anh",
+                    Loai = "hình ảnh",
+                    DuongDan = this.urlHinhAnh,
+                    IdLichSuCongViec = this.idLichSuCongViec
+                };
+                taskBLL.ThemHinhAnh(baoCao);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            handleImportDataGridView();
+            showMessage("Đã cập nhật dữ liệu từ Google Sheets", "success");
         }
     }
 }

@@ -421,12 +421,6 @@
     <Compile Include="Screens\Task\Components\NearlyReportForm.Designer.cs">
       <DependentUpon>NearlyReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Task\ReportTaskOnline\ReportTaskOnlineForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Task\ReportTaskOnline\ReportTaskOnlineForm.Designer.cs">
-      <DependentUpon>ReportTaskOnlineForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\Task\ReportTask\DoReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -635,9 +629,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\LayoutNoHaveTasks\LayoutNoHaveTasksForm.resx">
       <DependentUpon>LayoutNoHaveTasksForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Task\ReportTaskOnline\ReportTaskOnlineForm.resx">
-      <DependentUpon>ReportTaskOnlineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\ReportTask\DoReportForm.resx">
       <DependentUpon>DoReportForm.cs</DependentUpon>
