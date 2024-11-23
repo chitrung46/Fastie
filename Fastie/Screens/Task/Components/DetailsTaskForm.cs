@@ -93,13 +93,12 @@ namespace Fastie.Screens.Task
                     taskForm.AddFormInMainLayout(acceptTaskForm);
                     if (currentTaskType == "Việc chủ động")
                     {
-                        
-                        acceptTaskForm.LoadDataTaskTable("Việc chủ động");
+                        acceptTaskForm.loadDataAcceptTask("Việc chủ động");
                         acceptTaskForm.BtnStateTask("Việc chủ động");
                     }
                     else if (currentTaskType == "Việc được giao")
                     {
-                        acceptTaskForm.LoadDataTaskTable("Việc được giao");
+                        acceptTaskForm.loadDataAcceptTask("Việc được giao");
                         acceptTaskForm.BtnStateTask("Việc được giao");
                     }
                     else

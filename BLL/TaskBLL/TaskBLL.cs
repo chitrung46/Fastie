@@ -256,6 +256,20 @@ namespace BLL
         }
 
 
+        //Nhận việc online
+        
+        public bool NhanCongViecOnline(string idTaiKhoanNhanViec, string idCongViec, string loaiNhanViec)
+        {
+            try
+            {
+                return taskDAL.NhanCongViecOnline(idTaiKhoanNhanViec, idCongViec, loaiNhanViec);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi nhận công việc online: " + ex.Message);
+            }
+        }
+
     }
 
 }

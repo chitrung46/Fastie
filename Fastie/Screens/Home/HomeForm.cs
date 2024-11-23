@@ -2,6 +2,7 @@
 using DTO;
 using Fastie.Components.NoPermissionAccessForm;
 using Fastie.Components.Toastify;
+using Fastie.Screens.ContactInformation;
 using Fastie.Screens.Decentralization;
 using System;
 using System.Collections.Generic;
@@ -323,5 +324,10 @@ namespace Fastie
             layoutConfirmForm.Show();
         }
 
+        private void pictureBoxHelp_Click(object sender, EventArgs e)
+        {
+            ContactInformationForm contactInformationForm = new ContactInformationForm();
+            contactInformationForm.Show();
+        }
     }
 }

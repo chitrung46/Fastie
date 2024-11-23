@@ -51,6 +51,8 @@
             this.lblPersonnelName = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.topbarLayout = new System.Windows.Forms.Panel();
+            this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDepartmentName = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -59,6 +61,8 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.topbarLayout.SuspendLayout();
+            this.customPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
@@ -354,11 +358,43 @@
             this.topbarLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.topbarLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.topbarLayout.Controls.Add(this.customPanel1);
             this.topbarLayout.Controls.Add(this.panel1);
             this.topbarLayout.Location = new System.Drawing.Point(302, 0);
             this.topbarLayout.Name = "topbarLayout";
             this.topbarLayout.Size = new System.Drawing.Size(1182, 65);
             this.topbarLayout.TabIndex = 2;
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customPanel1.BorderColor = System.Drawing.Color.Black;
+            this.customPanel1.BorderRadius = 30;
+            this.customPanel1.BorderSize = 0;
+            this.customPanel1.Controls.Add(this.pictureBoxHelp);
+            this.customPanel1.ForeColor = System.Drawing.Color.Black;
+            this.customPanel1.GradientAngle = 90F;
+            this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.customPanel1.Location = new System.Drawing.Point(29, 7);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(59, 55);
+            this.customPanel1.TabIndex = 16;
+            // 
+            // pictureBoxHelp
+            // 
+            this.pictureBoxHelp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBoxHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pictureBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxHelp.Image = global::Fastie.Properties.Resources.icons8_support_64;
+            this.pictureBoxHelp.Location = new System.Drawing.Point(7, 8);
+            this.pictureBoxHelp.Name = "pictureBoxHelp";
+            this.pictureBoxHelp.Size = new System.Drawing.Size(47, 40);
+            this.pictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxHelp.TabIndex = 15;
+            this.pictureBoxHelp.TabStop = false;
+            this.pictureBoxHelp.Click += new System.EventHandler(this.pictureBoxHelp_Click);
             // 
             // panel1
             // 
@@ -411,6 +447,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.topbarLayout.ResumeLayout(false);
             this.topbarLayout.PerformLayout();
+            this.customPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
@@ -446,6 +484,8 @@
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Label lblDepartmentName;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBoxHelp;
+        private GUI.TruniControls.CustomPanel customPanel1;
     }
 }
 

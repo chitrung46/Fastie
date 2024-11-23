@@ -24,7 +24,11 @@ namespace Fastie.Screens.Task.ReportTask
             this.taskForm = taskForm;
         }
 
-        public void LoadDataTaskTable()
+        public void LoadDataReportTask()
+        {
+            loadDataReportTask();
+        }
+        public void loadDataReportTask()
         {
             flowLayoutPanelTasks.Controls.Clear();
             List<TaskInfo> tasks = taskBLL.layCongViecTheoID(this.taskForm.IdTaiKhoan);
@@ -49,7 +53,7 @@ namespace Fastie.Screens.Task.ReportTask
 
         private void ReportTaskForm_Load(object sender, EventArgs e)
         {
-            LoadDataTaskTable();
+            loadDataReportTask();
         }
     }
 }

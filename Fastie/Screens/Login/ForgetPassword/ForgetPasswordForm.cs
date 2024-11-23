@@ -35,12 +35,13 @@ namespace Fastie.Screens.Login.ForgetPassword
         private void btnGetPassword_Click(object sender, EventArgs e)
         {
             string email = customTextBox_mail.Text.Trim();
-
+            btnGetPassword.Enabled = false;
             // Kiểm tra xem email có tồn tại trong hệ thống
             Account account = resetPassword.GetAccountByEmail(email);
             if (account == null)
             {
                 showMessage("Email không tồn tại trong hệ thống!", "error");
+                btnGetPassword.Enabled = true;
                 return;
             }
 
@@ -63,6 +64,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             else
             {
                 showMessage("Lỗi khi gửi email!", "error");
+                this.Close();
             }
         }
 
@@ -70,8 +72,8 @@ namespace Fastie.Screens.Login.ForgetPassword
         {
             try
             {
-                string fromEmail = "anhquan20041452@gmail.com";
-                string fromPassword = "fhbl clrh rurh dldr"; // Mật khẩu ứng dụng của email gửi
+                string fromEmail = "fastie.n02@gmail.com";
+                string fromPassword = "rtpl hzno ottm erol"; ; // Mật khẩu ứng dụng của email gửi
                 string content = $"Hệ thống phần mềm Fastie đã nhận được yêu cầu đổi mật khẩu\r\ncủa bạn.\r\nVui lòng nhập Mã xác nhận dưới đây để tiến hành đổi mật khẩu.\r\nMã xác nhận: {code}\r\nVui lòng không chia sẻ mã này với người khác vì lí do bảo mật.";
 
                 MailMessage mail = new MailMessage();

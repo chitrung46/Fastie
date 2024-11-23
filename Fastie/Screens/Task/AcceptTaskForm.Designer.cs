@@ -39,6 +39,7 @@
             this.pnlTabBar = new GUI.TruniControls.CustomPanel();
             this.btnAssignTask = new GUI.CustomButton();
             this.btnInitialtiveTask = new GUI.CustomButton();
+            this.lblShowNoTask = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlTabBar.SuspendLayout();
             this.SuspendLayout();
@@ -191,12 +192,26 @@
             this.btnInitialtiveTask.UseVisualStyleBackColor = false;
             this.btnInitialtiveTask.Click += new System.EventHandler(this.btnInitialtiveTask_Click);
             // 
+            // lblShowNoTask
+            // 
+            this.lblShowNoTask.AutoSize = true;
+            this.lblShowNoTask.BackColor = System.Drawing.Color.Transparent;
+            this.lblShowNoTask.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowNoTask.ForeColor = System.Drawing.Color.White;
+            this.lblShowNoTask.Location = new System.Drawing.Point(350, 304);
+            this.lblShowNoTask.Name = "lblShowNoTask";
+            this.lblShowNoTask.Size = new System.Drawing.Size(420, 28);
+            this.lblShowNoTask.TabIndex = 8;
+            this.lblShowNoTask.Text = "Không có công việc nào dành cho bạn";
+            this.lblShowNoTask.Visible = false;
+            // 
             // AcceptTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1120, 573);
+            this.Controls.Add(this.lblShowNoTask);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTabBar);
             this.Controls.Add(this.flowLayoutPanelTasks);
@@ -207,6 +222,7 @@
             this.panel1.PerformLayout();
             this.pnlTabBar.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -222,5 +238,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblShowNoTask;
     }
 }

@@ -12,6 +12,7 @@ using System.Web;
 using BLL.LoginBLL;
 using DTO;
 using Fastie.Components.Toastify;
+using Fastie.Screens.ContactInformation;
 namespace Fastie.Screens.Login
 {
     public partial class LoginForm : Form
@@ -31,17 +32,7 @@ namespace Fastie.Screens.Login
         }
         private void pictureEye_Click(object sender, EventArgs e)
         {
-            if(txtPassword.PasswordChar == true)
-            {
 
-                txtPassword.PasswordChar = false;
-                pictureEye.Image = Properties.Resources.icons8_hide_50;
-            }
-            else
-            {
-                txtPassword.PasswordChar = true;
-                pictureEye.Image = Properties.Resources.icons8_eye_23;
-            }
         }
 
         private void lblForgetPassword_Click(object sender, EventArgs e)
@@ -51,6 +42,16 @@ namespace Fastie.Screens.Login
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnLogin;
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             acc.TenDangNhap = txtEmail.Text;
             acc.MatKhau = txtPassword.Text;
@@ -93,9 +94,37 @@ namespace Fastie.Screens.Login
             this.Hide();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void lblForgetPassword_Click_1(object sender, EventArgs e)
         {
-            this.AcceptButton = btnLogin;
+            ForgetPasswordForm forgetPasswordForm = new ForgetPasswordForm();
+            forgetPasswordForm.Show();
+        }
+
+        private void pictureEye_Click_1(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == true)
+            {
+
+                txtPassword.PasswordChar = false;
+                pictureEye.Image = Properties.Resources.icons8_hide_50;
+            }
+            else
+            {
+                txtPassword.PasswordChar = true;
+                pictureEye.Image = Properties.Resources.icons8_eye_23;
+            }
+        }
+
+        private void pictureBoxHelp_Click(object sender, EventArgs e)
+        {
+            ContactInformationForm contactInformationForm = new ContactInformationForm();
+            contactInformationForm.Show();
+        }
+
+        private void lblTerm_Click(object sender, EventArgs e)
+        {
+            TermForm termForm = new TermForm();
+            termForm.Show();
         }
     }
 

@@ -773,5 +773,33 @@ namespace DAL.TaskDAL
             }
             return danhSachCongViec;
         }
+
+        //Nhận việc online
+        public bool NhanCongViecOnline(string idTaiKhoanNhanViec, string idCongViec, string loaiNhanViec)
+        {
+            string query = "proc_NhanViecOnline";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@idTaiKhoanNhanViec", idTaiKhoanNhanViec);
+                    cmd.Parameters.AddWithValue("@idCongViec", idCongViec);
+                    cmd.Parameters.AddWithValue("@loaiNhanViec", loaiNhanViec);
+
+                    conn.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+                catch (SqlException ex)
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

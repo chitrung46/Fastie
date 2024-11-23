@@ -221,6 +221,12 @@
     <Compile Include="Screens\ContactInformation\ContactInformationForm.Designer.cs">
       <DependentUpon>ContactInformationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\ContactInformation\TermForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\ContactInformation\TermForm.Designer.cs">
+      <DependentUpon>TermForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Department\DetailsDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\ContactInformation\ContactInformationForm.resx">
       <DependentUpon>ContactInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ContactInformation\TermForm.resx">
+      <DependentUpon>TermForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Decentralization\UpdateDecentralizationForm.resx">
       <DependentUpon>UpdateDecentralizationForm.cs</DependentUpon>
@@ -831,6 +840,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-check-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-support-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

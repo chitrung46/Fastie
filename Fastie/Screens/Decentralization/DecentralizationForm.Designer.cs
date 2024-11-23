@@ -209,7 +209,7 @@
             this.cbPosition.ForeColor = System.Drawing.Color.DimGray;
             this.cbPosition.IconColor = System.Drawing.Color.Black;
             this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPosition.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPosition.ListTextColor = System.Drawing.Color.Black;
             this.cbPosition.Location = new System.Drawing.Point(293, 131);
             this.cbPosition.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbPosition.Name = "cbPosition";
@@ -230,7 +230,7 @@
             this.cbDepartment.ForeColor = System.Drawing.Color.DimGray;
             this.cbDepartment.IconColor = System.Drawing.Color.Black;
             this.cbDepartment.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbDepartment.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.ListTextColor = System.Drawing.Color.Black;
             this.cbDepartment.Location = new System.Drawing.Point(28, 131);
             this.cbDepartment.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbDepartment.Name = "cbDepartment";

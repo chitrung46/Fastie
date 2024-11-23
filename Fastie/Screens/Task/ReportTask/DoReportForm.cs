@@ -198,7 +198,7 @@ namespace Fastie.Screens.Task.ReportTask
                 };
                 taskBLL.ThemHinhAnh(baoCao);
             }
-            reportTaskForm.LoadDataTaskTable();
+            reportTaskForm.LoadDataReportTask();
             this.Close();
         }
     }

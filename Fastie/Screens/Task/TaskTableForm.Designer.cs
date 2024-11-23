@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
+            this.lblShowNoNotification = new System.Windows.Forms.Label();
             this.flowLayoutPanelNotification = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlTaskTable = new GUI.TruniControls.CustomPanel();
+            this.lblShowNoTask = new System.Windows.Forms.Label();
             this.flowLayoutPanelTask = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel2.SuspendLayout();
@@ -44,6 +46,7 @@
             this.customPanel2.BorderColor = System.Drawing.Color.Black;
             this.customPanel2.BorderRadius = 30;
             this.customPanel2.BorderSize = 0;
+            this.customPanel2.Controls.Add(this.lblShowNoNotification);
             this.customPanel2.Controls.Add(this.flowLayoutPanelNotification);
             this.customPanel2.Controls.Add(this.label1);
             this.customPanel2.ForeColor = System.Drawing.Color.Black;
@@ -54,6 +57,19 @@
             this.customPanel2.Name = "customPanel2";
             this.customPanel2.Size = new System.Drawing.Size(482, 573);
             this.customPanel2.TabIndex = 0;
+            // 
+            // lblShowNoNotification
+            // 
+            this.lblShowNoNotification.AutoSize = true;
+            this.lblShowNoNotification.BackColor = System.Drawing.Color.Transparent;
+            this.lblShowNoNotification.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowNoNotification.ForeColor = System.Drawing.Color.White;
+            this.lblShowNoNotification.Location = new System.Drawing.Point(111, 269);
+            this.lblShowNoNotification.Name = "lblShowNoNotification";
+            this.lblShowNoNotification.Size = new System.Drawing.Size(276, 28);
+            this.lblShowNoNotification.TabIndex = 3;
+            this.lblShowNoNotification.Text = "Không có thông báo mới";
+            this.lblShowNoNotification.Visible = false;
             // 
             // flowLayoutPanelNotification
             // 
@@ -82,6 +98,7 @@
             this.pnlTaskTable.BorderColor = System.Drawing.Color.Black;
             this.pnlTaskTable.BorderRadius = 30;
             this.pnlTaskTable.BorderSize = 0;
+            this.pnlTaskTable.Controls.Add(this.lblShowNoTask);
             this.pnlTaskTable.Controls.Add(this.flowLayoutPanelTask);
             this.pnlTaskTable.Controls.Add(this.label2);
             this.pnlTaskTable.ForeColor = System.Drawing.Color.Black;
@@ -92,6 +109,19 @@
             this.pnlTaskTable.Name = "pnlTaskTable";
             this.pnlTaskTable.Size = new System.Drawing.Size(620, 573);
             this.pnlTaskTable.TabIndex = 0;
+            // 
+            // lblShowNoTask
+            // 
+            this.lblShowNoTask.AutoSize = true;
+            this.lblShowNoTask.BackColor = System.Drawing.Color.Transparent;
+            this.lblShowNoTask.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowNoTask.ForeColor = System.Drawing.Color.White;
+            this.lblShowNoTask.Location = new System.Drawing.Point(104, 272);
+            this.lblShowNoTask.Name = "lblShowNoTask";
+            this.lblShowNoTask.Size = new System.Drawing.Size(420, 28);
+            this.lblShowNoTask.TabIndex = 2;
+            this.lblShowNoTask.Text = "Không có công việc nào dành cho bạn";
+            this.lblShowNoTask.Visible = false;
             // 
             // flowLayoutPanelTask
             // 
@@ -142,5 +172,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelNotification;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTask;
+        private System.Windows.Forms.Label lblShowNoTask;
+        private System.Windows.Forms.Label lblShowNoNotification;
     }
 }

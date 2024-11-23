@@ -32,6 +32,12 @@ namespace Fastie.Screens.Task
             LoadDataNotification();
             LoadDataTask();
         }
+
+        public void LoadTaskTable()
+        {
+            LoadDataTask();
+            LoadDataNotification();
+        }
         private void LoadDataNotification()
         {
             flowLayoutPanelNotification.Controls.Clear();
@@ -40,17 +46,21 @@ namespace Fastie.Screens.Task
 
             if (workHistoryList.Count == 0)
             {
-                MessageBox.Show("Không có thông báo nào để hiển thị.", "Thông báo");
+                lblShowNoNotification.Visible = true;
             }
-
-            foreach (var history in workHistoryList)
+            else
             {
-                var notificationForm = new NotificationForm
+
+                foreach (var history in workHistoryList)
                 {
-                    TaskName = history.Ten,
-                    AssignerName = history.GhiChu // Sử dụng ghi chú làm tên người giao việc trong ví dụ này
-                };
-                flowLayoutPanelNotification.Controls.Add(notificationForm);
+                    var notificationForm = new NotificationForm
+                    {
+                        TaskName = history.Ten,
+                        AssignerName = history.GhiChu // Sử dụng ghi chú làm tên người giao việc trong ví dụ này
+                    };
+                    flowLayoutPanelNotification.Controls.Add(notificationForm);
+                }
+                lblShowNoNotification.Visible = false;
             }
         }
 
@@ -61,18 +71,22 @@ namespace Fastie.Screens.Task
             List<TaskInfo> tasks = taskBLL.layCongViecTheoID(this.taskForm.IdTaiKhoan);
             if(tasks.Count == 0)
             {
+                lblShowNoTask.Visible = true;
             }
-
-            foreach (var task in tasks)
+            else
             {
-                var taskForm = new LayoutTaskForm(this.taskForm)
+                foreach (var task in tasks)
                 {
-                    TitleTask = task.Ten,
-                    Status = task.TenTienDoCongViec,
-                    IdTask = task.Id
-                };
+                    var taskForm = new LayoutTaskForm(this.taskForm)
+                    {
+                        TitleTask = task.Ten,
+                        Status = task.TenTienDoCongViec,
+                        IdTask = task.Id
+                    };
 
-                flowLayoutPanelTask.Controls.Add(taskForm);
+                    flowLayoutPanelTask.Controls.Add(taskForm);
+                }
+                lblShowNoTask.Visible = false;
             }
         }
 

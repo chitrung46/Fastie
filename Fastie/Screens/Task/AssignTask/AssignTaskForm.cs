@@ -27,25 +27,29 @@ namespace Fastie.Screens.Task
         private void btnDetailAssignTask_Click(object sender, EventArgs e)
         {
             DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm(taskForm.IdTaiKhoan, taskForm.IdBoPhan);
-            detailAssignTaskForm.FormClosed += (s, args) => LoadDataTaskTable();
+            detailAssignTaskForm.FormClosed += (s, args) => loadDataAssignTask();
             detailAssignTaskForm.Show();
         }
 
         private void btnDetailAssignFastingTask_Click(object sender, EventArgs e)
         {
             DetailAssignFastingTaskForm detailAssignFastingTask = new DetailAssignFastingTaskForm(taskForm.IdTaiKhoan, taskForm.IdBoPhan);
-            detailAssignFastingTask.FormClosed += (s, args) => LoadDataTaskTable();
+            detailAssignFastingTask.FormClosed += (s, args) => loadDataAssignTask();
             detailAssignFastingTask.Show();
         }
 
         private void btnDetailAssignPositiveTask_Click(object sender, EventArgs e)
         {
             DetailAssignPositiveTaskForm detailAssignPositiveTaskForm = new DetailAssignPositiveTaskForm(taskForm.IdTaiKhoan, taskForm.IdBoPhan);
-            detailAssignPositiveTaskForm.FormClosed += (s, args) => LoadDataTaskTable();
+            detailAssignPositiveTaskForm.FormClosed += (s, args) => loadDataAssignTask();
             detailAssignPositiveTaskForm.Show();
         }
 
-        private void LoadDataTaskTable()
+        public void LoadDataAssignTask()
+        {
+            loadDataAssignTask();
+        }
+        private void loadDataAssignTask()
         {
             flowLayoutPanelTasks.Controls.Clear();
 
@@ -68,7 +72,7 @@ namespace Fastie.Screens.Task
 
         private void AssignTaskForm_Load(object sender, EventArgs e)
         {
-            LoadDataTaskTable();
+            loadDataAssignTask();
         }
 
  

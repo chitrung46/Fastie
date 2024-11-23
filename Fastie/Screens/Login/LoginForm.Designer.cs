@@ -28,45 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTerm = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             this.panel = new GUI.TruniControls.CustomPanel();
             this.btnLogin = new GUI.CustomButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureEye = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new GUI.TruniControls.CustomTextBox();
             this.lblForgetPassword = new System.Windows.Forms.Label();
             this.txtEmail = new GUI.TruniControls.CustomTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureEye = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // label3
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Controls.Add(this.panel);
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(-4, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1171, 650);
-            this.panel1.TabIndex = 0;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(356, 591);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(453, 21);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "© 2024 Fastie. Phần mềm được phát triển bởi đội ngũ Firon";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTerm
+            // 
+            this.lblTerm.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblTerm.AutoSize = true;
+            this.lblTerm.BackColor = System.Drawing.Color.Transparent;
+            this.lblTerm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblTerm.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTerm.ForeColor = System.Drawing.Color.White;
+            this.lblTerm.Location = new System.Drawing.Point(421, 615);
+            this.lblTerm.Name = "lblTerm";
+            this.lblTerm.Size = new System.Drawing.Size(329, 21);
+            this.lblTerm.TabIndex = 13;
+            this.lblTerm.Text = "Điều khoản sử dụng && Chính sách bảo mật";
+            this.lblTerm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTerm.Click += new System.EventHandler(this.lblTerm_Click);
             // 
             // panel
             // 
-            this.panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.panel.BorderColor = System.Drawing.Color.Black;
             this.panel.BorderRadius = 50;
@@ -85,10 +106,12 @@
             this.panel.GradientAngle = 125F;
             this.panel.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.panel.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.panel.Location = new System.Drawing.Point(381, 98);
+            this.panel.Location = new System.Drawing.Point(382, 81);
+            this.panel.MaximumSize = new System.Drawing.Size(500, 456);
+            this.panel.MinimumSize = new System.Drawing.Size(400, 456);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(400, 456);
-            this.panel.TabIndex = 8;
+            this.panel.TabIndex = 11;
             // 
             // btnLogin
             // 
@@ -109,42 +132,7 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pictureBox3.Image = global::Fastie.Properties.Resources.icons8_lock_50;
-            this.pictureBox3.Location = new System.Drawing.Point(71, 240);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureEye
-            // 
-            this.pictureEye.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pictureEye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureEye.Image = global::Fastie.Properties.Resources.icons8_eye_23;
-            this.pictureEye.Location = new System.Drawing.Point(308, 240);
-            this.pictureEye.Name = "pictureEye";
-            this.pictureEye.Size = new System.Drawing.Size(25, 20);
-            this.pictureEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureEye.TabIndex = 9;
-            this.pictureEye.TabStop = false;
-            this.pictureEye.Click += new System.EventHandler(this.pictureEye_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pictureBox2.Image = global::Fastie.Properties.Resources.icons8_email_30;
-            this.pictureBox2.Location = new System.Drawing.Point(71, 157);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // txtPassword
             // 
@@ -165,6 +153,9 @@
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.Size = new System.Drawing.Size(286, 35);
             this.txtPassword.TabIndex = 2;
+            this.toolTip2.SetToolTip(this.txtPassword, "Vui lòng nhập mật khẩu");
+            this.toolTip3.SetToolTip(this.txtPassword, "Vui lòng nhập mật khẩu");
+            this.toolTip1.SetToolTip(this.txtPassword, "Vui lòng nhập mật khẩu");
             this.txtPassword.UnderlinedStyle = false;
             // 
             // lblForgetPassword
@@ -180,7 +171,7 @@
             this.lblForgetPassword.TabIndex = 4;
             this.lblForgetPassword.Text = "Quên mật khẩu?";
             this.lblForgetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblForgetPassword.Click += new System.EventHandler(this.lblForgetPassword_Click);
+            this.lblForgetPassword.Click += new System.EventHandler(this.lblForgetPassword_Click_1);
             // 
             // txtEmail
             // 
@@ -201,6 +192,9 @@
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.Size = new System.Drawing.Size(286, 36);
             this.txtEmail.TabIndex = 1;
+            this.toolTip2.SetToolTip(this.txtEmail, "Vui lòng nhập email");
+            this.toolTip3.SetToolTip(this.txtEmail, "Vui lòng nhập email");
+            this.toolTip1.SetToolTip(this.txtEmail, "Vui lòng nhập email");
             this.txtEmail.UnderlinedStyle = false;
             // 
             // label5
@@ -242,40 +236,99 @@
             this.label2.Text = "Email";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBoxHelp
+            // 
+            this.pictureBoxHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxHelp.Image = global::Fastie.Properties.Resources.icons8_support_64;
+            this.pictureBoxHelp.Location = new System.Drawing.Point(1098, 586);
+            this.pictureBoxHelp.Name = "pictureBoxHelp";
+            this.pictureBoxHelp.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxHelp.TabIndex = 14;
+            this.pictureBoxHelp.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxHelp, "Hỗ trợ");
+            this.pictureBoxHelp.Click += new System.EventHandler(this.pictureBoxHelp_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pictureBox3.Image = global::Fastie.Properties.Resources.icons8_lock_50;
+            this.pictureBox3.Location = new System.Drawing.Point(71, 240);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureEye
+            // 
+            this.pictureEye.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pictureEye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureEye.Image = global::Fastie.Properties.Resources.icons8_eye_23;
+            this.pictureEye.Location = new System.Drawing.Point(308, 240);
+            this.pictureEye.Name = "pictureEye";
+            this.pictureEye.Size = new System.Drawing.Size(25, 20);
+            this.pictureEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureEye.TabIndex = 9;
+            this.pictureEye.TabStop = false;
+            this.pictureEye.Click += new System.EventHandler(this.pictureEye_Click_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pictureBox2.Image = global::Fastie.Properties.Resources.icons8_email_30;
+            this.pictureBox2.Location = new System.Drawing.Point(71, 157);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(1164, 648);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBoxHelp);
+            this.Controls.Add(this.lblTerm);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.panel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Đăng nhập";
             this.Load += new System.EventHandler(this.LoginForm_Load);
-            this.panel1.ResumeLayout(false);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private GUI.CustomButton btnLogin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblForgetPassword;
+        private System.Windows.Forms.Label label3;
         private GUI.TruniControls.CustomPanel panel;
-        private GUI.TruniControls.CustomTextBox txtPassword;
-        private System.Windows.Forms.Label label5;
+        private GUI.CustomButton btnLogin;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureEye;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private GUI.TruniControls.CustomTextBox txtPassword;
+        private System.Windows.Forms.Label lblForgetPassword;
         private GUI.TruniControls.CustomTextBox txtEmail;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTerm;
+        private System.Windows.Forms.PictureBox pictureBoxHelp;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip3;
     }
 }

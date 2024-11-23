@@ -34,6 +34,9 @@ namespace Fastie
         private string urlHinhAnh;
         private string idLichSuCongViec;
 
+        private string idTaiKhoanNhanViec;
+        private string idCongViecNhanViec;
+
         private string idTaiKhoan;
         private string idChucVu;
         private string idBoPhan;
@@ -41,10 +44,13 @@ namespace Fastie
         public TaskForm(string idTaiKhoan, string idBoPhan, string idChucVu)
         {
             InitializeComponent();
-            timer1.Enabled = true;
+
             this.idTaiKhoan = idTaiKhoan;
             this.idChucVu = idChucVu;
             this.idBoPhan = idBoPhan;
+
+            handleAcceptTask();
+            handleReportOnline();
 
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0019");
             setStateButton(btnTaskTable);
@@ -174,9 +180,13 @@ namespace Fastie
         }
 
         //load report task online
-        private async void handleImportDataGridView()
+        private async void handleReportOnline()
         {
-            var values = await handleDataSheet();
+            // API Key của bạn
+            string spreadsheetId = "1d0GYgmQ2-GFwFIF40c5BkaHUMMl2AMe5RK-5CNn3uuo";  // Thay bằng Spreadsheet ID
+            string range = "'Answer_1'!A2:G";  // Dải dữ liệu cần đọc
+            var values = await handleDataSheet(spreadsheetId, range);
+
             if (values == null)
             {
                 Console.WriteLine("No data available.");
@@ -196,12 +206,37 @@ namespace Fastie
             }
         }
 
-        private async Task<IList<IList<Object>>> handleDataSheet()
+        private async void handleAcceptTask()
         {
-            // API Key của bạn
+
+           // API Key của bạn
+            string spreadsheetId = "15iJdUaTMNOW6dMI2CZ9h9qKPQLQzOfK6j-BxZaaxdyw";  // Thay bằng Spreadsheet ID
+            string range = "'Answer_1'!A2:C";  // Dải dữ liệu cần đọc
+            var values = await handleDataSheet(spreadsheetId, range);
+
+            if (values == null)
+            {
+                Console.WriteLine("Không có dữ liệu nhận việc.");
+                return;
+            }
+
+            for (int i = 0; i < values.Count; i++)
+            {
+                this.idTaiKhoanNhanViec = values[i][1]?.ToString();
+                this.idCongViecNhanViec = values[i][2]?.ToString();
+                if (!string.IsNullOrEmpty(this.idTaiKhoanNhanViec) || !string.IsNullOrEmpty(this.idCongViecNhanViec))
+                {
+                    taskBLL.NhanCongViecOnline(this.idTaiKhoanNhanViec, this.idCongViecNhanViec, "Nhận việc");
+                } else
+                {
+                    Console.WriteLine("Không có dữ liệu nhận việc.");
+                }
+            }
+        }
+
+        private async Task<IList<IList<Object>>> handleDataSheet(string spreadsheetId, string range)
+        {
             string apiKey = "AIzaSyCHVUVNsmnAkuyVb6dStMTRd0nF9Q2uGdI";
-            string spreadsheetId = "1d0GYgmQ2-GFwFIF40c5BkaHUMMl2AMe5RK-5CNn3uuo";  // Thay bằng Spreadsheet ID
-            string range = "'Answer_1'!A2:G";  // Dải dữ liệu cần đọc
 
             // URL để truy cập dữ liệu từ Google Sheets
             string url = $"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}?key={apiKey}";
@@ -276,10 +311,22 @@ namespace Fastie
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void btnReloadData_Click(object sender, EventArgs e)
         {
-            handleImportDataGridView();
-            showMessage("Đã cập nhật dữ liệu từ Google Sheets", "success");
+            handleAcceptTask();
+            handleReportOnline();
+
+            TaskTableForm taskTableForm = new TaskTableForm(this);
+            AssignTaskForm assignTaskForm = new AssignTaskForm(this);
+            AcceptTaskForm acceptTaskForm = new AcceptTaskForm(this);
+            ReportTaskForm reportTaskForm = new ReportTaskForm(this);
+
+            reportTaskForm.loadDataReportTask();
+            acceptTaskForm.loadDataAcceptTask();
+            assignTaskForm.LoadDataAssignTask();
+            taskTableForm.LoadTaskTable();
+
+            showMessage("Dữ liệu đã được cập nhật", "success");
         }
     }
 }

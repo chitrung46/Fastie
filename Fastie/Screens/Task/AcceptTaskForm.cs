@@ -29,7 +29,7 @@ namespace Fastie.Screens.Task
 
         private void AcceptTaskForm_Load(object sender, EventArgs e)
         {
-            LoadDataTaskTable();
+            loadDataAcceptTask();
         }
         private void setStateButton(Button stateButton)
         {
@@ -44,7 +44,8 @@ namespace Fastie.Screens.Task
             stateButton.BackColor = Color.IndianRed;
         }
 
-        public void LoadDataTaskTable(string taskType = null)
+ 
+        public void loadDataAcceptTask(string taskType = null)
         {
             this.currentTaskType = taskType;
             flowLayoutPanelTasks.Controls.Clear();
@@ -76,11 +77,11 @@ namespace Fastie.Screens.Task
                     };
                     flowLayoutPanelTasks.Controls.Add(layoutGetTaskForm);
                 }
+                lblShowNoTask.Visible = false;
             }
             else
             {
-   
-                MessageBox.Show("Không có công việc nào phù hợp để hiển thị.", "Thông báo");
+                lblShowNoTask.Visible = true;
             }
         }
 
@@ -99,7 +100,7 @@ namespace Fastie.Screens.Task
         {
             this.currentTaskType = taskType;
             //MessageBox.Show(currentTaskType);
-            LoadDataTaskTable(currentTaskType);
+            loadDataAcceptTask(currentTaskType);
             if(this.currentTaskType == "Việc chủ động")
             {
                 setStateButton(btnInitialtiveTask);
