@@ -80,7 +80,7 @@
             // 
             this.txtCode4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.txtCode4.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtCode4.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtCode4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.txtCode4.BorderRadius = 5;
             this.txtCode4.BorderSize = 1;
             this.txtCode4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,7 +102,7 @@
             // 
             this.txtCode3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.txtCode3.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtCode3.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtCode3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.txtCode3.BorderRadius = 5;
             this.txtCode3.BorderSize = 1;
             this.txtCode3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,7 +124,7 @@
             // 
             this.txtCode2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.txtCode2.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtCode2.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtCode2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.txtCode2.BorderRadius = 5;
             this.txtCode2.BorderSize = 1;
             this.txtCode2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,7 +146,7 @@
             // 
             this.txtCode1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.txtCode1.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtCode1.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtCode1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.txtCode1.BorderRadius = 5;
             this.txtCode1.BorderSize = 1;
             this.txtCode1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -106,7 +106,7 @@
             // 
             this.txtConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.txtConfirmPassword.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtConfirmPassword.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtConfirmPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.txtConfirmPassword.BorderRadius = 15;
             this.txtConfirmPassword.BorderSize = 1;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,7 +127,7 @@
             // 
             this.txtNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.txtNewPassword.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtNewPassword.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtNewPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.txtNewPassword.BorderRadius = 15;
             this.txtNewPassword.BorderSize = 1;
             this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
