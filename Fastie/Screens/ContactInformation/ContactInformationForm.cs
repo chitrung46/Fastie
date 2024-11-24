@@ -120,7 +120,7 @@ namespace Fastie.Screens.ContactInformation
                 string userName = txtName.Text.Trim(); // Nếu bạn có trường tên người dùng
 
                 // Lấy thông tin về yêu cầu (có thể được truyền vào từ giao diện)
-                string subject = cbTypeRequest.Text.Trim(); // Chủ đề yêu cầu hỗ trợ
+                string subject = cbTypeRequest.Texts.Trim(); // Chủ đề yêu cầu hỗ trợ
                 string issueDescription = txtDescribe.Text.Trim(); // Mô tả vấn đề người dùng gửi
                 string phoneNumber = txtNumberphone.Text.Trim(); // Số điện thoại liên hệ
 
@@ -137,7 +137,7 @@ Dưới đây là thông tin về yêu cầu của bạn:
 - Mô tả vấn đề: {issueDescription}
 - Số điện thoại liên hệ: {phoneNumber}
 
-Chúng tôi cam kết sẽ hỗ trợ bạn một cách nhanh chóng và hiệu quả. Nếu có thêm thông tin cần cung cấp hoặc nếu bạn có bất kỳ câu hỏi nào, xin vui lòng trả lời email này hoặc gọi điện cho chúng tôi qua số [Số điện thoại hỗ trợ].
+Chúng tôi cam kết sẽ hỗ trợ bạn một cách nhanh chóng và hiệu quả. Nếu có thêm thông tin cần cung cấp hoặc nếu bạn có bất kỳ câu hỏi nào, xin vui lòng trả lời email này hoặc gọi điện cho chúng tôi qua số 0939999666.
 
 Chân thành cảm ơn và mong được hỗ trợ bạn!
 

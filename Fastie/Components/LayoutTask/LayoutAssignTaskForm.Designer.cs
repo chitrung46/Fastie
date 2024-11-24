@@ -39,6 +39,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAssignArisingTask = new GUI.CustomButton();
+            this.customButton2 = new GUI.CustomButton();
             this.customButton1 = new GUI.CustomButton();
             this.btnGetTask = new GUI.CustomButton();
             this.panel3.SuspendLayout();
@@ -115,7 +116,7 @@
             this.panel4.Controls.Add(this.lblJobAssigner);
             this.panel4.Location = new System.Drawing.Point(592, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(231, 54);
+            this.panel4.Size = new System.Drawing.Size(211, 54);
             this.panel4.TabIndex = 5;
             // 
             // lblJobAssigner
@@ -130,17 +131,18 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.customButton2);
             this.panel5.Controls.Add(this.customButton1);
             this.panel5.Controls.Add(this.btnGetTask);
-            this.panel5.Location = new System.Drawing.Point(947, 3);
+            this.panel5.Location = new System.Drawing.Point(924, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(167, 54);
+            this.panel5.Size = new System.Drawing.Size(190, 54);
             this.panel5.TabIndex = 6;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.btnAssignArisingTask);
-            this.panel6.Location = new System.Drawing.Point(829, 3);
+            this.panel6.Location = new System.Drawing.Point(806, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(112, 54);
             this.panel6.TabIndex = 7;
@@ -163,6 +165,24 @@
             this.btnAssignArisingTask.Text = "Phát sinh";
             this.btnAssignArisingTask.UseVisualStyleBackColor = false;
             // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.Red;
+            this.customButton2.BorderColor = System.Drawing.Color.White;
+            this.customButton2.BorderRadius = 15;
+            this.customButton2.BorderSize = 0;
+            this.customButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton2.ForeColor = System.Drawing.Color.White;
+            this.customButton2.Image = global::Fastie.Properties.Resources.icons8_multiply_24;
+            this.customButton2.Location = new System.Drawing.Point(125, 6);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(48, 40);
+            this.customButton2.TabIndex = 2;
+            this.customButton2.UseVisualStyleBackColor = false;
+            // 
             // customButton1
             // 
             this.customButton1.BackColor = System.Drawing.Color.LimeGreen;
@@ -175,7 +195,7 @@
             this.customButton1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customButton1.ForeColor = System.Drawing.Color.White;
             this.customButton1.Image = global::Fastie.Properties.Resources.icons8_check_24;
-            this.customButton1.Location = new System.Drawing.Point(85, 6);
+            this.customButton1.Location = new System.Drawing.Point(73, 6);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(48, 40);
             this.customButton1.TabIndex = 1;
@@ -241,5 +261,6 @@
         private System.Windows.Forms.Panel panel6;
         private GUI.CustomButton btnAssignArisingTask;
         private GUI.CustomButton customButton1;
+        private GUI.CustomButton customButton2;
     }
 }
