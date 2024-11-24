@@ -8,55 +8,66 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using BLL.AnalyticsBLL;
+using DTO.AnalyticsDTO;
 
 namespace Fastie.Screens.Analytics
 {
     public partial class ChartCompoundColumnAcceptTaskForm : Form
     {
-        public ChartCompoundColumnAcceptTaskForm()
+        private string accountId;
+        private string departmentId;
+        private string positionId;
+        private string personnelId;
+        private DateTime startDate;
+        private DateTime endDate;
+
+        private AnalyticsBLL analyticsBLL = new AnalyticsBLL();
+
+        public ChartCompoundColumnAcceptTaskForm(string accountId, string departmentId, string positionId, string personnelId, DateTime startDate, DateTime endDate)
         {
             InitializeComponent();
+
+            this.accountId = accountId;
+            this.departmentId = departmentId;
+            this.positionId = positionId;
+            this.personnelId = personnelId;
+            this.startDate = startDate;
+            this.endDate = endDate;
+
             InitializeColumnChartAcceptTask();
         }
+
         private void InitializeColumnChartAcceptTask()
         {
-            // Đặt tiêu đề cho biểu đồ
-            chartAcceptTask.Titles.Add("Thống kê số lần nhận việc");
+            List<AnalyticsDTO> data = analyticsBLL.ThongKeNhanViecChuDongVaDieuChinh(accountId, departmentId, positionId, personnelId, startDate, endDate);
 
-            // Tạo một ChartArea để vẽ biểu đồ
+            // Set chart title
+            chartAcceptTask.Titles.Add("Thống kê số lần nhận việc và xin điều chỉnh phân công");
+
+            // Set up ChartArea
             ChartArea chartArea = new ChartArea("MainArea");
-            chartAcceptTask.ChartAreas.Clear(); // Xóa các ChartArea cũ nếu có
+            chartAcceptTask.ChartAreas.Clear();
             chartAcceptTask.ChartAreas.Add(chartArea);
 
-            // Tạo Series cho Nhóm 1
-            Series series1 = new Series("Nhóm 1")
-            {
-                ChartType = SeriesChartType.Column
-            };
-            series1.Points.AddXY("Tháng 1", 50);
-            series1.Points.AddXY("Tháng 2", 70);
-            series1.Points.AddXY("Tháng 3", 60);
+            // Configure series
+            Series seriesAcceptTask = new Series("Nhận việc chủ động") { ChartType = SeriesChartType.Column };
+            Series seriesAdjustRequest = new Series("Xin điều chỉnh") { ChartType = SeriesChartType.Column };
 
-            // Tạo Series cho Nhóm 2
-            Series series2 = new Series("Nhóm 2")
-            {
-                ChartType = SeriesChartType.Column
-            };
-            series2.Points.AddXY("Tháng 1", 40);
-            series2.Points.AddXY("Tháng 2", 65);
-            series2.Points.AddXY("Tháng 3", 80);
+            seriesAcceptTask.Points.AddXY("Nhận việc", data[0].SoLanNhanViecChuDong);
+            seriesAdjustRequest.Points.AddXY("Xin điều chỉnh", data[0].SoLanXinDieuChinh);
 
-            // Thêm các Series vào biểu đồ
-            chartAcceptTask.Series.Clear(); // Xóa các Series cũ nếu có
-            chartAcceptTask.Series.Add(series1);
-            chartAcceptTask.Series.Add(series2);
+            // Add series to the chart
+            chartAcceptTask.Series.Clear();
+            chartAcceptTask.Series.Add(seriesAcceptTask);
+            chartAcceptTask.Series.Add(seriesAdjustRequest);
 
-            // Cấu hình trục X và trục Y
-            chartArea.AxisX.Title = "Tháng";
-            chartArea.AxisY.Title = "Giá Trị";
-            chartArea.AxisY.Interval = 10;
+            // Configure axis
+            chartArea.AxisX.Title = "Trạng thái";
+            chartArea.AxisY.Title = "Số lượng";
+            chartArea.AxisY.Interval = 1;
 
-            // Thêm chú thích cho biểu đồ nếu chưa có
+            // Add legend if not present
             if (chartAcceptTask.Legends.Count == 0)
             {
                 chartAcceptTask.Legends.Add(new Legend("Legend"));

@@ -1,9 +1,14 @@
-﻿using System;
+﻿
+using BLL.AnalyticsBLL;
+using DTO;
+using DTO.AnalyticsDTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,45 +18,104 @@ namespace Fastie.Screens.Analytics
 {
     public partial class PieChartTaskCompletionRateForm : Form
     {
-        public PieChartTaskCompletionRateForm()
+        private AnalyticsBLL analyticsBLL = new AnalyticsBLL();
+        private string accountId;
+        private string departmentId;
+        private string positionId;
+        private string personnelId;
+        private DateTime startDate;
+        private DateTime endDate;
+
+        public PieChartTaskCompletionRateForm(string accountId, string departmentId, string positionId, string personnelId, DateTime startDate, DateTime endDate)
         {
             InitializeComponent();
-            InitializePieChartTaskCompletionRate();
+
+            this.accountId = accountId;
+            this.departmentId = departmentId;
+            this.positionId = positionId;
+            this.personnelId = personnelId;
+            this.startDate = startDate;
+            this.endDate = endDate;
+
+            InitializeColumnChart();
         }
 
-        private void InitializePieChartTaskCompletionRate()
+        private void InitializeColumnChart()
         {
-            // Đặt tiêu đề cho biểu đồ
-            chartPieTaskCompletionRate.Titles.Add("Tỉ lệ hoàn thành công việc");
-
-            // Tạo một ChartArea mới dành riêng cho biểu đồ tròn
-            ChartArea pieChartArea = new ChartArea("PieChartArea");
-            chartPieTaskCompletionRate.ChartAreas.Clear(); // Xóa các ChartArea cũ nếu có
-            chartPieTaskCompletionRate.ChartAreas.Add(pieChartArea);
-
-            // Tạo một Series với kiểu biểu đồ là Pie
-            Series series = new Series("Số Lượng")
+            try
             {
-                ChartType = SeriesChartType.Pie,
-                ChartArea = "PieChartArea" // Liên kết Series với ChartArea mới
-            };
+                // Lấy dữ liệu từ BLL
+                List<AnalyticsDTO> data;
 
-            // Thêm các dữ liệu mẫu vào Series
-            //(vd 1 công việc chờ nhận, 1 cv chưa bắt đầu, 5 cv đang thực hiện, 3 cv chờ duyệt, 7 cv hoàn thành)
-            series.Points.AddXY("công việc chưa hoàn thành", 30);
-            series.Points.AddXY("công việc hoàn thành", 70);
+                if (departmentId == "Tất cả") // Nếu chọn tất cả bộ phận
+                {
+                    data = analyticsBLL.ThongKeTyLeHoanThanhTatCaBoPhan(accountId, startDate, endDate);
+                }
+                else // Nếu chọn bộ phận cụ thể
+                {
+                    data = analyticsBLL.ThongKeTyLeHoanThanh(accountId, departmentId, positionId, personnelId, startDate, endDate);
+                }
 
-            // Thêm Series vào biểu đồ
-            chartPieTaskCompletionRate.Series.Clear(); // Xóa các Series cũ nếu có
-            chartPieTaskCompletionRate.Series.Add(series);
+                // Xóa và làm mới biểu đồ
+                chartPieTaskCompletionRate.ChartAreas.Clear();
+                chartPieTaskCompletionRate.Series.Clear();
+                chartPieTaskCompletionRate.Legends.Clear();
 
+                ChartArea columnChartArea = new ChartArea("ColumnChartArea")
+                {
+                    BackColor = Color.Transparent,
+                    AxisX = { Title = "Bộ phận", Interval = 1 }, // Hiển thị tên từng bộ phận trên trục X
+                    AxisY = { Title = "Tỷ lệ hoàn thành (%)" } // Hiển thị tỷ lệ trên trục Y
+                };
+                chartPieTaskCompletionRate.ChartAreas.Add(columnChartArea);
 
+                Series series = new Series("Completion Rate")
+                {
+                    ChartType = SeriesChartType.Column, // Hiển thị dạng cột
+                    ChartArea = "ColumnChartArea",
+                    IsValueShownAsLabel = true // Hiển thị giá trị trên các cột
+                };
 
-            // Thêm chú thích cho biểu đồ
-            if (chartPieTaskCompletionRate.Legends.Count == 0)
+                if (data != null && data.Count > 0)
+                {
+                    foreach (var stats in data)
+                    {
+                        if (!string.IsNullOrEmpty(stats.TenBoPhan) && stats.TyLeHoanThanh != null)
+                        {
+                            series.Points.AddXY(stats.TenBoPhan, stats.TyLeHoanThanh);
+                        }
+                        else
+                        {
+                            series.Points.AddXY(stats.TenBoPhan ?? "N/A", 0); // Xử lý nếu thiếu dữ liệu
+                        }
+                    }
+                }
+                else
+                {
+                    series.Points.AddXY("Không có dữ liệu", 0);
+                }
+
+                chartPieTaskCompletionRate.Series.Add(series);
+
+                Legend legend = new Legend("Legend")
+                {
+                    Title = "Bộ phận",
+                    Docking = Docking.Right,
+                    BackColor = Color.Transparent
+                };
+                chartPieTaskCompletionRate.Legends.Add(legend);
+
+                chartPieTaskCompletionRate.Titles.Clear();
+                chartPieTaskCompletionRate.Titles.Add(new Title("Tỉ lệ hoàn thành công việc theo bộ phận", Docking.Top, new Font("Arial", 16, FontStyle.Bold), Color.Black));
+            }
+            catch (Exception ex)
             {
-                chartPieTaskCompletionRate.Legends.Add(new Legend("Legend"));
+                MessageBox.Show($"Lỗi khi hiển thị biểu đồ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
     }
+
 }

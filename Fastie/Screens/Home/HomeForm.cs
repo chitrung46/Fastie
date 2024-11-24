@@ -209,11 +209,13 @@ namespace Fastie
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
-            Analytics analytics = new Analytics();
-            addFormInMainLayout(analytics);
-            setStatePanel(stateAnalytics);
+            // Giả sử bạn có biến `idTaiKhoan` chứa ID của tài khoản đang đăng nhập
+            string accountId = this.idTaiKhoan; // Hoặc thay bằng cách lấy ID tài khoản đang đăng nhập
 
+            Analytics analytics = new Analytics(accountId);
+            addFormInMainLayout(analytics);
         }
+
         private void btnAccount_Click(object sender, EventArgs e)
         {
             string permissionId = "Q0002,Q0003,Q0004,Q0005";

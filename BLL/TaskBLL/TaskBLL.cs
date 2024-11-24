@@ -269,6 +269,17 @@ namespace BLL
                 throw new Exception("Lỗi khi nhận công việc online: " + ex.Message);
             }
         }
+        public void TaoLichSuNhanViec(string idCongViec, string idTaiKhoanNhan)
+        {
+            try
+            {
+                taskDAL.TaoLichSuNhanViec(idCongViec, idTaiKhoanNhan);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tạo lịch sử nhận việc: " + ex.Message);
+            }
+        }
 
     }
 

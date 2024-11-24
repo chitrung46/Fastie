@@ -801,5 +801,22 @@ namespace DAL.TaskDAL
                 }
             }
         }
+
+        public void TaoLichSuNhanViec(string idCongViec, string idTaiKhoanNhan)
+        {
+            string query = "proc_TaoLichSuNhanViec";
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@idCongViec", idCongViec);
+                    command.Parameters.AddWithValue("@idTaiKhoanNhan", idTaiKhoanNhan);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
