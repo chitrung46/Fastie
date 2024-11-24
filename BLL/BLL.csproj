@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL\AccountBLL.cs" />
+    <Compile Include="AnalyticsBLL\AnalyticsBLL.cs" />
     <Compile Include="ListRoleBLL\ListRoleBLL.cs" />
     <Compile Include="LoginBLL\GetInFoLoginBLL.cs" />
     <Compile Include="ResetPasswordBLL\ResetPasswordBLL.cs" />

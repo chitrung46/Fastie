@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDAL\AccountDAL.cs" />
+    <Compile Include="AnalyticsDAL\AnalyticsDAL.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="DecentralizationDAL\DecentralizationDAL.cs" />
     <Compile Include="DepartmentDAL\DepartmentDAL.cs" />
@@ -127,5 +128,6 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

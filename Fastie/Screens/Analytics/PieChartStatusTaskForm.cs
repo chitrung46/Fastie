@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL.AnalyticsBLL;
+using DTO.AnalyticsDTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,54 +15,82 @@ namespace Fastie.Screens.Analytics
 {
     public partial class PieChartStatusTaskForm : Form
     {
-        public PieChartStatusTaskForm()
+        private AnalyticsBLL analyticsBLL = new AnalyticsBLL();
+        private string accountId;
+        private string departmentId;
+        private string positionId;
+        private string personnelId;
+        private DateTime startDate;
+        private DateTime endDate;
+
+        public PieChartStatusTaskForm(string accountId, string departmentId, string positionId, string personnelId, DateTime startDate, DateTime endDate)
         {
             InitializeComponent();
+            this.accountId = accountId;
+            this.departmentId = departmentId;
+            this.positionId = positionId;
+            this.personnelId = personnelId;
+            this.startDate = startDate;
+            this.endDate = endDate;
+
             InitializePieChartStateTask();
         }
 
         private void InitializePieChartStateTask()
         {
-            // Tạo một ChartArea mới dành riêng cho biểu đồ tròn
-            ChartArea pieChartArea = new ChartArea("PieChartArea");
-            chartPieStatusTask.ChartAreas.Clear(); // Xóa các ChartArea cũ nếu có
-            chartPieStatusTask.ChartAreas.Add(pieChartArea);
-
-            // Tạo một Series với kiểu biểu đồ là Pie
-            Series series = new Series("Số Lượng")
+            try
             {
-                ChartType = SeriesChartType.Pie,
-                ChartArea = "PieChartArea" // Liên kết Series với ChartArea mới
-            };
+                // Fetch data from BLL
+                List<AnalyticsDTO> data = analyticsBLL.ThongKeTrangThaiCongViec(accountId, departmentId, positionId, personnelId, startDate, endDate);
 
-            // Cấu hình để hiển thị phần trăm thay vì tên
-            series.IsValueShownAsLabel = true;
-            series.Label = "#PERCENT"; // Hiển thị % cho từng phần thay vì tên
-            series.LegendText = "#VALX"; // Hiển thị tên hạng mục trong phần chú thích
+                // Clear old chart data
+                chartPieStatusTask.ChartAreas.Clear();
+                chartPieStatusTask.Series.Clear();
+                chartPieStatusTask.Legends.Clear();
 
-            // Thêm các điểm dữ liệu
-            series.Points.AddXY("Công việc chờ nhận", 10);
-            series.Points.AddXY("Công việc chưa bắt đầu", 20);
-            series.Points.AddXY("Công việc đang thực hiện", 30);
-            series.Points.AddXY("Công việc chờ duyệt", 30);
-            series.Points.AddXY("Công việc hoàn thành", 10);
+                // Create a new ChartArea
+                ChartArea pieChartArea = new ChartArea("PieChartArea");
+                pieChartArea.BackColor = Color.Transparent;
+                chartPieStatusTask.ChartAreas.Add(pieChartArea);
 
-            // Thêm Series vào biểu đồ
-            chartPieStatusTask.Series.Clear(); // Xóa các Series cũ nếu có
-            chartPieStatusTask.Series.Add(series);
+                // Create a new Series for Pie Chart
+                Series series = new Series("Task Status")
+                {
+                    ChartType = SeriesChartType.Pie,
+                    ChartArea = "PieChartArea",
+                    IsValueShownAsLabel = true,
+                    Label = "#PERCENT", // Show percentages on the chart
+                    LegendText = "#VALX" // Show categories in the legend
+                };
 
+                // Populate Series with data
+                foreach (var item in data)
+                {
+                    series.Points.AddXY(item.TenChucVu, Convert.ToInt32(item.IdChucVu)); // Assuming `TenChucVu` = Status, `IdChucVu` = Count
+                }
 
-            // Thêm chú thích cho biểu đồ
-            if (chartPieStatusTask.Legends.Count == 0)
-            {
-                chartPieStatusTask.Legends.Add(new Legend("Legend"));
+                // Add Series to Chart
+                chartPieStatusTask.Series.Add(series);
+
+                // Add Legend
+                Legend legend = new Legend("TaskLegend")
+                {
+                    Title = "Task Status",
+                    Docking = Docking.Right,
+                    BackColor = Color.Transparent
+                };
+                chartPieStatusTask.Legends.Add(legend);
+
+                // Customize chart appearance
+                chartPieStatusTask.BackColor = Color.White;
+                chartPieStatusTask.Titles.Clear();
+                chartPieStatusTask.Titles.Add(new Title("Thống kê trạng thái của các công việc", Docking.Top, new Font("Arial", 16, FontStyle.Bold), Color.Black));
             }
-        }
-
-
-        private void chartPieStatusTask_Click(object sender, EventArgs e)
-        {
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error initializing pie chart: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
+

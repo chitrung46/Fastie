@@ -331,7 +331,17 @@ namespace GUI.TruniControls
         public int SelectedIndex
         {
             get { return cmbList.SelectedIndex; }
-            set { cmbList.SelectedIndex = value; }
+            set
+            {
+                if (value >= 0 && value < cmbList.Items.Count) // Kiểm tra chỉ số hợp lệ
+                {
+                    cmbList.SelectedIndex = value;
+                }
+                else
+                {
+                    cmbList.SelectedIndex = -1; // Đặt về trạng thái "không chọn"
+                }
+            }
         }
 
         [Category("Data")]

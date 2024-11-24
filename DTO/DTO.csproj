@@ -98,6 +98,7 @@
     <Compile Include="AccountDTO\Account.cs" />
     <Compile Include="AccountDTO\AccountId.cs" />
     <Compile Include="AccountDTO\AccountInfo.cs" />
+    <Compile Include="AnalyticsDTO\AnalyticsDTO.cs" />
     <Compile Include="CheckRoleDTO\Permission.cs" />
     <Compile Include="CheckRoleDTO\UserAccountSession.cs" />
     <Compile Include="DepartmentDTO\Department.cs" />

@@ -58,7 +58,7 @@
             title1.Name = "Title1";
             title1.Text = "Thống kê trạng thái công việc";
             this.chartPieStatusTask.Titles.Add(title1);
-            this.chartPieStatusTask.Click += new System.EventHandler(this.chartPieStatusTask_Click);
+            
             // 
             // PieChartStatusTaskForm
             // 
