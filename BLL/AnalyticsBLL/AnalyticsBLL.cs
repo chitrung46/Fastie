@@ -28,22 +28,9 @@ namespace BLL.AnalyticsBLL
         {
             return analyticsDAL.LayNhanSuDuaTrenChucVuVaBoPhan(departmentId, positionId);
         }
-
-        /*
-        public List<AnalyticsDTO> GetAllPositions()
-        {
-            AnalyticsDAL analyticsDAL = new AnalyticsDAL();
-            return analyticsDAL.GetAllPositions();
-        }
-        */
         public List<AnalyticsDTO> ThongKeTrangThaiCongViec(string accountId, string departmentId, string positionId, string personnelId, DateTime startDate, DateTime endDate)
         {
             var data = analyticsDAL.ThongKeTrangThaiCongViec(accountId, departmentId, positionId, personnelId, startDate, endDate);
-
-            foreach (var item in data)
-            {
-                Console.WriteLine($"BLL Result - TrangThai: {item.TenChucVu}, SoLuong: {item.IdChucVu}");
-            }
 
             return data;
         }
@@ -60,11 +47,6 @@ namespace BLL.AnalyticsBLL
         public List<AnalyticsDTO> ThongKeTyLeHoanThanh(string accountId, string departmentId, string positionId, string personnelId, DateTime startDate, DateTime endDate)
         {
             List<AnalyticsDTO> data = analyticsDAL.ThongKeTyLeHoanThanh(accountId, departmentId, positionId, personnelId, startDate, endDate);
-            Console.WriteLine($"BLL Data Count: {data.Count}");
-            foreach (var item in data)
-            {
-                Console.WriteLine($"Hoàn thành: {item.SoLuongHoanThanh}, Chưa hoàn thành: {item.SoLuongChuaHoanThanh}, Tỷ lệ: {item.TyLeHoanThanh}, Tổng số: {item.TongSoCongViec}");
-            }
             return data;
         }
 
@@ -74,15 +56,7 @@ namespace BLL.AnalyticsBLL
         }
         public List<AnalyticsDTO> LayTaCaBoPhan()
         {
-            try
-            {
-                return analyticsDAL.LayTaCaBoPhan();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in AnalyticsBLL.GetAllDepartments: {ex.Message}");
-                throw;
-            }
+            return analyticsDAL.LayTaCaBoPhan();
         }
 
         public List<AnalyticsDTO> ThongKeTyLeHoanThanhTatCaBoPhan(string accountId, DateTime startDate, DateTime endDate)
