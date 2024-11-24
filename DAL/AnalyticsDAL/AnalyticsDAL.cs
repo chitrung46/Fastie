@@ -250,7 +250,7 @@ namespace DAL.AnalyticsDAL
 
             using (SqlConnection con = SqlConnectionData.Connect())
             {
-                SqlCommand command = new SqlCommand("proc_ThongKeTyLeHoanThanh", con);
+                SqlCommand command = new SqlCommand("proc_ThongKeTyLeHoanThanh1", con);
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Add parameters to the stored procedure
