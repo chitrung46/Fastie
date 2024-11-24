@@ -84,9 +84,10 @@ namespace Fastie
             needEdit.NgayVaoLam = dTPDayOfWork.Value;
             needEdit.Sdt = cTBNumberPhone.Text;
             personnelBLL.UpdatePersonnel(needEdit);
-            this.Close();
+            
             showMessage("Sửa nhân sự thành công!", "success");
             layoutpersonnelForm.loadDataPersonnel();
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -280,7 +280,17 @@ namespace BLL
                 throw new Exception("Lỗi khi tạo lịch sử nhận việc: " + ex.Message);
             }
         }
-
+        public bool DuyetHoanThanhCongViec(string idCongViec)
+        {
+            try
+            {
+                return taskDAL.DuyetHoanThanhCongViec(idCongViec);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi duyệt: " + ex.Message);
+            }
+        }
     }
 
 }

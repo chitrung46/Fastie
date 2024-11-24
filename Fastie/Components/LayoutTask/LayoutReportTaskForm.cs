@@ -1,4 +1,5 @@
-﻿using Fastie.Screens.Task.ReportTask;
+﻿using Fastie.Components.Toastify;
+using Fastie.Screens.Task.ReportTask;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,11 +58,34 @@ namespace Fastie.Components.LayoutTask
             get { return taskDetail; }
             set { taskDetail = value; btnTaskDetail.Text = value; }
         }
-
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnReport_Click(object sender, EventArgs e)
         {
-            DoReportForm doReportForm = new DoReportForm(reportTaskForm, TaskId);
-            doReportForm.Show();
+            if (TaskStatus == "Hoàn thành")
+            {
+                showMessage("Công việc đã hoàn thành!", "error");
+                return;
+            }
+            if(TaskStatus == "Không hoàn thành")
+            {
+                showMessage("Công việc quá hạn!", "error");
+                return;
+            }
+            if (TaskStatus != "Chờ nhận")
+            {
+                DoReportForm doReportForm = new DoReportForm(reportTaskForm, TaskId);
+                doReportForm.Show();
+            }
+            else
+            {
+                showMessage("Vui lòng nhận công việc trước khi báo cáo!", "error");
+            }
+            
         }
     }
 }

@@ -13,6 +13,30 @@ namespace DAL.TaskDAL
 {
     public class TaskDAL:DatabaseAccess
     {
+        public bool DuyetHoanThanhCongViec(string idCongViec)
+        {
+            bool result = false;
+            string query = "proc_duyetHoanThanhCongViec";
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@idCongViec", idCongViec);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy ID công việc: " + ex.Message);
+            }
+            return result;
+        }
         public string GetProgressNameById(string progressId)
         {
             string progressName = string.Empty;
@@ -380,7 +404,7 @@ namespace DAL.TaskDAL
                         Ten = reader["ten"].ToString(),
                         ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
                         TenTienDoCongViec = reader["tienDoCongViec"].ToString(),
-                        TenNhanSuGiaoViec = reader["NguoiGiaoViec"].ToString()
+                        TenNhanSuNhanViec = reader["NguoiNhanViec"].ToString()
                     };
                     danhSachCongViec.Add(congViec);
                 }

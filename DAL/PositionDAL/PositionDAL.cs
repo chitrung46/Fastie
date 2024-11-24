@@ -68,7 +68,7 @@ namespace DAL
             }
         }
         //Xoa Chuc Vu
-        public void DeletePosition(string positionId)
+        public bool DeletePosition(string positionId)
         {
             string query = "proc_deletePosition";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -79,6 +79,7 @@ namespace DAL
                 con.Open();
                 command.ExecuteNonQuery();
             }
+            return true;
         }
 
         //Tìm kiếm chức vụ

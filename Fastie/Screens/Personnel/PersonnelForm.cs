@@ -34,7 +34,8 @@ namespace Fastie
 
         private void PersonnelForm_Load(object sender, EventArgs e)
         {
-            LoadDataPersonnel();
+            List<Personnel> personnelList = personnelBLL.GetPersonnelList();
+            loadDataPersonnel(personnelList);
         }
 
         public void LoadDataPersonnel() 

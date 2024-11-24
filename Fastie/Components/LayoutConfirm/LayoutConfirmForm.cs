@@ -111,35 +111,43 @@ namespace Fastie
         {
             switch (btnConfirm.Text)
             {
-                case "Xóa quyền":
-                    bool result = decentralizationBLL.deleteAllRoles(this.accountName);
-                    if(result)
+                case "Xóa chức vụ":
+                    bool xoaChucVu = positionBLL.DeletePosition(layoutPositionForm.IdPosition);
+                    if (xoaChucVu)
                     {
-                        showMessage("Xóa quyền thành công", "success");
-                        decentralizationForm.loadDataFromDecentralization();
+                        showMessage("Xóa chức vụ thành công", "success");
+                        layoutPositionForm.LoadPositionData();
                     }
                     else
                     {
-                        showMessage("Xóa quyền thất bại", "error");
+                        showMessage("Xóa chức vụ thất bại", "error");
                     }
                     this.Close();
                     break;
-                case "Xóa chức vụ":
-                    positionBLL.DeletePosition(layoutPositionForm.IdPosition);
-                    layoutPositionForm.LoadPositionData();
-                    showMessage("Xóa chức vụ thành công", "success");
-                    this.Close();
-                    break;
                 case "Xóa bộ phận":
-                    departmentBLL.DeleteDepartment(layoutDepartmentForm.IdDepartment);
-                    layoutDepartmentForm.loadDataDepartment();
-                    showMessage("Xóa bộ phận thành công", "success");
+                    bool xoaBoPhan = departmentBLL.DeleteDepartment(layoutDepartmentForm.IdDepartment);
+                    if (xoaBoPhan)
+                    {
+                        showMessage("Xóa bộ phận thành công", "success");
+                        layoutDepartmentForm.loadDataDepartment();
+                    }
+                    else
+                    {
+                        showMessage("Xóa bộ phận thất bại", "error");
+                    }
                     this.Close();
                     break;
                 case "Xóa nhân sự":
-                    personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
-                    showMessage("Xóa nhân sự thành công", "success");
-                    layoutPersonnelForm.loadDataPersonnel();
+                    bool xoaNhanSu = personnelBLL.DeletePersonnel(layoutPersonnelForm.IdPersonnel);
+                    if (xoaNhanSu)
+                    {
+                        showMessage("Xóa nhân sự thành công", "success");
+                        layoutPersonnelForm.loadDataPersonnel();
+                    }
+                    else
+                    {
+                        showMessage("Xóa nhân sự thất bại", "error");
+                    }
                     this.Close();
                     break;
                 case "Cập nhật":

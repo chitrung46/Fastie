@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Windows.Media;
+using BLL;
+using DTO;
+using Fastie.Components.Toastify;
 namespace Fastie.Components.LayoutTask
 {
     public partial class LayoutAssignTaskForm : UserControl
     {
+        TaskBLL taskBLL = new TaskBLL();
         private string taskName;
         private string taskTime;
         private string taskStatus;
@@ -52,11 +56,44 @@ namespace Fastie.Components.LayoutTask
             get { return taskJobAssigner; }
             set { taskJobAssigner = value; lblJobAssigner.Text = value; }
         }
-
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
+        }
         private void btnGetTask_Click(object sender, EventArgs e)
         {
             DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, this);
             taskForm.AddFormInMainLayout(detailsTaskForm);
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            if (taskStatus != "Chờ duyệt")
+            {
+                showMessage("Không thỏa mãn điều kiện duyệt!", "error");
+            }
+            else
+            {
+                try
+                {
+                    bool success = taskBLL.DuyetHoanThanhCongViec(idTask);
+                    if (success)
+                    {
+                        showMessage("Công việc đã được duyệt hoàn thành!", "success");
+                    }
+                    else
+                    {
+                        showMessage("Không thể duyệt!", "error");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    showMessage("Không thể duyệt!", "error");
+                }
+            }
+
         }
     }
 }
