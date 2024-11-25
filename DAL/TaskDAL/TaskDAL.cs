@@ -778,7 +778,7 @@ namespace DAL.TaskDAL
                     DanhSachBaoCao baoCao = new DanhSachBaoCao
                     {
                         NoiDung = reader["ghiChu"].ToString(),
-                        NgayBaoCao = reader["thoGianKhoiTao"] as DateTime?,
+                        NgayBaoCao = reader["thoiGianKhoiTao"] as DateTime?,
                         TenAnh = reader["tenHinhAnh"].ToString(),
                         TenFile = reader["tenTaiLieu"].ToString()
                     };
@@ -961,7 +961,66 @@ namespace DAL.TaskDAL
             {
                 Console.WriteLine("Lỗi khi từ chối điều chỉnh phân công: " + ex.Message);
             }
-            return false;
+        }
+
+
+
+        //giaoviecmoi
+        public bool GiaoViec(string loaiGiaoViec, ThongTinGiaoViec ThongTinCongViec)
+        {
+            string query = "proc_GiaoViec";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@loaiGiaoViec", loaiGiaoViec);
+                cmd.Parameters.AddWithValue("@ten", ThongTinCongViec.Ten);
+                cmd.Parameters.AddWithValue("@moTa", ThongTinCongViec.MoTa);
+                cmd.Parameters.AddWithValue("@thoiHanHoanThanh", ThongTinCongViec.ThoiHanHoanThanh);
+                cmd.Parameters.AddWithValue("@idTaiKhoanGiaoViec", ThongTinCongViec.IdTaiKhoanGiaoViec);
+                cmd.Parameters.AddWithValue("@idBoPhanGiaoViec", ThongTinCongViec.IdBoPhanGiaoViec);
+                cmd.Parameters.AddWithValue("@danhSachTaiKhoanNhanViec", ThongTinCongViec.DanhSachTaiKhoanNhanViec);
+                cmd.Parameters.AddWithValue("@danhSachBoPhanNhanViec", ThongTinCongViec.DanhSachBoPhanNhanViec);
+                cmd.Parameters.AddWithValue("@danhSachHinhAnh", ThongTinCongViec.DanhSachHinhAnh);
+                cmd.Parameters.AddWithValue("@danhSachTaiLieu", ThongTinCongViec.DanhSachTaiLieu);
+                cmd.Parameters.AddWithValue("@idCongViecGoc", ThongTinCongViec.IdCongViecGoc);
+                cmd.Parameters.AddWithValue("@soLuongNhanSuChuDong", ThongTinCongViec.SoLuongNhanSuChuDong);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                
+            }
+            return true;
+        }
+        public DateTime? ThoiHanHoanThanhCongViecGoc(string idCongViecGoc)
+        {
+            string query = "proc_ThoiHanHoanThanhCongViecGoc";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Add input parameter
+                cmd.Parameters.AddWithValue("@idCongViecGoc", idCongViecGoc);
+
+                // Define the output parameter
+                SqlParameter outputParam = new SqlParameter("@thoiHanHoanThanh", SqlDbType.DateTime);
+                outputParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(outputParam);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    // Return the output parameter value
+                    return outputParam.Value != DBNull.Value ? Convert.ToDateTime(outputParam.Value) : DateTime.MinValue;
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception
+                    return DateTime.MinValue;  // Return minimum value of DateTime if error occurs
+                }
+            }
         }
 
     }

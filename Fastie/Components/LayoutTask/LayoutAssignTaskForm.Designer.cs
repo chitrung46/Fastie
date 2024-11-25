@@ -220,6 +220,7 @@
             this.btnAssignArisingTask.TabIndex = 0;
             this.btnAssignArisingTask.Text = "Phát sinh";
             this.btnAssignArisingTask.UseVisualStyleBackColor = false;
+            this.btnAssignArisingTask.Click += new System.EventHandler(this.btnAssignArisingTask_Click);
             // 
             // LayoutAssignTaskForm
             // 

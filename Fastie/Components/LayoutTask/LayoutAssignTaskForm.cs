@@ -12,6 +12,7 @@ using System.Windows.Media;
 using BLL;
 using DTO;
 using Fastie.Components.Toastify;
+using System.Security.AccessControl;
 namespace Fastie.Components.LayoutTask
 {
     public partial class LayoutAssignTaskForm : UserControl
@@ -24,10 +25,17 @@ namespace Fastie.Components.LayoutTask
         private string idTask;
 
         private TaskForm taskForm;
+        private AssignTaskForm assignTaskForm;
         public LayoutAssignTaskForm(TaskForm taskForm)
         {
             InitializeComponent();
             this.taskForm = taskForm;
+        }
+        public LayoutAssignTaskForm(TaskForm taskForm, AssignTaskForm assignTaskForm)
+        {
+            InitializeComponent();
+            this.taskForm = taskForm;
+            this.assignTaskForm = assignTaskForm;
         }
 
         public string IdTask
@@ -94,6 +102,14 @@ namespace Fastie.Components.LayoutTask
                 }
             }
 
+        }
+
+        private void btnAssignArisingTask_Click(object sender, EventArgs e)
+        {
+            DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm("Giao việc phát sinh", idTask, taskForm.IdTaiKhoan, taskForm.IdBoPhan);
+            //assignTaskForm.LoadDataAssignTask();
+            detailAssignTaskForm.FormClosed += (s, args) => assignTaskForm.LoadDataAssignTask();
+            detailAssignTaskForm.Show();
         }
     }
 }

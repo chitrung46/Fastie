@@ -43,6 +43,7 @@ namespace Fastie
                 cbPosition.Visible = false;   // Ẩn label Chức vụ
                 cbPersonnel.Visible = false; // Ẩn label Nhân sự
             }
+            
         }
 
         private void Analytics_Load(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace Fastie.Screens.Task
 
         private void btnDetailAssignTask_Click(object sender, EventArgs e)
         {
-            DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm(taskForm.IdTaiKhoan, taskForm.IdBoPhan);
+            DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm("Giao việc", taskForm.IdTaiKhoan, taskForm.IdBoPhan);
             detailAssignTaskForm.FormClosed += (s, args) => loadDataAssignTask();
             detailAssignTaskForm.Show();
         }
@@ -57,7 +57,7 @@ namespace Fastie.Screens.Task
 
             foreach (TaskInfo congViec in danhSachCongViec)
             {
-                LayoutAssignTaskForm layoutCongViec = new LayoutAssignTaskForm(taskForm)
+                LayoutAssignTaskForm layoutCongViec = new LayoutAssignTaskForm(taskForm, this)
                 {
                     TaskName = congViec.Ten,
                     TaskTime = congViec.ThoiHanHoanThanh.HasValue ? congViec.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
