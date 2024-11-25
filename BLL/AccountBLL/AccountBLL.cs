@@ -21,5 +21,16 @@ namespace BLL
             return accountDAL.ThemTaiKhoan(taiKhoan);
         }
 
+        public List<Account> LayDanhSachTaiKhoan()
+        {
+            try
+            {
+                return accountDAL.LayDanhSachTaiKhoan();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

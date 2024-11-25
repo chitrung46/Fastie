@@ -1,6 +1,8 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using Fastie.Components.LayoutAccount;
 using Fastie.Components.LayoutDecentralization;
+using Fastie.Components.LayoutTask;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +19,7 @@ namespace Fastie
     public partial class AccountForm : Form
     {
         private HomeForm homeForm;
+        AccountBLL accountBLL = new AccountBLL();
         public AccountForm(HomeForm homeForm)
         {
             InitializeComponent();
@@ -25,20 +28,25 @@ namespace Fastie
 
         private void loadDataAccount()
         {
-            for (int i = 0; i < 10; i++)
+            flowLayoutPanelAcoount.Controls.Clear();
+            List<Account> account = accountBLL.LayDanhSachTaiKhoan();
+
+            foreach (Account taikhoan in account)
             {
-                var layoutAccountForm = new LayoutAccountForm(this, homeForm)
+                LayoutAccountForm layoutAccountForm = new LayoutAccountForm(this, homeForm)
                 {
-                    PersonnelName = "Nhật Toàn",
-                    PositionName = "Quản lý",
-                    DepartmentName = "Kế toán",
-                    StatusAccount = "Hoạt động",
+
+                    PersonnelName = taikhoan.TenNhanSu,
+                    PositionName = taikhoan.TenChucVu,
+                    DepartmentName = taikhoan.TenBoPhan,
+                    StatusAccount = taikhoan.TrangThai,
                     HasAccount = "Đã có",
-                    IdAccount = "ACC" + i
+                    IdAccount = "ACC"
                 };
                 flowLayoutPanelAcoount.Controls.Add(layoutAccountForm);
             }
         }
+
 
         private void AccountForm_Load(object sender, EventArgs e)
         {

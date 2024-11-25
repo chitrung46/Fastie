@@ -28,5 +28,43 @@ namespace DAL
             }
             return true;
         }
+
+        public List<Account> LayDanhSachTaiKhoan()
+        {
+            try
+            {
+                string query = "proc_LayDanhSachTaiKhoan";
+                List<Account> danhSachTaiKhoan = new List<Account>();
+
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    SqlCommand command = new SqlCommand(query, con);
+                    command.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string tenNhanSu = reader["TenNhanSu"].ToString();
+                            string tenBoPhan = reader["TenBoPhan"].ToString();
+                            string tenChucVu = reader["TenChucVu"].ToString();
+                            string trangThai = reader["TrangThai"].ToString();
+
+                            Account account = new Account(tenNhanSu, tenBoPhan, tenChucVu, trangThai);
+                            danhSachTaiKhoan.Add(account);
+                        }
+                    }
+                }
+
+                return danhSachTaiKhoan;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy danh sách tài khoản: " + ex.Message, ex);
+            }
+        }
+
+
     }
 }
