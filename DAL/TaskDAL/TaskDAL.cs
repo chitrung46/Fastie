@@ -818,5 +818,127 @@ namespace DAL.TaskDAL
                 }
             }
         }
+
+        //Tạo đơn xin điều chỉnh phân công
+        public bool TaoDonXinDieuChinhPhanCong(string idCongViec, string idTaiKhoanNhanViec, string liDo)
+        {
+            string query = "proc_TaoDonXinDieuChinhPhanCong";
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@idCongViec", idCongViec);
+                        command.Parameters.AddWithValue("@idTaiKhoanKhoiTao", idTaiKhoanNhanViec);
+                        command.Parameters.AddWithValue("@liDo", liDo);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            } catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi tạo đơn xin điều chỉnh phân công: " + ex.Message);
+            }
+            return false;
+        }
+
+        //Hiên thị danh sách điều chỉnh phân công
+        public List<TaskInfo> HienThiDanhSachDieuChinhPhanCong(string idTaiKhoanGiaoViec)
+        {
+            string query = "proc_HienThiDanhSachDieuChinhPhanCong";
+            List<TaskInfo> taskInfos = new List<TaskInfo>();  // Khai báo danh sách chứa các đối tượng TaskInfo
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@idTaiKhoanGiaoViec", idTaiKhoanGiaoViec);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                TaskInfo taskInfo = new TaskInfo
+                                {
+                                    Id = reader["IdCongViec"].ToString(),
+                                    Ten = reader["TenCongViec"].ToString(),
+                                    ThoiHanHoanThanh = reader.GetDateTime(reader.GetOrdinal("NgayKetThuc")),
+                                    TenNhanSuGiaoViec = reader["TenTaiKhoanGiaoViec"].ToString(),
+                                    TenTienDoCongViec = reader["TienDoCongViec"].ToString(),
+                                    LiDoDieuChinh = reader["LiDo"].ToString()
+                                };
+
+                                // Thêm đối tượng TaskInfo vào danh sách
+                                taskInfos.Add(taskInfo);
+                            }
+                        }
+                    }
+                }
+                return taskInfos;  // Trả về danh sách TaskInfo
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi hiển thị đơn xin điều chỉnh phân công: " + ex.Message);
+            }
+            return taskInfos;  // Trả về danh sách (dù có thể rỗng nếu có lỗi)
+        }
+
+        public bool XacNhanDieuChinhPhanCong(string idCongViec, string idTaiKhoanKhoiTao)
+        {
+            string query = "proc_XoaTaiKhoanNhanViecXinDieuChinhPhanCong";
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@idCongViec", idCongViec);
+                        command.Parameters.AddWithValue("@idTaiKhoanKhoiTao", idTaiKhoanKhoiTao);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi xác nhận điều chỉnh phân công: " + ex.Message);
+            }
+            return false;
+        }
+
+        public bool TuChoiTDieuChinhPhanCong(string idCongViec, string idTaiKhoanKhoiTao)
+        {
+            string query = "proc_XuLyTuChoiDonXinDieuChinhPhanCong";
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@idCongViec", idCongViec);
+                        command.Parameters.AddWithValue("@idTaiKhoanKhoiTao", idTaiKhoanKhoiTao);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi từ chối điều chỉnh phân công: " + ex.Message);
+            }
+            return false;
+        }
+
     }
 }

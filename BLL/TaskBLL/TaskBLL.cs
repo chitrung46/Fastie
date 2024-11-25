@@ -281,6 +281,55 @@ namespace BLL
             }
         }
 
+        public bool TaoDonXinDieuChinhPhanCong(string idCongViec, string idTaiKhoanNhanViec, string liDo)
+        {
+            try
+            {
+                return taskDAL.TaoDonXinDieuChinhPhanCong(idCongViec, idTaiKhoanNhanViec, liDo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tạo đơn xin điều chỉnh phân công: " + ex.Message);
+            }
+        }
+
+        public List<TaskInfo> HienThiDanhSachDieuChinhPhanCong(string idTaiKhoanGiaoViec)
+        {
+            try
+            {
+                return taskDAL.HienThiDanhSachDieuChinhPhanCong(idTaiKhoanGiaoViec);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi hiển thị đơn xin điều chỉnh phân công: " + ex.Message);
+            }
+        }
+
+        public bool XacNhanDieuChinhPhanCong(string idCongViec, string idTaiKhoanKhoiTao)
+        {
+            try
+            {
+                return taskDAL.XacNhanDieuChinhPhanCong(idCongViec, idTaiKhoanKhoiTao);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi xác nhận điều chỉnh phân công: " + ex.Message);
+            }
+        }
+
+        public bool TuChoiDieuChinhPhanCong(string idCongViec, string idTaiKhoanKhoiTao)
+        {
+            try
+            {
+                return taskDAL.TuChoiTDieuChinhPhanCong(idCongViec, idTaiKhoanKhoiTao);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi từ chối điều chỉnh phân công: " + ex.Message);
+            }
+        }
+
+
     }
 
 }
