@@ -291,6 +291,22 @@ namespace BLL
                 throw new Exception("Lỗi khi duyệt: " + ex.Message);
             }
         }
+        public bool GiaoViec(string loaiGiaoViec, ThongTinGiaoViec ThongTinCongViec)
+        {
+            return taskDAL.GiaoViec( loaiGiaoViec,  ThongTinCongViec);
+            
+        }
+        public DateTime? ThoiHanHoanThanhCongViecGoc(string idCongViecGoc)
+        {
+            try
+            {
+                return taskDAL.ThoiHanHoanThanhCongViecGoc(idCongViecGoc);
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 
 }

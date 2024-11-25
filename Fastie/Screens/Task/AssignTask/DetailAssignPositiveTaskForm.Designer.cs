@@ -35,12 +35,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txbTaskName = new GUI.TruniControls.CustomTextBox();
             this.lblTaskName = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBoPhanNhanViec = new System.Windows.Forms.DataGridView();
             this.idBoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
-            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
+            this.cCBLoaiCongViec = new GUI.TruniControls.CustomComboBox();
             this.txbSoNhanSuChuDong = new GUI.TruniControls.CustomTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxDepartment = new GUI.TruniControls.CustomComboBox();
@@ -50,9 +50,7 @@
             this.customButton5 = new GUI.CustomButton();
             this.customButton4 = new GUI.CustomButton();
             this.customButton2 = new GUI.CustomButton();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTaiKhoanNhanViec = new System.Windows.Forms.DataGridView();
             this.cbxPersonnel = new GUI.TruniControls.CustomComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -65,10 +63,12 @@
             this.lblNameOfForm = new System.Windows.Forms.Label();
             this.btnCancel = new GUI.CustomButton();
             this.btnUpdate = new GUI.CustomButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.idTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBoPhanNhanViec)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.pnl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanNhanViec)).BeginInit();
             this.customPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,21 +169,21 @@
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Tên công việc: ";
             // 
-            // dataGridView1
+            // dgvBoPhanNhanViec
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBoPhanNhanViec.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBoPhanNhanViec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBoPhanNhanViec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idBoPhan,
             this.ten,
             this.moTa});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 104);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(409, 109);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvBoPhanNhanViec.Location = new System.Drawing.Point(30, 104);
+            this.dgvBoPhanNhanViec.Name = "dgvBoPhanNhanViec";
+            this.dgvBoPhanNhanViec.RowHeadersWidth = 51;
+            this.dgvBoPhanNhanViec.RowTemplate.Height = 24;
+            this.dgvBoPhanNhanViec.Size = new System.Drawing.Size(409, 109);
+            this.dgvBoPhanNhanViec.TabIndex = 7;
+            this.dgvBoPhanNhanViec.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idBoPhan
             // 
@@ -216,7 +216,7 @@
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
             this.customPanel1.BorderSize = 0;
-            this.customPanel1.Controls.Add(this.customComboBox1);
+            this.customPanel1.Controls.Add(this.cCBLoaiCongViec);
             this.customPanel1.Controls.Add(this.txbSoNhanSuChuDong);
             this.customPanel1.Controls.Add(this.label3);
             this.customPanel1.Controls.Add(this.dtpTimeCompleted);
@@ -236,24 +236,27 @@
             this.customPanel1.Size = new System.Drawing.Size(624, 442);
             this.customPanel1.TabIndex = 45;
             // 
-            // customComboBox1
+            // cCBLoaiCongViec
             // 
-            this.customComboBox1.BackColor = System.Drawing.Color.White;
-            this.customComboBox1.BorderColor = System.Drawing.Color.Black;
-            this.customComboBox1.BorderRadius = 8;
-            this.customComboBox1.BorderSize = 0;
-            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBox1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.customComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.customComboBox1.IconColor = System.Drawing.Color.Black;
-            this.customComboBox1.ListBackColor = System.Drawing.Color.White;
-            this.customComboBox1.ListTextColor = System.Drawing.Color.Black;
-            this.customComboBox1.Location = new System.Drawing.Point(25, 128);
-            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Size = new System.Drawing.Size(567, 36);
-            this.customComboBox1.TabIndex = 44;
-            this.customComboBox1.Texts = "";
+            this.cCBLoaiCongViec.BackColor = System.Drawing.Color.White;
+            this.cCBLoaiCongViec.BorderColor = System.Drawing.Color.Black;
+            this.cCBLoaiCongViec.BorderRadius = 8;
+            this.cCBLoaiCongViec.BorderSize = 0;
+            this.cCBLoaiCongViec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cCBLoaiCongViec.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.cCBLoaiCongViec.ForeColor = System.Drawing.Color.Black;
+            this.cCBLoaiCongViec.IconColor = System.Drawing.Color.Black;
+            this.cCBLoaiCongViec.Items.AddRange(new object[] {
+            "Giao việc",
+            "Ra thông báo"});
+            this.cCBLoaiCongViec.ListBackColor = System.Drawing.Color.White;
+            this.cCBLoaiCongViec.ListTextColor = System.Drawing.Color.Black;
+            this.cCBLoaiCongViec.Location = new System.Drawing.Point(25, 128);
+            this.cCBLoaiCongViec.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cCBLoaiCongViec.Name = "cCBLoaiCongViec";
+            this.cCBLoaiCongViec.Size = new System.Drawing.Size(567, 36);
+            this.cCBLoaiCongViec.TabIndex = 44;
+            this.cCBLoaiCongViec.Texts = "";
             // 
             // txbSoNhanSuChuDong
             // 
@@ -327,8 +330,8 @@
             this.pnl2.Controls.Add(this.customButton5);
             this.pnl2.Controls.Add(this.customButton4);
             this.pnl2.Controls.Add(this.customButton2);
-            this.pnl2.Controls.Add(this.dataGridView1);
-            this.pnl2.Controls.Add(this.dataGridView2);
+            this.pnl2.Controls.Add(this.dgvBoPhanNhanViec);
+            this.pnl2.Controls.Add(this.dgvTaiKhoanNhanViec);
             this.pnl2.Controls.Add(this.cbxPersonnel);
             this.pnl2.Controls.Add(this.cbxDepartment);
             this.pnl2.Controls.Add(this.label5);
@@ -411,35 +414,19 @@
             this.customButton2.UseVisualStyleBackColor = false;
             this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
             // 
-            // dataGridView2
+            // dgvTaiKhoanNhanViec
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idNhanSu,
+            this.dgvTaiKhoanNhanViec.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTaiKhoanNhanViec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTaiKhoanNhanViec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idTaiKhoan,
             this.dataGridViewTextBoxColumn1});
-            this.dataGridView2.Location = new System.Drawing.Point(29, 317);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(410, 107);
-            this.dataGridView2.TabIndex = 9;
-            // 
-            // idNhanSu
-            // 
-            this.idNhanSu.HeaderText = "Mã Tài khoản";
-            this.idNhanSu.MinimumWidth = 6;
-            this.idNhanSu.Name = "idNhanSu";
-            this.idNhanSu.ReadOnly = true;
-            this.idNhanSu.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Tên Nhân sự";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
+            this.dgvTaiKhoanNhanViec.Location = new System.Drawing.Point(29, 317);
+            this.dgvTaiKhoanNhanViec.Name = "dgvTaiKhoanNhanViec";
+            this.dgvTaiKhoanNhanViec.RowHeadersWidth = 51;
+            this.dgvTaiKhoanNhanViec.RowTemplate.Height = 24;
+            this.dgvTaiKhoanNhanViec.Size = new System.Drawing.Size(410, 107);
+            this.dgvTaiKhoanNhanViec.TabIndex = 9;
             // 
             // cbxPersonnel
             // 
@@ -619,6 +606,22 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // idTaiKhoan
+            // 
+            this.idTaiKhoan.HeaderText = "Mã Tài khoản";
+            this.idTaiKhoan.MinimumWidth = 6;
+            this.idTaiKhoan.Name = "idTaiKhoan";
+            this.idTaiKhoan.ReadOnly = true;
+            this.idTaiKhoan.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Tên Nhân sự";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
             // DetailAssignPositiveTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -635,12 +638,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Giao việc chủ động";
             this.Load += new System.EventHandler(this.DetailAssignPositiveTaskForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBoPhanNhanViec)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanNhanViec)).EndInit();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -658,7 +661,7 @@
         private GUI.TruniControls.CustomTextBox txbTaskName;
         private System.Windows.Forms.Label lblTaskName;
         private GUI.CustomButton customButton4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBoPhanNhanViec;
         private GUI.TruniControls.CustomPanel customPanel1;
         private GUI.TruniControls.CustomComboBox cbxDepartment;
         private System.Windows.Forms.Label label5;
@@ -674,17 +677,17 @@
         private System.Windows.Forms.Label lblNameOfForm;
         private GUI.CustomButton customButton3;
         private GUI.CustomButton customButton5;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvTaiKhoanNhanViec;
         private GUI.TruniControls.CustomComboBox cbxPersonnel;
         private GUI.TruniControls.CustomTextBox txbSoNhanSuChuDong;
         private System.Windows.Forms.Label label3;
         private GUI.CustomButton btnCancel;
         private GUI.CustomButton btnUpdate;
-        private GUI.TruniControls.CustomComboBox customComboBox1;
+        private GUI.TruniControls.CustomComboBox cCBLoaiCongViec;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBoPhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idNhanSu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

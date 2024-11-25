@@ -19,14 +19,16 @@ namespace Fastie.Screens.Task
     public partial class DetailAssignPositiveTaskForm : Form
     {
         TaskBLL taskBLL = new TaskBLL();
-        private string idTaiKhoan;
-        private string idBoPhanKhiDangNhap;
+        private string idTaiKhoanNguoiDung;
+        private string idBoPhanNguoiDung;
+        private string loaiGiaoViec = "Giao việc chủ động";
+        private bool result;
         DepartmentBLL departmentBLL = new DepartmentBLL();
         public DetailAssignPositiveTaskForm(string idTaiKhoan, string idBoPhan)
         {
             InitializeComponent();
-            this.idTaiKhoan = idTaiKhoan;
-            this.idBoPhanKhiDangNhap = idBoPhan;
+            this.idTaiKhoanNguoiDung = idTaiKhoan;
+            this.idBoPhanNguoiDung = idBoPhan;
             LoadTaskTypeComboBox();
             LoadDepartmentComboBox();
             dtpTimeCompleted.Format = DateTimePickerFormat.Custom;
@@ -44,14 +46,14 @@ namespace Fastie.Screens.Task
         private void LoadTaskTypeComboBox()
         {
             List<TaskType> danhSachLoaiCongViec = taskBLL.LayDanhSachLoaiCongViec();
-            customComboBox1.DataSource = danhSachLoaiCongViec;
+            cCBLoaiCongViec.DataSource = danhSachLoaiCongViec;
             foreach (var item in danhSachLoaiCongViec)
             {
                 Console.WriteLine("Id: " + item.Id + ", Ten: " + item.Ten);   // Kiểm tra dữ liệu
             }
-            customComboBox1.DisplayMember = "Ten";  // Hiển thị tên loại công việc
-            customComboBox1.ValueMember = "Id";     // Giá trị là ID của loại công việc
-            customComboBox1.SelectedIndex = -1;
+            cCBLoaiCongViec.DisplayMember = "Ten";  // Hiển thị tên loại công việc
+            cCBLoaiCongViec.ValueMember = "Id";     // Giá trị là ID của loại công việc
+            cCBLoaiCongViec.SelectedIndex = -1;
         }
         
 
@@ -87,66 +89,67 @@ namespace Fastie.Screens.Task
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txbTaskName.Text) || string.IsNullOrWhiteSpace(customComboBox1.Texts) ||
+            if (string.IsNullOrWhiteSpace(txbTaskName.Text) || string.IsNullOrWhiteSpace(cCBLoaiCongViec.Texts) ||
             string.IsNullOrWhiteSpace(cTBDescribeTask.Text) || dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now || string.IsNullOrWhiteSpace(txbSoNhanSuChuDong.Text))
             {
                 showMessage("Vui lòng nhập đủ thông tin!", "error");
                 //MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Exit the method if validation fails
             }
-            string testIdLichSu = taskBLL.TaoLichSuId();
-            //if (testIdLichSu != null)
-            //{
-            //    //MessageBox.Show("Tạo ID lịch sử thành công", testIdLichSu);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Tạo ID lịch sử thất bại");
-            //}
-
-            var task = new TaskInfo()
+            if (cCBLoaiCongViec.Texts == "Giao việc")
             {
-                IdLoaiCongViec = taskBLL.LayIdLoaiCongViecTuTen(customComboBox1.Texts),
-                IdBoPhanGiaoViec = this.idBoPhanKhiDangNhap,
-                Id = taskBLL.TaoCongViecId(taskBLL.LayIdLoaiCongViecTuTen(customComboBox1.Texts), this.idBoPhanKhiDangNhap),
-                Ten = txbTaskName.Text,
-                GhiChu = "",
-                MoTa = cTBDescribeTask.Text,
-                ThoiGianGiaoViec = DateTime.Now,
-                ThoiHanHoanThanh = dtpTimeCompleted.Value,
-                IdTienDoCongViec = "TD001",
-                IdTaiKhoanGiaoViec = this.idTaiKhoan,
-                IdLichSuMacDinh = taskBLL.TaoLichSuId()
-            };
+                List<String> danhSachTaiKhoanNhanViec = new List<String>();
+                List<String> danhSachBoPhanNhanViec = new List<String>();
 
-            bool result = taskBLL.ThemCongViecGiaoViec(task);
-            if (result)
-            {
-                int soLuongNhanSuChuDong;
-                if (int.TryParse(txbSoNhanSuChuDong.Text, out soLuongNhanSuChuDong))
+                foreach (DataGridViewRow row in dgvBoPhanNhanViec.Rows)
                 {
-                    taskBLL.ThemCongViecChuDong(task.Id, soLuongNhanSuChuDong);
-                }
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    string departmentId = row.Cells["idBoPhan"].Value?.ToString();
-                    if (!string.IsNullOrEmpty(departmentId))
+                    string idBoPhanNhanViec = row.Cells["idBoPhan"].Value?.ToString();
+                    if (!string.IsNullOrEmpty(idBoPhanNhanViec))
                     {
-                        // Save department assignment to BoPhanNhanViec table
-                        taskBLL.LuuBoPhanNhanViec(departmentId, task.Id);
+                        danhSachBoPhanNhanViec.Add(idBoPhanNhanViec);
                     }
                 }
-                foreach (DataGridViewRow row in dataGridView2.Rows)
+                foreach (DataGridViewRow row in dgvTaiKhoanNhanViec.Rows)
                 {
-                    string recipientId = row.Cells["idNhanSu"].Value?.ToString();
-                    if (!string.IsNullOrEmpty(recipientId))
+                    string idTaiKhoanNhanViec = row.Cells["idTaiKhoan"].Value?.ToString();
+                    if (!string.IsNullOrEmpty(idTaiKhoanNhanViec))
                     {
-                        // Save recipient assignment to TaiKhoanNhanViec table
-                        taskBLL.LuuTaiKhoanNhanViec(recipientId, task.Id);
+                        danhSachTaiKhoanNhanViec.Add(idTaiKhoanNhanViec);
                     }
                 }
-                MessageBox.Show("Công việc đã được thêm thành công!", "Thông báo");
+                
+                
+                var thongTinGiaoViec = new ThongTinGiaoViec()
+                {
+                    Ten = txbTaskName.Text,
+                    MoTa = cTBDescribeTask.Text,
+                    ThoiHanHoanThanh = dtpTimeCompleted.Value.ToString(),
+                    IdBoPhanGiaoViec = this.idBoPhanNguoiDung,
+                    IdTaiKhoanGiaoViec = this.idTaiKhoanNguoiDung,
+                    DanhSachTaiKhoanNhanViec = string.Join(",", danhSachTaiKhoanNhanViec),
+                    DanhSachBoPhanNhanViec = string.Join(",", danhSachBoPhanNhanViec),
+                    DanhSachHinhAnh = "",
+                    DanhSachTaiLieu = "",
+                    SoLuongNhanSuChuDong = Convert.ToInt32(txbSoNhanSuChuDong.Text)
+                };
+                result = taskBLL.GiaoViec("Giao việc chủ động", thongTinGiaoViec);
+
+                
+                //bool result = taskBLL.GiaoViec(loaiGiaoViec, thongTinGiaoViec);
+
+                if (result)
+                {
+                    showMessage("Giao việc thành công", "success");
+                }
+                else
+                {
+                    showMessage("Giao việc thất bại", "error");
+                }
                 this.Close();
+            }
+            else if (cCBLoaiCongViec.Texts == "Ra thông báo")
+            {
+                showMessage("Chưa hoàn thiện chức năng", "success");
             }
         }
 
@@ -156,7 +159,7 @@ namespace Fastie.Screens.Task
             if (selectedDepartment == null) return;
 
             // Check if department already exists in DataGridView
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dgvBoPhanNhanViec.Rows)
             {
                 if (row.Cells["idBoPhan"].Value?.ToString() == selectedDepartment.Id)
                 {
@@ -166,7 +169,7 @@ namespace Fastie.Screens.Task
             }
 
             // Add selected department to DataGridView
-            dataGridView1.Rows.Add(selectedDepartment.Id, selectedDepartment.Ten);
+            dgvBoPhanNhanViec.Rows.Add(selectedDepartment.Id, selectedDepartment.Ten);
 
             // Populate comboBoxNguoiNhan with managers of all departments in dgvDepartments
             LayQuanLiBoPhanDuocChon();
@@ -175,12 +178,12 @@ namespace Fastie.Screens.Task
         {
             List<AcceptTaskPersonnel> managers = new List<AcceptTaskPersonnel>();
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dgvBoPhanNhanViec.Rows)
             {
                 string idBoPhanValue = row.Cells["idBoPhan"].Value?.ToString();
                 if (!string.IsNullOrEmpty(idBoPhanValue))
                 {
-                    if (idBoPhanValue == this.idBoPhanKhiDangNhap)
+                    if (idBoPhanValue == this.idBoPhanNguoiDung)
                     {
                         List<AcceptTaskPersonnel> departmentPersonnel = departmentBLL.LayNhanSuBoPhan(idBoPhanValue);
                         managers.AddRange(departmentPersonnel);
@@ -209,9 +212,9 @@ namespace Fastie.Screens.Task
             if (selectedRecipient == null) return;
 
             // Check if recipient is already added
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            foreach (DataGridViewRow row in dgvTaiKhoanNhanViec.Rows)
             {
-                if (row.Cells["idNhanSu"].Value?.ToString() == selectedRecipient.Id)
+                if (row.Cells["idTaiKhoan"].Value?.ToString() == selectedRecipient.Id)
                 {
                     //MessageBox.Show("Recipient is already added.");
                     return;
@@ -219,14 +222,14 @@ namespace Fastie.Screens.Task
             }
 
             // Add selected recipient to dgvRecipients
-            dataGridView2.Rows.Add(selectedRecipient.Id, selectedRecipient.Ten);
+            dgvTaiKhoanNhanViec.Rows.Add(selectedRecipient.Id, selectedRecipient.Ten);
         }
 
         private void customButton4_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgvBoPhanNhanViec.SelectedRows.Count > 0)
             {
-                dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                dgvBoPhanNhanViec.Rows.RemoveAt(dgvBoPhanNhanViec.SelectedRows[0].Index);
                 LayQuanLiBoPhanDuocChon();  // Refresh managers after removing a department
             }
             else
@@ -237,9 +240,9 @@ namespace Fastie.Screens.Task
 
         private void customButton3_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.SelectedRows.Count > 0)
+            if (dgvTaiKhoanNhanViec.SelectedRows.Count > 0)
             {
-                dataGridView2.Rows.RemoveAt(dataGridView2.SelectedRows[0].Index);
+                dgvTaiKhoanNhanViec.Rows.RemoveAt(dgvTaiKhoanNhanViec.SelectedRows[0].Index);
             }
             else
             {

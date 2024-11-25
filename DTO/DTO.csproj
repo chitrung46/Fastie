@@ -114,6 +114,8 @@
     <Compile Include="TaskDTO\AssignTask.cs" />
     <Compile Include="TaskDTO\TaskInfo.cs" />
     <Compile Include="TaskDTO\TaskType.cs" />
+    <Compile Include="TaskDTO\ThongTinGiaoViec.cs" />
+    <Compile Include="TaskDTO\ThongTinGiaoViecPhatSinh.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

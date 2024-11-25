@@ -42,8 +42,7 @@ namespace Fastie
                 cbPosition.Visible = false;   // Ẩn label Chức vụ
                 cbPersonnel.Visible = false; // Ẩn label Nhân sự
             }
-            Console.WriteLine("Logged in account ID: " + currentAccountId);
-            MessageBox.Show("Logged in account ID: " + currentAccountId);
+            
         }
 
         private void Analytics_Load(object sender, EventArgs e)
