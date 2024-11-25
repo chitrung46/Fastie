@@ -321,7 +321,7 @@ namespace BLL
         {
             try
             {
-                return taskDAL.TuChoiTDieuChinhPhanCong(idCongViec, idTaiKhoanKhoiTao);
+                return taskDAL.TuChoiDieuChinhPhanCong(idCongViec, idTaiKhoanKhoiTao);
             }
             catch (Exception ex)
             {

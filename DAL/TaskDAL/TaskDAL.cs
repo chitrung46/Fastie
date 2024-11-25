@@ -938,7 +938,7 @@ namespace DAL.TaskDAL
             return false;
         }
 
-        public bool TuChoiTDieuChinhPhanCong(string idCongViec, string idTaiKhoanKhoiTao)
+        public bool TuChoiDieuChinhPhanCong(string idCongViec, string idTaiKhoanKhoiTao)
         {
             string query = "proc_XuLyTuChoiDonXinDieuChinhPhanCong";
             try
@@ -961,6 +961,8 @@ namespace DAL.TaskDAL
             {
                 Console.WriteLine("Lỗi khi từ chối điều chỉnh phân công: " + ex.Message);
             }
+            return false;
+
         }
 
 

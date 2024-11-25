@@ -198,20 +198,7 @@ namespace Fastie.Screens.Task
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(lblNumber.Text) || !int.TryParse(lblNumber.Text, out int number) || number == 0)
-            {
-                this.Close();
-                DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm(taskInfo.IdTaiKhoanGiaoViec, taskInfo.IdBoPhanGiaoViec);
-                detailAssignTaskForm.Show();
-            }
-            else
-            {
-                this.Close();
-                DetailAssignPositiveTaskForm detailAssignPositiveTaskForm = new DetailAssignPositiveTaskForm(taskInfo.IdTaiKhoanGiaoViec, taskInfo.IdBoPhanGiaoViec);
-                detailAssignPositiveTaskForm.Show();
-            }
-            AssignTaskForm assignTaskForm = new AssignTaskForm(taskForm);
-            taskForm.AddFormInMainLayout(assignTaskForm);
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
