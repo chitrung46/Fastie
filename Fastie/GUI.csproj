@@ -415,6 +415,12 @@
     <Compile Include="Screens\Task\Components\DetailNotificationForm.Designer.cs">
       <DependentUpon>DetailNotificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Task\Components\DetailReportTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Task\Components\DetailReportTaskForm.Designer.cs">
+      <DependentUpon>DetailReportTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Task\Components\DetailsTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -644,6 +650,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\Components\DetailNotificationForm.resx">
       <DependentUpon>DetailNotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Task\Components\DetailReportTaskForm.resx">
+      <DependentUpon>DetailReportTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Task\Components\DetailsTaskForm.resx">
       <DependentUpon>DetailsTaskForm.cs</DependentUpon>

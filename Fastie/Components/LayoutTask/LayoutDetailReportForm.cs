@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fastie.Screens.Task.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,5 +51,10 @@ namespace Fastie.Components.LayoutTask
             set { imageName = value; lblImageName.Text = imageName; }
         }
 
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            DetailReportTaskForm detailReportTaskForm = new DetailReportTaskForm();
+            detailReportTaskForm.Show();
+        }
     }
 }

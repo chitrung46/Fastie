@@ -62,5 +62,10 @@ namespace Fastie
         {
             this.Close();
         }
+
+        private void CreateDepartmentForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnAdd;
+        }
     }
 }

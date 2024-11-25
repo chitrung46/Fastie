@@ -61,5 +61,10 @@ namespace Fastie.Screens.Task.Components
                 showMessage(ex.Message, "error");
             }
         }
+
+        private void ReasonAdjustmentForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnConfirm;
+        }
     }
 }

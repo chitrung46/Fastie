@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdatePersonnelForm));
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
@@ -203,6 +204,8 @@
             this.cTBNumberPhone.Size = new System.Drawing.Size(144, 38);
             this.cTBNumberPhone.TabIndex = 5;
             this.cTBNumberPhone.UnderlinedStyle = false;
+            this.cTBNumberPhone._TextChanged += new System.EventHandler(this.cTBNumberPhone__TextChanged);
+            this.cTBNumberPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cTBNumberPhone_KeyPress);
             // 
             // cTBName
             // 
@@ -320,6 +323,7 @@
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdatePersonnelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Cập nhật thông tin nhân sự";

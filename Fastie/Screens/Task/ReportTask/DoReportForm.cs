@@ -201,5 +201,10 @@ namespace Fastie.Screens.Task.ReportTask
             reportTaskForm.LoadDataReportTask();
             this.Close();
         }
+
+        private void DoReportForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnReport;
+        }
     }
 }

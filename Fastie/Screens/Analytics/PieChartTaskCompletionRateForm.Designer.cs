@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PieChartTaskCompletionRateForm));
             this.chartPieTaskCompletionRate = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartPieTaskCompletionRate)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             this.ClientSize = new System.Drawing.Size(1094, 622);
             this.Controls.Add(this.chartPieTaskCompletionRate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PieChartTaskCompletionRateForm";
             this.Text = "PieChartTaskCompletionRate";
             ((System.ComponentModel.ISupportInitialize)(this.chartPieTaskCompletionRate)).EndInit();

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Fastie.Components.Toastify;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Fastie.Screens.ContactInformation
 {
@@ -54,6 +55,13 @@ namespace Fastie.Screens.ContactInformation
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(txtNumberphone.Text))
+            {
+                showMessage("Vui lòng nhập số điện thoại liên hệ!", "error");
+                btnSend.Enabled = true;
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(cbTypeRequest.Texts) || cbTypeRequest.Texts == "Chọn")
             {
                 showMessage("Vui lòng chọn chủ đề yêu cầu!", "error");
@@ -64,13 +72,6 @@ namespace Fastie.Screens.ContactInformation
             if (string.IsNullOrWhiteSpace(txtDescribe.Text))
             {
                 showMessage("Vui lòng nhập mô tả vấn đề!", "error");
-                btnSend.Enabled = true;
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtNumberphone.Text))
-            {
-                showMessage("Vui lòng nhập số điện thoại liên hệ!", "error");
                 btnSend.Enabled = true;
                 return;
             }
@@ -111,6 +112,7 @@ namespace Fastie.Screens.ContactInformation
         {
             try
             {
+                string requestCode = GenerateRequestCode();
                 // Thông tin email gửi
                 string fromEmail = "fastie.n02@gmail.com";
                 string fromPassword = "rtpl hzno ottm erol"; // Mật khẩu ứng dụng của email gửi
@@ -131,7 +133,7 @@ Kính gửi {userName},
 Cảm ơn bạn đã liên hệ với đội ngũ Firon! Chúng tôi đã nhận được yêu cầu hỗ trợ của bạn và sẽ xem xét ngay lập tức. Một trong các đại diện của chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất để giải quyết vấn đề của bạn.
 
 Dưới đây là thông tin về yêu cầu của bạn:
-
+- Mã yêu cầu: {requestCode}
 - Ngày gửi yêu cầu: {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}
 - Chủ đề yêu cầu: {subject}
 - Mô tả vấn đề: {issueDescription}
@@ -176,6 +178,37 @@ Firon
             }
 
 
+        }
+        private string GenerateRequestCode()
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(100000, 999999); // Tạo số ngẫu nhiên 6 chữ số
+            return $"HTYC{randomNumber}";
+        }
+
+        private void ContactInformationForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnSend;
+        }
+
+        private void txtNumberphone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+
+        private void txtNumberphone__TextChanged(object sender, EventArgs e)
+        {
+            if (txtNumberphone.Text != "" && int.TryParse(txtNumberphone.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    showMessage("Vui lòng nhập số điện thoại hợp lệ!", "error");
+                    txtNumberphone.Text = "";
+                }
+            }
         }
     }
 }

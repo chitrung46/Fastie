@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.sidebarLayout = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.lblDepartmentName = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
             this.sidebarLayout.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,6 +84,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.stateAccount);
             this.panel2.Controls.Add(this.stateAnalytics);
@@ -430,6 +433,17 @@
             this.pictureBox13.TabIndex = 4;
             this.pictureBox13.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(11, 557);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 21);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Version 1.0.0";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -438,12 +452,14 @@
             this.Controls.Add(this.topbarLayout);
             this.Controls.Add(this.mainLayout);
             this.Controls.Add(this.sidebarLayout);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie";
             this.Load += new System.EventHandler(this.FormLayout_Load);
             this.sidebarLayout.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.topbarLayout.ResumeLayout(false);
             this.topbarLayout.PerformLayout();
@@ -486,6 +502,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxHelp;
         private GUI.TruniControls.CustomPanel customPanel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

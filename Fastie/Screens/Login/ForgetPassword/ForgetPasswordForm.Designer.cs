@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgetPasswordForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.customPanel4 = new GUI.TruniControls.CustomPanel();
@@ -248,7 +249,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Montserrat Thin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(97, 93);
+            this.label3.Location = new System.Drawing.Point(98, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(209, 42);
             this.label3.TabIndex = 0;
@@ -280,6 +281,7 @@
             this.Controls.Add(this.customPanel3);
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ForgetPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Nhập email";

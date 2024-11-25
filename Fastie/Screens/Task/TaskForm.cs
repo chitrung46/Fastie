@@ -49,9 +49,6 @@ namespace Fastie
             this.idChucVu = idChucVu;
             this.idBoPhan = idBoPhan;
 
-            handleAcceptTask();
-            handleReportOnline();
-
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0019");
             setStateButton(btnTaskTable);
             if (checkPermission) {
@@ -177,6 +174,8 @@ namespace Fastie
 
         private void TaskForm_Load(object sender, EventArgs e)
         {
+            handleAcceptTask();
+            handleReportOnline();
         }
 
         //load report task online
@@ -344,7 +343,7 @@ namespace Fastie
             assignTaskForm.LoadDataAssignTask();
             taskTableForm.LoadTaskTable();
 
-            showMessage("Dữ liệu đã được cập nhật", "success");
+            showMessage("Cập nhật báo cáo và nhận việc online", "success");
         }
     }
 }

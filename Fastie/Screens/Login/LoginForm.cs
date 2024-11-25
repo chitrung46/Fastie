@@ -13,6 +13,7 @@ using BLL.LoginBLL;
 using DTO;
 using Fastie.Components.Toastify;
 using Fastie.Screens.ContactInformation;
+using System.Text.RegularExpressions;
 namespace Fastie.Screens.Login
 {
     public partial class LoginForm : Form
@@ -62,7 +63,11 @@ namespace Fastie.Screens.Login
                 showMessage("Email không được để trống", "error");
                 return;
             }
-
+            if(!IsValidEmail(acc.TenDangNhap))
+            {
+                showMessage("Email không hợp lệ!", "error");
+                return;
+            }
             if (string.IsNullOrWhiteSpace(acc.MatKhau))
             {
                 showMessage("Mật khẩu không được để trống", "error");
@@ -114,7 +119,22 @@ namespace Fastie.Screens.Login
                 pictureEye.Image = Properties.Resources.icons8_eye_23;
             }
         }
+        public bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
 
+            try
+            {
+                // Mẫu kiểm tra định dạng email
+                string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                return Regex.IsMatch(email, emailPattern);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         private void pictureBoxHelp_Click(object sender, EventArgs e)
         {
             ContactInformationForm contactInformationForm = new ContactInformationForm();
@@ -126,6 +146,8 @@ namespace Fastie.Screens.Login
             TermForm termForm = new TermForm();
             termForm.Show();
         }
+
+
     }
 
 }

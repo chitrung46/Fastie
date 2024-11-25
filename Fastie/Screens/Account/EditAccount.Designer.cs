@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditAccount));
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
@@ -187,6 +188,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

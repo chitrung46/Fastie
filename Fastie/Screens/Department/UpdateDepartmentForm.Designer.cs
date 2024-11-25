@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateDepartmentForm));
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -193,6 +194,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UpdateDepartmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

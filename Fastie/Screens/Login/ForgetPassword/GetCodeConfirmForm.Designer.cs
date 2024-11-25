@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetCodeConfirmForm));
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.txtCode4 = new GUI.TruniControls.CustomTextBox();
             this.txtCode3 = new GUI.TruniControls.CustomTextBox();
@@ -192,7 +193,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(87, 50);
+            this.label1.Location = new System.Drawing.Point(94, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 29);
             this.label1.TabIndex = 0;
@@ -205,7 +206,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(84, 93);
+            this.label3.Location = new System.Drawing.Point(102, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(199, 36);
             this.label3.TabIndex = 0;
@@ -327,9 +328,11 @@
             this.Controls.Add(this.customPanel3);
             this.Controls.Add(this.customPanel4);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GetCodeConfirmForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Nhận mã";
+            this.Load += new System.EventHandler(this.GetCodeConfirmForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.customPanel2.ResumeLayout(false);

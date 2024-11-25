@@ -162,5 +162,10 @@ namespace Fastie.Screens.Login.ForgetPassword
         {
 
         }
+
+        private void GetCodeConfirmForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnConfirmCode;
+        }
     }
 }

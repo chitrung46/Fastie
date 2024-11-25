@@ -36,6 +36,7 @@ namespace Fastie
         {
             cTBName.Text = needEdit.Ten;
             cTBDescribe.Text = needEdit.MoTa;
+            this.AcceptButton = btnUpdate;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

@@ -25,5 +25,6 @@ namespace Fastie.Screens.Position
             lblPositionName.Text = layoutPositionForm.NamePosition;
             lblPositionContent.Text = layoutPositionForm.DecriptionPosition;
         }
+
     }
 }

@@ -32,6 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PieChartStatusTaskForm));
             this.chartPieStatusTask = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartPieStatusTask)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,6 @@
             title1.Name = "Title1";
             title1.Text = "Thống kê trạng thái công việc";
             this.chartPieStatusTask.Titles.Add(title1);
-            
             // 
             // PieChartStatusTaskForm
             // 
@@ -68,6 +68,7 @@
             this.ClientSize = new System.Drawing.Size(1094, 622);
             this.Controls.Add(this.chartPieStatusTask);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PieChartStatusTaskForm";
             this.Text = "Chart";
             ((System.ComponentModel.ISupportInitialize)(this.chartPieStatusTask)).EndInit();

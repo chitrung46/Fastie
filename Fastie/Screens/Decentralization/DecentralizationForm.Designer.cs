@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DecentralizationForm));
             this.flowLayoutPanelPersonnel = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlTabBar = new GUI.TruniControls.CustomPanel();
             this.btnRoleless = new GUI.CustomButton();
@@ -355,6 +356,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DecentralizationForm";
             this.Text = "DecentralizationBackupForm";
             this.Load += new System.EventHandler(this.DecentralizationBackupForm_Load);

@@ -157,11 +157,11 @@ namespace Fastie.Screens.Task
 
                 if (result.Status == Google.Apis.Upload.UploadStatus.Completed)
                 {
-                    MessageBox.Show($"Uploaded successfully! File ID: {request.ResponseBody.Id}");
+                    showMessage("Tải file thành công!", "success");
                 }
                 else
                 {
-                    MessageBox.Show($"Upload failed: {result.Exception?.Message}");
+                    showMessage("Tải file thất bại!", "error");
                 }
             }
         }
@@ -197,7 +197,6 @@ namespace Fastie.Screens.Task
             string.IsNullOrWhiteSpace(cTBDescribeTask.Text) || dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now)
             {
                 showMessage("Vui lòng nhập đủ thông tin!", "error");
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Exit the method if validation fails
             }
             if (cCBLoaiCongViec.Texts == "Giao việc")
@@ -255,7 +254,6 @@ namespace Fastie.Screens.Task
                     result = taskBLL.GiaoViec(loaiGiaoViec, thongTinGiaoViec);
                                      
                 }
-                //bool result = taskBLL.GiaoViec(loaiGiaoViec, thongTinGiaoViec);
 
                 if (result)
                 {
@@ -271,63 +269,6 @@ namespace Fastie.Screens.Task
             {
                 showMessage("Chưa hoàn thiện chức năng", "success");
             }
-            
-
-
-
-
-
-
-
-
-            //string testIdLichSu = taskBLL.TaoLichSuId();
-            ////if(testIdLichSu!= null)
-            ////{
-
-            ////    //MessageBox.Show("Tạo ID lịch sử thành công", testIdLichSu);
-            ////} else
-            ////{
-            ////    MessageBox.Show("Tạo ID lịch sử thất bại"); 
-            ////}
-            //var task = new TaskInfo()
-            //{
-            //    IdLoaiCongViec = taskBLL.LayIdLoaiCongViecTuTen(cCBLoaiCongViec.Texts),
-            //    IdBoPhanGiaoViec =this.idBoPhanKhiDangNhap,
-            //    Id = taskBLL.TaoCongViecId(taskBLL.LayIdLoaiCongViecTuTen(cCBLoaiCongViec.Texts), this.idBoPhanKhiDangNhap),
-            //    Ten = txbTaskName.Text,
-            //    GhiChu = "",
-            //    MoTa = cTBDescribeTask.Text,
-            //    ThoiGianGiaoViec = DateTime.Now,
-            //    ThoiHanHoanThanh = dtpTimeCompleted.Value,
-            //    IdTienDoCongViec = "TD001",
-            //    IdTaiKhoanGiaoViec = this.idTaiKhoan,
-            //    IdLichSuMacDinh = taskBLL.TaoLichSuId()
-            //};
-
-            //bool result = taskBLL.ThemCongViecGiaoViec(task);
-            //if (result)
-            //{
-            //    foreach (DataGridViewRow row in dgvBoPhanNhanViec.Rows)
-            //    {
-            //        string departmentId = row.Cells["idBoPhan"].Value?.ToString();
-            //        if (!string.IsNullOrEmpty(departmentId))
-            //        {
-            //            // Save department assignment to BoPhanNhanViec table
-            //            taskBLL.LuuBoPhanNhanViec(departmentId, task.Id);
-            //        }
-            //    }
-            //    foreach (DataGridViewRow row in dgvTaiKhoanNhanViec.Rows)
-            //    {
-            //        string recipientId = row.Cells["idNhanSu"].Value?.ToString();
-            //        if (!string.IsNullOrEmpty(recipientId))
-            //        {
-            //            // Save recipient assignment to TaiKhoanNhanViec table
-            //            taskBLL.LuuTaiKhoanNhanViec(recipientId, task.Id);
-            //        }
-            //    }
-            //    MessageBox.Show("Công việc đã được thêm thành công!", "Thông báo");
-            //    this.Close();
-            //}
         }
 
         private void customButton2_Click(object sender, EventArgs e)
@@ -340,7 +281,7 @@ namespace Fastie.Screens.Task
             {
                 if (row.Cells["idBoPhan"].Value?.ToString() == selectedDepartment.Id)
                 {
-                    MessageBox.Show("Department is already added.");
+                    showMessage("Bộ phận đã được thêm", "error");
                     return;
                 }
             }
@@ -393,7 +334,7 @@ namespace Fastie.Screens.Task
             {
                 if (row.Cells["idTaiKhoan"].Value?.ToString() == selectedRecipient.Id)
                 {
-                    //MessageBox.Show("Recipient is already added.");
+                    showMessage("Người nhận đã được thêm", "error");
                     return;
                 }
             }
@@ -411,7 +352,7 @@ namespace Fastie.Screens.Task
             }
             else
             {
-                MessageBox.Show("Please select a department to remove.");
+                showMessage("Vui lòng chọn bộ phận để xóa", "error");
             }
         }
 
@@ -423,13 +364,18 @@ namespace Fastie.Screens.Task
             }
             else
             {
-                MessageBox.Show("Please select a recipient to remove.");
+                showMessage("Vui lòng chọn người nhận để xóa", "error");
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DetailAssignTaskForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnAdd;
         }
     }
 }

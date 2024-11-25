@@ -162,6 +162,7 @@
             this.ClientSize = new System.Drawing.Size(608, 391);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailsDepartmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Xem chi tiết bộ phận";

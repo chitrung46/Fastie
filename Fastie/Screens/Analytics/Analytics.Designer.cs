@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Analytics));
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,11 +44,8 @@
             this.cbPosition = new GUI.TruniControls.CustomComboBox();
             this.cbDepartment = new GUI.TruniControls.CustomComboBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.customPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -58,7 +56,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(558, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 21);
+            this.label4.Size = new System.Drawing.Size(77, 21);
             this.label4.TabIndex = 18;
             this.label4.Text = "Nhân sự";
             // 
@@ -70,7 +68,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(289, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 21);
+            this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 14;
             this.label3.Text = "Chức vụ";
             // 
@@ -82,7 +80,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(24, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 21);
+            this.label2.Size = new System.Drawing.Size(78, 21);
             this.label2.TabIndex = 15;
             this.label2.Text = "Bộ phận";
             // 
@@ -103,7 +101,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(24, 191);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 21);
+            this.label5.Size = new System.Drawing.Size(151, 21);
             this.label5.TabIndex = 21;
             this.label5.Text = "Thời gian bắt đầu";
             // 
@@ -115,7 +113,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(289, 191);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 21);
+            this.label7.Size = new System.Drawing.Size(158, 21);
             this.label7.TabIndex = 23;
             this.label7.Text = "Thời gian kết thúc";
             // 
@@ -136,7 +134,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(558, 191);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 21);
+            this.label8.Size = new System.Drawing.Size(86, 21);
             this.label8.TabIndex = 25;
             this.label8.Text = "Thông kê";
             // 
@@ -255,8 +253,6 @@
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
             this.customPanel1.BorderSize = 0;
-            this.customPanel1.Controls.Add(this.pictureBox8);
-            this.customPanel1.Controls.Add(this.label6);
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.ForeColor = System.Drawing.Color.Black;
             this.customPanel1.GradientAngle = 90F;
@@ -267,29 +263,6 @@
             this.customPanel1.Size = new System.Drawing.Size(1094, 74);
             this.customPanel1.TabIndex = 5;
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = global::Fastie.Properties.Resources.icons8_search_100;
-            this.pictureBox8.Location = new System.Drawing.Point(940, 22);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(986, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 21);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Tìm kiếm";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -298,7 +271,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(18, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 32);
+            this.label1.Size = new System.Drawing.Size(127, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thống kê";
             // 
@@ -325,6 +298,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1164, 3000);
             this.MinimumSize = new System.Drawing.Size(1164, 695);
             this.Name = "Analytics";
@@ -332,7 +306,6 @@
             this.Load += new System.EventHandler(this.Analytics_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,8 +314,6 @@
         #endregion
 
         private GUI.TruniControls.CustomPanel customPanel1;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private GUI.TruniControls.CustomComboBox cbPersonnel;
         private System.Windows.Forms.Label label4;

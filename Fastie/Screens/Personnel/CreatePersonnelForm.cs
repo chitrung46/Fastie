@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fastie.Components.LayoutDepartment;
 using Fastie.Components.Toastify;
+using System.Text.RegularExpressions;
 
 namespace Fastie
 {
@@ -41,6 +42,32 @@ namespace Fastie
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cTBName.Text))
+            {
+                showMessage("Vui lòng nhập tên!", "error");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(cTBEmail.Text))
+            {
+                showMessage("Vui lòng nhập email!", "error");
+                return;
+            }
+            if (!IsValidEmail(cTBEmail.Text))
+            {
+                showMessage("Email không hợp lệ!", "error");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(cCBSex.Texts))
+            {
+                showMessage("Vui lòng chọn giới tính!", "error");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(cTBNumberPhone.Text))
+            {
+                showMessage("Vui lòng nhập số điện thoại!", "error");
+                return;
+            }
+
             try
             {
                 Personnel newNhanSu = new Personnel
@@ -63,9 +90,50 @@ namespace Fastie
             this.Close();
         }
 
+        public bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                // Mẫu kiểm tra định dạng email
+                string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                return Regex.IsMatch(email, emailPattern);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CreatePersonnelForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnAdd;
+        }
+
+        private void cTBNumberPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cTBNumberPhone__TextChanged(object sender, EventArgs e)
+        {
+            if (cTBNumberPhone.Text != "" && int.TryParse(cTBNumberPhone.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    showMessage("Vui lòng nhập số điện thoại hợp lệ!", "error");
+                    cTBNumberPhone.Text = "";
+                }
+            }
         }
     }
 }

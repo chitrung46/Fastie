@@ -213,6 +213,7 @@ namespace Fastie
 
             Analytics analytics = new Analytics(accountId);
             addFormInMainLayout(analytics);
+            setStatePanel(stateAnalytics);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)

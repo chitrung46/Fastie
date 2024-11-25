@@ -42,6 +42,7 @@ namespace Fastie.Screens.Task
             dgvAssignTaskFast.Rows.Add("Tên loại công việc");
             dgvAssignTaskFast.Rows.Add("Mô tả công việc");
             dgvAssignTaskFast.Rows.Add("Thời hạn hoàn thành");
+            this.AcceptButton = btnUpdate;
             
         }
         private int ExcelColumnLetterToNumber(string columnLetter)
@@ -81,7 +82,6 @@ namespace Fastie.Screens.Task
             if (string.IsNullOrEmpty(excelFilePath))
             {
                 showMessage("Vui lòng chọn File", "error");
-                //MessageBox.Show("No file selected. Please upload an Excel file first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -108,7 +108,6 @@ namespace Fastie.Screens.Task
                     string.IsNullOrWhiteSpace(completionDeadlineColumn))
                 {
                     showMessage("Vui lòng điền đủ thôn tin", "error");
-                    //MessageBox.Show("Please specify all column letters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -159,12 +158,11 @@ namespace Fastie.Screens.Task
 
                 if (errorMessages.Any())
                 {
-                    MessageBox.Show(string.Join(Environment.NewLine, errorMessages), "Errors Occurred", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    showMessage(string.Join(Environment.NewLine, errorMessages), "error");
                 }
                 else
                 {
                     showMessage("Thêm các công việc thành công !", "success");
-                    //MessageBox.Show("All tasks were added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePositionForm));
             this.label4 = new System.Windows.Forms.Label();
             this.cTBDescribe = new GUI.TruniControls.CustomTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -189,9 +190,11 @@
             this.Controls.Add(this.customPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreatePositionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Thêm chức vụ ";
+            this.Load += new System.EventHandler(this.CreatePositionForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);

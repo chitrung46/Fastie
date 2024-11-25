@@ -147,6 +147,7 @@
             this.btnDetail.Size = new System.Drawing.Size(48, 40);
             this.btnDetail.TabIndex = 2;
             this.btnDetail.UseVisualStyleBackColor = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // LayoutDetailReportForm
             // 

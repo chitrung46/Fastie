@@ -34,6 +34,7 @@ namespace Fastie
         {
             cTBName.Text = needEdit.Ten;
             cTBDesribe.Text = needEdit.MoTa;
+            this.AcceptButton = btnUpdate;
         }
 
         private void showMessage(string message, string type)

@@ -160,6 +160,7 @@
             this.Name = "ReasonAdjustmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Đơn xin điều chỉnh phân công";
+            this.Load += new System.EventHandler(this.ReasonAdjustmentForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);

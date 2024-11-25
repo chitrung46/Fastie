@@ -53,5 +53,10 @@ namespace Fastie.Screens.Login.ForgetPassword
                 showMessage("Có lỗi xảy ra khi đặt lại mật khẩu.", "error");
             }
         }
+
+        private void ResetPasswordForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnGetPassword;
+        }
     }
 }

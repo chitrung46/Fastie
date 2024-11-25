@@ -28,7 +28,7 @@ namespace Fastie.Components.LayoutNotification
         }
         public string AssignerName
         {
-            get { return AssignerName; }
+            get { return assignerName; }
             set { assignerName = value; lblAssignerName.Text = value; }
         }
 

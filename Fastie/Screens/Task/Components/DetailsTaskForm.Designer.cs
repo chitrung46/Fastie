@@ -42,7 +42,6 @@
             this.customPanel4 = new GUI.TruniControls.CustomPanel();
             this.lblDescribeTask = new System.Windows.Forms.Label();
             this.customPanel3 = new GUI.TruniControls.CustomPanel();
-            this.lblTypeJob = new System.Windows.Forms.Label();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.lblTaskNamee = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTaskName = new System.Windows.Forms.Label();
             this.pnl2 = new GUI.TruniControls.CustomPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFileName = new System.Windows.Forms.Label();
             this.customButton2 = new GUI.CustomButton();
             this.customPanel8 = new GUI.TruniControls.CustomPanel();
@@ -65,6 +63,11 @@
             this.btnEdit = new GUI.CustomButton();
             this.btnAdjustmentTask = new GUI.CustomButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.customPanel9 = new GUI.TruniControls.CustomPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblTypeJob = new System.Windows.Forms.Label();
+            this.lblIdTask = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.customPanel6.SuspendLayout();
@@ -73,10 +76,10 @@
             this.customPanel3.SuspendLayout();
             this.customPanel2.SuspendLayout();
             this.pnl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.customPanel8.SuspendLayout();
             this.customPanel7.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.customPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -86,7 +89,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(34, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 32);
+            this.label3.Size = new System.Drawing.Size(227, 32);
             this.label3.TabIndex = 41;
             this.label3.Text = "Chi tiết công việc";
             // 
@@ -266,17 +269,6 @@
             this.customPanel3.Size = new System.Drawing.Size(555, 40);
             this.customPanel3.TabIndex = 49;
             // 
-            // lblTypeJob
-            // 
-            this.lblTypeJob.AutoSize = true;
-            this.lblTypeJob.Location = new System.Drawing.Point(15, 10);
-            this.lblTypeJob.MaximumSize = new System.Drawing.Size(510, 300);
-            this.lblTypeJob.MinimumSize = new System.Drawing.Size(510, 18);
-            this.lblTypeJob.Name = "lblTypeJob";
-            this.lblTypeJob.Size = new System.Drawing.Size(510, 21);
-            this.lblTypeJob.TabIndex = 0;
-            this.lblTypeJob.Text = "Thông báo";
-            // 
             // customPanel2
             // 
             this.customPanel2.AutoScroll = true;
@@ -312,7 +304,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(347, 349);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 21);
+            this.label4.Size = new System.Drawing.Size(237, 21);
             this.label4.TabIndex = 47;
             this.label4.Text = "Số lượng nhân sự chủ động:";
             // 
@@ -323,7 +315,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(28, 349);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 21);
+            this.label7.Size = new System.Drawing.Size(186, 21);
             this.label7.TabIndex = 41;
             this.label7.Text = "Thời hạn hoàn thành: ";
             // 
@@ -333,7 +325,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(29, 181);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 21);
+            this.label2.Size = new System.Drawing.Size(145, 21);
             this.label2.TabIndex = 35;
             this.label2.Text = "Mô tả công việc: ";
             // 
@@ -343,7 +335,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(29, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 21);
+            this.label1.Size = new System.Drawing.Size(133, 21);
             this.label1.TabIndex = 33;
             this.label1.Text = "Loại công việc: ";
             // 
@@ -353,7 +345,7 @@
             this.lblTaskName.ForeColor = System.Drawing.Color.White;
             this.lblTaskName.Location = new System.Drawing.Point(28, 17);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(121, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(129, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Tên công việc: ";
             // 
@@ -363,7 +355,9 @@
             this.pnl2.BorderColor = System.Drawing.Color.Black;
             this.pnl2.BorderRadius = 30;
             this.pnl2.BorderSize = 0;
-            this.pnl2.Controls.Add(this.pictureBox1);
+            this.pnl2.Controls.Add(this.label10);
+            this.pnl2.Controls.Add(this.customPanel9);
+            this.pnl2.Controls.Add(this.label9);
             this.pnl2.Controls.Add(this.lblFileName);
             this.pnl2.Controls.Add(this.customButton2);
             this.pnl2.Controls.Add(this.customPanel8);
@@ -381,24 +375,14 @@
             this.pnl2.Size = new System.Drawing.Size(457, 430);
             this.pnl2.TabIndex = 44;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(32, 257);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 43;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblFileName
             // 
             this.lblFileName.AutoSize = true;
             this.lblFileName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFileName.ForeColor = System.Drawing.Color.White;
-            this.lblFileName.Location = new System.Drawing.Point(296, 257);
+            this.lblFileName.Location = new System.Drawing.Point(295, 330);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(69, 21);
+            this.lblFileName.Size = new System.Drawing.Size(73, 21);
             this.lblFileName.TabIndex = 2;
             this.lblFileName.Text = "n2.docx";
             // 
@@ -412,7 +396,7 @@
             this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(34, 204);
+            this.customButton2.Location = new System.Drawing.Point(34, 278);
             this.customButton2.Name = "customButton2";
             this.customButton2.Size = new System.Drawing.Size(141, 40);
             this.customButton2.TabIndex = 44;
@@ -431,7 +415,7 @@
             this.customPanel8.GradientAngle = 90F;
             this.customPanel8.GradientBottomColor = System.Drawing.Color.White;
             this.customPanel8.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel8.Location = new System.Drawing.Point(32, 128);
+            this.customPanel8.Location = new System.Drawing.Point(34, 212);
             this.customPanel8.Name = "customPanel8";
             this.customPanel8.Size = new System.Drawing.Size(396, 40);
             this.customPanel8.TabIndex = 53;
@@ -439,7 +423,7 @@
             // lblPersonnel
             // 
             this.lblPersonnel.AutoSize = true;
-            this.lblPersonnel.Location = new System.Drawing.Point(15, 10);
+            this.lblPersonnel.Location = new System.Drawing.Point(15, 11);
             this.lblPersonnel.MaximumSize = new System.Drawing.Size(225, 300);
             this.lblPersonnel.MinimumSize = new System.Drawing.Size(205, 18);
             this.lblPersonnel.Name = "lblPersonnel";
@@ -458,7 +442,7 @@
             this.customPanel7.GradientAngle = 90F;
             this.customPanel7.GradientBottomColor = System.Drawing.Color.White;
             this.customPanel7.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel7.Location = new System.Drawing.Point(32, 47);
+            this.customPanel7.Location = new System.Drawing.Point(31, 126);
             this.customPanel7.Name = "customPanel7";
             this.customPanel7.Size = new System.Drawing.Size(396, 40);
             this.customPanel7.TabIndex = 52;
@@ -466,7 +450,7 @@
             // lblDepartment
             // 
             this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Location = new System.Drawing.Point(15, 10);
+            this.lblDepartment.Location = new System.Drawing.Point(15, 11);
             this.lblDepartment.MaximumSize = new System.Drawing.Size(225, 300);
             this.lblDepartment.MinimumSize = new System.Drawing.Size(205, 18);
             this.lblDepartment.Name = "lblDepartment";
@@ -477,9 +461,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(28, 96);
+            this.label5.Location = new System.Drawing.Point(30, 181);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 21);
+            this.label5.Size = new System.Drawing.Size(147, 21);
             this.label5.TabIndex = 33;
             this.label5.Text = "Người nhận việc:";
             // 
@@ -487,9 +471,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(29, 17);
+            this.label6.Location = new System.Drawing.Point(28, 97);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 21);
+            this.label6.Size = new System.Drawing.Size(165, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bộ phận nhận việc:";
             // 
@@ -503,7 +487,7 @@
             this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUploadFile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadFile.Location = new System.Drawing.Point(300, 204);
+            this.btnUploadFile.Location = new System.Drawing.Point(299, 278);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(128, 40);
             this.btnUploadFile.TabIndex = 9;
@@ -590,6 +574,65 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(657, 49);
             this.flowLayoutPanel1.TabIndex = 58;
             // 
+            // customPanel9
+            // 
+            this.customPanel9.AutoScroll = true;
+            this.customPanel9.BackColor = System.Drawing.Color.White;
+            this.customPanel9.BorderColor = System.Drawing.Color.Black;
+            this.customPanel9.BorderRadius = 15;
+            this.customPanel9.BorderSize = 0;
+            this.customPanel9.Controls.Add(this.lblIdTask);
+            this.customPanel9.ForeColor = System.Drawing.Color.Black;
+            this.customPanel9.GradientAngle = 90F;
+            this.customPanel9.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel9.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel9.Location = new System.Drawing.Point(32, 46);
+            this.customPanel9.Name = "customPanel9";
+            this.customPanel9.Size = new System.Drawing.Size(396, 40);
+            this.customPanel9.TabIndex = 55;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(29, 17);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 21);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "ID công việc";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(30, 330);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 21);
+            this.label10.TabIndex = 56;
+            this.label10.Text = "n2.docx";
+            // 
+            // lblTypeJob
+            // 
+            this.lblTypeJob.AutoSize = true;
+            this.lblTypeJob.Location = new System.Drawing.Point(15, 10);
+            this.lblTypeJob.MaximumSize = new System.Drawing.Size(510, 300);
+            this.lblTypeJob.MinimumSize = new System.Drawing.Size(510, 18);
+            this.lblTypeJob.Name = "lblTypeJob";
+            this.lblTypeJob.Size = new System.Drawing.Size(510, 21);
+            this.lblTypeJob.TabIndex = 0;
+            this.lblTypeJob.Text = "Thông báo";
+            // 
+            // lblIdTask
+            // 
+            this.lblIdTask.AutoSize = true;
+            this.lblIdTask.Location = new System.Drawing.Point(15, 11);
+            this.lblIdTask.MaximumSize = new System.Drawing.Size(440, 300);
+            this.lblIdTask.MinimumSize = new System.Drawing.Size(205, 18);
+            this.lblIdTask.Name = "lblIdTask";
+            this.lblIdTask.Size = new System.Drawing.Size(205, 21);
+            this.lblIdTask.TabIndex = 0;
+            // 
             // DetailsTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -623,12 +666,13 @@
             this.customPanel2.PerformLayout();
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.customPanel8.ResumeLayout(false);
             this.customPanel8.PerformLayout();
             this.customPanel7.ResumeLayout(false);
             this.customPanel7.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.customPanel9.ResumeLayout(false);
+            this.customPanel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,7 +692,6 @@
         private System.Windows.Forms.Label label4;
         private GUI.CustomButton btnOriginalTask;
         private GUI.CustomButton customButton2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private GUI.CustomButton btnUploadFile;
         private System.Windows.Forms.PictureBox pictureBack;
         private System.Windows.Forms.Label lblBack;
@@ -663,7 +706,6 @@
         private System.Windows.Forms.Label lblNumber;
         private System.Windows.Forms.Label dtpTimeCompleted;
         private System.Windows.Forms.Label lblDescribeTask;
-        private System.Windows.Forms.Label lblTypeJob;
         private System.Windows.Forms.Label lblTaskNamee;
         private System.Windows.Forms.Label lblPersonnel;
         private System.Windows.Forms.Label lblDepartment;
@@ -671,5 +713,10 @@
         private GUI.CustomButton btnEdit;
         private GUI.CustomButton btnAdjustmentTask;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label lblTypeJob;
+        private System.Windows.Forms.Label label10;
+        private GUI.TruniControls.CustomPanel customPanel9;
+        private System.Windows.Forms.Label lblIdTask;
+        private System.Windows.Forms.Label label9;
     }
 }

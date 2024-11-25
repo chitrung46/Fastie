@@ -49,6 +49,7 @@
             this.btnDetailAssignTask.BorderColor = System.Drawing.Color.White;
             this.btnDetailAssignTask.BorderRadius = 15;
             this.btnDetailAssignTask.BorderSize = 0;
+            this.btnDetailAssignTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetailAssignTask.FlatAppearance.BorderSize = 0;
             this.btnDetailAssignTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetailAssignTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -67,6 +68,7 @@
             this.btnDetailAssignPositiveTask.BorderColor = System.Drawing.Color.White;
             this.btnDetailAssignPositiveTask.BorderRadius = 15;
             this.btnDetailAssignPositiveTask.BorderSize = 0;
+            this.btnDetailAssignPositiveTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetailAssignPositiveTask.FlatAppearance.BorderSize = 0;
             this.btnDetailAssignPositiveTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetailAssignPositiveTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,6 +88,7 @@
             this.btnDetailAssignFastingTask.BorderColor = System.Drawing.Color.White;
             this.btnDetailAssignFastingTask.BorderRadius = 15;
             this.btnDetailAssignFastingTask.BorderSize = 0;
+            this.btnDetailAssignFastingTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetailAssignFastingTask.FlatAppearance.BorderSize = 0;
             this.btnDetailAssignFastingTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetailAssignFastingTask.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,7 +131,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(1002, 4);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 21);
+            this.label7.Size = new System.Drawing.Size(60, 21);
             this.label7.TabIndex = 2;
             this.label7.Text = "Duyệt";
             // 
@@ -139,7 +142,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(811, 4);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 21);
+            this.label6.Size = new System.Drawing.Size(101, 21);
             this.label6.TabIndex = 1;
             this.label6.Text = "Hành động";
             // 
@@ -150,7 +153,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(922, 4);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 21);
+            this.label5.Size = new System.Drawing.Size(70, 21);
             this.label5.TabIndex = 0;
             this.label5.Text = "Chi tiết";
             // 
@@ -161,7 +164,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(581, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 21);
+            this.label4.Size = new System.Drawing.Size(141, 21);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tên người  nhận";
             // 
@@ -172,7 +175,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(419, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 21);
+            this.label3.Size = new System.Drawing.Size(93, 21);
             this.label3.TabIndex = 0;
             this.label3.Text = "Trạng thái";
             // 
@@ -183,7 +186,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(269, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 21);
+            this.label2.Size = new System.Drawing.Size(125, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Ngày kết thúc";
             // 
@@ -194,7 +197,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(16, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 21);
+            this.label1.Size = new System.Drawing.Size(121, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên công việc";
             // 

@@ -59,5 +59,10 @@ namespace Fastie
         {
             this.Close();
         }
+
+        private void CreatePositionForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnAdd;
+        }
     }
 }

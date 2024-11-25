@@ -40,12 +40,14 @@
             // 
             this.lblCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCancel.AutoSize = true;
+            this.lblCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCancel.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCancel.Location = new System.Drawing.Point(317, 5);
+            this.lblCancel.Location = new System.Drawing.Point(349, 5);
             this.lblCancel.Name = "lblCancel";
             this.lblCancel.Size = new System.Drawing.Size(20, 21);
             this.lblCancel.TabIndex = 9;
             this.lblCancel.Text = "X";
+            this.lblCancel.Click += new System.EventHandler(this.lblCancel_Click_1);
             // 
             // lblStatus
             // 
@@ -74,7 +76,7 @@
             this.pnlBar.MaximumSize = new System.Drawing.Size(430, 7);
             this.pnlBar.MinimumSize = new System.Drawing.Size(354, 7);
             this.pnlBar.Name = "pnlBar";
-            this.pnlBar.Size = new System.Drawing.Size(370, 7);
+            this.pnlBar.Size = new System.Drawing.Size(406, 7);
             this.pnlBar.TabIndex = 5;
             // 
             // pictureBoxError
@@ -87,11 +89,11 @@
             this.pictureBoxError.TabIndex = 6;
             this.pictureBoxError.TabStop = false;
             // 
-            // LayoutToastifyFail
+            // LayoutToastify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 68);
+            this.ClientSize = new System.Drawing.Size(373, 68);
             this.Controls.Add(this.lblCancel);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblMessage);
@@ -100,7 +102,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(430, 68);
             this.MinimumSize = new System.Drawing.Size(354, 68);
-            this.Name = "LayoutToastifyFail";
+            this.Name = "LayoutToastify";
             this.Text = "LayoutToastifyFail";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).EndInit();
             this.ResumeLayout(false);

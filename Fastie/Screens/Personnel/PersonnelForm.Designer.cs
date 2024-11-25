@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonnelForm));
             this.customPanel3 = new GUI.TruniControls.CustomPanel();
+            this.txtSearch = new GUI.TruniControls.CustomTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddPersonnel = new GUI.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,11 +43,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.flowLayoutPanelPersonnel = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtSearch = new GUI.TruniControls.CustomTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customPanel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // customPanel3
@@ -64,6 +65,40 @@
             this.customPanel3.Name = "customPanel3";
             this.customPanel3.Size = new System.Drawing.Size(1120, 74);
             this.customPanel3.TabIndex = 6;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.AutoSize = true;
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtSearch.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BorderRadius = 0;
+            this.txtSearch.BorderSize = 1;
+            this.txtSearch.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.White;
+            this.txtSearch.Location = new System.Drawing.Point(1004, 20);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Multiline = false;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtSearch.PasswordChar = false;
+            this.txtSearch.PlaceholderColor = System.Drawing.Color.White;
+            this.txtSearch.PlaceholderText = "Tìm kiếm";
+            this.txtSearch.Size = new System.Drawing.Size(97, 36);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.UnderlinedStyle = false;
+            this.txtSearch._TextChanged += new System.EventHandler(this.txtSearch__TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pictureBox1.Image = global::Fastie.Properties.Resources.icons8_search_100;
+            this.pictureBox1.Location = new System.Drawing.Point(960, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -197,40 +232,6 @@
             this.flowLayoutPanelPersonnel.Size = new System.Drawing.Size(1213, 491);
             this.flowLayoutPanelPersonnel.TabIndex = 21;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.AutoSize = true;
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.txtSearch.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BorderRadius = 0;
-            this.txtSearch.BorderSize = 1;
-            this.txtSearch.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.White;
-            this.txtSearch.Location = new System.Drawing.Point(1004, 20);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Multiline = false;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtSearch.PasswordChar = false;
-            this.txtSearch.PlaceholderColor = System.Drawing.Color.White;
-            this.txtSearch.PlaceholderText = "Tìm kiếm";
-            this.txtSearch.Size = new System.Drawing.Size(97, 36);
-            this.txtSearch.TabIndex = 24;
-            this.txtSearch.UnderlinedStyle = false;
-            this.txtSearch._TextChanged += new System.EventHandler(this.txtSearch__TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pictureBox1.Image = global::Fastie.Properties.Resources.icons8_search_100;
-            this.pictureBox1.Location = new System.Drawing.Point(960, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            // 
             // PersonnelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -243,14 +244,15 @@
             this.Controls.Add(this.customPanel3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PersonnelForm";
             this.Text = "Personnel";
             this.Load += new System.EventHandler(this.PersonnelForm_Load);
             this.customPanel3.ResumeLayout(false);
             this.customPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

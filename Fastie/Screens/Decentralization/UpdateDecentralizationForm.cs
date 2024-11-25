@@ -131,6 +131,7 @@ namespace Fastie
         private void CreateDecentralizationForm_Load(object sender, EventArgs e)
         {
             CheckPermissions();
+            this.AcceptButton = btnAdd;
         }
 
         private void InitializePermissionCheckboxMap()

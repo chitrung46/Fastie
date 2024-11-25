@@ -111,6 +111,19 @@ namespace Fastie
         {
             switch (btnConfirm.Text)
             {
+                case "Xóa quyền":
+                    bool result = decentralizationBLL.deleteAllRoles(this.accountName);
+                    if (result)
+                    {
+                        showMessage("Xóa quyền thành công", "success");
+                        decentralizationForm.loadDataFromDecentralization();
+                    }
+                    else
+                    {
+                        showMessage("Xóa quyền thất bại", "error");
+                    }
+                    this.Close();
+                    break;
                 case "Xóa chức vụ":
                     bool xoaChucVu = positionBLL.DeletePosition(layoutPositionForm.IdPosition);
                     if (xoaChucVu)

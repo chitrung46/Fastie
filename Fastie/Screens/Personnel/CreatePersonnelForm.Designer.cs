@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePersonnelForm));
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -191,6 +192,8 @@
             this.cTBNumberPhone.Size = new System.Drawing.Size(144, 36);
             this.cTBNumberPhone.TabIndex = 5;
             this.cTBNumberPhone.UnderlinedStyle = false;
+            this.cTBNumberPhone._TextChanged += new System.EventHandler(this.cTBNumberPhone__TextChanged);
+            this.cTBNumberPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cTBNumberPhone_KeyPress);
             // 
             // cTBName
             // 
@@ -307,10 +310,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreatePersonnelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Thêm nhân sự";
+            this.Load += new System.EventHandler(this.CreatePersonnelForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.ResumeLayout(false);

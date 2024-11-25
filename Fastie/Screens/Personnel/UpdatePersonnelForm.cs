@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using BLL.DepartmentBLL;
 using Fastie.Components.LayoutDepartmen;
 using Fastie.Components.Toastify;
+using System.Text.RegularExpressions;
 
 namespace Fastie
 {
@@ -65,19 +66,56 @@ namespace Fastie
 
             cCBSex.Items.Add("Nam");
             cCBSex.Items.Add("Nữ");
+            this.AcceptButton = btnUpdate;
         }
 
+        public bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                // Mẫu kiểm tra định dạng email
+                string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                return Regex.IsMatch(email, emailPattern);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cTBName.Text))
+            if(string.IsNullOrWhiteSpace(cTBName.Text))
             {
-                showMessage("Vui lòng nhập đầy đủ thông tin", "error");
+                showMessage("Vui lòng nhập tên!", "error");
                 return;
             }
-            needEdit.Ten = cTBName.Text;        
+            if (string.IsNullOrWhiteSpace(cTBEmail.Text))
+            {
+                showMessage("Vui lòng nhập email!", "error");
+                return;
+            }
+            if (!IsValidEmail(cTBEmail.Text))
+            {
+                showMessage("Email không hợp lệ!", "error");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(cCBSex.Texts))
+            {
+                showMessage("Vui lòng chọn giới tính!", "error");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(cTBNumberPhone.Text))
+            {
+                showMessage("Vui lòng nhập số điện thoại!", "error");
+                return;
+            }
 
-            needEdit.Ten = cTBName.Text;         // Lấy tên mới từ textbox cTBName
+            needEdit.Ten = cTBName.Text;        
+            needEdit.Ten = cTBName.Text;         
             needEdit.Email = cTBEmail.Text;
             needEdit.GioiTinh = cCBSex.Texts;
             needEdit.NgaySinh = dTPBirthday.Value;
@@ -93,6 +131,26 @@ namespace Fastie
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cTBNumberPhone__TextChanged(object sender, EventArgs e)
+        {
+            if (cTBNumberPhone.Text != "" && int.TryParse(cTBNumberPhone.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    showMessage("Vui lòng nhập số điện thoại hợp lệ!", "error");
+                    cTBNumberPhone.Text = "";
+                }
+            }
+        }
+
+        private void cTBNumberPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

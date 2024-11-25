@@ -51,7 +51,7 @@ namespace Fastie.Components.Toastify
         {
             base.OnLoad(e);
             closeTimer = new Timer();
-            closeTimer.Interval = 3000;
+            closeTimer.Interval = 4000;
             closeTimer.Tick += CloseTimer_Tick;
             closeTimer.Start();
         }
@@ -62,5 +62,9 @@ namespace Fastie.Components.Toastify
             this.Close();
         }
 
+        private void lblCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

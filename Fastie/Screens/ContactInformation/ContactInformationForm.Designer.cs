@@ -234,6 +234,8 @@
             this.txtNumberphone.Size = new System.Drawing.Size(286, 36);
             this.txtNumberphone.TabIndex = 3;
             this.txtNumberphone.UnderlinedStyle = false;
+            this.txtNumberphone._TextChanged += new System.EventHandler(this.txtNumberphone__TextChanged);
+            this.txtNumberphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumberphone_KeyPress);
             // 
             // txtEmail
             // 
@@ -341,6 +343,7 @@
             this.Name = "ContactInformationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Thông tin liên hệ";
+            this.Load += new System.EventHandler(this.ContactInformationForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
