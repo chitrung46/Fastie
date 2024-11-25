@@ -209,8 +209,7 @@ namespace Fastie
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
-            // Giả sử bạn có biến `idTaiKhoan` chứa ID của tài khoản đang đăng nhập
-            string accountId = this.idTaiKhoan; // Hoặc thay bằng cách lấy ID tài khoản đang đăng nhập
+            string accountId = this.idTaiKhoan; 
 
             Analytics analytics = new Analytics(accountId);
             addFormInMainLayout(analytics);

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using Fastie.Screens.Task.Components;
 
 namespace Fastie.Screens.Task
 {
@@ -21,6 +22,7 @@ namespace Fastie.Screens.Task
         private LayoutTaskForm layoutTaskForm;
         private LayoutAssignTaskForm layoutAssignTaskForm;
         private TaskBLL taskBLL = new TaskBLL();
+        private string idTaiKhoan;
         private string idTask;
         private string currentTaskType;
         private TaskInfo taskInfo;
@@ -30,8 +32,12 @@ namespace Fastie.Screens.Task
             InitializeComponent();
             this.taskForm = taskForm;
             this.idTask = idTask;
+            this.idTaiKhoan = taskForm.IdTaiKhoan;
             this.currentTaskType = currentTaskType;
             LoadTaskDetails();
+            btnDelete.Visible = false;
+            btnEdit.Visible = false;
+            btnAdjustmentTask.Visible = true;
         }
 
         public DetailsTaskForm(TaskForm taskForm, string idTask)
@@ -39,13 +45,20 @@ namespace Fastie.Screens.Task
             InitializeComponent();
             this.taskForm = taskForm;
             this.idTask = idTask;
+            this.idTaiKhoan = taskForm.IdTaiKhoan;
             LoadTaskDetails();
+
+            btnDelete.Visible = false;
+            btnEdit.Visible = false;
+            btnAdjustmentTask.Visible = true;
+            btnOriginalTask.Visible = true;
         }
         public DetailsTaskForm(TaskForm taskForm, LayoutGetTaskForm layoutGetTaskForm)
         {
             InitializeComponent();
             this.taskForm = taskForm;
             this.layoutGetTaskForm = layoutGetTaskForm;
+            this.idTaiKhoan = taskForm.IdTaiKhoan;
             LoadTaskDetails();
         }
         public DetailsTaskForm(TaskForm taskForm, LayoutTaskForm layoutTaskForm)
@@ -53,6 +66,7 @@ namespace Fastie.Screens.Task
             InitializeComponent();
             this.taskForm = taskForm;
             this.layoutTaskForm = layoutTaskForm;
+            this.idTaiKhoan = taskForm.IdTaiKhoan;
             LoadTaskDetails();
         }
         public DetailsTaskForm(TaskForm taskForm, LayoutAssignTaskForm layoutAssignTaskForm)
@@ -61,6 +75,7 @@ namespace Fastie.Screens.Task
             this.taskForm = taskForm;
             this.layoutAssignTaskForm = layoutAssignTaskForm;
             this.taskInfo = taskBLL.LayChiTietCongViecTheoIdCongViec(layoutAssignTaskForm.IdTask);
+            this.idTaiKhoan = taskForm.IdTaiKhoan;
             lblTaskNamee.Text = taskInfo.Ten;
             lblTypeJob.Text = taskInfo.TenLoaiCongViec;
             lblDescribeTask.Text = taskInfo.MoTa;
@@ -208,6 +223,12 @@ namespace Fastie.Screens.Task
             layoutConfirmForm.Content = information[1];
             layoutConfirmForm.btnConfirmText = information[2];
             layoutConfirmForm.Show();
+        }
+
+        private void btnAdjustmentTask_Click(object sender, EventArgs e)
+        {
+            ReasonAdjustmentForm reasonAdjustmentForm = new ReasonAdjustmentForm(this.idTaiKhoan, this.idTask);
+            reasonAdjustmentForm.Show();
         }
     }
 }

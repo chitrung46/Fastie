@@ -171,7 +171,7 @@ Firon
             catch (Exception ex)
             {
                 // Xử lý lỗi, có thể log thêm thông tin lỗi vào đây
-                Console.WriteLine($"Error: {ex.Message}");
+                showMessage(ex.Message, "error");
                 return false;
             }
 

@@ -37,6 +37,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblJobAssigner = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnReason = new GUI.CustomButton();
+            this.btnRefuse = new GUI.CustomButton();
             this.btnApprove = new GUI.CustomButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,7 +70,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.btnTaskStatus);
-            this.panel3.Location = new System.Drawing.Point(506, 3);
+            this.panel3.Location = new System.Drawing.Point(411, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(174, 54);
             this.panel3.TabIndex = 8;
@@ -93,7 +95,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lblTaskTime);
-            this.panel2.Location = new System.Drawing.Point(361, 3);
+            this.panel2.Location = new System.Drawing.Point(267, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(139, 54);
             this.panel2.TabIndex = 9;
@@ -103,15 +105,15 @@
             this.panel1.Controls.Add(this.lblTaskName);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 54);
+            this.panel1.Size = new System.Drawing.Size(261, 54);
             this.panel1.TabIndex = 10;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.lblJobAssigner);
-            this.panel4.Location = new System.Drawing.Point(686, 3);
+            this.panel4.Location = new System.Drawing.Point(589, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(279, 54);
+            this.panel4.Size = new System.Drawing.Size(188, 54);
             this.panel4.TabIndex = 11;
             // 
             // lblJobAssigner
@@ -126,11 +128,51 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.btnReason);
+            this.panel6.Controls.Add(this.btnRefuse);
             this.panel6.Controls.Add(this.btnApprove);
-            this.panel6.Location = new System.Drawing.Point(971, 3);
+            this.panel6.Location = new System.Drawing.Point(783, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(143, 54);
+            this.panel6.Size = new System.Drawing.Size(331, 54);
             this.panel6.TabIndex = 13;
+            // 
+            // btnReason
+            // 
+            this.btnReason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.btnReason.BorderColor = System.Drawing.Color.White;
+            this.btnReason.BorderRadius = 15;
+            this.btnReason.BorderSize = 0;
+            this.btnReason.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReason.FlatAppearance.BorderSize = 0;
+            this.btnReason.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReason.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReason.ForeColor = System.Drawing.Color.White;
+            this.btnReason.Location = new System.Drawing.Point(225, 6);
+            this.btnReason.Name = "btnReason";
+            this.btnReason.Size = new System.Drawing.Size(97, 40);
+            this.btnReason.TabIndex = 2;
+            this.btnReason.Text = "Lý do";
+            this.btnReason.UseVisualStyleBackColor = false;
+            this.btnReason.Click += new System.EventHandler(this.btnReason_Click);
+            // 
+            // btnRefuse
+            // 
+            this.btnRefuse.BackColor = System.Drawing.Color.Red;
+            this.btnRefuse.BorderColor = System.Drawing.Color.White;
+            this.btnRefuse.BorderRadius = 15;
+            this.btnRefuse.BorderSize = 0;
+            this.btnRefuse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefuse.FlatAppearance.BorderSize = 0;
+            this.btnRefuse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefuse.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefuse.ForeColor = System.Drawing.Color.White;
+            this.btnRefuse.Location = new System.Drawing.Point(116, 6);
+            this.btnRefuse.Name = "btnRefuse";
+            this.btnRefuse.Size = new System.Drawing.Size(97, 40);
+            this.btnRefuse.TabIndex = 1;
+            this.btnRefuse.Text = "Từ chối";
+            this.btnRefuse.UseVisualStyleBackColor = false;
+            this.btnRefuse.Click += new System.EventHandler(this.btnRefuse_Click);
             // 
             // btnApprove
             // 
@@ -143,12 +185,13 @@
             this.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApprove.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApprove.ForeColor = System.Drawing.Color.White;
-            this.btnApprove.Location = new System.Drawing.Point(23, 7);
+            this.btnApprove.Location = new System.Drawing.Point(9, 7);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(97, 40);
             this.btnApprove.TabIndex = 0;
             this.btnApprove.Text = "Phê duyệt";
             this.btnApprove.UseVisualStyleBackColor = false;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // LayoutAssignmentAdjustmentForm
             // 
@@ -186,5 +229,7 @@
         private System.Windows.Forms.Label lblJobAssigner;
         private System.Windows.Forms.Panel panel6;
         private GUI.CustomButton btnApprove;
+        private GUI.CustomButton btnRefuse;
+        private GUI.CustomButton btnReason;
     }
 }

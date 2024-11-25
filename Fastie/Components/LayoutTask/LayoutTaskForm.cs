@@ -44,7 +44,6 @@ namespace Fastie.Components.LayoutTask
         private void btnGetInformation_Click(object sender, EventArgs e)
         {
             DetailsTaskForm detailsTaskForm = new DetailsTaskForm(this.taskForm, this.idTask);
-
             taskForm.AddFormInMainLayout(detailsTaskForm);
         }
 

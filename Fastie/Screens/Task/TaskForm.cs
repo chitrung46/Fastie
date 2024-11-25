@@ -170,7 +170,7 @@ namespace Fastie
 
         private void btnAdjustTask_Click(object sender, EventArgs e)
         {
-            AssignmentAdjustmentTaskForm assignmentAdjustmentTaskForm = new AssignmentAdjustmentTaskForm();
+            AssignmentAdjustmentTaskForm assignmentAdjustmentTaskForm = new AssignmentAdjustmentTaskForm(this);
             addFormInMainLayout(assignmentAdjustmentTaskForm);
             setStateButton(btnAdjustTask);
         }
@@ -182,27 +182,34 @@ namespace Fastie
         //load report task online
         private async void handleReportOnline()
         {
-            // API Key của bạn
-            string spreadsheetId = "1d0GYgmQ2-GFwFIF40c5BkaHUMMl2AMe5RK-5CNn3uuo";  // Thay bằng Spreadsheet ID
-            string range = "'Answer_1'!A2:G";  // Dải dữ liệu cần đọc
-            var values = await handleDataSheet(spreadsheetId, range);
-
-            if (values == null)
+            try
             {
-                Console.WriteLine("No data available.");
-                return;
+                // API Key của bạn
+                string spreadsheetId = "1d0GYgmQ2-GFwFIF40c5BkaHUMMl2AMe5RK-5CNn3uuo";  // Thay bằng Spreadsheet ID
+                string range = "'Answer_1'!A2:G";  // Dải dữ liệu cần đọc
+                var values = await handleDataSheet(spreadsheetId, range);
+
+                if (values == null)
+                {
+                    Console.WriteLine("No data available.");
+                    return;
+                }
+
+                for (int i = 0; i < values.Count; i++)
+                {
+                    this.thoiGianBaoCao = values[i][0]?.ToString();
+                    this.idTaiKhoanBaoCao = values[i][1]?.ToString();
+                    this.idCongViec = values[i][2]?.ToString();
+                    this.tienDoHoanThanh = values[i][3]?.ToString();
+                    this.noiDungBaoCao = values[i][4]?.ToString();
+                    this.urlTaiLieu = values[i][5]?.ToString();
+                    this.urlHinhAnh = values[i][6]?.ToString();
+                    reportOnline();
+                }
             }
-
-            for (int i = 0; i < values.Count; i++)
+            catch (Exception ex)
             {
-                this.thoiGianBaoCao = values[i][0]?.ToString();
-                this.idTaiKhoanBaoCao = values[i][1]?.ToString();
-                this.idCongViec = values[i][2]?.ToString();
-                this.tienDoHoanThanh = values[i][3]?.ToString();
-                this.noiDungBaoCao = values[i][4]?.ToString();
-                this.urlTaiLieu = values[i][5]?.ToString();
-                this.urlHinhAnh = values[i][6]?.ToString();
-                reportOnline();
+                showMessage($"Lỗi kết nối mạng {ex.Message}", "error");
             }
         }
 
@@ -236,34 +243,45 @@ namespace Fastie
 
         private async Task<IList<IList<Object>>> handleDataSheet(string spreadsheetId, string range)
         {
-            string apiKey = "AIzaSyCHVUVNsmnAkuyVb6dStMTRd0nF9Q2uGdI";
+            try {
+                string apiKey = "AIzaSyCHVUVNsmnAkuyVb6dStMTRd0nF9Q2uGdI";
 
-            // URL để truy cập dữ liệu từ Google Sheets
-            string url = $"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}?key={apiKey}";
+                // URL để truy cập dữ liệu từ Google Sheets
+                string url = $"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}?key={apiKey}";
 
-            using (HttpClient client = new HttpClient())
-            {
-                HttpResponseMessage response = await client.GetAsync(url);
-                if (response.IsSuccessStatusCode)
+                using (HttpClient client = new HttpClient())
                 {
-                    string json = await response.Content.ReadAsStringAsync();
-
-                    // Phân tích dữ liệu JSON trả về
-                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<GoogleSheetResponse>(json);
-
-                    if (result != null && result.Values != null)
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    if (response.IsSuccessStatusCode)
                     {
-                        return result.Values;
+                        string json = await response.Content.ReadAsStringAsync();
+
+                        // Phân tích dữ liệu JSON trả về
+                        var result = Newtonsoft.Json.JsonConvert.DeserializeObject<GoogleSheetResponse>(json);
+
+                        if (result != null && result.Values != null)
+                        {
+                            return result.Values;
+                        }
+                    }
+                    else
+                    {
+                        showMessage("Vui lòng kiểm tra kết nối mạng", "error");
                     }
                 }
-                else
-                {
-                    MessageBox.Show($"Lỗi khi truy cập Google Sheets: {response.ReasonPhrase}");
-                }
-            }
 
+            }
+            catch (Exception ex)
+            {
+                showMessage("Vui lòng kiểm tra kết nối mạng", "error");
+            }
             return null;
         }
+
+
+
+
+
 
         public class GoogleSheetResponse
         {

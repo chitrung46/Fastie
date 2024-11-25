@@ -66,7 +66,6 @@ namespace Fastie.Screens.Task
             {
                 foreach (var task in filteredTasks)
                 {
-                    MessageBox.Show(task.Ten);
                     LayoutGetTaskForm layoutGetTaskForm = new LayoutGetTaskForm(taskForm, this.currentTaskType)
                     {
                         TaskName = task.Ten,

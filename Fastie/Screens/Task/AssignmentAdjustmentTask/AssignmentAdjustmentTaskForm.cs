@@ -1,4 +1,6 @@
-﻿using Fastie.Components.LayoutTask;
+﻿using BLL;
+using DTO;
+using Fastie.Components.LayoutTask;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,12 @@ namespace Fastie.Screens.Task.AssignmentAdjustmentTask
 {
     public partial class AssignmentAdjustmentTaskForm : Form
     {
-        public AssignmentAdjustmentTaskForm()
+        TaskBLL taskBLL = new TaskBLL();
+        private TaskForm taskForm;
+        public AssignmentAdjustmentTaskForm(TaskForm taskForm)
         {
             InitializeComponent();
+            this.taskForm = taskForm;
             loadDataAssignmentAdjusment();
         }
 
@@ -23,22 +28,28 @@ namespace Fastie.Screens.Task.AssignmentAdjustmentTask
         {
             loadDataAssignmentAdjusment();
         }
+
         private void loadDataAssignmentAdjusment()
         {
-            flowLayoutPanelTask.Controls.Clear();
-            
-            LayoutAssignmentAdjustmentForm[] layoutAssignmentAdjustmentForms = new LayoutAssignmentAdjustmentForm[20];
-            for (int i = 0; i < 20; i++)
+            flowLayoutPanelTask.Controls.Clear(); 
+            List<TaskInfo> taskInfos = taskBLL.HienThiDanhSachDieuChinhPhanCong(this.taskForm.IdTaiKhoan);
+
+            foreach (var task in taskInfos)
             {
-                layoutAssignmentAdjustmentForms[i] = new LayoutAssignmentAdjustmentForm
+                LayoutAssignmentAdjustmentForm layoutForm = new LayoutAssignmentAdjustmentForm(taskForm,this)
                 {
-                    TaskName = "Task " + i,
-                    TaskTime = "Time " + i,
-                    TaskStatus = "Status " + i,
-                    TaskJobAssigner = "Job Assigner " + i
+                    TaskName = task.Ten,  
+                    TaskTime = task.ThoiHanHoanThanh ?? DateTime.MinValue,
+                    TaskStatus = task.TenTienDoCongViec,  
+                    TaskJobAssigner = task.TenNhanSuGiaoViec ,
+                    IdCongViec = task.Id,
+                    Reason = task.LiDoDieuChinh
                 };
-                flowLayoutPanelTask.Controls.Add(layoutAssignmentAdjustmentForms[i]);
+
+                // Thêm LayoutAssignmentAdjustmentForm vào flowLayoutPanel
+                flowLayoutPanelTask.Controls.Add(layoutForm);
             }
         }
+
     }
 }

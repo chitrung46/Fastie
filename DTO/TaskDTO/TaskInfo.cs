@@ -30,13 +30,16 @@ namespace DTO
         private string soLuongNhanSuChuDong;
         private string tenNhanSuNhanViec;
 
+        //Thuộc tính điều chỉnh phân công
+        private string liDoDieuChinh;
+
 
         
 
         // Constructor đầy đủ
         public TaskInfo(string id, string ten, string moTa, DateTime? thoiGianGiaoViec, DateTime? thoiGianHoanThanh, DateTime? thoiHanHoanThanh,
                         string ghiChu, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string idLoaiCongViec, string idTienDoCongViec, string idLichSuMacDinh,
-                        string tenBoPhan, string tenLoaiCongViec, string tenTienDoCongViec, string tenNhanSuGiaoViec, string soLuongNhanSuChuDong, string tenNhanSuNhanViec)
+                        string tenBoPhan, string tenLoaiCongViec, string tenTienDoCongViec, string tenNhanSuGiaoViec, string soLuongNhanSuChuDong, string tenNhanSuNhanViec, string liDoDieuChinh)
         {
             this.id = id;
             this.ten = ten;
@@ -56,6 +59,7 @@ namespace DTO
             this.tenNhanSuGiaoViec = tenNhanSuGiaoViec;
             this.soLuongNhanSuChuDong = soLuongNhanSuChuDong;
             this.tenNhanSuNhanViec = tenNhanSuNhanViec;
+            this.liDoDieuChinh = liDoDieuChinh;
         }
 
         // Constructor tối giản (nếu chỉ có các thuộc tính cơ bản)
@@ -82,5 +86,7 @@ namespace DTO
         public string TenNhanSuGiaoViec { get => tenNhanSuGiaoViec; set => tenNhanSuGiaoViec = value; }
         public string SoLuongNhanSuChuDong {  get => soLuongNhanSuChuDong; set => soLuongNhanSuChuDong = value; }
         public string TenNhanSuNhanViec { get => tenNhanSuNhanViec; set => tenNhanSuNhanViec = value; }
+
+        public string LiDoDieuChinh { get => liDoDieuChinh; set => liDoDieuChinh = value; }
     }
 }
