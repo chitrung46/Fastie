@@ -330,6 +330,17 @@ namespace BLL
         }
 
 
+        public bool DuyetHoanThanhCongViec(string idCongViec)
+        {
+            try
+            {
+                return taskDAL.DuyetHoanThanhCongViec(idCongViec);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi duyệt: " + ex.Message);
+            }
+        }
     }
 
 }

@@ -37,11 +37,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblJobAssigner = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnAssignArisingTask = new GUI.CustomButton();
             this.customButton2 = new GUI.CustomButton();
             this.customButton1 = new GUI.CustomButton();
             this.btnGetTask = new GUI.CustomButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnAssignArisingTask = new GUI.CustomButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,7 +56,7 @@
             this.lblTaskName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaskName.Location = new System.Drawing.Point(19, 19);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(182, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(171, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Sửa chữa bồn vệ sinh";
             // 
@@ -66,7 +66,7 @@
             this.lblTaskTime.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaskTime.Location = new System.Drawing.Point(7, 16);
             this.lblTaskTime.Name = "lblTaskTime";
-            this.lblTaskTime.Size = new System.Drawing.Size(85, 21);
+            this.lblTaskTime.Size = new System.Drawing.Size(82, 21);
             this.lblTaskTime.TabIndex = 0;
             this.lblTaskTime.Text = "9/12/2024";
             // 
@@ -125,7 +125,7 @@
             this.lblJobAssigner.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobAssigner.Location = new System.Drawing.Point(13, 16);
             this.lblJobAssigner.Name = "lblJobAssigner";
-            this.lblJobAssigner.Size = new System.Drawing.Size(146, 21);
+            this.lblJobAssigner.Size = new System.Drawing.Size(137, 21);
             this.lblJobAssigner.TabIndex = 0;
             this.lblJobAssigner.Text = "Lương Chí Trung";
             // 
@@ -138,32 +138,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(190, 54);
             this.panel5.TabIndex = 6;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnAssignArisingTask);
-            this.panel6.Location = new System.Drawing.Point(806, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(112, 54);
-            this.panel6.TabIndex = 7;
-            // 
-            // btnAssignArisingTask
-            // 
-            this.btnAssignArisingTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnAssignArisingTask.BorderColor = System.Drawing.Color.White;
-            this.btnAssignArisingTask.BorderRadius = 15;
-            this.btnAssignArisingTask.BorderSize = 0;
-            this.btnAssignArisingTask.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAssignArisingTask.FlatAppearance.BorderSize = 0;
-            this.btnAssignArisingTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAssignArisingTask.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssignArisingTask.ForeColor = System.Drawing.Color.White;
-            this.btnAssignArisingTask.Location = new System.Drawing.Point(3, 7);
-            this.btnAssignArisingTask.Name = "btnAssignArisingTask";
-            this.btnAssignArisingTask.Size = new System.Drawing.Size(97, 40);
-            this.btnAssignArisingTask.TabIndex = 0;
-            this.btnAssignArisingTask.Text = "Phát sinh";
-            this.btnAssignArisingTask.UseVisualStyleBackColor = false;
             // 
             // customButton2
             // 
@@ -200,6 +174,7 @@
             this.customButton1.Size = new System.Drawing.Size(48, 40);
             this.customButton1.TabIndex = 1;
             this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // btnGetTask
             // 
@@ -219,6 +194,32 @@
             this.btnGetTask.TabIndex = 0;
             this.btnGetTask.UseVisualStyleBackColor = false;
             this.btnGetTask.Click += new System.EventHandler(this.btnGetTask_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnAssignArisingTask);
+            this.panel6.Location = new System.Drawing.Point(806, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(112, 54);
+            this.panel6.TabIndex = 7;
+            // 
+            // btnAssignArisingTask
+            // 
+            this.btnAssignArisingTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnAssignArisingTask.BorderColor = System.Drawing.Color.White;
+            this.btnAssignArisingTask.BorderRadius = 15;
+            this.btnAssignArisingTask.BorderSize = 0;
+            this.btnAssignArisingTask.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAssignArisingTask.FlatAppearance.BorderSize = 0;
+            this.btnAssignArisingTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignArisingTask.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssignArisingTask.ForeColor = System.Drawing.Color.White;
+            this.btnAssignArisingTask.Location = new System.Drawing.Point(3, 7);
+            this.btnAssignArisingTask.Name = "btnAssignArisingTask";
+            this.btnAssignArisingTask.Size = new System.Drawing.Size(97, 40);
+            this.btnAssignArisingTask.TabIndex = 0;
+            this.btnAssignArisingTask.Text = "Phát sinh";
+            this.btnAssignArisingTask.UseVisualStyleBackColor = false;
             // 
             // LayoutAssignTaskForm
             // 

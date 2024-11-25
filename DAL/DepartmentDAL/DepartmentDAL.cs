@@ -68,7 +68,7 @@ namespace DAL.DepartmentDAL
         }
 
         //Xoa Bo Phan
-        public void DeleteDepartment(string departmentId)
+        public bool DeleteDepartment(string departmentId)
         {
             string query = "proc_deleteDepartment";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -79,6 +79,7 @@ namespace DAL.DepartmentDAL
                 con.Open();
                 command.ExecuteNonQuery();
             }
+            return true;
         }
         public List<AcceptTaskPersonnel> LayQuanLiBoPhan(string idBoPhan)
         {

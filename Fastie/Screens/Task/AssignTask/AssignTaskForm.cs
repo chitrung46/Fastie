@@ -62,7 +62,7 @@ namespace Fastie.Screens.Task
                     TaskName = congViec.Ten,
                     TaskTime = congViec.ThoiHanHoanThanh.HasValue ? congViec.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",
                     TaskStatus = congViec.TenTienDoCongViec,
-                    TaskJobAssigner = congViec.TenNhanSuGiaoViec,
+                    TaskJobAssigner = congViec.TenNhanSuNhanViec,
                     IdTask = congViec.Id
                 };
 

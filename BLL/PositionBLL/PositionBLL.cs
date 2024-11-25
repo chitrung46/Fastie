@@ -1,6 +1,7 @@
 ﻿using DTO;
 using DAL;
 using System.Collections.Generic;
+using System;
 
 namespace BLL
 {
@@ -22,9 +23,16 @@ namespace BLL
             positionDAL.UpdatePosition(position);
         }
 
-        public void DeletePosition(string id) 
+        public bool DeletePosition(string id)
         {
-            positionDAL.DeletePosition(id);
+            try
+            {
+                return positionDAL.DeletePosition(id);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public List<Position> TimKiemChucVu(string searchValue)

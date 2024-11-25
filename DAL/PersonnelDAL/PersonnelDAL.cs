@@ -58,7 +58,7 @@ namespace DAL
             return list;
         }
 
-        public void DeletePersonnel(string id)
+        public bool DeletePersonnel(string id)
         {
             string query = "proc_deletePersonnel";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -69,6 +69,7 @@ namespace DAL
                 con.Open();
                 command.ExecuteNonQuery();
             }
+            return true;
         }
         public void UpdatePersonnel(Personnel personnel)
         {

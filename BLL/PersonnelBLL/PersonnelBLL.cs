@@ -1,6 +1,7 @@
 ﻿using DTO;
 using DAL;
 using System.Collections.Generic;
+using System;
 
 namespace BLL
 {
@@ -21,9 +22,17 @@ namespace BLL
             personnelDAL.UpdatePersonnel(personnel);
         }
 
-        public void DeletePersonnel(string id)
+        public bool DeletePersonnel(string id)
         {
-            personnelDAL.DeletePersonnel(id);
+
+            try
+            {
+                return personnelDAL.DeletePersonnel(id);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public List<Personnel> TimKiemNhanSu(string searchValue)

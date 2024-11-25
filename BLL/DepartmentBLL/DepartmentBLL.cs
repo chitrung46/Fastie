@@ -25,10 +25,17 @@ namespace BLL.DepartmentBLL
             return list;
         }
 
-        public void DeleteDepartment(string departmentId)
+        public bool DeleteDepartment(string departmentId)
         {
-            departmentDAL.DeleteDepartment(departmentId);
-        } 
+            try
+            {
+                return departmentDAL.DeleteDepartment(departmentId);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public List<AcceptTaskPersonnel> LayQuanLiBoPhan(string idBoPhan)
         {
             return departmentDAL.LayQuanLiBoPhan(idBoPhan);

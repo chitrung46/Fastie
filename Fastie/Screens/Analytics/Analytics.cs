@@ -1,5 +1,6 @@
 ﻿using BLL.AnalyticsBLL;
 using DTO.AnalyticsDTO;
+using Fastie.Components.Toastify;
 using Fastie.Screens.Analytics;
 using System;
 using System.Collections.Generic;
@@ -254,18 +255,26 @@ namespace Fastie
 
             if (selectedItem.Value == "Chọn")
             {
+                showMessage("Vui lòng chọn bộ phận hợp lệ!", "error");
                 selectedDepartmentId = null;
-                cbPosition.SelectedIndex = 0;
-                cbPersonnel.SelectedIndex = 0;
+                cbPosition.SelectedIndex = 0; // Reset lại combobox chức vụ
+                cbPersonnel.SelectedIndex = 0; // Reset lại combobox nhân sự
                 return;
             }
 
             selectedDepartmentId = selectedItem.Key;
 
-            TaiChucVu(selectedDepartmentId);
-            TaiNhanSu(selectedDepartmentId, null);
-
-            ShowTaskCompletionRateChart();
+            try
+            {
+                TaiChucVu(selectedDepartmentId);
+                TaiNhanSu(selectedDepartmentId, null);
+                ShowTaskCompletionRateChart();
+                showMessage("Đã tải dữ liệu bộ phận thành công!", "success");
+            }
+            catch (Exception ex)
+            {
+                showMessage($"Lỗi khi tải dữ liệu bộ phận: {ex.Message}", "error");
+            }
         }
 
 
@@ -277,6 +286,7 @@ namespace Fastie
 
             if (selectedItem.Value == "Chọn")
             {
+                showMessage("Vui lòng chọn chức vụ hợp lệ!", "error");
                 selectedPositionId = null;
                 cbPersonnel.SelectedIndex = 0; // Reset lại nhân sự
                 return;
@@ -284,18 +294,24 @@ namespace Fastie
 
             selectedPositionId = selectedItem.Key;
 
-            TaiNhanSu(selectedDepartmentId, selectedPositionId);
-
-            ShowTaskCompletionRateChart();
+            try
+            {
+                TaiNhanSu(selectedDepartmentId, selectedPositionId);
+                ShowTaskCompletionRateChart();
+                showMessage("Đã tải dữ liệu chức vụ thành công!", "success");
+            }
+            catch (Exception ex)
+            {
+                showMessage($"Lỗi khi tải dữ liệu chức vụ: {ex.Message}", "error");
+            }
         }
+
 
 
         private void ShowColumnChartAcceptTasks()
         {
             DateTime startDate = dTPBirthday.Value;
             DateTime endDate = dateTimePicker1.Value;
-
-            Console.WriteLine($"Accept Tasks Chart Parameters - AccountId: {currentAccountId}, DepartmentId: {selectedDepartmentId}, PositionId: {selectedPositionId}, PersonnelId: {selectedPersonnelId}, StartDate: {startDate}, EndDate: {endDate}");
 
             ChartCompoundColumnAcceptTaskForm acceptTaskChartForm = new ChartCompoundColumnAcceptTaskForm(
                 currentAccountId,
@@ -314,15 +330,27 @@ namespace Fastie
         {
             if (!isLoaded || cbPersonnel.SelectedItem == null) return;
 
-
             var selectedItem = (KeyValuePair<string, string>)cbPersonnel.SelectedItem;
 
-            if (selectedItem.Value == "Chọn") return;
+            if (selectedItem.Value == "Chọn")
+            {
+                showMessage("Vui lòng chọn nhân sự hợp lệ!", "error");
+                return;
+            }
 
             selectedPersonnelId = selectedItem.Key;
 
-            ShowPieChart();
+            try
+            {
+                ShowPieChart();
+                showMessage("Đã cập nhật biểu đồ nhân sự thành công!", "success");
+            }
+            catch (Exception ex)
+            {
+                showMessage($"Lỗi khi cập nhật biểu đồ nhân sự: {ex.Message}", "error");
+            }
         }
+
 
 
         private void cbAnalytics_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -336,28 +364,42 @@ namespace Fastie
                 return;
             }
 
-            switch (selectedChartType.Key)
+            try
             {
-                case "pie":
-                    ShowPieChart();
-                    break;
+                switch (selectedChartType.Key)
+                {
+                    case "pie":
+                        ShowPieChart();
+                        break;
 
-                case "bar":
-                    ShowColumnChart();
-                    break;
+                    case "bar":
+                        ShowColumnChart();
+                        break;
 
-                case "bar_accept":
-                    ShowColumnChartAcceptTasks();
-                    break;
+                    case "bar_accept":
+                        ShowColumnChartAcceptTasks();
+                        break;
 
-                case "pie_task_complete":
-                    ShowTaskCompletionRateChart();
-                    break;
+                    case "pie_task_complete":
+                        ShowTaskCompletionRateChart();
+                        break;
 
-                default:
-                    MessageBox.Show("Please select a valid chart type.");
-                    break;
+                    default:
+                        showMessage("Không tìm thấy loại biểu đồ phù hợp!", "error");
+                        break;
+                }
+                showMessage("Đã cập nhật biểu đồ thành công!", "success");
             }
+            catch (Exception ex)
+            {
+                showMessage($"Lỗi khi cập nhật biểu đồ: {ex.Message}", "error");
+            }
+        }
+        private void showMessage(string message, string type)
+        {
+            LayoutToastify layoutToastify = new LayoutToastify();
+            layoutToastify.SetMessage(message, type);
+            layoutToastify.Show();
         }
 
 
