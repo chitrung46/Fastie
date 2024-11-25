@@ -105,7 +105,7 @@ namespace DAL.TaskDAL
                                     IdLoaiCongViec = reader["idLoaiCongViec"].ToString(),
                                     IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
                                     IdLichSuMacDinh = reader["idLichSuMacDinh"].ToString(),
-                                    TenTienDoCongViec = reader["tienDoCongViec"].ToString(),
+                                    TenTienDoCongViec = reader["tenTienDoCongViec"].ToString(),
                                     TenNhanSuGiaoViec = reader["NguoiGiaoViec"].ToString(),
                                 });
                             }
