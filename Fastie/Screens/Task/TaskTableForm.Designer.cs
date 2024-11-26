@@ -103,7 +103,7 @@
             this.flowLayoutPanelTask.MaximumSize = new System.Drawing.Size(4000, 2000);
             this.flowLayoutPanelTask.MinimumSize = new System.Drawing.Size(625, 484);
             this.flowLayoutPanelTask.Name = "flowLayoutPanelTask";
-            this.flowLayoutPanelTask.Size = new System.Drawing.Size(627, 484);
+            this.flowLayoutPanelTask.Size = new System.Drawing.Size(657, 484);
             this.flowLayoutPanelTask.TabIndex = 1;
             // 
             // label2
