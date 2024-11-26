@@ -1147,5 +1147,28 @@ namespace DAL.TaskDAL
             }
             return true;
         }
+
+        public void TaoCongViecTuYKien(string tenCongViec, string tenBoPhan, string thoiGianGhiNhan, string moTa, string thoiHanHoanThanh)
+        {
+            try
+            {
+                string query = "proc_TaoCongViecTuYKien";
+                using (SqlConnection conn = SqlConnectionData.Connect())
+                {
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ten", tenCongViec);
+                    cmd.Parameters.AddWithValue("@moTa", moTa);
+                    cmd.Parameters.AddWithValue("@thoiGianGhiNhan", thoiGianGhiNhan);
+                    cmd.Parameters.AddWithValue("@tenBoPhan", tenBoPhan);
+                    cmd.Parameters.AddWithValue("@thoiHanHoanThanh", thoiHanHoanThanh);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine("Lỗi khi tạo công việc từ ý kiến: " + ex.Message);
+            }
+        }
     }
 }
