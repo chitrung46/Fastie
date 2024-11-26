@@ -16,5 +16,10 @@ namespace Fastie.Screens.Analytics
         {
             InitializeComponent();
         }
+
+        private void XuatFile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
