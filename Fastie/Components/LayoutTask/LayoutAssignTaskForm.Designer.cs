@@ -90,9 +90,9 @@
             this.btnTaskStatus.ForeColor = System.Drawing.Color.White;
             this.btnTaskStatus.Location = new System.Drawing.Point(3, 7);
             this.btnTaskStatus.Name = "btnTaskStatus";
-            this.btnTaskStatus.Size = new System.Drawing.Size(145, 40);
+            this.btnTaskStatus.Size = new System.Drawing.Size(163, 40);
             this.btnTaskStatus.TabIndex = 0;
-            this.btnTaskStatus.Text = "Đang thực hiện";
+            this.btnTaskStatus.Text = "Không hoàn thành";
             this.btnTaskStatus.UseVisualStyleBackColor = false;
             // 
             // panel2

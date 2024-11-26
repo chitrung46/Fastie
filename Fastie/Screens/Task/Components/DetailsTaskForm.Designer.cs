@@ -651,7 +651,8 @@
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DetailsTaskForm";
-            this.Text = "DetailsTaskForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Fastie - Công việc gốc";
             this.Load += new System.EventHandler(this.DetailsTaskForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);

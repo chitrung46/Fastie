@@ -115,55 +115,50 @@ namespace Fastie.Screens.Task
 
                 for (int i = startRow; i <= rowCount; i++)
                 {
-                    try
+                    
+                    string taskName = worksheet.Cells[i, ExcelColumnLetterToNumber(taskNameColumn)].Text;
+                    string taskType = worksheet.Cells[i, ExcelColumnLetterToNumber(taskTypeColumn)].Text;
+                    string taskDescription = worksheet.Cells[i, ExcelColumnLetterToNumber(taskDescriptionColumn)].Text;
+                    string completionDeadlineText = worksheet.Cells[i, ExcelColumnLetterToNumber(completionDeadlineColumn)].Text;
+
+                    DateTime completionDeadline = DateTime.TryParseExact(completionDeadlineText,
+                                                                        "MM/dd/yyyy HH:mm",
+                                                                        CultureInfo.InvariantCulture,
+                                                                        DateTimeStyles.None,
+                                                                        out var parsedDate) ? parsedDate : DateTime.Now;
+
+                    var task = new TaskInfo
                     {
-                        string taskName = worksheet.Cells[i, ExcelColumnLetterToNumber(taskNameColumn)].Text;
-                        string taskType = worksheet.Cells[i, ExcelColumnLetterToNumber(taskTypeColumn)].Text;
-                        string taskDescription = worksheet.Cells[i, ExcelColumnLetterToNumber(taskDescriptionColumn)].Text;
-                        string completionDeadlineText = worksheet.Cells[i, ExcelColumnLetterToNumber(completionDeadlineColumn)].Text;
+                        Ten = taskName,
+                        MoTa = taskDescription,
+                        ThoiGianGiaoViec = DateTime.Now,
+                        ThoiHanHoanThanh = completionDeadline,
+                        IdTaiKhoanGiaoViec = this.idTaiKhoan,
+                        IdLoaiCongViec = taskBLL.LayIdLoaiCongViecTuTen(taskType),
+                        IdBoPhanGiaoViec = this.idBoPhanKhiDangNhap,
+                        Id = taskBLL.TaoCongViecId(taskBLL.LayIdLoaiCongViecTuTen(taskType), this.idBoPhanKhiDangNhap),
+                        GhiChu = "",
+                        IdTienDoCongViec = "TD001",
+                        IdLichSuMacDinh = taskBLL.TaoLichSuId()
+                    };
 
-                        DateTime completionDeadline = DateTime.TryParseExact(completionDeadlineText,
-                                                                            "MM/dd/yyyy HH:mm",
-                                                                            CultureInfo.InvariantCulture,
-                                                                            DateTimeStyles.None,
-                                                                            out var parsedDate) ? parsedDate : DateTime.Now;
-
-                        var task = new TaskInfo
-                        {
-                            Ten = taskName,
-                            MoTa = taskDescription,
-                            ThoiGianGiaoViec = DateTime.Now,
-                            ThoiHanHoanThanh = completionDeadline,
-                            IdTaiKhoanGiaoViec = this.idTaiKhoan,
-                            IdLoaiCongViec = taskBLL.LayIdLoaiCongViecTuTen(taskType),
-                            IdBoPhanGiaoViec = this.idBoPhanKhiDangNhap,
-                            Id = taskBLL.TaoCongViecId(taskBLL.LayIdLoaiCongViecTuTen(taskType), this.idBoPhanKhiDangNhap),
-                            GhiChu = "",
-                            IdTienDoCongViec = "TD001",
-                            IdLichSuMacDinh = taskBLL.TaoLichSuId()
-                        };
-
-                        bool result = taskBLL.ThemCongViecGiaoViec(task);
-
-                        if (!result)
-                        {
-                            errorMessages.Add($"Failed to add task '{taskName}' at row {i}.");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        errorMessages.Add($"Error processing row {i}: {ex.Message}");
-                    }
-                }
-
-                if (errorMessages.Any())
-                {
-                    showMessage(string.Join(Environment.NewLine, errorMessages), "error");
-                }
-                else
-                {
+                    bool result = taskBLL.ThemCongViecGiaoViec(task);
                     showMessage("Thêm các công việc thành công !", "success");
+                    //if (!result)
+                    //{
+                    //    errorMessages.Add($"Failed to add task '{taskName}' at row {i}.");
+                    //}
+                                     
                 }
+
+                //if (errorMessages.Any())
+                //{
+                //    showMessage(string.Join(Environment.NewLine, errorMessages), "error");
+                //}
+                //else
+                //{
+                //    showMessage("Thêm các công việc thành công !", "success");
+                //}
             }
         }
 

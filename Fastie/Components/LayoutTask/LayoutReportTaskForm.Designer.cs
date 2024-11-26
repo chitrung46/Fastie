@@ -54,7 +54,7 @@
             this.lblTaskName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaskName.Location = new System.Drawing.Point(19, 19);
             this.lblTaskName.Name = "lblTaskName";
-            this.lblTaskName.Size = new System.Drawing.Size(182, 21);
+            this.lblTaskName.Size = new System.Drawing.Size(171, 21);
             this.lblTaskName.TabIndex = 0;
             this.lblTaskName.Text = "Sửa chữa bồn vệ sinh";
             // 
@@ -64,7 +64,7 @@
             this.lblTaskTime.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaskTime.Location = new System.Drawing.Point(13, 16);
             this.lblTaskTime.Name = "lblTaskTime";
-            this.lblTaskTime.Size = new System.Drawing.Size(85, 21);
+            this.lblTaskTime.Size = new System.Drawing.Size(82, 21);
             this.lblTaskTime.TabIndex = 0;
             this.lblTaskTime.Text = "9/12/2024";
             // 
@@ -82,16 +82,16 @@
             this.lblJobAssigner.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobAssigner.Location = new System.Drawing.Point(13, 16);
             this.lblJobAssigner.Name = "lblJobAssigner";
-            this.lblJobAssigner.Size = new System.Drawing.Size(146, 21);
+            this.lblJobAssigner.Size = new System.Drawing.Size(137, 21);
             this.lblJobAssigner.TabIndex = 0;
             this.lblJobAssigner.Text = "Lương Chí Trung";
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.btnTaskStatus);
-            this.panel7.Location = new System.Drawing.Point(485, 3);
+            this.panel7.Location = new System.Drawing.Point(474, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(163, 54);
+            this.panel7.Size = new System.Drawing.Size(174, 54);
             this.panel7.TabIndex = 21;
             // 
             // btnTaskStatus
@@ -106,9 +106,9 @@
             this.btnTaskStatus.ForeColor = System.Drawing.Color.White;
             this.btnTaskStatus.Location = new System.Drawing.Point(3, 7);
             this.btnTaskStatus.Name = "btnTaskStatus";
-            this.btnTaskStatus.Size = new System.Drawing.Size(145, 40);
+            this.btnTaskStatus.Size = new System.Drawing.Size(168, 40);
             this.btnTaskStatus.TabIndex = 0;
-            this.btnTaskStatus.Text = "Đang thực hiện";
+            this.btnTaskStatus.Text = "Không hoàn thành";
             this.btnTaskStatus.UseVisualStyleBackColor = false;
             // 
             // panel8
@@ -142,7 +142,7 @@
             this.panel9.Controls.Add(this.lblTaskTime);
             this.panel9.Location = new System.Drawing.Point(323, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(156, 54);
+            this.panel9.Size = new System.Drawing.Size(145, 54);
             this.panel9.TabIndex = 22;
             // 
             // panel10
