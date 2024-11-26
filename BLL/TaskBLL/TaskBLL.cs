@@ -357,6 +357,24 @@ namespace BLL
                 return null;
             }
         }
+        public bool KiemTraCongViecChuDong(string idTask)
+        {
+            try
+            {
+                return taskDAL.KiemTraCongViecChuDong(idTask);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool KiemTraCongViecPhatSinh(string idTask, out string idCongViecGoc)
+        {
+            idCongViecGoc = taskDAL.KiemTraCongViecPhatSinh(idTask);
+            return idCongViecGoc != null;
+
+
+        }
     }
 
 }

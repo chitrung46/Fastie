@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using BLL;
 using DTO;
 using Fastie.Screens.Task.Components;
+using System.IO;
+using System.Net.Http;
 
 namespace Fastie.Screens.Task
 {
@@ -26,7 +28,11 @@ namespace Fastie.Screens.Task
         private string idTask;
         private string currentTaskType;
         private TaskInfo taskInfo;
-
+        private bool congViecPhatSinh;
+        private bool congViecChuDong;
+        private string idCongViecGoc;
+        private string duongDanHinhAnh;
+        private string duongDanTaiLieu;
         public DetailsTaskForm(TaskForm taskForm, string idTask, string currentTaskType)
         {
             InitializeComponent();
@@ -34,10 +40,22 @@ namespace Fastie.Screens.Task
             this.idTask = idTask;
             this.idTaiKhoan = taskForm.IdTaiKhoan;
             this.currentTaskType = currentTaskType;
+            KiemTraCongViecChuDongVaPhatSinh(idTask);
             LoadTaskDetails();
+            congViecChuDong = taskBLL.KiemTraCongViecChuDong(idTask);
+            congViecPhatSinh = taskBLL.KiemTraCongViecPhatSinh(idTask, out idCongViecGoc);
+            btnOriginalTask.Visible = congViecPhatSinh;
             btnDelete.Visible = false;
             btnEdit.Visible = false;
             btnAdjustmentTask.Visible = true;
+
+            if (!congViecChuDong)
+            {
+                label4.Visible = false;
+                customPanel6.Visible = false;
+            }
+
+
         }
 
         public DetailsTaskForm(TaskForm taskForm, string idTask)
@@ -47,11 +65,19 @@ namespace Fastie.Screens.Task
             this.idTask = idTask;
             this.idTaiKhoan = taskForm.IdTaiKhoan;
             LoadTaskDetails();
-
+            congViecChuDong = taskBLL.KiemTraCongViecChuDong(idTask);
+            congViecPhatSinh = taskBLL.KiemTraCongViecPhatSinh(idTask, out idCongViecGoc);
             btnDelete.Visible = false;
             btnEdit.Visible = false;
             btnAdjustmentTask.Visible = true;
-            btnOriginalTask.Visible = true;
+            btnOriginalTask.Visible = congViecPhatSinh;
+            
+            if (!congViecChuDong)
+            {
+                label4.Visible = false;
+                customPanel6.Visible = false;
+            }
+            
         }
         public DetailsTaskForm(TaskForm taskForm, LayoutGetTaskForm layoutGetTaskForm)
         {
@@ -59,7 +85,20 @@ namespace Fastie.Screens.Task
             this.taskForm = taskForm;
             this.layoutGetTaskForm = layoutGetTaskForm;
             this.idTaiKhoan = taskForm.IdTaiKhoan;
+
             LoadTaskDetails();
+            congViecChuDong = taskBLL.KiemTraCongViecChuDong(idTask);
+            congViecPhatSinh = taskBLL.KiemTraCongViecPhatSinh(idTask, out idCongViecGoc);
+            btnOriginalTask.Visible = congViecPhatSinh;
+            btnDelete.Visible = false;
+            btnEdit.Visible = false;
+            btnAdjustmentTask.Visible = true;
+
+            if (!congViecChuDong)
+            {
+                label4.Visible = false;
+                customPanel6.Visible = false;
+            }
         }
         public DetailsTaskForm(TaskForm taskForm, LayoutTaskForm layoutTaskForm)
         {
@@ -74,15 +113,22 @@ namespace Fastie.Screens.Task
             InitializeComponent();
             this.taskForm = taskForm;
             this.layoutAssignTaskForm = layoutAssignTaskForm;
-            this.taskInfo = taskBLL.LayChiTietCongViecTheoIdCongViec(layoutAssignTaskForm.IdTask);
+            this.idTask = layoutAssignTaskForm.IdTask;
             this.idTaiKhoan = taskForm.IdTaiKhoan;
-            lblTaskNamee.Text = taskInfo.Ten;
-            lblTypeJob.Text = taskInfo.TenLoaiCongViec;
-            lblDescribeTask.Text = taskInfo.MoTa;
-            dtpTimeCompleted.Text = taskInfo.ThoiHanHoanThanh.ToString();
-            lblNumber.Text = taskBLL.LaySoLuongNhanSuChuDongTheoIdCongViec(layoutAssignTaskForm.IdTask).ToString();
-            //LoadTaskDetails();
+            
+            LoadTaskDetails();
+            congViecChuDong = taskBLL.KiemTraCongViecChuDong(idTask);
+            congViecPhatSinh = taskBLL.KiemTraCongViecPhatSinh(idTask, out idCongViecGoc);
+            btnDelete.Visible = false;
+            btnEdit.Visible = false;
+            btnAdjustmentTask.Visible = true;
+            btnOriginalTask.Visible = congViecPhatSinh;
 
+            if (!congViecChuDong)
+            {
+                label4.Visible = false;
+                customPanel6.Visible = false;
+            }
         }
 
         private void customPanel2_Paint(object sender, PaintEventArgs e)
@@ -133,7 +179,12 @@ namespace Fastie.Screens.Task
                     break;
             }
         }
-
+        private void KiemTraCongViecChuDongVaPhatSinh (string idTask)
+        {
+            congViecChuDong = taskBLL.KiemTraCongViecChuDong(idTask);
+            congViecPhatSinh = taskBLL.KiemTraCongViecPhatSinh(idTask, out idCongViecGoc);
+            
+        }
 
 
         private void addFormInPanelReport(Form userControl)
@@ -155,6 +206,7 @@ namespace Fastie.Screens.Task
 
             if (task != null)
             {
+                lblIdTask.Text = task.Id;
                 lblTaskNamee.Text = task.Ten;
                 lblTypeJob.Text = task.TenLoaiCongViec;
                 lblDescribeTask.Text = task.MoTa;
@@ -162,8 +214,10 @@ namespace Fastie.Screens.Task
                 lblDepartment.Text = task.TenBoPhan;
                 lblPersonnel.Text = task.TenNhanSuNhanViec;
                 lblNumber.Text = task.SoLuongNhanSuChuDong ?? "0";
-
-
+                label10.Text = task.TenHinhAnh;
+                lblFileName.Text = task.TenTaiLieu;
+                duongDanHinhAnh = task.DuongDanHinhAnh;
+                duongDanTaiLieu = task.DuongDanTaiLieu;
             }
             else
             {
@@ -178,14 +232,17 @@ namespace Fastie.Screens.Task
 
             switch (taskForm.FormCurrent)
             {
+
                 case "TaskTableForm":
+                    NearlyReportForm nearlyReportTaskTableForm = new NearlyReportForm(taskForm, idTask);
+                    addFormInPanelReport(nearlyReportTaskTableForm);
                     break;
                 case "AcceptTaskForm":
                     LoadTaskDetails();
                     break;
                 case "AssignTaskForm":
-                    NearlyReportForm nearlyReport = new NearlyReportForm(taskForm, layoutAssignTaskForm.IdTask);
-                    addFormInPanelReport(nearlyReport);
+                    NearlyReportForm nearlyReportAssignTaskForm = new NearlyReportForm(taskForm, idTask);
+                    addFormInPanelReport(nearlyReportAssignTaskForm);
                     break;
             }
         }
@@ -216,6 +273,103 @@ namespace Fastie.Screens.Task
         {
             ReasonAdjustmentForm reasonAdjustmentForm = new ReasonAdjustmentForm(this.idTaiKhoan, this.idTask);
             reasonAdjustmentForm.Show();
+        }
+
+        private void btnOriginalTask_Click(object sender, EventArgs e)
+        {
+            if(congViecPhatSinh)
+            {
+                DetailsTaskForm detailsTaskForm = new DetailsTaskForm(taskForm, idCongViecGoc);
+                detailsTaskForm.FormBorderStyle = FormBorderStyle.Sizable;
+                detailsTaskForm.lblBack.Visible = false;
+                detailsTaskForm.pictureBack.Visible = false;
+                detailsTaskForm.Show();
+            }
+            
+        }
+        private string ChuyenLinkSangUC(string googleDriveLink)
+        {
+            try
+            {
+                // Tìm vị trí "/d/" và "/view"
+                int startIndex = googleDriveLink.IndexOf("/d/") + 3; // Bỏ qua "/d/"
+                int endIndex = googleDriveLink.IndexOf("/view");
+
+                // Lấy FILE_ID từ link
+                if (startIndex > 0 && endIndex > startIndex)
+                {
+                    string fileId = googleDriveLink.Substring(startIndex, endIndex - startIndex);
+
+                    // Trả về link tải trực tiếp
+                    return $"https://drive.google.com/uc?id={fileId}";
+                }
+                else
+                {
+                    throw new FormatException("Liên kết không đúng định dạng Google Drive.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi và trả về thông báo
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi chuyển đổi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return string.Empty;
+            }
+        }
+        private async void customButton2_Click(object sender, EventArgs e)
+        {
+            // Chuyển đổi link sang dạng tải trực tiếp
+            //string linkGoc = duongDanHinhAnh;
+
+            // Convert the link to a direct download link
+            string link = ChuyenLinkSangUC(duongDanHinhAnh);
+
+            if (!string.IsNullOrEmpty(link))
+            {
+                // Get local Pictures folder path
+                string picturesFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+                try
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        HttpResponseMessage response = await client.GetAsync(link);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            // Check if the response is an image
+                            string contentType = response.Content.Headers.ContentType.MediaType;
+
+                            if (contentType.StartsWith("image"))
+                            {
+                                byte[] fileBytes = await response.Content.ReadAsByteArrayAsync();
+
+                                // Generate a unique file name with timestamp
+                                string extension = contentType.Split('/')[1]; // e.g., "jpeg", "png"
+                                string uniqueFileName = $"DownloadedImage_{DateTime.Now:yyyyMMdd_HHmmss}.{extension}";
+                                string localPath = Path.Combine(picturesFolder, uniqueFileName);
+
+                                // Save the image to local path
+                                File.WriteAllBytes(localPath, fileBytes);
+
+                                MessageBox.Show($"Image downloaded successfully: {localPath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                System.Diagnostics.Process.Start("explorer.exe", picturesFolder);
+                            }
+                            else
+                            {
+                                MessageBox.Show("The URL does not point to an image file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to download the file. Please check the URL.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

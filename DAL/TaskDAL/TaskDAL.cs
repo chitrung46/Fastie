@@ -211,7 +211,8 @@ namespace DAL.TaskDAL
                                 ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
                                 GhiChu = reader["ghiChu"].ToString(),
                                 IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
-                                TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString()
+                                TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString(),
+                                TenTienDoCongViec = reader["tienDoCongViec"].ToString()
                             });
                         }
                     }
@@ -552,7 +553,11 @@ namespace DAL.TaskDAL
                                 TenLoaiCongViec = reader["tenLoaiCongViec"].ToString(),
                                 TenTienDoCongViec = reader["tenTienDoCongViec"].ToString(),
                                 TenNhanSuNhanViec = reader["tenNhanSuNhanViec"].ToString(),
-                                SoLuongNhanSuChuDong = reader["soLuongNhanSuChuDong"].ToString()
+                                SoLuongNhanSuChuDong = reader["soLuongNhanSuChuDong"].ToString(),
+                                DuongDanTaiLieu = reader["duongDanTaiLieu"].ToString(),
+                                DuongDanHinhAnh = reader["duongDanHinhAnh"].ToString(),
+                                TenTaiLieu = reader["tenTaiLieu"].ToString(),
+                                TenHinhAnh = reader["tenHinhAnh"].ToString()
                             };
                         }
                     }
@@ -987,6 +992,8 @@ namespace DAL.TaskDAL
                 cmd.Parameters.AddWithValue("@danhSachTaiLieu", ThongTinCongViec.DanhSachTaiLieu);
                 cmd.Parameters.AddWithValue("@idCongViecGoc", ThongTinCongViec.IdCongViecGoc);
                 cmd.Parameters.AddWithValue("@soLuongNhanSuChuDong", ThongTinCongViec.SoLuongNhanSuChuDong);
+                cmd.Parameters.AddWithValue("@tenHinhAnh", ThongTinCongViec.TenHinhAnh);
+                cmd.Parameters.AddWithValue("@tenTaiLieu", ThongTinCongViec.TenTaiLieu);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 
@@ -1024,6 +1031,42 @@ namespace DAL.TaskDAL
                 }
             }
         }
+        public bool KiemTraCongViecChuDong(string idTask)
+        {
+            string query = "proc_kiemTraCongViecChuDong";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdTask", idTask);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                var result = cmd.ExecuteScalar(); // Lấy kết quả đầu tiên
+                return result != null;
+            }
+        }
+        public string KiemTraCongViecPhatSinh(string idTask)
+        {
+            string query = "proc_kiemTraCongViecPhatSinh";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdTask", idTask);
 
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return result.ToString(); // Trả về idCongViecGoc
+                    }
+                    else
+                    {
+                        return null; // Không tìm thấy công việc phát sinh
+                    }
+                }
+            }
+        }
     }
 }

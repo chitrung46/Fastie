@@ -17,13 +17,15 @@ namespace DTO.TaskDTO
         private string danhSachBoPhanNhanViec;
         private string danhSachHinhAnh;
         private string danhSachTaiLieu;
+        private string tenHinhAnh;
+        private string tenTaiLieu;
         private string idCongViecGoc;
         private int soLuongNhanSuChuDong;
         public ThongTinGiaoViec()
         {
         }
 
-        public ThongTinGiaoViec(string ten, string moTa, string thoiHanHoanThanh, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string danhSachTaiKhoanNhanViec, string danhSachBoPhanNhanViec, string danhSachHinhAnh, string danhSachTaiLieu)
+        public ThongTinGiaoViec(string ten, string moTa, string thoiHanHoanThanh, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string danhSachTaiKhoanNhanViec, string danhSachBoPhanNhanViec, string danhSachHinhAnh, string danhSachTaiLieu, string tenHinhAnh, string tenTaiLieu)
         {
             this.ten = ten;
             this.moTa = moTa;
@@ -34,8 +36,10 @@ namespace DTO.TaskDTO
             this.danhSachBoPhanNhanViec = danhSachBoPhanNhanViec;
             this.danhSachHinhAnh = danhSachHinhAnh;
             this.danhSachTaiLieu = danhSachTaiLieu;
+            this.tenHinhAnh = tenHinhAnh;
+            this.tenTaiLieu = tenTaiLieu;
         }
-        public ThongTinGiaoViec(string ten, string moTa, string thoiHanHoanThanh, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string danhSachTaiKhoanNhanViec, string danhSachBoPhanNhanViec, string danhSachHinhAnh, string danhSachTaiLieu, string idCongViecGoc)
+        public ThongTinGiaoViec(string ten, string moTa, string thoiHanHoanThanh, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string danhSachTaiKhoanNhanViec, string danhSachBoPhanNhanViec, string danhSachHinhAnh, string danhSachTaiLieu, string idCongViecGoc, string tenHinhAnh, string tenTaiLieu)
         {
             this.ten = ten;
             this.moTa = moTa;
@@ -47,8 +51,10 @@ namespace DTO.TaskDTO
             this.danhSachHinhAnh = danhSachHinhAnh;
             this.danhSachTaiLieu = danhSachTaiLieu;
             this.idCongViecGoc = idCongViecGoc;
+            this.tenHinhAnh = tenHinhAnh;
+            this.tenTaiLieu = tenTaiLieu;
         }
-        public ThongTinGiaoViec(string ten, string moTa, string thoiHanHoanThanh, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string danhSachTaiKhoanNhanViec, string danhSachBoPhanNhanViec, string danhSachHinhAnh, string danhSachTaiLieu, int soLuongNhanSuChuDong)
+        public ThongTinGiaoViec(string ten, string moTa, string thoiHanHoanThanh, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string danhSachTaiKhoanNhanViec, string danhSachBoPhanNhanViec, string danhSachHinhAnh, string danhSachTaiLieu, int soLuongNhanSuChuDong, string tenHinhAnh, string tenTaiLieu)
         {
             this.ten = ten;
             this.moTa = moTa;
@@ -60,6 +66,8 @@ namespace DTO.TaskDTO
             this.danhSachHinhAnh = danhSachHinhAnh;
             this.danhSachTaiLieu = danhSachTaiLieu;
             this.soLuongNhanSuChuDong = soLuongNhanSuChuDong;
+            this.tenHinhAnh = tenHinhAnh;
+            this.tenTaiLieu = tenTaiLieu;
         }
 
         public string Ten { get => ten; set => ten = value; }
@@ -73,5 +81,7 @@ namespace DTO.TaskDTO
         public string DanhSachTaiLieu { get => danhSachTaiLieu; set => danhSachTaiLieu = value; }
         public string IdCongViecGoc { get => idCongViecGoc; set => idCongViecGoc = value; }
         public int SoLuongNhanSuChuDong { get => soLuongNhanSuChuDong; set => soLuongNhanSuChuDong = value; }
+        public string TenHinhAnh { get => tenHinhAnh; set => tenHinhAnh = value; }
+        public string TenTaiLieu { get => tenTaiLieu; set => tenTaiLieu = value; }
     }
 }

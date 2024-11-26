@@ -32,14 +32,19 @@ namespace DTO
 
         //Thuộc tính điều chỉnh phân công
         private string liDoDieuChinh;
+        //ảnh file
+        private string duongDanHinhAnh;
+        private string duongDanTaiLieu;
+        private string tenHinhAnh;
+        private string tenTaiLieu;
 
 
-        
 
         // Constructor đầy đủ
         public TaskInfo(string id, string ten, string moTa, DateTime? thoiGianGiaoViec, DateTime? thoiGianHoanThanh, DateTime? thoiHanHoanThanh,
                         string ghiChu, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string idLoaiCongViec, string idTienDoCongViec, string idLichSuMacDinh,
-                        string tenBoPhan, string tenLoaiCongViec, string tenTienDoCongViec, string tenNhanSuGiaoViec, string soLuongNhanSuChuDong, string tenNhanSuNhanViec, string liDoDieuChinh)
+                        string tenBoPhan, string tenLoaiCongViec, string tenTienDoCongViec, string tenNhanSuGiaoViec, string soLuongNhanSuChuDong, string tenNhanSuNhanViec, string liDoDieuChinh, string duongDanHinhAnh,
+                        string duongDanTaiLieu, string tenHinhAnh, string tenTaiLieu)
         {
             this.id = id;
             this.ten = ten;
@@ -60,6 +65,10 @@ namespace DTO
             this.soLuongNhanSuChuDong = soLuongNhanSuChuDong;
             this.tenNhanSuNhanViec = tenNhanSuNhanViec;
             this.liDoDieuChinh = liDoDieuChinh;
+            this.duongDanHinhAnh = duongDanHinhAnh;
+            this.duongDanTaiLieu = duongDanTaiLieu;
+            this.tenHinhAnh = tenHinhAnh;
+            this.tenTaiLieu = tenTaiLieu;
         }
 
         // Constructor tối giản (nếu chỉ có các thuộc tính cơ bản)
@@ -88,5 +97,9 @@ namespace DTO
         public string TenNhanSuNhanViec { get => tenNhanSuNhanViec; set => tenNhanSuNhanViec = value; }
 
         public string LiDoDieuChinh { get => liDoDieuChinh; set => liDoDieuChinh = value; }
+        public string TenHinhAnh { get => tenHinhAnh; set => tenHinhAnh = value; }
+        public string TenTaiLieu { get => tenTaiLieu; set => tenTaiLieu = value; }
+        public string DuongDanHinhAnh { get => duongDanHinhAnh; set => duongDanHinhAnh = value; }
+        public string DuongDanTaiLieu { get => duongDanTaiLieu; set => duongDanTaiLieu = value; }
     }
 }

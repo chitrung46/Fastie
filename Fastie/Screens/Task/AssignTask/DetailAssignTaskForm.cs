@@ -27,7 +27,11 @@ namespace Fastie.Screens.Task
         private string idBoPhanNguoiDung;
         DepartmentBLL departmentBLL = new DepartmentBLL();
         private string fileName;
+        private string fileUrl;
         private string imageName;
+        private string imageUrl;
+        private string duongDanFile; // Lưu link Google Drive của file
+        private string duongDanAnh;
         private string loaiGiaoViec;
         private string idCongViecGoc;
         private bool result;
@@ -40,8 +44,9 @@ namespace Fastie.Screens.Task
             this.loaiGiaoViec = loaiGiaoViec;
             //LoadTaskTypeComboBox();
             LoadDepartmentComboBox();
+            dtpTimeCompleted.Value = DateTime.Now;
             dtpTimeCompleted.Format = DateTimePickerFormat.Custom;
-            dtpTimeCompleted.CustomFormat = "dd/MM/yyyy HH:mm";
+            dtpTimeCompleted.CustomFormat = "dd/MM/yyyy    HH:mm";
         }
         public DetailAssignTaskForm(string loaiGiaoViec, string idCongViecGoc, string idTaiKhoan, string idBoPhan)
         {
@@ -53,8 +58,9 @@ namespace Fastie.Screens.Task
             this.loaiGiaoViec = loaiGiaoViec;
             //LoadTaskTypeComboBox();
             LoadDepartmentComboBox();
+            dtpTimeCompleted.Value = DateTime.Now;
             dtpTimeCompleted.Format = DateTimePickerFormat.Custom;
-            dtpTimeCompleted.CustomFormat = "dd/MM/yyyy HH:mm";
+            dtpTimeCompleted.CustomFormat = "dd/MM/yyyy    HH:mm";
         }
         public DetailAssignTaskForm(string idTaiKhoan, string idBoPhan)
         {
@@ -64,8 +70,9 @@ namespace Fastie.Screens.Task
             this.idBoPhanNguoiDung = idBoPhan;
             LoadTaskTypeComboBox();
             LoadDepartmentComboBox();
+            dtpTimeCompleted.Value = DateTime.Now;
             dtpTimeCompleted.Format = DateTimePickerFormat.Custom;
-            dtpTimeCompleted.CustomFormat = "dd/MM/yyyy HH:mm";
+            dtpTimeCompleted.CustomFormat = "dd/MM/yyyy    HH:mm";
         }
         private void LoadDepartmentComboBox()
         {
@@ -116,7 +123,8 @@ namespace Fastie.Screens.Task
                 openFileDialog.Filter = "Text Files|*.txt;*.csv|Word Documents|*.doc;*.docx|Excel Files|*.xls;*.xlsx";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    fileName = openFileDialog.FileName;
+                    fileUrl = openFileDialog.FileName;
+                    fileName = Path.GetFileName(openFileDialog.FileName);
                 }
             }
         }
@@ -129,7 +137,19 @@ namespace Fastie.Screens.Task
             label9.Text = imageName;
             //UploadToGoogleDrive("image/jpeg", imageName);
         }
-        private void UploadToGoogleDrive(string mimeType, string fileName)
+        private void SelectImage()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    imageUrl = openFileDialog.FileName;
+                    imageName = Path.GetFileName(openFileDialog.FileName);
+                }
+            }
+        }
+        private void UploadToGoogleDrive(string mimeType, string fileName, bool isImage)
         {
             if (string.IsNullOrEmpty(fileName))
             {
@@ -152,30 +172,34 @@ namespace Fastie.Screens.Task
             using (var stream = new FileStream(fileName, FileMode.Open))
             {
                 var request = driveService.Files.Create(fileMetadata, stream, mimeType);
-                request.Fields = "id";
+                request.Fields = "id, webViewLink";
                 var result = request.Upload();
 
                 if (result.Status == Google.Apis.Upload.UploadStatus.Completed)
                 {
-                    showMessage("Tải file thành công!", "success");
+                    // Tạo link Google Drive
+                    string fileId = request.ResponseBody.Id;
+                    string fileLink = $"https://drive.google.com/file/d/{fileId}/view";
+
+                    // Lưu link vào thuộc tính tương ứng
+                    if (isImage)
+                    {
+                        duongDanAnh = fileLink;
+                        showMessage("Upload ảnh thành công!", "success");
+                    }
+                    else
+                    {
+                        duongDanFile = fileLink;
+                        showMessage("Upload file thành công!", "success");
+                    }
                 }
                 else
                 {
-                    showMessage("Tải file thất bại!", "error");
+                    showMessage("Upload thất bại!", "error");
                 }
             }
         }
-        private void SelectImage()
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    imageName = openFileDialog.FileName;
-                }
-            }
-        }
+
 
         private void showMessage(string message, string type)
         {
@@ -192,11 +216,53 @@ namespace Fastie.Screens.Task
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
-            if (string.IsNullOrWhiteSpace(txbTaskName.Text) || string.IsNullOrWhiteSpace(cCBLoaiCongViec.Texts) ||
-            string.IsNullOrWhiteSpace(cTBDescribeTask.Text) || dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now)
+            if (!string.IsNullOrEmpty(fileUrl))
+            {
+                UploadToGoogleDrive("application/octet-stream", fileUrl, false);
+                
+            }
+            if (!string.IsNullOrEmpty(imageUrl))
+            {
+                // Gửi ảnh lên Google Drive
+                UploadToGoogleDrive("image/jpeg", imageUrl, true);
+                
+            }
+            if (string.IsNullOrWhiteSpace(txbTaskName.Text) 
+                && string.IsNullOrWhiteSpace(cCBLoaiCongViec.Texts)
+                && string.IsNullOrWhiteSpace(cTBDescribeTask.Text)
+                && (dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now))
             {
                 showMessage("Vui lòng nhập đủ thông tin!", "error");
+                return; // Exit the method if validation fails
+            }
+
+
+
+
+            if (string.IsNullOrWhiteSpace(txbTaskName.Text)) 
+            {
+                showMessage("Vui lòng nhập tên công việc!", "error");
+                return; // Exit the method if validation fails
+            }
+
+            if (string.IsNullOrWhiteSpace(cCBLoaiCongViec.Texts))
+            {
+                showMessage("Vui lòng chọn loại công việc!", "error");
+                return; // Exit the method if validation fails
+            }
+            if (string.IsNullOrWhiteSpace(cTBDescribeTask.Text))
+            {
+                showMessage("Vui lòng nhập mô tả công việc!", "error");
+                return; // Exit the method if validation fails
+            }
+            if (dtpTimeCompleted.Value == null) 
+            {
+                showMessage("Vui lòng chọn thời hạn hoan thành!", "error");
+                return; // Exit the method if validation fails
+            }
+            if (dtpTimeCompleted.Value <= DateTime.Now)
+            {
+                showMessage("Chọn thời hạn hoàn thành hợp lệ!", "error");
                 return; // Exit the method if validation fails
             }
             if (cCBLoaiCongViec.Texts == "Giao việc")
@@ -217,6 +283,11 @@ namespace Fastie.Screens.Task
                     string idTaiKhoanNhanViec = row.Cells["idTaiKhoan"].Value?.ToString();
                     if (!string.IsNullOrEmpty(idTaiKhoanNhanViec))
                     {
+                        if (idTaiKhoanNhanViec == this.idTaiKhoanNguoiDung)
+                        {
+                            showMessage("Không thể tự giao việc cho bản thân", "error");
+                            return; // Thoát khỏi hàm nếu phát hiện lỗi
+                        }
                         danhSachTaiKhoanNhanViec.Add(idTaiKhoanNhanViec);
                     }
                 }
@@ -231,8 +302,10 @@ namespace Fastie.Screens.Task
                         IdTaiKhoanGiaoViec = this.idTaiKhoanNguoiDung,
                         DanhSachTaiKhoanNhanViec = string.Join(",", danhSachTaiKhoanNhanViec),
                         DanhSachBoPhanNhanViec = string.Join(",", danhSachBoPhanNhanViec),
-                        DanhSachHinhAnh = "",
-                        DanhSachTaiLieu = ""
+                        DanhSachHinhAnh = duongDanAnh,
+                        DanhSachTaiLieu = duongDanFile,
+                        TenHinhAnh = imageName,
+                        TenTaiLieu = fileName
                     };
                     result = taskBLL.GiaoViec(loaiGiaoViec, thongTinGiaoViec);
                 }
@@ -247,9 +320,11 @@ namespace Fastie.Screens.Task
                         IdTaiKhoanGiaoViec = this.idTaiKhoanNguoiDung,
                         DanhSachTaiKhoanNhanViec = string.Join(",", danhSachTaiKhoanNhanViec),
                         DanhSachBoPhanNhanViec = string.Join(",", danhSachBoPhanNhanViec),
-                        DanhSachHinhAnh = "",
+                        DanhSachHinhAnh = duongDanAnh,
                         IdCongViecGoc = this.idCongViecGoc,
-                        DanhSachTaiLieu = ""
+                        DanhSachTaiLieu = duongDanFile,
+                        TenHinhAnh = imageName,
+                        TenTaiLieu = fileName
                     };
                     result = taskBLL.GiaoViec(loaiGiaoViec, thongTinGiaoViec);
                                      
