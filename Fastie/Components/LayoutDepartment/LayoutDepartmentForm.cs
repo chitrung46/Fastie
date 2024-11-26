@@ -110,5 +110,10 @@ namespace Fastie.Components.LayoutDepartmen
             DetailsDepartmentForm detailsDepartmentForm = new DetailsDepartmentForm(this);
             detailsDepartmentForm.Show();
         }
+
+        private void LayoutDepartmentForm_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
+        }
     }
 }

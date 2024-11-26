@@ -30,20 +30,26 @@
         {
             this.mainLayout = new System.Windows.Forms.Panel();
             this.pnlTabBar = new GUI.TruniControls.CustomPanel();
+            this.btnReloadData = new GUI.CustomButton();
             this.btnAdjustTask = new GUI.CustomButton();
             this.btnReportTask = new GUI.CustomButton();
             this.btnAcceptTask = new GUI.CustomButton();
             this.btnAssignTask = new GUI.CustomButton();
             this.btnTaskTable = new GUI.CustomButton();
-            this.btnReloadData = new GUI.CustomButton();
             this.pnlTabBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainLayout
             // 
+            this.mainLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainLayout.AutoScroll = true;
+            this.mainLayout.AutoSize = true;
             this.mainLayout.Location = new System.Drawing.Point(28, 95);
             this.mainLayout.Margin = new System.Windows.Forms.Padding(4);
+            this.mainLayout.MaximumSize = new System.Drawing.Size(3000, 1500);
+            this.mainLayout.MinimumSize = new System.Drawing.Size(1120, 573);
             this.mainLayout.Name = "mainLayout";
             this.mainLayout.Size = new System.Drawing.Size(1120, 573);
             this.mainLayout.TabIndex = 2;
@@ -72,8 +78,29 @@
             this.pnlTabBar.Size = new System.Drawing.Size(1120, 75);
             this.pnlTabBar.TabIndex = 1;
             // 
+            // btnReloadData
+            // 
+            this.btnReloadData.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnReloadData.BackColor = System.Drawing.Color.IndianRed;
+            this.btnReloadData.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
+            this.btnReloadData.BorderRadius = 40;
+            this.btnReloadData.BorderSize = 0;
+            this.btnReloadData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReloadData.FlatAppearance.BorderSize = 0;
+            this.btnReloadData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReloadData.ForeColor = System.Drawing.Color.White;
+            this.btnReloadData.Location = new System.Drawing.Point(1013, 11);
+            this.btnReloadData.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReloadData.Name = "btnReloadData";
+            this.btnReloadData.Size = new System.Drawing.Size(95, 54);
+            this.btnReloadData.TabIndex = 8;
+            this.btnReloadData.Text = "Tải lại";
+            this.btnReloadData.UseVisualStyleBackColor = false;
+            this.btnReloadData.Click += new System.EventHandler(this.btnReloadData_Click);
+            // 
             // btnAdjustTask
             // 
+            this.btnAdjustTask.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAdjustTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnAdjustTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnAdjustTask.BorderRadius = 40;
@@ -93,6 +120,7 @@
             // 
             // btnReportTask
             // 
+            this.btnReportTask.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnReportTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnReportTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnReportTask.BorderRadius = 40;
@@ -112,6 +140,7 @@
             // 
             // btnAcceptTask
             // 
+            this.btnAcceptTask.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAcceptTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnAcceptTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnAcceptTask.BorderRadius = 40;
@@ -131,6 +160,7 @@
             // 
             // btnAssignTask
             // 
+            this.btnAssignTask.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAssignTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnAssignTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnAssignTask.BorderRadius = 40;
@@ -150,6 +180,7 @@
             // 
             // btnTaskTable
             // 
+            this.btnTaskTable.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnTaskTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnTaskTable.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnTaskTable.BorderRadius = 40;
@@ -166,25 +197,6 @@
             this.btnTaskTable.Text = "Bảng công việc";
             this.btnTaskTable.UseVisualStyleBackColor = false;
             this.btnTaskTable.Click += new System.EventHandler(this.btnTaskTable_Click);
-            // 
-            // btnReloadData
-            // 
-            this.btnReloadData.BackColor = System.Drawing.Color.IndianRed;
-            this.btnReloadData.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
-            this.btnReloadData.BorderRadius = 40;
-            this.btnReloadData.BorderSize = 0;
-            this.btnReloadData.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReloadData.FlatAppearance.BorderSize = 0;
-            this.btnReloadData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReloadData.ForeColor = System.Drawing.Color.White;
-            this.btnReloadData.Location = new System.Drawing.Point(1013, 11);
-            this.btnReloadData.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReloadData.Name = "btnReloadData";
-            this.btnReloadData.Size = new System.Drawing.Size(95, 54);
-            this.btnReloadData.TabIndex = 8;
-            this.btnReloadData.Text = "Tải lại";
-            this.btnReloadData.UseVisualStyleBackColor = false;
-            this.btnReloadData.Click += new System.EventHandler(this.btnReloadData_Click);
             // 
             // TaskForm
             // 
@@ -203,6 +215,7 @@
             this.Load += new System.EventHandler(this.TaskForm_Load);
             this.pnlTabBar.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

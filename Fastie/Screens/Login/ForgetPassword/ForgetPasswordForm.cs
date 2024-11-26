@@ -38,7 +38,7 @@ namespace Fastie.Screens.Login.ForgetPassword
             string email = customTextBox_mail.Text.Trim();
             btnGetPassword.Enabled = false;
             // Kiểm tra xem email có tồn tại trong hệ thống
-            Account account = resetPassword.GetAccountByEmail(email);
+            DTO.Account account = resetPassword.GetAccountByEmail(email);
             if(email == "")
             {
                 showMessage("Email không được để trống!", "error");

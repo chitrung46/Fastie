@@ -46,6 +46,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -64,6 +65,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(79, 3);
@@ -73,6 +75,7 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel4.Controls.Add(this.pictureboxDetail);
             this.panel4.Location = new System.Drawing.Point(307, 3);
             this.panel4.Name = "panel4";
@@ -81,6 +84,7 @@
             // 
             // pictureboxDetail
             // 
+            this.pictureboxDetail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureboxDetail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureboxDetail.Image = global::Fastie.Properties.Resources.icons8_menu_23;
             this.pictureboxDetail.Location = new System.Drawing.Point(5, 7);
@@ -93,6 +97,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.lblAssignerName);
             this.panel3.Controls.Add(this.lblTaskName);
             this.panel3.Location = new System.Drawing.Point(4, 3);
@@ -124,9 +129,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(2000, 75);
+            this.MinimumSize = new System.Drawing.Size(425, 75);
             this.Name = "NotificationForm";
             this.Size = new System.Drawing.Size(425, 75);
             this.panel1.ResumeLayout(false);

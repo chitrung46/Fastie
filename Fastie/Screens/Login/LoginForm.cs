@@ -19,8 +19,9 @@ namespace Fastie.Screens.Login
     public partial class LoginForm : Form
     {
         LoginBLL loginBLL = new LoginBLL();
-        GetInFoLoginBLL getInFoLoginBLL = new GetInFoLoginBLL();    
-        Account acc = new Account();
+        GetInFoLoginBLL getInFoLoginBLL = new GetInFoLoginBLL();
+
+        DTO.Account acc = new DTO.Account();
         public LoginForm()
         {
             InitializeComponent();

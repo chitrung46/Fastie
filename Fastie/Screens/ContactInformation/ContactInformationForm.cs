@@ -176,8 +176,6 @@ Firon
                 showMessage(ex.Message, "error");
                 return false;
             }
-
-
         }
         private string GenerateRequestCode()
         {

@@ -39,12 +39,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.PanelChart = new System.Windows.Forms.Panel();
             this.cbAnalytics = new GUI.TruniControls.CustomComboBox();
-            this.btnUploadFile = new GUI.CustomButton();
             this.cbPersonnel = new GUI.TruniControls.CustomComboBox();
             this.cbPosition = new GUI.TruniControls.CustomComboBox();
             this.cbDepartment = new GUI.TruniControls.CustomComboBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnUploadFile = new GUI.CustomButton();
             this.customPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,7 @@
             // dTPBirthday
             // 
             this.dTPBirthday.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold);
+            this.dTPBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dTPBirthday.Location = new System.Drawing.Point(28, 221);
             this.dTPBirthday.Name = "dTPBirthday";
             this.dTPBirthday.Size = new System.Drawing.Size(233, 27);
@@ -120,6 +121,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(293, 221);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(233, 27);
@@ -134,14 +136,19 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(558, 191);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 21);
+            this.label8.Size = new System.Drawing.Size(120, 21);
             this.label8.TabIndex = 25;
-            this.label8.Text = "Thông kê";
+            this.label8.Text = "Dạng biểu đồ";
             // 
             // PanelChart
             // 
+            this.PanelChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelChart.AutoScroll = true;
             this.PanelChart.Location = new System.Drawing.Point(28, 273);
+            this.PanelChart.MaximumSize = new System.Drawing.Size(3000, 1500);
+            this.PanelChart.MinimumSize = new System.Drawing.Size(1094, 622);
             this.PanelChart.Name = "PanelChart";
             this.PanelChart.Size = new System.Drawing.Size(1094, 622);
             this.PanelChart.TabIndex = 27;
@@ -154,11 +161,12 @@
             this.cbAnalytics.BorderSize = 1;
             this.cbAnalytics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbAnalytics.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbAnalytics.ForeColor = System.Drawing.Color.DimGray;
+            this.cbAnalytics.ForeColor = System.Drawing.Color.Black;
             this.cbAnalytics.IconColor = System.Drawing.Color.Black;
-            this.cbAnalytics.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbAnalytics.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbAnalytics.ListBackColor = System.Drawing.Color.White;
+            this.cbAnalytics.ListTextColor = System.Drawing.Color.Black;
             this.cbAnalytics.Location = new System.Drawing.Point(562, 219);
+            this.cbAnalytics.MaximumSize = new System.Drawing.Size(400, 30);
             this.cbAnalytics.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbAnalytics.Name = "cbAnalytics";
             this.cbAnalytics.Padding = new System.Windows.Forms.Padding(1);
@@ -166,23 +174,6 @@
             this.cbAnalytics.TabIndex = 26;
             this.cbAnalytics.Texts = "";
             this.cbAnalytics.OnSelectedIndexChanged += new System.EventHandler(this.cbAnalytics_OnSelectedIndexChanged);
-            // 
-            // btnUploadFile
-            // 
-            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.btnUploadFile.BorderColor = System.Drawing.Color.White;
-            this.btnUploadFile.BorderRadius = 15;
-            this.btnUploadFile.BorderSize = 0;
-            this.btnUploadFile.FlatAppearance.BorderSize = 0;
-            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadFile.Location = new System.Drawing.Point(994, 133);
-            this.btnUploadFile.Name = "btnUploadFile";
-            this.btnUploadFile.Size = new System.Drawing.Size(128, 40);
-            this.btnUploadFile.TabIndex = 12;
-            this.btnUploadFile.Text = "Xuất file";
-            this.btnUploadFile.UseVisualStyleBackColor = false;
             // 
             // cbPersonnel
             // 
@@ -192,10 +183,10 @@
             this.cbPersonnel.BorderSize = 1;
             this.cbPersonnel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbPersonnel.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPersonnel.ForeColor = System.Drawing.Color.White;
             this.cbPersonnel.IconColor = System.Drawing.Color.Black;
-            this.cbPersonnel.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPersonnel.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPersonnel.ListBackColor = System.Drawing.Color.White;
+            this.cbPersonnel.ListTextColor = System.Drawing.Color.Black;
             this.cbPersonnel.Location = new System.Drawing.Point(562, 143);
             this.cbPersonnel.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbPersonnel.Name = "cbPersonnel";
@@ -213,10 +204,10 @@
             this.cbPosition.BorderSize = 1;
             this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbPosition.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPosition.ForeColor = System.Drawing.Color.Black;
             this.cbPosition.IconColor = System.Drawing.Color.Black;
-            this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPosition.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPosition.ListBackColor = System.Drawing.Color.White;
+            this.cbPosition.ListTextColor = System.Drawing.Color.Black;
             this.cbPosition.Location = new System.Drawing.Point(293, 143);
             this.cbPosition.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbPosition.Name = "cbPosition";
@@ -234,10 +225,10 @@
             this.cbDepartment.BorderSize = 1;
             this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbDepartment.ForeColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.ForeColor = System.Drawing.Color.Black;
             this.cbDepartment.IconColor = System.Drawing.Color.Black;
-            this.cbDepartment.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbDepartment.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.ListBackColor = System.Drawing.Color.White;
+            this.cbDepartment.ListTextColor = System.Drawing.Color.Black;
             this.cbDepartment.Location = new System.Drawing.Point(28, 143);
             this.cbDepartment.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbDepartment.Name = "cbDepartment";
@@ -249,6 +240,10 @@
             // 
             // customPanel1
             // 
+            this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customPanel1.AutoScroll = true;
+            this.customPanel1.AutoSize = true;
             this.customPanel1.BackColor = System.Drawing.Color.White;
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
@@ -259,12 +254,15 @@
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.customPanel1.Location = new System.Drawing.Point(28, 12);
+            this.customPanel1.MaximumSize = new System.Drawing.Size(3000, 74);
+            this.customPanel1.MinimumSize = new System.Drawing.Size(1094, 74);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(1094, 74);
             this.customPanel1.TabIndex = 5;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,6 +272,28 @@
             this.label1.Size = new System.Drawing.Size(127, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thống kê";
+            // 
+            // btnUploadFile
+            // 
+            this.btnUploadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnUploadFile.BorderColor = System.Drawing.Color.White;
+            this.btnUploadFile.BorderRadius = 15;
+            this.btnUploadFile.BorderSize = 0;
+            this.btnUploadFile.FlatAppearance.BorderSize = 0;
+            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
+            this.btnUploadFile.Image = global::Fastie.Properties.Resources.icons8_print_24;
+            this.btnUploadFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUploadFile.Location = new System.Drawing.Point(994, 125);
+            this.btnUploadFile.Name = "btnUploadFile";
+            this.btnUploadFile.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.btnUploadFile.Size = new System.Drawing.Size(128, 48);
+            this.btnUploadFile.TabIndex = 12;
+            this.btnUploadFile.Text = "Xuất file";
+            this.btnUploadFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUploadFile.UseVisualStyleBackColor = false;
             // 
             // Analytics
             // 
@@ -299,7 +319,7 @@
             this.Controls.Add(this.customPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1164, 3000);
+            this.MaximumSize = new System.Drawing.Size(3000, 1600);
             this.MinimumSize = new System.Drawing.Size(1164, 695);
             this.Name = "Analytics";
             this.Text = "Analytics";

@@ -46,7 +46,12 @@
             // 
             // flowLayoutPanelTasks
             // 
+            this.flowLayoutPanelTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelTasks.AutoScroll = true;
+            this.flowLayoutPanelTasks.AutoSize = true;
+            this.flowLayoutPanelTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.flowLayoutPanelTasks.Location = new System.Drawing.Point(1, 118);
             this.flowLayoutPanelTasks.Name = "flowLayoutPanelTasks";
             this.flowLayoutPanelTasks.Size = new System.Drawing.Size(1175, 461);
@@ -134,8 +139,7 @@
             // 
             // pnlTabBar
             // 
-            this.pnlTabBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTabBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTabBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnlTabBar.BorderColor = System.Drawing.Color.Black;
             this.pnlTabBar.BorderRadius = 50;
@@ -154,6 +158,7 @@
             // 
             // btnAssignTask
             // 
+            this.btnAssignTask.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAssignTask.BackColor = System.Drawing.Color.Transparent;
             this.btnAssignTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnAssignTask.BorderRadius = 40;
@@ -174,6 +179,7 @@
             // 
             // btnInitialtiveTask
             // 
+            this.btnInitialtiveTask.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnInitialtiveTask.BackColor = System.Drawing.Color.IndianRed;
             this.btnInitialtiveTask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(171)))), ((int)(((byte)(201)))));
             this.btnInitialtiveTask.BorderRadius = 40;
@@ -203,6 +209,7 @@
             this.lblShowNoTask.Size = new System.Drawing.Size(420, 28);
             this.lblShowNoTask.TabIndex = 8;
             this.lblShowNoTask.Text = "Không có công việc nào dành cho bạn";
+            this.lblShowNoTask.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblShowNoTask.Visible = false;
             // 
             // AcceptTaskForm

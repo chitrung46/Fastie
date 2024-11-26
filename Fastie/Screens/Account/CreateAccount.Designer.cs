@@ -35,10 +35,10 @@
             this.cbPosition = new GUI.TruniControls.CustomComboBox();
             this.lblBoPhan = new System.Windows.Forms.Label();
             this.cbDepartment = new GUI.TruniControls.CustomComboBox();
-            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
+            this.txtPassword = new GUI.TruniControls.CustomTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.cTBName = new GUI.TruniControls.CustomTextBox();
+            this.txtUsername = new GUI.TruniControls.CustomTextBox();
             this.btnCancel = new GUI.CustomButton();
             this.btnAdd = new GUI.CustomButton();
             this.customPanel1.SuspendLayout();
@@ -65,10 +65,10 @@
             this.customPanel1.Controls.Add(this.cbPosition);
             this.customPanel1.Controls.Add(this.lblBoPhan);
             this.customPanel1.Controls.Add(this.cbDepartment);
-            this.customPanel1.Controls.Add(this.customTextBox1);
+            this.customPanel1.Controls.Add(this.txtPassword);
             this.customPanel1.Controls.Add(this.label4);
             this.customPanel1.Controls.Add(this.lblName);
-            this.customPanel1.Controls.Add(this.cTBName);
+            this.customPanel1.Controls.Add(this.txtUsername);
             this.customPanel1.ForeColor = System.Drawing.Color.Black;
             this.customPanel1.GradientAngle = 90F;
             this.customPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
@@ -97,10 +97,10 @@
             this.cbPosition.BorderSize = 1;
             this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbPosition.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPosition.ForeColor = System.Drawing.Color.Black;
             this.cbPosition.IconColor = System.Drawing.Color.Black;
             this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPosition.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPosition.ListTextColor = System.Drawing.Color.Black;
             this.cbPosition.Location = new System.Drawing.Point(302, 232);
             this.cbPosition.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbPosition.Name = "cbPosition";
@@ -129,10 +129,10 @@
             this.cbDepartment.BorderSize = 1;
             this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbDepartment.ForeColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.ForeColor = System.Drawing.Color.Black;
             this.cbDepartment.IconColor = System.Drawing.Color.Black;
             this.cbDepartment.ListBackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbDepartment.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.ListTextColor = System.Drawing.Color.Black;
             this.cbDepartment.Location = new System.Drawing.Point(24, 232);
             this.cbDepartment.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbDepartment.Name = "cbDepartment";
@@ -142,26 +142,26 @@
             this.cbDepartment.Texts = "";
             this.cbDepartment.OnSelectedIndexChanged += new System.EventHandler(this.cbDepartment_OnSelectedIndexChanged);
             // 
-            // customTextBox1
+            // txtPassword
             // 
-            this.customTextBox1.BackColor = System.Drawing.Color.White;
-            this.customTextBox1.BorderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.customTextBox1.BorderRadius = 8;
-            this.customTextBox1.BorderSize = 2;
-            this.customTextBox1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.customTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox1.Location = new System.Drawing.Point(24, 132);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.Black;
-            this.customTextBox1.PlaceholderText = "";
-            this.customTextBox1.Size = new System.Drawing.Size(511, 36);
-            this.customTextBox1.TabIndex = 31;
-            this.customTextBox1.UnderlinedStyle = false;
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtPassword.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtPassword.BorderRadius = 8;
+            this.txtPassword.BorderSize = 2;
+            this.txtPassword.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtPassword.Location = new System.Drawing.Point(24, 132);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPassword.Multiline = false;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPassword.PasswordChar = false;
+            this.txtPassword.PlaceholderColor = System.Drawing.Color.Black;
+            this.txtPassword.PlaceholderText = "";
+            this.txtPassword.Size = new System.Drawing.Size(511, 36);
+            this.txtPassword.TabIndex = 31;
+            this.txtPassword.UnderlinedStyle = false;
             // 
             // label4
             // 
@@ -182,30 +182,30 @@
             this.lblName.Location = new System.Drawing.Point(29, 20);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(94, 16);
+            this.lblName.Size = new System.Drawing.Size(98, 16);
             this.lblName.TabIndex = 20;
-            this.lblName.Text = "Tên tài khoản: ";
+            this.lblName.Text = "Tên đăng nhập";
             // 
-            // cTBName
+            // txtUsername
             // 
-            this.cTBName.BackColor = System.Drawing.Color.White;
-            this.cTBName.BorderColor = System.Drawing.Color.DarkGray;
-            this.cTBName.BorderFocusColor = System.Drawing.Color.Black;
-            this.cTBName.BorderRadius = 8;
-            this.cTBName.BorderSize = 2;
-            this.cTBName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.cTBName.ForeColor = System.Drawing.Color.Black;
-            this.cTBName.Location = new System.Drawing.Point(24, 51);
-            this.cTBName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cTBName.Multiline = false;
-            this.cTBName.Name = "cTBName";
-            this.cTBName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.cTBName.PasswordChar = false;
-            this.cTBName.PlaceholderColor = System.Drawing.Color.Black;
-            this.cTBName.PlaceholderText = "";
-            this.cTBName.Size = new System.Drawing.Size(511, 36);
-            this.cTBName.TabIndex = 1;
-            this.cTBName.UnderlinedStyle = false;
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtUsername.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtUsername.BorderRadius = 8;
+            this.txtUsername.BorderSize = 2;
+            this.txtUsername.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
+            this.txtUsername.Location = new System.Drawing.Point(24, 51);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUsername.Multiline = false;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtUsername.PasswordChar = false;
+            this.txtUsername.PlaceholderColor = System.Drawing.Color.Black;
+            this.txtUsername.PlaceholderText = "";
+            this.txtUsername.Size = new System.Drawing.Size(511, 36);
+            this.txtUsername.TabIndex = 1;
+            this.txtUsername.UnderlinedStyle = false;
             // 
             // btnCancel
             // 
@@ -219,7 +219,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(374, 406);
+            this.btnCancel.Location = new System.Drawing.Point(488, 406);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnCancel.Size = new System.Drawing.Size(94, 40);
@@ -240,7 +240,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(488, 406);
+            this.btnAdd.Location = new System.Drawing.Point(388, 406);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.btnAdd.Size = new System.Drawing.Size(94, 40);
@@ -278,10 +278,10 @@
         private GUI.TruniControls.CustomPanel customPanel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblName;
-        private GUI.TruniControls.CustomTextBox cTBName;
+        private GUI.TruniControls.CustomTextBox txtUsername;
         private GUI.CustomButton btnCancel;
         private GUI.CustomButton btnAdd;
-        private GUI.TruniControls.CustomTextBox customTextBox1;
+        private GUI.TruniControls.CustomTextBox txtPassword;
         private System.Windows.Forms.Label lblBoPhan;
         private GUI.TruniControls.CustomComboBox cbDepartment;
         private System.Windows.Forms.Label lblChucVu;

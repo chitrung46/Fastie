@@ -18,7 +18,13 @@ namespace BLL
         AccountDAL accountDAL = new AccountDAL();
         public int ThemTaiKhoan(Account taiKhoan)
         {
-            return accountDAL.ThemTaiKhoan(taiKhoan);
+            try
+            {
+                return accountDAL.ThemTaiKhoan(taiKhoan);   
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public List<Account> LayDanhSachTaiKhoan()
@@ -29,7 +35,45 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public int CapNhatTaiKhoan(Account taiKhoan)
+        {
+            try
+            {
+                return accountDAL.CapNhatTaiKhoan(taiKhoan);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+        }
+
+        public int VoHieuHoaTaiKhoan(string id)
+        {
+            try
+            {
+                return accountDAL.VoHieuHoaTaiKhoan(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public int CapNhatTrangThaiTaiKhoan(string idTaiKhoan)
+        {
+            try
+            {
+                return accountDAL.CapNhatTrangThaiTaiKhoan(idTaiKhoan);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

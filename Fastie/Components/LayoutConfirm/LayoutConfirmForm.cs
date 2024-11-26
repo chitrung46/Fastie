@@ -28,12 +28,14 @@ namespace Fastie
         private LayoutDepartmentForm layoutDepartmentForm;
         private LayoutPersonnelForm layoutPersonnelForm;
         private LayoutAccountForm layoutAccountForm;
+        private AccountForm AccountForm;
         private HomeForm homeForm;
 
         PositionBLL positionBLL = new PositionBLL();
         PersonnelBLL personnelBLL = new PersonnelBLL();
         DepartmentBLL departmentBLL = new DepartmentBLL();
         DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
+        AccountBLL accountBll = new AccountBLL();
 
         public LayoutConfirmForm()
         {
@@ -76,6 +78,12 @@ namespace Fastie
             InitializeComponent();
             this.accountName = accountName;
             this.layoutAccountForm = layoutAccountForm;
+        }
+        public LayoutConfirmForm(AccountForm accountForm, string accountName)
+        {
+            InitializeComponent();
+            this.AccountForm  = accountForm;
+            this.accountName = accountName;
         }
 
         public string AccountName { get => accountName; set => accountName = value; }   
@@ -180,8 +188,52 @@ namespace Fastie
                     LoginForm loginForm = new LoginForm();
                     loginForm.Show();
                     break;
-                case "Xóa tài khoản":
-                    showMessage("Xóa nhân sự thành công", "success");
+                case "Vô hiệu hóa":
+                    try { 
+                        int checkDisable = accountBll.VoHieuHoaTaiKhoan(accountName);
+                        AccountForm.LoadDataAccount();
+                        if(checkDisable == 0)
+                        {
+                            showMessage("Vô hiệu hóa tài khoản thành công", "success");
+                        } else if(checkDisable == -1)
+                        {
+
+                           showMessage("Tài khoản không tồn tại", "error");
+                        } else
+                        {
+                            showMessage("Vô hiệu hóa tài khoản thất bại", "error");
+                        }
+
+                    } catch(Exception ex)
+                    {
+                        showMessage("Vô hiệu hóa tài khoản thất bại", "error");
+                    }
+                    this.Close();
+                    break;
+                case "Kích hoạt":
+                    try
+                    {
+                        int checkDisable = accountBll.CapNhatTrangThaiTaiKhoan(accountName);
+                        AccountForm.LoadDataAccount();
+                        if (checkDisable == 0)
+                        {
+                            showMessage("Kích hoạt tài khoản thành công", "success");
+                        }
+                        else if (checkDisable == -1)
+                        {
+
+                            showMessage("Tài khoản không tồn tại", "error");
+                        }
+                        else
+                        {
+                            showMessage("Kích hoạt tài khoản thất bại", "error");
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        showMessage("Vô hiệu hóa tài khoản thất bại", "error");
+                    }
                     this.Close();
                     break;
                 case "Xóa việc":

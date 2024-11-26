@@ -14,21 +14,34 @@ namespace DTO
         private string idBoPhan;
         private string idChucVu;
 
-        private String tenNhanSu;
-        private String tenBoPhan;
-        private String tenChucVu;
+        private string tenNhanSu;
+        private string tenBoPhan;
+        private string tenChucVu;
+        private string soDienthoai;
+        private string email;
 
+        public string Email { get => email; set => email = value; }
+        public string SoDienthoai { get => soDienthoai; set => soDienthoai = value; }
         public string TenNhanSu { get => tenNhanSu; set => tenNhanSu = value; }
         public string TenBoPhan { get => tenBoPhan; set => tenBoPhan = value; }
         public string TenChucVu { get => tenChucVu; set => tenChucVu = value; }
         public Account() { }
 
-        public Account(string tenNhanSu, string tenBoPhan, string tenChucVu, string trangThai)
+        public Account(string tenNhanSu, string tenBoPhan, string tenChucVu, string trangThai, string email, string soDienThoai, string tenDangNhap, string matKhau, string id, string idNhanSu, string idBoPhan, string idChucVu)
         {
             this.tenNhanSu = tenNhanSu;
             this.tenBoPhan = tenBoPhan;
             this.tenChucVu = tenChucVu;
             this.trangThai = trangThai;
+            this.tenDangNhap = tenDangNhap;
+            this.matKhau = matKhau;
+            this.email = email;
+            this.soDienthoai = soDienThoai;
+            this.id = id;
+            this.idNhanSu = idNhanSu;
+            this.idBoPhan = idBoPhan;
+            this.idChucVu = idChucVu;
+
         }
 
         public Account(string id, string tenDangNhap, string matKhau, DateTime khoiTaoLuc, DateTime capNhatLuc, string trangThai)

@@ -133,6 +133,7 @@
             // dTPDayOfWork
             // 
             this.dTPDayOfWork.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold);
+            this.dTPDayOfWork.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dTPDayOfWork.Location = new System.Drawing.Point(308, 211);
             this.dTPDayOfWork.Name = "dTPDayOfWork";
             this.dTPDayOfWork.Size = new System.Drawing.Size(226, 27);
@@ -242,6 +243,7 @@
             // dTPBirthday
             // 
             this.dTPBirthday.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold);
+            this.dTPBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dTPBirthday.Location = new System.Drawing.Point(308, 133);
             this.dTPBirthday.Name = "dTPBirthday";
             this.dTPBirthday.Size = new System.Drawing.Size(225, 27);

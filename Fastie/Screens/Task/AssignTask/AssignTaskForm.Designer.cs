@@ -45,6 +45,7 @@
             // 
             // btnDetailAssignTask
             // 
+            this.btnDetailAssignTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetailAssignTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnDetailAssignTask.BorderColor = System.Drawing.Color.White;
             this.btnDetailAssignTask.BorderRadius = 15;
@@ -64,6 +65,7 @@
             // 
             // btnDetailAssignPositiveTask
             // 
+            this.btnDetailAssignPositiveTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetailAssignPositiveTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnDetailAssignPositiveTask.BorderColor = System.Drawing.Color.White;
             this.btnDetailAssignPositiveTask.BorderRadius = 15;
@@ -84,6 +86,7 @@
             // 
             // btnDetailAssignFastingTask
             // 
+            this.btnDetailAssignFastingTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetailAssignFastingTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnDetailAssignFastingTask.BorderColor = System.Drawing.Color.White;
             this.btnDetailAssignFastingTask.BorderRadius = 15;

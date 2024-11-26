@@ -22,14 +22,6 @@ namespace Fastie
         public CreatePersonnelForm(PersonnelForm personnelForm)
         {
             InitializeComponent();
-            // Thiết lập định dạng cho DateTimePicker trong form
-            dTPBirthday.Format = DateTimePickerFormat.Custom;
-            dTPBirthday.CustomFormat = "yyyy-MM-dd";
-            // Thiết lập định dạng cho DateTimePicker trong form
-            dTPDayOfWork.Format = DateTimePickerFormat.Custom;
-            dTPDayOfWork.CustomFormat = "yyyy-MM-dd";
-            cCBSex.Items.Add("Nam");
-            cCBSex.Items.Add("Nữ");
             this.personnelForm = personnelForm;
         }
 
@@ -67,6 +59,31 @@ namespace Fastie
                 showMessage("Vui lòng nhập số điện thoại!", "error");
                 return;
             }
+            if (cTBNumberPhone.Text.Length < 10)
+            {
+                showMessage("Số điện thoại không hợp lệ!", "error");
+                return;
+            }
+            if (string.IsNullOrEmpty(dTPBirthday.Value.Date.ToString()))
+            {
+                showMessage("Vui lòng chọn ngày sinh!", "error");
+                return;
+            }
+            if(dTPBirthday.Value.Date > DateTime.Now.Date)
+            {
+                showMessage("Ngày sinh không hợp lệ!", "error");
+                return;
+            }
+            if (string.IsNullOrEmpty(dTPDayOfWork.Value.Date.ToString()))
+            {
+                showMessage("Vui lòng chọn ngày vào làm!", "error");
+                return;
+            }
+            if (dTPDayOfWork.Value.Date > DateTime.Now.Date)
+            {
+                showMessage("Ngày vào làm không hợp lệ!", "error");
+                return;
+            }
 
             try
             {
@@ -81,13 +98,14 @@ namespace Fastie
                 };
                 nhanSuBLL.InsertPersonnel(newNhanSu);
                 showMessage("Thêm Nhân sự mới thành công!", "success");
+                personnelForm.LoadDataPersonnel();
+                this.Close();
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                showMessage("Email đã tồn tại", "error");
+                return;
             }
-            personnelForm.LoadDataPersonnel();
-            this.Close();
         }
 
         public bool IsValidEmail(string email)
@@ -113,6 +131,12 @@ namespace Fastie
 
         private void CreatePersonnelForm_Load(object sender, EventArgs e)
         {
+            cCBSex.Items.Add("Nam");
+            cCBSex.Items.Add("Nữ");
+            dTPBirthday.Format = DateTimePickerFormat.Custom;
+            dTPBirthday.CustomFormat = "dd/MM/yyyy";
+            dTPDayOfWork.Format = DateTimePickerFormat.Custom;
+            dTPDayOfWork.CustomFormat = "dd/MM/yyyy";
             this.AcceptButton = btnAdd;
         }
 

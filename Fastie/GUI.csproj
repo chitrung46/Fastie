@@ -185,6 +185,12 @@
     <Compile Include="Components\Toastify\LayoutToastify.Designer.cs">
       <DependentUpon>LayoutToastify.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Account\DetailAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Account\DetailAccountForm.Designer.cs">
+      <DependentUpon>DetailAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Analytics\Analytics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -525,6 +531,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Toastify\LayoutToastify.resx">
       <DependentUpon>LayoutToastify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Account\DetailAccountForm.resx">
+      <DependentUpon>DetailAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Analytics\Analytics.resx">
       <DependentUpon>Analytics.cs</DependentUpon>
@@ -876,6 +885,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-multiply-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-disable-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,6 +26,10 @@ namespace Fastie
             this.homeForm = homeForm;
         }
 
+        public void LoadDataAccount()
+        {
+            loadDataAccount();
+        }
         private void loadDataAccount()
         {
             flowLayoutPanelAcoount.Controls.Clear();
@@ -37,11 +41,18 @@ namespace Fastie
                 {
 
                     PersonnelName = taikhoan.TenNhanSu,
+                    Username = taikhoan.TenDangNhap,
+                    PhoneNumber = taikhoan.SoDienthoai,
+                    StatusAccount = taikhoan.TrangThai,
                     PositionName = taikhoan.TenChucVu,
                     DepartmentName = taikhoan.TenBoPhan,
-                    StatusAccount = taikhoan.TrangThai,
                     HasAccount = "Đã có",
-                    IdAccount = "ACC"
+                    IdAccount = taikhoan.Id,
+                    Password = taikhoan.MatKhau,
+                    Email = taikhoan.Email,
+                    DepartmentId = taikhoan.IdBoPhan,
+                    PositionId = taikhoan.IdChucVu,
+                    PersonnelId = taikhoan.IdNhanSu
                 };
                 flowLayoutPanelAcoount.Controls.Add(layoutAccountForm);
             }

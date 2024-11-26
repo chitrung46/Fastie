@@ -60,9 +60,12 @@ namespace Fastie
             }
 
             dTPBirthday.Format = DateTimePickerFormat.Custom;
-            dTPBirthday.CustomFormat = "yyyy/MM/dd";
+            dTPBirthday.CustomFormat = "dd/MM/yyyy";
             dTPDayOfWork.Format = DateTimePickerFormat.Custom;
-            dTPDayOfWork.CustomFormat = "yyyy/MM/dd";
+            dTPDayOfWork.CustomFormat = "dd/MM/yyyy";
+
+            dTPBirthday.Value = needEdit.NgaySinh;
+            dTPDayOfWork.Value = needEdit.NgayVaoLam;
 
             cCBSex.Items.Add("Nam");
             cCBSex.Items.Add("Nữ");
@@ -76,7 +79,6 @@ namespace Fastie
 
             try
             {
-                // Mẫu kiểm tra định dạng email
                 string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
                 return Regex.IsMatch(email, emailPattern);
             }
@@ -113,6 +115,31 @@ namespace Fastie
                 showMessage("Vui lòng nhập số điện thoại!", "error");
                 return;
             }
+            if (cTBNumberPhone.Text.Length < 10)
+            {
+                showMessage("Số điện thoại không hợp lệ!", "error");
+                return;
+            }
+            if (string.IsNullOrEmpty(dTPBirthday.Value.Date.ToString()))
+            {
+                showMessage("Vui lòng chọn ngày sinh!", "error");
+                return;
+            }
+            if (dTPBirthday.Value.Date > DateTime.Now.Date)
+            {
+                showMessage("Ngày sinh không hợp lệ!", "error");
+                return;
+            }
+            if (string.IsNullOrEmpty(dTPDayOfWork.Value.Date.ToString()))
+            {
+                showMessage("Vui lòng chọn ngày vào làm!", "error");
+                return;
+            }
+            if (dTPDayOfWork.Value.Date > DateTime.Now.Date)
+            {
+                showMessage("Ngày vào làm không hợp lệ!", "error");
+                return;
+            }
 
             needEdit.Ten = cTBName.Text;        
             needEdit.Ten = cTBName.Text;         
@@ -121,11 +148,19 @@ namespace Fastie
             needEdit.NgaySinh = dTPBirthday.Value;
             needEdit.NgayVaoLam = dTPDayOfWork.Value;
             needEdit.Sdt = cTBNumberPhone.Text;
-            personnelBLL.UpdatePersonnel(needEdit);
-            
-            showMessage("Sửa nhân sự thành công!", "success");
-            layoutpersonnelForm.loadDataPersonnel();
-            this.Close();
+
+            try
+            {
+                personnelBLL.UpdatePersonnel(needEdit);
+                showMessage("Sửa nhân sự thành công!", "success");
+                layoutpersonnelForm.loadDataPersonnel();
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                showMessage("Có lỗi xảy ra!", "error");
+                return;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

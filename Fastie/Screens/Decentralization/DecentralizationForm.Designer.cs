@@ -207,7 +207,7 @@
             this.cbPosition.BorderSize = 1;
             this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbPosition.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPosition.ForeColor = System.Drawing.Color.Black;
             this.cbPosition.IconColor = System.Drawing.Color.Black;
             this.cbPosition.ListBackColor = System.Drawing.Color.WhiteSmoke;
             this.cbPosition.ListTextColor = System.Drawing.Color.Black;
@@ -228,7 +228,7 @@
             this.cbDepartment.BorderSize = 1;
             this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbDepartment.ForeColor = System.Drawing.Color.DimGray;
+            this.cbDepartment.ForeColor = System.Drawing.Color.Black;
             this.cbDepartment.IconColor = System.Drawing.Color.Black;
             this.cbDepartment.ListBackColor = System.Drawing.Color.WhiteSmoke;
             this.cbDepartment.ListTextColor = System.Drawing.Color.Black;

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.sidebarLayout = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.stateAccount = new System.Windows.Forms.Panel();
             this.stateAnalytics = new System.Windows.Forms.Panel();
@@ -58,7 +59,6 @@
             this.lblDepartmentName = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label1 = new System.Windows.Forms.Label();
             this.sidebarLayout.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,6 +84,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.stateAccount);
@@ -105,6 +107,18 @@
             this.panel2.Size = new System.Drawing.Size(300, 591);
             this.panel2.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(11, 557);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 21);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Version 1.0.0";
+            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -119,7 +133,7 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(40, 0, 45, 0);
             this.btnLogout.Size = new System.Drawing.Size(300, 58);
-            this.btnLogout.TabIndex = 0;
+            this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -172,7 +186,7 @@
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Padding = new System.Windows.Forms.Padding(40, 0, 50, 0);
             this.btnAccount.Size = new System.Drawing.Size(300, 58);
-            this.btnAccount.TabIndex = 0;
+            this.btnAccount.TabIndex = 7;
             this.btnAccount.Text = "Tài khoản";
             this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
@@ -191,7 +205,7 @@
             this.btnAnalytics.Name = "btnAnalytics";
             this.btnAnalytics.Padding = new System.Windows.Forms.Padding(40, 0, 50, 0);
             this.btnAnalytics.Size = new System.Drawing.Size(300, 58);
-            this.btnAnalytics.TabIndex = 0;
+            this.btnAnalytics.TabIndex = 6;
             this.btnAnalytics.Text = "Thống kê";
             this.btnAnalytics.UseVisualStyleBackColor = false;
             this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
@@ -226,7 +240,7 @@
             this.btnDecentralization.Name = "btnDecentralization";
             this.btnDecentralization.Padding = new System.Windows.Forms.Padding(40, 0, 25, 0);
             this.btnDecentralization.Size = new System.Drawing.Size(300, 58);
-            this.btnDecentralization.TabIndex = 0;
+            this.btnDecentralization.TabIndex = 1;
             this.btnDecentralization.Text = "Phân quyền";
             this.btnDecentralization.UseVisualStyleBackColor = false;
             this.btnDecentralization.Click += new System.EventHandler(this.btnDecentralization_Click);
@@ -245,7 +259,7 @@
             this.btnWork.Name = "btnWork";
             this.btnWork.Padding = new System.Windows.Forms.Padding(40, 0, 45, 0);
             this.btnWork.Size = new System.Drawing.Size(300, 58);
-            this.btnWork.TabIndex = 0;
+            this.btnWork.TabIndex = 5;
             this.btnWork.Text = "Công việc";
             this.btnWork.UseVisualStyleBackColor = false;
             this.btnWork.Click += new System.EventHandler(this.btnWork_Click);
@@ -272,7 +286,7 @@
             this.btnPart.Name = "btnPart";
             this.btnPart.Padding = new System.Windows.Forms.Padding(40, 0, 55, 0);
             this.btnPart.Size = new System.Drawing.Size(300, 58);
-            this.btnPart.TabIndex = 0;
+            this.btnPart.TabIndex = 2;
             this.btnPart.Text = "Bộ phận";
             this.btnPart.UseVisualStyleBackColor = false;
             this.btnPart.Click += new System.EventHandler(this.btnPart_Click);
@@ -291,7 +305,7 @@
             this.btnPosition.Name = "btnPosition";
             this.btnPosition.Padding = new System.Windows.Forms.Padding(40, 0, 55, 0);
             this.btnPosition.Size = new System.Drawing.Size(300, 58);
-            this.btnPosition.TabIndex = 0;
+            this.btnPosition.TabIndex = 3;
             this.btnPosition.Text = "Chức vụ";
             this.btnPosition.UseVisualStyleBackColor = false;
             this.btnPosition.Click += new System.EventHandler(this.btnPosition_Click);
@@ -310,7 +324,7 @@
             this.btnPersonnel.Name = "btnPersonnel";
             this.btnPersonnel.Padding = new System.Windows.Forms.Padding(40, 0, 55, 0);
             this.btnPersonnel.Size = new System.Drawing.Size(300, 58);
-            this.btnPersonnel.TabIndex = 0;
+            this.btnPersonnel.TabIndex = 4;
             this.btnPersonnel.Text = "Nhân sự";
             this.btnPersonnel.UseVisualStyleBackColor = false;
             this.btnPersonnel.Click += new System.EventHandler(this.btnPersonnel_Click);
@@ -432,17 +446,6 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 4;
             this.pictureBox13.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(11, 557);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 21);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Version 1.0.0";
             // 
             // HomeForm
             // 
