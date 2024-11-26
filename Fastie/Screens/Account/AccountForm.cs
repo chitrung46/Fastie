@@ -34,27 +34,29 @@ namespace Fastie
         {
             flowLayoutPanelAcoount.Controls.Clear();
             List<Account> account = accountBLL.LayDanhSachTaiKhoan();
-
-            foreach (Account taikhoan in account)
+            if(account.Count > 0)
             {
-                LayoutAccountForm layoutAccountForm = new LayoutAccountForm(this, homeForm)
+                foreach (Account taikhoan in account)
                 {
+                    LayoutAccountForm layoutAccountForm = new LayoutAccountForm(this, homeForm)
+                    {
 
-                    PersonnelName = taikhoan.TenNhanSu,
-                    Username = taikhoan.TenDangNhap,
-                    PhoneNumber = taikhoan.SoDienthoai,
-                    StatusAccount = taikhoan.TrangThai,
-                    PositionName = taikhoan.TenChucVu,
-                    DepartmentName = taikhoan.TenBoPhan,
-                    HasAccount = "Đã có",
-                    IdAccount = taikhoan.Id,
-                    Password = taikhoan.MatKhau,
-                    Email = taikhoan.Email,
-                    DepartmentId = taikhoan.IdBoPhan,
-                    PositionId = taikhoan.IdChucVu,
-                    PersonnelId = taikhoan.IdNhanSu
-                };
-                flowLayoutPanelAcoount.Controls.Add(layoutAccountForm);
+                        PersonnelName = taikhoan.TenNhanSu,
+                        Username = taikhoan.TenDangNhap,
+                        PhoneNumber = taikhoan.SoDienthoai,
+                        StatusAccount = taikhoan.TrangThai,
+                        PositionName = taikhoan.TenChucVu,
+                        DepartmentName = taikhoan.TenBoPhan,
+                        HasAccount = "Đã có",
+                        IdAccount = taikhoan.Id,
+                        Password = taikhoan.MatKhau,
+                        Email = taikhoan.Email,
+                        DepartmentId = taikhoan.IdBoPhan,
+                        PositionId = taikhoan.IdChucVu,
+                        PersonnelId = taikhoan.IdNhanSu
+                    };
+                    flowLayoutPanelAcoount.Controls.Add(layoutAccountForm);
+                }
             }
         }
 

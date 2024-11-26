@@ -81,6 +81,7 @@
             this.sidebarLayout.Name = "sidebarLayout";
             this.sidebarLayout.Size = new System.Drawing.Size(300, 800);
             this.sidebarLayout.TabIndex = 0;
+            this.sidebarLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebarLayout_Paint);
             // 
             // panel2
             // 
@@ -106,6 +107,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 591);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label1
             // 
@@ -118,6 +120,7 @@
             this.label1.Size = new System.Drawing.Size(99, 21);
             this.label1.TabIndex = 6;
             this.label1.Text = "Version 1.0.0";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnLogout
             // 
@@ -145,6 +148,7 @@
             this.stateAccount.Name = "stateAccount";
             this.stateAccount.Size = new System.Drawing.Size(10, 58);
             this.stateAccount.TabIndex = 1;
+            this.stateAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.stateAccount_Paint);
             this.stateAccount.MouseEnter += new System.EventHandler(this.pnlAccount_MouseEnter);
             this.stateAccount.MouseLeave += new System.EventHandler(this.pnlAccount_MouseLeave);
             // 
@@ -155,6 +159,7 @@
             this.stateAnalytics.Name = "stateAnalytics";
             this.stateAnalytics.Size = new System.Drawing.Size(10, 58);
             this.stateAnalytics.TabIndex = 1;
+            this.stateAnalytics.Paint += new System.Windows.Forms.PaintEventHandler(this.stateAnalytics_Paint);
             // 
             // statePart
             // 
@@ -163,6 +168,7 @@
             this.statePart.Name = "statePart";
             this.statePart.Size = new System.Drawing.Size(10, 58);
             this.statePart.TabIndex = 0;
+            this.statePart.Paint += new System.Windows.Forms.PaintEventHandler(this.statePart_Paint);
             // 
             // stateWork
             // 
@@ -171,6 +177,7 @@
             this.stateWork.Name = "stateWork";
             this.stateWork.Size = new System.Drawing.Size(10, 58);
             this.stateWork.TabIndex = 0;
+            this.stateWork.Paint += new System.Windows.Forms.PaintEventHandler(this.stateWork_Paint);
             // 
             // btnAccount
             // 
@@ -217,6 +224,7 @@
             this.stateDecentralization.Name = "stateDecentralization";
             this.stateDecentralization.Size = new System.Drawing.Size(10, 58);
             this.stateDecentralization.TabIndex = 0;
+            this.stateDecentralization.Paint += new System.Windows.Forms.PaintEventHandler(this.stateDecentralization_Paint);
             // 
             // statePersonnel
             // 
@@ -225,6 +233,7 @@
             this.statePersonnel.Name = "statePersonnel";
             this.statePersonnel.Size = new System.Drawing.Size(10, 58);
             this.statePersonnel.TabIndex = 0;
+            this.statePersonnel.Paint += new System.Windows.Forms.PaintEventHandler(this.statePersonnel_Paint);
             // 
             // btnDecentralization
             // 
@@ -271,6 +280,7 @@
             this.statePosition.Name = "statePosition";
             this.statePosition.Size = new System.Drawing.Size(10, 58);
             this.statePosition.TabIndex = 0;
+            this.statePosition.Paint += new System.Windows.Forms.PaintEventHandler(this.statePosition_Paint);
             // 
             // btnPart
             // 
@@ -338,6 +348,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // mainLayout
             // 
@@ -349,6 +360,7 @@
             this.mainLayout.Name = "mainLayout";
             this.mainLayout.Size = new System.Drawing.Size(1182, 695);
             this.mainLayout.TabIndex = 1;
+            this.mainLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.mainLayout_Paint);
             // 
             // lblPersonnelName
             // 
@@ -360,6 +372,7 @@
             this.lblPersonnelName.Size = new System.Drawing.Size(48, 21);
             this.lblPersonnelName.TabIndex = 5;
             this.lblPersonnelName.Text = "Toàn";
+            this.lblPersonnelName.Click += new System.EventHandler(this.lblPersonnelName_Click);
             // 
             // panel3
             // 
@@ -369,6 +382,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1182, 4);
             this.panel3.TabIndex = 3;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // topbarLayout
             // 
@@ -381,6 +395,7 @@
             this.topbarLayout.Name = "topbarLayout";
             this.topbarLayout.Size = new System.Drawing.Size(1182, 65);
             this.topbarLayout.TabIndex = 2;
+            this.topbarLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.topbarLayout_Paint);
             // 
             // customPanel1
             // 
@@ -397,6 +412,7 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(59, 55);
             this.customPanel1.TabIndex = 16;
+            this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
             // pictureBoxHelp
             // 
@@ -425,6 +441,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(135, 53);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblDepartmentName
             // 
@@ -436,6 +453,7 @@
             this.lblDepartmentName.Size = new System.Drawing.Size(68, 21);
             this.lblDepartmentName.TabIndex = 5;
             this.lblDepartmentName.Text = "Kế toán";
+            this.lblDepartmentName.Click += new System.EventHandler(this.lblDepartmentName_Click);
             // 
             // pictureBox13
             // 
@@ -446,6 +464,11 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 4;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // HomeForm
             // 
