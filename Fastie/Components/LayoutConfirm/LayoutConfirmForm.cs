@@ -17,12 +17,14 @@ using Fastie.Components.LayoutPersonnel;
 using BLL.DepartmentBLL;
 using Fastie.Components.LayoutAccount;
 using Fastie.Components.Toastify;
+using Fastie.Screens.Task;
 
 namespace Fastie
 {
     public partial class LayoutConfirmForm : Form
     {
         private string accountName;
+        private string idTask;
         private LayoutDecentralizationForm decentralizationForm;
         private LayoutPositionForm layoutPositionForm;
         private LayoutDepartmentForm layoutDepartmentForm;
@@ -30,12 +32,14 @@ namespace Fastie
         private LayoutAccountForm layoutAccountForm;
         private AccountForm AccountForm;
         private HomeForm homeForm;
+        private DetailsTaskForm detailsTaskForm;
 
         PositionBLL positionBLL = new PositionBLL();
         PersonnelBLL personnelBLL = new PersonnelBLL();
         DepartmentBLL departmentBLL = new DepartmentBLL();
         DecentralizationBLL decentralizationBLL = new DecentralizationBLL();
         AccountBLL accountBll = new AccountBLL();
+        TaskBLL taskBLL = new TaskBLL();
 
         public LayoutConfirmForm()
         {
@@ -85,7 +89,12 @@ namespace Fastie
             this.AccountForm  = accountForm;
             this.accountName = accountName;
         }
-
+        public LayoutConfirmForm(DetailsTaskForm detailsTaskForm, string accountName)
+        {
+            InitializeComponent();
+            this.detailsTaskForm = detailsTaskForm;
+            this.idTask = accountName;
+        }
         public string AccountName { get => accountName; set => accountName = value; }   
         public string Title { get => lblTitle.Text; set => lblTitle.Text = value; }
         public string Content { get => lblContent.Text; set => lblContent.Text = value; }
@@ -237,7 +246,49 @@ namespace Fastie
                     this.Close();
                     break;
                 case "Xóa việc":
-                    showMessage("Xóa việc thành công", "success");
+                    try
+                    {
+                        bool checkDelete = taskBLL.XoaCongViec(idTask);
+                        //AccountForm.LoadDataAccount();
+                        if (checkDelete)
+                        {
+                            showMessage("Xóa công việc", "success");
+                        }
+                        
+                        else
+                        {
+                            showMessage("Xóa công việc thất bại", "error");
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        showMessage("Xóa công việc thất bại", "error");
+                    }
+                    
+                    this.Close();
+                    break;
+                case "Xóa việc phát sinh":
+                    try
+                    {
+                        bool checkDelete = taskBLL.XoaCongViecPhatSinh(idTask);
+                        //AccountForm.LoadDataAccount();
+                        if (checkDelete)
+                        {
+                            showMessage("Xóa công việc phát sinh", "success");
+                        }
+
+                        else
+                        {
+                            showMessage("Xóa công việc phát sinh thất bại", "error");
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        showMessage("Xóa công việc phát sinh thất bại", "error");
+                    }
+
                     this.Close();
                     break;
                 default:

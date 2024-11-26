@@ -375,6 +375,34 @@ namespace BLL
 
 
         }
+        public bool XoaCongViec(string idTask)
+        {
+            try
+            {
+                return taskDAL.XoaCongViec(idTask);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi xóa công việc: " + ex.Message);
+            }
+        }
+        public bool XoaCongViecPhatSinh(string idTask)
+        {
+            try
+            {
+                return taskDAL.XoaCongViecPhatSinh(idTask);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi xóa công việc phát sinh: " + ex.Message);
+            }
+        }
+
+        public bool CapNhatCongViec(string idCongViec, string loaiGiaoViec, ThongTinGiaoViec ThongTinCongViec)
+        {
+            return taskDAL.CapNhatCongViec(idCongViec, loaiGiaoViec, ThongTinCongViec);
+
+        }
     }
 
 }

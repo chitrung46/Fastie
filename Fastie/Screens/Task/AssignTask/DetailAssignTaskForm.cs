@@ -17,6 +17,8 @@ using BLL.DepartmentBLL;
 using DTO;
 using DTO.TaskDTO;
 using Fastie.Components.Toastify;
+using System.Reflection;
+//using System.Windows.Media;
 namespace Fastie.Screens.Task
 {
     public partial class DetailAssignTaskForm : Form
@@ -35,6 +37,20 @@ namespace Fastie.Screens.Task
         private string loaiGiaoViec;
         private string idCongViecGoc;
         private bool result;
+        private string idCongViec;
+
+        public string DuongDanAnh
+        {
+            get { return duongDanAnh; }
+            set { duongDanAnh = value; }
+        }
+
+        // Thuộc tính để truy cập và thay đổi giá trị của duongDanTaiLieu
+        public string DuongDanFile
+        {
+            get { return duongDanFile; }
+            set { duongDanFile = value; }
+        }
         public DetailAssignTaskForm(string loaiGiaoViec, string idTaiKhoan, string idBoPhan)
         {
             InitializeGoogleDriveService();
@@ -47,6 +63,125 @@ namespace Fastie.Screens.Task
             dtpTimeCompleted.Value = DateTime.Now;
             dtpTimeCompleted.Format = DateTimePickerFormat.Custom;
             dtpTimeCompleted.CustomFormat = "dd/MM/yyyy    HH:mm";
+        }
+
+
+        public DetailAssignTaskForm(TaskInfo taskInfo, string idCongViec, string loaiGiaoViec, string idTaiKhoan, string idBoPhan)
+        {
+            InitializeGoogleDriveService();
+            InitializeComponent();
+
+
+            // Lưu thông tin từ tham số
+            this.idTaiKhoanNguoiDung = idTaiKhoan;
+            this.idBoPhanNguoiDung = idBoPhan;
+            this.loaiGiaoViec = loaiGiaoViec;
+            this.idCongViec = idCongViec;
+            LoadDepartmentComboBox();
+            // Gán thông tin taskInfo vào các ô hiển thị
+            if (taskInfo != null)
+            {
+                //lblIdTask.Text = taskInfo.Id;
+                txbTaskName.Text = taskInfo.Ten;
+                cCBLoaiCongViec.Texts = taskInfo.TenLoaiCongViec;
+                cTBDescribeTask.Text = taskInfo.MoTa;
+                dtpTimeCompleted.Value = taskInfo.ThoiHanHoanThanh.HasValue ? taskInfo.ThoiHanHoanThanh.Value : DateTime.Now;
+                //cbxDepartment.Text = taskInfo.TenBoPhan;
+                //lblPersonnel.Text = taskInfo.TenNhanSuNhanViec;
+                //lblNumber.Text = taskInfo.SoLuongNhanSuChuDong ?? "0";
+                duongDanAnh = taskInfo.DuongDanHinhAnh ?? null;
+                duongDanFile = taskInfo.DuongDanTaiLieu ?? null;
+                lblFileName.Text = taskInfo.TenTaiLieu ?? null;
+                label9.Text = taskInfo.TenHinhAnh ?? null;
+
+            }
+            RemoveAllClickEvents(btnAdd);
+            btnAdd.Click += new EventHandler(capNhatCongViec_Click);
+        }
+        private void RemoveAllClickEvents(Button button)
+        {
+            FieldInfo f1 = typeof(Control).GetField("EventClick", BindingFlags.Static | BindingFlags.NonPublic);
+            object obj = f1.GetValue(button);
+            PropertyInfo pi = button.GetType().GetProperty("Events", BindingFlags.NonPublic | BindingFlags.Instance);
+            EventHandlerList list = (EventHandlerList)pi.GetValue(button, null);
+            list.RemoveHandler(obj, list[obj]);
+        }
+        private void capNhatCongViec_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(fileUrl))
+            {
+                UploadToGoogleDrive("application/octet-stream", fileUrl, false);
+
+            }
+            if (!string.IsNullOrEmpty(imageUrl))
+            {
+                // Gửi ảnh lên Google Drive
+                UploadToGoogleDrive("image/jpeg", imageUrl, true);
+
+            }
+            List<String> danhSachTaiKhoanNhanViec = new List<String>();
+            List<String> danhSachBoPhanNhanViec = new List<String>();
+
+            foreach (DataGridViewRow row in dgvBoPhanNhanViec.Rows)
+            {
+                string idBoPhanNhanViec = row.Cells["idBoPhan"].Value?.ToString();
+                if (!string.IsNullOrEmpty(idBoPhanNhanViec))
+                {
+                    danhSachBoPhanNhanViec.Add(idBoPhanNhanViec);
+                }
+            }
+            foreach (DataGridViewRow row in dgvTaiKhoanNhanViec.Rows)
+            {
+                string idTaiKhoanNhanViec = row.Cells["idTaiKhoan"].Value?.ToString();
+                if (!string.IsNullOrEmpty(idTaiKhoanNhanViec))
+                {
+                    if (idTaiKhoanNhanViec == this.idTaiKhoanNguoiDung)
+                    {
+                        showMessage("Không thể tự giao việc cho bản thân", "error");
+                        return; // Thoát khỏi hàm nếu phát hiện lỗi
+                    }
+                    danhSachTaiKhoanNhanViec.Add(idTaiKhoanNhanViec);
+                }
+            }
+            if (loaiGiaoViec == "Giao việc")
+            {
+                var thongTinGiaoViec = new ThongTinGiaoViec()
+                {
+                    Ten = txbTaskName.Text,
+                    MoTa = cTBDescribeTask.Text,
+                    ThoiHanHoanThanh = dtpTimeCompleted.Value.ToString(),
+                    
+                    IdTaiKhoanGiaoViec = this.idTaiKhoanNguoiDung,
+                    DanhSachTaiKhoanNhanViec = string.Join(",", danhSachTaiKhoanNhanViec),
+                    DanhSachBoPhanNhanViec = string.Join(",", danhSachBoPhanNhanViec),
+                    DanhSachHinhAnh = duongDanAnh,
+                    DanhSachTaiLieu = duongDanFile,
+                    TenHinhAnh = imageName,
+                    TenTaiLieu = fileName
+                };
+                result = taskBLL.CapNhatCongViec(idCongViec, loaiGiaoViec, thongTinGiaoViec);
+            }
+            if (loaiGiaoViec == "Giao việc phát sinh")
+            {
+                var thongTinGiaoViec = new ThongTinGiaoViec()
+                {
+                    Ten = txbTaskName.Text,
+                    MoTa = cTBDescribeTask.Text,
+                    ThoiHanHoanThanh = dtpTimeCompleted.Value.ToString(),
+                    
+                    IdTaiKhoanGiaoViec = this.idTaiKhoanNguoiDung,
+                    DanhSachTaiKhoanNhanViec = string.Join(",", danhSachTaiKhoanNhanViec),
+                    DanhSachBoPhanNhanViec = string.Join(",", danhSachBoPhanNhanViec),
+                    DanhSachHinhAnh = duongDanAnh,
+                    IdCongViecGoc = this.idCongViecGoc,
+                    DanhSachTaiLieu = duongDanFile,
+                    TenHinhAnh = imageName,
+                    TenTaiLieu = fileName
+                };
+                result = taskBLL.CapNhatCongViec(idCongViec, loaiGiaoViec, thongTinGiaoViec);
+
+            }
+            this.Close();
         }
         public DetailAssignTaskForm(string loaiGiaoViec, string idCongViecGoc, string idTaiKhoan, string idBoPhan)
         {

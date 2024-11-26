@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +24,22 @@ namespace Fastie.Screens.Task
         private string idBoPhanNguoiDung;
         private string loaiGiaoViec = "Giao việc chủ động";
         private bool result;
+        private string idCongViec;
+        private string duongDanFile; // Lưu link Google Drive của file
+        private string duongDanAnh;
+
+        public string DuongDanAnh
+        {
+            get { return duongDanAnh; }
+            set { duongDanAnh = value; }
+        }
+
+        // Thuộc tính để truy cập và thay đổi giá trị của duongDanTaiLieu
+        public string DuongDanFile
+        {
+            get { return duongDanFile; }
+            set { duongDanFile = value; }
+        }
         DepartmentBLL departmentBLL = new DepartmentBLL();
         public DetailAssignPositiveTaskForm(string idTaiKhoan, string idBoPhan)
         {
@@ -34,7 +51,92 @@ namespace Fastie.Screens.Task
             dtpTimeCompleted.Format = DateTimePickerFormat.Custom;
             dtpTimeCompleted.CustomFormat = "dd/MM/yyyy";
         }
+        public DetailAssignPositiveTaskForm(TaskInfo taskInfo, string idCongViec, string loaiGiaoViec, string idTaiKhoan, string idBoPhan)
+        {
+            //InitializeGoogleDriveService();
+            InitializeComponent();
 
+
+            // Lưu thông tin từ tham số
+            this.idTaiKhoanNguoiDung = idTaiKhoan;
+            this.idBoPhanNguoiDung = idBoPhan;
+            this.loaiGiaoViec = loaiGiaoViec;
+            this.idCongViec = idCongViec;
+            LoadDepartmentComboBox();
+            // Gán thông tin taskInfo vào các ô hiển thị
+            if (taskInfo != null)
+            {
+                //lblIdTask.Text = taskInfo.Id;
+                txbTaskName.Text = taskInfo.Ten;
+                cCBLoaiCongViec.Texts = taskInfo.TenLoaiCongViec;
+                cTBDescribeTask.Text = taskInfo.MoTa;
+                dtpTimeCompleted.Value = taskInfo.ThoiHanHoanThanh.HasValue ? taskInfo.ThoiHanHoanThanh.Value : DateTime.Now;
+                //cbxDepartment.Text = taskInfo.TenBoPhan;
+                //lblPersonnel.Text = taskInfo.TenNhanSuNhanViec;
+                txbSoNhanSuChuDong.Text = taskInfo.SoLuongNhanSuChuDong ?? "0";
+                duongDanAnh = taskInfo.DuongDanHinhAnh ?? null;
+                duongDanFile = taskInfo.DuongDanTaiLieu ?? null;
+                lblFileName.Text = taskInfo.TenTaiLieu ?? null;
+                label9.Text = taskInfo.TenHinhAnh ?? null;
+
+            }
+            RemoveAllClickEvents(btnUpdate);
+            btnUpdate.Click += new EventHandler(capNhatCongViec_Click);
+        }
+        private void capNhatCongViec_Click(object sender, EventArgs e) 
+        {
+
+            List<String> danhSachTaiKhoanNhanViec = new List<String>();
+            List<String> danhSachBoPhanNhanViec = new List<String>();
+
+            foreach (DataGridViewRow row in dgvBoPhanNhanViec.Rows)
+            {
+                string idBoPhanNhanViec = row.Cells["idBoPhan"].Value?.ToString();
+                if (!string.IsNullOrEmpty(idBoPhanNhanViec))
+                {
+                    danhSachBoPhanNhanViec.Add(idBoPhanNhanViec);
+                }
+            }
+            foreach (DataGridViewRow row in dgvTaiKhoanNhanViec.Rows)
+            {
+                string idTaiKhoanNhanViec = row.Cells["idTaiKhoan"].Value?.ToString();
+                if (!string.IsNullOrEmpty(idTaiKhoanNhanViec))
+                {
+                    if (idTaiKhoanNhanViec == this.idTaiKhoanNguoiDung)
+                    {
+                        showMessage("Không thể tự giao việc cho bản thân", "error");
+                        return; // Thoát khỏi hàm nếu phát hiện lỗi
+                    }
+                    danhSachTaiKhoanNhanViec.Add(idTaiKhoanNhanViec);
+                }
+            }
+            var thongTinGiaoViec = new ThongTinGiaoViec()
+            {
+                Ten = txbTaskName.Text,
+                MoTa = cTBDescribeTask.Text,
+                ThoiHanHoanThanh = dtpTimeCompleted.Value.ToString(),
+                
+                IdTaiKhoanGiaoViec = this.idTaiKhoanNguoiDung,
+                DanhSachTaiKhoanNhanViec = string.Join(",", danhSachTaiKhoanNhanViec),
+                DanhSachBoPhanNhanViec = string.Join(",", danhSachBoPhanNhanViec),
+                DanhSachHinhAnh = "",
+                DanhSachTaiLieu = "",
+                SoLuongNhanSuChuDong = Convert.ToInt32(txbSoNhanSuChuDong.Text),
+                TenHinhAnh = "",
+                TenTaiLieu = ""
+
+            };
+            result = taskBLL.CapNhatCongViec(idCongViec, "Giao việc chủ động", thongTinGiaoViec);
+            this.Close();
+        }
+        private void RemoveAllClickEvents(Button button)
+        {
+            FieldInfo f1 = typeof(Control).GetField("EventClick", BindingFlags.Static | BindingFlags.NonPublic);
+            object obj = f1.GetValue(button);
+            PropertyInfo pi = button.GetType().GetProperty("Events", BindingFlags.NonPublic | BindingFlags.Instance);
+            EventHandlerList list = (EventHandlerList)pi.GetValue(button, null);
+            list.RemoveHandler(obj, list[obj]);
+        }
         private void LoadDepartmentComboBox()
         {
             List<DTO.Department> danhSachBoPhan = departmentBLL.GetDepartmentList();

@@ -165,11 +165,11 @@ namespace DAL.TaskDAL
                                 ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
                                 GhiChu = reader["ghiChu"].ToString(),
                                 TenBoPhan = reader["TenBoPhan"].ToString(),
-                                TenLoaiCongViec = reader["TenLoaiCongViec"].ToString(),
+                                //TenLoaiCongViec = reader["TenLoaiCongViec"].ToString(),
                                 TenTienDoCongViec = reader["TenTienDoCongViec"].ToString(),
                                 TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString(),
                                 SoLuongNhanSuChuDong = reader["SoLuongNhanSuChuDong"].ToString(),
-                                TenNhanSuNhanViec = reader["TenNhanSuNhanViec"].ToString()
+                                //TenNhanSuNhanViec = reader["TenNhanSuNhanViec"].ToString()
                             };
 
                             tasks.Add(task);
@@ -1067,6 +1067,85 @@ namespace DAL.TaskDAL
                     }
                 }
             }
+        }
+
+
+        public bool XoaCongViec(string idTask) 
+        {
+            string query = "proc_XoaCongViec";
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@id", idTask);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("XoaCongViec: " + ex.Message);
+            }
+            return false;
+
+        }
+        public bool XoaCongViecPhatSinh(string idTask)
+        {
+            string query = "proc_XoaCongViecPhatSinh";
+            try
+            {
+                using (SqlConnection con = SqlConnectionData.Connect())
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@id", idTask);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("XoaCongViecPhatSinh: " + ex.Message);
+            }
+            return false;
+
+        }
+
+        public bool CapNhatCongViec(string idCongViec, string loaiGiaoViec, ThongTinGiaoViec ThongTinCongViec)
+        {
+            string query = "proc_CapNhatCongViec";
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@loaiGiaoViec", loaiGiaoViec);
+                cmd.Parameters.AddWithValue("@id", idCongViec);
+                cmd.Parameters.AddWithValue("@ten", ThongTinCongViec.Ten);
+                cmd.Parameters.AddWithValue("@moTa", ThongTinCongViec.MoTa);
+                cmd.Parameters.AddWithValue("@thoiHanHoanThanh", ThongTinCongViec.ThoiHanHoanThanh);
+                cmd.Parameters.AddWithValue("@idTaiKhoanGiaoViec", ThongTinCongViec.IdTaiKhoanGiaoViec);
+                
+                cmd.Parameters.AddWithValue("@danhSachTaiKhoanNhanViec", ThongTinCongViec.DanhSachTaiKhoanNhanViec);
+                cmd.Parameters.AddWithValue("@danhSachBoPhanNhanViec", ThongTinCongViec.DanhSachBoPhanNhanViec);
+                cmd.Parameters.AddWithValue("@danhSachHinhAnh", ThongTinCongViec.DanhSachHinhAnh);
+                cmd.Parameters.AddWithValue("@danhSachTaiLieu", ThongTinCongViec.DanhSachTaiLieu);
+                
+                cmd.Parameters.AddWithValue("@soLuongNhanSuChuDong", ThongTinCongViec.SoLuongNhanSuChuDong);
+                cmd.Parameters.AddWithValue("@tenHinhAnh", ThongTinCongViec.TenHinhAnh);
+                cmd.Parameters.AddWithValue("@tenTaiLieu", ThongTinCongViec.TenTaiLieu);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            return true;
         }
     }
 }
