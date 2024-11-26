@@ -135,9 +135,9 @@ namespace Fastie
                 showMessage("Thêm Tài khoản mới thành công!", "success");
 
             }
-            catch (Exception ex)
+            catch
             {
-                throw new Exception(ex.Message);
+                showMessage("Tên đăng nhập đã tồn tại!", "error");
             }
             //departmentForm.LoadDataDepartment();
             this.Close();
