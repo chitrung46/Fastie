@@ -27,6 +27,7 @@ namespace Fastie.Screens.Personnel
             lblGender.Text = layoutPersonnelForm.Gender;
             lblDateOfBirth.Text = layoutPersonnelForm.DateOfBirth.ToString();
             lblDateOfWork.Text = layoutPersonnelForm.DateOfWork.ToString();
+            lblNumberPhone.Text = layoutPersonnelForm.NumberPhone;
         }
     }
 }

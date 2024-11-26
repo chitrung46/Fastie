@@ -59,6 +59,7 @@ namespace Fastie
                     IdPersonnel = personnel.Id,
                     NumberPhone = personnel.Sdt
                 };
+                layoutPersonnelForm.DateOfWork = personnel.NgayVaoLam;
                 flowLayoutPanelPersonnel.Controls.Add(layoutPersonnelForm);
                 i++;
             }

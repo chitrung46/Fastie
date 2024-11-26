@@ -121,25 +121,34 @@ namespace Fastie
                 showMessage("Vui lòng nhập đầy đủ thông tin", "error");
                 return;
             }
-            try
-            {
-                Account taoTaiKhoanMoi = new Account
-                {
-                    TenDangNhap = cTBName.Text,
-                    MatKhau = customTextBox1.Text,
-                    IdNhanSu = layoutPersonnelForm.IdPersonnel,
-                    IdChucVu = this.selectedPositionId,
-                    IdBoPhan = this.selectedDepartmentId
-                };
-                accountBLL.ThemTaiKhoan(taoTaiKhoanMoi);
-                showMessage("Thêm Tài khoản mới thành công!", "success");
 
-            }
-            catch (Exception ex)
+            
+            Account taoTaiKhoanMoi = new Account
             {
-                throw new Exception(ex.Message);
+                TenDangNhap = cTBName.Text,
+                MatKhau = customTextBox1.Text,
+                IdNhanSu = layoutPersonnelForm.IdPersonnel,
+                IdChucVu = this.selectedPositionId,
+                IdBoPhan = this.selectedDepartmentId
+            };
+                                    
+            // Thêm tài khoản
+            int result = accountBLL.ThemTaiKhoan(taoTaiKhoanMoi);
+
+            // Kiểm tra kết quả trả về
+            if (result == -1)
+            {
+                showMessage("Tên đăng nhập đã tồn tại!", "error");
             }
-            //departmentForm.LoadDataDepartment();
+            else if (result == 0)
+            {
+                showMessage("Thêm tài khoản mới thành công!", "success");
+            }
+            else
+            {
+                showMessage("Đã xảy ra lỗi không mong muốn!", "error");
+            }
+
             this.Close();
         }
     }

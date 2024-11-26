@@ -11,7 +11,7 @@ namespace DAL
 {
     public class AccountDAL : DatabaseAccess
     {
-        public bool ThemTaiKhoan(Account taiKhoan)
+        public int ThemTaiKhoan(Account taiKhoan)
         {
             string query = "proc_insertAccount";
             using (SqlConnection con = SqlConnectionData.Connect())
@@ -23,10 +23,18 @@ namespace DAL
                 command.Parameters.AddWithValue("@idBoPhan", taiKhoan.IdBoPhan);
                 command.Parameters.AddWithValue("@idChucVu", taiKhoan.IdChucVu);
                 command.Parameters.AddWithValue("@idNhanSu", taiKhoan.IdNhanSu);
+
+                // Thêm tham số để nhận giá trị trả về
+                SqlParameter returnValue = new SqlParameter();
+                returnValue.Direction = ParameterDirection.ReturnValue;
+                command.Parameters.Add(returnValue);
+
                 con.Open();
                 command.ExecuteNonQuery();
+
+                // Lấy giá trị trả về
+                return (int)returnValue.Value;
             }
-            return true;
         }
 
         public List<Account> LayDanhSachTaiKhoan()
