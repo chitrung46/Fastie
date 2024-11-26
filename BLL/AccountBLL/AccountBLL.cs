@@ -16,7 +16,7 @@ namespace BLL
     {
         //For account login
         AccountDAL accountDAL = new AccountDAL();
-        public bool ThemTaiKhoan(Account taiKhoan)
+        public int ThemTaiKhoan(Account taiKhoan)
         {
             return accountDAL.ThemTaiKhoan(taiKhoan);
         }
