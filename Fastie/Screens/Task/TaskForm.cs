@@ -17,6 +17,7 @@ using BLL;
 using DTO;
 using Fastie.Components.Toastify;
 using System.Net.Http;
+using System.Windows.Media;
 
 namespace Fastie
 {
@@ -176,6 +177,7 @@ namespace Fastie
         {
             handleAcceptTask();
             handleReportOnline();
+            handleAssignTask();
         }
 
         //load report task online
@@ -237,6 +239,39 @@ namespace Fastie
                 {
                     Console.WriteLine("Không có dữ liệu nhận việc.");
                 }
+            }
+        }
+
+        public async void handleAssignTask()
+        {
+            string spreadsheetId = "1OIK7_bkcgyw_eNl1CDU4bBZNeg7PFeEstboGf7TBG7E";  // Thay bằng Spreadsheet ID
+            string range = "'Data sample'!A3:E";  // Dải dữ liệu cần đọc
+            var values = await handleDataSheet(spreadsheetId, range);
+            if (values == null)
+            {
+                Console.WriteLine("Không có dữ liệu nhận việc.");
+                return;
+            }
+
+            for (int i = 0; i < values.Count; i++)
+            {
+             //   @ten NVARCHAR(100),
+             //   @moTa NVARCHAR(500),
+             //   @thoiHanHoanThanh DATETIME,
+             //   @danhSachTaiKhoanNhanViec NVARCHAR(500),
+	            //@danhSachBoPhanNhanViec NVARCHAR(500),
+	            //@danhSachHinhAnh NVARCHAR(500),
+	            //@danhSachTaiLieu NVARCHAR(500)
+                //this.idTaiKhoanNhanViec = values[i][1]?.ToString();
+                //this.idCongViecNhanViec = values[i][2]?.ToString();
+                //if (!string.IsNullOrEmpty(this.idTaiKhoanNhanViec) || !string.IsNullOrEmpty(this.idCongViecNhanViec))
+                //{
+                //    taskBLL.NhanCongViecOnline(this.idTaiKhoanNhanViec, this.idCongViecNhanViec, "Nhận việc");
+                //}
+                //else
+                //{
+                //    Console.WriteLine("Không có dữ liệu nhận việc.");
+                //}
             }
         }
 
@@ -332,6 +367,7 @@ namespace Fastie
         {
             handleAcceptTask();
             handleReportOnline();
+            handleAssignTask();
 
             TaskTableForm taskTableForm = new TaskTableForm(this);
             AssignTaskForm assignTaskForm = new AssignTaskForm(this);
