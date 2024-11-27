@@ -122,7 +122,7 @@ namespace Fastie.Screens.Task
                     string completionDeadlineText = worksheet.Cells[i, ExcelColumnLetterToNumber(completionDeadlineColumn)].Text;
 
                     DateTime completionDeadline = DateTime.TryParseExact(completionDeadlineText,
-                                                                        "MM/dd/yyyy HH:mm",
+                                                                        "dd/MM/yyyy HH:mm",
                                                                         CultureInfo.InvariantCulture,
                                                                         DateTimeStyles.None,
                                                                         out var parsedDate) ? parsedDate : DateTime.Now;

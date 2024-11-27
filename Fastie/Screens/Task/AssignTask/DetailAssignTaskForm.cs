@@ -18,6 +18,10 @@ using DTO;
 using DTO.TaskDTO;
 using Fastie.Components.Toastify;
 using System.Reflection;
+using System.Net.Mail;
+using System.Net;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 //using System.Windows.Media;
 namespace Fastie.Screens.Task
 {
@@ -468,6 +472,7 @@ namespace Fastie.Screens.Task
                 if (result)
                 {
                     showMessage("Giao việc thành công", "success");
+                    sendRequest();
                 }
                 else
                 {
@@ -586,6 +591,70 @@ namespace Fastie.Screens.Task
         private void DetailAssignTaskForm_Load(object sender, EventArgs e)
         {
             this.AcceptButton = btnAdd;
+        }
+
+        private bool sendRequest()
+        {
+            try
+            {
+                // Thông tin email gửi
+                string fromEmail = "fastie.n02@gmail.com";
+                string fromPassword = "rtpl hzno ottm erol"; // Mật khẩu ứng dụng của email gửi
+                string userName = "Đặng Nhật Toàn";
+                string assignerName = "Đỗ Thị Kiều Thanh";
+                string assignerPhone = "0986746985";
+                // Nội dung email xác nhận
+                string content = $@"
+Kính gửi {userName},
+
+Bạn được giao một nhiệm vụ mới từ đội ngũ Firon. Vui lòng xem thông tin chi tiết bên dưới và thực hiện nhiệm vụ đúng thời hạn được yêu cầu. Nếu có bất kỳ thắc mắc nào, xin vui lòng liên hệ với người giao việc.
+
+Thông tin công việc:
+- Ngày giao nhiệm vụ: {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}
+- Tên công việc: {txbTaskName.Text}
+- Mô tả nhiệm vụ: {cTBDescribeTask.Text}
+- Hạn hoàn thành: {dtpTimeCompleted.Value.ToString("dd/MM/yyyy")}
+- Người giao việc: {assignerName}
+- Số điện thoại liên hệ: {assignerPhone}
+
+Chúng tôi mong bạn sẽ hoàn thành nhiệm vụ một cách hiệu quả và đúng tiến độ. Nếu có thêm thông tin cần làm rõ, vui lòng trả lời email này hoặc liên hệ trực tiếp với người giao việc.
+
+Chân thành cảm ơn và chúc bạn hoàn thành tốt nhiệm vụ!
+
+Trân trọng,
+Firon
+Đội ngũ hỗ trợ quản lý công việc
+";
+
+
+                // Tạo đối tượng MailMessage
+                MailMessage mail = new MailMessage();
+                mail.To.Add("nhattoan664t@gmail.com"); // Email người nhận
+                mail.From = new MailAddress(fromEmail); // Email người gửi
+                mail.Subject = "Xác nhận giao việc - [Đội ngũ Fastie]"; // Tiêu đề email
+                mail.Body = content; // Nội dung email
+
+                // Thiết lập cấu hình SMTP
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com")
+                {
+                    EnableSsl = true,
+                    Port = 587,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    Credentials = new NetworkCredential(fromEmail, fromPassword)
+                };
+
+                // Gửi email
+                smtp.Send(mail);
+
+                // Trả về true nếu gửi thành công
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi, có thể log thêm thông tin lỗi vào đây
+                showMessage(ex.Message, "error");
+                return false;
+            }
         }
     }
 }

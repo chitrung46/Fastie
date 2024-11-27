@@ -1170,5 +1170,6 @@ namespace DAL.TaskDAL
                 Console.WriteLine("Lỗi khi tạo công việc từ ý kiến: " + ex.Message);
             }
         }
+
     }
 }
