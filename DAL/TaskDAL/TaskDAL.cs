@@ -1148,7 +1148,7 @@ namespace DAL.TaskDAL
             return true;
         }
 
-        public void TaoCongViecTuYKien(string tenCongViec, string tenBoPhan, string thoiGianGhiNhan, string moTa, string thoiHanHoanThanh)
+        public void TaoCongViecTuYKien(string tenCongViec, string tenBoPhan, string moTa, string thoiGianGhiNhan, string thoiHanHoanThanh)
         {
             try
             {
