@@ -504,6 +504,16 @@ namespace Fastie.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pdf_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pdf-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_pencil_23 {
             get {
                 object obj = ResourceManager.GetObject("icons8-pencil-23", resourceCulture);
@@ -647,6 +657,16 @@ namespace Fastie.Properties {
         internal static System.Drawing.Bitmap icons8_support_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-support-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_word_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-word-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

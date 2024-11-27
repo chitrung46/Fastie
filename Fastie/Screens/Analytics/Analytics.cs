@@ -31,13 +31,15 @@ namespace Fastie
         {
             InitializeComponent();
             currentAccountId = accountId;
+            btnExportWorđ.Visible = false;
+            btnExportPDF.Visible = false;
             //string userRole = analyticsBLL.GetRoleByAccountId(currentAccountId);
             currentRole = analyticsBLL.LayChuVuID(currentAccountId); // Get role from stored procedure
             if (currentRole == "Nhân viên")
             {
-                cbDepartment.Visible = false;
-                cbPosition.Visible = false;
-                cbPersonnel.Visible = false;
+                lblDepartment.Visible = false;
+                lblPosition.Visible = false;
+                lblPersonnel.Visible = false;
 
                 cbDepartment.Visible = false; // Ẩn label Bộ phận
                 cbPosition.Visible = false;   // Ẩn label Chức vụ
@@ -68,10 +70,10 @@ namespace Fastie
         {
             cbAnalytics.Items.Clear();
             cbAnalytics.Items.Add(new KeyValuePair<string, string>(null, "Chọn"));
-            cbAnalytics.Items.Add(new KeyValuePair<string, string>("pie", "Biểu đồ tròn - thống kê trạng thái"));
-            cbAnalytics.Items.Add(new KeyValuePair<string, string>("bar", "Biểu đồ cột - Thống kê hoàn thành"));
-            cbAnalytics.Items.Add(new KeyValuePair<string, string>("bar_accept", "Biểu đồ cột - Thông kê nhận việc chủ động, số lần xin điều chỉnh phân công"));
-            cbAnalytics.Items.Add(new KeyValuePair<string, string>("pie_task_complete", "Biểu đồ thống kê tỉ lệ hoàn thành công việc - tỉ lệ không hoàn thành"));
+            cbAnalytics.Items.Add(new KeyValuePair<string, string>("pie", "Thống kê trạng thái"));
+            cbAnalytics.Items.Add(new KeyValuePair<string, string>("bar", "Thống kê hoàn thành"));
+            cbAnalytics.Items.Add(new KeyValuePair<string, string>("bar_accept", "Thông kê nhận việc chủ động, số lần xin điều chỉnh phân công"));
+            cbAnalytics.Items.Add(new KeyValuePair<string, string>("pie_task_complete", "Thống kê tỉ lệ hoàn thành công việc - tỉ lệ không hoàn thành"));
 
             cbAnalytics.DisplayMember = "Value";
             cbAnalytics.ValueMember = "Key";
@@ -401,11 +403,31 @@ namespace Fastie
             layoutToastify.Show();
         }
 
+        private void btnExportWorđ_Click(object sender, EventArgs e)
+        {
+            if (cbDepartment.Texts == null)
+            {
+                showMessage("Vui lòng chọn bộ phận", "error");
+            }
+            if (cbPersonnel.Texts == null)
+            {
+                XuatFile xuatFile = new XuatFile(selectedDepartmentId, "01-11-2024", "30-11-2024");
+                xuatFile.Show();
+            }  
+            else
+            {
+                XuatFile xuatFile = new XuatFile(selectedDepartmentId, selectedPersonnelId, "01-11-2024", "30-11-2024");
+                xuatFile.Show();
+            }
+                
 
+        }
 
-
-
-
+        private void btnExportFile_Click(object sender, EventArgs e)
+        {
+            btnExportWorđ.Visible = true;
+            btnExportPDF.Visible = true;
+        }
     }
 }
 

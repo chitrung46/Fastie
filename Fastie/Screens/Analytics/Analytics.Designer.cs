@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Analytics));
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPersonnel = new System.Windows.Forms.Label();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.lblDepartment = new System.Windows.Forms.Label();
             this.dTPBirthday = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,45 +44,47 @@
             this.cbDepartment = new GUI.TruniControls.CustomComboBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUploadFile = new GUI.CustomButton();
+            this.btnExportFile = new GUI.CustomButton();
+            this.btnExportWorđ = new GUI.CustomButton();
+            this.btnExportPDF = new GUI.CustomButton();
             this.customPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label4
+            // lblPersonnel
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(558, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 21);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Nhân sự";
+            this.lblPersonnel.AutoSize = true;
+            this.lblPersonnel.BackColor = System.Drawing.Color.Transparent;
+            this.lblPersonnel.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonnel.ForeColor = System.Drawing.Color.White;
+            this.lblPersonnel.Location = new System.Drawing.Point(558, 110);
+            this.lblPersonnel.Name = "lblPersonnel";
+            this.lblPersonnel.Size = new System.Drawing.Size(73, 21);
+            this.lblPersonnel.TabIndex = 18;
+            this.lblPersonnel.Text = "Nhân sự";
             // 
-            // label3
+            // lblPosition
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(289, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 21);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Chức vụ";
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPosition.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.Color.White;
+            this.lblPosition.Location = new System.Drawing.Point(289, 110);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(72, 21);
+            this.lblPosition.TabIndex = 14;
+            this.lblPosition.Text = "Chức vụ";
             // 
-            // label2
+            // lblDepartment
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 21);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Bộ phận";
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.BackColor = System.Drawing.Color.Transparent;
+            this.lblDepartment.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartment.ForeColor = System.Drawing.Color.White;
+            this.lblDepartment.Location = new System.Drawing.Point(24, 110);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(74, 21);
+            this.lblDepartment.TabIndex = 15;
+            this.lblDepartment.Text = "Bộ phận";
             // 
             // dTPBirthday
             // 
@@ -102,7 +104,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(24, 191);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 21);
+            this.label5.Size = new System.Drawing.Size(142, 21);
             this.label5.TabIndex = 21;
             this.label5.Text = "Thời gian bắt đầu";
             // 
@@ -114,7 +116,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(289, 191);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 21);
+            this.label7.Size = new System.Drawing.Size(147, 21);
             this.label7.TabIndex = 23;
             this.label7.Text = "Thời gian kết thúc";
             // 
@@ -136,7 +138,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(558, 191);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 21);
+            this.label8.Size = new System.Drawing.Size(112, 21);
             this.label8.TabIndex = 25;
             this.label8.Text = "Dạng biểu đồ";
             // 
@@ -269,31 +271,73 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(18, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 32);
+            this.label1.Size = new System.Drawing.Size(124, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thống kê";
             // 
-            // btnUploadFile
+            // btnExportFile
             // 
-            this.btnUploadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.btnUploadFile.BorderColor = System.Drawing.Color.White;
-            this.btnUploadFile.BorderRadius = 15;
-            this.btnUploadFile.BorderSize = 0;
-            this.btnUploadFile.FlatAppearance.BorderSize = 0;
-            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadFile.Image = global::Fastie.Properties.Resources.icons8_print_24;
-            this.btnUploadFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUploadFile.Location = new System.Drawing.Point(994, 125);
-            this.btnUploadFile.Name = "btnUploadFile";
-            this.btnUploadFile.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.btnUploadFile.Size = new System.Drawing.Size(128, 48);
-            this.btnUploadFile.TabIndex = 12;
-            this.btnUploadFile.Text = "Xuất file";
-            this.btnUploadFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUploadFile.UseVisualStyleBackColor = false;
+            this.btnExportFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnExportFile.BorderColor = System.Drawing.Color.White;
+            this.btnExportFile.BorderRadius = 15;
+            this.btnExportFile.BorderSize = 0;
+            this.btnExportFile.FlatAppearance.BorderSize = 0;
+            this.btnExportFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportFile.ForeColor = System.Drawing.Color.White;
+            this.btnExportFile.Image = global::Fastie.Properties.Resources.icons8_print_24;
+            this.btnExportFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportFile.Location = new System.Drawing.Point(994, 125);
+            this.btnExportFile.Name = "btnExportFile";
+            this.btnExportFile.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.btnExportFile.Size = new System.Drawing.Size(128, 48);
+            this.btnExportFile.TabIndex = 12;
+            this.btnExportFile.Text = "Xuất file";
+            this.btnExportFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportFile.UseVisualStyleBackColor = false;
+            this.btnExportFile.Click += new System.EventHandler(this.btnExportFile_Click);
+            // 
+            // btnExportWorđ
+            // 
+            this.btnExportWorđ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportWorđ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnExportWorđ.BorderColor = System.Drawing.Color.White;
+            this.btnExportWorđ.BorderRadius = 15;
+            this.btnExportWorđ.BorderSize = 0;
+            this.btnExportWorđ.FlatAppearance.BorderSize = 0;
+            this.btnExportWorđ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportWorđ.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportWorđ.ForeColor = System.Drawing.Color.White;
+            this.btnExportWorđ.Image = global::Fastie.Properties.Resources.icons8_word_24;
+            this.btnExportWorđ.Location = new System.Drawing.Point(994, 191);
+            this.btnExportWorđ.Name = "btnExportWorđ";
+            this.btnExportWorđ.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.btnExportWorđ.Size = new System.Drawing.Size(54, 48);
+            this.btnExportWorđ.TabIndex = 28;
+            this.btnExportWorđ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportWorđ.UseVisualStyleBackColor = false;
+            this.btnExportWorđ.Click += new System.EventHandler(this.btnExportWorđ_Click);
+            // 
+            // btnExportPDF
+            // 
+            this.btnExportPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnExportPDF.BorderColor = System.Drawing.Color.White;
+            this.btnExportPDF.BorderRadius = 15;
+            this.btnExportPDF.BorderSize = 0;
+            this.btnExportPDF.FlatAppearance.BorderSize = 0;
+            this.btnExportPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportPDF.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportPDF.Image = global::Fastie.Properties.Resources.icons8_pdf_24;
+            this.btnExportPDF.Location = new System.Drawing.Point(1054, 191);
+            this.btnExportPDF.Name = "btnExportPDF";
+            this.btnExportPDF.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.btnExportPDF.Size = new System.Drawing.Size(54, 48);
+            this.btnExportPDF.TabIndex = 29;
+            this.btnExportPDF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportPDF.UseVisualStyleBackColor = false;
             // 
             // Analytics
             // 
@@ -302,20 +346,22 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1164, 907);
+            this.Controls.Add(this.btnExportPDF);
+            this.Controls.Add(this.btnExportWorđ);
             this.Controls.Add(this.PanelChart);
             this.Controls.Add(this.cbAnalytics);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btnUploadFile);
+            this.Controls.Add(this.btnExportFile);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dTPBirthday);
             this.Controls.Add(this.cbPersonnel);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblPersonnel);
             this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.cbDepartment);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblPosition);
+            this.Controls.Add(this.lblDepartment);
             this.Controls.Add(this.customPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -336,18 +382,20 @@
         private GUI.TruniControls.CustomPanel customPanel1;
         private System.Windows.Forms.Label label1;
         private GUI.TruniControls.CustomComboBox cbPersonnel;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblPersonnel;
         private GUI.TruniControls.CustomComboBox cbPosition;
         private GUI.TruniControls.CustomComboBox cbDepartment;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.Label lblDepartment;
         private System.Windows.Forms.DateTimePicker dTPBirthday;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private GUI.CustomButton btnUploadFile;
+        private GUI.CustomButton btnExportFile;
         private GUI.TruniControls.CustomComboBox cbAnalytics;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel PanelChart;
+        private GUI.CustomButton btnExportWorđ;
+        private GUI.CustomButton btnExportPDF;
     }
 }

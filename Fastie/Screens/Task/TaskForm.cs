@@ -17,7 +17,6 @@ using BLL;
 using DTO;
 using Fastie.Components.Toastify;
 using System.Net.Http;
-using System.Windows.Media;
 
 namespace Fastie
 {

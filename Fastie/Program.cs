@@ -1,4 +1,5 @@
-﻿using Fastie.Screens.Login;
+﻿using Fastie.Screens.Analytics;
+using Fastie.Screens.Login;
 using Fastie.Screens.Task;
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,9 @@ namespace Fastie
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new HomeForm());
-            Application.Run(new LoginForm());
+            Application.Run(new HomeForm());
+            //Application.Run(new LoginForm());
+            //Application.Run(new XuatFile("Word", "TK0000000004"));
         }
     }
 }

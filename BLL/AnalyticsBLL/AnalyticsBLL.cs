@@ -64,6 +64,19 @@ namespace BLL.AnalyticsBLL
             return analyticsDAL.LayThongKeTyLeHoanThanhTatCaBoPhan(accountId, startDate, endDate);
         }
 
+        //Trung
+
+        public List<ThongTinThongKe> LayBangThongKeTienDoCongViecTheoMaTaiKhoan(string idTaiKhoan, string ngayBatDau, string ngayKetThuc)
+        {
+            try
+            {
+                return analyticsDAL.LayBangThongKeTienDoCongViecTheoMaTaiKhoan(idTaiKhoan, ngayBatDau, ngayKetThuc);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Lỗi khi thực hiện lấy danh sách thống kê tiến độ công việc theo mã tài khoản: " + ex.Message);
+            }
+        }
 
     }
 }

@@ -382,23 +382,36 @@ namespace DAL.AnalyticsDAL
             return result;
         }
 
+        public List<ThongTinThongKe> LayBangThongKeTienDoCongViecTheoMaTaiKhoan(string idTaiKhoan, string ngayBatDau, string ngayKetThuc)
+        {
+            List<ThongTinThongKe> result = new List<ThongTinThongKe>();
 
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                SqlCommand command = new SqlCommand("proc_XuatFile_ThongKeTrangThaiCongViecTheoMaTaiKhoan", con);
+                command.CommandType = CommandType.StoredProcedure;
 
+                command.Parameters.AddWithValue("@idTaiKhoan", idTaiKhoan);
+                command.Parameters.AddWithValue("@ngayBatDau", ngayBatDau);
+                command.Parameters.AddWithValue("@ngayKetThuc", ngayKetThuc);
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        result.Add(new ThongTinThongKe
+                        {
+                            IdCongViec = (string)reader["IdCongViec"],
+                            TenCongViec = (string)reader["TenCongViec"],
+                            TienDoCongViec = (string)reader["TienDoCongViec"]
+                        });
+                    }
+                }
+            }
 
-
-
-
-
-
-
-
-
+            return result;
+        }
     }
-
-
-
-
-
 
 }
 
