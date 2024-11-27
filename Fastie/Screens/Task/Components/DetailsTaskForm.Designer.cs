@@ -183,6 +183,7 @@
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -205,6 +206,7 @@
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnOriginalTask
             // 
@@ -634,6 +636,7 @@
             this.btnUploadFile.TabIndex = 9;
             this.btnUploadFile.Text = "Tải xuống file";
             this.btnUploadFile.UseVisualStyleBackColor = false;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
             // 
             // DetailsTaskForm
             // 

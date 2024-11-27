@@ -40,7 +40,7 @@ namespace Fastie.Screens.Task
             this.idTask = idTask;
             this.idTaiKhoan = taskForm.IdTaiKhoan;
             this.currentTaskType = currentTaskType;
-            KiemTraCongViecChuDongVaPhatSinh(idTask);
+            //KiemTraCongViecChuDongVaPhatSinh(idTask);
             LoadTaskDetails();
             congViecChuDong = taskBLL.KiemTraCongViecChuDong(idTask);
             congViecPhatSinh = taskBLL.KiemTraCongViecPhatSinh(idTask, out idCongViecGoc);
@@ -119,9 +119,9 @@ namespace Fastie.Screens.Task
             LoadTaskDetails();
             congViecChuDong = taskBLL.KiemTraCongViecChuDong(idTask);
             congViecPhatSinh = taskBLL.KiemTraCongViecPhatSinh(idTask, out idCongViecGoc);
-            btnDelete.Visible = false;
-            btnEdit.Visible = false;
-            btnAdjustmentTask.Visible = true;
+            btnDelete.Visible = true;
+            btnEdit.Visible = true;
+            btnAdjustmentTask.Visible = false;
             btnOriginalTask.Visible = congViecPhatSinh;
 
             if (!congViecChuDong)
@@ -255,18 +255,69 @@ namespace Fastie.Screens.Task
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            TaskInfo task = taskBLL.LayChiTietCongViec(idTask);
 
+            //if (task != null)
+            //{
+            //    lblIdTask.Text = task.Id;
+            //    lblTaskNamee.Text = task.Ten;
+            //    lblTypeJob.Text = task.TenLoaiCongViec;
+            //    lblDescribeTask.Text = task.MoTa;
+            //    dtpTimeCompleted.Text = task.ThoiHanHoanThanh.HasValue ? task.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A";
+            //    lblDepartment.Text = task.TenBoPhan;
+            //    lblPersonnel.Text = task.TenNhanSuNhanViec;
+            //    lblNumber.Text = task.SoLuongNhanSuChuDong ?? "0";
+            //    label10.Text = task.TenHinhAnh;
+            //    lblFileName.Text = task.TenTaiLieu;
+            //    duongDanHinhAnh = task.DuongDanHinhAnh;
+            //    duongDanTaiLieu = task.DuongDanTaiLieu;
+            //}
+            if (congViecChuDong)
+            {
+                DetailAssignPositiveTaskForm detailAssignPositiveTaskForm = new DetailAssignPositiveTaskForm(task, idTask, "Giao việc chủ động", taskForm.IdTaiKhoan, taskForm.IdBoPhan);
+                detailAssignPositiveTaskForm.Show();
+                duongDanHinhAnh = detailAssignPositiveTaskForm.DuongDanAnh;
+                duongDanTaiLieu = detailAssignPositiveTaskForm.DuongDanFile;
+            }
+            else if (congViecPhatSinh)
+            {
+                DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm(task, idTask, "Giao việc phát sinh", taskForm.IdTaiKhoan, taskForm.IdBoPhan);
+                detailAssignTaskForm.Show();
+                duongDanHinhAnh = detailAssignTaskForm.DuongDanAnh;
+                duongDanTaiLieu = detailAssignTaskForm.DuongDanFile;
+            }
+            else
+            {
+                DetailAssignTaskForm detailAssignTaskForm = new DetailAssignTaskForm(task, idTask, "Giao việc",  taskForm.IdTaiKhoan, taskForm.IdBoPhan);
+                detailAssignTaskForm.Show();
+                duongDanHinhAnh = detailAssignTaskForm.DuongDanAnh;
+                duongDanTaiLieu = detailAssignTaskForm.DuongDanFile;
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string[] information = { "Bạn có chắc chắn xóa công việc này?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Xóa việc" };
+            congViecPhatSinh = taskBLL.KiemTraCongViecPhatSinh(idTask, out idCongViecGoc);
+            if (!congViecPhatSinh)
+            {
+                string[] information = { "Bạn có chắc chắn xóa công việc này?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Xóa việc" };
 
-            LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm();
-            layoutConfirmForm.Title = information[0];
-            layoutConfirmForm.Content = information[1];
-            layoutConfirmForm.btnConfirmText = information[2];
-            layoutConfirmForm.Show();
+                LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm(this, idTask);
+                layoutConfirmForm.Title = information[0];
+                layoutConfirmForm.Content = information[1];
+                layoutConfirmForm.btnConfirmText = information[2];
+                layoutConfirmForm.Show();
+            }
+            else
+            {
+                string[] information = { "Bạn có chắc chắn xóa công việc này?", "Bạn sẽ không thể thực hiện các chức năng hệ thống", "Xóa việc phát sinh" };
+
+                LayoutConfirmForm layoutConfirmForm = new LayoutConfirmForm(this, idTask);
+                layoutConfirmForm.Title = information[0];
+                layoutConfirmForm.Content = information[1];
+                layoutConfirmForm.btnConfirmText = information[2];
+                layoutConfirmForm.Show();
+            }
         }
 
         private void btnAdjustmentTask_Click(object sender, EventArgs e)
@@ -317,6 +368,10 @@ namespace Fastie.Screens.Task
         }
         private async void customButton2_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(duongDanHinhAnh))
+            {
+                return;
+            }
             // Chuyển đổi link sang dạng tải trực tiếp
             //string linkGoc = duongDanHinhAnh;
 
@@ -369,6 +424,84 @@ namespace Fastie.Screens.Task
                 {
                     MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnEdit_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+        private string ChuyenLinkTaiLieuSangUC(string googleDriveLink)
+        {
+            try
+            {
+                int startIndex = googleDriveLink.IndexOf("/d/") + 3;
+                int endIndex = googleDriveLink.IndexOf("/view");
+
+                if (startIndex > 0 && endIndex > startIndex)
+                {
+                    string fileId = googleDriveLink.Substring(startIndex, endIndex - startIndex);
+                    return $"https://drive.google.com/uc?id={fileId}&export=download";
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi chuyển đổi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return string.Empty;
+            }
+        }
+
+        private async void btnUploadFile_Click(object sender, EventArgs e)
+        {
+            string link = ChuyenLinkTaiLieuSangUC(duongDanTaiLieu);
+            if (string.IsNullOrEmpty(link))
+            {
+                //MessageBox.Show("Link không được để trống.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    HttpResponseMessage response = await client.GetAsync(link);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string contentType = response.Content.Headers.ContentType.MediaType;
+
+                        // Kiểm tra MIME type, file cần là text/plain
+                        if (contentType.Contains("text") || contentType.Contains("octet-stream"))
+                        {
+                            byte[] fileBytes = await response.Content.ReadAsByteArrayAsync();
+
+                            // Tên file lưu trữ
+                            string downloadFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                            string uniqueFileName = $"DownloadedFile_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+                            string localPath = Path.Combine(downloadFolder, uniqueFileName);
+
+                            File.WriteAllBytes(localPath, fileBytes);
+                            MessageBox.Show($"Tải file thành công: {localPath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            System.Diagnostics.Process.Start("explorer.exe", downloadFolder);
+                        }
+                        else
+                        {
+                            MessageBox.Show("URL không trỏ tới file hợp lệ.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể tải file. Kiểm tra URL hoặc quyền chia sẻ file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi xảy ra: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

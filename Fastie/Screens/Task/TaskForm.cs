@@ -1,14 +1,9 @@
 ﻿using BLL.PermissionBLL;
-using Fastie.Components.LayoutRole;
 using Fastie.Components.NoPermissionAccessForm;
 using Fastie.Screens.Task;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fastie.Screens.Task.AssignmentAdjustmentTask;
@@ -188,7 +183,6 @@ namespace Fastie
                 string spreadsheetId = "1d0GYgmQ2-GFwFIF40c5BkaHUMMl2AMe5RK-5CNn3uuo";  // Thay bằng Spreadsheet ID
                 string range = "'Answer_1'!A2:G";  // Dải dữ liệu cần đọc
                 var values = await handleDataSheet(spreadsheetId, range);
-
                 if (values == null)
                 {
                     Console.WriteLine("No data available.");
@@ -201,15 +195,15 @@ namespace Fastie
                     this.idTaiKhoanBaoCao = values[i][1]?.ToString();
                     this.idCongViec = values[i][2]?.ToString();
                     this.tienDoHoanThanh = values[i][3]?.ToString();
-                    this.noiDungBaoCao = values[i][4]?.ToString();
-                    this.urlTaiLieu = values[i][5]?.ToString();
-                    this.urlHinhAnh = values[i][6]?.ToString();
+                    this.noiDungBaoCao = values[i][4]?.ToString() ?? "";
+                    this.urlTaiLieu = values[i][5]?.ToString() ?? "";
+                    this.urlHinhAnh = values[i][6]?.ToString() ?? "";
                     reportOnline();
                 }
             }
             catch (Exception ex)
             {
-                showMessage($"Lỗi kết nối mạng {ex.Message}", "error");
+                MessageBox.Show($"{ex.Message}", "error");
             }
         }
 
@@ -234,6 +228,7 @@ namespace Fastie
                 if (!string.IsNullOrEmpty(this.idTaiKhoanNhanViec) || !string.IsNullOrEmpty(this.idCongViecNhanViec))
                 {
                     taskBLL.NhanCongViecOnline(this.idTaiKhoanNhanViec, this.idCongViecNhanViec, "Nhận việc");
+                    showMessage("Cập nhật nhận việc online thành công", "success");
                 } else
                 {
                     Console.WriteLine("Không có dữ liệu nhận việc.");
@@ -244,33 +239,27 @@ namespace Fastie
         public async void handleAssignTask()
         {
             string spreadsheetId = "1OIK7_bkcgyw_eNl1CDU4bBZNeg7PFeEstboGf7TBG7E";  // Thay bằng Spreadsheet ID
-            string range = "'Data sample'!A3:E";  // Dải dữ liệu cần đọc
+            string range = "'Data sample'!A3:F";  // Dải dữ liệu cần đọc
             var values = await handleDataSheet(spreadsheetId, range);
             if (values == null)
             {
                 Console.WriteLine("Không có dữ liệu nhận việc.");
                 return;
             }
-
-            for (int i = 0; i < values.Count; i++)
+            try
             {
-             //   @ten NVARCHAR(100),
-             //   @moTa NVARCHAR(500),
-             //   @thoiHanHoanThanh DATETIME,
-             //   @danhSachTaiKhoanNhanViec NVARCHAR(500),
-	            //@danhSachBoPhanNhanViec NVARCHAR(500),
-	            //@danhSachHinhAnh NVARCHAR(500),
-	            //@danhSachTaiLieu NVARCHAR(500)
-                //this.idTaiKhoanNhanViec = values[i][1]?.ToString();
-                //this.idCongViecNhanViec = values[i][2]?.ToString();
-                //if (!string.IsNullOrEmpty(this.idTaiKhoanNhanViec) || !string.IsNullOrEmpty(this.idCongViecNhanViec))
-                //{
-                //    taskBLL.NhanCongViecOnline(this.idTaiKhoanNhanViec, this.idCongViecNhanViec, "Nhận việc");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Không có dữ liệu nhận việc.");
-                //}
+                for (int i = 0; i < values.Count; i++)
+                {
+                    string ten = values[i][0]?.ToString();
+                    string tenBoPhan = values[i][1]?.ToString();
+                    string moTa = values[i][3]?.ToString();
+                    string thoiGianGhiNhan = values[i][4]?.ToString();
+                    string thoiHanHoanThanh = values[i][5]?.ToString();
+                    taskBLL.TaoCongViecTuYKien(ten, tenBoPhan, moTa, thoiGianGhiNhan,thoiHanHoanThanh);
+                }
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -306,7 +295,7 @@ namespace Fastie
             }
             catch (Exception ex)
             {
-                showMessage("Vui lòng kiểm tra kết nối mạng", "error");
+                showMessage(ex.Message, "error");
             }
             return null;
         }
@@ -360,6 +349,7 @@ namespace Fastie
                 };
                 taskBLL.ThemHinhAnh(baoCao);
             }
+            showMessage("Cập nhật báo cáo online", "success");
         }
 
         private void btnReloadData_Click(object sender, EventArgs e)

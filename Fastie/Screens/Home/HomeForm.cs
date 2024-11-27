@@ -331,5 +331,105 @@ namespace Fastie
             ContactInformationForm contactInformationForm = new ContactInformationForm();
             contactInformationForm.Show();
         }
+
+        private void sidebarLayout_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stateAccount_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void stateAnalytics_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void statePart_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void stateWork_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void stateDecentralization_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void statePersonnel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void statePosition_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void topbarLayout_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblPersonnelName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mainLayout_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void customPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblDepartmentName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
     }
 }

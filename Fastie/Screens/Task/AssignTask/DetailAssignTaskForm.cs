@@ -17,6 +17,12 @@ using BLL.DepartmentBLL;
 using DTO;
 using DTO.TaskDTO;
 using Fastie.Components.Toastify;
+using System.Reflection;
+using System.Net.Mail;
+using System.Net;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+//using System.Windows.Media;
 namespace Fastie.Screens.Task
 {
     public partial class DetailAssignTaskForm : Form
@@ -35,6 +41,20 @@ namespace Fastie.Screens.Task
         private string loaiGiaoViec;
         private string idCongViecGoc;
         private bool result;
+        private string idCongViec;
+
+        public string DuongDanAnh
+        {
+            get { return duongDanAnh; }
+            set { duongDanAnh = value; }
+        }
+
+        // Thuộc tính để truy cập và thay đổi giá trị của duongDanTaiLieu
+        public string DuongDanFile
+        {
+            get { return duongDanFile; }
+            set { duongDanFile = value; }
+        }
         public DetailAssignTaskForm(string loaiGiaoViec, string idTaiKhoan, string idBoPhan)
         {
             InitializeGoogleDriveService();
@@ -47,6 +67,125 @@ namespace Fastie.Screens.Task
             dtpTimeCompleted.Value = DateTime.Now;
             dtpTimeCompleted.Format = DateTimePickerFormat.Custom;
             dtpTimeCompleted.CustomFormat = "dd/MM/yyyy    HH:mm";
+        }
+
+
+        public DetailAssignTaskForm(TaskInfo taskInfo, string idCongViec, string loaiGiaoViec, string idTaiKhoan, string idBoPhan)
+        {
+            InitializeGoogleDriveService();
+            InitializeComponent();
+
+
+            // Lưu thông tin từ tham số
+            this.idTaiKhoanNguoiDung = idTaiKhoan;
+            this.idBoPhanNguoiDung = idBoPhan;
+            this.loaiGiaoViec = loaiGiaoViec;
+            this.idCongViec = idCongViec;
+            LoadDepartmentComboBox();
+            // Gán thông tin taskInfo vào các ô hiển thị
+            if (taskInfo != null)
+            {
+                //lblIdTask.Text = taskInfo.Id;
+                txbTaskName.Text = taskInfo.Ten;
+                cCBLoaiCongViec.Texts = taskInfo.TenLoaiCongViec;
+                cTBDescribeTask.Text = taskInfo.MoTa;
+                dtpTimeCompleted.Value = taskInfo.ThoiHanHoanThanh.HasValue ? taskInfo.ThoiHanHoanThanh.Value : DateTime.Now;
+                //cbxDepartment.Text = taskInfo.TenBoPhan;
+                //lblPersonnel.Text = taskInfo.TenNhanSuNhanViec;
+                //lblNumber.Text = taskInfo.SoLuongNhanSuChuDong ?? "0";
+                duongDanAnh = taskInfo.DuongDanHinhAnh ?? null;
+                duongDanFile = taskInfo.DuongDanTaiLieu ?? null;
+                lblFileName.Text = taskInfo.TenTaiLieu ?? null;
+                label9.Text = taskInfo.TenHinhAnh ?? null;
+
+            }
+            RemoveAllClickEvents(btnAdd);
+            btnAdd.Click += new EventHandler(capNhatCongViec_Click);
+        }
+        private void RemoveAllClickEvents(Button button)
+        {
+            FieldInfo f1 = typeof(Control).GetField("EventClick", BindingFlags.Static | BindingFlags.NonPublic);
+            object obj = f1.GetValue(button);
+            PropertyInfo pi = button.GetType().GetProperty("Events", BindingFlags.NonPublic | BindingFlags.Instance);
+            EventHandlerList list = (EventHandlerList)pi.GetValue(button, null);
+            list.RemoveHandler(obj, list[obj]);
+        }
+        private void capNhatCongViec_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(fileUrl))
+            {
+                UploadToGoogleDrive("application/octet-stream", fileUrl, false);
+
+            }
+            if (!string.IsNullOrEmpty(imageUrl))
+            {
+                // Gửi ảnh lên Google Drive
+                UploadToGoogleDrive("image/jpeg", imageUrl, true);
+
+            }
+            List<String> danhSachTaiKhoanNhanViec = new List<String>();
+            List<String> danhSachBoPhanNhanViec = new List<String>();
+
+            foreach (DataGridViewRow row in dgvBoPhanNhanViec.Rows)
+            {
+                string idBoPhanNhanViec = row.Cells["idBoPhan"].Value?.ToString();
+                if (!string.IsNullOrEmpty(idBoPhanNhanViec))
+                {
+                    danhSachBoPhanNhanViec.Add(idBoPhanNhanViec);
+                }
+            }
+            foreach (DataGridViewRow row in dgvTaiKhoanNhanViec.Rows)
+            {
+                string idTaiKhoanNhanViec = row.Cells["idTaiKhoan"].Value?.ToString();
+                if (!string.IsNullOrEmpty(idTaiKhoanNhanViec))
+                {
+                    if (idTaiKhoanNhanViec == this.idTaiKhoanNguoiDung)
+                    {
+                        showMessage("Không thể tự giao việc cho bản thân", "error");
+                        return; // Thoát khỏi hàm nếu phát hiện lỗi
+                    }
+                    danhSachTaiKhoanNhanViec.Add(idTaiKhoanNhanViec);
+                }
+            }
+            if (loaiGiaoViec == "Giao việc")
+            {
+                var thongTinGiaoViec = new ThongTinGiaoViec()
+                {
+                    Ten = txbTaskName.Text,
+                    MoTa = cTBDescribeTask.Text,
+                    ThoiHanHoanThanh = dtpTimeCompleted.Value.ToString(),
+                    
+                    IdTaiKhoanGiaoViec = this.idTaiKhoanNguoiDung,
+                    DanhSachTaiKhoanNhanViec = string.Join(",", danhSachTaiKhoanNhanViec),
+                    DanhSachBoPhanNhanViec = string.Join(",", danhSachBoPhanNhanViec),
+                    DanhSachHinhAnh = duongDanAnh,
+                    DanhSachTaiLieu = duongDanFile,
+                    TenHinhAnh = imageName,
+                    TenTaiLieu = fileName
+                };
+                result = taskBLL.CapNhatCongViec(idCongViec, loaiGiaoViec, thongTinGiaoViec);
+            }
+            if (loaiGiaoViec == "Giao việc phát sinh")
+            {
+                var thongTinGiaoViec = new ThongTinGiaoViec()
+                {
+                    Ten = txbTaskName.Text,
+                    MoTa = cTBDescribeTask.Text,
+                    ThoiHanHoanThanh = dtpTimeCompleted.Value.ToString(),
+                    
+                    IdTaiKhoanGiaoViec = this.idTaiKhoanNguoiDung,
+                    DanhSachTaiKhoanNhanViec = string.Join(",", danhSachTaiKhoanNhanViec),
+                    DanhSachBoPhanNhanViec = string.Join(",", danhSachBoPhanNhanViec),
+                    DanhSachHinhAnh = duongDanAnh,
+                    IdCongViecGoc = this.idCongViecGoc,
+                    DanhSachTaiLieu = duongDanFile,
+                    TenHinhAnh = imageName,
+                    TenTaiLieu = fileName
+                };
+                result = taskBLL.CapNhatCongViec(idCongViec, loaiGiaoViec, thongTinGiaoViec);
+
+            }
+            this.Close();
         }
         public DetailAssignTaskForm(string loaiGiaoViec, string idCongViecGoc, string idTaiKhoan, string idBoPhan)
         {
@@ -333,6 +472,7 @@ namespace Fastie.Screens.Task
                 if (result)
                 {
                     showMessage("Giao việc thành công", "success");
+                    sendRequest();
                 }
                 else
                 {
@@ -451,6 +591,70 @@ namespace Fastie.Screens.Task
         private void DetailAssignTaskForm_Load(object sender, EventArgs e)
         {
             this.AcceptButton = btnAdd;
+        }
+
+        private bool sendRequest()
+        {
+            try
+            {
+                // Thông tin email gửi
+                string fromEmail = "fastie.n02@gmail.com";
+                string fromPassword = "rtpl hzno ottm erol"; // Mật khẩu ứng dụng của email gửi
+                string userName = "Đặng Nhật Toàn";
+                string assignerName = "Đỗ Thị Kiều Thanh";
+                string assignerPhone = "0986746985";
+                // Nội dung email xác nhận
+                string content = $@"
+Kính gửi {userName},
+
+Bạn được giao một nhiệm vụ mới từ đội ngũ Firon. Vui lòng xem thông tin chi tiết bên dưới và thực hiện nhiệm vụ đúng thời hạn được yêu cầu. Nếu có bất kỳ thắc mắc nào, xin vui lòng liên hệ với người giao việc.
+
+Thông tin công việc:
+- Ngày giao nhiệm vụ: {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}
+- Tên công việc: {txbTaskName.Text}
+- Mô tả nhiệm vụ: {cTBDescribeTask.Text}
+- Hạn hoàn thành: {dtpTimeCompleted.Value.ToString("dd/MM/yyyy")}
+- Người giao việc: {assignerName}
+- Số điện thoại liên hệ: {assignerPhone}
+
+Chúng tôi mong bạn sẽ hoàn thành nhiệm vụ một cách hiệu quả và đúng tiến độ. Nếu có thêm thông tin cần làm rõ, vui lòng trả lời email này hoặc liên hệ trực tiếp với người giao việc.
+
+Chân thành cảm ơn và chúc bạn hoàn thành tốt nhiệm vụ!
+
+Trân trọng,
+Firon
+Đội ngũ hỗ trợ quản lý công việc
+";
+
+
+                // Tạo đối tượng MailMessage
+                MailMessage mail = new MailMessage();
+                mail.To.Add("nhattoan664t@gmail.com"); // Email người nhận
+                mail.From = new MailAddress(fromEmail); // Email người gửi
+                mail.Subject = "Xác nhận giao việc - [Đội ngũ Fastie]"; // Tiêu đề email
+                mail.Body = content; // Nội dung email
+
+                // Thiết lập cấu hình SMTP
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com")
+                {
+                    EnableSsl = true,
+                    Port = 587,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    Credentials = new NetworkCredential(fromEmail, fromPassword)
+                };
+
+                // Gửi email
+                smtp.Send(mail);
+
+                // Trả về true nếu gửi thành công
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi, có thể log thêm thông tin lỗi vào đây
+                showMessage(ex.Message, "error");
+                return false;
+            }
         }
     }
 }
