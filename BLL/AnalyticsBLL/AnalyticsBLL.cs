@@ -68,7 +68,6 @@ namespace BLL.AnalyticsBLL
         {
             return analyticsDAL.LayThongKeTyLeHoanThanhTatCaBoPhan(accountId, startDate, endDate);
         }
-
         //Trung
 
         public List<ThongTinThongKe> LayBangThongKeTienDoCongViecTheoMaTaiKhoan(string idTaiKhoan, string ngayBatDau, string ngayKetThuc)
@@ -146,6 +145,10 @@ namespace BLL.AnalyticsBLL
                 Console.WriteLine($"BLL - Đã xảy ra lỗi: {ex.Message}");
                 throw new Exception("Lỗi khi lấy tỷ lệ hoàn thành công việc: " + ex.Message);
             }
+        }
+        public string GetTaiKhoanId(string idNhanSu)
+        {
+            return analyticsDAL.GetTaiKhoanId(idNhanSu);
         }
 
     }

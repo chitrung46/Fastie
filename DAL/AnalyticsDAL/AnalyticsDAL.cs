@@ -352,7 +352,7 @@ namespace DAL.AnalyticsDAL
                         result.Add(new AnalyticsDTO
                         {
                             TenBoPhan = reader["tenBoPhan"].ToString(),
-                            TyLeHoanThanhCongViec = reader["TyLeHoanThanh"] != DBNull.Value
+                            TyLeHoanThanh = reader["TyLeHoanThanh"] != DBNull.Value
                                 ? Convert.ToDecimal(reader["TyLeHoanThanh"])
                                 : 0
                         });
@@ -522,20 +522,51 @@ namespace DAL.AnalyticsDAL
         }
 
 
+        public string GetTaiKhoanId(string idNhanSu)
+        {
+            string idTaiKhoan = "";
+            string query = "GetTaiKhoanIdByNhanSuId"; // Stored procedure name
 
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                SqlCommand command = new SqlCommand(query, con);
+                command.CommandType = CommandType.StoredProcedure; // Đặt loại câu lệnh là stored procedure
+                command.Parameters.AddWithValue("@idNhanSu", idNhanSu);
 
+                try
+                {
+                    con.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        idTaiKhoan = reader["id"].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching idTaiKhoan for idNhanSu {idNhanSu}: {ex.Message}");
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
 
-
-
-
-
-
-
-
-
+            return idTaiKhoan;
+        }
     }
 
+
+
+
+
+
+
+
+
+
 }
+
 
 
 

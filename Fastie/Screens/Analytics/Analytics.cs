@@ -103,7 +103,7 @@ namespace Fastie
             DateTime endDate = dateTimePicker1.Value;
 
             // Lấy idTaiKhoan dựa trên idNhanSu đã chọn
-            string idTaiKhoan = GetTaiKhoanId(selectedPersonnelId);
+            string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
 
             Console.WriteLine($"[ShowPieChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
 
@@ -134,7 +134,7 @@ namespace Fastie
                 return;
             }
 
-            string idTaiKhoan = GetTaiKhoanId(selectedPersonnelId);
+            string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
             Console.WriteLine($"[ShowColumnChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
 
             if (string.IsNullOrEmpty(idTaiKhoan))
@@ -163,7 +163,7 @@ namespace Fastie
                 return;
             }
 
-            string idTaiKhoan = GetTaiKhoanId(selectedPersonnelId);
+            string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
             Console.WriteLine($"[ShowTaskCompletionRateChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
 
             if (string.IsNullOrEmpty(idTaiKhoan))
@@ -349,7 +349,7 @@ namespace Fastie
                 return;
             }
 
-            string idTaiKhoan = GetTaiKhoanId(selectedPersonnelId);
+            string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
             Console.WriteLine($"[ShowColumnChartAcceptTasks] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
 
             if (string.IsNullOrEmpty(idTaiKhoan))
@@ -394,38 +394,7 @@ namespace Fastie
                 showMessage($"Lỗi khi cập nhật biểu đồ nhân sự: {ex.Message}", "error");
             }
         }
-        private string GetTaiKhoanId(string idNhanSu)
-        {
-            string idTaiKhoan = "";
-            string query = "SELECT id FROM TaiKhoan WHERE TaiKhoan.idNhanSu = @idNhanSu";
-
-            using (SqlConnection con = SqlConnectionData.Connect())
-            {
-                SqlCommand command = new SqlCommand(query, con);
-                command.Parameters.AddWithValue("@idNhanSu", idNhanSu);
-
-                try
-                {
-                    con.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        idTaiKhoan = reader["id"].ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error fetching idTaiKhoan for idNhanSu {idNhanSu}: {ex.Message}");
-                }
-                finally
-                {
-                    con.Close();
-                }
-            }
-
-            return idTaiKhoan;
-        }
-
+     
 
 
         private void cbAnalytics_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -632,7 +601,7 @@ namespace Fastie
                 }
 
                 // Lấy id tài khoản dựa trên nhân sự
-                string idTaiKhoan = GetTaiKhoanId(personnelId);
+                string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
                 if (string.IsNullOrEmpty(idTaiKhoan))
                 {
                     showMessage("Không thể lấy tài khoản. Vui lòng kiểm tra thông tin nhân sự!", "error");

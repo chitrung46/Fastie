@@ -44,7 +44,7 @@ namespace DTO.AnalyticsDTO
         public AnalyticsDTO() { }
         public int SoLanXinDieuChinhPhanCong { get; set; }
         public int SoLanNhanViecChuDong { get; set; }
-
+        
         public string IdChucVu { get => idChucVu; set => idChucVu = value; }
         public string TenChucVu { get => tenChucVu; set => tenChucVu = value; }
         public string IdBoPhan { get => idBoPhan; set => idBoPhan = value; }
@@ -54,6 +54,8 @@ namespace DTO.AnalyticsDTO
         public int SoLuongDungHan { get; set; }
         public int SoLuongTreHan { get; set; }
         public int SoLuongHoanThanh { get; set; }
+        public decimal TiLeHoanThanhCongViec { get; set; }
+        public decimal TyLeHoanThanh { get; set; }
         public int SoLuongChuaHoanThanh { get; set; }
         public decimal TyLeHoanThanhCongViec { get; set; }
         public int TongSoCongViec { get; set; }
