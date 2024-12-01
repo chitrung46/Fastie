@@ -41,69 +41,104 @@ namespace Fastie.Screens.Analytics
         }
 
         private void InitializeColumnChart()
+{
+    try
+    {
+        // Biến để lưu danh sách tỷ lệ hoàn thành
+        List<AnalyticsDTO> data = null;
+
+        if (string.IsNullOrEmpty(departmentId) || departmentId == "Tất cả")
         {
-            try
-            {
-                // Lấy tỷ lệ hoàn thành từ BLL
-                decimal tyLeHoanThanh = analyticsBLL.ThongKeTyLeHoanThanh(
-                    accountId,
-                    departmentId,
-                    positionId,
-                    personnelId,
-                    startDate,
-                    endDate
-                );
-
-                // Xóa và làm mới biểu đồ
-                chartPieTaskCompletionRate.ChartAreas.Clear();
-                chartPieTaskCompletionRate.Series.Clear();
-                chartPieTaskCompletionRate.Legends.Clear();
-
-                // Tạo ChartArea
-                ChartArea chartArea = new ChartArea("MainArea")
-                {
-                    BackColor = Color.Transparent
-                };
-                chartArea.AxisX.Title = "Trạng thái";
-                chartArea.AxisY.Title = "Tỷ lệ (%)";
-                chartArea.AxisY.Interval = 10;
-                chartPieTaskCompletionRate.ChartAreas.Add(chartArea);
-
-                // Tạo Series
-                Series series = new Series("Tỷ lệ hoàn thành")
-                {
-                    ChartType = SeriesChartType.Column,
-                    ChartArea = "MainArea",
-                    IsValueShownAsLabel = true
-                };
-
-                // Thêm dữ liệu vào Series
-                series.Points.AddXY("Tỷ lệ hoàn thành", tyLeHoanThanh);
-
-                chartPieTaskCompletionRate.Series.Add(series);
-
-                // Thêm tiêu đề
-                chartPieTaskCompletionRate.Titles.Clear();
-                chartPieTaskCompletionRate.Titles.Add(new Title(
-                    "Tỷ lệ hoàn thành công việc",
-                    Docking.Top,
-                    new Font("Arial", 16, FontStyle.Bold),
-                    Color.Black
-                ));
-
-                // Thêm chú thích (Legend)
-                Legend legend = new Legend("Legend")
-                {
-                    Docking = Docking.Bottom,
-                    BackColor = Color.Transparent
-                };
-                chartPieTaskCompletionRate.Legends.Add(legend);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi hiển thị biểu đồ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            data = analyticsBLL.ThongKeTyLeHoanThanhTatCaBoPhan(accountId, startDate, endDate);
         }
+        else
+        {
+            decimal tyLeHoanThanh = analyticsBLL.ThongKeTyLeHoanThanh(
+                accountId,
+                departmentId,
+                positionId,
+                personnelId,
+                startDate,
+                endDate
+            );
+
+            data = new List<AnalyticsDTO>
+            {
+                new AnalyticsDTO
+                {
+                    TenBoPhan = "Tỷ lệ hoàn thành",
+                    TyLeHoanThanh = tyLeHoanThanh
+                }
+            };
+        }
+
+        // Kiểm tra nếu không có dữ liệu
+        if (data == null || data.Count == 0)
+        {
+            MessageBox.Show("Không có dữ liệu để hiển thị biểu đồ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+        // Debug dữ liệu
+        foreach (var item in data)
+        {
+            Console.WriteLine($"Bộ phận: {item.TenBoPhan}, Tỷ lệ hoàn thành: {item.TyLeHoanThanh}");
+        }
+
+        // Xóa và làm mới biểu đồ
+        chartPieTaskCompletionRate.ChartAreas.Clear();
+        chartPieTaskCompletionRate.Series.Clear();
+        chartPieTaskCompletionRate.Legends.Clear();
+
+        ChartArea chartArea = new ChartArea("MainArea")
+        {
+            BackColor = Color.Transparent
+        };
+        chartArea.AxisX.Title = "Bộ phận";
+        chartArea.AxisY.Title = "Tỷ lệ (%)";
+        chartArea.AxisY.Interval = 10;
+        chartArea.AxisX.Interval = 1; // Hiển thị tất cả nhãn
+        chartArea.AxisX.LabelStyle.Angle = -45; // Xoay nhãn
+        chartPieTaskCompletionRate.ChartAreas.Add(chartArea);
+
+        Series series = new Series("Tỷ lệ hoàn thành")
+        {
+            ChartType = SeriesChartType.Column,
+            ChartArea = "MainArea",
+            IsValueShownAsLabel = true
+        };
+
+        foreach (var item in data)
+        {
+            decimal tyLeHoanThanh = item.TyLeHoanThanh ?? 0; // Xử lý null
+            series.Points.AddXY(item.TenBoPhan, tyLeHoanThanh);
+        }
+
+        chartPieTaskCompletionRate.Series.Add(series);
+
+        chartPieTaskCompletionRate.Titles.Clear();
+        chartPieTaskCompletionRate.Titles.Add(new Title(
+            "Tỷ lệ hoàn thành công việc",
+            Docking.Top,
+            new Font("Arial", 16, FontStyle.Bold),
+            Color.Black
+        ));
+
+        Legend legend = new Legend("Legend")
+        {
+            Docking = Docking.Bottom,
+            BackColor = Color.Transparent
+        };
+        chartPieTaskCompletionRate.Legends.Add(legend);
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Lỗi khi hiển thị biểu đồ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+
+
+
 
 
 

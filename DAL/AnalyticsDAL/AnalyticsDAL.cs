@@ -349,6 +349,7 @@ namespace DAL.AnalyticsDAL
                 {
                     while (reader.Read())
                     {
+                        Console.WriteLine($"Tên bộ phận: {reader["tenBoPhan"]}, Tỷ lệ hoàn thành: {reader["TyLeHoanThanh"]}");
                         result.Add(new AnalyticsDTO
                         {
                             TenBoPhan = reader["tenBoPhan"].ToString(),

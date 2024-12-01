@@ -66,8 +66,11 @@ namespace BLL.AnalyticsBLL
 
         public List<AnalyticsDTO> ThongKeTyLeHoanThanhTatCaBoPhan(string accountId, DateTime startDate, DateTime endDate)
         {
-            return analyticsDAL.LayThongKeTyLeHoanThanhTatCaBoPhan(accountId, startDate, endDate);
+            var data = analyticsDAL.LayThongKeTyLeHoanThanhTatCaBoPhan(accountId, startDate, endDate);
+            Console.WriteLine($"BLL - Dữ liệu trả về có {data.Count} mục.");
+            return data;
         }
+
         //Trung
 
         public List<ThongTinThongKe> LayBangThongKeTienDoCongViecTheoMaTaiKhoan(string idTaiKhoan, string ngayBatDau, string ngayKetThuc)

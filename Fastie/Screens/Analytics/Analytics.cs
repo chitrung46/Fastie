@@ -90,6 +90,38 @@ namespace Fastie
 
         private void ShowPieChart()
         {
+            // Nếu vai trò là "Nhân viên", xử lý đặc biệt
+            if (currentRole == "Nhân viên")
+            {
+                DateTime startDate = dTPBirthday.Value;
+                DateTime endDate = dateTimePicker1.Value;
+
+                // Lấy ID tài khoản hiện tại
+                string idTaiKhoan = currentAccountId;
+
+                Console.WriteLine($"[ShowPieChart - Nhân viên] idTaiKhoan: {idTaiKhoan}");
+
+                if (string.IsNullOrEmpty(idTaiKhoan))
+                {
+                    showMessage("Không tìm thấy tài khoản của bạn!", "error");
+                    return;
+                }
+
+                // Gọi PieChartStatusTaskForm với thông tin tài khoản hiện tại
+                PieChartStatusTaskForm pieChartStatusTaskForm = new PieChartStatusTaskForm(
+                    idTaiKhoan,       // Tài khoản hiện tại
+                    null,             // Không cần bộ phận
+                    null,             // Không cần chức vụ
+                    null,       // Nhân sự tương ứng với tài khoản hiện tại
+                    startDate,
+                    endDate
+                );
+
+                addFormInMainLayout(pieChartStatusTaskForm);
+                return;
+            }
+
+            // Logic hiện tại cho các vai trò khác (nếu có)
             if (cbDepartment.SelectedItem == null || cbPosition.SelectedItem == null || cbPersonnel.SelectedItem == null || cbAnalytics.SelectedItem == null)
                 return;
 
@@ -99,13 +131,125 @@ namespace Fastie
                 ((KeyValuePair<string, string>)cbAnalytics.SelectedItem).Value == "Chọn")
                 return;
 
-            DateTime startDate = dTPBirthday.Value;
-            DateTime endDate = dateTimePicker1.Value;
+            DateTime startDateOther = dTPBirthday.Value;
+            DateTime endDateOther = dateTimePicker1.Value;
 
             // Lấy idTaiKhoan dựa trên idNhanSu đã chọn
-            string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
+            string idTaiKhoanOther = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
 
-            Console.WriteLine($"[ShowPieChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
+            Console.WriteLine($"[ShowPieChart - Vai trò khác] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoanOther}");
+
+            if (string.IsNullOrEmpty(idTaiKhoanOther))
+            {
+                showMessage("Không tìm thấy tài khoản tương ứng với nhân sự!", "error");
+                return;
+            }
+
+            PieChartStatusTaskForm pieChartStatusTaskFormOther = new PieChartStatusTaskForm(
+                idTaiKhoanOther,
+                selectedDepartmentId,
+                selectedPositionId,
+                selectedPersonnelId,
+                startDateOther,
+                endDateOther
+            );
+
+            addFormInMainLayout(pieChartStatusTaskFormOther);
+        }
+
+        private void ShowColumnChart()
+        {
+            if (currentRole == "Nhân viên")
+            {
+                string idTaiKhoan = currentAccountId;
+
+                Console.WriteLine($"[ShowColumnChart - Nhân viên] idTaiKhoan: {idTaiKhoan}");
+
+                if (string.IsNullOrEmpty(idTaiKhoan))
+                {
+                    showMessage("Không tìm thấy tài khoản của bạn!", "error");
+                    return;
+                }
+
+                ChartCompoundColumnCompleteTaskForm columnChartForm = new ChartCompoundColumnCompleteTaskForm(
+                    idTaiKhoan,
+                    null, // Không cần bộ phận
+                    null, // Không cần chức vụ
+                    null, // Nhân sự là chính tài khoản hiện tại
+                    dTPBirthday.Value,
+                    dateTimePicker1.Value
+                );
+
+                addFormInMainLayout(columnChartForm);
+                return;
+            }
+
+            // Logic cho các vai trò khác
+            if (cbPersonnel.SelectedItem == null || selectedPersonnelId == null)
+            {
+                showMessage("Vui lòng chọn nhân sự hợp lệ!", "error");
+                return;
+            }
+
+            string selectedAccountId = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
+            Console.WriteLine($"[ShowColumnChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {selectedAccountId}");
+
+            if (string.IsNullOrEmpty(selectedAccountId))
+            {
+                showMessage("Không tìm thấy tài khoản tương ứng với nhân sự!", "error");
+                return;
+            }
+
+            ChartCompoundColumnCompleteTaskForm columnChartFormOther = new ChartCompoundColumnCompleteTaskForm(
+                selectedAccountId,
+                selectedDepartmentId,
+                selectedPositionId,
+                selectedPersonnelId,
+                dTPBirthday.Value,
+                dateTimePicker1.Value
+            );
+
+            addFormInMainLayout(columnChartFormOther);
+        }
+
+        private void ShowColumnChartAcceptTasks()
+        {
+            // Nếu vai trò là "Nhân viên", xử lý riêng
+            if (currentRole == "Nhân viên")
+            {
+
+                Console.WriteLine($"[ShowColumnChartAcceptTasks - Nhân viên] idTaiKhoan: {currentAccountId}");
+
+                if (string.IsNullOrEmpty(currentAccountId))
+                {
+                    showMessage("Không tìm thấy tài khoản của bạn!", "error");
+                    return;
+                }
+
+                // Hiển thị biểu đồ cho nhân viên
+                ChartCompoundColumnAcceptTaskForm acceptTaskChartForm = new ChartCompoundColumnAcceptTaskForm(
+                    currentAccountId,
+                    null, // Không cần bộ phận
+                    null, // Không cần chức vụ
+                    null, // Nhân sự chính là tài khoản hiện tại
+                    dTPBirthday.Value,
+                    dateTimePicker1.Value
+                );
+
+                addFormInMainLayout(acceptTaskChartForm);
+                return;
+            }
+
+            // Logic xử lý cho các vai trò khác
+            if (cbPersonnel.SelectedItem == null || selectedPersonnelId == null)
+            {
+                showMessage("Vui lòng chọn nhân sự hợp lệ!", "error");
+                return;
+            }
+
+            // Lấy ID tài khoản dựa trên nhân sự được chọn
+            string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
+            Console.WriteLine($"[ShowColumnChartAcceptTasks] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
 
             if (string.IsNullOrEmpty(idTaiKhoan))
             {
@@ -113,72 +257,34 @@ namespace Fastie
                 return;
             }
 
-            PieChartStatusTaskForm pieChartStatusTaskForm = new PieChartStatusTaskForm(
+            // Hiển thị biểu đồ cho các vai trò khác
+            ChartCompoundColumnAcceptTaskForm acceptTaskChartFormOther = new ChartCompoundColumnAcceptTaskForm(
                 idTaiKhoan,
+                selectedDepartmentId,
+                selectedPositionId,
+                selectedPersonnelId,
+                dTPBirthday.Value,
+                dateTimePicker1.Value
+            );
+
+            addFormInMainLayout(acceptTaskChartFormOther);
+        }
+
+
+        private void ShowTaskCompletionRateChart()
+        {
+            if (!isLoaded) return;
+
+            DateTime startDate = dTPBirthday.Value;
+            DateTime endDate = dateTimePicker1.Value;
+
+            PieChartTaskCompletionRateForm completionRateChartForm = new PieChartTaskCompletionRateForm(
+                currentAccountId,
                 selectedDepartmentId,
                 selectedPositionId,
                 selectedPersonnelId,
                 startDate,
                 endDate
-            );
-
-            addFormInMainLayout(pieChartStatusTaskForm);
-        }
-
-
-        private void ShowColumnChart()
-        {
-            if (cbPersonnel.SelectedItem == null || selectedPersonnelId == null)
-            {
-                showMessage("Vui lòng chọn nhân sự hợp lệ!", "error");
-                return;
-            }
-
-            string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
-            Console.WriteLine($"[ShowColumnChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
-
-            if (string.IsNullOrEmpty(idTaiKhoan))
-            {
-                showMessage("Không tìm thấy tài khoản tương ứng với nhân sự!", "error");
-                return;
-            }
-
-            ChartCompoundColumnCompleteTaskForm columnChartForm = new ChartCompoundColumnCompleteTaskForm(
-                idTaiKhoan,
-                selectedDepartmentId,
-                selectedPositionId,
-                selectedPersonnelId,
-                dTPBirthday.Value,
-                dateTimePicker1.Value
-            );
-
-            addFormInMainLayout(columnChartForm);
-        }
-
-        private void ShowTaskCompletionRateChart()
-        {
-            if (cbPersonnel.SelectedItem == null || selectedPersonnelId == null)
-            {
-                showMessage("Vui lòng chọn nhân sự hợp lệ!", "error");
-                return;
-            }
-
-            string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
-            Console.WriteLine($"[ShowTaskCompletionRateChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
-
-            if (string.IsNullOrEmpty(idTaiKhoan))
-            {
-                showMessage("Không tìm thấy tài khoản tương ứng với nhân sự!", "error");
-                return;
-            }
-
-            PieChartTaskCompletionRateForm completionRateChartForm = new PieChartTaskCompletionRateForm(
-                idTaiKhoan,
-                selectedDepartmentId,
-                selectedPositionId,
-                selectedPersonnelId,
-                dTPBirthday.Value,
-                dateTimePicker1.Value
             );
 
             addFormInMainLayout(completionRateChartForm);
@@ -341,34 +447,7 @@ namespace Fastie
 
 
 
-        private void ShowColumnChartAcceptTasks()
-        {
-            if (cbPersonnel.SelectedItem == null || selectedPersonnelId == null)
-            {
-                showMessage("Vui lòng chọn nhân sự hợp lệ!", "error");
-                return;
-            }
-
-            string idTaiKhoan = analyticsBLL.GetTaiKhoanId(selectedPersonnelId);
-            Console.WriteLine($"[ShowColumnChartAcceptTasks] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
-
-            if (string.IsNullOrEmpty(idTaiKhoan))
-            {
-                showMessage("Không tìm thấy tài khoản tương ứng với nhân sự!", "error");
-                return;
-            }
-
-            ChartCompoundColumnAcceptTaskForm acceptTaskChartForm = new ChartCompoundColumnAcceptTaskForm(
-                idTaiKhoan,
-                selectedDepartmentId,
-                selectedPositionId,
-                selectedPersonnelId,
-                dTPBirthday.Value,
-                dateTimePicker1.Value
-            );
-
-            addFormInMainLayout(acceptTaskChartForm);
-        }
+        
 
         private void cbPersonnel_SelectedIndexChanged(object sender, EventArgs e)
         {
