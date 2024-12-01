@@ -177,7 +177,7 @@ namespace DAL.AnalyticsDAL
 
             using (SqlConnection con = SqlConnectionData.Connect())
             {
-                SqlCommand command = new SqlCommand("proc_ThongKeHoanThanh1", con);
+                SqlCommand command = new SqlCommand("proc_ThongKeHoanThanh", con);
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Add parameters to the stored procedure
@@ -209,14 +209,14 @@ namespace DAL.AnalyticsDAL
         public List<AnalyticsDTO> ThongKeNhanViecChuDongVaDieuChinh(string idTaiKhoan, string idBoPhan, string idChucVu, string idNhanSu, DateTime tuNgay, DateTime denNgay)
         {
             Console.WriteLine($"DAL Parameters - AccountId: {idTaiKhoan}, DepartmentId: {idBoPhan}, PositionId: {idChucVu}, PersonnelId: {idNhanSu}, StartDate: {tuNgay}, EndDate: {denNgay}");
+
             List<AnalyticsDTO> acceptTaskData = new List<AnalyticsDTO>();
 
             using (SqlConnection con = SqlConnectionData.Connect())
             {
-                SqlCommand command = new SqlCommand("proc_ThongKeNhanViecChuDongVaDieuChinh1", con);
+                SqlCommand command = new SqlCommand("proc_ThongKeNhanViecChuDongVaDieuChinh", con);
                 command.CommandType = CommandType.StoredProcedure;
 
-                // Add parameters to the stored procedure
                 command.Parameters.AddWithValue("@idTaiKhoan", idTaiKhoan);
                 command.Parameters.AddWithValue("@idBoPhan", string.IsNullOrEmpty(idBoPhan) ? (object)DBNull.Value : idBoPhan);
                 command.Parameters.AddWithValue("@idChucVu", string.IsNullOrEmpty(idChucVu) ? (object)DBNull.Value : idChucVu);
@@ -226,17 +226,19 @@ namespace DAL.AnalyticsDAL
 
                 con.Open();
 
-
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
+                    Console.WriteLine($"Reader Data: SoLanNhanViecChuDong = {reader["SoLanNhanViecChuDong"]}, SoLanXinDieuChinhPhanCong = {reader["SoLanXinDieuChinhPhanCong"]}");
+
                     AnalyticsDTO acceptTaskDTO = new AnalyticsDTO
                     {
                         SoLanNhanViecChuDong = reader["SoLanNhanViecChuDong"] != DBNull.Value ? Convert.ToInt32(reader["SoLanNhanViecChuDong"]) : 0,
-                        SoLanXinDieuChinh = reader["SoLanXinDieuChinh"] != DBNull.Value ? Convert.ToInt32(reader["SoLanXinDieuChinh"]) : 0
+                        SoLanXinDieuChinhPhanCong = reader["SoLanXinDieuChinhPhanCong"] != DBNull.Value ? Convert.ToInt32(reader["SoLanXinDieuChinhPhanCong"]) : 0
                     };
 
                     acceptTaskData.Add(acceptTaskDTO);
+
                 }
                 reader.Close();
             }
@@ -244,57 +246,36 @@ namespace DAL.AnalyticsDAL
             return acceptTaskData;
         }
 
-        public List<AnalyticsDTO> ThongKeTyLeHoanThanh(string idTaiKhoan, string idBoPhan, string idChucVu, string idNhanSu, DateTime tuNgay, DateTime denNgay)
+        public decimal ThongKeTyLeHoanThanh(string idTaiKhoan, string idBoPhan, string idChucVu, string idNhanSu, DateTime tuNgay, DateTime denNgay)
         {
-            List<AnalyticsDTO> completionRateData = new List<AnalyticsDTO>();
-
             using (SqlConnection con = SqlConnectionData.Connect())
             {
-                SqlCommand command = new SqlCommand("proc_ThongKeTyLeHoanThanh1", con);
-                command.CommandType = CommandType.StoredProcedure;
+                SqlCommand command = new SqlCommand("proc_ThongKeTyLeHoanThanh", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
 
-                // Add parameters to the stored procedure
-                command.Parameters.AddWithValue("@idTaiKhoan", idTaiKhoan ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@idBoPhan", idBoPhan ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@idChucVu", idChucVu ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@idNhanSu", idNhanSu ?? (object)DBNull.Value);
+                // Thêm các tham số
+                command.Parameters.AddWithValue("@idTaiKhoan", idTaiKhoan);
+                command.Parameters.AddWithValue("@idBoPhan", string.IsNullOrEmpty(idBoPhan) ? (object)DBNull.Value : idBoPhan);
+                command.Parameters.AddWithValue("@idChucVu", string.IsNullOrEmpty(idChucVu) ? (object)DBNull.Value : idChucVu);
+                command.Parameters.AddWithValue("@idNhanSu", string.IsNullOrEmpty(idNhanSu) ? (object)DBNull.Value : idNhanSu);
                 command.Parameters.AddWithValue("@tuNgay", tuNgay);
                 command.Parameters.AddWithValue("@denNgay", denNgay);
 
                 con.Open();
-                SqlDataReader reader = command.ExecuteReader();
 
-                while (reader.Read())
+                // Đọc kết quả trả về
+                object result = command.ExecuteScalar();
+                con.Close();
+
+                if (result != null && decimal.TryParse(result.ToString(), out decimal tyLeHoanThanh))
                 {
-                    AnalyticsDTO dto = new AnalyticsDTO
-                    {
-                        // Safely parse data with a fallback value
-                        SoLuongHoanThanh = reader["SoLuongHoanThanh"] != DBNull.Value
-                            ? int.TryParse(reader["SoLuongHoanThanh"].ToString(), out var hoanThanh) ? hoanThanh : 0
-                            : 0,
-
-                        SoLuongChuaHoanThanh = reader["SoLuongChuaHoanThanh"] != DBNull.Value
-                            ? int.TryParse(reader["SoLuongChuaHoanThanh"].ToString(), out var chuaHoanThanh) ? chuaHoanThanh : 0
-                            : 0,
-
-                        TyLeHoanThanh = reader["TyLeHoanThanh"] != DBNull.Value
-                            ? decimal.TryParse(reader["TyLeHoanThanh"].ToString(), out var tyLe) ? tyLe : 0
-                            : 0,
-
-                        TongSoCongViec = reader["TongSoCongViec"] != DBNull.Value
-                            ? int.TryParse(reader["TongSoCongViec"].ToString(), out var tongSo) ? tongSo : 0
-                            : 0
-                    };
-
-                    completionRateData.Add(dto);
+                    return tyLeHoanThanh;
                 }
 
-
-
-                reader.Close();
+                return 0; // Nếu không có kết quả, trả về 0
             }
-
-            return completionRateData;
         }
 
         public string LayChuVuID(string accountId)
@@ -371,7 +352,7 @@ namespace DAL.AnalyticsDAL
                         result.Add(new AnalyticsDTO
                         {
                             TenBoPhan = reader["tenBoPhan"].ToString(),
-                            TyLeHoanThanh = reader["TyLeHoanThanh"] != DBNull.Value
+                            TyLeHoanThanhCongViec = reader["TyLeHoanThanh"] != DBNull.Value
                                 ? Convert.ToDecimal(reader["TyLeHoanThanh"])
                                 : 0
                         });
@@ -411,6 +392,147 @@ namespace DAL.AnalyticsDAL
 
             return result;
         }
+
+        public List<ThongTinThongKe> LayThongKeSoCongViecHoanThanhDungHanTreHan(string idTaiKhoan, string ngayBatDau, string ngayKetThuc)
+        {
+            if (string.IsNullOrEmpty(idTaiKhoan))
+            {
+                throw new ArgumentException("idTaiKhoan is null or empty in DAL.");
+            }
+
+            List<ThongTinThongKe> result = new List<ThongTinThongKe>();
+            Console.WriteLine($"DAL received idTaiKhoan: {idTaiKhoan}, ngayBatDau: {ngayBatDau}, ngayKetThuc: {ngayKetThuc}");
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                SqlCommand command = new SqlCommand("proc_XuatFile_ThongKeSoCongViecHoanThanhDungHanTreHanTheoMaTaiKhoan", con);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@idTaiKhoan", idTaiKhoan);
+                command.Parameters.AddWithValue("@ngayBatDau", ngayBatDau);
+                command.Parameters.AddWithValue("@ngayKetThuc", ngayKetThuc);
+
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int soDungHan = reader["SoLuongCongViecHoanThanhDungHan"] != DBNull.Value
+                            ? Convert.ToInt32(reader["SoLuongCongViecHoanThanhDungHan"])
+                            : 0;
+                        int soTreHan = reader["SoLuongCongViecHoanThanhTreHan"] != DBNull.Value
+                            ? Convert.ToInt32(reader["SoLuongCongViecHoanThanhTreHan"])
+                            : 0;
+
+                        Console.WriteLine($"SoLuongCongViecHoanThanhDungHan: {soDungHan}, SoLuongCongViecHoanThanhTreHan: {soTreHan}");
+
+                        result.Add(new ThongTinThongKe
+                        {
+                            SoLuongCongViecHoanThanhDungHan = soDungHan,
+                            SoLuongCongViecHoanThanhTreHan = soTreHan
+                        });
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<ThongTinThongKe> LayThongKeSoLanNhanViecChuDongVaSoLanXinDieuChinhPhanCong(string idTaiKhoan, string ngayBatDau, string ngayKetThuc)
+        {
+            if (string.IsNullOrEmpty(idTaiKhoan))
+            {
+                throw new ArgumentException("idTaiKhoan is null or empty in DAL.");
+            }
+
+            List<ThongTinThongKe> result = new List<ThongTinThongKe>();
+            Console.WriteLine($"DAL received idTaiKhoan: {idTaiKhoan}, ngayBatDau: {ngayBatDau}, ngayKetThuc: {ngayKetThuc}");
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                SqlCommand command = new SqlCommand("proc_XuatFile_ThongKeSoLanNhanViecChuDongVaSoLanXinDieuChinhPhanCongTheoMaTaiKhoan", con);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@idTaiKhoan", idTaiKhoan);
+                command.Parameters.AddWithValue("@ngayBatDau", ngayBatDau);
+                command.Parameters.AddWithValue("@ngayKetThuc", ngayKetThuc);
+
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int soLanNhanViecChuDong = reader["SoLanNhanViecChuDong"] != DBNull.Value
+                            ? Convert.ToInt32(reader["SoLanNhanViecChuDong"])
+                            : 0;
+
+                        int soLanXinDieuChinhPhanCong = reader["SoLanXinDieuChinhPhanCong"] != DBNull.Value
+                            ? Convert.ToInt32(reader["SoLanXinDieuChinhPhanCong"])
+                            : 0;
+
+                        Console.WriteLine($"SoLanNhanViecChuDong: {soLanNhanViecChuDong}, SoLanXinDieuChinhPhanCong: {soLanXinDieuChinhPhanCong}");
+
+                        result.Add(new ThongTinThongKe
+                        {
+                            SoLanNhanViecChuDong = soLanNhanViecChuDong,
+                            SoLanXinDieuChinhPhanCong = soLanXinDieuChinhPhanCong
+                        });
+                    }
+                }
+            }
+
+            return result;
+        }
+        public ThongTinThongKe LayThongKeTiLeHoanThanhCongViec(string idTaiKhoan, string ngayBatDau, string ngayKetThuc)
+        {
+            if (string.IsNullOrEmpty(idTaiKhoan))
+            {
+                throw new ArgumentException("idTaiKhoan is null or empty in DAL.");
+            }
+
+            ThongTinThongKe result = new ThongTinThongKe();
+            Console.WriteLine($"DAL received idTaiKhoan: {idTaiKhoan}, ngayBatDau: {ngayBatDau}, ngayKetThuc: {ngayKetThuc}");
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                SqlCommand command = new SqlCommand("proc_XuatFile_ThongKeSoTiLeHoanThanhCongViecTheoMaTaiKhoan", con);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@idTaiKhoan", idTaiKhoan);
+                command.Parameters.AddWithValue("@ngayBatDau", ngayBatDau);
+                command.Parameters.AddWithValue("@ngayKetThuc", ngayKetThuc);
+
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        decimal tiLeHoanThanhCongViec = reader["TiLeHoanThanhCongViec"] != DBNull.Value
+                            ? Convert.ToDecimal(reader["TiLeHoanThanhCongViec"])
+                            : 0.0m;
+
+                        Console.WriteLine($"TiLeHoanThanhCongViec: {tiLeHoanThanhCongViec}");
+
+                        result.TiLeHoanThanhCongViec = tiLeHoanThanhCongViec;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 }

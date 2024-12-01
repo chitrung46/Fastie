@@ -44,75 +44,67 @@ namespace Fastie.Screens.Analytics
         {
             try
             {
-                // Lấy dữ liệu từ BLL
-                List<AnalyticsDTO> data;
-
-                if (departmentId == "Tất cả") // Nếu chọn tất cả bộ phận
-                {
-                    data = analyticsBLL.ThongKeTyLeHoanThanhTatCaBoPhan(accountId, startDate, endDate);
-                }
-                else // Nếu chọn bộ phận cụ thể
-                {
-                    data = analyticsBLL.ThongKeTyLeHoanThanh(accountId, departmentId, positionId, personnelId, startDate, endDate);
-                }
+                // Lấy tỷ lệ hoàn thành từ BLL
+                decimal tyLeHoanThanh = analyticsBLL.ThongKeTyLeHoanThanh(
+                    accountId,
+                    departmentId,
+                    positionId,
+                    personnelId,
+                    startDate,
+                    endDate
+                );
 
                 // Xóa và làm mới biểu đồ
                 chartPieTaskCompletionRate.ChartAreas.Clear();
                 chartPieTaskCompletionRate.Series.Clear();
                 chartPieTaskCompletionRate.Legends.Clear();
 
-                ChartArea columnChartArea = new ChartArea("ColumnChartArea")
+                // Tạo ChartArea
+                ChartArea chartArea = new ChartArea("MainArea")
                 {
-                    BackColor = Color.Transparent,
-                    AxisX = { Title = "Bộ phận", Interval = 1 }, // Hiển thị tên từng bộ phận trên trục X
-                    AxisY = { Title = "Tỷ lệ hoàn thành (%)" } // Hiển thị tỷ lệ trên trục Y
+                    BackColor = Color.Transparent
                 };
-                chartPieTaskCompletionRate.ChartAreas.Add(columnChartArea);
+                chartArea.AxisX.Title = "Trạng thái";
+                chartArea.AxisY.Title = "Tỷ lệ (%)";
+                chartArea.AxisY.Interval = 10;
+                chartPieTaskCompletionRate.ChartAreas.Add(chartArea);
 
-                Series series = new Series("Completion Rate")
+                // Tạo Series
+                Series series = new Series("Tỷ lệ hoàn thành")
                 {
-                    ChartType = SeriesChartType.Column, // Hiển thị dạng cột
-                    ChartArea = "ColumnChartArea",
-                    IsValueShownAsLabel = true // Hiển thị giá trị trên các cột
+                    ChartType = SeriesChartType.Column,
+                    ChartArea = "MainArea",
+                    IsValueShownAsLabel = true
                 };
 
-                if (data != null && data.Count > 0)
-                {
-                    foreach (var stats in data)
-                    {
-                        if (!string.IsNullOrEmpty(stats.TenBoPhan) && stats.TyLeHoanThanh != null)
-                        {
-                            series.Points.AddXY(stats.TenBoPhan, stats.TyLeHoanThanh);
-                        }
-                        else
-                        {
-                            series.Points.AddXY(stats.TenBoPhan ?? "N/A", 0); // Xử lý nếu thiếu dữ liệu
-                        }
-                    }
-                }
-                else
-                {
-                    series.Points.AddXY("Không có dữ liệu", 0);
-                }
+                // Thêm dữ liệu vào Series
+                series.Points.AddXY("Tỷ lệ hoàn thành", tyLeHoanThanh);
 
                 chartPieTaskCompletionRate.Series.Add(series);
 
+                // Thêm tiêu đề
+                chartPieTaskCompletionRate.Titles.Clear();
+                chartPieTaskCompletionRate.Titles.Add(new Title(
+                    "Tỷ lệ hoàn thành công việc",
+                    Docking.Top,
+                    new Font("Arial", 16, FontStyle.Bold),
+                    Color.Black
+                ));
+
+                // Thêm chú thích (Legend)
                 Legend legend = new Legend("Legend")
                 {
-                    Title = "Bộ phận",
-                    Docking = Docking.Right,
+                    Docking = Docking.Bottom,
                     BackColor = Color.Transparent
                 };
                 chartPieTaskCompletionRate.Legends.Add(legend);
-
-                chartPieTaskCompletionRate.Titles.Clear();
-                chartPieTaskCompletionRate.Titles.Add(new Title("Tỉ lệ hoàn thành công việc theo bộ phận", Docking.Top, new Font("Arial", 16, FontStyle.Bold), Color.Black));
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi hiển thị biểu đồ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 

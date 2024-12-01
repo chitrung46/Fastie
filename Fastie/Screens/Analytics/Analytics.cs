@@ -1,17 +1,21 @@
 ﻿using BLL.AnalyticsBLL;
+using DAL;
 using DTO.AnalyticsDTO;
 using Fastie.Components.Toastify;
 using Fastie.Screens.Analytics;
+using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Word = Microsoft.Office.Interop.Word;
 
 
 namespace Fastie
@@ -23,7 +27,9 @@ namespace Fastie
         private string selectedDepartmentId;
         private string selectedPositionId;
         private string selectedPersonnelId;
+        private KeyValuePair<string, string> selectChartType;
         private bool isLoaded = false;
+
 
         AnalyticsBLL analyticsBLL = new AnalyticsBLL();
 
@@ -96,10 +102,19 @@ namespace Fastie
             DateTime startDate = dTPBirthday.Value;
             DateTime endDate = dateTimePicker1.Value;
 
-            Console.WriteLine($"Pie Chart Parameters - AccountId: {currentAccountId}, DepartmentId: {selectedDepartmentId}, PositionId: {selectedPositionId}, PersonnelId: {selectedPersonnelId}, StartDate: {startDate}, EndDate: {endDate}");
+            // Lấy idTaiKhoan dựa trên idNhanSu đã chọn
+            string idTaiKhoan = GetTaiKhoanId(selectedPersonnelId);
+
+            Console.WriteLine($"[ShowPieChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
+
+            if (string.IsNullOrEmpty(idTaiKhoan))
+            {
+                showMessage("Không tìm thấy tài khoản tương ứng với nhân sự!", "error");
+                return;
+            }
 
             PieChartStatusTaskForm pieChartStatusTaskForm = new PieChartStatusTaskForm(
-                currentAccountId,
+                idTaiKhoan,
                 selectedDepartmentId,
                 selectedPositionId,
                 selectedPersonnelId,
@@ -113,44 +128,61 @@ namespace Fastie
 
         private void ShowColumnChart()
         {
-            DateTime startDate = dTPBirthday.Value;
-            DateTime endDate = dateTimePicker1.Value;
+            if (cbPersonnel.SelectedItem == null || selectedPersonnelId == null)
+            {
+                showMessage("Vui lòng chọn nhân sự hợp lệ!", "error");
+                return;
+            }
 
-            // Log input parameters
-            Console.WriteLine($"Column Chart Parameters - AccountId: {currentAccountId}, DepartmentId: {selectedDepartmentId}, PositionId: {selectedPositionId}, PersonnelId: {selectedPersonnelId}, StartDate: {startDate}, EndDate: {endDate}");
+            string idTaiKhoan = GetTaiKhoanId(selectedPersonnelId);
+            Console.WriteLine($"[ShowColumnChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
+
+            if (string.IsNullOrEmpty(idTaiKhoan))
+            {
+                showMessage("Không tìm thấy tài khoản tương ứng với nhân sự!", "error");
+                return;
+            }
 
             ChartCompoundColumnCompleteTaskForm columnChartForm = new ChartCompoundColumnCompleteTaskForm(
-                currentAccountId,
+                idTaiKhoan,
                 selectedDepartmentId,
                 selectedPositionId,
                 selectedPersonnelId,
-                startDate,
-                endDate
+                dTPBirthday.Value,
+                dateTimePicker1.Value
             );
 
             addFormInMainLayout(columnChartForm);
         }
+
         private void ShowTaskCompletionRateChart()
         {
-            if (!isLoaded) return;
+            if (cbPersonnel.SelectedItem == null || selectedPersonnelId == null)
+            {
+                showMessage("Vui lòng chọn nhân sự hợp lệ!", "error");
+                return;
+            }
 
-            DateTime startDate = dTPBirthday.Value;
-            DateTime endDate = dateTimePicker1.Value;
+            string idTaiKhoan = GetTaiKhoanId(selectedPersonnelId);
+            Console.WriteLine($"[ShowTaskCompletionRateChart] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
+
+            if (string.IsNullOrEmpty(idTaiKhoan))
+            {
+                showMessage("Không tìm thấy tài khoản tương ứng với nhân sự!", "error");
+                return;
+            }
 
             PieChartTaskCompletionRateForm completionRateChartForm = new PieChartTaskCompletionRateForm(
-                currentAccountId,
+                idTaiKhoan,
                 selectedDepartmentId,
                 selectedPositionId,
                 selectedPersonnelId,
-                startDate,
-                endDate
+                dTPBirthday.Value,
+                dateTimePicker1.Value
             );
 
             addFormInMainLayout(completionRateChartForm);
         }
-
-
-
 
         private void addFormInMainLayout(Form userControl)
         {
@@ -311,21 +343,32 @@ namespace Fastie
 
         private void ShowColumnChartAcceptTasks()
         {
-            DateTime startDate = dTPBirthday.Value;
-            DateTime endDate = dateTimePicker1.Value;
+            if (cbPersonnel.SelectedItem == null || selectedPersonnelId == null)
+            {
+                showMessage("Vui lòng chọn nhân sự hợp lệ!", "error");
+                return;
+            }
+
+            string idTaiKhoan = GetTaiKhoanId(selectedPersonnelId);
+            Console.WriteLine($"[ShowColumnChartAcceptTasks] idNhanSu: {selectedPersonnelId}, idTaiKhoan: {idTaiKhoan}");
+
+            if (string.IsNullOrEmpty(idTaiKhoan))
+            {
+                showMessage("Không tìm thấy tài khoản tương ứng với nhân sự!", "error");
+                return;
+            }
 
             ChartCompoundColumnAcceptTaskForm acceptTaskChartForm = new ChartCompoundColumnAcceptTaskForm(
-                currentAccountId,
+                idTaiKhoan,
                 selectedDepartmentId,
                 selectedPositionId,
                 selectedPersonnelId,
-                startDate,
-                endDate
+                dTPBirthday.Value,
+                dateTimePicker1.Value
             );
 
             addFormInMainLayout(acceptTaskChartForm);
         }
-
 
         private void cbPersonnel_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -351,12 +394,45 @@ namespace Fastie
                 showMessage($"Lỗi khi cập nhật biểu đồ nhân sự: {ex.Message}", "error");
             }
         }
+        private string GetTaiKhoanId(string idNhanSu)
+        {
+            string idTaiKhoan = "";
+            string query = "SELECT id FROM TaiKhoan WHERE TaiKhoan.idNhanSu = @idNhanSu";
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                SqlCommand command = new SqlCommand(query, con);
+                command.Parameters.AddWithValue("@idNhanSu", idNhanSu);
+
+                try
+                {
+                    con.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        idTaiKhoan = reader["id"].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching idTaiKhoan for idNhanSu {idNhanSu}: {ex.Message}");
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+
+            return idTaiKhoan;
+        }
 
 
 
         private void cbAnalytics_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (!isLoaded) return;
+
+            selectChartType = (KeyValuePair<string, string>)cbAnalytics.SelectedItem;
 
             var selectedChartType = (KeyValuePair<string, string>)cbAnalytics.SelectedItem;
 
@@ -402,31 +478,263 @@ namespace Fastie
             layoutToastify.SetMessage(message, type);
             layoutToastify.Show();
         }
-
+        /*
         private void btnExportWorđ_Click(object sender, EventArgs e)
         {
-            if (cbDepartment.Texts == null)
-            {
-                showMessage("Vui lòng chọn bộ phận", "error");
-            }
-            if (cbPersonnel.Texts == null)
-            {
-                XuatFile xuatFile = new XuatFile(selectedDepartmentId, "01-11-2024", "30-11-2024");
-                xuatFile.Show();
-            }  
-            else
-            {
-                XuatFile xuatFile = new XuatFile(selectedDepartmentId, selectedPersonnelId, "01-11-2024", "30-11-2024");
-                xuatFile.Show();
-            }
-                
+            try { 
 
+            string departmentId = ((KeyValuePair<string, string>)cbDepartment.SelectedItem).Key;
+            string positionId = ((KeyValuePair<string, string>)cbPosition.SelectedItem).Key;
+            string personnelId = ((KeyValuePair<string, string>)cbPersonnel.SelectedItem).Key;
+            string hoTen = cbPersonnel.SelectedItem != null ? cbPersonnel.SelectedItem.ToString() : "Không xác định";
+            string chucVu = cbPosition.SelectedItem != null ? cbPosition.SelectedItem.ToString() : "Không xác định"; // Lấy dữ liệu từ Label hoặc TextBox hiển thị chức vụ
+            string boPhan = cbDepartment.SelectedItem != null ? cbDepartment.SelectedItem.ToString() : "Không xác định"; // Lấy dữ liệu từ Label hoặc TextBox hiển thị bộ phận
+
+            // Lấy thời gian bắt đầu và kết thúc
+            DateTime startDate = dTPBirthday.Value;
+            DateTime endDate = dateTimePicker1.Value;
+
+            // Kiểm tra điều kiện đầu vào
+            if (string.IsNullOrEmpty(departmentId) || departmentId == "Chọn")
+            {
+                showMessage("Vui lòng chọn bộ phận hợp lệ!", "error");
+                return;
+            }
+
+            if (selectChartType.Key == null || selectChartType.Value == "Chọn")
+            {
+                showMessage("Vui lòng chọn loại biểu đồ hợp lệ trước khi xuất file!", "error");
+                return;
+            }
+
+            // Lưu biểu đồ dựa trên loại được chọn
+            string chartPath = string.Empty;
+            switch (selectChartType.Key)
+            {
+                case "pie":
+                    chartPath = SavePieChartImage(); // Phương thức lưu biểu đồ tròn
+                    break;
+
+                case "bar":
+                    chartPath = SaveColumnChartImage(); // Phương thức lưu biểu đồ cột
+                    break;
+
+                default:
+                    showMessage("Loại biểu đồ không hợp lệ!", "error");
+                    return;
+            }
+
+            if (string.IsNullOrEmpty(chartPath))
+            {
+                showMessage("Không thể lưu biểu đồ. Vui lòng thử lại!", "error");
+                return;
+            }
+
+            // Lấy id tài khoản dựa trên nhân sự
+            string idTaiKhoan = GetTaiKhoanId(personnelId);
+            if (string.IsNullOrEmpty(idTaiKhoan))
+            {
+                showMessage("Không thể lấy tài khoản. Vui lòng kiểm tra thông tin nhân sự!", "error");
+                return;
+            }
+
+            // Truyền thông tin vào form XuatFile
+            XuatFile exportForm = new XuatFile(
+                departmentId,
+                personnelId,
+                idTaiKhoan,
+                startDate.ToString("yyyy-MM-dd"),
+                endDate.ToString("yyyy-MM-dd"),
+                chartPath,
+                hoTen,
+                chucVu,
+                boPhan
+            );
+            exportForm.Show();
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị thông báo lỗi nếu có exception
+                showMessage($"Đã xảy ra lỗi khi xuất file: {ex.Message}", "error");
+            }
+        }
+        */
+        private void btnExportWorđ_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy dữ liệu từ các ComboBox
+                string departmentId = ((KeyValuePair<string, string>)cbDepartment.SelectedItem).Key;
+                string positionId = ((KeyValuePair<string, string>)cbPosition.SelectedItem).Key;
+                string personnelId = ((KeyValuePair<string, string>)cbPersonnel.SelectedItem).Key;
+                string hoTen = cbPersonnel.SelectedItem != null ? cbPersonnel.SelectedItem.ToString() : "Không xác định";
+                string chucVu = cbPosition.SelectedItem != null ? cbPosition.SelectedItem.ToString() : "Không xác định";
+                string boPhan = cbDepartment.SelectedItem != null ? cbDepartment.SelectedItem.ToString() : "Không xác định";
+
+                // Lấy thời gian bắt đầu và kết thúc
+                DateTime startDate = dTPBirthday.Value;
+                DateTime endDate = dateTimePicker1.Value;
+
+                // Kiểm tra điều kiện đầu vào
+                if (string.IsNullOrEmpty(departmentId) || departmentId == "Chọn")
+                {
+                    showMessage("Vui lòng chọn bộ phận hợp lệ!", "error");
+                    return;
+                }
+
+                if (selectChartType.Key == null || selectChartType.Value == "Chọn")
+                {
+                    showMessage("Vui lòng chọn loại biểu đồ hợp lệ trước khi xuất file!", "error");
+                    return;
+                }
+
+                // Lưu biểu đồ dựa trên loại được chọn
+                string chartPath = string.Empty;
+                switch (selectChartType.Key)
+                {
+                    case "pie":
+                        chartPath = SavePieChartImage(); // Lưu biểu đồ tròn
+                        break;
+
+                    case "bar":
+                        chartPath = SaveColumnChartImage(); // Lưu biểu đồ cột
+                        break;
+
+                    default:
+                        showMessage("Loại biểu đồ không hợp lệ!", "error");
+                        return;
+                }
+
+                if (string.IsNullOrEmpty(chartPath))
+                {
+                    showMessage("Không thể lưu biểu đồ. Vui lòng thử lại!", "error");
+                    return;
+                }
+
+                // Lấy id tài khoản dựa trên nhân sự
+                string idTaiKhoan = GetTaiKhoanId(personnelId);
+                if (string.IsNullOrEmpty(idTaiKhoan))
+                {
+                    showMessage("Không thể lấy tài khoản. Vui lòng kiểm tra thông tin nhân sự!", "error");
+                    return;
+                }
+
+                // Truyền thông tin vào form XuatFile
+                XuatFile exportForm = new XuatFile(
+                    departmentId,
+                    personnelId,
+                    idTaiKhoan,
+                    startDate.ToString("yyyy-MM-dd"),
+                    endDate.ToString("yyyy-MM-dd"),
+                    chartPath,
+                    hoTen,
+                    chucVu,
+                    boPhan
+                );
+                exportForm.Show();
+            }
+            catch (NullReferenceException ex)
+            {
+                // Xử lý lỗi NullReference cụ thể
+                showMessage($"Dữ liệu bị thiếu hoặc null: {ex.Message}", "error");
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi chung
+                showMessage($"Đã xảy ra lỗi khi xuất file: {ex.Message}", "error");
+            }
+            finally
+            {
+                // Giải phóng tài nguyên (nếu có)
+                // Ví dụ: đóng các kết nối, xóa file tạm...
+            }
+        }
+
+        private string SavePieChartImage()
+        {
+            string chartPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "pie_chart.png");
+            try
+            {
+                ShowPieChart(); // Hiển thị biểu đồ trước khi lưu
+                using (Bitmap bitmap = new Bitmap(PanelChart.Width, PanelChart.Height))
+                {
+                    PanelChart.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, PanelChart.Width, PanelChart.Height));
+                    bitmap.Save(chartPath, System.Drawing.Imaging.ImageFormat.Png);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu biểu đồ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            return chartPath;
+        }
+
+        private string SaveColumnChartImage()
+        {
+            string chartPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "column_chart.png");
+            try
+            {
+                ShowColumnChart(); // Hiển thị biểu đồ trước khi lưu
+                using (Bitmap bitmap = new Bitmap(PanelChart.Width, PanelChart.Height))
+                {
+                    PanelChart.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, PanelChart.Width, PanelChart.Height));
+                    bitmap.Save(chartPath, System.Drawing.Imaging.ImageFormat.Png);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu biểu đồ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return chartPath;
         }
 
         private void btnExportFile_Click(object sender, EventArgs e)
         {
             btnExportWorđ.Visible = true;
             btnExportPDF.Visible = true;
+        }
+
+        private void btnExportPDF_Click(object sender, EventArgs e)
+        {
+            string filePathWord = "D:\\Bao_cao.docx";
+            string filePathPDF = "D:\\Bao_cao.pdf";
+
+            try
+            {
+                // Gọi hàm xuất file Word (tương tự như `btnExportWord_Click`)
+                btnExportWorđ_Click(sender, e);
+
+                // Tạo đối tượng Word Application
+                Word.Application wordApp = new Word.Application();
+                Word.Document doc = null;
+
+                try
+                {
+                    // Mở file Word
+                    doc = wordApp.Documents.Open(filePathWord);
+
+                    // Chuyển đổi Word sang PDF
+                    doc.ExportAsFixedFormat(filePathPDF, Word.WdExportFormat.wdExportFormatPDF);
+
+                    MessageBox.Show($"File PDF đã được tạo thành công tại: {filePathPDF}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Đã xảy ra lỗi khi chuyển đổi sang PDF: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // Đóng tài liệu và ứng dụng Word
+                    if (doc != null)
+                        doc.Close();
+                    wordApp.Quit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
