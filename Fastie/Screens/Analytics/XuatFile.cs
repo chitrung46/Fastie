@@ -564,6 +564,14 @@ namespace Fastie.Screens.Analytics
             showMessage("Đang xuất file, vui lòng chờ...", "success");
 
             string filePath = "D:\\Bao_cao.docx";
+            string hoTenCleaned = hoTen.Contains(",") ? hoTen.Split(',')[1].Trim() : hoTen.Trim();
+            string hoTenCleaned1 = hoTenCleaned.Replace("[", "").Replace("]", "").Split(',').Last().Trim();
+            string chucVuCleaned = chucVu.Contains(",") ? chucVu.Split(',')[1].Trim() : chucVu.Trim();
+            string chucVuCleaned1 = chucVuCleaned.Replace("[", "").Replace("]", "").Split(',').Last().Trim();
+            string boPhanCleaned = boPhan.Contains(",") ? boPhan.Split(',')[1].Trim() : boPhan.Trim();
+            string boPhanCleaned1 = boPhanCleaned.Replace("[", "").Replace("]", "").Split(',').Last().Trim();
+
+
 
             // Tạo đối tượng Word Application
             Word.Application wordApp = new Word.Application();
@@ -582,15 +590,15 @@ namespace Fastie.Screens.Analytics
                 // Thêm nội dung Header dựa trên checkbox
                 if (ckbDocumentName.Checked)
                 {
-                    header.Range.Text += "Tên tài liệu: Báo cáo kết quả công việc tháng 11.2024\n";
+                    header.Range.Text += "Tên tài liệu: Báo cáo kết quả công việc tháng 11.2024";
                 }
                 if (ckbDocumentNumber.Checked)
                 {
-                    header.Range.Text += "Số tài liệu: BC001_TK0000000003\n";
+                    header.Range.Text += "Số tài liệu: BC001_TK0000000003";
                 }
                 if (ckbDocumentDate.Checked)
                 {
-                    header.Range.Text += $"Ngày: {DateTime.Now.ToString("dd/MM/yyyy")}\n";
+                    header.Range.Text += $"Ngày: {DateTime.Now.ToString("dd/MM/yyyy")}";
                 }
                 if (ckbSoftwareVersion.Checked)
                 {
@@ -625,42 +633,54 @@ namespace Fastie.Screens.Analytics
                 var date = doc.Content.Paragraphs.Add();
                 date.Range.Text = $"Tp.Hồ Chí Minh, ngày {DateTime.Now.ToString("dd")} tháng {DateTime.Now.ToString("MM")} năm {DateTime.Now.ToString("yyyy")}";
                 date.Range.Font.Size = 12;
+                date.Range.Font.Bold = 0;
                 date.Range.Font.Italic = 1;
                 date.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight; // Căn phải
                 date.Range.ParagraphFormat.SpaceAfter = 6; // Tạo khoảng cách sau ngày tháng
                 date.Range.InsertParagraphAfter();
 
 
-                // Thêm tiêu đề chính (căn giữa)
+                // Thêm một đoạn văn mới để kiểm tra căn giữa
+                var testParagraph = doc.Content.Paragraphs.Add();
+                testParagraph.Range.Text = "BÁO CÁO KẾT QUẢ CÔNG VIỆC THÁNG 11/ NĂM 2024";
+                testParagraph.Range.Font.Size = 16;
+                testParagraph.Range.Font.Bold = 1;
+                testParagraph.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                testParagraph.Range.ParagraphFormat.SpaceAfter = 10; // Tạo khoảng cách sau đoạn
+                testParagraph.Range.InsertParagraphAfter();
 
-                var reportTitle = doc.Content.Paragraphs.Add();
-                reportTitle.Range.Text = "BÁO CÁO KẾT QUẢ CÔNG VIỆC\nTHÁNG 11/ NĂM 2024";
-                reportTitle.Range.Font.Size = 16;
-                reportTitle.Range.Font.Bold = 1;
-                reportTitle.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter; // Căn giữa
-                reportTitle.Range.InsertParagraphAfter();
+
                 // Thêm thông tin cá nhân
                 var info1 = doc.Content.Paragraphs.Add();
-                info1.Range.Text = $"Họ và tên: {hoTen}";
+                info1.Range.Text = $"Họ và tên: {hoTenCleaned1}"; // Loại bỏ ID, chỉ lấy tên
                 info1.Range.Font.Size = 13;
+                info1.Range.Font.Bold = 0; // Không in đậm
+                info1.Range.Font.Italic = 0; // Không in nghiêng
                 info1.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
                 info1.Range.InsertParagraphAfter();
 
                 var info2 = doc.Content.Paragraphs.Add();
-                info2.Range.Text = $"Chức vụ: {chucVu}";
+                info2.Range.Text = $"Chức vụ: {chucVuCleaned1}"; // Lấy phần chức vụ từ chuỗi (bỏ mã số)
                 info2.Range.Font.Size = 13;
+                info2.Range.Font.Bold = 0; // Không in đậm
+                info2.Range.Font.Italic = 0; // Không in nghiêng
                 info2.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
                 info2.Range.InsertParagraphAfter();
 
                 var info3 = doc.Content.Paragraphs.Add();
-                info3.Range.Text = $"Bộ phận: {boPhan}";
+                info3.Range.Text = $"Bộ phận: {boPhanCleaned1}"; // Lấy phần bộ phận từ chuỗi (bỏ mã số)
                 info3.Range.Font.Size = 13;
+                info3.Range.Font.Bold = 0; // Không in đậm
+                info3.Range.Font.Italic = 0; // Không in nghiêng
                 info3.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
                 info3.Range.InsertParagraphAfter();
 
+
                 var info4 = doc.Content.Paragraphs.Add();
-                info4.Range.Text = "Thời gian thống kê: 01/11/2024 – 30/11/2024";
+                info4.Range.Text = $"Thời gian thống kê: {ngayBatDau} – {ngayKetThuc}"; // Sử dụng thời gian truyền vào
                 info4.Range.Font.Size = 13;
+                info4.Range.Font.Bold = 0; // Không in đậm
+                info4.Range.Font.Italic = 0; // Không in nghiêng
                 info4.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
                 info4.Range.InsertParagraphAfter();
 
@@ -680,14 +700,15 @@ namespace Fastie.Screens.Analytics
                 table.AllowAutoFit = true;
 
                 // Header của bảng
-                table.Cell(1, 1).Range.Text = "ID Công Việc";
+                table.Cell(1, 1).Range.Text = "STT";
                 table.Cell(1, 2).Range.Text = "Tên Công Việc";
                 table.Cell(1, 3).Range.Text = "Tiến Độ Công Việc";
 
                 // Định dạng header
                 for (int col = 1; col <= 3; col++)
                 {
-                    table.Cell(1, col).Range.Font.Bold = 1;
+                    table.Cell(1, col).Range.Font.Bold = 0; // Không in đậm
+                    table.Cell(1, col).Range.Font.Italic = 0; // Không in nghiêng
                     table.Cell(1, col).Range.Font.Name = "Times New Roman";
                     table.Cell(1, col).Range.Font.Size = 12;
                     table.Cell(1, col).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
@@ -696,12 +717,14 @@ namespace Fastie.Screens.Analytics
                 // Điền dữ liệu vào bảng
                 for (int i = 0; i < data.Count; i++)
                 {
-                    table.Cell(i + 2, 1).Range.Text = data[i].IdCongViec;
-                    table.Cell(i + 2, 2).Range.Text = data[i].TenCongViec;
-                    table.Cell(i + 2, 3).Range.Text = data[i].TienDoCongViec;
+                    table.Cell(i + 2, 1).Range.Text = (i + 1).ToString();
+                    table.Cell(i + 2, 2).Range.Text = data[i].TenCongViec.ToLower(); // In thường
+                    table.Cell(i + 2, 3).Range.Text = data[i].TienDoCongViec.ToLower(); // In thường
 
                     for (int col = 1; col <= 3; col++)
                     {
+                        table.Cell(i + 2, col).Range.Font.Bold = 0; // Không in đậm
+                        table.Cell(i + 2, col).Range.Font.Italic = 0; // Không in nghiêng
                         table.Cell(i + 2, col).Range.Font.Name = "Times New Roman";
                         table.Cell(i + 2, col).Range.Font.Size = 12;
                         table.Cell(i + 2, col).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
@@ -715,11 +738,14 @@ namespace Fastie.Screens.Analytics
                 // Lấy dữ liệu bảng thống kê số công việc hoàn thành đúng hạn và trễ hạn
                 List<ThongTinThongKe> summaryData = analyticsBLL.LayThongKeSoCongViecHoanThanhDungHanTreHan(idTaiKhoan, ngayBatDau, ngayKetThuc);
                 var completedTaskTableTitle = doc.Content.Paragraphs.Add();
-                completedTaskTableTitle.Range.Text = "Bảng 2: Thống kê số công việc hoàn thành đúng hạn và trễ hạn";
+                completedTaskTableTitle.Range.Text = "Bảng 2: Thống kê số công việc hoàn thành đúng hạn và trễ hạn"; // In thường
                 completedTaskTableTitle.Range.Font.Size = 13;
-                completedTaskTableTitle.Range.Font.Bold = 1;
+                completedTaskTableTitle.Range.Font.Bold = 1; // Không in đậm
+                completedTaskTableTitle.Range.Font.Italic = 0; // Không in nghiêng
                 completedTaskTableTitle.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
                 completedTaskTableTitle.Range.InsertParagraphAfter();
+
+
 
                 // Tạo bảng thống kê số công việc hoàn thành
                 Word.Table summaryTable = doc.Tables.Add(doc.Content.Paragraphs.Add().Range, 3, 2);
@@ -733,33 +759,37 @@ namespace Fastie.Screens.Analytics
                 // Định dạng header
                 for (int col = 1; col <= 2; col++)
                 {
-                    summaryTable.Cell(1, col).Range.Font.Bold = 1;
+                    summaryTable.Cell(1, col).Range.Font.Bold = 0; // Không in đậm
+                    summaryTable.Cell(1, col).Range.Font.Italic = 0; // Không in nghiêng
                     summaryTable.Cell(1, col).Range.Font.Name = "Times New Roman";
                     summaryTable.Cell(1, col).Range.Font.Size = 12;
                     summaryTable.Cell(1, col).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 }
+
                 if (summaryData.Count > 0)
                 {
-                    summaryTable.Cell(2, 1).Range.Text = "Hoàn thành đúng hạn";
+                    summaryTable.Cell(2, 1).Range.Text = "Hoàn thành đúng hạn"; // In thường
                     summaryTable.Cell(2, 2).Range.Text = summaryData[0].SoLuongCongViecHoanThanhDungHan.ToString();
 
-                    summaryTable.Cell(3, 1).Range.Text = "Hoàn thành trễ hạn";
+                    summaryTable.Cell(3, 1).Range.Text = "Hoàn thành trễ hạn"; // In thường
                     summaryTable.Cell(3, 2).Range.Text = summaryData[0].SoLuongCongViecHoanThanhTreHan.ToString();
                 }
                 else
                 {
-                    summaryTable.Cell(2, 1).Range.Text = "Không có dữ liệu";
+                    summaryTable.Cell(2, 1).Range.Text = "Không có dữ liệu"; // In thường
                     summaryTable.Cell(2, 2).Range.Text = "0";
                 }
+
                 Word.Paragraph space1 = doc.Content.Paragraphs.Add();
                 space.Range.Text = "\n";
                 space.Range.InsertParagraphAfter();
                 // Dữ liệu bảng thống kê nhận việc chủ động
                 List<ThongTinThongKe> activeTaskData = analyticsBLL.LayThongKeSoLanNhanViecChuDongVaSoLanXinDieuChinhPhanCong(idTaiKhoan, ngayBatDau, ngayKetThuc);
                 var activeTaskTableTitle = doc.Content.Paragraphs.Add();
-                activeTaskTableTitle.Range.Text = "Bảng 3: Thống kê nhận việc chủ động và xin điều chỉnh phân công";
+                activeTaskTableTitle.Range.Text = "Bảng 3: Thống kê nhận việc chủ động và xin điều chỉnh phân công"; // In thường
                 activeTaskTableTitle.Range.Font.Size = 13;
-                activeTaskTableTitle.Range.Font.Bold = 1;
+                activeTaskTableTitle.Range.Font.Bold = 1; // Không in đậm
+                activeTaskTableTitle.Range.Font.Italic = 0; // Không in nghiêng
                 activeTaskTableTitle.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
                 activeTaskTableTitle.Range.InsertParagraphAfter();
 
@@ -769,29 +799,30 @@ namespace Fastie.Screens.Analytics
                 activeTaskTable.AllowAutoFit = true;
 
                 // Header của bảng
-                activeTaskTable.Cell(1, 1).Range.Text = "Loại Thống Kê";
-                activeTaskTable.Cell(1, 2).Range.Text = "Số Lượng";
+                activeTaskTable.Cell(1, 1).Range.Text = "Loại thống kê"; // In thường
+                activeTaskTable.Cell(1, 2).Range.Text = "Số lượng"; // In thường
 
                 for (int col = 1; col <= 2; col++)
                 {
-                    activeTaskTable.Cell(1, col).Range.Font.Bold = 1;
+                    activeTaskTable.Cell(1, col).Range.Font.Bold = 0; // Không in đậm
+                    activeTaskTable.Cell(1, col).Range.Font.Italic = 0; // Không in nghiêng
                     activeTaskTable.Cell(1, col).Range.Font.Name = "Times New Roman";
                     activeTaskTable.Cell(1, col).Range.Font.Size = 12;
                     activeTaskTable.Cell(1, col).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 }
 
-    
+
                 if (activeTaskData.Count > 0)
                 {
-                    activeTaskTable.Cell(2, 1).Range.Text = "Số lần nhận việc chủ động";
+                    activeTaskTable.Cell(2, 1).Range.Text = "Số lần nhận việc chủ động"; // In thường
                     activeTaskTable.Cell(2, 2).Range.Text = activeTaskData[0].SoLanNhanViecChuDong.ToString();
 
-                    activeTaskTable.Cell(3, 1).Range.Text = "Số lần xin điều chỉnh phân công";
+                    activeTaskTable.Cell(3, 1).Range.Text = "Số lần xin điều chỉnh phân công"; // In thường
                     activeTaskTable.Cell(3, 2).Range.Text = activeTaskData[0].SoLanXinDieuChinhPhanCong.ToString();
                 }
                 else
                 {
-                    activeTaskTable.Cell(2, 1).Range.Text = "Không có dữ liệu";
+                    activeTaskTable.Cell(2, 1).Range.Text = "Không có dữ liệu"; // In thường
                     activeTaskTable.Cell(2, 2).Range.Text = "0";
                 }
                 Word.Paragraph space2 = doc.Content.Paragraphs.Add();
@@ -806,28 +837,32 @@ namespace Fastie.Screens.Analytics
 
                 // Thêm tiêu đề cho bảng thống kê tỷ lệ hoàn thành công việc
                 var completionRateTableTitle = doc.Content.Paragraphs.Add();
-                completionRateTableTitle.Range.Text = "Bảng 4: Thống kê tỷ lệ hoàn thành công việc";
+                completionRateTableTitle.Range.Text = "Bảng 4: Thống kê tỷ lệ hoàn thành công việc"; // In thường
                 completionRateTableTitle.Range.Font.Size = 13;
-                completionRateTableTitle.Range.Font.Bold = 1;
+                completionRateTableTitle.Range.Font.Bold = 1; // Không in đậm
+                completionRateTableTitle.Range.Font.Italic = 0; // Không in nghiêng
                 completionRateTableTitle.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
                 completionRateTableTitle.Range.InsertParagraphAfter();
 
-               
+
+
 
                 Word.Table completionRateTable = doc.Tables.Add(doc.Content.Paragraphs.Add().Range, 1, 2);
                 completionRateTable.Borders.Enable = 1;
                 completionRateTable.AllowAutoFit = true;
 
-                completionRateTable.Cell(1, 1).Range.Text = "Loại Thống Kê";
-                completionRateTable.Cell(1, 2).Range.Text = "Tỷ Lệ (%)";
+                completionRateTable.Cell(1, 1).Range.Text = "Loại thống kê"; // In thường
+                completionRateTable.Cell(1, 2).Range.Text = "Tỷ lệ (%)"; // In thường
 
                 for (int col = 1; col <= 2; col++)
                 {
-                    completionRateTable.Cell(1, col).Range.Font.Bold = 1;
+                    completionRateTable.Cell(1, col).Range.Font.Bold = 0; // Không in đậm
+                    completionRateTable.Cell(1, col).Range.Font.Italic = 0; // Không in nghiêng
                     completionRateTable.Cell(1, col).Range.Font.Name = "Times New Roman";
                     completionRateTable.Cell(1, col).Range.Font.Size = 12;
                     completionRateTable.Cell(1, col).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 }
+
 
                 completionRateTable.Cell(2, 1).Range.Text = "Tỷ lệ hoàn thành công việc";
                 completionRateTable.Cell(2, 2).Range.Text = $"{tiLeHoanThanh} %";
@@ -847,45 +882,7 @@ namespace Fastie.Screens.Analytics
                 wordApp.Quit();
             }
         }
-        private void XuatBangThongKeTrangThaiCongViecTheoMaTaiKhoan(Word.Document doc, string idTaiKhoan, string ngayBatDau, string ngayKetThuc)
-        {
-            List<ThongTinThongKe> bangThongKe = analyticsBLL.LayBangThongKeTienDoCongViecTheoMaTaiKhoan(idTaiKhoan, ngayBatDau, ngayKetThuc);
-
-            Word.Paragraph para1 = doc.Content.Paragraphs.Add();
-            para1.Range.Text = "Thời gian thống kê: 01/11/2024 – 30/11/2024\n";
-            para1.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify;
-            para1.Range.InsertParagraphAfter();
-
-            Word.Table table = doc.Tables.Add(doc.Content.Paragraphs.Add().Range, bangThongKe.Count + 1, 3);
-            table.Borders.Enable = 1; 
-            table.AllowAutoFit = true;
-
-            table.Cell(1, 1).Range.Text = "ID Công Việc";
-            table.Cell(1, 2).Range.Text = "Tên Công Việc";
-            table.Cell(1, 3).Range.Text = "Tiến Độ Công Việc";
-
-            for (int col = 1; col <= 3; col++)
-            {
-                table.Cell(1, col).Range.Font.Bold = 1;
-                table.Cell(1, col).Range.Font.Name = "Times New Roman";
-                table.Cell(1, col).Range.Font.Size = 12;
-                table.Cell(1, col).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter; 
-            }
-
-            for (int i = 0; i < bangThongKe.Count; i++)
-            {
-                table.Cell(i + 2, 1).Range.Text = bangThongKe[i].IdCongViec;
-                table.Cell(i + 2, 2).Range.Text = bangThongKe[i].TenCongViec;
-                table.Cell(i + 2, 3).Range.Text = bangThongKe[i].TienDoCongViec;
-
-                for (int col = 1; col <= 3; col++)
-                {
-                    table.Cell(i + 2, col).Range.Font.Name = "Times New Roman";
-                    table.Cell(i + 2, col).Range.Font.Size = 12;
-                    table.Cell(i + 2, col).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft; 
-                }
-            }
-        }
+        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
