@@ -563,6 +563,22 @@ namespace Fastie
         {
             try
             {
+                if (cbDepartment.SelectedItem == null)
+                {
+                    showMessage("Vui lòng chọn bộ phận!", "error");
+                    return;
+                }
+                if (cbPosition.SelectedItem == null)
+                {
+                    showMessage("Vui lòng chọn chức vụ!", "error");
+                    return;
+                }
+                if (cbPersonnel.SelectedItem == null)
+                {
+                    showMessage("Vui lòng chọn nhân sự!", "error");
+                    return;
+                }
+
                 // Lấy dữ liệu từ các ComboBox
                 string departmentId = ((KeyValuePair<string, string>)cbDepartment.SelectedItem).Key;
                 string positionId = ((KeyValuePair<string, string>)cbPosition.SelectedItem).Key;
@@ -574,7 +590,11 @@ namespace Fastie
                 // Lấy thời gian bắt đầu và kết thúc
                 DateTime startDate = dTPBirthday.Value;
                 DateTime endDate = dateTimePicker1.Value;
-
+                if (startDate > endDate)
+                {
+                    showMessage("Thời gian bắt đầu không được lớn hơn thời gian kết thúc!", "error");
+                    return;
+                }
                 // Kiểm tra điều kiện đầu vào
                 if (string.IsNullOrEmpty(departmentId) || departmentId == "Chọn")
                 {
@@ -624,8 +644,8 @@ namespace Fastie
                     departmentId,
                     personnelId,
                     idTaiKhoan,
-                    startDate.ToString("yyyy-MM-dd"),
-                    endDate.ToString("yyyy-MM-dd"),
+                    startDate.ToString(),
+                    endDate.ToString(),
                     chartPath,
                     hoTen,
                     chucVu,
@@ -697,6 +717,21 @@ namespace Fastie
 
         private void btnExportPDF_Click(object sender, EventArgs e)
         {
+            if (cbDepartment.SelectedItem == null)
+            {
+                showMessage("Vui lòng chọn bộ phận!", "error");
+                return;
+            }
+            if (cbPosition.SelectedItem == null)
+            {
+                showMessage("Vui lòng chọn chức vụ!", "error");
+                return;
+            }
+            if (cbPersonnel.SelectedItem == null)
+            {
+                showMessage("Vui lòng chọn nhân sự!", "error");
+                return;
+            }
             string filePathWord = "D:\\Bao_cao.docx";
             string filePathPDF = "D:\\Bao_cao.pdf";
 

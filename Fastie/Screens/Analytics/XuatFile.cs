@@ -7,12 +7,14 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL.AnalyticsBLL;
 using DTO.AnalyticsDTO;
 using Fastie.Components.Toastify;
+using Microsoft.Office.Interop.Word;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace Fastie.Screens.Analytics
@@ -563,7 +565,7 @@ namespace Fastie.Screens.Analytics
         {
             showMessage("Đang xuất file, vui lòng chờ...", "success");
 
-            string filePath = "D:\\Bao_cao.docx";
+            string filePath = "D:\\Bao_cao_CongViec.docx";
             string hoTenCleaned = hoTen.Contains(",") ? hoTen.Split(',')[1].Trim() : hoTen.Trim();
             string hoTenCleaned1 = hoTenCleaned.Replace("[", "").Replace("]", "").Split(',').Last().Trim();
             string chucVuCleaned = chucVu.Contains(",") ? chucVu.Split(',')[1].Trim() : chucVu.Trim();
@@ -594,7 +596,8 @@ namespace Fastie.Screens.Analytics
                 }
                 if (ckbDocumentNumber.Checked)
                 {
-                    header.Range.Text += "Số tài liệu: BC001_TK0000000003";
+                    string documentNumber = GenerateDocumentNumber();
+                    header.Range.Text += $"Số tài liệu: {documentNumber}";
                 }
                 if (ckbDocumentDate.Checked)
                 {
@@ -645,6 +648,7 @@ namespace Fastie.Screens.Analytics
                 testParagraph.Range.Text = "BÁO CÁO KẾT QUẢ CÔNG VIỆC THÁNG 11/ NĂM 2024";
                 testParagraph.Range.Font.Size = 16;
                 testParagraph.Range.Font.Bold = 1;
+                testParagraph.Range.Font.Italic = 0;
                 testParagraph.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 testParagraph.Range.ParagraphFormat.SpaceAfter = 10; // Tạo khoảng cách sau đoạn
                 testParagraph.Range.InsertParagraphAfter();
@@ -677,12 +681,15 @@ namespace Fastie.Screens.Analytics
 
 
                 var info4 = doc.Content.Paragraphs.Add();
-                info4.Range.Text = $"Thời gian thống kê: {ngayBatDau} – {ngayKetThuc}"; // Sử dụng thời gian truyền vào
+                info4.Range.Text = $"Thời gian thống kê: {DateTime.Parse(ngayBatDau).ToString("dd/MM/yyyy")} – {DateTime.Parse(ngayKetThuc).ToString("dd/MM/yyyy")}";
                 info4.Range.Font.Size = 13;
                 info4.Range.Font.Bold = 0; // Không in đậm
                 info4.Range.Font.Italic = 0; // Không in nghiêng
                 info4.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
                 info4.Range.InsertParagraphAfter();
+
+
+
 
                 // Dữ liệu bảng thống kê tiến độ công việc
                 List<ThongTinThongKe> data = analyticsBLL.LayBangThongKeTienDoCongViecTheoMaTaiKhoan(idTaiKhoan, ngayBatDau, ngayKetThuc);
@@ -755,8 +762,6 @@ namespace Fastie.Screens.Analytics
                 // Header của bảng
                 summaryTable.Cell(1, 1).Range.Text = "Loại Thống Kê";
                 summaryTable.Cell(1, 2).Range.Text = "Số Lượng";
-
-                // Định dạng header
                 for (int col = 1; col <= 2; col++)
                 {
                     summaryTable.Cell(1, col).Range.Font.Bold = 0; // Không in đậm
@@ -765,6 +770,21 @@ namespace Fastie.Screens.Analytics
                     summaryTable.Cell(1, col).Range.Font.Size = 12;
                     summaryTable.Cell(1, col).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 }
+
+                // Định dạng header
+                for (int row = 2; row <= summaryTable.Rows.Count; row++)
+                {
+                    for (int col = 1; col <= summaryTable.Columns.Count; col++)
+                    {
+                        var cellRange = summaryTable.Cell(row, col).Range;
+                        cellRange.Font.Bold = 0; // Không in đậm
+                        cellRange.Font.Italic = 0; // Không in nghiêng
+                        cellRange.Font.Name = "Times New Roman";
+                        cellRange.Font.Size = 12;
+                        cellRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                    }
+                }
+
 
                 if (summaryData.Count > 0)
                 {
@@ -802,6 +822,7 @@ namespace Fastie.Screens.Analytics
                 activeTaskTable.Cell(1, 1).Range.Text = "Loại thống kê"; // In thường
                 activeTaskTable.Cell(1, 2).Range.Text = "Số lượng"; // In thường
 
+                // Định dạng tiêu đề bảng 3
                 for (int col = 1; col <= 2; col++)
                 {
                     activeTaskTable.Cell(1, col).Range.Font.Bold = 0; // Không in đậm
@@ -810,6 +831,21 @@ namespace Fastie.Screens.Analytics
                     activeTaskTable.Cell(1, col).Range.Font.Size = 12;
                     activeTaskTable.Cell(1, col).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 }
+
+                // Định dạng nội dung bảng 3
+                for (int row = 2; row <= activeTaskTable.Rows.Count; row++)
+                {
+                    for (int col = 1; col <= activeTaskTable.Columns.Count; col++)
+                    {
+                        var cellRange = activeTaskTable.Cell(row, col).Range;
+                        cellRange.Font.Bold = 0; // Không in đậm
+                        cellRange.Font.Italic = 0; // Không in nghiêng
+                        cellRange.Font.Name = "Times New Roman";
+                        cellRange.Font.Size = 12;
+                        cellRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                    }
+                }
+
 
 
                 if (activeTaskData.Count > 0)
@@ -882,8 +918,13 @@ namespace Fastie.Screens.Analytics
                 wordApp.Quit();
             }
         }
-        
 
+        private string GenerateDocumentNumber()
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(1000000000); // Tạo một số ngẫu nhiên từ 0 đến 999999999
+            return $"BC{randomNumber:D10}_{idTaiKhoan}"; // Định dạng số ngẫu nhiên thành 10 chữ số
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
