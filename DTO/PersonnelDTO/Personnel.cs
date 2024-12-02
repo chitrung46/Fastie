@@ -11,7 +11,13 @@ namespace DTO
         private DateTime ngayVaoLam;
         private string sdt;
 
-        public Personnel() { }  
+        public Personnel() { }
+        public Personnel(string ten, string email, string sdt)
+        {            
+            this.ten = ten;
+            this.email = email;            
+            this.sdt = sdt;
+        }
         public Personnel(string id, string ten, string email, string gioiTinh, DateTime ngaySinh, DateTime ngayVaoLam, string sdt)
         {
             this.id = id;

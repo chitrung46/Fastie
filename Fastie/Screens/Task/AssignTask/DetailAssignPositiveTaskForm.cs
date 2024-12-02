@@ -46,10 +46,11 @@ namespace Fastie.Screens.Task
             InitializeComponent();
             this.idTaiKhoanNguoiDung = idTaiKhoan;
             this.idBoPhanNguoiDung = idBoPhan;
-            LoadTaskTypeComboBox();
+            //LoadTaskTypeComboBox();
             LoadDepartmentComboBox();
+            dtpTimeCompleted.Value = DateTime.Now;
             dtpTimeCompleted.Format = DateTimePickerFormat.Custom;
-            dtpTimeCompleted.CustomFormat = "dd/MM/yyyy";
+            dtpTimeCompleted.CustomFormat = "dd/MM/yyyy    HH:mm";
         }
         public DetailAssignPositiveTaskForm(TaskInfo taskInfo, string idCongViec, string loaiGiaoViec, string idTaiKhoan, string idBoPhan)
         {
@@ -166,11 +167,51 @@ namespace Fastie.Screens.Task
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txbTaskName.Text) || string.IsNullOrWhiteSpace(cCBLoaiCongViec.Texts) ||
-            string.IsNullOrWhiteSpace(cTBDescribeTask.Text) || dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now || string.IsNullOrWhiteSpace(txbSoNhanSuChuDong.Text))
+            if (string.IsNullOrWhiteSpace(txbTaskName.Text)
+                && string.IsNullOrWhiteSpace(cCBLoaiCongViec.Texts)
+                && string.IsNullOrWhiteSpace(cTBDescribeTask.Text)
+                && (dtpTimeCompleted.Value == null || dtpTimeCompleted.Value <= DateTime.Now)
+                && string.IsNullOrWhiteSpace(txbSoNhanSuChuDong.Text))
             {
                 showMessage("Vui lòng nhập đủ thông tin!", "error");
                 return; // Exit the method if validation fails
+            }
+
+
+
+
+            if (string.IsNullOrWhiteSpace(txbTaskName.Text))
+            {
+                showMessage("Vui lòng nhập tên công việc!", "error");
+                return; // Exit the method if validation fails
+            }
+
+            if (string.IsNullOrWhiteSpace(cCBLoaiCongViec.Texts))
+            {
+                showMessage("Vui lòng chọn loại công việc!", "error");
+                return; // Exit the method if validation fails
+            }
+            if (string.IsNullOrWhiteSpace(cTBDescribeTask.Text))
+            {
+                showMessage("Vui lòng nhập mô tả công việc!", "error");
+                return; // Exit the method if validation fails
+            }
+            if (dtpTimeCompleted.Value == null)
+            {
+                showMessage("Vui lòng chọn thời hạn hoan thành!", "error");
+                return; // Exit the method if validation fails
+            }
+            if (dtpTimeCompleted.Value <= DateTime.Now)
+            {
+                showMessage("Chọn thời hạn hoàn thành hợp lệ!", "error");
+                return; // Exit the method if validation fails
+            }
+            if (string.IsNullOrWhiteSpace(txbSoNhanSuChuDong.Text) 
+                || !int.TryParse(txbSoNhanSuChuDong.Text, out int soNhanSuChuDong) 
+                || soNhanSuChuDong < 0)
+            {
+                showMessage("Vui lòng nhập số nhân sự chủ động hợp lệ (là số nguyên không âm).", "error");
+                return;
             }
             if (cCBLoaiCongViec.Texts == "Giao việc")
             {
@@ -219,6 +260,7 @@ namespace Fastie.Screens.Task
                 {
                     showMessage("Giao việc thất bại", "error");
                 }
+                btnUpdate.Enabled = false;  
                 this.Close();
             }
             else if (cCBLoaiCongViec.Texts == "Ra thông báo")

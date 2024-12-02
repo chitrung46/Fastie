@@ -23,8 +23,8 @@ namespace Fastie
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new HomeForm());
-            Application.Run(new LoginForm());
+            Application.Run(new HomeForm());
+            //Application.Run(new LoginForm());
             //Application.Run(new XuatFile("Word", "TK0000000004"));
         }
     }

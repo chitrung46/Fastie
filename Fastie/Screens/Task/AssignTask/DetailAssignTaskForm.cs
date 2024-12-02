@@ -200,6 +200,7 @@ namespace Fastie.Screens.Task
             dtpTimeCompleted.Value = DateTime.Now;
             dtpTimeCompleted.Format = DateTimePickerFormat.Custom;
             dtpTimeCompleted.CustomFormat = "dd/MM/yyyy    HH:mm";
+            //dtpTimeCompleted.ValueChanged += new EventHandler(dtpTimeCompleted_ValueChanged);
         }
         public DetailAssignTaskForm(string idTaiKhoan, string idBoPhan)
         {
@@ -348,9 +349,22 @@ namespace Fastie.Screens.Task
         }
 
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        private void dtpTimeCompleted_ValueChanged(object sender, EventArgs e)
         {
+            DateTime selectedTime = dtpTimeCompleted.Value;
+            DateTime currentTime = DateTime.Now;
+            DateTime thoiHanHoanThanh = taskBLL.LayThoiHanHoanThanh(idCongViecGoc);
 
+            if (selectedTime < currentTime)
+            {
+                showMessage("Thời gian hoàn thành không được trước thời gian hiện tại.", "error");
+                dtpTimeCompleted.Value = currentTime; // Reset lại giá trị
+            }
+            else if (selectedTime > thoiHanHoanThanh)
+            {
+                showMessage($"Không được vượt quá thời hạn: {thoiHanHoanThanh:dd/MM/yyyy HH:mm}.", "error");
+                dtpTimeCompleted.Value = thoiHanHoanThanh; // Reset lại giá trị
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -449,7 +463,12 @@ namespace Fastie.Screens.Task
                     result = taskBLL.GiaoViec(loaiGiaoViec, thongTinGiaoViec);
                 }
                 if (loaiGiaoViec == "Giao việc phát sinh")
-                {                    
+                {   
+                    if (dtpTimeCompleted.Value >= taskBLL.LayThoiHanHoanThanh(this.idCongViecGoc))
+                    {
+                        showMessage("Không được trễ hơn thời hạn gốc!", "error");
+                        return;
+                    }
                     var thongTinGiaoViec = new ThongTinGiaoViec()
                     {
                         Ten = txbTaskName.Text,
@@ -471,13 +490,21 @@ namespace Fastie.Screens.Task
 
                 if (result)
                 {
+                    string idTaiKhoanNhanViecDauTien = null;
                     showMessage("Giao việc thành công", "success");
-                    sendRequest();
+                    if (danhSachTaiKhoanNhanViec != null && danhSachTaiKhoanNhanViec.Count > 0)
+                    {
+                        idTaiKhoanNhanViecDauTien = danhSachTaiKhoanNhanViec[0];
+                        //Console.WriteLine($"ID tài khoản nhận việc đầu tiên: {idTaiKhoanNhanViecDauTien}");
+                    }
+                    
+                    sendRequest(idTaiKhoanNhanViecDauTien);
                 }
                 else
                 {
                     showMessage("Giao việc thất bại", "error");
                 }
+                btnAdd.Enabled = false;
                 this.Close();
             }
             else if (cCBLoaiCongViec.Texts == "Ra thông báo")
@@ -593,19 +620,29 @@ namespace Fastie.Screens.Task
             this.AcceptButton = btnAdd;
         }
 
-        private bool sendRequest()
+        private bool sendRequest(string idTaiKhoanNhanViec)
         {
             try
             {
-                // Thông tin email gửi
-                string fromEmail = "fastie.n02@gmail.com";
-                string fromPassword = "rtpl hzno ottm erol"; // Mật khẩu ứng dụng của email gửi
-                string userName = "Đặng Nhật Toàn";
-                string assignerName = "Đỗ Thị Kiều Thanh";
-                string assignerPhone = "0986746985";
-                // Nội dung email xác nhận
-                string content = $@"
-Kính gửi {userName},
+                if (string.IsNullOrEmpty(idTaiKhoanNhanViec))
+                {
+                    //showMessage("ID tài khoản nhận việc không được để trống hoặc null.", "error");
+                    return true;
+                }
+                else 
+                {
+                    // Thông tin email gửi
+                    string fromEmail = "fastie.n02@gmail.com";
+                    string fromPassword = "rtpl hzno ottm erol"; // Mật khẩu ứng dụng của email gửi
+                    string userName = "Đặng Nhật Toàn";
+                    //string assignerName = "Đỗ Thị Kiều Thanh";
+                    //string assignerPhone = "0986746985";
+                    var nguoiGiaoViec = taskBLL.LayThongTinTheoMaTaiKhoan(idTaiKhoanNguoiDung);
+                    var nguoiNhanViec = taskBLL.LayThongTinTheoMaTaiKhoan(idTaiKhoanNhanViec);
+                    string idCongViec = taskBLL.LayIdCongViec();
+                    // Nội dung email xác nhận
+                    string content = $@"
+Kính gửi {nguoiNhanViec.Ten},
 
 Bạn được giao một nhiệm vụ mới từ đội ngũ Firon. Vui lòng xem thông tin chi tiết bên dưới và thực hiện nhiệm vụ đúng thời hạn được yêu cầu. Nếu có bất kỳ thắc mắc nào, xin vui lòng liên hệ với người giao việc.
 
@@ -613,9 +650,11 @@ Thông tin công việc:
 - Ngày giao nhiệm vụ: {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}
 - Tên công việc: {txbTaskName.Text}
 - Mô tả nhiệm vụ: {cTBDescribeTask.Text}
-- Hạn hoàn thành: {dtpTimeCompleted.Value.ToString("dd/MM/yyyy")}
-- Người giao việc: {assignerName}
-- Số điện thoại liên hệ: {assignerPhone}
+- Hạn hoàn thành: {dtpTimeCompleted.Value.ToString("dd/MM/yyyy HH:mm:ss")}
+- Người giao việc: {nguoiGiaoViec.Ten}
+- Số điện thoại liên hệ: {nguoiGiaoViec.Sdt}
+- ID tài khoản: {idTaiKhoanNhanViec}
+- ID Công việc: {idCongViec}
 
 Chúng tôi mong bạn sẽ hoàn thành nhiệm vụ một cách hiệu quả và đúng tiến độ. Nếu có thêm thông tin cần làm rõ, vui lòng trả lời email này hoặc liên hệ trực tiếp với người giao việc.
 
@@ -627,27 +666,29 @@ Firon
 ";
 
 
-                // Tạo đối tượng MailMessage
-                MailMessage mail = new MailMessage();
-                mail.To.Add("nhattoan664t@gmail.com"); // Email người nhận
-                mail.From = new MailAddress(fromEmail); // Email người gửi
-                mail.Subject = "Xác nhận giao việc - [Đội ngũ Fastie]"; // Tiêu đề email
-                mail.Body = content; // Nội dung email
+                    // Tạo đối tượng MailMessage
+                    MailMessage mail = new MailMessage();
+                    //mail.To.Add("nhattoan664t@gmail.com"); // Email người nhận
+                    mail.To.Add(nguoiNhanViec.Email);
+                    mail.From = new MailAddress(fromEmail); // Email người gửi
+                    mail.Subject = "Xác nhận giao việc - [Đội ngũ Fastie]"; // Tiêu đề email
+                    mail.Body = content; // Nội dung email
 
-                // Thiết lập cấu hình SMTP
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com")
-                {
-                    EnableSsl = true,
-                    Port = 587,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    Credentials = new NetworkCredential(fromEmail, fromPassword)
-                };
+                    // Thiết lập cấu hình SMTP
+                    SmtpClient smtp = new SmtpClient("smtp.gmail.com")
+                    {
+                        EnableSsl = true,
+                        Port = 587,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        Credentials = new NetworkCredential(fromEmail, fromPassword)
+                    };
 
-                // Gửi email
-                smtp.Send(mail);
+                    // Gửi email
+                    smtp.Send(mail);
 
-                // Trả về true nếu gửi thành công
-                return true;
+                    // Trả về true nếu gửi thành công
+                    return true;
+                }
             }
             catch (Exception ex)
             {

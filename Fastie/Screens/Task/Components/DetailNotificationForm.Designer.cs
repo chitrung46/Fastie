@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailNotificationForm));
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.customPanel4 = new GUI.TruniControls.CustomPanel();
+            this.lblActionName = new System.Windows.Forms.Label();
+            this.lblAction = new System.Windows.Forms.Label();
             this.customPanel3 = new GUI.TruniControls.CustomPanel();
             this.lblTaskAssigner = new System.Windows.Forms.Label();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
@@ -38,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.customPanel1.SuspendLayout();
+            this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +64,8 @@
             this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
             this.customPanel1.BorderSize = 0;
+            this.customPanel1.Controls.Add(this.customPanel4);
+            this.customPanel1.Controls.Add(this.lblAction);
             this.customPanel1.Controls.Add(this.customPanel3);
             this.customPanel1.Controls.Add(this.customPanel2);
             this.customPanel1.Controls.Add(this.label4);
@@ -74,6 +80,46 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(562, 313);
             this.customPanel1.TabIndex = 15;
+            // 
+            // customPanel4
+            // 
+            this.customPanel4.AutoScroll = true;
+            this.customPanel4.BackColor = System.Drawing.Color.White;
+            this.customPanel4.BorderColor = System.Drawing.Color.Black;
+            this.customPanel4.BorderRadius = 15;
+            this.customPanel4.BorderSize = 0;
+            this.customPanel4.Controls.Add(this.lblActionName);
+            this.customPanel4.ForeColor = System.Drawing.Color.Black;
+            this.customPanel4.GradientAngle = 90F;
+            this.customPanel4.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel4.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel4.Location = new System.Drawing.Point(24, 120);
+            this.customPanel4.Name = "customPanel4";
+            this.customPanel4.Size = new System.Drawing.Size(511, 40);
+            this.customPanel4.TabIndex = 32;
+            // 
+            // lblActionName
+            // 
+            this.lblActionName.AutoSize = true;
+            this.lblActionName.Location = new System.Drawing.Point(15, 10);
+            this.lblActionName.MaximumSize = new System.Drawing.Size(470, 300);
+            this.lblActionName.MinimumSize = new System.Drawing.Size(470, 18);
+            this.lblActionName.Name = "lblActionName";
+            this.lblActionName.Size = new System.Drawing.Size(470, 18);
+            this.lblActionName.TabIndex = 0;
+            this.lblActionName.Text = "Lương Chí Trung";
+            // 
+            // lblAction
+            // 
+            this.lblAction.AutoSize = true;
+            this.lblAction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
+            this.lblAction.ForeColor = System.Drawing.Color.White;
+            this.lblAction.Location = new System.Drawing.Point(29, 96);
+            this.lblAction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAction.Name = "lblAction";
+            this.lblAction.Size = new System.Drawing.Size(89, 18);
+            this.lblAction.TabIndex = 31;
+            this.lblAction.Text = "Hành động";
             // 
             // customPanel3
             // 
@@ -115,9 +161,9 @@
             this.customPanel2.GradientAngle = 90F;
             this.customPanel2.GradientBottomColor = System.Drawing.Color.White;
             this.customPanel2.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(24, 117);
+            this.customPanel2.Location = new System.Drawing.Point(24, 206);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(511, 177);
+            this.customPanel2.Size = new System.Drawing.Size(511, 88);
             this.customPanel2.TabIndex = 15;
             // 
             // lblTaskDetail
@@ -136,7 +182,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(29, 94);
+            this.label4.Location = new System.Drawing.Point(29, 174);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 18);
@@ -151,9 +197,9 @@
             this.lblName.Location = new System.Drawing.Point(29, 20);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(124, 18);
+            this.lblName.Size = new System.Drawing.Size(118, 18);
             this.lblName.TabIndex = 20;
-            this.lblName.Text = "Người giao việc";
+            this.lblName.Text = "Người khởi tạo";
             // 
             // DetailNotificationForm
             // 
@@ -171,6 +217,8 @@
             this.Load += new System.EventHandler(this.DetailNotificationForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel4.PerformLayout();
             this.customPanel3.ResumeLayout(false);
             this.customPanel3.PerformLayout();
             this.customPanel2.ResumeLayout(false);
@@ -190,5 +238,8 @@
         private System.Windows.Forms.Label lblTaskDetail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblName;
+        private GUI.TruniControls.CustomPanel customPanel4;
+        private System.Windows.Forms.Label lblActionName;
+        private System.Windows.Forms.Label lblAction;
     }
 }

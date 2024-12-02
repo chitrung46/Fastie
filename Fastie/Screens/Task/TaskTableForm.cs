@@ -56,7 +56,8 @@ namespace Fastie.Screens.Task
                     var notificationForm = new NotificationForm
                     {
                         TaskName = history.Ten,
-                        AssignerName = history.GhiChu // Sử dụng ghi chú làm tên người giao việc trong ví dụ này
+                        AssignerName = history.TenNhanSuGiaoViec, // Sử dụng ghi chú làm tên người giao việc trong ví dụ này
+                        ActionName = history.TenHanhDong
                     };
                     flowLayoutPanelNotification.Controls.Add(notificationForm);
                 }

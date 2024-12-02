@@ -13,6 +13,7 @@ namespace DTO.AnalyticsDTO
         private string tienDoCongViec;
         private string mucDoHoanThanh;
         private string noiDungBaoCao;
+
         private int soLanNhanViecChuDong;
         private int soLanXinDieuChinhPhanCong;
         private float tiLeHoanThanhCongViec;
@@ -34,17 +35,9 @@ namespace DTO.AnalyticsDTO
             this.noiDungBaoCao = noiDungBaoCao;
         }
 
-        public ThongTinThongKe(int soLanNhanViecChuDong, int soLanXinDieuChinhPhanCong)
-        {
-            this.soLanNhanViecChuDong = soLanNhanViecChuDong;
-            this.soLanXinDieuChinhPhanCong = soLanXinDieuChinhPhanCong;
-        }
 
-        public ThongTinThongKe(float tiLeHoanThanhCongViec)
-        {
-            this.tiLeHoanThanhCongViec = tiLeHoanThanhCongViec;
-        }
-
+        public int SoLuongCongViecHoanThanhDungHan { get; set; }
+        public int SoLuongCongViecHoanThanhTreHan { get; set; }
         public string IdCongViec { get => idCongViec; set => idCongViec = value; }
         public string TenCongViec { get => tenCongViec; set => tenCongViec = value; }
         public string TienDoCongViec { get => tienDoCongViec; set => tienDoCongViec = value; }
@@ -52,6 +45,6 @@ namespace DTO.AnalyticsDTO
         public string NoiDungBaoCao { get => noiDungBaoCao; set => noiDungBaoCao = value; }
         public int SoLanNhanViecChuDong { get => soLanNhanViecChuDong; set => soLanNhanViecChuDong = value; }
         public int SoLanXinDieuChinhPhanCong { get => soLanXinDieuChinhPhanCong; set => soLanXinDieuChinhPhanCong = value; }
-        public float TiLeHoanThanhCongViec { get => tiLeHoanThanhCongViec; set => tiLeHoanThanhCongViec = value; }
+        public decimal TiLeHoanThanhCongViec { get; set; }
     }
 }

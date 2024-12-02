@@ -145,6 +145,7 @@ namespace Fastie
 
         private void btnReportTask_Click(object sender, EventArgs e)
         {
+            this.formCurrent = "ReportTaskForm";
             bool checkPermission = permissionBLL.checkPermission(this.idTaiKhoan, "Q0022");
             setStateButton(btnReportTask);
             if (checkPermission)

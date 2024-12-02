@@ -33,7 +33,7 @@
             this.lblSex = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.lblBirthDay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
@@ -48,7 +48,7 @@
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.customPanel3 = new GUI.TruniControls.CustomPanel();
-            this.lblPersonnelName = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.customPanel1.SuspendLayout();
             this.customPanel7.SuspendLayout();
             this.customPanel6.SuspendLayout();
@@ -102,17 +102,17 @@
             this.label3.TabIndex = 28;
             this.label3.Text = "Ngày sinh: ";
             // 
-            // lblName
+            // lbl1
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
-            this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(29, 20);
-            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(68, 18);
-            this.lblName.TabIndex = 20;
-            this.lblName.Text = "Họ tên: ";
+            this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
+            this.lbl1.ForeColor = System.Drawing.Color.White;
+            this.lbl1.Location = new System.Drawing.Point(29, 20);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(68, 18);
+            this.lbl1.TabIndex = 20;
+            this.lbl1.Text = "Họ tên: ";
             // 
             // lblBirthDay
             // 
@@ -152,7 +152,7 @@
             this.customPanel1.Controls.Add(this.lblSex);
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.Controls.Add(this.label3);
-            this.customPanel1.Controls.Add(this.lblName);
+            this.customPanel1.Controls.Add(this.lbl1);
             this.customPanel1.Controls.Add(this.lblBirthDay);
             this.customPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customPanel1.ForeColor = System.Drawing.Color.Black;
@@ -311,7 +311,7 @@
             this.customPanel3.BorderColor = System.Drawing.Color.Black;
             this.customPanel3.BorderRadius = 15;
             this.customPanel3.BorderSize = 0;
-            this.customPanel3.Controls.Add(this.lblPersonnelName);
+            this.customPanel3.Controls.Add(this.lblName);
             this.customPanel3.ForeColor = System.Drawing.Color.Black;
             this.customPanel3.GradientAngle = 90F;
             this.customPanel3.GradientBottomColor = System.Drawing.Color.White;
@@ -321,16 +321,16 @@
             this.customPanel3.Size = new System.Drawing.Size(511, 40);
             this.customPanel3.TabIndex = 31;
             // 
-            // lblPersonnelName
+            // lblName
             // 
-            this.lblPersonnelName.AutoSize = true;
-            this.lblPersonnelName.Location = new System.Drawing.Point(15, 10);
-            this.lblPersonnelName.MaximumSize = new System.Drawing.Size(470, 300);
-            this.lblPersonnelName.MinimumSize = new System.Drawing.Size(470, 18);
-            this.lblPersonnelName.Name = "lblPersonnelName";
-            this.lblPersonnelName.Size = new System.Drawing.Size(470, 18);
-            this.lblPersonnelName.TabIndex = 0;
-            this.lblPersonnelName.Text = "Kế toán";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(15, 10);
+            this.lblName.MaximumSize = new System.Drawing.Size(470, 300);
+            this.lblName.MinimumSize = new System.Drawing.Size(470, 18);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(470, 18);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Kế toán";
             // 
             // DetailsPersonnelForm
             // 
@@ -369,14 +369,14 @@
         private System.Windows.Forms.Label lblSex;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lblBirthDay;
         private System.Windows.Forms.Label label2;
         private GUI.TruniControls.CustomPanel customPanel1;
         private GUI.TruniControls.CustomPanel customPanel2;
         private System.Windows.Forms.Label lblEmail;
         private GUI.TruniControls.CustomPanel customPanel3;
-        private System.Windows.Forms.Label lblPersonnelName;
+        private System.Windows.Forms.Label lblName;
         private GUI.TruniControls.CustomPanel customPanel6;
         private System.Windows.Forms.Label lblDateOfBirth;
         private GUI.TruniControls.CustomPanel customPanel5;

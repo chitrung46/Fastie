@@ -32,10 +32,13 @@ namespace Fastie.Screens.Task
             {
                 LayoutDetailReportForm layoutDetailReportForm = new LayoutDetailReportForm()
                 {
+                    IdReport = this.idCongViec,
                     ReportContent = baoCao.NoiDung,
                     ReportDate = baoCao.NgayBaoCao.HasValue ? baoCao.NgayBaoCao.Value.ToString("dd/MM/yyyy") : "N/A",
                     FileName = baoCao.TenFile,
-                    ImageName = baoCao.TenAnh
+                    ImageName = baoCao.TenAnh,
+                    FileUrl = baoCao.DuongDanFile,
+                    ImageUrl = baoCao.DuongDanAnh
                 };
                 flowLayoutPanelReport.Controls.Add(layoutDetailReportForm);
             }

@@ -241,7 +241,7 @@
             this.lblForgetPassword.ForeColor = System.Drawing.Color.White;
             this.lblForgetPassword.Location = new System.Drawing.Point(55, 348);
             this.lblForgetPassword.Name = "lblForgetPassword";
-            this.lblForgetPassword.Size = new System.Drawing.Size(138, 21);
+            this.lblForgetPassword.Size = new System.Drawing.Size(151, 21);
             this.lblForgetPassword.TabIndex = 4;
             this.lblForgetPassword.Text = "Quên mật khẩu?";
             this.lblForgetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -255,7 +255,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(55, 203);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 21);
+            this.label5.Size = new System.Drawing.Size(89, 21);
             this.label5.TabIndex = 0;
             this.label5.Text = "Mật khẩu";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -268,7 +268,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(128, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 32);
+            this.label1.Size = new System.Drawing.Size(147, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng nhập";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,7 +281,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(55, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 21);
+            this.label2.Size = new System.Drawing.Size(58, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Email";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -296,7 +296,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 21);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Version 1.0.0";
+            this.label4.Text = "Version 0.1.4";
             // 
             // LoginForm
             // 

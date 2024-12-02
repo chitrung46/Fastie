@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailReportTaskForm));
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblFileName = new System.Windows.Forms.Label();
+            this.customButton2 = new GUI.CustomButton();
+            this.btnUploadFile = new GUI.CustomButton();
+            this.customPanel4 = new GUI.TruniControls.CustomPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.customPanel3 = new GUI.TruniControls.CustomPanel();
             this.lblPositionName = new System.Windows.Forms.Label();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
@@ -37,17 +44,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.customPanel4 = new GUI.TruniControls.CustomPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblFileName = new System.Windows.Forms.Label();
-            this.customButton2 = new GUI.CustomButton();
-            this.btnUploadFile = new GUI.CustomButton();
             this.customPanel1.SuspendLayout();
+            this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel2.SuspendLayout();
-            this.customPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // customPanel1
@@ -76,6 +76,104 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(757, 324);
             this.customPanel1.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(384, 169);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 21);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "n2.docx";
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.AutoSize = true;
+            this.lblFileName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFileName.ForeColor = System.Drawing.Color.White;
+            this.lblFileName.Location = new System.Drawing.Point(587, 169);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(69, 21);
+            this.lblFileName.TabIndex = 57;
+            this.lblFileName.Text = "n2.docx";
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.customButton2.BorderColor = System.Drawing.Color.White;
+            this.customButton2.BorderRadius = 15;
+            this.customButton2.BorderSize = 0;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton2.ForeColor = System.Drawing.Color.White;
+            this.customButton2.Location = new System.Drawing.Point(388, 117);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(141, 40);
+            this.customButton2.TabIndex = 59;
+            this.customButton2.Text = "Tải xuống ảnh";
+            this.customButton2.UseVisualStyleBackColor = false;
+            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
+            // 
+            // btnUploadFile
+            // 
+            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
+            this.btnUploadFile.BorderColor = System.Drawing.Color.White;
+            this.btnUploadFile.BorderRadius = 15;
+            this.btnUploadFile.BorderSize = 0;
+            this.btnUploadFile.FlatAppearance.BorderSize = 0;
+            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
+            this.btnUploadFile.Location = new System.Drawing.Point(591, 117);
+            this.btnUploadFile.Name = "btnUploadFile";
+            this.btnUploadFile.Size = new System.Drawing.Size(128, 40);
+            this.btnUploadFile.TabIndex = 58;
+            this.btnUploadFile.Text = "Tải xuống file";
+            this.btnUploadFile.UseVisualStyleBackColor = false;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
+            // 
+            // customPanel4
+            // 
+            this.customPanel4.AutoScroll = true;
+            this.customPanel4.BackColor = System.Drawing.Color.White;
+            this.customPanel4.BorderColor = System.Drawing.Color.Black;
+            this.customPanel4.BorderRadius = 15;
+            this.customPanel4.BorderSize = 0;
+            this.customPanel4.Controls.Add(this.label1);
+            this.customPanel4.ForeColor = System.Drawing.Color.Black;
+            this.customPanel4.GradientAngle = 90F;
+            this.customPanel4.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel4.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel4.Location = new System.Drawing.Point(387, 43);
+            this.customPanel4.Name = "customPanel4";
+            this.customPanel4.Size = new System.Drawing.Size(332, 40);
+            this.customPanel4.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 10);
+            this.label1.MaximumSize = new System.Drawing.Size(300, 300);
+            this.label1.MinimumSize = new System.Drawing.Size(300, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(300, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "25/11/2024";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(384, 20);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 18);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Ngày báo cáo";
             // 
             // customPanel3
             // 
@@ -152,9 +250,9 @@
             this.lblName.Location = new System.Drawing.Point(29, 20);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(118, 18);
+            this.lblName.Size = new System.Drawing.Size(104, 18);
             this.lblName.TabIndex = 20;
-            this.lblName.Text = "Người báo cáo";
+            this.lblName.Text = "ID Công việc";
             // 
             // label2
             // 
@@ -166,102 +264,6 @@
             this.label2.Size = new System.Drawing.Size(227, 32);
             this.label2.TabIndex = 16;
             this.label2.Text = "Chi tiết báo cáo";
-            // 
-            // customPanel4
-            // 
-            this.customPanel4.AutoScroll = true;
-            this.customPanel4.BackColor = System.Drawing.Color.White;
-            this.customPanel4.BorderColor = System.Drawing.Color.Black;
-            this.customPanel4.BorderRadius = 15;
-            this.customPanel4.BorderSize = 0;
-            this.customPanel4.Controls.Add(this.label1);
-            this.customPanel4.ForeColor = System.Drawing.Color.Black;
-            this.customPanel4.GradientAngle = 90F;
-            this.customPanel4.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel4.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel4.Location = new System.Drawing.Point(387, 43);
-            this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(332, 40);
-            this.customPanel4.TabIndex = 31;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 10);
-            this.label1.MaximumSize = new System.Drawing.Size(300, 300);
-            this.label1.MinimumSize = new System.Drawing.Size(300, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "25/11/2024";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(179)))), ((int)(((byte)(233)))));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(384, 20);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 18);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Ngày báo cáo";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(384, 169);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 21);
-            this.label10.TabIndex = 60;
-            this.label10.Text = "n2.docx";
-            // 
-            // lblFileName
-            // 
-            this.lblFileName.AutoSize = true;
-            this.lblFileName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFileName.ForeColor = System.Drawing.Color.White;
-            this.lblFileName.Location = new System.Drawing.Point(587, 169);
-            this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(73, 21);
-            this.lblFileName.TabIndex = 57;
-            this.lblFileName.Text = "n2.docx";
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.customButton2.BorderColor = System.Drawing.Color.White;
-            this.customButton2.BorderRadius = 15;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(388, 117);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(141, 40);
-            this.customButton2.TabIndex = 59;
-            this.customButton2.Text = "Tải xuống ảnh";
-            this.customButton2.UseVisualStyleBackColor = false;
-            // 
-            // btnUploadFile
-            // 
-            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(92)))));
-            this.btnUploadFile.BorderColor = System.Drawing.Color.White;
-            this.btnUploadFile.BorderRadius = 15;
-            this.btnUploadFile.BorderSize = 0;
-            this.btnUploadFile.FlatAppearance.BorderSize = 0;
-            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadFile.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadFile.Location = new System.Drawing.Point(591, 117);
-            this.btnUploadFile.Name = "btnUploadFile";
-            this.btnUploadFile.Size = new System.Drawing.Size(128, 40);
-            this.btnUploadFile.TabIndex = 58;
-            this.btnUploadFile.Text = "Tải xuống file";
-            this.btnUploadFile.UseVisualStyleBackColor = false;
             // 
             // DetailReportTaskForm
             // 
@@ -275,14 +277,15 @@
             this.Name = "DetailReportTaskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fastie - Chi tiết báo cáo";
+            this.Load += new System.EventHandler(this.DetailReportTaskForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel4.PerformLayout();
             this.customPanel3.ResumeLayout(false);
             this.customPanel3.PerformLayout();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

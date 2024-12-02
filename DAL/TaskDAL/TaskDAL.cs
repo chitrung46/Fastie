@@ -140,7 +140,7 @@ namespace DAL.TaskDAL
         public List<TaskInfo> nhanCongViecChuaDuocGiaoTuTaiKhoan(string idBoPhan, string accountId)
         {
             List<TaskInfo> tasks = new List<TaskInfo>();
-            string query = "proc_layCongViecTuTkChuDuocNhan";
+            string query = "proc_layCongViecChuDongTest";
 
             using (SqlConnection con = SqlConnectionData.Connect())
             {
@@ -148,8 +148,8 @@ namespace DAL.TaskDAL
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@idBoPhan", idBoPhan);
-                    command.Parameters.AddWithValue("@AccountId", accountId);
+                    command.Parameters.AddWithValue("@IdBoPhan", idBoPhan);
+                    command.Parameters.AddWithValue("@IdTaiKhoanNhanViec", accountId);
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -157,19 +157,30 @@ namespace DAL.TaskDAL
                         {
                             TaskInfo task = new TaskInfo
                             {
-                                Id = reader["CongViecID"].ToString(),
-                                Ten = reader["TenCongViec"].ToString(),
-                                MoTa = reader["MoTaCongViec"].ToString(),
+                                //Id = reader["CongViecID"].ToString(),
+                                //Ten = reader["TenCongViec"].ToString(),
+                                //MoTa = reader["MoTaCongViec"].ToString(),
+                                //ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
+                                //ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,  // Xử lý NULL
+                                //ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
+                                //GhiChu = reader["ghiChu"].ToString(),
+                                //TenBoPhan = reader["TenBoPhan"].ToString(),
+                                //TenLoaiCongViec = reader["TenLoaiCongViec"].ToString(),
+                                //TenTienDoCongViec = reader["TenTienDoCongViec"].ToString(),
+                                //TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString(),
+                                SoLuongNhanSuChuDong = reader["SoLuongChuDong"].ToString(),
+                                //TenNhanSuNhanViec = reader["TenNhanSuNhanViec"].ToString()
+
+                                Id = reader["id"].ToString(),
+                                Ten = reader["ten"].ToString(),
+                                MoTa = reader["moTa"].ToString(),
                                 ThoiGianGiaoViec = reader["thoiGianGiaoViec"] as DateTime?,
-                                ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,  // Xử lý NULL
+                                ThoiGianHoanThanh = reader["thoiGianHoanThanh"] as DateTime?,
                                 ThoiHanHoanThanh = reader["thoiHanHoanThanh"] as DateTime?,
                                 GhiChu = reader["ghiChu"].ToString(),
-                                TenBoPhan = reader["TenBoPhan"].ToString(),
-                                //TenLoaiCongViec = reader["TenLoaiCongViec"].ToString(),
-                                TenTienDoCongViec = reader["TenTienDoCongViec"].ToString(),
+                                IdTienDoCongViec = reader["idTienDoCongViec"].ToString(),
                                 TenNhanSuGiaoViec = reader["TenNhanSuGiaoViec"].ToString(),
-                                SoLuongNhanSuChuDong = reader["SoLuongNhanSuChuDong"].ToString(),
-                                //TenNhanSuNhanViec = reader["TenNhanSuNhanViec"].ToString()
+                                TenTienDoCongViec = reader["tienDoCongViec"].ToString()
                             };
 
                             tasks.Add(task);
@@ -571,7 +582,7 @@ namespace DAL.TaskDAL
 
             using (SqlConnection connection = SqlConnectionData.Connect())
             {
-                using (SqlCommand command = new SqlCommand("proc_LayLichSuCongViecChiTiet", connection))
+                using (SqlCommand command = new SqlCommand("proc_LayThongBaoTheoMaTaiKhoan", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@idTaiKhoan", idNguoiDung);
@@ -583,8 +594,9 @@ namespace DAL.TaskDAL
                         {
                             TaskInfo taskInfo = new TaskInfo
                             {
-                                GhiChu = reader["ghiChu"].ToString(),
-                                Ten = reader["tenCongViec"].ToString()
+                                TenNhanSuGiaoViec = reader["TenNhanSu"].ToString(),
+                                Ten = reader["TenCongViec"].ToString(),
+                                TenHanhDong = reader["TenHanhDong"].ToString()
                             };
                             resultList.Add(taskInfo);
                         }
@@ -785,7 +797,9 @@ namespace DAL.TaskDAL
                         NoiDung = reader["ghiChu"].ToString(),
                         NgayBaoCao = reader["thoiGianKhoiTao"] as DateTime?,
                         TenAnh = reader["tenHinhAnh"].ToString(),
-                        TenFile = reader["tenTaiLieu"].ToString()
+                        TenFile = reader["tenTaiLieu"].ToString(),
+                        DuongDanAnh = reader["duongDanHinhAnh"].ToString(),
+                        DuongDanFile = reader["duongDanTaiLieu"].ToString()
                     };
                     danhSachCongViec.Add(baoCao);
                 }
@@ -1170,6 +1184,126 @@ namespace DAL.TaskDAL
                 throw new Exception(ex.Message);
             }
         }
+        public bool NhanViec(string loaiNhanViec, string idCongViec, string idTaiKhoanNhanViec)
+        {
+            try
+            {
+                using (SqlConnection connection = SqlConnectionData.Connect())
+                {
+                    connection.Open();
 
+                    using (SqlCommand command = new SqlCommand("proc_NhanViec", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Thêm tham số cho stored procedure
+                        command.Parameters.AddWithValue("@loaiNhanViec", loaiNhanViec);
+                        command.Parameters.AddWithValue("@idCongViec", idCongViec);
+                        command.Parameters.AddWithValue("@idTaiKhoanNhanViec", idTaiKhoanNhanViec);
+
+                        // Thực thi stored procedure
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Kiểm tra nếu có dòng nào bị ảnh hưởng
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi (nếu cần) và trả về false
+                Console.WriteLine("Lỗi khi nhận việc: " + ex.Message);
+                return false;
+            }
+        }
+        public DateTime LayThoiHanHoanThanh(string idCongViecGoc)
+        {
+            DateTime thoiHanHoanThanh = DateTime.MaxValue; // Giá trị mặc định nếu không tìm thấy
+            // Thay bằng chuỗi kết nối của bạn
+
+            using (SqlConnection connection = SqlConnectionData.Connect())
+            {
+                using (SqlCommand command = new SqlCommand("proc_LayThoiHanHoanThanh", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@idCongViec", idCongViecGoc);
+
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+                    if (result != null && DateTime.TryParse(result.ToString(), out DateTime parsedDate))
+                    {
+                        thoiHanHoanThanh = parsedDate;
+                    }
+                }
+            }
+            return thoiHanHoanThanh;
+        }
+        public Personnel LayThongTinTheoMaTaiKhoan(string idTaiKhoan)
+        {
+            Personnel personnel = null; // Initialize as null to handle cases where no data is found.
+            string query = "proc_LayThongTinTheoMaTaiKhoan";
+
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@idTaiKhoan", idTaiKhoan);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read()) // Ensure there is data to read.
+                        {
+                            personnel = new Personnel
+                            {
+                                Ten = reader["Ten"].ToString(),
+                                Email = reader["Email"].ToString(),                                
+                                Sdt = reader["SDT"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            return personnel; // Will return null if no matching record is found.
+        }
+
+        public string LayIdCongViec()
+        {
+            string result = null;
+            try
+            {
+                using (SqlConnection connection = SqlConnectionData.Connect())
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("proc_LayIdCongViec", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Thêm tham số cho stored procedure
+                        //command.Parameters.AddWithValue("@loaiNhanViec", loaiNhanViec);
+                        //command.Parameters.AddWithValue("@idCongViec", idCongViec);
+                        //command.Parameters.AddWithValue("@idTaiKhoanNhanViec", idTaiKhoanNhanViec);
+
+                        // Thực thi stored procedure
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                result = reader["idCongViec"]?.ToString();
+                            }
+                        }
+                    }
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi (nếu cần) và trả về false
+                Console.WriteLine("Lỗi khi nhận việc: " + ex.Message);
+                return null;
+            }
+        }
     }
 }

@@ -567,7 +567,7 @@
             // 
             this.lblPersonnel.AutoSize = true;
             this.lblPersonnel.Location = new System.Drawing.Point(15, 11);
-            this.lblPersonnel.MaximumSize = new System.Drawing.Size(225, 300);
+            this.lblPersonnel.MaximumSize = new System.Drawing.Size(370, 300);
             this.lblPersonnel.MinimumSize = new System.Drawing.Size(205, 18);
             this.lblPersonnel.Name = "lblPersonnel";
             this.lblPersonnel.Size = new System.Drawing.Size(205, 21);
