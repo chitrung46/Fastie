@@ -244,7 +244,7 @@ namespace Fastie
             var values = await handleDataSheet(spreadsheetId, range);
             if (values == null)
             {
-                Console.WriteLine("Không có dữ liệu nhận việc.");
+                Console.WriteLine("Không có dữ liệu giao việc.");
                 return;
             }
             try

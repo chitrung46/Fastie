@@ -1181,7 +1181,7 @@ namespace DAL.TaskDAL
                 }
             }catch(Exception ex)
             {
-                Console.WriteLine("Lỗi khi tạo công việc từ ý kiến: " + ex.Message);
+                throw new Exception(ex.Message);
             }
         }
         public bool NhanViec(string loaiNhanViec, string idCongViec, string idTaiKhoanNhanViec)

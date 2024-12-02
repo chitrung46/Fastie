@@ -446,11 +446,21 @@ namespace Fastie
         }
 
 
+        private void UpdateComboBoxTextColor(GUI.TruniControls.CustomComboBox comboBox)
+        {
+            if (comboBox.SelectedItem != null)
+            {
+                var selectedItem = (KeyValuePair<string, string>)comboBox.SelectedItem;
+                comboBox.ForeColor = selectedItem.Value == "Chọn" ? Color.Gray : Color.Black;
+            }
+        }
 
-        
+
 
         private void cbPersonnel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateComboBoxTextColor(cbPersonnel);
+
             if (!isLoaded || cbPersonnel.SelectedItem == null) return;
 
             var selectedItem = (KeyValuePair<string, string>)cbPersonnel.SelectedItem;

@@ -167,7 +167,7 @@ Fastie
                 MailMessage mail = new MailMessage();
                 mail.To.Add(email); // Email người nhận
                 mail.From = new MailAddress(fromEmail); // Email người gửi
-                mail.Subject = "Xác nhận yêu cầu hỗ trợ của bạn - [Đội ngũ Firon]"; // Tiêu đề email
+                mail.Subject = "Cập nhật tài khoản thành công - [Đội ngũ Fastie]"; // Tiêu đề email
                 mail.Body = content; // Nội dung email
 
                 // Thiết lập cấu hình SMTP
