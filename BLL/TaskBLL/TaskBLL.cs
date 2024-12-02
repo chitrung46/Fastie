@@ -414,6 +414,52 @@ namespace BLL
                 throw new Exception("Lỗi khi tạo công việc từ ý kiến: " + ex.Message);
             }
         }
+        public bool NhanViec(string loaiNhanViec, string idCongViec, string idTaiKhoanNhanViec)
+        {
+            try
+            {
+                return taskDAL.NhanViec( loaiNhanViec,  idCongViec,  idTaiKhoanNhanViec);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi nhận việc: " + ex.Message);
+            }
+        }
+        public DateTime LayThoiHanHoanThanh(string idCongViecGoc)
+        {
+            try
+            {
+                return taskDAL.LayThoiHanHoanThanh(idCongViecGoc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy thời hạn hoàn thành: " + ex.Message);
+            }
+        }
+
+        public Personnel LayThongTinTheoMaTaiKhoan(string idTaiKhoan)
+        {
+            try
+            {
+                return taskDAL.LayThongTinTheoMaTaiKhoan(idTaiKhoan);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy thông tin tài khoản: " + ex.Message);
+            }
+        }
+
+        public string LayIdCongViec()
+        {
+            try
+            {
+                return taskDAL.LayIdCongViec();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy ID công việc: " + ex.Message);
+            }
+        }
     }
 
 }

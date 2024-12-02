@@ -1,4 +1,5 @@
 ﻿using Fastie.Components.Toastify;
+using Fastie.Screens.Task;
 using Fastie.Screens.Task.ReportTask;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,11 @@ namespace Fastie.Components.LayoutTask
     public partial class LayoutReportTaskForm : UserControl
     {
         private ReportTaskForm reportTaskForm;
-        public LayoutReportTaskForm(ReportTaskForm reportTaskForm)
+        private TaskForm taskForm;
+        public LayoutReportTaskForm(TaskForm taskForm, ReportTaskForm reportTaskForm)
         {
             InitializeComponent();
+            this.taskForm = taskForm;
             this.reportTaskForm = reportTaskForm;
         }
 
@@ -86,6 +89,12 @@ namespace Fastie.Components.LayoutTask
                 showMessage("Vui lòng nhận công việc trước khi báo cáo!", "error");
             }
             
+        }
+
+        private void btnTaskDetail_Click(object sender, EventArgs e)
+        {
+            DetailsTaskForm detailsTaskForm = new DetailsTaskForm(this.taskForm, this.TaskId);
+            taskForm.AddFormInMainLayout(detailsTaskForm);
         }
     }
 }

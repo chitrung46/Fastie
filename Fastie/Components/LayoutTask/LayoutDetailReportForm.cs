@@ -22,6 +22,8 @@ namespace Fastie.Components.LayoutTask
         private string reportDate;
         private string fileName;
         private string imageName;
+        private string fileUrl;
+        private string imageUrl;
         private string idReport;
         public string ReportContent
         {
@@ -51,9 +53,20 @@ namespace Fastie.Components.LayoutTask
             set { imageName = value; lblImageName.Text = imageName; }
         }
 
+        public string FileUrl
+        {
+            get { return fileUrl; }
+            set { fileUrl = value;}
+        }
+        public string ImageUrl
+        {
+            get { return imageUrl; }
+            set { imageUrl = value;}
+        }
+
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            DetailReportTaskForm detailReportTaskForm = new DetailReportTaskForm();
+            DetailReportTaskForm detailReportTaskForm = new DetailReportTaskForm(this);
             detailReportTaskForm.Show();
         }
     }

@@ -119,7 +119,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 21);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Version 1.0.0";
+            this.label1.Text = "Version 0.1.4";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnLogout
@@ -369,7 +369,7 @@
             this.lblPersonnelName.ForeColor = System.Drawing.Color.White;
             this.lblPersonnelName.Location = new System.Drawing.Point(64, 6);
             this.lblPersonnelName.Name = "lblPersonnelName";
-            this.lblPersonnelName.Size = new System.Drawing.Size(48, 21);
+            this.lblPersonnelName.Size = new System.Drawing.Size(47, 21);
             this.lblPersonnelName.TabIndex = 5;
             this.lblPersonnelName.Text = "Toàn";
             this.lblPersonnelName.Click += new System.EventHandler(this.lblPersonnelName_Click);

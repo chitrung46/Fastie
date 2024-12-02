@@ -14,12 +14,14 @@ using DTO;
 using Fastie.Screens.Task.Components;
 using System.IO;
 using System.Net.Http;
+using Fastie.Screens.Task.ReportTask;
 
 namespace Fastie.Screens.Task
 {
     public partial class DetailsTaskForm : Form
     {
         private TaskForm taskForm;
+        private ReportTaskForm reportTaskForm;
         private LayoutGetTaskForm layoutGetTaskForm;
         private LayoutTaskForm layoutTaskForm;
         private LayoutAssignTaskForm layoutAssignTaskForm;
@@ -78,6 +80,27 @@ namespace Fastie.Screens.Task
                 customPanel6.Visible = false;
             }
             
+        }
+        public DetailsTaskForm(ReportTaskForm reportTaskForm, string idTask)
+        {
+            InitializeComponent();
+            this.reportTaskForm = reportTaskForm;
+            this.idTask = idTask;
+            this.idTaiKhoan = reportTaskForm.taskForm.IdTaiKhoan;
+            LoadTaskDetails();
+            congViecChuDong = taskBLL.KiemTraCongViecChuDong(idTask);
+            congViecPhatSinh = taskBLL.KiemTraCongViecPhatSinh(idTask, out idCongViecGoc);
+            btnDelete.Visible = false;
+            btnEdit.Visible = false;
+            btnAdjustmentTask.Visible = true;
+            btnOriginalTask.Visible = congViecPhatSinh;
+
+            if (!congViecChuDong)
+            {
+                label4.Visible = false;
+                customPanel6.Visible = false;
+            }
+
         }
         public DetailsTaskForm(TaskForm taskForm, LayoutGetTaskForm layoutGetTaskForm)
         {
@@ -176,6 +199,10 @@ namespace Fastie.Screens.Task
                 case "AssignTaskForm":
                     AssignTaskForm assignTaskForm = new AssignTaskForm(taskForm);
                     taskForm.AddFormInMainLayout(assignTaskForm);
+                    break;
+                case "ReportTaskForm":
+                    ReportTaskForm reportTaskForm = new ReportTaskForm(taskForm);
+                    taskForm.AddFormInMainLayout(reportTaskForm);
                     break;
             }
         }
@@ -457,6 +484,10 @@ namespace Fastie.Screens.Task
 
         private async void btnUploadFile_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(duongDanTaiLieu))
+            {
+                return;
+            }
             string link = ChuyenLinkTaiLieuSangUC(duongDanTaiLieu);
             if (string.IsNullOrEmpty(link))
             {

@@ -37,14 +37,14 @@ namespace DTO
         private string duongDanTaiLieu;
         private string tenHinhAnh;
         private string tenTaiLieu;
-
+        private string tenHanhDong;
 
 
         // Constructor đầy đủ
         public TaskInfo(string id, string ten, string moTa, DateTime? thoiGianGiaoViec, DateTime? thoiGianHoanThanh, DateTime? thoiHanHoanThanh,
                         string ghiChu, string idTaiKhoanGiaoViec, string idBoPhanGiaoViec, string idLoaiCongViec, string idTienDoCongViec, string idLichSuMacDinh,
                         string tenBoPhan, string tenLoaiCongViec, string tenTienDoCongViec, string tenNhanSuGiaoViec, string soLuongNhanSuChuDong, string tenNhanSuNhanViec, string liDoDieuChinh, string duongDanHinhAnh,
-                        string duongDanTaiLieu, string tenHinhAnh, string tenTaiLieu)
+                        string duongDanTaiLieu, string tenHinhAnh, string tenTaiLieu, string tenHanhDong)
         {
             this.id = id;
             this.ten = ten;
@@ -69,6 +69,7 @@ namespace DTO
             this.duongDanTaiLieu = duongDanTaiLieu;
             this.tenHinhAnh = tenHinhAnh;
             this.tenTaiLieu = tenTaiLieu;
+            this.tenHanhDong = tenHanhDong;
         }
 
         // Constructor tối giản (nếu chỉ có các thuộc tính cơ bản)
@@ -101,5 +102,6 @@ namespace DTO
         public string TenTaiLieu { get => tenTaiLieu; set => tenTaiLieu = value; }
         public string DuongDanHinhAnh { get => duongDanHinhAnh; set => duongDanHinhAnh = value; }
         public string DuongDanTaiLieu { get => duongDanTaiLieu; set => duongDanTaiLieu = value; }
+        public string TenHanhDong { get => tenHanhDong; set => tenHanhDong = value; }
     }
 }

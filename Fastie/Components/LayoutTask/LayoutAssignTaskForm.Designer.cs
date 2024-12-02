@@ -156,6 +156,7 @@
             this.customButton2.Size = new System.Drawing.Size(48, 40);
             this.customButton2.TabIndex = 2;
             this.customButton2.UseVisualStyleBackColor = false;
+            this.customButton2.Visible = false;
             // 
             // customButton1
             // 

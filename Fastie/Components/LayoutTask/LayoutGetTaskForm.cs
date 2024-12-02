@@ -66,26 +66,43 @@ namespace Fastie.Components.LayoutRole
 
         private void btnGetTask_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(taskId) && !string.IsNullOrEmpty(taskForm.IdTaiKhoan))
+            //if (!string.IsNullOrEmpty(taskId) && !string.IsNullOrEmpty(taskForm.IdTaiKhoan))
+            //{
+            //Console.WriteLine("Việc bth");
+            //taskBLL.giaoViecChoTaiKhoan(taskForm.IdTaiKhoan, taskId);
+
+            //    if (this.ParentForm is AcceptTaskForm parentForm)
+            //    {
+            //        // Cập nhật trạng thái dựa vào loại công việc
+            //        string newStatusId = parentForm.CurrentTaskType == "Việc chủ động" ? "TD002" : "TD002";
+            //        taskBLL.capNhatTrangThaiCongViec(taskId, newStatusId);
+            //    }
+
+            //    if (this.Parent != null)
+            //    {
+            //        this.Parent.Controls.Remove(this);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Không tìm thấy ID công việc hoặc ID tài khoản để nhận.", "Lỗi");
+            //}
+            if (this.ParentForm is AcceptTaskForm parentForm)
             {
-                taskBLL.giaoViecChoTaiKhoan(taskForm.IdTaiKhoan, taskId);
-
-                if (this.ParentForm is AcceptTaskForm parentForm)
+                if (parentForm.CurrentTaskType == "Việc chủ động")
                 {
-                    // Cập nhật trạng thái dựa vào loại công việc
-                    string newStatusId = parentForm.CurrentTaskType == "Việc chủ động" ? "TD002" : "TD002";
-                    taskBLL.capNhatTrangThaiCongViec(taskId, newStatusId);
+                    Console.WriteLine("Việc chủ động");
+                    taskBLL.NhanViec("Nhận việc chủ động", taskId, taskForm.IdTaiKhoan);
+                    this.Parent?.Controls.Remove(this);
                 }
-
-                if (this.Parent != null)
+                else
                 {
-                    this.Parent.Controls.Remove(this);
+                    taskBLL.NhanViec("Nhận việc", taskId, taskForm.IdTaiKhoan);
+                    this.Parent?.Controls.Remove(this);
                 }
             }
-            else
-            {
-                MessageBox.Show("Không tìm thấy ID công việc hoặc ID tài khoản để nhận.", "Lỗi");
-            }
+
+            
         }
 
 
