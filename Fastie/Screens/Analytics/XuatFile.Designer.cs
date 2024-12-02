@@ -65,7 +65,6 @@
             this.customPanel2.Controls.Add(this.txbFooter);
             this.customPanel2.Controls.Add(this.label2);
             this.customPanel2.Controls.Add(this.ckbLabelNumberOfPages);
-            this.customPanel2.Controls.Add(this.ckbSoftwareVersion);
             this.customPanel2.ForeColor = System.Drawing.Color.Black;
             this.customPanel2.GradientAngle = 90F;
             this.customPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -169,7 +168,7 @@
             this.ckbSoftwareVersion.Checked = true;
             this.ckbSoftwareVersion.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbSoftwareVersion.ForeColor = System.Drawing.Color.White;
-            this.ckbSoftwareVersion.Location = new System.Drawing.Point(28, 48);
+            this.ckbSoftwareVersion.Location = new System.Drawing.Point(28, 126);
             this.ckbSoftwareVersion.Name = "ckbSoftwareVersion";
             this.ckbSoftwareVersion.Size = new System.Drawing.Size(103, 20);
             this.ckbSoftwareVersion.TabIndex = 0;
@@ -188,6 +187,7 @@
             this.customPanel1.Controls.Add(this.txbHeader);
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.Controls.Add(this.ckbDocumentDate);
+            this.customPanel1.Controls.Add(this.ckbSoftwareVersion);
             this.customPanel1.Controls.Add(this.ckbDocumentNumber);
             this.customPanel1.Controls.Add(this.ckbDocumentName);
             this.customPanel1.ForeColor = System.Drawing.Color.Black;
@@ -328,6 +328,7 @@
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSubmit
             // 

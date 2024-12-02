@@ -338,6 +338,7 @@
             this.btnExportPDF.TabIndex = 29;
             this.btnExportPDF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportPDF.UseVisualStyleBackColor = false;
+            this.btnExportPDF.Click += new System.EventHandler(this.btnExportPDF_Click);
             // 
             // Analytics
             // 

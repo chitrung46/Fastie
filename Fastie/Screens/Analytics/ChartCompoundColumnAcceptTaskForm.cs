@@ -40,38 +40,61 @@ namespace Fastie.Screens.Analytics
 
         private void InitializeColumnChartAcceptTask()
         {
-            List<AnalyticsDTO> data = analyticsBLL.ThongKeNhanViecChuDongVaDieuChinh(accountId, departmentId, positionId, personnelId, startDate, endDate);
-
-            // Set chart title
-            chartAcceptTask.Titles.Add("Thống kê số lần nhận việc và xin điều chỉnh phân công");
-
-            // Set up ChartArea
-            ChartArea chartArea = new ChartArea("MainArea");
-            chartAcceptTask.ChartAreas.Clear();
-            chartAcceptTask.ChartAreas.Add(chartArea);
-
-            // Configure series
-            Series seriesAcceptTask = new Series("Nhận việc chủ động") { ChartType = SeriesChartType.Column };
-            Series seriesAdjustRequest = new Series("Xin điều chỉnh") { ChartType = SeriesChartType.Column };
-
-            seriesAcceptTask.Points.AddXY("Nhận việc", data[0].SoLanNhanViecChuDong);
-            seriesAdjustRequest.Points.AddXY("Xin điều chỉnh", data[0].SoLanXinDieuChinh);
-
-            // Add series to the chart
-            chartAcceptTask.Series.Clear();
-            chartAcceptTask.Series.Add(seriesAcceptTask);
-            chartAcceptTask.Series.Add(seriesAdjustRequest);
-
-            // Configure axis
-            chartArea.AxisX.Title = "Trạng thái";
-            chartArea.AxisY.Title = "Số lượng";
-            chartArea.AxisY.Interval = 1;
-
-            // Add legend if not present
-            if (chartAcceptTask.Legends.Count == 0)
+            try
             {
-                chartAcceptTask.Legends.Add(new Legend("Legend"));
+                Console.WriteLine($"[UI Input] accountId: {accountId}, departmentId: {departmentId}, positionId: {positionId}, personnelId: {personnelId}, startDate: {startDate}, endDate: {endDate}");
+                List<AnalyticsDTO> data = analyticsBLL.ThongKeNhanViecChuDongVaDieuChinh(accountId, departmentId, positionId, personnelId, startDate, endDate);
+
+                if (data == null || data.Count == 0)
+                {
+                    Console.WriteLine("[UI Log] No data returned from BLL.");
+                    MessageBox.Show("Không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                foreach (var item in data)
+                {
+                    Console.WriteLine($"[UI Data Row] SoLanNhanViecChuDong: {item.SoLanNhanViecChuDong}, SoLanXinDieuChinh: {item.SoLanXinDieuChinhPhanCong}");
+                }
+
+                // Chart rendering logic
+                chartAcceptTask.Titles.Clear();
+                chartAcceptTask.Titles.Add("Thống kê số lần nhận việc và xin điều chỉnh phân công");
+
+                ChartArea chartArea = new ChartArea("MainArea");
+                chartAcceptTask.ChartAreas.Clear();
+                chartAcceptTask.ChartAreas.Add(chartArea);
+
+                Series seriesAcceptTask = new Series("Nhận việc chủ động") { ChartType = SeriesChartType.Column };
+                Series seriesAdjustRequest = new Series("Xin điều chỉnh") { ChartType = SeriesChartType.Column };
+
+                foreach (var item in data)
+                {
+                    seriesAcceptTask.Points.AddXY("Nhận việc", item.SoLanNhanViecChuDong);
+                    seriesAdjustRequest.Points.AddXY("Xin điều chỉnh", item.SoLanXinDieuChinhPhanCong);
+                }
+
+                chartAcceptTask.Series.Clear();
+                chartAcceptTask.Series.Add(seriesAcceptTask);
+                chartAcceptTask.Series.Add(seriesAdjustRequest);
+
+                chartArea.AxisX.Title = "Trạng thái";
+                chartArea.AxisY.Title = "Số lượng";
+                chartArea.AxisY.Interval = 1;
+
+                if (chartAcceptTask.Legends.Count == 0)
+                {
+                    chartAcceptTask.Legends.Add(new Legend("Legend"));
+                }
+
+                Console.WriteLine("[UI Log] Chart initialized successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[UI Error] {ex.Message}");
+                MessageBox.Show($"Lỗi khi hiển thị biểu đồ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

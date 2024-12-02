@@ -240,7 +240,7 @@ namespace Fastie
         public async void handleAssignTask()
         {
             string spreadsheetId = "1OIK7_bkcgyw_eNl1CDU4bBZNeg7PFeEstboGf7TBG7E";  // Thay bằng Spreadsheet ID
-            string range = "'Data sample'!A3:F";  // Dải dữ liệu cần đọc
+            string range = "'Split'!B3:G";  // Dải dữ liệu cần đọc
             var values = await handleDataSheet(spreadsheetId, range);
             if (values == null)
             {
@@ -358,17 +358,6 @@ namespace Fastie
             handleAcceptTask();
             handleReportOnline();
             handleAssignTask();
-
-            TaskTableForm taskTableForm = new TaskTableForm(this);
-            AssignTaskForm assignTaskForm = new AssignTaskForm(this);
-            AcceptTaskForm acceptTaskForm = new AcceptTaskForm(this);
-            ReportTaskForm reportTaskForm = new ReportTaskForm(this);
-
-            reportTaskForm.loadDataReportTask();
-            acceptTaskForm.loadDataAcceptTask();
-            assignTaskForm.LoadDataAssignTask();
-            taskTableForm.LoadTaskTable();
-
             showMessage("Cập nhật báo cáo và nhận việc online", "success");
         }
     }

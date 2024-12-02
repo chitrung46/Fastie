@@ -404,11 +404,11 @@ namespace BLL
 
         }
 
-        public void TaoCongViecTuYKien(string tenCongViec, string tenBoPhan, string thoiGianGhiNhan, string moTa, string thoiHanHoanThanh)
+        public void TaoCongViecTuYKien(string tenCongViec, string tenBoPhan, string moTa, string thoiGianGhiNhan, string thoiHanHoanThanh)
         {
             try
             {
-                taskDAL.TaoCongViecTuYKien(tenCongViec, tenBoPhan, thoiGianGhiNhan, moTa, thoiHanHoanThanh);
+                taskDAL.TaoCongViecTuYKien(tenCongViec, tenBoPhan, moTa, thoiGianGhiNhan, thoiHanHoanThanh);
             } catch(Exception ex)
             {
                 throw new Exception("Lỗi khi tạo công việc từ ý kiến: " + ex.Message);
