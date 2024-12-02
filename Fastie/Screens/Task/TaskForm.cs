@@ -243,7 +243,7 @@ namespace Fastie
             var values = await handleDataSheet(spreadsheetId, range);
             if (values == null)
             {
-                Console.WriteLine("Không có dữ liệu nhận việc.");
+                Console.WriteLine("Không có dữ liệu giao việc.");
                 return;
             }
             try
@@ -255,7 +255,6 @@ namespace Fastie
                     string moTa = values[i][3]?.ToString();
                     string thoiGianGhiNhan = values[i][4]?.ToString();
                     string thoiHanHoanThanh = values[i][5]?.ToString();
-                    MessageBox.Show($"{ten} - {tenBoPhan} - {moTa} - {thoiGianGhiNhan} - {thoiHanHoanThanh}");
                     taskBLL.TaoCongViecTuYKien(ten, tenBoPhan, moTa, thoiGianGhiNhan,thoiHanHoanThanh);
                 }
             }catch (Exception ex)
