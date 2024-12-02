@@ -14,7 +14,7 @@ namespace DAL
     {
         public static SqlConnection Connect()
         {
-            string connectionString = @"Data Source=ANH-QUAN;Initial Catalog=FASTIE_DEMO;Integrated Security=True";
+            string connectionString = @"Data Source=HA-VY;Initial Catalog=FASTIE_27_11;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connectionString);
             return conn;
         }

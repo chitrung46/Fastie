@@ -780,8 +780,8 @@ namespace Fastie
                 showMessage("Vui lòng chọn nhân sự!", "error");
                 return;
             }
-            string filePathWord = "D:\\Bao_cao.docx";
-            string filePathPDF = "D:\\Bao_cao.pdf";
+            string filePathWord = "D:\\Bao_cao_CongViec.docx";
+            string filePathPDF = "D:\\Bao_cao_CongViec.pdf";
 
             try
             {
