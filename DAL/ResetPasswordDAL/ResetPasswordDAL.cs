@@ -138,6 +138,29 @@ namespace DAL
                 return null;
             }
         }
+        public static string GetPasswordByEmail(string email)
+        {
+            using (SqlConnection conn = SqlConnectionData.Connect())
+            {
+                SqlCommand cmd = new SqlCommand("proc_getPasswordByEmail", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                // Truyền tham số email
+                cmd.Parameters.AddWithValue("@Email", email);
+
+                conn.Open();
+                object result = cmd.ExecuteScalar(); // Lấy giá trị duy nhất
+                return result?.ToString(); // Trả về mật khẩu hoặc null nếu không tìm thấy
+            }
+        }
+
+
+
+
+
+
 
     }
 }

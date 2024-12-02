@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using BLL;
 using Fastie.Components.Toastify;
+using Microsoft.Office.Interop.Word;
 namespace Fastie.Screens.Login.ForgetPassword
 {
     public partial class ResetPasswordForm : Form
@@ -40,7 +41,12 @@ namespace Fastie.Screens.Login.ForgetPassword
                 showMessage("Mật khẩu phải có ít nhất 6 ký tự!", "error");
                 return;
             }
-
+            string currentPassword = resetPasswordBLL.GetPasswordByEmail(userEmail);
+            if (currentPassword == newPassword)
+            {
+                showMessage("Mật khẩu mới không được giống mật khẩu cũ. Vui lòng nhập mật khẩu khác.", "error");
+                return;
+            }
             // Gọi BLL để cập nhật mật khẩu trong cơ sở dữ liệu
             bool isUpdated = resetPasswordBLL.UpdateNewPassword(userEmail, newPassword);
             if (isUpdated)

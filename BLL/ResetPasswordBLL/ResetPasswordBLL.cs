@@ -74,6 +74,11 @@ namespace BLL
         {
             return ResetPasswordDAL.UpdatePassword(email, newPassword);
         }
+        public string GetPasswordByEmail(string email)
+        {
+            return ResetPasswordDAL.GetPasswordByEmail(email); // Gọi phương thức DAL
+        }
+
 
     }
 }
