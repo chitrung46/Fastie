@@ -35,6 +35,8 @@ namespace Fastie.Screens.Analytics
         public XuatFile()
         {
             InitializeComponent();
+            InitializeDataGridView();
+            InitializeDataGridViewFooter();
         }
 
         public XuatFile(string idBoPhan, string ngayBatDau, string ngayKetThuc)
@@ -585,38 +587,71 @@ namespace Fastie.Screens.Analytics
                 doc.Content.Font.Name = "Times New Roman";
                 doc.Content.Font.Size = 13;
 
+
                 // Header
                 Word.HeaderFooter header = doc.Sections[1].Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary];
                 header.Range.Text = ""; // Reset header
 
+                // Sử dụng StringBuilder để xây dựng nội dung header
+                StringBuilder headerContent = new StringBuilder();
+
                 // Thêm nội dung Header dựa trên checkbox
                 if (ckbDocumentName.Checked)
                 {
-                    header.Range.Text += "Tên tài liệu: Báo cáo kết quả công việc tháng 11.2024";
+                    headerContent.AppendLine("Tên tài liệu: Báo cáo kết quả công việc tháng 11.2024");
                 }
                 if (ckbDocumentNumber.Checked)
                 {
                     string documentNumber = GenerateDocumentNumber();
-                    header.Range.Text += $"Số tài liệu: {documentNumber}";
+                    headerContent.AppendLine($"Số tài liệu: {documentNumber}");
                 }
                 if (ckbDocumentDate.Checked)
                 {
-                    header.Range.Text += $"Ngày: {DateTime.Now.ToString("dd/MM/yyyy")}";
+                    headerContent.AppendLine($"Ngày: {DateTime.Now.ToString("dd/MM/yyyy")}");
                 }
                 if (ckbSoftwareVersion.Checked)
                 {
-                    header.Range.Text += "Fastie v0.1.4";
+                    headerContent.AppendLine("Fastie v0.1.4");
                 }
+
+                // Thêm các giá trị từ DataGridView vào sau các checkbox
+                foreach (DataGridViewRow row in dgvHeader.Rows)
+                {
+                    if (row.Cells[0].Value != null) // Kiểm tra nếu ô có giá trị
+                    {
+                        headerContent.AppendLine(row.Cells[0].Value.ToString()); // Thêm giá trị từng dòng
+                    }
+                }
+
+                // Gán nội dung hoàn chỉnh vào header
+                header.Range.Text = headerContent.ToString();
+
+                // Đặt căn chỉnh đoạn văn bản
                 header.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
+
                 // Footer
-                Word.HeaderFooter footer = doc.Sections[1].Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary];
+                // Footer
+                HeaderFooter footer = doc.Sections[1].Footers[WdHeaderFooterIndex.wdHeaderFooterPrimary];
                 footer.Range.Text = ""; // Reset footer
-                if (ckbLabelNumberOfPages.Checked)
+
+                // Thêm nội dung "test" vào footer
+                footer.Range.Text = "test\n";
+
+                // Thêm số trang dưới dòng "test"
+                footer.Range.Collapse(WdCollapseDirection.wdCollapseEnd);
+                footer.Range.Fields.Add(footer.Range, WdFieldType.wdFieldPage);
+                footer.Range.InsertAfter("\n");
+
+                // Thêm nội dung Footer từ DataGridView
+                foreach (DataGridViewRow row in dgvFooter.Rows)
                 {
-                    footer.Range.Text += "Trang số: ";
-                    footer.Range.Fields.Add(footer.Range, Word.WdFieldType.wdFieldPage);
+                    if (row.Cells[0].Value != null)
+                    {
+                        footer.Range.InsertAfter(row.Cells[0].Value.ToString() + "\n");
+                    }
                 }
+
 
                 // Thêm thông tin mặc định
                 var title1 = doc.Content.Paragraphs.Add();
@@ -906,17 +941,50 @@ namespace Fastie.Screens.Analytics
 
                 // Lưu file
                 doc.SaveAs2(filePath);
-                MessageBox.Show("Báo cáo đã được tạo thành công tại: " + filePath);
+                showMessage("Báo cáo đã được tạo thành công tại: " + filePath, "success");
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                showMessage("Đã xảy ra lỗi: " + ex.Message, "error");
+
             }
             finally
             {
-                doc.Close();
-                wordApp.Quit();
+                if (doc != null)
+                {
+                    try
+                    {
+                        doc.Close(false);
+                    }
+                    catch
+                    {
+                        // Bỏ qua lỗi đóng tài liệu
+                    }
+                }
+
+                if (wordApp != null)
+                {
+                    try
+                    {
+                        wordApp.Quit();
+                    }
+                    catch
+                    {
+                        // Bỏ qua lỗi đóng ứng dụng
+                    }
+                }
+
+                // Giải phóng tài nguyên COM
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(doc);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(wordApp);
+                doc = null;
+                wordApp = null;
+
+                GC.Collect(); // Thu gom rác
+                GC.WaitForPendingFinalizers();
             }
+
         }
 
         private string GenerateDocumentNumber()
@@ -928,6 +996,144 @@ namespace Fastie.Screens.Analytics
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAddHeader_Click(object sender, EventArgs e)
+        {
+            // Lấy giá trị từ TextBox
+            string headerText = txbHeader.Text.Trim();
+
+            if (!string.IsNullOrEmpty(headerText))
+            {
+                // Thêm giá trị vào DataGridView
+                dgvHeader.Rows.Add(headerText);
+
+                // Xóa nội dung TextBox sau khi thêm
+                txbHeader.Text = string.Empty;
+
+                // Thông báo thành công
+                showMessage("Đã thêm nội dung vào DataGridView.", "success");
+            }
+            else
+            {
+                // Hiển thị thông báo nếu TextBox rỗng
+                showMessage("Vui lòng nhập nội dung header.", "warning");
+
+            }
+        }
+
+        private void InitializeDataGridView()
+        {
+            // Xóa tất cả các cột nếu đã tồn tại
+            dgvHeader.Columns.Clear();
+
+            // Thêm cột vào DataGridView
+            dgvHeader.Columns.Add("HeaderTextColumn", "Header Text");
+        }
+
+        private void btnDeleteHeader_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu DataGridView không có hàng nào được chọn
+            if (dgvHeader.SelectedRows.Count == 0)
+            {
+                showMessage("Vui lòng chọn một dòng để xóa.", "warning");
+                return;
+            }
+
+            // Xóa hàng được chọn
+            foreach (DataGridViewRow row in dgvHeader.SelectedRows)
+            {
+                if (!row.IsNewRow) // Kiểm tra không phải hàng mới
+                {
+                    dgvHeader.Rows.Remove(row);
+                }
+            }
+
+            // Thông báo thành công
+            showMessage("Đã xóa dòng thành công!", "success");
+        }
+
+        private void dgvHeader_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra nếu không phải nhấn vào tiêu đề cột
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Lấy dòng hiện tại mà người dùng click
+                DataGridViewRow selectedRow = dgvHeader.Rows[e.RowIndex];
+
+                // Hiển thị dữ liệu của dòng đã chọn (nếu cần)
+                string headerText = selectedRow.Cells[0].Value?.ToString() ?? "Không có dữ liệu";
+       
+            }
+        }
+
+        private void btnAddFooter_Click(object sender, EventArgs e)
+        {
+            // Lấy giá trị từ TextBox
+            string footerText = txbFooter.Text.Trim();
+
+            if (!string.IsNullOrEmpty(footerText))
+            {
+                // Thêm giá trị vào DataGridView
+                dgvFooter.Rows.Add(footerText);
+
+                // Xóa nội dung TextBox sau khi thêm
+                txbFooter.Text = string.Empty;
+
+                // Thông báo thành công
+                showMessage("Đã thêm nội dung vào Footer.", "success");
+
+            }
+            else
+            {
+                // Hiển thị thông báo nếu TextBox rỗng
+                showMessage("Vui lòng nhập nội dung Footer.", "warning");
+
+            }
+        }
+        private void InitializeDataGridViewFooter()
+        {
+            // Xóa tất cả các cột nếu đã tồn tại
+            dgvFooter.Columns.Clear();
+
+            // Thêm cột vào DataGridView
+            dgvFooter.Columns.Add("FooterTextColumn", "Footer Text");
+        }
+
+        private void btnDeleteFooter_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có dòng nào được chọn không
+            if (dgvFooter.SelectedRows.Count > 0)
+            {
+                // Xóa dòng được chọn
+                foreach (DataGridViewRow row in dgvFooter.SelectedRows)
+                {
+                    if (!row.IsNewRow) // Không xóa dòng trống
+                    {
+                        dgvFooter.Rows.Remove(row);
+                    }
+                }
+
+                // Thông báo thành công
+                showMessage("Đã xóa dòng trong Footer.", "success");
+
+            }
+            else
+            {
+                // Thông báo nếu không có dòng nào được chọn
+                showMessage("Vui lòng chọn một dòng để xóa.", "warning");
+
+            }
+        }
+
+        private void dgvFooter_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Đảm bảo không click vào tiêu đề cột
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Lấy nội dung của dòng được chọn và hiển thị trong TextBox (nếu cần)
+                txbFooter.Text = dgvFooter.Rows[e.RowIndex].Cells["FooterTextColumn"].Value?.ToString();
+            }
         }
     }
 }

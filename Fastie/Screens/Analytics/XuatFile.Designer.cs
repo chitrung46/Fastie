@@ -30,6 +30,7 @@
         {
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.dgvFooter = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDeleteFooter = new GUI.CustomButton();
             this.btnAddFooter = new GUI.CustomButton();
             this.txbFooter = new GUI.TruniControls.CustomTextBox();
@@ -38,6 +39,7 @@
             this.ckbSoftwareVersion = new System.Windows.Forms.CheckBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.dgvHeader = new System.Windows.Forms.DataGridView();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDeleteHeader = new GUI.CustomButton();
             this.btnAddHeader = new GUI.CustomButton();
             this.txbHeader = new GUI.TruniControls.CustomTextBox();
@@ -78,12 +80,21 @@
             // 
             this.dgvFooter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFooter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFooter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
             this.dgvFooter.Location = new System.Drawing.Point(15, 112);
             this.dgvFooter.Name = "dgvFooter";
             this.dgvFooter.RowHeadersWidth = 51;
             this.dgvFooter.RowTemplate.Height = 24;
             this.dgvFooter.Size = new System.Drawing.Size(712, 77);
             this.dgvFooter.TabIndex = 16;
+            this.dgvFooter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFooter_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Data";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
             // 
             // btnDeleteFooter
             // 
@@ -100,6 +111,7 @@
             this.btnDeleteFooter.Size = new System.Drawing.Size(43, 34);
             this.btnDeleteFooter.TabIndex = 7;
             this.btnDeleteFooter.UseVisualStyleBackColor = false;
+            this.btnDeleteFooter.Click += new System.EventHandler(this.btnDeleteFooter_Click);
             // 
             // btnAddFooter
             // 
@@ -116,6 +128,7 @@
             this.btnAddFooter.Size = new System.Drawing.Size(43, 34);
             this.btnAddFooter.TabIndex = 6;
             this.btnAddFooter.UseVisualStyleBackColor = false;
+            this.btnAddFooter.Click += new System.EventHandler(this.btnAddFooter_Click);
             // 
             // txbFooter
             // 
@@ -201,14 +214,24 @@
             // 
             // dgvHeader
             // 
+            this.dgvHeader.AllowUserToOrderColumns = true;
             this.dgvHeader.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHeader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHeader.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Data});
             this.dgvHeader.Location = new System.Drawing.Point(15, 142);
             this.dgvHeader.Name = "dgvHeader";
             this.dgvHeader.RowHeadersWidth = 51;
             this.dgvHeader.RowTemplate.Height = 24;
             this.dgvHeader.Size = new System.Drawing.Size(712, 77);
             this.dgvHeader.TabIndex = 16;
+            this.dgvHeader.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHeader_CellContentClick);
+            // 
+            // Data
+            // 
+            this.Data.HeaderText = "Data";
+            this.Data.MinimumWidth = 6;
+            this.Data.Name = "Data";
             // 
             // btnDeleteHeader
             // 
@@ -225,6 +248,7 @@
             this.btnDeleteHeader.Size = new System.Drawing.Size(43, 34);
             this.btnDeleteHeader.TabIndex = 7;
             this.btnDeleteHeader.UseVisualStyleBackColor = false;
+            this.btnDeleteHeader.Click += new System.EventHandler(this.btnDeleteHeader_Click);
             // 
             // btnAddHeader
             // 
@@ -241,6 +265,7 @@
             this.btnAddHeader.Size = new System.Drawing.Size(43, 34);
             this.btnAddHeader.TabIndex = 6;
             this.btnAddHeader.UseVisualStyleBackColor = false;
+            this.btnAddHeader.Click += new System.EventHandler(this.btnAddHeader_Click);
             // 
             // txbHeader
             // 
@@ -390,5 +415,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox ckbLabelNumberOfPages;
         private System.Windows.Forms.CheckBox ckbSoftwareVersion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
