@@ -29,7 +29,9 @@ namespace Fastie.Screens.Task.Components
         {
             lblTaskAssigner.Text = notification.AssignerName;
             lblTaskDetail.Text = notification.TaskName;
-
+            lblActionName.Text = notification.ActionName;
         }
+
+        
     }
 }

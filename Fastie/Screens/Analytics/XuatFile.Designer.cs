@@ -284,7 +284,7 @@
             this.ckbDocumentDate.Name = "ckbDocumentDate";
             this.ckbDocumentDate.Size = new System.Drawing.Size(132, 20);
             this.ckbDocumentDate.TabIndex = 2;
-            this.ckbDocumentDate.Text = "Ngày: 26/11/2024";
+            this.ckbDocumentDate.Text = "Ngày: 27/11/2024";
             this.ckbDocumentDate.UseVisualStyleBackColor = true;
             // 
             // ckbDocumentNumber
@@ -297,7 +297,7 @@
             this.ckbDocumentNumber.Name = "ckbDocumentNumber";
             this.ckbDocumentNumber.Size = new System.Drawing.Size(226, 20);
             this.ckbDocumentNumber.TabIndex = 1;
-            this.ckbDocumentNumber.Text = "Số tài liệu: BC001_TK0000000003";
+            this.ckbDocumentNumber.Text = "Số tài liệu: BC012_TK0000000003";
             this.ckbDocumentNumber.UseVisualStyleBackColor = true;
             // 
             // ckbDocumentName

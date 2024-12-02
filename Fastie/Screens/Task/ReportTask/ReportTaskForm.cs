@@ -34,7 +34,7 @@ namespace Fastie.Screens.Task.ReportTask
             List<TaskInfo> tasks = taskBLL.layCongViecTheoID(this.taskForm.IdTaiKhoan);
             foreach (TaskInfo congViec in tasks)
             {
-                LayoutReportTaskForm layoutCongViec = new LayoutReportTaskForm(this)
+                LayoutReportTaskForm layoutCongViec = new LayoutReportTaskForm(taskForm, this)
                 {
                     TaskName = congViec.Ten,
                     TaskTime = congViec.ThoiHanHoanThanh.HasValue ? congViec.ThoiHanHoanThanh.Value.ToString("dd/MM/yyyy") : "N/A",

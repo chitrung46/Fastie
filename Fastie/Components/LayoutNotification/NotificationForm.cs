@@ -15,6 +15,7 @@ namespace Fastie.Components.LayoutNotification
     {
         private string taskName;
         private string assignerName;
+        private string actionName;
 
         public NotificationForm()
         {
@@ -30,6 +31,11 @@ namespace Fastie.Components.LayoutNotification
         {
             get { return assignerName; }
             set { assignerName = value; lblAssignerName.Text = value; }
+        }
+        public string ActionName
+        {
+            get { return actionName; }
+            set { actionName = value;}
         }
 
         private void pictureboxDetail_Click(object sender, EventArgs e)

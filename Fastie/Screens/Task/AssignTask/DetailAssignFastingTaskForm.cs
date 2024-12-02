@@ -7,6 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
@@ -97,60 +98,74 @@ namespace Fastie.Screens.Task
                 excelData.Clear();
 
                 // Get user-input columns for each data type
-                string taskNameColumn = dgvAssignTaskFast.Rows[0].Cells["Column"].Value?.ToString();
-                string taskTypeColumn = dgvAssignTaskFast.Rows[1].Cells["Column"].Value?.ToString();
-                string taskDescriptionColumn = dgvAssignTaskFast.Rows[2].Cells["Column"].Value?.ToString();
-                string completionDeadlineColumn = dgvAssignTaskFast.Rows[3].Cells["Column"].Value?.ToString();
+                string taskNameColumn = dgvAssignTaskFast.Rows[0].Cells["Column"].Value?.ToString().ToUpper();
+                string taskTypeColumn = dgvAssignTaskFast.Rows[1].Cells["Column"].Value?.ToString().ToUpper();
+                string taskDescriptionColumn = dgvAssignTaskFast.Rows[2].Cells["Column"].Value?.ToString().ToUpper();
+                string completionDeadlineColumn = dgvAssignTaskFast.Rows[3].Cells["Column"].Value?.ToString().ToUpper();
 
                 if (string.IsNullOrWhiteSpace(taskNameColumn) ||
                     string.IsNullOrWhiteSpace(taskTypeColumn) ||
                     string.IsNullOrWhiteSpace(taskDescriptionColumn) ||
                     string.IsNullOrWhiteSpace(completionDeadlineColumn))
                 {
-                    showMessage("Vui lòng điền đủ thôn tin", "error");
+                    showMessage("Vui lòng điền đủ thông tin", "error");
                     return;
                 }
-
-                List<string> errorMessages = new List<string>();
-
-                for (int i = startRow; i <= rowCount; i++)
+                if (Regex.IsMatch(taskTypeColumn ?? "", @"^\d+$")
+                    || Regex.IsMatch(taskNameColumn ?? "", @"^\d+$")
+                    || Regex.IsMatch(taskDescriptionColumn ?? "", @"^\d+$")
+                    || Regex.IsMatch(completionDeadlineColumn ?? "", @"^\d+$"))
                 {
-                    
-                    string taskName = worksheet.Cells[i, ExcelColumnLetterToNumber(taskNameColumn)].Text;
-                    string taskType = worksheet.Cells[i, ExcelColumnLetterToNumber(taskTypeColumn)].Text;
-                    string taskDescription = worksheet.Cells[i, ExcelColumnLetterToNumber(taskDescriptionColumn)].Text;
-                    string completionDeadlineText = worksheet.Cells[i, ExcelColumnLetterToNumber(completionDeadlineColumn)].Text;
-
-                    DateTime completionDeadline = DateTime.TryParseExact(completionDeadlineText,
-                                                                        "dd/MM/yyyy HH:mm",
-                                                                        CultureInfo.InvariantCulture,
-                                                                        DateTimeStyles.None,
-                                                                        out var parsedDate) ? parsedDate : DateTime.Now;
-
-                    var task = new TaskInfo
-                    {
-                        Ten = taskName,
-                        MoTa = taskDescription,
-                        ThoiGianGiaoViec = DateTime.Now,
-                        ThoiHanHoanThanh = completionDeadline,
-                        IdTaiKhoanGiaoViec = this.idTaiKhoan,
-                        IdLoaiCongViec = taskBLL.LayIdLoaiCongViecTuTen(taskType),
-                        IdBoPhanGiaoViec = this.idBoPhanKhiDangNhap,
-                        Id = taskBLL.TaoCongViecId(taskBLL.LayIdLoaiCongViecTuTen(taskType), this.idBoPhanKhiDangNhap),
-                        GhiChu = "",
-                        IdTienDoCongViec = "TD001",
-                        IdLichSuMacDinh = taskBLL.TaoLichSuId()
-                    };
-
-                    bool result = taskBLL.ThemCongViecGiaoViec(task);
-                    showMessage("Thêm các công việc thành công !", "success");
-                    //if (!result)
-                    //{
-                    //    errorMessages.Add($"Failed to add task '{taskName}' at row {i}.");
-                    //}
-                                     
+                    showMessage("Định dạng bắt buộc là chữ cái!", "error");
+                    return;
                 }
+                
+                List<string> errorMessages = new List<string>();
+                try
+                {
+                    for (int i = startRow; i <= rowCount; i++)
+                    {
 
+                        string taskName = worksheet.Cells[i, ExcelColumnLetterToNumber(taskNameColumn)].Text;
+                        string taskType = worksheet.Cells[i, ExcelColumnLetterToNumber(taskTypeColumn)].Text;
+                        string taskDescription = worksheet.Cells[i, ExcelColumnLetterToNumber(taskDescriptionColumn)].Text;
+                        string completionDeadlineText = worksheet.Cells[i, ExcelColumnLetterToNumber(completionDeadlineColumn)].Text;
+
+                        DateTime completionDeadline = DateTime.TryParseExact(completionDeadlineText,
+                                                                            "dd/MM/yyyy HH:mm",
+                                                                            CultureInfo.InvariantCulture,
+                                                                            DateTimeStyles.None,
+                                                                            out var parsedDate) ? parsedDate : DateTime.Now;
+
+                        var task = new TaskInfo
+                        {
+                            Ten = taskName,
+                            MoTa = taskDescription,
+                            ThoiGianGiaoViec = DateTime.Now,
+                            ThoiHanHoanThanh = completionDeadline,
+                            IdTaiKhoanGiaoViec = this.idTaiKhoan,
+                            IdLoaiCongViec = taskBLL.LayIdLoaiCongViecTuTen(taskType),
+                            IdBoPhanGiaoViec = this.idBoPhanKhiDangNhap,
+                            Id = taskBLL.TaoCongViecId(taskBLL.LayIdLoaiCongViecTuTen(taskType), this.idBoPhanKhiDangNhap),
+                            GhiChu = "",
+                            IdTienDoCongViec = "TD001",
+                            IdLichSuMacDinh = taskBLL.TaoLichSuId()
+                        };
+
+                        bool result = taskBLL.ThemCongViecGiaoViec(task);
+                        showMessage("Thêm các công việc thành công !", "success");
+                        //if (!result)
+                        //{
+                        //    errorMessages.Add($"Failed to add task '{taskName}' at row {i}.");
+                        //}
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    showMessage("Vui lòng nhập đúng định dạng!", "error");
+                    return;
+                }
                 //if (errorMessages.Any())
                 //{
                 //    showMessage(string.Join(Environment.NewLine, errorMessages), "error");

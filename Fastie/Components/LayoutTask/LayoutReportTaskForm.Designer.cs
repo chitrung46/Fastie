@@ -136,6 +136,7 @@
             this.btnTaskDetail.Size = new System.Drawing.Size(48, 40);
             this.btnTaskDetail.TabIndex = 2;
             this.btnTaskDetail.UseVisualStyleBackColor = false;
+            this.btnTaskDetail.Click += new System.EventHandler(this.btnTaskDetail_Click);
             // 
             // panel9
             // 
